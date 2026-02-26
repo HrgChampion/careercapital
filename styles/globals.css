@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+html,body {
+  padding: 0;
+  margin: 0;
+}
+* { box-sizing: border-box; }
+input { padding: 6px; margin-left: 8px; }
+label { display: block; font-size: 14px; }
+button { padding: 8px 12px; cursor: pointer; }
