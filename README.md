@@ -1,5 +1,4 @@
-# Hustlers Heaven — TypeScript setup
-
+# Career Capital
 This repository contains a small TypeScript financial engine in `lib/mbaEngine.ts`.
 
 Quick start
