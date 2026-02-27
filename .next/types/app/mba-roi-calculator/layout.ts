@@ -1,4 +1,4 @@
-// File: /home/himanshu/Desktop/Hustlers_Heaven/app/mba-roi-calculator/layout.tsx
+// File: /home/himanshu/Desktop/CareerCapital/app/mba-roi-calculator/layout.tsx
 import * as entry from '../../../../app/mba-roi-calculator/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
