@@ -226,6 +226,233 @@ export default function Home() {
             </div>
           </section>
 
+          {/* Is an MBA Worth It in 2026? */}
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight mb-10">Is an MBA Worth It in 2026?</h2>
+            <div className="max-w-3xl space-y-5">
+              <p className="text-slate-400 text-sm leading-relaxed">
+                The honest answer is: <span className="text-white font-medium">it depends on where you go and what you do with it.</span> That
+                non-answer frustrates people, but the data actually supports it. Over the past decade, MBA tuition at
+                most programs has grown faster than post-MBA salaries — except at the very top of the rankings. At
+                elite programs (Harvard, Wharton, Booth, Kellogg, Columbia, Sloan, Tuck), recruiting pipelines into
+                consulting, finance, and tech remain strong enough that the numbers still work for most graduates.
+                At programs outside the top 20, the math gets significantly harder.
+              </p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                The post-2022 tech layoff cycle changed the calculus for anyone targeting product management or
+                engineering-adjacent MBA roles. Big Tech companies that once recruited aggressively on campus pulled
+                back sharply. That has pushed more MBA graduates toward consulting and finance — sectors that have
+                maintained placement, but are also more selective and cyclically sensitive. If your primary goal is
+                a FAANG PM role, an MBA is no longer the reliable pathway it was in 2019–2021.
+              </p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                There is a third path that has genuinely improved: <span className="text-white font-medium">accredited online and part-time MBAs.</span> Programs
+                like UNC Kenan-Flagler Online, Indiana Kelley Direct, and Carnegie Mellon Tepper Online now carry
+                real employer recognition, cost 60–80% less than their full-time equivalents, and eliminate
+                opportunity cost entirely since you keep working. For professionals who are already well-networked
+                in their industry and need the credential rather than the career pivot, these programs offer the
+                strongest financial ROI of any MBA format.
+              </p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                The short version for 2026: <span className="text-white font-medium">school tier × target industry × financing structure</span> determines
+                whether an MBA is a career accelerant or an expensive credential. This calculator is designed to
+                model exactly that combination for your specific inputs — not a generic average.
+              </p>
+            </div>
+          </section>
+
+          {/* Average MBA Cost */}
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight mb-10">Average MBA Cost: US &amp; Global Programs</h2>
+            <div className="space-y-6 max-w-3xl">
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Tuition figures quoted by schools are almost always understated. The real cost includes fees, living
+                expenses, and — critically — <span className="text-white font-medium">two years of foregone salary</span> if you attend full-time. At M7 programs,
+                the full economic outflow routinely exceeds $280,000.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">US Elite (M7)</p>
+                  <p className="text-white font-semibold text-lg">$130,000 – $165,000</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">Tuition + fees only. HBS, Wharton, Booth, Kellogg, Columbia, Sloan, Tuck. Add $80k–$120k living expenses over 2 years.</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">US Top 10–25</p>
+                  <p className="text-white font-semibold text-lg">$85,000 – $125,000</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">Darden, Fuqua, Ross, Haas, Yale SOM, Stern. Similar living costs but lower tuition ceiling.</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">Online / Part-Time</p>
+                  <p className="text-white font-semibold text-lg">$25,000 – $65,000</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">UNC Online, Indiana Kelley Direct, ASU W. P. Carey, Carnegie Mellon Tepper Online. Zero opportunity cost — you keep working.</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">Europe &amp; UK</p>
+                  <p className="text-white font-semibold text-lg">€70,000 – £100,000</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">INSEAD (1-year, €95k), LBS (£92k), Oxford Saïd (£72k), IMD (CHF 95k). Often 1-year format reduces opportunity cost.</p>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                The most common mistake prospective students make is modeling only tuition. Enter the full cost —
+                tuition plus living expenses plus foregone income — into the Total MBA Cost field above to get an
+                accurate NPV.
+              </p>
+            </div>
+          </section>
+
+          {/* Average MBA Salary Increase */}
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight mb-10">Average MBA Salary Increase by Sector</h2>
+            <div className="space-y-6 max-w-3xl">
+              <p className="text-slate-400 text-sm leading-relaxed">
+                GMAC&apos;s most recent survey puts the median pre-MBA base salary at approximately $85,000 for
+                full-time program applicants. Post-MBA, M7 graduates entering consulting or finance routinely report
+                total first-year compensation exceeding $200,000 when signing bonuses are included. The gap between
+                sectors is large enough that industry target matters as much as school tier.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-1">
+                  <p className="text-white font-semibold text-sm">Management Consulting (MBB)</p>
+                  <p className="text-purple-300 text-lg font-semibold">$190k – $215k base</p>
+                  <p className="text-slate-400 text-xs">+ $30k–$50k signing bonus. McKinsey, Bain, BCG target M7 almost exclusively.</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-1">
+                  <p className="text-white font-semibold text-sm">Investment Banking / PE</p>
+                  <p className="text-purple-300 text-lg font-semibold">$200k – $250k+</p>
+                  <p className="text-slate-400 text-xs">Associate base at bulge-bracket banks. PE roles vary widely but skew higher on carry.</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-1">
+                  <p className="text-white font-semibold text-sm">Technology (FAANG-tier)</p>
+                  <p className="text-purple-300 text-lg font-semibold">$175k – $220k base</p>
+                  <p className="text-slate-400 text-xs">Plus RSU grants often worth $100k–$200k/year at major tech firms. Recruiting is now more selective post-2022.</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-1">
+                  <p className="text-white font-semibold text-sm">General Management / Corp Dev</p>
+                  <p className="text-purple-300 text-lg font-semibold">$130k – $160k</p>
+                  <p className="text-slate-400 text-xs">Strategy, operations, and leadership rotational programs. Solid trajectory but lower starting salary.</p>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Across all sectors and school tiers, the median salary increase from pre- to post-MBA ranges from
+                <span className="text-white font-medium"> 40% at regional programs</span> to <span className="text-white font-medium">110%+ at M7 programs targeting consulting and finance.</span> The
+                calculator defaults to a $90k → $140k scenario, which reflects a mid-tier program with a solid but
+                not exceptional placement. Adjust both salary fields to match your actual target role.
+              </p>
+            </div>
+          </section>
+
+          {/* Break-even examples */}
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight mb-10">MBA Break-Even: Three Real Scenarios</h2>
+            <div className="space-y-6 max-w-3xl">
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Abstract break-even ranges are not useful for decision-making. Here are three concrete scenarios
+                modeled the same way this calculator works — including opportunity cost, loan repayment, and
+                discounted cash flows.
+              </p>
+
+              <div className="space-y-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-medium text-purple-400 uppercase tracking-widest bg-purple-500/10 border border-purple-500/20 rounded px-2 py-1">Scenario A</span>
+                    <p className="text-white font-semibold text-sm">M7 Program → Management Consulting (MBB)</p>
+                  </div>
+                  <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Total Cost</p><p className="text-white font-medium">$160k tuition<br/><span className="text-slate-400 text-xs">+ ~$180k opp. cost = $340k</span></p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Salary Jump</p><p className="text-white font-medium">$95k → $200k<br/><span className="text-slate-400 text-xs">+$105k/yr delta</span></p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Break-Even</p><p className="text-green-400 font-semibold">~5.5 years</p></div>
+                  </div>
+                  <p className="text-slate-400 text-xs leading-relaxed">Strong positive NPV. The salary delta absorbs loan payments quickly, and the high IRR (typically 18–24%) exceeds any passive investment alternative.</p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-medium text-yellow-400 uppercase tracking-widest bg-yellow-500/10 border border-yellow-500/20 rounded px-2 py-1">Scenario B</span>
+                    <p className="text-white font-semibold text-sm">Regional Top-30 → General Management</p>
+                  </div>
+                  <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Total Cost</p><p className="text-white font-medium">$90k tuition<br/><span className="text-slate-400 text-xs">+ ~$160k opp. cost = $250k</span></p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Salary Jump</p><p className="text-white font-medium">$70k → $115k<br/><span className="text-slate-400 text-xs">+$45k/yr delta</span></p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Break-Even</p><p className="text-yellow-400 font-semibold">~7–8 years</p></div>
+                  </div>
+                  <p className="text-slate-400 text-xs leading-relaxed">Marginal NPV at a 6% discount rate. The lower salary delta makes loan repayment slow. Works if the program offers meaningful scholarship aid or the role unlocks above-average career trajectory over time.</p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-medium text-blue-400 uppercase tracking-widest bg-blue-500/10 border border-blue-500/20 rounded px-2 py-1">Scenario C</span>
+                    <p className="text-white font-semibold text-sm">Accredited Online Part-Time MBA</p>
+                  </div>
+                  <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Total Cost</p><p className="text-white font-medium">$45k tuition<br/><span className="text-slate-400 text-xs">$0 opp. cost (kept working)</span></p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Salary Jump</p><p className="text-white font-medium">$80k → $105k<br/><span className="text-slate-400 text-xs">+$25k/yr delta</span></p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Break-Even</p><p className="text-green-400 font-semibold">~2 years</p></div>
+                  </div>
+                  <p className="text-slate-400 text-xs leading-relaxed">Best financial ROI of the three. Eliminating opportunity cost is more powerful than reducing tuition. The credential and promotion unlock break even almost immediately, even with a modest salary increase.</p>
+                </div>
+              </div>
+
+              <div className="bg-violet-500/10 border border-violet-500/20 rounded-xl p-5">
+                <p className="text-violet-300 text-sm leading-relaxed">
+                  <span className="font-semibold text-white">Key insight:</span> In scenarios A and B, opportunity cost exceeds tuition. Most prospective students anchor on the tuition number and underestimate total outflow by 40–60%. Always model both figures — this calculator&apos;s Total MBA Cost field should include tuition, fees, and living expenses over the program duration.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* When MBA is NOT worth it */}
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight mb-10">When an MBA Is Not Worth It</h2>
+            <div className="space-y-5 max-w-3xl">
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Most MBA content is written by people with a financial interest in you enrolling. This section is not.
+                There are specific profiles where an MBA consistently produces a negative NPV or, at best, a marginal
+                return that fails to justify the risk and disruption. Recognizing your profile before you apply is
+                worth more than any calculator.
+              </p>
+
+              <div className="space-y-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-white font-semibold text-sm">You are already earning $150k+ in a high-skill technical role</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">Software engineers, quantitative analysts, and senior data scientists at top-tier companies frequently earn more before an MBA than most MBA graduates earn after one. The credential does not unlock meaningfully higher compensation in roles that value demonstrated technical output over managerial signaling. A lateral move, a staff promotion, or a direct switch to a PE-backed startup will almost always outperform a two-year detour.</p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-white font-semibold text-sm">You are taking on 100% debt for a program outside the top 25</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">The MBA prestige gradient is steep. Recruiter pipelines — especially in consulting and finance — are heavily concentrated at M7 and select regional schools with strong alumni networks in specific geographies. A fully-financed degree from a program without a clear pipeline into your target sector leaves you with significant debt and a credential that opens fewer doors than expected.</p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-white font-semibold text-sm">Your goal is entrepreneurship</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">$150,000 and two years of execution is a more valuable asset than a two-year case study curriculum. Successful founders consistently cite network and credibility as the benefits of an MBA — but those can be built directly through actual company-building, accelerators, and early-stage communities. If you are going to business school to learn how to start a business, you are using the wrong tool.</p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-white font-semibold text-sm">You are switching industries mid-career without pre-MBA groundwork</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">Career switchers are among the most common MBA profiles — and among the most frequently disappointed. The programs most likely to facilitate a pivot are M7 schools with strong recruiting infrastructure. At other programs, breaking into a new industry from scratch during a two-year window, while managing coursework and recruiting simultaneously, is extremely difficult. Professionals who successfully pivot into consulting or finance typically start building relationships and skills in that direction 12–18 months before applications, not after matriculation.</p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-white font-semibold text-sm">You expect the degree to compensate for weak fundamentals</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">An MBA does not fix a weak work ethic, poor analytical skills, or an inability to perform under interview conditions. The recruiting process for top MBA outcomes — case interviews, technical finance screens, behavioral rounds — is just as demanding as entry-level hiring, sometimes more so. Candidates who struggle with these interviews before an MBA tend to struggle during it. The degree is an access credential, not a competence transfer.</p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                  <p className="text-white font-semibold text-sm">You are going for &ldquo;personal development&rdquo; without a target outcome</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">Vague career goals produce vague career outcomes. The MBA recruiting cycle is structured around specific roles in specific sectors with specific timelines. Students who arrive without a clear target spend the first year in exploration mode and the second year in catch-up mode. The financial model only works when you can define — before you enroll — the role, salary, and industry you are targeting on the other side.</p>
+                </div>
+              </div>
+
+              <p className="text-slate-400 text-sm leading-relaxed">
+                None of this is a categorical argument against MBAs. The network, intellectual environment, and
+                signaling value of a top program are real — and for some profiles, they justify the investment even
+                when the financial model is marginal. But those factors are subjective and personal.{" "}
+                <span className="text-white font-medium">The financial model is not.</span> Run your actual numbers in
+                the calculator above before making a decision based on optimistic assumptions or anecdotal outcomes.
+              </p>
+            </div>
+          </section>
+
         </div>
       </div>
 

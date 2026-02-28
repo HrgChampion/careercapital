@@ -86,6 +86,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── MBA Guides ── */}
+      <section className="max-w-5xl mx-auto w-full px-6 pb-28">
+        <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">MBA Guides</p>
+        <div className="grid md:grid-cols-3 gap-5">
+
+          <Link href="/mba-worth-it" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Is an MBA Worth It?</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Financial breakdown, ROI vs. the stock market, and the scenarios where the math reliably fails.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-salary-increase" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Salary Increase</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Pre- vs. post-MBA pay by industry. Consulting, banking, tech, and general management — with real figures.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-break-even" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Break-Even Period</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The math behind payback timelines, what shifts them, and three scenarios with full calculations.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+        </div>
+      </section>
+
       {/* ── Vision ── */}
       <section className="max-w-5xl mx-auto w-full px-6 pb-28 border-t border-white/10 pt-20">
         <div className="max-w-2xl space-y-6">
