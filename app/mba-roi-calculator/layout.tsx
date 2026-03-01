@@ -11,7 +11,7 @@ export const metadata = {
     "MBA financial analysis",
   ],
   alternates: {
-    canonical: "https://yourdomain.com/mba-roi-calculator",
+    canonical: "https://careerreturns.com/mba-roi-calculator",
   },
 }
 

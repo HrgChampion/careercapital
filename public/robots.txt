@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap — update domain before deploying
-# Sitemap: https://yourdomain.com/sitemap.xml
+# Sitemap: https://careerreturns.com/sitemap.xml
