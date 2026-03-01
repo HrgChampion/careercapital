@@ -73,12 +73,12 @@ export default function MbaSalaryIncreasePage() {
 
           <div className="space-y-3">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                 <div className="space-y-1">
                   <p className="text-white font-semibold">Management Consulting — MBB</p>
                   <p className="text-slate-400 text-xs">McKinsey, Bain, Boston Consulting Group</p>
                 </div>
-                <div className="text-right">
+                <div className="sm:text-right">
                   <p className="text-green-400 text-xl font-semibold">$190k – $215k</p>
                   <p className="text-slate-500 text-xs">base salary</p>
                 </div>
@@ -91,12 +91,12 @@ export default function MbaSalaryIncreasePage() {
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                 <div className="space-y-1">
                   <p className="text-white font-semibold">Investment Banking — Bulge Bracket / Elite Boutique</p>
                   <p className="text-slate-400 text-xs">Goldman, Morgan Stanley, JPMorgan, Evercore, Lazard</p>
                 </div>
-                <div className="text-right">
+                <div className="sm:text-right">
                   <p className="text-green-400 text-xl font-semibold">$200k – $250k</p>
                   <p className="text-slate-500 text-xs">base + guaranteed bonus</p>
                 </div>
@@ -109,12 +109,12 @@ export default function MbaSalaryIncreasePage() {
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                 <div className="space-y-1">
                   <p className="text-white font-semibold">Technology — FAANG &amp; Tier-1 Firms</p>
                   <p className="text-slate-400 text-xs">Google, Meta, Apple, Amazon, Microsoft</p>
                 </div>
-                <div className="text-right">
+                <div className="sm:text-right">
                   <p className="text-green-400 text-xl font-semibold">$175k – $220k</p>
                   <p className="text-slate-500 text-xs">base salary</p>
                 </div>
@@ -127,7 +127,7 @@ export default function MbaSalaryIncreasePage() {
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                 <div className="space-y-1">
                   <p className="text-white font-semibold">General Management / Corporate Strategy</p>
                   <p className="text-slate-400 text-xs">Leadership programs, corp dev, strategy roles</p>
@@ -145,7 +145,7 @@ export default function MbaSalaryIncreasePage() {
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                 <div className="space-y-1">
                   <p className="text-white font-semibold">Healthcare, Non-profit, Government</p>
                   <p className="text-slate-400 text-xs">Hospital administration, policy, social impact</p>

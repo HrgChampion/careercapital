@@ -78,15 +78,15 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
 
         {/* SEO Header */}
-        <div className="mb-16 flex items-start justify-between gap-8">
+        <div className="mb-16 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5">
           <section>
             <p className="text-xs font-medium text-purple-400 uppercase tracking-widest mb-3">
               Capital Allocation Simulator
             </p>
-            <h1 className="text-4xl font-semibold tracking-tight">MBA ROI Calculator – Is an MBA Worth It?</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">MBA ROI Calculator – Is an MBA Worth It?</h1>
             <p className="mt-4 text-slate-400 text-lg leading-relaxed max-w-2xl">
               This MBA ROI calculator helps you determine if an MBA is worth it financially by modeling
               tuition costs, lost income, student loans, and post-MBA salary increases using
@@ -95,7 +95,7 @@ export default function Home() {
           </section>
           <button
             onClick={() => setDrawerOpen(true)}
-            className="shrink-0 text-xs text-slate-400 hover:text-white border border-white/10 rounded-lg px-4 py-2 transition-colors hover:border-white/30"
+            className="shrink-0 self-start text-xs text-slate-400 hover:text-white border border-white/10 rounded-lg px-4 py-2 transition-colors hover:border-white/30"
           >
             Assumptions ↗
           </button>
@@ -111,9 +111,12 @@ export default function Home() {
             <NavButtons step={step} setStep={setStep} />
           </div>
 
-          {/* ── Right: Results Panel (sticky) ── */}
-          <div className="sticky top-8">
-            <ResultsPanel result={result} scoreData={scoreData} inputs={inputs} />
+          {/* ── Right: Results Panel (sticky on desktop, plain on mobile) ── */}
+          <div>
+            <div className="lg:hidden border-t border-white/10 mb-8" />
+            <div className="lg:sticky lg:top-8">
+              <ResultsPanel result={result} scoreData={scoreData} inputs={inputs} />
+            </div>
           </div>
 
         </div>
@@ -357,7 +360,7 @@ export default function Home() {
                     <span className="text-xs font-medium text-purple-400 uppercase tracking-widest bg-purple-500/10 border border-purple-500/20 rounded px-2 py-1">Scenario A</span>
                     <p className="text-white font-semibold text-sm">M7 Program → Management Consulting (MBB)</p>
                   </div>
-                  <div className="grid grid-cols-3 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
                     <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Total Cost</p><p className="text-white font-medium">$160k tuition<br/><span className="text-slate-400 text-xs">+ ~$180k opp. cost = $340k</span></p></div>
                     <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Salary Jump</p><p className="text-white font-medium">$95k → $200k<br/><span className="text-slate-400 text-xs">+$105k/yr delta</span></p></div>
                     <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Break-Even</p><p className="text-green-400 font-semibold">~5.5 years</p></div>
@@ -370,7 +373,7 @@ export default function Home() {
                     <span className="text-xs font-medium text-yellow-400 uppercase tracking-widest bg-yellow-500/10 border border-yellow-500/20 rounded px-2 py-1">Scenario B</span>
                     <p className="text-white font-semibold text-sm">Regional Top-30 → General Management</p>
                   </div>
-                  <div className="grid grid-cols-3 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
                     <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Total Cost</p><p className="text-white font-medium">$90k tuition<br/><span className="text-slate-400 text-xs">+ ~$160k opp. cost = $250k</span></p></div>
                     <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Salary Jump</p><p className="text-white font-medium">$70k → $115k<br/><span className="text-slate-400 text-xs">+$45k/yr delta</span></p></div>
                     <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Break-Even</p><p className="text-yellow-400 font-semibold">~7–8 years</p></div>
@@ -383,7 +386,7 @@ export default function Home() {
                     <span className="text-xs font-medium text-blue-400 uppercase tracking-widest bg-blue-500/10 border border-blue-500/20 rounded px-2 py-1">Scenario C</span>
                     <p className="text-white font-semibold text-sm">Accredited Online Part-Time MBA</p>
                   </div>
-                  <div className="grid grid-cols-3 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
                     <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Total Cost</p><p className="text-white font-medium">$45k tuition<br/><span className="text-slate-400 text-xs">$0 opp. cost (kept working)</span></p></div>
                     <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Salary Jump</p><p className="text-white font-medium">$80k → $105k<br/><span className="text-slate-400 text-xs">+$25k/yr delta</span></p></div>
                     <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Break-Even</p><p className="text-green-400 font-semibold">~2 years</p></div>
@@ -859,7 +862,7 @@ function AssumptionsDrawer({ open, onClose }: { open: boolean; onClose: () => vo
       {open && (
         <div className="fixed inset-0 bg-black/50 z-40" onClick={onClose} />
       )}
-      <div className={`fixed right-0 top-0 h-full w-88 bg-slate-950 border-l border-white/10 p-8 z-50 transition-transform duration-300 overflow-y-auto ${open ? "translate-x-0" : "translate-x-full"}`}>
+      <div className={`fixed right-0 top-0 h-full w-full sm:w-88 bg-slate-950 border-l border-white/10 p-6 sm:p-8 z-50 transition-transform duration-300 overflow-y-auto ${open ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-lg font-semibold">Model Assumptions</h2>
           <button onClick={onClose} className="text-slate-400 hover:text-white text-xl leading-none">×</button>

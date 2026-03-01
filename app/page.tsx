@@ -10,12 +10,12 @@ export default function HomePage() {
       </div>
 
       {/* ── Hero ── */}
-      <section className="flex-1 flex flex-col items-center justify-center text-center px-6 py-32 max-w-5xl mx-auto w-full">
+      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 py-20 sm:py-32 max-w-5xl mx-auto w-full">
         <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">
           CareerCapital
         </p>
 
-        <h1 className="text-5xl sm:text-6xl font-semibold tracking-tight leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
           Capital Allocation for<br />Career Decisions
         </h1>
 
@@ -37,7 +37,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Modeling Foundation ── */}
-      <section className="max-w-5xl mx-auto w-full px-6 pb-24">
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16 sm:pb-24">
         <div className="rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl p-10 text-center space-y-6">
 
           <h2 className="text-2xl font-semibold tracking-tight">
@@ -53,7 +53,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Capability Grid ── */}
-      <section className="max-w-5xl mx-auto w-full px-6 pb-28">
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16 sm:pb-28">
         <div className="grid md:grid-cols-3 gap-6">
 
           <div className="rounded-2xl bg-white/5 border border-white/10 p-8 space-y-4 hover:bg-white/[0.07] transition-all">
@@ -119,7 +119,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Vision ── */}
-      <section className="max-w-5xl mx-auto w-full px-6 pb-28 border-t border-white/10 pt-20">
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16 sm:pb-28 border-t border-white/10 pt-14 sm:pt-20">
         <div className="max-w-2xl space-y-6">
 
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">

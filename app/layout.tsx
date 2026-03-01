@@ -6,8 +6,9 @@ export const metadata = {
   description:
     "Professional-grade capital budgeting tools for evaluating MBA programs, graduate degrees, and career investments.",
   verification: {
-    google: "Q3CH18Wk-DRwQpK6HhnH5FM-DH43_xOxFXRVAuGdX4A",
+    google: "zDoWplbx5Khdq-waO3kN2Ko9CJeltvRwJyit1br6uF4",
   },
+   metadataBase: new URL("https://careerreturns.com"),
 }
 
 export default function RootLayout({
