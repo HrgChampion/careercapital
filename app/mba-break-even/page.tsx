@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA Break-Even Period: When Does an MBA Pay Off? | CareerCapital",
+  title: "MBA Break-Even Period (With Real Scenarios & Math) | CareerCapital",
   description:
-    "Understand the MBA break-even period and payback timeline. The math, the factors that shift it, and three real scenarios with specific numbers.",
+    "MBA break-even and payback period explained with real math. Three scenarios (M7 consulting, regional GM, online MBA), the factors that shift your timeline, and a free calculator.",
 }
 
 export default function MbaBreakEvenPage() {
@@ -37,14 +37,17 @@ export default function MbaBreakEvenPage() {
             you have recovered every dollar you spent and every dollar of income you gave up to attend.
           </p>
           <p className="text-slate-400 text-sm leading-relaxed">
-            It is a more intuitive metric than NPV for many people because it answers a concrete question:
+            It is a more intuitive metric than{" "}
+            <Link href="/mba-roi-calculator" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">NPV</Link>
+            {" "}for many people because it answers a concrete question:
             <span className="text-white font-medium"> how long before I am financially ahead compared to never having gone?</span>
           </p>
           <p className="text-slate-400 text-sm leading-relaxed">
             The cumulative net cash flow starts deeply negative on day one of enrollment — you are spending
             money and forgoing income. It stays negative through the program. After graduation it begins
-            climbing as your salary uplift (minus loan payments) accumulates year over year. Break-even is
-            where the cumulative curve crosses zero.
+            climbing as your{" "}
+            <Link href="/mba-salary-increase" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">salary uplift</Link>
+            {" "}(minus loan payments) accumulates year over year. Break-even is where the cumulative curve crosses zero.
           </p>
           <div className="bg-white/5 border border-white/10 rounded-xl p-6">
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Typical ranges</p>
@@ -110,8 +113,9 @@ export default function MbaBreakEvenPage() {
               <span className="font-semibold text-white">The right method:</span> Project net cash flow
               year by year — salary delta minus annual loan payment — for each year after graduation.
               Running sum from the initial outflow (tuition + living costs + opportunity cost). Break-even
-              is the year the running sum turns positive, interpolated between years for precision. Our
-              calculator does this automatically.
+              is the year the running sum turns positive, interpolated between years for precision. Our{" "}
+              <Link href="/mba-roi-calculator" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA ROI calculator</Link>
+              {" "}does this automatically.
             </p>
           </div>
         </section>
@@ -291,7 +295,9 @@ export default function MbaBreakEvenPage() {
               <span className="font-semibold text-white">Pattern:</span> The program format (full-time vs.
               part-time) matters more than the tuition difference between programs. Opportunity cost is the
               dominant variable in full-time scenarios. Controlling for it — by keeping your income stream
-              intact — produces better break-even math than attending a cheaper full-time program.
+              intact — produces better break-even math than attending a cheaper full-time program.{" "}
+              For a full analysis of whether the investment makes sense for your profile, see{" "}
+              <Link href="/mba-worth-it" className="text-violet-300 hover:text-violet-200 transition-colors underline underline-offset-2">Is an MBA Worth It?</Link>
             </p>
           </div>
         </section>
@@ -331,6 +337,58 @@ export default function MbaBreakEvenPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How long does it take to break even on an MBA?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "MBA break-even ranges from 4–6 years for M7 programs with consulting or finance placement, 7–10 years for regional top-30 programs targeting general management, and 2–4 years for online or part-time MBAs. The key variables are salary delta, opportunity cost, total tuition, and loan structure. A simple cost-to-salary ratio significantly underestimates true break-even because it ignores loan repayment drag in the early post-graduation years.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What is the MBA payback period for consulting?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "For an M7 MBA graduate entering MBB consulting (McKinsey, Bain, BCG), the payback period is typically 4.5–6 years. With a pre-MBA salary of $85,000 and a post-MBA MBB base of $200,000 plus $40,000 signing bonus, the net annual benefit after loan payments is approximately $95,000–$115,000. Against a total economic cost of $400,000–$420,000, the break-even occurs in the mid-5-year range.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Does an online MBA break even faster than a full-time MBA?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, significantly. An online or part-time MBA eliminates opportunity cost entirely since you keep working during the program. For the same salary outcome, an online MBA with $48,000 in tuition breaks even in approximately 2–3 years. A full-time program with $155,000 in tuition plus $160,000 in foregone income (total $315,000) breaks even in 8–9 years with the same $30,000 salary delta. The format difference is more impactful than the tuition difference.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How does opportunity cost affect MBA break-even?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Opportunity cost is the single most underestimated factor in MBA break-even calculations. For a two-year full-time program, foregone salary equals two years of pre-MBA income — often $160,000–$220,000 for most applicants. This is typically larger than tuition itself. A correct break-even model must include opportunity cost, not just tuition, in the total outflow at program start.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What factors most affect how long an MBA takes to pay off?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "The five factors that most affect MBA break-even are: (1) salary delta — the annual income increase from the degree; (2) program format — full-time eliminates opportunity cost; (3) opportunity cost — pre-MBA salary times program duration; (4) loan percentage and interest rate — higher debt extends break-even by reducing net annual benefit; (5) total tuition — important but typically less impactful than opportunity cost for mid-career candidates.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </main>
   )
 }

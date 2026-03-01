@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA Salary Increase: Pre vs. Post-MBA Pay by Industry | CareerCapital",
+  title: "MBA Salary Increase (2026 Data): Pre vs. Post-MBA Pay by Industry | CareerCapital",
   description:
-    "Data on MBA salary growth before and after graduation. Pre-MBA median, post-MBA by sector, and how to model your personal salary increase.",
+    "MBA salary increase data for 2026. Pre-MBA median by function, post-MBA by sector (consulting, banking, tech), salary delta modeling, and ROI implications.",
 }
 
 export default function MbaSalaryIncreasePage() {
@@ -56,8 +56,9 @@ export default function MbaSalaryIncreasePage() {
           <p className="text-slate-400 text-sm leading-relaxed">
             The critical figure for ROI modeling is not your absolute pre-MBA salary — it is the gap between
             what you earn now and what you will earn after graduation. Someone earning $145k in a senior
-            engineering role faces a very different ROI picture than someone earning $75k in a non-profit role,
-            even if both attend the same program.
+            engineering role faces a very different{" "}
+            <Link href="/mba-worth-it" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">ROI picture</Link>
+            {" "}than someone earning $75k in a non-profit role, even if both attend the same program.
           </p>
         </section>
 
@@ -168,8 +169,9 @@ export default function MbaSalaryIncreasePage() {
         <section className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">The Number That Actually Matters: Your Salary Delta</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            Post-MBA salary figures are useful benchmarks. But for ROI modeling, the variable that drives
-            everything is the <span className="text-white font-medium">salary delta</span> — the annual income
+            Post-MBA salary figures are useful benchmarks. But for{" "}
+            <Link href="/mba-roi-calculator" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">ROI modeling</Link>
+            , the variable that drives everything is the <span className="text-white font-medium">salary delta</span> — the annual income
             difference between what you earn with the degree and what you would have earned without it.
           </p>
           <p className="text-slate-400 text-sm leading-relaxed">
@@ -190,7 +192,9 @@ export default function MbaSalaryIncreasePage() {
               <p className="text-slate-500 text-xs uppercase tracking-wide">Scenario: Low Delta</p>
               <p className="text-white font-medium text-sm">$155k → $200k (FAANG PM)</p>
               <p className="text-yellow-400 text-sm font-semibold">+$45k/yr delta</p>
-              <p className="text-slate-400 text-xs">Marginal or negative NPV even at M7. Break-even extends beyond 10 years.</p>
+              <p className="text-slate-400 text-xs">Marginal or negative NPV even at M7.{" "}
+                <Link href="/mba-break-even" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">Break-even</Link>
+                {" "}extends beyond 10 years.</p>
             </div>
           </div>
           <p className="text-slate-400 text-sm leading-relaxed">
@@ -219,7 +223,9 @@ export default function MbaSalaryIncreasePage() {
           <p className="text-slate-400 text-sm leading-relaxed">
             For general management roles, salary growth is slower and more dependent on individual
             performance and company trajectory. The 10-year NPV of this path is harder to model with
-            confidence, which is why the calculator uses conservative and base-case projections side by side.
+            confidence, which is why the{" "}
+            <Link href="/mba-roi-calculator" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">MBA ROI calculator</Link>
+            {" "}uses conservative and base-case projections side by side.
           </p>
         </section>
 
