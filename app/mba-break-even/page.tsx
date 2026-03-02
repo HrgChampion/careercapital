@@ -66,6 +66,31 @@ export default function MbaBreakEvenPage() {
               ))}
             </div>
           </div>
+
+          {/* Break-even timeline bar chart */}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
+            <p className="text-xs font-medium text-slate-500 uppercase tracking-widest">Break-Even Timeline — Years After Graduation</p>
+            <div className="space-y-3">
+              {[
+                { label: "Online / Part-Time MBA", years: "2–4 yrs", pct: 25, color: "bg-green-400" },
+                { label: "M7 → Consulting / Finance", years: "4–6 yrs", pct: 42, color: "bg-emerald-400" },
+                { label: "M7 → Tech (post-2022)", years: "5–8 yrs", pct: 54, color: "bg-yellow-400" },
+                { label: "Top 20 → General Management", years: "7–10 yrs", pct: 71, color: "bg-orange-400" },
+                { label: "Non-target, full debt", years: "10+ yrs", pct: 92, color: "bg-red-400" },
+              ].map(({ label, years, pct, color }) => (
+                <div key={label} className="space-y-1.5">
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-400">{label}</span>
+                    <span className="text-white font-medium tabular-nums">{years}</span>
+                  </div>
+                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className={`h-2 rounded-full ${color}`} style={{ width: `${pct}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-slate-600 text-xs pt-1">Shorter bar = faster payback. Scale: 0–12 years. Bars represent midpoint of stated range.</p>
+          </div>
         </section>
 
         {/* The math */}

@@ -72,6 +72,32 @@ export default function MbaSalaryIncreasePage() {
             salary level.
           </p>
 
+          {/* Salary bar chart */}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
+            <p className="text-xs font-medium text-slate-500 uppercase tracking-widest">Post-MBA Base Salary vs. Pre-MBA Median — M7 Placements</p>
+            <div className="space-y-3">
+              {[
+                { label: "Investment Banking", range: "$200k – $250k", pct: 90, color: "bg-green-400" },
+                { label: "MBB Consulting", range: "$190k – $215k", pct: 82, color: "bg-emerald-400" },
+                { label: "Tech (FAANG-tier)", range: "$175k – $220k", pct: 78, color: "bg-teal-400" },
+                { label: "General Management", range: "$130k – $160k", pct: 56, color: "bg-yellow-400" },
+                { label: "Healthcare / Gov't", range: "$90k – $125k", pct: 42, color: "bg-orange-400" },
+                { label: "Pre-MBA Median", range: "~$85k – $95k", pct: 34, color: "bg-slate-500" },
+              ].map(({ label, range, pct, color }) => (
+                <div key={label} className="space-y-1.5">
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-400">{label}</span>
+                    <span className="text-white font-medium tabular-nums">{range}</span>
+                  </div>
+                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className={`h-2 rounded-full ${color}`} style={{ width: `${pct}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-slate-600 text-xs pt-1">Scale: $0 – $250k. Bars represent midpoint of stated range.</p>
+          </div>
+
           <div className="space-y-3">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">

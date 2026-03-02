@@ -132,6 +132,32 @@ export default function MbaWorthItPage() {
               <p className="text-slate-500 text-xs">IRR. Market investment likely wins.</p>
             </div>
           </div>
+
+          {/* IRR comparison bar chart */}
+          <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-4">
+            <p className="text-xs font-medium text-slate-500 uppercase tracking-widest">IRR by Path vs. S&amp;P 500 Baseline</p>
+            <div className="space-y-3">
+              {[
+                { label: "M7 → Consulting / Finance", irr: "18–24%", pct: 88, color: "bg-green-400", dim: false },
+                { label: "M7 → Tech (post-2022 market)", irr: "12–16%", pct: 58, color: "bg-emerald-400", dim: false },
+                { label: "Top 20 → General Mgmt", irr: "8–12%", pct: 42, color: "bg-yellow-400", dim: false },
+                { label: "S&P 500 long-run average", irr: "~10%", pct: 38, color: "bg-indigo-400", dim: true },
+                { label: "Non-target, full debt", irr: "<6%", pct: 22, color: "bg-red-400", dim: false },
+              ].map(({ label, irr, pct, color, dim }) => (
+                <div key={label} className={`space-y-1.5 ${dim ? "opacity-50" : ""}`}>
+                  <div className="flex justify-between items-center text-xs">
+                    <span className={dim ? "text-slate-500 italic" : "text-slate-400"}>{label}</span>
+                    <span className={`font-semibold tabular-nums ${dim ? "text-indigo-400" : "text-white"}`}>{irr}</span>
+                  </div>
+                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className={`h-2 rounded-full ${color}`} style={{ width: `${pct}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-slate-600 text-xs pt-1">Scale: 0–27% IRR. S&amp;P 500 row shown as benchmark reference.</p>
+          </div>
+
           <p className="text-slate-400 text-sm leading-relaxed">
             The MBA also has a meaningful advantage that IRR does not capture: it can unlock roles that are
             structurally inaccessible without the credential — specific consulting firms, banking associate
