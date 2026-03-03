@@ -357,6 +357,12 @@ export default function MbaBreakEvenPage() {
             <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
             {" · "}
             <Link href="/mba-salary-increase" className="hover:text-slate-300 transition-colors">MBA Salary Increase</Link>
+            {" · "}
+            <Link href="/mba-roi-100k-debt" className="hover:text-slate-300 transition-colors">MBA $100k Debt ROI</Link>
+            {" · "}
+            <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
+            {" · "}
+            <Link href="/mba-roi-military" className="hover:text-slate-300 transition-colors">MBA ROI: Veterans</Link>
           </p>
           <p>Rational decisions. Compounding outcomes.</p>
         </footer>

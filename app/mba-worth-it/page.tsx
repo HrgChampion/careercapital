@@ -234,6 +234,12 @@ export default function MbaWorthItPage() {
             <Link href="/mba-salary-increase" className="hover:text-slate-300 transition-colors">MBA Salary Increase</Link>
             {" · "}
             <Link href="/mba-break-even" className="hover:text-slate-300 transition-colors">MBA Break-Even</Link>
+            {" · "}
+            <Link href="/mba-roi-recession" className="hover:text-slate-300 transition-colors">MBA Recession ROI</Link>
+            {" · "}
+            <Link href="/mba-roi-engineers" className="hover:text-slate-300 transition-colors">MBA ROI: Engineers</Link>
+            {" · "}
+            <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
           </p>
           <p>Rational decisions. Compounding outcomes.</p>
         </footer>

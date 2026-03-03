@@ -87,7 +87,7 @@ export default function HomePage() {
       </section>
 
       {/* ── MBA Guides ── */}
-      <section className="max-w-5xl mx-auto w-full px-6 pb-28">
+      <section className="max-w-5xl mx-auto w-full px-6 pb-16">
         <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">MBA Guides</p>
         <div className="grid md:grid-cols-3 gap-5">
 
@@ -111,6 +111,94 @@ export default function HomePage() {
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Break-Even Period</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               The math behind payback timelines, what shifts them, and three scenarios with full calculations.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+        </div>
+      </section>
+
+      {/* ── High-Intent ROI Guides ── */}
+      <section className="max-w-5xl mx-auto w-full px-6 pb-28">
+        <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">MBA ROI by Employer, School & Scenario</p>
+        <div className="grid md:grid-cols-3 gap-5">
+
+          <Link href="/mba-roi-mckinsey" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI: McKinsey</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Associate salary, break-even math, school placement rates, and when the McKinsey ROI case actually holds.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-goldman-sachs" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI: Goldman Sachs</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              GS associate comp structure, year-end bonus math, conservative vs. realistic break-even, and GS vs. McKinsey ROI.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-big4-vs-mbb" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Big 4 vs MBB ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The $60k annual salary gap, break-even comparison, NPV side-by-side, and when Big 4 actually wins.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-100k-debt" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI with $100k Debt</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Exact loan payment math at four debt levels, debt-to-income thresholds, and which career tracks survive full debt.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-recession" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI in a Recession</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              2008 and 2020 hiring data, NPV model with salary delays, industries by resilience, and counter-cyclical strategy.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-insead-vs-wharton" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">INSEAD vs Wharton ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Full cost comparison ($224k vs $395k), salary outcomes, break-even head-to-head, and career track fit by program.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-engineers" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI for Engineers</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The compressed delta problem, SWE to PM math, four outcome scenarios, and when senior engineers should skip the MBA.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-healthcare" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI: Healthcare</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Hospital management salary data, PSLF loan forgiveness strategy, and top MBA programs for healthcare careers.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-military" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI: Military Veterans</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              GI Bill + Yellow Ribbon math, net cost after benefits, MBB veteran recruiting programs, and top programs for officers.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-scholarship" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Scholarship ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              50% vs 0% scholarship break-even table, when to take the lower-ranked school with full aid, and negotiation tactics.
             </p>
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>

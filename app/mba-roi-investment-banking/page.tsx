@@ -181,6 +181,10 @@ export default function MbaRoiInvestmentBankingPage() {
             <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
             {" · "}
             <Link href="/mba-roi-tech" className="hover:text-slate-300 transition-colors">MBA ROI: Tech</Link>
+            {" · "}
+            <Link href="/mba-roi-goldman-sachs" className="hover:text-slate-300 transition-colors">MBA ROI: Goldman Sachs</Link>
+            {" · "}
+            <Link href="/mba-roi-recession" className="hover:text-slate-300 transition-colors">MBA Recession ROI</Link>
           </p>
           <p>Rational decisions. Compounding outcomes.</p>
         </footer>

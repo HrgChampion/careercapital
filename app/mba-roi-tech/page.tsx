@@ -164,6 +164,10 @@ export default function MbaRoiTechPage() {
             <Link href="/mba-roi-investment-banking" className="hover:text-slate-300 transition-colors">MBA ROI: Banking</Link>
             {" · "}
             <Link href="/mba-roi-online-vs-full-time" className="hover:text-slate-300 transition-colors">Online vs. Full-Time MBA</Link>
+            {" · "}
+            <Link href="/mba-roi-engineers" className="hover:text-slate-300 transition-colors">MBA ROI: Engineers</Link>
+            {" · "}
+            <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
           </p>
           <p>Rational decisions. Compounding outcomes.</p>
         </footer>

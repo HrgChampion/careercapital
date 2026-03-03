@@ -176,6 +176,10 @@ export default function MbaRoiEuropePage() {
             <Link href="/mba-roi-online-vs-full-time" className="hover:text-slate-300 transition-colors">Online vs. Full-Time MBA</Link>
             {" · "}
             <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
+            {" · "}
+            <Link href="/mba-roi-insead-vs-wharton" className="hover:text-slate-300 transition-colors">INSEAD vs Wharton</Link>
+            {" · "}
+            <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
           </p>
           <p>Rational decisions. Compounding outcomes.</p>
         </footer>

@@ -1,4 +1,4 @@
-# Career Capital
+# Career Returns
 This repository contains a small TypeScript financial engine in `lib/mbaEngine.ts`.
 
 Quick start
