@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Military Veterans: GI Bill, Yellow Ribbon & Career Outcomes (2025) | CareerReturns",
+  title: "MBA ROI for Military Veterans (2026): GI Bill Math, Yellow Ribbon & MBB Placement Data",
   description:
     "MBA ROI for veterans. GI Bill Yellow Ribbon program math, MBB veteran recruiting data, net cost after benefits, post-MBA salary outcomes, and the top MBA programs for military officers.",
   alternates: { canonical: "https://careerreturns.com/mba-roi-military" },
@@ -97,6 +97,41 @@ export default function MbaRoiMilitaryPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Veteran scholarships beyond GI Bill */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Veteran MBA Scholarships Beyond GI Bill</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            GI Bill benefits are the foundation, but many veterans leave additional scholarship money on the
+            table. Merit-based and veteran-specific awards stack on top of Yellow Ribbon to reduce out-of-pocket
+            costs — including living and personal expenses not covered by MHA.
+          </p>
+          <div className="space-y-3">
+            {[
+              { school: "Kellogg (Northwestern)", scholarship: "Veterans Merit Award", amount: "$20,000–$50,000", notes: "Stackable with Yellow Ribbon. Kellogg actively recruits veterans and offers need/merit awards separately from Yellow Ribbon matching. Ranked #1 by Student Veterans of America." },
+              { school: "Darden (Virginia)", scholarship: "Dean's Merit Scholarship", amount: "Up to full tuition", notes: "~15% of the class is veterans. Merit awards available on top of unlimited Yellow Ribbon matching for outstanding candidates." },
+              { school: "Ross (Michigan)", scholarship: "Veterans Scholarship Fund", amount: "$15,000–$40,000", notes: "Veteran-designated merit scholarships independent of GI Bill. Combined with Yellow Ribbon, net tuition can drop to zero." },
+              { school: "Booth (Chicago)", scholarship: "Military Merit Award", amount: "$20,000–$60,000", notes: "Merit-based awards for veteran applicants through a separate evaluation track. Yellow Ribbon unlimited matching available." },
+              { school: "Tuck (Dartmouth)", scholarship: "Tuck Gives Back Initiative", amount: "$15,000–$45,000", notes: "Formal veteran scholarship program. Partners with Warrior-Scholar Project. Strong consulting and PE placement." },
+              { school: "Fuqua (Duke)", scholarship: "Veterans Fellowship", amount: "$15,000–$35,000", notes: "One of the highest veteran enrollment percentages in the Southeast. Fellowship support independent of GI Bill available for O-4+ officers." },
+            ].map(({ school, scholarship, amount, notes }) => (
+              <div key={school} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <p className="text-white font-semibold text-sm">{school}</p>
+                  <p className="text-green-400 font-semibold text-xs">{amount}</p>
+                </div>
+                <p className="text-blue-300 text-xs font-medium">{scholarship}</p>
+                <p className="text-slate-400 text-xs leading-relaxed">{notes}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Stacking GI Bill + Yellow Ribbon + a veteran merit scholarship can reduce total program cost to
+            near zero at several top programs. For the mechanics of how scholarship aid shifts IRR from 21%
+            to 40%, see the{" "}
+            <Link href="/mba-roi-scholarship" className="text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-2">MBA scholarship ROI analysis</Link>.
+          </p>
         </section>
 
         {/* Net cost after benefits */}

@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Investment Banking: Associate Pay & Break-Even (2026) | CareerCapital",
+  title: "MBA ROI for Investment Banking (2026): Associate Pay, PE Exit Math & 10-Year NPV",
   description:
     "MBA ROI for investment banking. Bulge bracket associate compensation, PE exit math, break-even timeline, and when the banking track justifies M7 tuition.",
 }

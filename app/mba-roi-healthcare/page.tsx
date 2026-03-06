@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Healthcare Management: Salary Data, PSLF Strategy & Break-Even (2025) | CareerReturns",
+  title: "MBA ROI for Healthcare (2026): Management Salaries, PSLF Strategy & Real Break-Even Scenarios",
   description:
     "Is an MBA worth it for healthcare? Hospital administration salary data, healthcare consulting ROI, PSLF loan forgiveness strategy, top MBA programs for healthcare, and the full break-even math.",
   alternates: { canonical: "https://careerreturns.com/mba-roi-healthcare" },

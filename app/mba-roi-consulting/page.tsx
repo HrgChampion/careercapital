@@ -181,6 +181,44 @@ export default function MbaRoiConsultingPage() {
           </div>
         </section>
 
+        {/* 5-year comp trajectory */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">McKinsey, BCG & Bain: 5-Year Compensation Trajectory</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The financial case for consulting strengthens significantly when modeled beyond year one. MBB
+            associates who stay on the partnership track see compensation roughly double within five years —
+            a trajectory that compresses effective break-even and dramatically increases 10-year NPV.
+          </p>
+          <div className="space-y-3">
+            {[
+              { level: "Post-MBA Associate", timeline: "Year 0–2", base: "$195k–$210k", bonus: "$45k–$85k", total: "$240k–$295k", color: "text-slate-300" },
+              { level: "Engagement Manager", timeline: "Year 2–4", base: "$250k–$280k", bonus: "$70k–$120k", total: "$320k–$400k", color: "text-purple-300" },
+              { level: "Associate Principal / Project Leader", timeline: "Year 4–6", base: "$300k–$380k", bonus: "$100k–$180k", total: "$400k–$560k", color: "text-violet-300" },
+              { level: "Principal / Associate Director", timeline: "Year 6–8", base: "$380k–$500k", bonus: "$140k–$250k", total: "$520k–$750k", color: "text-indigo-300" },
+              { level: "Partner / Director", timeline: "Year 8+", base: "$500k–$800k", bonus: "$300k–$700k", total: "$800k–$1.5M+", color: "text-emerald-400" },
+            ].map(({ level, timeline, base, bonus, total, color }) => (
+              <div key={level} className="bg-white/5 border border-white/10 rounded-xl p-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+                  <p className="text-white font-semibold text-sm">{level}</p>
+                  <p className={`${color} font-semibold text-sm`}>{total}</p>
+                </div>
+                <div className="grid grid-cols-3 gap-2 text-xs">
+                  <div><p className="text-slate-500 mb-0.5">Timeline</p><p className="text-slate-400">{timeline}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Base</p><p className="text-slate-300">{base}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Bonus</p><p className="text-slate-300">{bonus}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            A candidate who joins McKinsey at $240,000 total comp and reaches Partner by year 8 at $1M+ total
+            compensation has a 10-year IRR that far exceeds the first-year break-even model. The consulting MBA
+            ROI case is best understood as a <span className="text-purple-300">trajectory investment</span>,
+            not a starting salary arbitrage. Only 15–20% of associates reach partner — but even MBB exits
+            at the Engagement Manager level into PE, corporate strategy, or startups at $200,000–$350,000 base.
+          </p>
+        </section>
+
         {/* CTA */}
         <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
           <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">Model Your Numbers</p>

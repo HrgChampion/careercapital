@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "Big 4 vs MBB MBA ROI: Salary Gap, Break-Even & When Big 4 Wins (2025) | CareerReturns",
+  title: "Big 4 vs MBB MBA ROI (2026): The $47K Salary Gap, Break-Even & When Big 4 Actually Wins",
   description:
     "Big 4 vs MBB consulting MBA ROI comparison. Deloitte vs McKinsey salary data, break-even difference, NPV side-by-side, and the scenarios where Big 4 outperforms MBB on financial returns.",
   alternates: { canonical: "https://careerreturns.com/mba-roi-big4-vs-mbb" },

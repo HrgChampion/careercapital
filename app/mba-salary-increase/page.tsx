@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA Salary Increase (2026 Data): Pre vs. Post-MBA Pay by Industry | CareerCapital",
+  title: "MBA Salary Increase (2026): Real Pre vs. Post-MBA Pay Data — $60K–$90K Deltas by Industry",
   description:
     "MBA salary increase data for 2026. Pre-MBA median by function, post-MBA by sector (consulting, banking, tech), salary delta modeling, and ROI implications.",
 }

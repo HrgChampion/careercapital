@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Engineers: SWE to PM, Consulting & the Compressed Delta Problem (2025) | CareerReturns",
+  title: "MBA ROI for Engineers (2026): Why High Pre-MBA Pay Kills the ROI — and When It Still Works",
   description:
     "Is an MBA worth it for engineers? The compressed salary delta problem, SWE to PM ROI, consulting vs tech outcomes, and exactly when the MBA math works for software engineers and technical professionals.",
   alternates: { canonical: "https://careerreturns.com/mba-roi-engineers" },
@@ -194,6 +194,51 @@ export default function MbaRoiEngineersPage() {
                 <p className="text-slate-400 text-xs leading-relaxed">{note}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Tech vs consulting 10-year comparison */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Tech vs. Consulting: 10-Year Compensation Comparison for Engineers</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The most common question for engineers: does switching to MBB via an MBA produce more lifetime
+            income than staying on the FAANG track? The answer hinges entirely on two variables — whether
+            you reach Partner at MBB, and whether your FAANG equity refreshes continue to compound.
+          </p>
+          <div className="space-y-3">
+            {[
+              { year: "Year 1 post-MBA", faang: "$300k (L6 base + equity)", mbb: "$240k–$295k (Associate)", note: "Tech leads early" },
+              { year: "Year 3", faang: "$350k–$420k (L7 + refresh)", mbb: "$320k–$400k (Engagement Manager)", note: "Near parity" },
+              { year: "Year 5", faang: "$400k–$550k (Staff / L8)", mbb: "$400k–$560k (AP / Project Leader)", note: "Roughly equivalent" },
+              { year: "Year 10", faang: "$500k–$800k (Principal / Staff Eng)", mbb: "$800k–$1.5M+ (Partner)", note: "MBB diverges if Partner" },
+            ].map(({ year, faang, mbb, note }) => (
+              <div key={year} className="bg-white/5 border border-white/10 rounded-xl p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <p className="text-white font-semibold text-sm">{year}</p>
+                  <p className="text-slate-500 text-xs italic">{note}</p>
+                </div>
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div>
+                    <p className="text-slate-500 mb-0.5">Stay in Tech (FAANG)</p>
+                    <p className="text-cyan-400">{faang}</p>
+                  </div>
+                  <div>
+                    <p className="text-slate-500 mb-0.5">Switch to MBB (via M7 MBA)</p>
+                    <p className="text-violet-300">{mbb}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+            <p className="text-white font-semibold text-sm">The Key Variable: Only 15–20% of Associates Reach Partner</p>
+            <p className="text-slate-400 text-xs leading-relaxed">
+              For the 80–85% of MBB associates who exit after 3–5 years — into PE, corporate strategy, or
+              startups — the 10-year comp advantage of consulting narrows considerably. MBB exits at EM level
+              still earn $250k–$350k at most landing spots, which remains positive NPV for non-FAANG engineers.
+              But for a Senior FAANG engineer earning $400k+ pre-MBA, staying in tech likely wins on pure
+              financial return. The MBA case for senior FAANG engineers is strategic optionality, not compensation maximization.
+            </p>
           </div>
         </section>
 

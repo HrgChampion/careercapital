@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "Is an MBA Worth It in 2026? Financial Analysis & Real Data | CareerCapital",
+  title: "Is an MBA Worth It in 2026? Real ROI Data from MBB, FAANG & 12 Industries | CareerReturns",
   description:
     "Is an MBA worth it financially in 2026? Full cost breakdown, ROI vs. the stock market, IRR by school tier, and the scenarios where the math reliably fails.",
 }

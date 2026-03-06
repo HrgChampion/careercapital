@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA Scholarship ROI: 50% vs 0% Aid, Break-Even Impact & When to Take Lower-Ranked School (2025) | CareerReturns",
+  title: "MBA Scholarship ROI (2026): How 50% Aid Flips IRR from 21% to 40% — and When to Take a Lower-Ranked School",
   description:
     "MBA scholarship ROI comparison. How a 50% merit scholarship changes break-even, NPV, and IRR. When to take a lower-ranked school with full aid over a top program at full cost — with real math.",
   alternates: { canonical: "https://careerreturns.com/mba-roi-scholarship" },

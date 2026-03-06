@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "INSEAD vs Wharton MBA ROI: Cost, Salary & Break-Even Comparison (2025) | CareerReturns",
+  title: "INSEAD vs. Wharton MBA ROI (2026): Cost Gap, Salary Data & Which Actually Wins on Break-Even",
   description:
     "INSEAD vs Wharton MBA ROI head-to-head. Full cost comparison, post-MBA salary outcomes, break-even timeline, career track fit, and when the one-year MBA wins the financial case.",
   alternates: { canonical: "https://careerreturns.com/mba-roi-insead-vs-wharton" },

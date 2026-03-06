@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA Break-Even Period (With Real Scenarios & Math) | CareerCapital",
+  title: "MBA Break-Even Period (2026): 4–13 Year Range Explained with Real Math Across MBB, Banking & Tech",
   description:
     "MBA break-even and payback period explained with real math. Three scenarios (M7 consulting, regional GM, online MBA), the factors that shift your timeline, and a free calculator.",
 }

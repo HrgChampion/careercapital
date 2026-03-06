@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "MBA ROI Calculator – NPV, IRR & Break-Even Analysis",
+  title: "Free MBA ROI Calculator (2026): NPV, IRR & Break-Even in Under 60 Seconds",
   description:
     "Analyze whether an MBA is worth it using real capital budgeting methods. Calculate Net Present Value (NPV), Internal Rate of Return (IRR), loan amortization, and exact break-even period.",
   keywords: [

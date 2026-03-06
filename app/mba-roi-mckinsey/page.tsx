@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for McKinsey: Associate Salary, Break-Even & Real Math (2025) | CareerReturns",
+  title: "MBA ROI for McKinsey (2026): $192K Associate Salary, IRR & When the Math Actually Works",
   description:
     "Is an MBA worth it for McKinsey? McKinsey associate salary data, break-even math, which schools actually place into McKinsey, and when the numbers work in 2025.",
   alternates: { canonical: "https://careerreturns.com/mba-roi-mckinsey" },

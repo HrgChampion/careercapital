@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI in a Recession: Historical Data, Risk Modeling & Survival Guide (2025) | CareerReturns",
+  title: "MBA ROI in a Recession (2026): What 2008 & 2020 Hiring Data Says About Your Risk",
   description:
     "Does an MBA still pay off in a recession? Historical hiring data from 2008 and 2020, NPV models with salary delays, industries that held, and how to structure your MBA for economic downturns.",
   alternates: { canonical: "https://careerreturns.com/mba-roi-recession" },
