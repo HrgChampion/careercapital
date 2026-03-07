@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import { Analytics } from '@vercel/analytics/next'
 
 export const metadata = {
-  title: "CareerCapital — Human Capital ROI Platform",
+  title: "CareerReturns — Human Capital ROI Platform",
   description:
     "Professional-grade capital budgeting tools for evaluating MBA programs, graduate degrees, and career investments.",
   verification: {
