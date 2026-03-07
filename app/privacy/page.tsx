@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "Privacy Policy | CareerCapital",
+  title: "Privacy Policy | CareerReturns",
   description:
-    "CareerCapital privacy policy. What data we collect, how we use it, and your rights as a visitor.",
+    "CareerReturns privacy policy. What data we collect, how we use it, and your rights as a visitor.",
 }
 
 export default function PrivacyPage() {
@@ -14,10 +14,10 @@ export default function PrivacyPage() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-violet-600/10 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-20 space-y-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-10 sm:space-y-16">
 
         <header className="space-y-4">
-          <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">CareerCapital</p>
+          <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">CareerReturns</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             Privacy Policy
           </h1>
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
             Last updated: <span className="text-white">March 2, 2026</span>
           </p>
           <p className="text-slate-400 text-base leading-relaxed">
-            CareerCapital (<strong className="text-white">careerreturns.com</strong>) is a free informational tool. We collect
+            CareerReturns (<strong className="text-white">careerreturns.com</strong>) is a free informational tool. We collect
             minimal data and do not sell or share your information with advertisers.
             This policy explains exactly what we do and do not do.
           </p>
@@ -57,7 +57,7 @@ export default function PrivacyPage() {
             <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
               <p className="text-white font-semibold text-sm">No Accounts, No Email Collection</p>
               <p className="text-slate-400 text-sm leading-relaxed">
-                CareerCapital has no user registration, login system, or newsletter. We do not collect
+                CareerReturns has no user registration, login system, or newsletter. We do not collect
                 your name, email address, or any personally identifiable information. There are no
                 contact forms that submit data to our servers.
               </p>
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold tracking-tight">2. Cookies</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            CareerCapital does not set first-party cookies. Vercel Analytics operates without cookies
+            CareerReturns does not set first-party cookies. Vercel Analytics operates without cookies
             by default. We do not use advertising cookies, tracking pixels, or retargeting scripts.
             If you have a browser that blocks cookies, the site functions identically.
           </p>
@@ -127,7 +127,7 @@ export default function PrivacyPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold tracking-tight">6. Children</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            CareerCapital is not directed at children under 13. We do not knowingly collect any
+            CareerReturns is not directed at children under 13. We do not knowingly collect any
             information from users under 13 years of age.
           </p>
         </section>

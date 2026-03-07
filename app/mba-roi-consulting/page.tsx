@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Consulting: MBB Salary, Break-Even & Real Math (2026) | CareerCapital",
+  title: "MBA ROI for Consulting: MBB Salary, Break-Even & Real Math (2026) | CareerReturns",
   description:
     "Is an MBA worth it for consulting? MBB salary data, break-even math, which schools actually place into McKinsey, Bain, and BCG — and when the numbers work.",
 }
@@ -14,10 +14,10 @@ export default function MbaRoiConsultingPage() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-violet-600/15 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-20 space-y-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-12 sm:space-y-20">
 
         <header className="space-y-5">
-          <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">CareerCapital · MBA ROI by Career Track</p>
+          <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">CareerReturns · MBA ROI by Career Track</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA ROI for Consulting:<br />When MBB Makes the Math Work
           </h1>

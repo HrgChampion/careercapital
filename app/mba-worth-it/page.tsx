@@ -15,11 +15,11 @@ export default function MbaWorthItPage() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-indigo-600/20 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-20 space-y-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-12 sm:space-y-20">
 
         {/* Header */}
         <header className="space-y-5">
-          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerCapital</p>
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             Is an MBA Worth It?
           </h1>
@@ -30,7 +30,7 @@ export default function MbaWorthItPage() {
 
         {/* Direct answer — first 150 words */}
         <section className="space-y-4">
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-4">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-8 space-y-4">
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Short Answer</p>
             <p className="text-white text-base leading-relaxed font-medium">
               An MBA is worth it if your post-MBA salary delta — the annual income increase attributable to
@@ -209,7 +209,7 @@ export default function MbaWorthItPage() {
         </section>
 
         {/* CTA */}
-        <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
+        <section className="rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-10 text-center space-y-5">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Free Tool</p>
           <h2 className="text-2xl font-semibold tracking-tight">Model Your Specific MBA Decision</h2>
           <p className="text-slate-400 text-sm leading-relaxed max-w-lg mx-auto">

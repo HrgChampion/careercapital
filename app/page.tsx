@@ -12,7 +12,7 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 py-20 sm:py-32 max-w-5xl mx-auto w-full">
         <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">
-          CareerCapital
+          CareerReturns
         </p>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
@@ -38,7 +38,7 @@ export default function HomePage() {
 
       {/* ── Modeling Foundation ── */}
       <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16 sm:pb-24">
-        <div className="rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl p-10 text-center space-y-6">
+        <div className="rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl p-6 sm:p-10 text-center space-y-6">
 
           <h2 className="text-2xl font-semibold tracking-tight">
             Built on Discounted Cash Flow Analysis
@@ -56,7 +56,7 @@ export default function HomePage() {
       <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16 sm:pb-28">
         <div className="grid md:grid-cols-3 gap-6">
 
-          <div className="rounded-2xl bg-white/5 border border-white/10 p-8 space-y-4 hover:bg-white/[0.07] transition-all">
+          <div className="rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 space-y-4 hover:bg-white/[0.07] transition-all">
             <div className="text-indigo-400 text-xl font-mono">Σ</div>
             <h3 className="font-semibold text-white">NPV Modeling</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -65,7 +65,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-white/5 border border-white/10 p-8 space-y-4 hover:bg-white/[0.07] transition-all">
+          <div className="rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 space-y-4 hover:bg-white/[0.07] transition-all">
             <div className="text-indigo-400 text-xl font-mono">%</div>
             <h3 className="font-semibold text-white">IRR Solver</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -74,7 +74,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-white/5 border border-white/10 p-8 space-y-4 hover:bg-white/[0.07] transition-all">
+          <div className="rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 space-y-4 hover:bg-white/[0.07] transition-all">
             <div className="text-indigo-400 text-xl font-mono">$</div>
             <h3 className="font-semibold text-white">Loan Amortization</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -87,11 +87,11 @@ export default function HomePage() {
       </section>
 
       {/* ── MBA Guides ── */}
-      <section className="max-w-5xl mx-auto w-full px-6 pb-16">
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16">
         <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">MBA Guides</p>
         <div className="grid md:grid-cols-3 gap-5">
 
-          <Link href="/mba-worth-it" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-worth-it" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Is an MBA Worth It?</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               Financial breakdown, ROI vs. the stock market, and the scenarios where the math reliably fails.
@@ -99,7 +99,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-salary-increase" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-salary-increase" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Salary Increase</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               Pre- vs. post-MBA pay by industry. Consulting, banking, tech, and general management — with real figures.
@@ -107,7 +107,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-break-even" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-break-even" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Break-Even Period</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               The math behind payback timelines, what shifts them, and three scenarios with full calculations.
@@ -119,11 +119,11 @@ export default function HomePage() {
       </section>
 
       {/* ── High-Intent ROI Guides ── */}
-      <section className="max-w-5xl mx-auto w-full px-6 pb-28">
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16 sm:pb-28">
         <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">MBA ROI by Employer, School & Scenario</p>
         <div className="grid md:grid-cols-3 gap-5">
 
-          <Link href="/mba-roi-mckinsey" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-mckinsey" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI: McKinsey</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               Associate salary, break-even math, school placement rates, and when the McKinsey ROI case actually holds.
@@ -131,7 +131,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-goldman-sachs" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-goldman-sachs" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI: Goldman Sachs</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               GS associate comp structure, year-end bonus math, conservative vs. realistic break-even, and GS vs. McKinsey ROI.
@@ -139,7 +139,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-big4-vs-mbb" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-big4-vs-mbb" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Big 4 vs MBB ROI</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               The $60k annual salary gap, break-even comparison, NPV side-by-side, and when Big 4 actually wins.
@@ -147,7 +147,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-100k-debt" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-100k-debt" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI with $100k Debt</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               Exact loan payment math at four debt levels, debt-to-income thresholds, and which career tracks survive full debt.
@@ -155,7 +155,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-recession" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-recession" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI in a Recession</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               2008 and 2020 hiring data, NPV model with salary delays, industries by resilience, and counter-cyclical strategy.
@@ -163,7 +163,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-insead-vs-wharton" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-insead-vs-wharton" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">INSEAD vs Wharton ROI</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               Full cost comparison ($224k vs $395k), salary outcomes, break-even head-to-head, and career track fit by program.
@@ -171,7 +171,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-engineers" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-engineers" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI for Engineers</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               The compressed delta problem, SWE to PM math, four outcome scenarios, and when senior engineers should skip the MBA.
@@ -179,7 +179,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-healthcare" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-healthcare" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI: Healthcare</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               Hospital management salary data, PSLF loan forgiveness strategy, and top MBA programs for healthcare careers.
@@ -187,7 +187,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-military" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-military" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI: Military Veterans</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               GI Bill + Yellow Ribbon math, net cost after benefits, MBB veteran recruiting programs, and top programs for officers.
@@ -195,7 +195,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-scholarship" className="group rounded-2xl bg-white/5 border border-white/10 p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-scholarship" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Scholarship ROI</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               50% vs 0% scholarship break-even table, when to take the lower-ranked school with full aid, and negotiation tactics.
@@ -243,7 +243,7 @@ export default function HomePage() {
           </Link>
           {" · "}
           <a
-            href="mailto:hello@careercapital.io"
+            href="mailto:hgauba4@gmail.com"
             className="hover:text-slate-300 transition-colors"
           >
             Contact

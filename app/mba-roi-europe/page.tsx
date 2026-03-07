@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "European MBA ROI: INSEAD, LBS & Oxford vs. US Programs (2026) | CareerCapital",
+  title: "European MBA ROI: INSEAD, LBS & Oxford vs. US Programs (2026) | CareerReturns",
   description:
     "MBA ROI for European programs. INSEAD vs LBS vs Oxford costs, one-year format advantages, post-MBA salary in Europe, and when to choose Europe over a US M7.",
 }
@@ -14,10 +14,10 @@ export default function MbaRoiEuropePage() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-emerald-600/10 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-20 space-y-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-12 sm:space-y-20">
 
         <header className="space-y-5">
-          <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest">CareerCapital · MBA ROI by Program Region</p>
+          <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest">CareerReturns · MBA ROI by Program Region</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             European MBA ROI:<br />INSEAD, LBS & Oxford vs. US Programs
           </h1>

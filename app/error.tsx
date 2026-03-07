@@ -22,7 +22,7 @@ export default function Error({
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-160 h-160 bg-red-600/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="max-w-xl mx-auto px-6 py-20 text-center space-y-8">
+      <div className="max-w-xl mx-auto px-4 sm:px-6 py-12 sm:py-20 text-center space-y-8">
 
         <div className="space-y-2">
           <p className="text-8xl font-semibold text-white/10 tracking-tighter select-none">500</p>

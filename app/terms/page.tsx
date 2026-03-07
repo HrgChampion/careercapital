@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "Terms of Service | CareerCapital",
+  title: "Terms of Service | CareerReturns",
   description:
-    "CareerCapital terms of service. Calculator results are for educational purposes only and do not constitute financial advice.",
+    "CareerReturns terms of service. Calculator results are for educational purposes only and do not constitute financial advice.",
 }
 
 export default function TermsPage() {
@@ -14,10 +14,10 @@ export default function TermsPage() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-indigo-600/10 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-20 space-y-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-10 sm:space-y-16">
 
         <header className="space-y-4">
-          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerCapital</p>
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             Terms of Service
           </h1>
@@ -25,7 +25,7 @@ export default function TermsPage() {
             Last updated: <span className="text-white">March 2, 2026</span>
           </p>
           <p className="text-slate-400 text-base leading-relaxed">
-            By using <strong className="text-white">careerreturns.com</strong> (&quot;CareerCapital,&quot; &quot;the site,&quot;
+            By using <strong className="text-white">careerreturns.com</strong> (&quot;CareerReturns,&quot; &quot;the site,&quot;
             &quot;we,&quot; or &quot;us&quot;), you agree to these Terms of Service. If you do not agree,
             please stop using the site.
           </p>
@@ -35,7 +35,7 @@ export default function TermsPage() {
         <div className="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-6 space-y-3">
           <p className="text-amber-300 font-semibold text-sm uppercase tracking-wide">Important: Not Financial Advice</p>
           <p className="text-slate-300 text-sm leading-relaxed">
-            All content on CareerCapital — including the MBA ROI Calculator, break-even analysis,
+            All content on CareerReturns — including the MBA ROI Calculator, break-even analysis,
             salary data, and editorial articles — is provided for <span className="text-white font-medium">educational and
             informational purposes only</span>. Nothing on this site constitutes financial advice,
             investment advice, or a recommendation to attend or not attend any educational program.
@@ -47,7 +47,7 @@ export default function TermsPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold tracking-tight">1. Use of the Site</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            CareerCapital grants you a limited, non-exclusive, non-transferable license to access and
+            CareerReturns grants you a limited, non-exclusive, non-transferable license to access and
             use the site for personal, non-commercial purposes. You may not:
           </p>
           <ul className="space-y-2 text-slate-400 text-sm leading-relaxed">
@@ -101,8 +101,8 @@ export default function TermsPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold tracking-tight">4. Intellectual Property</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            All content on CareerCapital — including text, calculator logic, data visualizations,
-            page designs, and site structure — is owned by CareerCapital and protected by applicable
+            All content on CareerReturns — including text, calculator logic, data visualizations,
+            page designs, and site structure — is owned by CareerReturns and protected by applicable
             copyright and intellectual property laws. You may quote short excerpts (under 100 words)
             for non-commercial purposes provided you link back to the original page. All other use
             requires written permission.
@@ -122,7 +122,7 @@ export default function TermsPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold tracking-tight">6. Limitation of Liability</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            To the fullest extent permitted by applicable law, CareerCapital and its operators shall
+            To the fullest extent permitted by applicable law, CareerReturns and its operators shall
             not be liable for any indirect, incidental, special, consequential, or punitive damages
             arising from your use of the site or reliance on any content or calculator output —
             including but not limited to financial losses, lost profits, or damage arising from

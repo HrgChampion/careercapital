@@ -15,11 +15,11 @@ export default function MbaBreakEvenPage() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-indigo-600/15 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-20 space-y-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-12 sm:space-y-20">
 
         {/* Header */}
         <header className="space-y-5">
-          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerCapital</p>
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA Break-Even Period:<br />When Does It Pay Off?
           </h1>

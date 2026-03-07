@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "Online MBA vs Full-Time MBA: ROI Comparison (2026 Data) | CareerCapital",
+  title: "Online MBA vs Full-Time MBA: ROI Comparison (2026 Data) | CareerReturns",
   description:
     "Online MBA vs full-time MBA ROI compared side by side. Opportunity cost math, salary outcomes, break-even timelines, and when each format produces better returns.",
 }
@@ -14,10 +14,10 @@ export default function MbaRoiOnlineVsFullTimePage() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-indigo-600/15 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-20 space-y-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-12 sm:space-y-20">
 
         <header className="space-y-5">
-          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerCapital · MBA Format Comparison</p>
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · MBA Format Comparison</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             Online MBA vs. Full-Time MBA:<br />Which Has Better ROI?
           </h1>

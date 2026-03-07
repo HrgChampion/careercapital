@@ -81,7 +81,7 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
 
         {/* SEO Header */}
-        <div className="mb-16 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5">
+        <div className="mb-8 sm:mb-16 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5">
           <section>
             <p className="text-xs font-medium text-purple-400 uppercase tracking-widest mb-3">
               Capital Allocation Simulator
@@ -122,12 +122,12 @@ export default function Home() {
         </div>
 
         {/* ── Below-fold SEO content ── */}
-        <div className="mt-28 border-t border-white/10 pt-20 space-y-20">
+        <div className="mt-16 sm:mt-28 border-t border-white/10 pt-12 sm:pt-20 space-y-12 sm:space-y-20">
 
           {/* Financial explanation */}
           <section>
             <h2 className="text-2xl font-semibold tracking-tight mb-10">How This MBA ROI Calculator Works</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
 
               <div className="space-y-3">
                 <h3 className="text-base font-semibold text-white">Net Present Value (NPV)</h3>
@@ -622,7 +622,7 @@ function ResultsPanel({
   inputs: Inputs
 }) {
   if (!result || !scoreData) return (
-    <div className="rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-8 shadow-2xl">
+    <div className="rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-5 sm:p-8 shadow-2xl">
       <div className="flex items-center gap-3 text-slate-500">
         <div className="w-2 h-2 rounded-full bg-slate-600 animate-pulse" />
         <p className="text-sm">Complete your inputs to see analysis</p>
@@ -633,26 +633,26 @@ function ResultsPanel({
   const npv = result.npv ?? 0
 
   return (
-    <div className="rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-8 shadow-2xl space-y-6">
+    <div className="rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-5 sm:p-8 shadow-2xl space-y-6">
 
       {/* Grade + Score */}
       <div className="flex items-start justify-between">
         <div>
           <p className="text-slate-400 text-xs mb-1">Investment Grade</p>
-          <h2 className={`text-9xl font-semibold tracking-tight leading-none ${gradeColor[scoreData.grade] ?? "text-white"}`}>
+          <h2 className={`text-7xl sm:text-9xl font-semibold tracking-tight leading-none ${gradeColor[scoreData.grade] ?? "text-white"}`}>
             {scoreData.grade}
           </h2>
         </div>
         <div className="text-right">
           <p className="text-slate-400 text-xs mb-1">Score</p>
-          <p className="text-4xl font-semibold">
-            {scoreData.score}<span className="text-xl text-slate-500">/100</span>
+          <p className="text-3xl sm:text-4xl font-semibold">
+            {scoreData.score}<span className="text-lg sm:text-xl text-slate-500">/100</span>
           </p>
           <p className={`text-xs font-medium mt-1 ${riskColor[scoreData.riskLevel] ?? "text-slate-400"}`}>
             {riskCopy[scoreData.riskLevel] ?? `Risk: ${scoreData.riskLevel}`}
           </p>
-          <p className="text-xs text-slate-500 mt-0.5 max-w-36 text-right">{scoreData.riskFactors}</p>
-          <div className="w-44 h-1.5 bg-white/10 rounded-full mt-3 overflow-hidden ml-auto">
+          <p className="text-xs text-slate-500 mt-0.5 max-w-28 sm:max-w-36 text-right">{scoreData.riskFactors}</p>
+          <div className="w-32 sm:w-44 h-1.5 bg-white/10 rounded-full mt-3 overflow-hidden ml-auto">
             <div
               className="h-full bg-linear-to-r from-purple-500 to-blue-500"
               style={{ width: `${scoreData.score}%` }}

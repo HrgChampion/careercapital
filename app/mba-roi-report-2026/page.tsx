@@ -99,7 +99,7 @@ export default function MbaRoiReport2026Page() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-emerald-600/10 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-20 space-y-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-12 sm:space-y-20">
 
         {/* ── HEADER ── */}
         <header className="space-y-6">
@@ -501,7 +501,7 @@ export default function MbaRoiReport2026Page() {
         </section>
 
         {/* ── CITATION (no H2) ── */}
-        <section className="rounded-2xl bg-emerald-500/8 border border-emerald-500/25 p-8 space-y-4">
+        <section className="rounded-2xl bg-emerald-500/8 border border-emerald-500/25 p-5 sm:p-8 space-y-4">
           <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest">Usage & Citation</p>
           <p className="text-white text-xl font-semibold tracking-tight">Free to Cite with Attribution</p>
           <p className="text-slate-400 text-sm leading-relaxed">

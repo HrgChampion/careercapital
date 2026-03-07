@@ -15,7 +15,7 @@ export default function MbaRoiScholarshipPage() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-yellow-600/10 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-20 space-y-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-12 sm:space-y-20">
 
         <header className="space-y-5">
           <p className="text-xs font-medium text-yellow-400 uppercase tracking-widest">CareerReturns · MBA Scholarship ROI</p>

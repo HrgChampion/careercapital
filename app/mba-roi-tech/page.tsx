@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI in Tech: Product Management, FAANG Pay & 2026 Reality | CareerCapital",
+  title: "MBA ROI in Tech: Product Management, FAANG Pay & 2026 Reality | CareerReturns",
   description:
     "Is an MBA worth it for tech in 2026? PM salaries, RSU comp, the post-2022 recruiting shift, and why high pre-MBA tech salaries make the ROI math hard.",
 }
@@ -14,10 +14,10 @@ export default function MbaRoiTechPage() {
         <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-blue-600/15 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-20 space-y-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-12 sm:space-y-20">
 
         <header className="space-y-5">
-          <p className="text-xs font-medium text-blue-400 uppercase tracking-widest">CareerCapital · MBA ROI by Career Track</p>
+          <p className="text-xs font-medium text-blue-400 uppercase tracking-widest">CareerReturns · MBA ROI by Career Track</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA ROI in Tech:<br />The 2026 Reality Check
           </h1>
