@@ -11,6 +11,29 @@ export const metadata = {
    metadataBase: new URL("https://careerreturns.com"),
 }
 
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CareerReturns",
+  "url": "https://careerreturns.com",
+  "description": "Professional-grade capital budgeting tools for MBA ROI and career investment decisions.",
+}
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "CareerReturns",
+  "url": "https://careerreturns.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://careerreturns.com/mba-roi-calculator",
+    },
+    "query-input": "required name=search_term_string",
+  },
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -22,6 +45,14 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         {children}
         <Analytics />
       </body>

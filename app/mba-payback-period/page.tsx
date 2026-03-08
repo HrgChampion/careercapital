@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA Payback Period (2026): How Long Before Your MBA Pays for Itself?",
+  title: "MBA Payback Period 2026: 4–8 Years by Industry [Real Math]",
   description:
-    "MBA payback period by career track in 2026. Consulting pays back in 4.2 years, banking 4.5 years, tech 6.1 years. Full calculation methodology, factors that compress or extend payback, and a free calculator.",
+    "MBA payback period by career track: consulting 4.2 yrs, banking 4.5 yrs, tech 6.1 yrs. Calculation methodology and what compresses payback timelines. See math →",
   alternates: { canonical: "https://careerreturns.com/mba-payback-period" },
 }
 
@@ -172,6 +172,42 @@ export default function MbaPaybackPeriodPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-break-even" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">⌛</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Break-Even Period</p>
+                <p className="text-slate-500 text-xs">Step-by-step payback calculation →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">→</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Complete Guide</p>
+                <p className="text-slate-500 text-xs">IRR by industry full breakdown →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -192,6 +228,11 @@ export default function MbaPaybackPeriodPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take to pay back an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "The average MBA payback period is 4–8 years depending on career track. Consulting (MBB) payback is approximately 4.2 years. Investment banking is approximately 4.5 years. Tech product management is approximately 6.1 years. General management payback ranges from 7–10 years. Online MBA payback is 2–3 years due to lower total cost."}}, {"@type": "Question", "name": "What factors affect the MBA payback period?", "acceptedAnswer": {"@type": "Answer", "text": "The five primary factors are: (1) Post-MBA salary delta — the single most powerful variable. (2) Total economic cost including foregone salary, not tuition alone. (3) Loan interest rate and debt level, which increase early annual payments. (4) Pre-MBA salary — higher pre-MBA salaries increase the opportunity cost hole. (5) Career track — consulting compresses payback the most."}}, {"@type": "Question", "name": "How is MBA break-even calculated?", "acceptedAnswer": {"@type": "Answer", "text": "MBA break-even is the year when cumulative post-graduation cash flows (salary delta minus loan payments) offset the total economic cost (tuition + living + foregone salary). The calculation requires year-by-year cash flow modeling, not a simple division. Discount rates affect present-value break-even differently than nominal break-even."}}, {"@type": "Question", "name": "Is 8 years a good MBA payback period?", "acceptedAnswer": {"@type": "Answer", "text": "An 8-year payback is at the upper limit of financial justification for most MBA programs. At M7 tuition levels ($280K–$360K total cost), an 8-year payback implies a modest salary delta of approximately $35K–$45K per year. This indicates either a high pre-MBA salary (compressed delta) or a modest post-MBA outcome — both signal weak financial justification at M7 cost."}}, {"@type": "Question", "name": "How does foregone salary affect MBA payback?", "acceptedAnswer": {"@type": "Answer", "text": "Foregone salary is often the largest single cost in MBA ROI calculations, exceeding tuition for high earners. A candidate earning $120K pre-MBA foregoes approximately $220K–$240K gross over two years (after accounting for living expenses). This adds to the total cost hole that post-MBA salary delta must overcome, extending payback by 1–3 years versus lower-earning peers."}}]}) }}
+      />
     </main>
   )
 }

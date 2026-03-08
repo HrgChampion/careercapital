@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA Cost (2026): Full Breakdown — Tuition, Living Expenses & Opportunity Cost",
+  title: "MBA Cost (2026): Tuition, Living Expenses & Opportunity Cost",
   description:
-    "Complete 2026 MBA cost breakdown by program. Tuition at M7, T15, and online programs, plus living costs, opportunity cost, loan interest, and true total economic cost. Includes after-scholarship net cost at top 6 schools.",
+    "2026 MBA cost breakdown. Tuition at M7, T15, and online programs, living costs, opportunity cost, loan interest, and true total economic cost. See data →",
   alternates: { canonical: "https://careerreturns.com/mba-cost" },
 }
 
@@ -218,6 +218,42 @@ export default function MbaCostPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-scholarship" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">%</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Scholarship ROI</p>
+                <p className="text-slate-500 text-xs">How merit aid changes break-even →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-100k-debt" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI with $100K Debt</p>
+                <p className="text-slate-500 text-xs">Debt-to-income thresholds →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -238,6 +274,11 @@ export default function MbaCostPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the total cost of an MBA at a top school?", "acceptedAnswer": {"@type": "Answer", "text": "The total cost of a 2-year M7 MBA including tuition, fees, living expenses, and books is approximately $280K–$360K. Harvard Business School totals approximately $320K–$350K. Wharton and Booth are approximately $300K–$330K. These figures exclude opportunity cost (foregone salary), which adds another $180K–$250K for the full economic cost analysis."}}, {"@type": "Question", "name": "What is the real economic cost of an MBA including foregone salary?", "acceptedAnswer": {"@type": "Answer", "text": "The true economic cost of a full-time 2-year MBA includes: tuition ($160K–$190K), living expenses ($80K–$110K), and foregone salary net of taxes (approximately $100K–$160K for 2 years). Total economic cost for M7 programs is typically $340K–$460K. This is the correct figure for NPV and IRR analysis, not tuition alone."}}, {"@type": "Question", "name": "How does MBA cost vary between M7, T15, and online programs?", "acceptedAnswer": {"@type": "Answer", "text": "M7 programs cost $160K–$190K in tuition + $80K–$110K in living expenses = $240K–$300K out-of-pocket. T15 programs cost $100K–$130K in tuition + $70K–$90K living = $170K–$220K out-of-pocket. Online MBA programs cost $25K–$75K total for tuition, with zero living cost premium. The out-of-pocket gap between M7 and online programs is $200K–$250K."}}, {"@type": "Question", "name": "How much can scholarships reduce MBA cost?", "acceptedAnswer": {"@type": "Answer", "text": "Merit scholarships at M7 programs average $20K–$60K per year, reducing 2-year tuition by $40K–$120K. T15–T25 programs offer more generous merit aid, with full scholarships possible for top candidates. A 50% scholarship at Wharton saves approximately $90K in tuition, improving 10-year NPV by approximately $100K–$130K after tax adjustments."}}, {"@type": "Question", "name": "What is the cheapest way to get an MBA from a top school?", "acceptedAnswer": {"@type": "Answer", "text": "The lowest-cost path to an M7 MBA credential involves maximizing merit scholarships, applying in early rounds to maximize financial aid consideration, targeting Yellow Ribbon programs if eligible as a veteran, and selecting programs with the strongest scholarship budgets relative to peer rankings. INSEAD's 10-month format also reduces total cost by eliminating a second year of tuition and living expenses."}}]}) }}
+      />
     </main>
   )
 }

@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Military Veterans (2026): GI Bill Math, Yellow Ribbon & MBB Placement Data",
+  title: "MBA ROI for Veterans (2026): GI Bill, Yellow Ribbon & MBB",
   description:
-    "MBA ROI for veterans. GI Bill Yellow Ribbon program math, MBB veteran recruiting data, net cost after benefits, post-MBA salary outcomes, and the top MBA programs for military officers.",
+    "MBA ROI for veterans: GI Bill Yellow Ribbon math, MBB veteran recruiting, net cost after benefits, post-MBA salary, and top programs for officers. See data →",
   alternates: { canonical: "https://careerreturns.com/mba-roi-military" },
 }
 
@@ -310,6 +310,42 @@ export default function MbaRoiMilitaryPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-scholarship" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">%</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Scholarship ROI</p>
+                <p className="text-slate-500 text-xs">Merit aid vs full cost break-even →</p>
+              </div>
+            </Link>
+            <Link href="/mba-cost" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Cost Breakdown 2026</p>
+                <p className="text-slate-500 text-xs">Net cost at M7, T15, online →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -330,6 +366,11 @@ export default function MbaRoiMilitaryPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can veterans use the GI Bill for an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Veterans with 36+ months of active duty service are eligible for the Post-9/11 GI Bill (Chapter 33), which covers full tuition at public schools or up to $28,937/yr at private schools (2024–25 rate), a Monthly Housing Allowance (MHA) based on E-5 BAH rates, and $1,000/yr for books and supplies."}}, {"@type": "Question", "name": "What is the Yellow Ribbon Program for MBA programs?", "acceptedAnswer": {"@type": "Answer", "text": "The Yellow Ribbon Program is an agreement between participating schools and the VA to fund tuition beyond the GI Bill's private school cap. Participating schools contribute additional aid matched dollar-for-dollar by the VA. With full Yellow Ribbon participation, veterans can attend M7 MBA programs (Wharton, Booth, HBS) with zero out-of-pocket tuition."}}, {"@type": "Question", "name": "Which MBA programs have the best Yellow Ribbon benefits for veterans?", "acceptedAnswer": {"@type": "Answer", "text": "All M7 programs participate in Yellow Ribbon with full coverage. Wharton, Booth, Kellogg, MIT Sloan, and Columbia fully cover tuition above the GI Bill cap. Stanford GSB does not participate in Yellow Ribbon. Additionally, Tuck, Fuqua, and Ross have strong veteran recruiting programs."}}, {"@type": "Question", "name": "What is the net cost of an MBA for a veteran using the GI Bill?", "acceptedAnswer": {"@type": "Answer", "text": "A veteran using the Post-9/11 GI Bill + Yellow Ribbon at a fully-participating M7 program pays zero tuition. The GI Bill provides monthly housing allowance ($2,200–$3,500/mo depending on zip code) and $1,000/yr for books. Net out-of-pocket cost is typically limited to living expenses above the BAH stipend."}}, {"@type": "Question", "name": "What post-MBA careers are best for military veterans?", "acceptedAnswer": {"@type": "Answer", "text": "McKinsey, Bain, and BCG actively recruit military veterans through dedicated programs (McK Veterans, Bain Military, BCG Veterans). Operations consulting, supply chain, government and defense consulting, and private equity are strong fits. Veterans with leadership experience and quantitative backgrounds are competitive for M7 programs and subsequent MBB placement."}}]}) }}
+      />
     </main>
   )
 }

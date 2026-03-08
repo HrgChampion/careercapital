@@ -1,5 +1,12 @@
 import Link from "next/link"
 
+export const metadata = {
+  title: "MBA ROI Calculator & Career Investment Tools (2026)",
+  description:
+    "Model your MBA return on investment with institutional-grade DCF analysis. NPV, IRR, and break-even calculator. Free tools for smarter career decisions.",
+  alternates: { canonical: "https://careerreturns.com" },
+}
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white flex flex-col relative overflow-hidden">
@@ -111,6 +118,14 @@ export default function HomePage() {
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Break-Even Period</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               The math behind payback timelines, what shifts them, and three scenarios with full calculations.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/post-mba-salary" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Post-MBA Salary 2026</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              First-year pay by industry, school tier breakdown, and 10-year salary growth curves across consulting, banking, and tech.
             </p>
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>

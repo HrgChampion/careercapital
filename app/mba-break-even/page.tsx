@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA Break-Even Period (2026): 4–13 Year Range Explained with Real Math Across MBB, Banking & Tech",
+  title: "MBA Break-Even Period (2026): MBB, Banking & Tech Timelines",
   description:
-    "MBA break-even and payback period explained with real math. Three scenarios (M7 consulting, regional GM, online MBA), the factors that shift your timeline, and a free calculator.",
+    "MBA break-even with real math. Three scenarios, factors that shift your payback timeline, and a free DCF calculator linked throughout. Calculate now →",
 }
 
 export default function MbaBreakEvenPage() {
@@ -348,6 +348,42 @@ export default function MbaBreakEvenPage() {
         </section>
 
         {/* Footer nav */}
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-payback-period" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">⌛</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Payback Period</p>
+                <p className="text-slate-500 text-xs">Break-even by career track →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">→</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Complete Guide</p>
+                <p className="text-slate-500 text-xs">Full IRR & NPV analysis →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -419,6 +455,11 @@ export default function MbaBreakEvenPage() {
             ],
           }),
         }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "HowTo", "name": "How to Calculate MBA Break-Even Period", "step": [{"@type": "HowToStep", "name": "Calculate Total Cost", "text": "Add tuition + living expenses + 2 years of foregone salary (your pre-MBA salary × 2)."}, {"@type": "HowToStep", "name": "Calculate Annual Salary Delta", "text": "Subtract your expected pre-MBA salary from your expected post-MBA salary."}, {"@type": "HowToStep", "name": "Model Loan Payments", "text": "Compute monthly loan payment using PMT = rL / (1-(1+r)^-n), where r = monthly rate, L = loan amount, n = number of payments."}, {"@type": "HowToStep", "name": "Build Cumulative Cash Flow", "text": "Track net annual cash flows (salary delta minus loan payments) year by year post-graduation."}, {"@type": "HowToStep", "name": "Find Zero-Crossing", "text": "The year when cumulative cash flow crosses zero and equals total economic cost is your break-even point."}]}) }}
       />
     </main>
   )

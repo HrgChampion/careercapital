@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Goldman Sachs (2026): $210K+ Pay, Bonus Structure & Real Break-Even Math",
+  title: "MBA ROI for Goldman Sachs (2026): $210K+ Pay & Break-Even",
   description:
-    "Is an MBA worth it for Goldman Sachs? GS associate salary, year-end bonus data, break-even math, school placement rates, and the real financial case for investment banking in 2025.",
+    "MBA ROI for Goldman Sachs: GS associate salary, year-end bonus, break-even math, school placement rates, and the investment banking financial case. See data →",
   alternates: { canonical: "https://careerreturns.com/mba-roi-goldman-sachs" },
 }
 
@@ -321,6 +321,42 @@ export default function MbaRoiGoldmanSachsPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-investment-banking" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Investment Banking</p>
+                <p className="text-slate-500 text-xs">Full IB associate pay & NPV →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-mckinsey" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">→</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: McKinsey</p>
+                <p className="text-slate-500 text-xs">Goldman vs McKinsey ROI head-to-head →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -341,6 +377,11 @@ export default function MbaRoiGoldmanSachsPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a Goldman Sachs MBA associate earn?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs MBA associates earn a base salary of approximately $200K in 2026. Year-end bonuses for first-year associates are typically $75K–$150K depending on desk performance. Total year-one compensation is $275K–$350K. The signing bonus is approximately $30K–$50K."}}, {"@type": "Question", "name": "Which MBA programs place into Goldman Sachs?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs recruits most heavily from Wharton, Harvard Business School, Columbia Business School, and Booth. Columbia's proximity to Wall Street and strong finance curriculum makes it a top feeder. GS also recruits from Stern, Tuck, and Fuqua for specific division needs."}}, {"@type": "Question", "name": "What is the break-even period for an MBA targeting Goldman Sachs?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA targeting Goldman Sachs investment banking breaks even in approximately 4–5 years. At $200K base + $100K average bonus vs a $95K pre-MBA salary, the net annual benefit is approximately $205K. Against a total economic cost of $300K–$380K, break-even falls in years 4–5."}}, {"@type": "Question", "name": "Is Goldman Sachs or McKinsey better for MBA ROI?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs produces higher nominal compensation in the first three years due to IB bonuses. McKinsey offers more predictable salary progression and superior exit opportunities. Over a 10-year horizon, the 10-year NPV is comparable, with Goldman having a slight edge in years 1–5 and McKinsey evening out through better non-financial compensation and exit optionality."}}, {"@type": "Question", "name": "Is an MBA required to work at Goldman Sachs?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs recruits MBA associates from M7 programs as the primary structured pathway for career switchers. Analysts who completed their two-year analyst programs can promote to associate without an MBA. For candidates without GS analyst experience, an M7 MBA is the most reliable route to an associate-level position."}}]}) }}
+      />
     </main>
   )
 }

@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA vs Master's ROI (2026): MS Finance, MSCS & MFin vs MBA — Which Wins?",
+  title: "MBA vs Master's ROI (2026): MS Finance, MSCS & MFin vs MBA",
   description:
-    "MBA vs Master's degree ROI comparison for 2026. Cost, salary outcomes, IRR, and break-even for MBA vs MS Finance, MSCS, MFin, MEM, and JD. Includes a decision framework for when each degree wins.",
+    "MBA vs Master's ROI 2026. Salary, IRR, and break-even: MBA vs MS Finance, MSCS, MFin, MEM, and JD. Decision framework for when each degree wins. See data →",
   alternates: { canonical: "https://careerreturns.com/mba-vs-masters-roi" },
 }
 
@@ -258,6 +258,42 @@ export default function MbaVsMastersRoiPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">→</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Complete Guide</p>
+                <p className="text-slate-500 text-xs">IRR, NPV & break-even by industry →</p>
+              </div>
+            </Link>
+            <Link href="/average-mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Average MBA Salary 2026</p>
+                <p className="text-slate-500 text-xs">Pay vs Master's degree earnings →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -278,6 +314,11 @@ export default function MbaVsMastersRoiPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA or a Master's degree better for career advancement?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the career target. An MBA provides broader business generalist training and access to consulting, finance, and general management. Specialized masters degrees (MS Finance, MSCS, MFin) provide deeper technical expertise for specific roles. For careers requiring deep technical credentials (quant finance, data science, engineering management), a specialized master's often produces better ROI."}}, {"@type": "Question", "name": "How does MBA ROI compare to MS Finance?", "acceptedAnswer": {"@type": "Answer", "text": "MS Finance programs at top schools (MIT MFin, Princeton, LSE) cost $60K–$120K and produce quant finance salaries of $130K–$180K. MBA programs at M7 cost $280K–$360K but provide access to a broader range of $190K–$250K roles in banking, consulting, and PE. The MS Finance has higher ROI for candidates committed to buy-side or quant roles; the MBA has better optionality."}}, {"@type": "Question", "name": "Is an MBA or MSCS more valuable for product management?", "acceptedAnswer": {"@type": "Answer", "text": "An MSCS is more efficient for software engineering careers and provides a strong foundation for technical PM roles. An MBA from a top program provides broader access to product leadership, strategy, and general management roles. For candidates targeting Principal PM, Director of Product, or CPO roles at large companies, the MBA from an M7 program has better long-term career ceiling."}}, {"@type": "Question", "name": "Which degree has a faster payback — MBA or Master's?", "acceptedAnswer": {"@type": "Answer", "text": "Specialized master's degrees typically break even in 2–4 years due to lower total cost ($60K–$120K vs $280K–$360K for M7 MBA). A MS Finance targeting a $150K role breaks even in 2–3 years. An M7 MBA targeting MBB breaks even in 4–5 years but produces higher 10-year NPV due to larger salary gains. Break-even favors master's; 10-year NPV often favors M7 MBA."}}, {"@type": "Question", "name": "Should I get a JD or MBA for corporate leadership?", "acceptedAnswer": {"@type": "Answer", "text": "A JD is valuable for careers in corporate law, legal counsel, and regulatory affairs. An MBA is better for operations, strategy, and general management leadership. The MBA/JD dual degree exists for careers at the intersection — corporate strategy for law firms, M&A advisory, or general counsel paths. For pure P&L leadership, the MBA is the more direct credential."}}]}) }}
+      />
     </main>
   )
 }

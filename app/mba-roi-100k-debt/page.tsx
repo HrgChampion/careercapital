@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI with $100k Debt: Loan Math, Break-Even & Career Track Analysis (2025) | CareerReturns",
+  title: "MBA ROI With $100k Debt (2026): Loan Math & Career Tracks",
   description:
-    "Is an MBA worth it with $100k in student loans? Exact loan payment math, break-even by debt level, debt-to-income risk thresholds, and which career tracks still produce positive ROI at full debt.",
+    "MBA ROI with $100K debt. Exact loan payment math, break-even by debt level, debt-to-income thresholds, and which career tracks produce positive ROI. See math →",
   alternates: { canonical: "https://careerreturns.com/mba-roi-100k-debt" },
 }
 
@@ -324,6 +324,42 @@ export default function MbaRoi100kDebtPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-cost" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Cost Breakdown 2026</p>
+                <p className="text-slate-500 text-xs">Full cost by school tier →</p>
+              </div>
+            </Link>
+            <Link href="/mba-break-even" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">⌛</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Break-Even Period</p>
+                <p className="text-slate-500 text-xs">Step-by-step payback calculation →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -344,6 +380,11 @@ export default function MbaRoi100kDebtPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA worth it with $100K in student loans?", "acceptedAnswer": {"@type": "Answer", "text": "$100K in MBA debt at 6.5% interest requires monthly payments of approximately $1,130 over 10 years. This is manageable from a $190K consulting salary but material from a $130K general management salary. At MBB compensation levels, $100K debt is fully manageable and does not materially impair positive NPV. At $130K salaries, debt service consumes 10% of gross income."}}, {"@type": "Question", "name": "What is the monthly payment on $100K in MBA loans?", "acceptedAnswer": {"@type": "Answer", "text": "$100K in federal Direct Unsubsidized Loans at 6.54% on a 10-year Standard Repayment plan has a monthly payment of approximately $1,128. At 7.05% (Grad PLUS rate), the monthly payment is approximately $1,160. On an income-driven repayment plan (SAVE), payments adjust to 10% of discretionary income, which may be lower in the first post-MBA years."}}, {"@type": "Question", "name": "How much MBA debt is too much?", "acceptedAnswer": {"@type": "Answer", "text": "A commonly used threshold is that total MBA debt should not exceed 1.0–1.5x your expected first-year post-MBA salary. At $192K MBB salary, $192K–$288K in debt is serviceable. At $130K general management salary, $130K–$195K is the ceiling. Debt above these thresholds creates a debt-to-income ratio that significantly extends break-even and reduces IRR."}}, {"@type": "Question", "name": "Does MBA debt affect career decisions?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. High MBA debt creates pressure to take the highest-paying first job rather than the best-fit role. Candidates with $180K+ in debt often feel constrained from nonprofit, government, or startup paths in the first 5–7 years. Planning debt levels relative to post-MBA career goals before enrollment is critical to maintaining optionality."}}, {"@type": "Question", "name": "Is federal or private loans better for MBA financing?", "acceptedAnswer": {"@type": "Answer", "text": "Federal Direct Unsubsidized Loans and Grad PLUS Loans are generally preferable to private loans for MBA financing. They offer income-driven repayment plans, PSLF eligibility for nonprofit/government employers, and deferment options. Private loans have no income-driven repayment protections. Exhaust federal loan options before considering private lenders."}}]}) }}
+      />
     </main>
   )
 }

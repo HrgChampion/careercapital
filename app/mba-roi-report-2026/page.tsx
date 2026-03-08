@@ -1,8 +1,8 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI Report 2026: IRR, Salary & Break-Even Data from 5,000+ Graduates | CareerReturns",
-  description: "The definitive 2026 MBA ROI analysis. Aggregated IRR tables across 12 industries, scholarship vs. no-scholarship scenarios, online vs. full-time, US vs. Europe, and recession modeling. Free to cite with attribution.",
+  title: "MBA ROI Report 2026: Top Schools, Salaries & Payback Periods",
+  description: "The 2026 MBA ROI report. IRR tables across 12 industries, scholarship impact, online vs full-time, US vs Europe, recession scenarios. Free to cite →",
   alternates: { canonical: "https://careerreturns.com/mba-roi-report-2026" },
 }
 
@@ -528,6 +528,42 @@ export default function MbaRoiReport2026Page() {
         </section>
 
         {/* ── FOOTER ── */}
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">→</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Complete Guide</p>
+                <p className="text-slate-500 text-xs">IRR, NPV & break-even by industry →</p>
+              </div>
+            </Link>
+            <Link href="/mba-worth-it" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">?</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Is an MBA Worth It?</p>
+                <p className="text-slate-500 text-xs">Full financial breakdown 2026 →</p>
+              </div>
+            </Link>
+            <Link href="/mba-salary-increase" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Salary Increase Data</p>
+                <p className="text-slate-500 text-xs">+47% avg — pre vs post MBA →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>

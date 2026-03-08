@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Engineers (2026): Why High Pre-MBA Pay Kills the ROI — and When It Still Works",
+  title: "MBA ROI for Engineers (2026): When High Pay Kills the Case",
   description:
-    "Is an MBA worth it for engineers? The compressed salary delta problem, SWE to PM ROI, consulting vs tech outcomes, and exactly when the MBA math works for software engineers and technical professionals.",
+    "MBA ROI for engineers: compressed salary delta, SWE to PM math, consulting vs tech outcomes, and when the MBA makes financial sense for engineers. See data →",
   alternates: { canonical: "https://careerreturns.com/mba-roi-engineers" },
 }
 
@@ -346,6 +346,42 @@ export default function MbaRoiEngineersPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-tech" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">⚙</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Tech</p>
+                <p className="text-slate-500 text-xs">PM salaries & RSU comp data →</p>
+              </div>
+            </Link>
+            <Link href="/average-mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Average MBA Salary 2026</p>
+                <p className="text-slate-500 text-xs">Pay by school tier & industry →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -366,6 +402,11 @@ export default function MbaRoiEngineersPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA worth it for software engineers?", "acceptedAnswer": {"@type": "Answer", "text": "For software engineers earning $150K–$200K pre-MBA, the compressed salary delta makes the MBA math difficult. A SWE targeting product management at $200K–$220K faces only a $20K–$50K annual delta, producing a 10-year NPV that is often negative or marginal at M7 tuition. The MBA math works better for engineers targeting consulting or finance, where the delta is $80K–$120K."}}, {"@type": "Question", "name": "Should engineers get an MBA to become a product manager?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA is one path to PM, but not the most efficient for engineers. Internal transfers, APM programs, and direct applications produce PMs without the $300K+ economic cost. If you specifically want to work at a major tech company as a PM, a Google APM, Meta RPM, or Microsoft PM program may be more effective than an MBA for that specific goal."}}, {"@type": "Question", "name": "What is the MBA ROI for engineers targeting consulting?", "acceptedAnswer": {"@type": "Answer", "text": "Engineers targeting MBB consulting through an M7 MBA face a salary delta of $80K–$120K over their pre-MBA engineering salary. This produces an IRR of 15–22% and break-even in 4–6 years — a strong ROI case. Engineers with high pre-MBA salaries ($150K+) face a compressed delta even into consulting, reducing ROI by 3–5 percentage points."}}, {"@type": "Question", "name": "Is an MBA worth it for a senior engineer?", "acceptedAnswer": {"@type": "Answer", "text": "For senior engineers (Staff, Principal) earning $250K–$400K total compensation, the MBA opportunity cost is extreme and the post-MBA salary uplift rarely closes the gap. An MBA is rarely financially justified for engineers beyond L6/Senior II. The exception is a deliberate career pivot to finance, private equity, or a senior corporate role where the credential gap is real."}}, {"@type": "Question", "name": "Which MBA programs are best for engineering backgrounds?", "acceptedAnswer": {"@type": "Answer", "text": "MIT Sloan, Booth, and Kellogg have strong quantitative programs that leverage engineering backgrounds. Wharton is ideal for engineers targeting finance. HBS and Stanford GSB are strong for entrepreneurship and tech product leadership. All M7 programs recruit engineers for MBB consulting, which values analytical and problem-structuring skills."}}]}) }}
+      />
     </main>
   )
 }

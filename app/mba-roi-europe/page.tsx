@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "European MBA ROI: INSEAD, LBS & Oxford vs. US Programs (2026) | CareerReturns",
+  title: "MBA ROI Europe 2026: INSEAD, LBS & Payback Data [Real]",
   description:
-    "MBA ROI for European programs. INSEAD vs LBS vs Oxford costs, one-year format advantages, post-MBA salary in Europe, and when to choose Europe over a US M7.",
+    "MBA ROI for European programs: INSEAD, LBS, and Oxford costs, one-year format advantages, post-MBA salaries, and when Europe beats a US M7. See full data →",
 }
 
 export default function MbaRoiEuropePage() {
@@ -163,6 +163,42 @@ export default function MbaRoiEuropePage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-insead-vs-wharton" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">≈</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">INSEAD vs Wharton ROI</p>
+                <p className="text-slate-500 text-xs">Full cost & break-even comparison →</p>
+              </div>
+            </Link>
+            <Link href="/mba-cost" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Cost Breakdown 2026</p>
+                <p className="text-slate-500 text-xs">True economic cost by program tier →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -185,6 +221,11 @@ export default function MbaRoiEuropePage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA from INSEAD or LBS worth the cost?", "acceptedAnswer": {"@type": "Answer", "text": "INSEAD and LBS both offer one-year programs at significantly lower total cost than US M7 schools — roughly $100K–$130K vs $230K–$260K all-in. Post-MBA salaries in Europe are 15–25% lower, but the compressed timeline eliminates one year of foregone income. Net present value analysis favors INSEAD for candidates targeting European or global roles."}}, {"@type": "Question", "name": "How does European MBA ROI compare to US MBA ROI?", "acceptedAnswer": {"@type": "Answer", "text": "European MBA programs produce comparable IRR to US M7 programs when accounting for total economic cost. INSEAD's one-year format combined with lower tuition generates IRRs of 18–22% for consulting placements, matching Wharton or Booth outcomes despite lower nominal salaries."}}, {"@type": "Question", "name": "What is the post-MBA salary in Europe?", "acceptedAnswer": {"@type": "Answer", "text": "Post-MBA median salary in Europe is approximately €85,000–€120,000 ($90K–$130K) for MBB consulting roles and €70,000–€95,000 ($75K–$105K) for general management. London and Zurich pay at the high end; Frankfurt and Amsterdam are more typical."}}, {"@type": "Question", "name": "Is the INSEAD MBA one year or two years?", "acceptedAnswer": {"@type": "Answer", "text": "INSEAD offers a one-year MBA program, running approximately 10 months. This eliminates one year of foregone salary — the single largest cost in MBA ROI calculations — giving it a structural financial advantage over two-year US programs at comparable or even higher nominal tuition."}}, {"@type": "Question", "name": "When should I choose a European MBA over a US MBA?", "acceptedAnswer": {"@type": "Answer", "text": "A European MBA is preferable when you: plan to work in Europe, Asia, or emerging markets; want to avoid two years of foregone income; value INSEAD or LBS's global alumni networks; and can achieve similar post-MBA roles at lower total cost. If you specifically need US MBB or bulge bracket placement, an M7 program has stronger institutional pipelines."}}]}) }}
+      />
     </main>
   )
 }

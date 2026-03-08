@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Investment Banking (2026): Associate Pay, PE Exit Math & 10-Year NPV",
+  title: "MBA ROI: Investment Banking 2026 — $210K Pay & Break-Even",
   description:
-    "MBA ROI for investment banking. Bulge bracket associate compensation, PE exit math, break-even timeline, and when the banking track justifies M7 tuition.",
+    "MBA ROI for investment banking. Bulge bracket associate pay, PE exit math, break-even timeline, and when banking justifies M7 tuition. See full data →",
 }
 
 export default function MbaRoiInvestmentBankingPage() {
@@ -166,6 +166,42 @@ export default function MbaRoiInvestmentBankingPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-goldman-sachs" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Goldman Sachs</p>
+                <p className="text-slate-500 text-xs">GS associate pay & break-even →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-big4-vs-mbb" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">≈</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Big 4 vs MBB ROI</p>
+                <p className="text-slate-500 text-xs">The $60K salary gap compared →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -190,6 +226,11 @@ export default function MbaRoiInvestmentBankingPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the post-MBA salary at investment banking?", "acceptedAnswer": {"@type": "Answer", "text": "First-year MBA associates at bulge bracket banks earn a base salary of $175K–$200K plus a year-end bonus of $75K–$150K, for total compensation of $250K–$350K. Tier-2 banks (Lazard, Evercore, Jefferies) pay similarly. The signing bonus is typically $30K–$50K."}}, {"@type": "Question", "name": "Is an MBA required for investment banking?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA is not strictly required but provides structured re-entry for career changers and non-target undergrads. Banks recruit associates directly from M7 programs at Wharton, Booth, Columbia, and NYU Stern. For candidates without IB analyst experience, an M7 MBA is the primary pathway to associate-level IB roles."}}, {"@type": "Question", "name": "What is the break-even period for an MBA targeting investment banking?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA targeting bulge bracket investment banking breaks even in approximately 4–5 years. At $200K base + $100K bonus in year one, the annual salary delta over a typical $95K pre-MBA salary is $205K. Against a total economic cost of $280K–$320K, break-even occurs in the early post-graduation years."}}, {"@type": "Question", "name": "Is the MBA ROI better at Goldman Sachs or MBB consulting?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs produces slightly higher nominal compensation than MBB in the first three years. However, MBB offers faster promotion timelines and better upside post year 3. On a 10-year NPV basis, the two tracks are comparable, with MBB having a slight edge due to performance bonuses and more predictable career progression."}}, {"@type": "Question", "name": "Which MBA programs place best into investment banking?", "acceptedAnswer": {"@type": "Answer", "text": "Wharton, Columbia Business School, Booth, and NYU Stern have the strongest bulge bracket IB placement rates. Approximately 30–40% of Wharton and Columbia classes enter financial services. Harvard and Stanford place fewer students into IB but retain strong individual relationships with Goldman, Morgan Stanley, and Evercore."}}]}) }}
+      />
     </main>
   )
 }

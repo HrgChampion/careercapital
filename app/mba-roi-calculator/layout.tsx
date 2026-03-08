@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Free MBA ROI Calculator (2026): NPV, IRR & Break-Even in Under 60 Seconds",
+  title: "MBA ROI Calculator — See Your Payback Period in 60 Seconds",
   description:
-    "Analyze whether an MBA is worth it using real capital budgeting methods. Calculate Net Present Value (NPV), Internal Rate of Return (IRR), loan amortization, and exact break-even period.",
+    "Free MBA ROI calculator. Model NPV, IRR, and break-even using real DCF analysis — not simplified shortcuts. Enter your numbers and calculate now →",
   keywords: [
     "MBA ROI calculator",
     "is MBA worth it calculator",
@@ -62,12 +62,27 @@ const faqSchema = {
   ],
 }
 
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MBA ROI Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free MBA ROI calculator using Net Present Value (NPV), Internal Rate of Return (IRR), and break-even analysis.",
+  "url": "https://careerreturns.com/mba-roi-calculator",
+}
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       {children}
     </>

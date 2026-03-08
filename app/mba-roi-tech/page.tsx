@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI in Tech: Product Management, FAANG Pay & 2026 Reality | CareerReturns",
+  title: "MBA ROI in Tech (2026): PM Roles, FAANG Pay & Break-Even",
   description:
-    "Is an MBA worth it for tech in 2026? PM salaries, RSU comp, the post-2022 recruiting shift, and why high pre-MBA tech salaries make the ROI math hard.",
+    "MBA ROI for tech in 2026. PM salaries, RSU comp, the post-2022 recruiting shift, and why high pre-MBA tech salaries make the ROI math hard. See data →",
 }
 
 export default function MbaRoiTechPage() {
@@ -151,6 +151,42 @@ export default function MbaRoiTechPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-engineers" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">⚙</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Engineers</p>
+                <p className="text-slate-500 text-xs">Compressed delta & SWE to PM math →</p>
+              </div>
+            </Link>
+            <Link href="/average-mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Average MBA Salary 2026</p>
+                <p className="text-slate-500 text-xs">Tech PM pay vs other sectors →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -173,6 +209,11 @@ export default function MbaRoiTechPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA worth it for a career in tech?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA is worth it for tech careers only when targeting roles that require the credential — primarily product management at large companies, strategy and operations at tech firms, or a transition to tech investment banking or venture capital. For engineers seeking senior IC roles, the MBA provides almost no additional value over direct promotion."}}, {"@type": "Question", "name": "What is the post-MBA salary in tech product management?", "acceptedAnswer": {"@type": "Answer", "text": "Tech product managers at large companies (Google, Meta, Apple, Amazon) earn $200K–$280K total compensation in year one post-MBA, including base, bonus, and RSUs. Startups pay lower cash but higher equity. The variance in tech PM comp is substantial; RSU valuations at growth companies can produce dramatically higher effective compensation."}}, {"@type": "Question", "name": "How did post-2022 tech layoffs affect MBA ROI for tech careers?", "acceptedAnswer": {"@type": "Answer", "text": "The 2022–2023 tech contraction significantly reduced recruiting for MBA PMs at large tech companies. Companies like Google, Meta, and Amazon cut MBA hiring by 30–60%. This increased the economic risk of the tech MBA path, extended break-even timelines, and pushed MBA candidates toward consulting as a more stable first post-MBA role."}}, {"@type": "Question", "name": "Is an MBA better for consulting or tech careers?", "acceptedAnswer": {"@type": "Answer", "text": "Consulting produces a higher and more predictable MBA ROI than tech in most scenarios. MBB offers structured MBA recruitment, predictable salary growth, and broad exit options. Tech PM roles are less structured in MBA recruiting, more variable in compensation, and have contracted since 2022. For pure financial optimization, consulting is the stronger MBA destination."}}, {"@type": "Question", "name": "Which MBA programs place best into tech companies?", "acceptedAnswer": {"@type": "Answer", "text": "Stanford GSB and MIT Sloan have the strongest tech placement due to Silicon Valley proximity and culture. Harvard Business School, Wharton, and Booth also place strongly into tech strategy and product roles. For companies like Google and Amazon, all M7 programs have strong placement relationships."}}]}) }}
+      />
     </main>
   )
 }

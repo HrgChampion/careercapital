@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Consulting: MBB Salary, Break-Even & Real Math (2026) | CareerReturns",
+  title: "MBA ROI: Consulting 2026 — $192K MBB Salary & Break-Even",
   description:
-    "Is an MBA worth it for consulting? MBB salary data, break-even math, which schools actually place into McKinsey, Bain, and BCG — and when the numbers work.",
+    "MBA ROI for consulting. MBB associate salary data, break-even math, which schools place into McKinsey, Bain, and BCG — and when the numbers work. See data →",
 }
 
 export default function MbaRoiConsultingPage() {
@@ -235,6 +235,42 @@ export default function MbaRoiConsultingPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-mckinsey" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">→</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: McKinsey</p>
+                <p className="text-slate-500 text-xs">MBB associate salary & placement →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-big4-vs-mbb" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">≈</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Big 4 vs MBB ROI</p>
+                <p className="text-slate-500 text-xs">When Big 4 actually wins →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -259,6 +295,11 @@ export default function MbaRoiConsultingPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the post-MBA salary at McKinsey, Bain, and BCG?", "acceptedAnswer": {"@type": "Answer", "text": "MBB (McKinsey, Bain, BCG) associate base salaries are $190K–$192K. Total first-year compensation including performance bonus and signing bonus is $230K–$250K. Salary increases approximately 15–20% per year at MBB for associates who perform above expectations."}}, {"@type": "Question", "name": "Which MBA programs place most into MBB consulting?", "acceptedAnswer": {"@type": "Answer", "text": "Harvard Business School, Wharton, Booth, Kellogg, MIT Sloan, and Columbia Business School place the most students into MBB. HBS and Wharton place 30–40% of their classes into consulting. Non-M7 schools have dramatically lower MBB placement rates — often below 5%."}}, {"@type": "Question", "name": "Is an MBA required to work at McKinsey or BCG?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA is not required — MBB also recruits PhD holders, medical doctors, and experienced hires. However, the MBA associate track is the primary structured entry point for career switchers. Without an M7 MBA and strong case interview preparation, entry to MBB is extremely difficult for career changers."}}, {"@type": "Question", "name": "What is the MBA break-even period for consulting?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA targeting MBB consulting breaks even in approximately 4.2 years. At $192K base + $50K bonus, the salary delta over a typical $90K pre-MBA salary is $152K per year. Against a total economic cost of $280K–$350K (tuition + foregone income), break-even occurs around year 4–5."}}, {"@type": "Question", "name": "Is an MBA for consulting worth it at Big 4 vs MBB?", "acceptedAnswer": {"@type": "Answer", "text": "The salary gap between MBB and Big 4 (Deloitte, PwC, EY, KPMG) is approximately $50K–$70K per year. An MBA ROI calculation targeting Big 4 produces a positive NPV at M7 tuition only with scholarship support. Without a scholarship, the Big 4 consulting track rarely justifies M7 economics on a pure financial basis."}}]}) }}
+      />
     </main>
   )
 }

@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for McKinsey (2026): $192K Associate Salary, IRR & When the Math Actually Works",
+  title: "MBA ROI for McKinsey (2026): $192K Salary, IRR & Break-Even",
   description:
-    "Is an MBA worth it for McKinsey? McKinsey associate salary data, break-even math, which schools actually place into McKinsey, and when the numbers work in 2025.",
+    "MBA ROI for McKinsey: $192K associate salary, break-even math, school placement rates into MBB, and when the McKinsey financial case works. Calculate now →",
   alternates: { canonical: "https://careerreturns.com/mba-roi-mckinsey" },
 }
 
@@ -373,6 +373,42 @@ export default function MbaRoiMcKinseyPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-consulting" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">→</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Consulting</p>
+                <p className="text-slate-500 text-xs">MBB salary data & break-even →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-goldman-sachs" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Goldman Sachs</p>
+                <p className="text-slate-500 text-xs">GS vs McKinsey ROI compared →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -393,6 +429,11 @@ export default function MbaRoiMcKinseyPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a McKinsey associate earn after an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "McKinsey MBA associates earn a base salary of $192K in 2026. Total first-year compensation including performance bonus (10–20% of base) and a signing bonus of $30K is approximately $225K–$260K. Compensation increases approximately 15–20% per year for strong performers."}}, {"@type": "Question", "name": "Which MBA programs place into McKinsey?", "acceptedAnswer": {"@type": "Answer", "text": "McKinsey recruits primarily from Harvard Business School, Wharton, Booth, Kellogg, MIT Sloan, Columbia, and Stanford GSB. Approximately 10–15% of M7 classes receive McKinsey offers annually. Outside M7, placement rates drop to under 2% at most programs."}}, {"@type": "Question", "name": "How long to break even on an MBA targeting McKinsey?", "acceptedAnswer": {"@type": "Answer", "text": "Breaking even on an MBA targeting McKinsey takes approximately 4.2 years. At $192K base + $50K bonus against a total economic cost of $300K–$350K, the annual salary delta of $140K–$160K generates payback in the early post-MBA years."}}, {"@type": "Question", "name": "Is McKinsey worth an M7 MBA financially?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, McKinsey produces one of the strongest MBA financial cases. The 22% IRR for M7 programs with MBB placement significantly exceeds both the risk-free rate and long-run equity market returns (~8%). Candidates who receive McKinsey offers from M7 programs typically generate a positive net present value of $300K–$500K over 10 years."}}, {"@type": "Question", "name": "Is it better to target McKinsey or Goldman Sachs with an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "Both tracks produce similar 10-year NPVs. Goldman Sachs pays slightly higher in years 1–3 due to banking bonuses. McKinsey offers faster promotion visibility, better exit opportunities in private equity and corporate strategy, and lower variance in total compensation. The choice depends more on career goals than pure financial optimization."}}]}) }}
+      />
     </main>
   )
 }

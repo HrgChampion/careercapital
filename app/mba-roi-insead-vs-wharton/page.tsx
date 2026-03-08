@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "INSEAD vs. Wharton MBA ROI (2026): Cost Gap, Salary Data & Which Actually Wins on Break-Even",
+  title: "INSEAD vs Wharton MBA ROI (2026): Cost, Salary & Break-Even",
   description:
-    "INSEAD vs Wharton MBA ROI head-to-head. Full cost comparison, post-MBA salary outcomes, break-even timeline, career track fit, and when the one-year MBA wins the financial case.",
+    "INSEAD vs Wharton MBA ROI. Full cost comparison, post-MBA salary outcomes, break-even timeline, career track fit, and when the one-year format wins. See data →",
   alternates: { canonical: "https://careerreturns.com/mba-roi-insead-vs-wharton" },
 }
 
@@ -282,6 +282,42 @@ export default function MbaRoiInseadVsWhartonPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-europe" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">→</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Europe</p>
+                <p className="text-slate-500 text-xs">INSEAD, LBS & Oxford data →</p>
+              </div>
+            </Link>
+            <Link href="/mba-cost" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Cost Breakdown 2026</p>
+                <p className="text-slate-500 text-xs">Full cost comparison by school →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -302,6 +338,11 @@ export default function MbaRoiInseadVsWhartonPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the total cost difference between INSEAD and Wharton?", "acceptedAnswer": {"@type": "Answer", "text": "INSEAD's one-year MBA costs approximately $110K in tuition plus $50K–$70K in living expenses, for a total of $160K–$180K. Wharton's two-year MBA costs approximately $185K in tuition plus $120K–$140K in living expenses, for a total of $305K–$325K. The total cost gap is approximately $140K–$150K in favor of INSEAD."}}, {"@type": "Question", "name": "Does Wharton or INSEAD pay more after graduation?", "acceptedAnswer": {"@type": "Answer", "text": "Wharton MBA graduates entering MBB consulting or investment banking in the US earn $190K–$250K total compensation. INSEAD graduates earn €90K–€130K ($95K–$140K) in Europe or $180K–$220K if placed in the US. Wharton has better US salary outcomes; INSEAD is competitive globally, particularly in Asia, Europe, and the Middle East."}}, {"@type": "Question", "name": "Which is better for ROI — INSEAD or Wharton?", "acceptedAnswer": {"@type": "Answer", "text": "INSEAD produces a higher IRR in most scenarios due to lower total cost. At comparable post-MBA salaries, INSEAD's $160K total cost vs Wharton's $310K total cost generates a higher IRR even with a 15–20% salary discount. The NPV is comparable only when Wharton placement produces significantly higher US compensation."}}, {"@type": "Question", "name": "Is INSEAD or Wharton better for consulting careers?", "acceptedAnswer": {"@type": "Answer", "text": "Both programs place strongly into MBB consulting. Wharton has stronger US office placement at McKinsey, BCG, and Bain. INSEAD has stronger European, Middle Eastern, and Asian office placement. Candidates targeting US-based MBB roles are better served by Wharton; those targeting global or European roles should strongly consider INSEAD."}}, {"@type": "Question", "name": "How long is the INSEAD MBA compared to Wharton?", "acceptedAnswer": {"@type": "Answer", "text": "The INSEAD MBA is a 10-month, one-year program. Wharton is a 21-month, two-year program. The one-year format eliminates approximately $90K–$120K in foregone salary and reduces total program duration by 11 months. This structural advantage drives INSEAD's superior IRR in most financial models."}}]}) }}
+      />
     </main>
   )
 }

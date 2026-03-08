@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI for Healthcare (2026): Management Salaries, PSLF Strategy & Real Break-Even Scenarios",
+  title: "MBA ROI for Healthcare (2026): Salaries, PSLF & Break-Even",
   description:
-    "Is an MBA worth it for healthcare? Hospital administration salary data, healthcare consulting ROI, PSLF loan forgiveness strategy, top MBA programs for healthcare, and the full break-even math.",
+    "MBA ROI for healthcare. Hospital administration salary, healthcare consulting ROI, PSLF loan forgiveness strategy, top programs, and break-even math. See data →",
   alternates: { canonical: "https://careerreturns.com/mba-roi-healthcare" },
 }
 
@@ -296,6 +296,42 @@ export default function MbaRoiHealthcarePage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-military" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">★</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Military Veterans</p>
+                <p className="text-slate-500 text-xs">GI Bill + Yellow Ribbon math →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-scholarship" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">%</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Scholarship ROI</p>
+                <p className="text-slate-500 text-xs">PSLF and aid strategy →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -316,6 +352,11 @@ export default function MbaRoiHealthcarePage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA worth it for healthcare professionals?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA is worth it for healthcare professionals targeting hospital administration, healthcare consulting, or health tech product management. Hospital C-suite and VP roles average $200K–$350K — significantly above clinical-track salaries. The MBA ROI case is strongest for physicians, pharmacists, and clinical leaders targeting administrative or consulting roles."}}, {"@type": "Question", "name": "What is the post-MBA salary in healthcare management?", "acceptedAnswer": {"@type": "Answer", "text": "Hospital VP and director roles pay $150K–$200K. Healthcare consulting at MBB pays $190K–$215K. Health tech (clinical product, digital health) pays $160K–$220K. Healthcare private equity pays $200K–$350K for post-MBA associates. These salary levels produce positive NPV against M7 tuition for candidates with strong pre-MBA clinical backgrounds."}}, {"@type": "Question", "name": "What is the PSLF loan forgiveness strategy for healthcare MBA graduates?", "acceptedAnswer": {"@type": "Answer", "text": "Public Service Loan Forgiveness (PSLF) forgives remaining federal loan balances after 10 years of qualifying payments while working for a 501(c)(3) employer. Hospital systems are frequently 501(c)(3) entities. A healthcare MBA graduate targeting hospital administration can eliminate $150K–$200K in debt after 10 years through PSLF, dramatically improving MBA ROI."}}, {"@type": "Question", "name": "Which MBA programs are best for healthcare careers?", "acceptedAnswer": {"@type": "Answer", "text": "Wharton (Health Care Management program), Michigan Ross (multidisciplinary health management), Yale SOM, and Kellogg have the strongest healthcare-focused MBA programs. Johnson (Cornell), Darden, and Harvard also place well into healthcare consulting and health system administration."}}, {"@type": "Question", "name": "How long to break even on an MBA for a healthcare professional?", "acceptedAnswer": {"@type": "Answer", "text": "For a physician or pharmacist with a $200K pre-MBA salary targeting healthcare consulting at $215K, the delta is small and break-even is 8–12 years — the MBA math is marginal. For a nurse or clinical coordinator at $80K–$100K pre-MBA targeting hospital administration at $160K+, break-even is 5–7 years and the NPV is positive."}}]}) }}
+      />
     </main>
   )
 }

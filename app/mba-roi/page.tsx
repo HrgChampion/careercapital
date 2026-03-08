@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "MBA ROI (2026): The Complete Guide — IRR, NPV & Break-Even by Industry",
+  title: "MBA ROI 2026: IRR, NPV & Break-Even by Industry [Guide]",
   description:
-    "The complete MBA ROI guide for 2026. IRR by destination industry, break-even periods, scholarship impact, online vs full-time, US vs Europe, and recession modeling. Free calculator included.",
+    "MBA ROI in 2026: IRR by industry (4%–55%), break-even periods, scholarship impact, online vs full-time comparison, and US vs Europe data. See full guide →",
   alternates: { canonical: "https://careerreturns.com/mba-roi" },
 }
 
@@ -184,6 +184,42 @@ export default function MbaRoiPage() {
           </Link>
         </section>
 
+
+        {/* ── Related Guides ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">Σ</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
+                <p className="text-slate-500 text-xs">Model your specific numbers →</p>
+              </div>
+            </Link>
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
+                <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
+              </div>
+            </Link>
+            <Link href="/mba-worth-it" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">?</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Is an MBA Worth It?</p>
+                <p className="text-slate-500 text-xs">Full financial breakdown 2026 →</p>
+              </div>
+            </Link>
+            <Link href="/mba-break-even" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">⌛</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Break-Even Period</p>
+                <p className="text-slate-500 text-xs">Real math for all career tracks →</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -204,6 +240,11 @@ export default function MbaRoiPage() {
         </footer>
 
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good MBA ROI?", "acceptedAnswer": {"@type": "Answer", "text": "A good MBA ROI is an Internal Rate of Return (IRR) exceeding 10–12%, which represents returns above long-run equity market benchmarks. M7 programs targeting MBB consulting or investment banking typically produce IRRs of 18–24%. IRR below 6% — approximately the long-run risk-free rate — indicates the MBA does not pass a basic financial hurdle."}}, {"@type": "Question", "name": "How is MBA ROI calculated?", "acceptedAnswer": {"@type": "Answer", "text": "MBA ROI is properly calculated using Discounted Cash Flow analysis: model all costs as negative cash flows (tuition, living expenses, foregone salary) and all benefits as positive cash flows (post-MBA salary delta net of taxes and loan payments). IRR is the discount rate that sets NPV to zero. Break-even is the year cumulative cash flow crosses zero."}}, {"@type": "Question", "name": "Is MBA ROI higher in consulting or banking?", "acceptedAnswer": {"@type": "Answer", "text": "Consulting (MBB) and banking (bulge bracket) produce comparable MBA IRRs of 18–24% from M7 programs. Consulting produces faster break-even (4.2 vs 4.5 years) due to more predictable salary structure. Banking produces higher year 1–3 total compensation due to larger bonuses. Over 10 years, the NPVs are similar, diverging based on individual performance trajectories."}}, {"@type": "Question", "name": "Is MBA ROI positive for all programs?", "acceptedAnswer": {"@type": "Answer", "text": "No. MBA ROI is negative or marginally positive for many programs outside the top 25, particularly when targeting sectors with modest post-MBA salary premiums. Regional programs targeting local general management roles at $90K–$110K post-MBA produce IRRs of 2–6%, which do not clear a basic financial hurdle. School tier, industry target, and financing structure are determinative."}}, {"@type": "Question", "name": "How does an MBA compare to just investing the money in the stock market?", "acceptedAnswer": {"@type": "Answer", "text": "At M7 programs with MBB/banking placement, the MBA IRR of 18–24% significantly outperforms the S&P 500's long-run 8–10% return. However, equity investment is diversified and liquid; an MBA is a concentrated, illiquid bet on a single career path. At programs producing IRR below 8–10%, passive index investing would generate higher risk-adjusted returns."}}]}) }}
+      />
     </main>
   )
 }
