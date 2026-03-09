@@ -257,12 +257,9 @@ export default function HomePage() {
             Terms
           </Link>
           {" · "}
-          <a
-            href="mailto:hgauba4@gmail.com"
-            className="hover:text-slate-300 transition-colors"
-          >
+          <Link href="/contact" className="hover:text-slate-300 transition-colors">
             Contact
-          </a>
+          </Link>
         </p>
         <p>Rational decisions. Compounding outcomes.</p>
       </footer>
