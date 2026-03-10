@@ -4,6 +4,21 @@ export const metadata = {
   title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
   description:
     "Is an MBA worth it financially in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math reliably fails. Calculate now →",
+  alternates: {
+    canonical: "https://careerreturns.com/mba-worth-it",
+  },
+  openGraph: {
+    title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
+    description: "Is an MBA worth it financially in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math reliably fails.",
+    url: "https://careerreturns.com/mba-worth-it",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
+    description: "Full cost breakdown, IRR by school tier, ROI vs the stock market.",
+  },
 }
 
 export default function MbaWorthItPage() {

@@ -5,6 +5,66 @@ export const metadata = {
   description:
     "Model your MBA return on investment with institutional-grade DCF analysis. NPV, IRR, and break-even calculator. Free tools for smarter career decisions.",
   alternates: { canonical: "https://careerreturns.com" },
+  openGraph: {
+    title: "MBA ROI Calculator & Career Investment Tools (2026)",
+    description: "Free MBA ROI calculator using DCF, NPV, and IRR analysis. Compare 12 industries, school tiers, and scenarios. Make data-driven career investment decisions.",
+    url: "https://careerreturns.com",
+    siteName: "CareerReturns",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@careerreturns",
+    title: "MBA ROI Calculator & Career Investment Tools (2026)",
+    description: "Free DCF-based MBA ROI calculator. NPV, IRR, and break-even analysis across 12 industries.",
+  },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is MBA ROI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MBA ROI (Return on Investment) is the financial return you earn from an MBA program relative to its total cost. It's calculated using NPV (Net Present Value) and IRR (Internal Rate of Return) to account for tuition, living expenses, opportunity cost, and post-MBA salary gains over a 10-year horizon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate MBA ROI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculate MBA ROI by subtracting total costs (tuition + opportunity cost + living expenses) from the discounted present value of future salary increases. Our free MBA ROI calculator uses institutional-grade DCF modeling to compute NPV, IRR, and break-even period automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is an MBA worth it financially in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An MBA is worth it financially when targeting high-delta industries: MBB consulting (IRR 22–40%), investment banking (21–38%), or PE/VC (23–41%). It typically fails financially when entering low-delta fields like nonprofit/government (IRR 4–14%) or taking on full debt for a non-target program."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the average MBA salary increase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The average MBA salary increase ranges from $35k to $90k per year depending on industry. MBB consulting offers the largest delta ($80–90k/year), while general management offers a smaller lift ($35–50k/year). The 10-year cumulative NPV ranges from -$20k (nonprofit) to +$600k (military with GI Bill)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to break even on an MBA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MBA break-even periods range from 2–13 years depending on industry and scholarship aid. MBB consulting breaks even in 4.2–4.7 years. Investment banking: 4.5–5 years. Technology: 6.1–7 years. Nonprofit/government can take 9–13 years or never break even with full debt."
+      }
+    }
+  ]
 }
 
 export default function HomePage() {
@@ -23,12 +83,13 @@ export default function HomePage() {
         </p>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
-          Capital Allocation for<br />Career Decisions
+          MBA ROI Calculator &amp;<br />Career Investment Tools
         </h1>
 
         <p className="mt-6 text-slate-400 text-lg leading-relaxed max-w-2xl">
-          Evaluate MBAs, graduate degrees, and career transitions using
-          institutional-grade discounted cash flow modeling.
+          Use institutional-grade discounted cash flow (DCF) analysis to calculate your MBA return on investment.
+          Model NPV, IRR, and break-even across 12 industries and every major school tier —
+          so you make your career investment decision with the same rigor as a capital allocation decision.
         </p>
 
         <div className="mt-10 flex gap-4 flex-wrap justify-center">
@@ -246,9 +307,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── FAQ Schema ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* ── FAQ Section ── */}
+      <section className="max-w-3xl mx-auto w-full px-4 sm:px-6 pb-16 sm:pb-28">
+        <h2 className="text-2xl font-semibold tracking-tight mb-8">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          {faqSchema.mainEntity.map((item, i) => (
+            <div key={i} className="rounded-2xl bg-white/5 border border-white/10 p-6 space-y-2">
+              <h3 className="font-semibold text-white">{item.name}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── Footer ── */}
       <footer className="border-t border-white/10 py-8 text-center text-slate-500 text-xs space-y-2">
         <p>
+          <Link href="/about" className="hover:text-slate-300 transition-colors">
+            About
+          </Link>
+          {" · "}
           <Link href="/privacy" className="hover:text-slate-300 transition-colors">
             Privacy Policy
           </Link>

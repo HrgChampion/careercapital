@@ -8,7 +8,20 @@ export const metadata = {
   verification: {
     google: "zDoWplbx5Khdq-waO3kN2Ko9CJeltvRwJyit1br6uF4",
   },
-   metadataBase: new URL("https://careerreturns.com"),
+  metadataBase: new URL("https://careerreturns.com"),
+  openGraph: {
+    title: "CareerReturns — MBA ROI Calculator & Career Investment Tools",
+    description: "Professional-grade DCF, NPV, and IRR analysis for MBA ROI decisions. Free calculator and 2026 data across 12 industries.",
+    url: "https://careerreturns.com",
+    siteName: "CareerReturns",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@careerreturns",
+    title: "CareerReturns — MBA ROI Calculator & Career Investment Tools",
+    description: "Free DCF-based MBA ROI calculator. NPV, IRR, and break-even analysis across 12 industries.",
+  },
 }
 
 const orgSchema = {
