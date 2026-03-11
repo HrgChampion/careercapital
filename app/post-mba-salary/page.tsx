@@ -139,7 +139,7 @@ export default function PostMbaSalaryPage() {
               </thead>
               <tbody>
                 {salaryByIndustry.map((row, i) => (
-                  <tr key={i} className="border-b border-white/5 hover:bg-white/2">
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
                     <td className="py-3 pr-4">
                       <p className="text-white font-medium">{row.industry}</p>
                       <p className="text-slate-500 text-xs mt-0.5">{row.notes}</p>
@@ -210,7 +210,7 @@ export default function PostMbaSalaryPage() {
               </thead>
               <tbody>
                 {salaryGrowth.map((row, i) => (
-                  <tr key={i} className="border-b border-white/5 hover:bg-white/2">
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
                     <td className="py-3 pr-4 text-white font-medium">{row.year}</td>
                     <td className="py-3 pr-4 text-slate-300">{row.mbb}</td>
                     <td className="py-3 pr-4 text-slate-300">{row.banking}</td>

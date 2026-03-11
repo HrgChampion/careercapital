@@ -11,19 +11,25 @@ import {
   type BreakType,
 } from "@/lib/trajectoryEngine"
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
+import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { CountrySelect } from "@/components/CountrySelect"
 
-function fmtUSD(n: number) {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n)
-}
-function fmtM(n: number) {
+function fmtM(n: number, c: CountryCode) {
   if (Math.abs(n) >= 1_000_000) return (n / 1_000_000).toFixed(2) + "M"
-  return fmtUSD(n)
+  return formatCurrency(n, c)
 }
 function fmtPct(n: number) { return (n * 100).toFixed(1) + "%" }
 
 const SCENARIO_COLORS = ["#60a5fa", "#4ade80", "#f87171", "#facc15"]
 
 export default function LifetimeEarningsCalculator() {
+  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const handleCountryChange = (c: CountryCode) => {
+    setCountry(c)
+    const sal = COUNTRIES[c].defaultSalary
+    setCurrentSalary(sal)
+    setScenarios(buildDefaultScenarios(sal))
+  }
   const [currentAge, setCurrentAge] = useState(32)
   const [retirementAge, setRetirementAge] = useState(65)
   const [inflationRate, setInflationRate] = useState(0.03)
@@ -102,11 +108,15 @@ export default function LifetimeEarningsCalculator() {
     : 1
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white font-mono">
+    <main className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       {/* Hero */}
-      <section className="border-b border-white/10 px-6 py-12 max-w-6xl mx-auto">
-        <p className="text-xs text-white/40 uppercase tracking-widest mb-3">CareerReturns · Lifetime Financial Modeling</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-3">
+      <section className="relative overflow-hidden border-b border-white/10 px-6 py-12 max-w-6xl mx-auto">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="relative flex items-start justify-between gap-4 mb-4">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Lifetime Financial Modeling</p>
+          <CountrySelect value={country} onChange={handleCountryChange} />
+        </div>
+        <h1 className="relative text-3xl md:text-4xl font-semibold tracking-tight mb-3 leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
           Stay, Pivot, or Take a Break — Which Career Path Makes You More Money?
         </h1>
         <p className="text-white/70 max-w-2xl mb-6 text-lg leading-relaxed">
@@ -120,7 +130,7 @@ export default function LifetimeEarningsCalculator() {
             { stat: "NPV + real", label: "Inflation-adjusted lifetime totals" },
             { stat: "Free", label: "No signup, instant results" },
           ].map(({ stat, label }) => (
-            <div key={stat} className="border border-white/10 rounded-lg p-3 bg-white/2">
+            <div key={stat} className="border border-white/10 rounded-lg p-3 bg-white/[0.02]">
               <div className="text-2xl font-bold text-white mb-1">{stat}</div>
               <div className="text-xs text-white/40 leading-tight">{label}</div>
             </div>
@@ -130,7 +140,7 @@ export default function LifetimeEarningsCalculator() {
 
       <div className="max-w-6xl mx-auto px-6 py-10">
         {/* Global inputs */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 p-4 rounded-lg border border-white/10 bg-white/2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 p-4 rounded-2xl border border-white/10 bg-white/5">
           <div>
             <label className="text-xs text-white/40 uppercase tracking-widest block mb-1">Current Salary ($)</label>
             <input type="number" value={currentSalary} step={5000} min={0}
@@ -162,7 +172,7 @@ export default function LifetimeEarningsCalculator() {
 
         {/* Chart */}
         {result && (
-          <div className="rounded-lg border border-white/10 p-5 bg-white/2 mb-8">
+          <div className="rounded-2xl border border-white/10 p-5 bg-white/5 mb-8">
             <p className="text-xs text-white/40 uppercase tracking-widest mb-4">Annual Earnings by Scenario</p>
             <div className="flex items-end gap-0.5 h-40 overflow-hidden">
               {Array.from({ length: Math.min(chartYears, 40) }, (_, i) => (
@@ -175,7 +185,7 @@ export default function LifetimeEarningsCalculator() {
                         key={s.scenarioId}
                         className="w-full rounded-sm transition-opacity"
                         style={{ height: `${Math.max(pct, 0.5)}%`, backgroundColor: s.color + "88" }}
-                        title={`${s.label}: ${fmtUSD(val)}`}
+                        title={`${s.label}: ${formatCurrency(val, country)}`}
                       />
                     )
                   })}
@@ -225,7 +235,7 @@ export default function LifetimeEarningsCalculator() {
 
                 <div className="space-y-4">
                   {scenarios[activeScenario].phases.map((phase, pi) => (
-                    <div key={phase.id} className="rounded-lg border border-white/10 p-4 bg-white/2">
+                    <div key={phase.id} className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
                       <div className="flex justify-between items-center mb-3">
                         <input
                           type="text" value={phase.label}
@@ -307,7 +317,7 @@ export default function LifetimeEarningsCalculator() {
             {result && (
               <>
                 {result.insights.length > 0 && (
-                  <div className="rounded-lg border border-white/20 bg-white/2 p-4">
+                  <div className="rounded-lg border border-white/20 bg-white/[0.02] p-4">
                     <p className="text-xs text-white/40 uppercase tracking-widest mb-2">Insights</p>
                     <ul className="space-y-2">
                       {result.insights.map((ins, i) => (
@@ -329,23 +339,23 @@ export default function LifetimeEarningsCalculator() {
                       <div className="grid grid-cols-2 gap-3 text-xs">
                         <div>
                           <p className="text-white/40">Lifetime Earnings</p>
-                          <p className="text-base font-bold">{fmtM(s.nominalLifetimeEarnings)}</p>
+                          <p className="text-base font-bold">{fmtM(s.nominalLifetimeEarnings, country)}</p>
                         </div>
                         <div>
                           <p className="text-white/40">NPV ({DISCOUNT_RATE * 100}%)</p>
-                          <p className="text-base font-bold">{s.npv !== null ? fmtM(s.npv) : "—"}</p>
+                          <p className="text-base font-bold">{s.npv !== null ? fmtM(s.npv, country) : "—"}</p>
                         </div>
                         <div>
                           <p className="text-white/40">Real (Inflation-Adj)</p>
-                          <p className="font-medium">{fmtM(s.realLifetimeEarnings)}</p>
+                          <p className="font-medium">{fmtM(s.realLifetimeEarnings, country)}</p>
                         </div>
                         <div>
                           <p className="text-white/40">Avg Annual</p>
-                          <p className="font-medium">{fmtUSD(s.averageAnnualEarnings)}</p>
+                          <p className="font-medium">{formatCurrency(s.averageAnnualEarnings, country)}</p>
                         </div>
                         <div>
                           <p className="text-white/40">Peak Earnings</p>
-                          <p className="font-medium">{fmtUSD(s.peakEarningsAmount)}</p>
+                          <p className="font-medium">{formatCurrency(s.peakEarningsAmount, country)}</p>
                           <p className="text-white/30">Age {currentAge + s.peakEarningsYear}</p>
                         </div>
                         {s.breakEvenVsBaselineYear !== null && (

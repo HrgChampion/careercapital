@@ -10,10 +10,8 @@ import {
   type SkillCategory,
 } from "@/lib/skillsGapEngine"
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
-
-function fmtUSD(n: number) {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n)
-}
+import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { CountrySelect } from "@/components/CountrySelect"
 
 const LEVEL_LABELS: Record<SkillLevel, string> = {
   0: "None",
@@ -30,6 +28,11 @@ const PATH_TYPE_COLORS: Record<string, string> = {
 }
 
 export default function SkillsGapCalculator() {
+  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const handleCountryChange = (c: CountryCode) => {
+    setCountry(c)
+    setCurrentSalary(COUNTRIES[c].defaultSalary)
+  }
   const [currentSalary, setCurrentSalary] = useState(75000)
   const [assessments, setAssessments] = useState<SkillAssessment[]>(
     SKILL_META.map(s => ({ skill: s.id, currentLevel: 0 as SkillLevel, targetLevel: 0 as SkillLevel }))
@@ -50,12 +53,16 @@ export default function SkillsGapCalculator() {
   }, [activeAssessments, currentSalary])
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white font-mono">
+    <main className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       {/* Hero */}
-      <section className="border-b border-white/10 px-6 py-12 max-w-5xl mx-auto">
-        <p className="text-xs text-white/40 uppercase tracking-widest mb-3">CareerReturns · Skills Intelligence</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-3">
-          Not Knowing Python Costs {fmtUSD(22000)}/Year. What's Your Skills Gap Costing You?
+      <section className="relative overflow-hidden border-b border-white/10 px-6 py-12 max-w-5xl mx-auto">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="relative flex items-start justify-between gap-4 mb-4">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Skills Intelligence</p>
+          <CountrySelect value={country} onChange={handleCountryChange} />
+        </div>
+        <h1 className="relative text-3xl md:text-4xl font-semibold tracking-tight mb-3 leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
+          Not Knowing Python Costs {formatCurrency(22000, country)}/Year. What&apos;s Your Skills Gap Costing You?
         </h1>
         <p className="text-white/70 max-w-2xl mb-6 text-lg leading-relaxed">
           Most career returners underestimate the <span className="text-white font-semibold">dollar value of their skills gaps</span>.
@@ -68,7 +75,7 @@ export default function SkillsGapCalculator() {
             { stat: "3 free", label: "Top upskill paths cost $0" },
             { stat: "10-yr NPV", label: "Dollar value of closing each gap" },
           ].map(({ stat, label }) => (
-            <div key={stat} className="border border-white/10 rounded-lg p-3 bg-white/2">
+            <div key={stat} className="border border-white/10 rounded-lg p-3 bg-white/[0.02]">
               <div className="text-2xl font-bold text-white mb-1">{stat}</div>
               <div className="text-xs text-white/40 leading-tight">{label}</div>
             </div>
@@ -78,7 +85,7 @@ export default function SkillsGapCalculator() {
 
       <div className="max-w-5xl mx-auto px-6 py-10">
         {/* Salary input */}
-        <div className="mb-8 flex items-center gap-6 p-4 rounded-lg border border-white/10 bg-white/2">
+        <div className="mb-8 flex items-center gap-6 p-4 rounded-2xl border border-white/10 bg-white/5">
           <div>
             <label className="text-xs text-white/40 uppercase tracking-widest block mb-1">Current Annual Salary ($)</label>
             <input type="number" value={currentSalary} step={5000} min={0}
@@ -114,7 +121,7 @@ export default function SkillsGapCalculator() {
                       {hasGap && (
                         <div className="text-right">
                           <p className="text-xs text-orange-400 font-medium">
-                            ~{fmtUSD(meta.maxAnnualImpact * (assessment.targetLevel - assessment.currentLevel) / 3)}/yr gap
+                            ~{formatCurrency(meta.maxAnnualImpact * (assessment.targetLevel - assessment.currentLevel) / 3, country)}/yr gap
                           </p>
                         </div>
                       )}
@@ -185,21 +192,21 @@ export default function SkillsGapCalculator() {
               <>
                 {/* Total gap cost */}
                 <div className="rounded-lg border border-red-400/20 bg-red-400/5 p-5">
-                  <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Your Total Skills Gap Cost</p>
+                  <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Your Total Skills Gap Cost</p>
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <p className="text-xs text-white/40">Annual Salary Cost</p>
-                      <p className="text-2xl font-bold text-red-400">{fmtUSD(result.totalAnnualSalaryCost)}</p>
+                      <p className="text-2xl font-bold text-red-400">{formatCurrency(result.totalAnnualSalaryCost, country)}</p>
                     </div>
                     <div>
                       <p className="text-xs text-white/40">{SKILLS_PROJECTION_YEARS}-Year NPV</p>
-                      <p className="text-2xl font-bold text-red-400">{fmtUSD(result.totalNPVCostOfGap)}</p>
+                      <p className="text-2xl font-bold text-red-400">{formatCurrency(result.totalNPVCostOfGap, country)}</p>
                     </div>
                   </div>
                   <div className="mt-3 pt-3 border-t border-red-400/10 grid grid-cols-2 gap-3 text-xs">
                     <div>
                       <p className="text-white/40">Total Upskill Cost</p>
-                      <p className="font-medium text-green-400">{fmtUSD(result.totalUpskillCost)}</p>
+                      <p className="font-medium text-green-400">{formatCurrency(result.totalUpskillCost, country)}</p>
                     </div>
                     <div>
                       <p className="text-white/40">Upskill Timeline</p>
@@ -215,7 +222,7 @@ export default function SkillsGapCalculator() {
                     {result.quickWins.slice(0, 3).map(item => (
                       <div key={item.skill} className="flex justify-between text-xs py-1">
                         <span className="text-white/70">{item.recommendedPath.label}</span>
-                        <span className="text-green-400">+{fmtUSD(item.annualSalaryImpact)}/yr</span>
+                        <span className="text-green-400">+{formatCurrency(item.annualSalaryImpact, country)}/yr</span>
                       </div>
                     ))}
                   </div>
@@ -223,12 +230,12 @@ export default function SkillsGapCalculator() {
 
                 {/* Ranked upskilling plan */}
                 <div>
-                  <p className="text-xs text-white/40 uppercase tracking-widest mb-3">
+                  <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">
                     Prioritized Action Plan (by ROI/month)
                   </p>
                   <div className="space-y-3">
                     {result.prioritizedSkills.map((item, rank) => (
-                      <div key={item.skill} className="rounded-lg border border-white/10 p-4 bg-white/2">
+                      <div key={item.skill} className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
                         <div className="flex justify-between items-start mb-2">
                           <div>
                             <div className="flex items-center gap-2">
@@ -240,20 +247,20 @@ export default function SkillsGapCalculator() {
                             </p>
                           </div>
                           <div className="text-right">
-                            <p className="text-sm font-bold text-orange-400">{fmtUSD(item.annualSalaryImpact)}/yr</p>
+                            <p className="text-sm font-bold text-orange-400">{formatCurrency(item.annualSalaryImpact, country)}/yr</p>
                             <p className="text-xs text-white/30">salary gap</p>
                           </div>
                         </div>
 
                         {/* Recommended path */}
-                        <div className={`rounded border px-3 py-2 mt-2 ${PATH_TYPE_COLORS[item.recommendedPath.pathType] ?? "border-white/10"} bg-white/2`}>
+                        <div className={`rounded border px-3 py-2 mt-2 ${PATH_TYPE_COLORS[item.recommendedPath.pathType] ?? "border-white/10"} bg-white/[0.02]`}>
                           <div className="flex justify-between items-center">
                             <div>
                               <p className="text-xs font-medium">{item.recommendedPath.label}</p>
                               <p className="text-[10px] text-white/40">{item.recommendedPath.provider}</p>
                             </div>
                             <div className="text-right text-[10px] text-white/40">
-                              <p>{item.recommendedPath.cost === 0 ? "Free" : fmtUSD(item.recommendedPath.cost)}</p>
+                              <p>{item.recommendedPath.cost === 0 ? "Free" : formatCurrency(item.recommendedPath.cost, country)}</p>
                               <p>{item.recommendedPath.durationMonths} mo · {item.recommendedPath.learningHoursPerWeek}hr/wk</p>
                             </div>
                           </div>
@@ -263,7 +270,7 @@ export default function SkillsGapCalculator() {
                           <div>
                             <p className="text-white/30">NPV of Path</p>
                             <p className={`font-medium ${item.pathNPV !== null && item.pathNPV > 0 ? "text-green-400" : "text-white/60"}`}>
-                              {item.pathNPV !== null ? fmtUSD(item.pathNPV) : "—"}
+                              {item.pathNPV !== null ? formatCurrency(item.pathNPV, country) : "—"}
                             </p>
                           </div>
                           <div>

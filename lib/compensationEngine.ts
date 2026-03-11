@@ -15,6 +15,7 @@ import { npvFromSeries, DISCOUNT_RATE, PROJECTION_YEARS } from "./mbaEngine"
 import {
   getBenchmark,
   type BenchmarkKey,
+  type BenchmarkCountry,
   type LocationTier,
   type CompanySize,
   type ExperienceBand,
@@ -34,6 +35,8 @@ export type CompensationInput = {
   discountRate: number
   /** Annual growth rate for salary projection */
   annualGrowthRate: number
+  /** Country for benchmark lookup — defaults to "US" */
+  country?: BenchmarkCountry
 }
 
 export type NegotiationScenario = {
@@ -74,9 +77,10 @@ export function calculateCompensation(input: CompensationInput): CompensationRes
     experience,
     discountRate,
     annualGrowthRate,
+    country,
   } = input
 
-  const benchmarkKey: BenchmarkKey = { industry, role, experience, location, companySize }
+  const benchmarkKey: BenchmarkKey = { industry, role, experience, location, companySize, country }
   const benchmark = getBenchmark(benchmarkKey)
 
   // Estimate gap penalty

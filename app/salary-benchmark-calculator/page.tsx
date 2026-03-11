@@ -5,19 +5,23 @@ import { calculateCompensation, GAP_PENALTY_PER_YEAR, type CompensationInput } f
 import {
   INDUSTRIES,
   EXPERIENCE_BANDS,
-  LOCATION_TIERS,
   COMPANY_SIZES,
+  getLocationTiers,
   type LocationTier,
   type CompanySize,
   type ExperienceBand,
+  type BenchmarkCountry,
 } from "@/lib/compensationBenchmarks"
 import { DISCOUNT_RATE, PROJECTION_YEARS } from "@/lib/mbaEngine"
-
-function fmtUSD(n: number) {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n)
-}
+import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { CountrySelect } from "@/components/CountrySelect"
 
 export default function SalaryBenchmarkCalculator() {
+  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const handleCountryChange = (c: CountryCode) => {
+    setCountry(c)
+    setCurrentSalary(COUNTRIES[c].defaultSalary)
+  }
   const [currentSalary, setCurrentSalary] = useState(85000)
   const [gapYears, setGapYears] = useState(2)
   const [yearsExperience, setYearsExperience] = useState(7)
@@ -37,6 +41,8 @@ export default function SalaryBenchmarkCalculator() {
     if (meta && meta.roles[0]) setRole(meta.roles[0].id)
   }
 
+  const locationTiers = getLocationTiers(country as BenchmarkCountry)
+
   const input: CompensationInput = {
     currentSalary,
     yearsExperience,
@@ -48,6 +54,7 @@ export default function SalaryBenchmarkCalculator() {
     experience,
     discountRate: DISCOUNT_RATE,
     annualGrowthRate: growthRate,
+    country: country as BenchmarkCountry,
   }
 
   const result = useMemo(() => {
@@ -58,11 +65,15 @@ export default function SalaryBenchmarkCalculator() {
   const isUnderpaid = result && result.currentVsMedian < -5000
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white font-mono">
+    <main className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       {/* Hero */}
-      <section className="border-b border-white/10 px-6 py-12 max-w-5xl mx-auto">
-        <p className="text-xs text-white/40 uppercase tracking-widest mb-3">CareerReturns · Salary Intelligence</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-3">
+      <section className="relative overflow-hidden border-b border-white/10 px-6 py-12 max-w-5xl mx-auto">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="relative flex items-start justify-between gap-4 mb-4">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Salary Intelligence</p>
+          <CountrySelect value={country} onChange={handleCountryChange} />
+        </div>
+        <h1 className="relative text-3xl md:text-4xl font-semibold tracking-tight mb-3 leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
           Am I Underpaid After My Career Break?
         </h1>
         <p className="text-white/70 max-w-2xl mb-6 text-lg leading-relaxed">
@@ -76,7 +87,7 @@ export default function SalaryBenchmarkCalculator() {
             { stat: "3 paths", label: "Raise now · build case · switch jobs" },
             { stat: "60 sec", label: "To see your market position" },
           ].map(({ stat, label }) => (
-            <div key={stat} className="border border-white/10 rounded-lg p-3 bg-white/2">
+            <div key={stat} className="border border-white/10 rounded-lg p-3 bg-white/[0.02]">
               <div className="text-2xl font-bold text-white mb-1">{stat}</div>
               <div className="text-xs text-white/40 leading-tight">{label}</div>
             </div>
@@ -142,7 +153,7 @@ export default function SalaryBenchmarkCalculator() {
             <div>
               <label className="text-xs text-white/50 uppercase tracking-widest block mb-2">Location</label>
               <div className="space-y-1">
-                {LOCATION_TIERS.map(l => (
+                {locationTiers.map(l => (
                   <button key={l.id} onClick={() => setLocation(l.id)}
                     className={`w-full text-left px-3 py-2 text-xs rounded border transition-all ${location === l.id ? "border-white/40 bg-white/5" : "border-white/10 text-white/40 hover:border-white/20"}`}>
                     <span className="font-medium">{l.label}</span>
@@ -182,16 +193,16 @@ export default function SalaryBenchmarkCalculator() {
                 {result.benchmark && (
                   <p className={`text-sm ${isUnderpaid ? "text-red-300" : "text-green-300"}`}>
                     {isUnderpaid
-                      ? `You're ${fmtUSD(result.annualLeaveOnTable)} below market median`
-                      : `You're ${fmtUSD(-result.currentVsMedian)} above market median`}
+                      ? `You're ${formatCurrency(result.annualLeaveOnTable, country)} below market median`
+                      : `You're ${formatCurrency(-result.currentVsMedian, country)} above market median`}
                   </p>
                 )}
               </div>
 
               {/* Benchmark band */}
               {result.benchmark && (
-                <div className="rounded-lg border border-white/10 p-4 bg-white/2">
-                  <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Market Range for Your Profile</p>
+                <div className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
+                  <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Market Range for Your Profile</p>
                   <div className="relative h-6 bg-white/5 rounded-full overflow-hidden mb-2">
                     <div className="absolute inset-y-0 bg-white/10 rounded-full"
                       style={{
@@ -216,25 +227,25 @@ export default function SalaryBenchmarkCalculator() {
                     ].map(b => (
                       <div key={b.label}>
                         <p className="text-white/30">{b.label}</p>
-                        <p className="font-medium text-white/80">{fmtUSD(b.val)}</p>
+                        <p className="font-medium text-white/80">{formatCurrency(b.val, country)}</p>
                       </div>
                     ))}
                   </div>
                   <div className="mt-2 text-center">
                     <span className="text-xs text-white/50">Your salary: </span>
-                    <span className="text-xs font-medium text-white">{fmtUSD(currentSalary)}</span>
+                    <span className="text-xs font-medium text-white">{formatCurrency(currentSalary, country)}</span>
                   </div>
                 </div>
               )}
 
               {/* Gap penalty */}
               {gapYears > 0 && (
-                <div className="rounded-lg border border-white/10 p-4 bg-white/2">
-                  <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Career Gap Impact</p>
+                <div className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
+                  <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Career Gap Impact</p>
                   <div className="grid grid-cols-2 gap-3 text-sm">
                     <div>
                       <p className="text-xs text-white/40">Estimated Gap Penalty</p>
-                      <p className="font-medium text-orange-400">{fmtUSD(result.estimatedGapPenalty)}/yr</p>
+                      <p className="font-medium text-orange-400">{formatCurrency(result.estimatedGapPenalty, country)}/yr</p>
                       <p className="text-[10px] text-white/30">{GAP_PENALTY_PER_YEAR * 100}% per gap year</p>
                     </div>
                     <div>
@@ -249,15 +260,15 @@ export default function SalaryBenchmarkCalculator() {
               {/* Leave on table */}
               {isUnderpaid && (
                 <div className="rounded-lg border border-red-400/20 p-4 bg-red-400/5">
-                  <p className="text-xs text-white/40 uppercase tracking-widest mb-3">What You&apos;re Leaving On The Table</p>
+                  <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">What You&apos;re Leaving On The Table</p>
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <p className="text-xs text-white/40">Per Year</p>
-                      <p className="text-xl font-bold text-red-400">{fmtUSD(result.annualLeaveOnTable)}</p>
+                      <p className="text-xl font-bold text-red-400">{formatCurrency(result.annualLeaveOnTable, country)}</p>
                     </div>
                     <div>
                       <p className="text-xs text-white/40">{PROJECTION_YEARS}-Year NPV</p>
-                      <p className="text-xl font-bold text-red-400">{fmtUSD(result.tenYearNPVLeaveOnTable)}</p>
+                      <p className="text-xl font-bold text-red-400">{formatCurrency(result.tenYearNPVLeaveOnTable, country)}</p>
                     </div>
                   </div>
                 </div>
@@ -265,10 +276,10 @@ export default function SalaryBenchmarkCalculator() {
 
               {/* Negotiation scenarios */}
               <div>
-                <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Your Options</p>
+                <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Your Options</p>
                 <div className="space-y-3">
                   {result.negotiationScenarios.map((s, i) => (
-                    <div key={i} className="rounded-lg border border-white/10 p-4 bg-white/2">
+                    <div key={i} className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
                       <div className="flex justify-between items-start mb-2">
                         <div>
                           <p className="text-sm font-medium">{s.label}</p>
@@ -276,15 +287,15 @@ export default function SalaryBenchmarkCalculator() {
                         </div>
                         <div className="text-right">
                           <p className="text-sm font-bold text-green-400">
-                            {s.netNPVGain !== null && s.netNPVGain > 0 ? "+" + fmtUSD(s.netNPVGain) : "—"}
+                            {s.netNPVGain !== null && s.netNPVGain > 0 ? "+" + formatCurrency(s.netNPVGain, country) : "—"}
                           </p>
                           <p className="text-[10px] text-white/30">NPV gain</p>
                         </div>
                       </div>
                       <p className="text-xs text-white/50 leading-relaxed">{s.recommendation}</p>
                       <div className="mt-2 pt-2 border-t border-white/5 flex justify-between text-xs text-white/40">
-                        <span>Target salary: {fmtUSD(s.expectedSalaryYear1)}</span>
-                        <span>Action cost: {s.actionCost > 0 ? fmtUSD(s.actionCost) : "Free"}</span>
+                        <span>Target salary: {formatCurrency(s.expectedSalaryYear1, country)}</span>
+                        <span>Action cost: {s.actionCost > 0 ? formatCurrency(s.actionCost, country) : "Free"}</span>
                       </div>
                     </div>
                   ))}

@@ -10,12 +10,11 @@ import {
   type ProgramType,
 } from "@/lib/comparisonEngine"
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
+import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { CountrySelect } from "@/components/CountrySelect"
 
 // ─── Helpers ────────────────────────────────────────────────────────────────────
 
-function fmtUSD(n: number) {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n)
-}
 function fmtPct(n: number) { return (n * 100).toFixed(1) + "%" }
 
 const gradeColor: Record<string, string> = {
@@ -45,6 +44,11 @@ const typeLabels: Record<ProgramType, string> = {
 const PROGRAM_TYPES: ProgramType[] = ["mba", "masters", "bootcamp", "certificate", "self_study"]
 
 export default function EducationComparisonCalculator() {
+  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const handleCountryChange = (c: CountryCode) => {
+    setCountry(c)
+    setCurrentSalary(COUNTRIES[c].defaultSalary)
+  }
   const [selectedPreset, setSelectedPreset] = useState("mba_vs_bootcamp")
   const [currentSalary, setCurrentSalary] = useState(85000)
   const [currentGrowthRate, setCurrentGrowthRate] = useState(0.03)
@@ -98,11 +102,15 @@ export default function EducationComparisonCalculator() {
   }, [programs, currentSalary, currentGrowthRate])
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white font-mono">
+    <main className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       {/* Hero */}
-      <section className="border-b border-white/10 px-6 py-12 max-w-6xl mx-auto">
-        <p className="text-xs text-white/40 uppercase tracking-widest mb-3">CareerReturns · Free Calculator · 2026</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
+      <section className="relative overflow-hidden border-b border-white/10 px-6 py-12 max-w-6xl mx-auto">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="relative flex items-start justify-between gap-4 mb-4">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Free Calculator · 2026</p>
+          <CountrySelect value={country} onChange={handleCountryChange} />
+        </div>
+        <h1 className="relative text-3xl md:text-4xl font-semibold tracking-tight mb-3 leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
           MBA vs Bootcamp vs Certificate:<br className="hidden md:block" /> Which Wins Financially?
         </h1>
         <p className="text-white/60 max-w-2xl text-base mb-6">
@@ -117,7 +125,7 @@ export default function EducationComparisonCalculator() {
             { stat: "$0", label: "Cost of this tool" },
             { stat: "< 2 min", label: "To a side-by-side ranking" },
           ].map(({ stat, label }) => (
-            <div key={label} className="border border-white/10 rounded-lg p-3 text-center bg-white/2">
+            <div key={label} className="border border-white/10 rounded-2xl p-3 text-center bg-white/5">
               <p className="text-white font-bold text-lg">{stat}</p>
               <p className="text-white/40 text-xs mt-0.5">{label}</p>
             </div>
@@ -128,7 +136,7 @@ export default function EducationComparisonCalculator() {
       <div className="max-w-6xl mx-auto px-6 py-10">
         {/* Presets */}
         <div className="mb-8">
-          <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Start with a Preset</p>
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Start with a Preset</p>
           <div className="flex flex-wrap gap-2">
             {COMPARISON_PRESETS.map(p => (
               <button
@@ -147,7 +155,7 @@ export default function EducationComparisonCalculator() {
         </div>
 
         {/* Baseline */}
-        <div className="grid md:grid-cols-2 gap-4 mb-8 p-4 rounded-lg border border-white/10 bg-white/2">
+        <div className="grid md:grid-cols-2 gap-4 mb-8 p-4 rounded-2xl border border-white/10 bg-white/5">
           <div>
             <label className="text-xs text-white/40 uppercase tracking-widest block mb-1">Current Annual Salary ($)</label>
             <input
@@ -269,8 +277,8 @@ export default function EducationComparisonCalculator() {
           <>
             {/* Insights */}
             {result.insights.length > 0 && (
-              <div className="rounded-lg border border-white/20 bg-white/2 p-5 mb-6">
-                <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Key Insights</p>
+              <div className="rounded-lg border border-white/20 bg-white/[0.02] p-5 mb-6">
+                <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Key Insights</p>
                 <ul className="space-y-2">
                   {result.insights.map((ins, i) => (
                     <li key={i} className="text-sm text-white/70 flex gap-2">
@@ -298,10 +306,10 @@ export default function EducationComparisonCalculator() {
                 </thead>
                 <tbody>
                   <TableRow label="NPV (10-yr)">
-                    <td className="text-right p-3 text-white/40">{fmtUSD(result.noProgramNPV)}</td>
+                    <td className="text-right p-3 text-white/40">{formatCurrency(result.noProgramNPV, country)}</td>
                     {result.programs.map(p => (
                       <td key={p.programId} className={`text-right p-3 font-medium ${p.programId === result.winnerId ? "text-green-400" : (p.npv !== null && p.npv > 0 ? "text-white/80" : "text-red-400/70")}`}>
-                        {p.npv !== null ? fmtUSD(p.npv) : "—"}
+                        {p.npv !== null ? formatCurrency(p.npv, country) : "—"}
                       </td>
                     ))}
                   </TableRow>
@@ -324,13 +332,13 @@ export default function EducationComparisonCalculator() {
                   <TableRow label="Total Investment">
                     <td className="text-right p-3 text-white/40">$0</td>
                     {result.programs.map(p => (
-                      <td key={p.programId} className="text-right p-3 text-white/60">{fmtUSD(p.totalInvestment)}</td>
+                      <td key={p.programId} className="text-right p-3 text-white/60">{formatCurrency(p.totalInvestment, country)}</td>
                     ))}
                   </TableRow>
                   <TableRow label="Salary Jump">
                     <td className="text-right p-3 text-white/40">—</td>
                     {result.programs.map(p => (
-                      <td key={p.programId} className="text-right p-3 text-white/60">{fmtUSD(p.salaryDelta)}</td>
+                      <td key={p.programId} className="text-right p-3 text-white/60">{formatCurrency(p.salaryDelta, country)}</td>
                     ))}
                   </TableRow>
                   <TableRow label="ROI Grade">
@@ -360,7 +368,7 @@ export default function EducationComparisonCalculator() {
                   <div className="mt-3 pt-3 border-t border-white/10 flex justify-between text-xs">
                     <span className="text-white/40">Rank #{p.rank}</span>
                     <span className={p.npv !== null && p.npv > 0 ? "text-green-400" : "text-red-400"}>
-                      {p.npv !== null ? fmtUSD(p.npv) : "—"} NPV
+                      {p.npv !== null ? formatCurrency(p.npv, country) : "—"} NPV
                     </span>
                   </div>
                 </div>

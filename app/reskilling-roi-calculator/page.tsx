@@ -9,6 +9,8 @@ import {
   type ReskillingPreset,
 } from "@/lib/reskillingEngine"
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
+import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { CountrySelect } from "@/components/CountrySelect"
 
 // ─── Color helpers ──────────────────────────────────────────────────────────────
 
@@ -27,9 +29,6 @@ const riskColor: Record<string, string> = {
 
 function fmt(n: number, opts?: Intl.NumberFormatOptions) {
   return new Intl.NumberFormat("en-US", opts).format(n)
-}
-function fmtUSD(n: number) {
-  return fmt(Math.round(n), { style: "currency", currency: "USD", maximumFractionDigits: 0 })
 }
 function fmtPct(n: number) {
   return fmt(n * 100, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + "%"
@@ -64,6 +63,16 @@ const DEFAULTS: Inputs = {
 }
 
 export default function ReskillingCalculator() {
+  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const handleCountryChange = (c: CountryCode) => {
+    setCountry(c)
+    setInputs(prev => ({
+      ...prev,
+      currentSalary: COUNTRIES[c].defaultSalary,
+      targetSalary: COUNTRIES[c].defaultTargetSalary,
+      programCost: COUNTRIES[c].defaultBootcampCost,
+    }))
+  }
   const [inputs, setInputs] = useState<Inputs>(DEFAULTS)
   const [step, setStep] = useState(0)
   const [selectedPreset, setSelectedPreset] = useState<string>("fullstack_bootcamp")
@@ -100,11 +109,15 @@ export default function ReskillingCalculator() {
   const maxAbs = Math.max(...cashFlows.map(Math.abs), 1)
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white font-mono">
+    <main className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       {/* Hero */}
-      <section className="border-b border-white/10 px-6 py-12 max-w-5xl mx-auto">
-        <p className="text-xs text-white/40 uppercase tracking-widest mb-3">CareerReturns · Free Calculator · 2026</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
+      <section className="relative overflow-hidden border-b border-white/10 px-6 py-12 max-w-5xl mx-auto">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="relative flex items-start justify-between gap-4 mb-4">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Free Calculator · 2026</p>
+          <CountrySelect value={country} onChange={handleCountryChange} />
+        </div>
+        <h1 className="relative text-3xl md:text-4xl font-semibold tracking-tight mb-3 leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
           Is Your Bootcamp or Certificate<br className="hidden md:block" /> Actually Worth It?
         </h1>
         <p className="text-white/60 max-w-2xl text-base mb-6">
@@ -118,7 +131,7 @@ export default function ReskillingCalculator() {
             { stat: "9", label: "Programs pre-loaded" },
             { stat: "60 sec", label: "Time to get your answer" },
           ].map(({ stat, label }) => (
-            <div key={label} className="border border-white/10 rounded-lg p-3 text-center bg-white/2">
+            <div key={label} className="border border-white/10 rounded-2xl p-3 text-center bg-white/5">
               <p className="text-white font-bold text-lg">{stat}</p>
               <p className="text-white/40 text-xs mt-0.5">{label}</p>
             </div>
@@ -140,7 +153,7 @@ export default function ReskillingCalculator() {
         <div>
           {/* Preset picker */}
           <div className="mb-8">
-            <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Quick Start — Pick a Program</p>
+            <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Quick Start — Pick a Program</p>
             <div className="grid grid-cols-1 gap-2">
               {RESKILLING_PRESETS.map(p => (
                 <button
@@ -155,7 +168,7 @@ export default function ReskillingCalculator() {
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">{p.label}</span>
                     <span className="text-xs text-white/40 ml-2">
-                      {p.typicalCost === 0 ? "Free" : fmtUSD(p.typicalCost)}
+                      {p.typicalCost === 0 ? "Free" : formatCurrency(p.typicalCost, country)}
                     </span>
                   </div>
                   <p className="text-xs text-white/40 mt-0.5">{p.description}</p>
@@ -222,7 +235,7 @@ export default function ReskillingCalculator() {
                 </Field>
               )}
               <div className="flex justify-end pt-2">
-                <button onClick={() => setStep(1)} className="px-6 py-2 bg-white text-black text-sm font-bold rounded hover:bg-white/90 transition-all">
+                <button onClick={() => setStep(1)} className="px-6 py-2 bg-linear-to-r from-indigo-600 to-violet-600 text-white shadow-[0_0_40px_rgba(99,102,241,0.3)] text-sm font-bold rounded hover:opacity-90 transition-all">
                   Next: Salary →
                 </button>
               </div>
@@ -262,7 +275,7 @@ export default function ReskillingCalculator() {
               </Field>
               <div className="flex justify-between pt-2">
                 <button onClick={() => setStep(0)} className="px-6 py-2 border border-white/20 text-sm rounded hover:border-white/40 transition-all">← Back</button>
-                <button onClick={() => setStep(2)} className="px-6 py-2 bg-white text-black text-sm font-bold rounded hover:bg-white/90 transition-all">Next: Financing →</button>
+                <button onClick={() => setStep(2)} className="px-6 py-2 bg-linear-to-r from-indigo-600 to-violet-600 text-white shadow-[0_0_40px_rgba(99,102,241,0.3)] text-sm font-bold rounded hover:opacity-90 transition-all">Next: Financing →</button>
               </div>
             </div>
           )}
@@ -315,7 +328,7 @@ export default function ReskillingCalculator() {
               <div className="grid grid-cols-2 gap-3">
                 <Metric
                   label="10-Year NPV"
-                  value={result.npv !== null ? fmtUSD(result.npv) : "—"}
+                  value={result.npv !== null ? formatCurrency(result.npv, country) : "—"}
                   sub={result.npv !== null && result.npv > 0 ? "Positive return" : "Negative return"}
                   highlight={result.npv !== null && result.npv > 0}
                 />
@@ -333,54 +346,54 @@ export default function ReskillingCalculator() {
                 />
                 <Metric
                   label="Salary Jump"
-                  value={fmtUSD(result.salaryDelta)}
-                  sub={`${fmtUSD(inputs.currentSalary)} → ${fmtUSD(inputs.targetSalary)}`}
+                  value={formatCurrency(result.salaryDelta, country)}
+                  sub={`${formatCurrency(inputs.currentSalary, country)} → ${formatCurrency(inputs.targetSalary, country)}`}
                   highlight={result.salaryDelta > 0}
                 />
               </div>
 
               {/* Vs no-change */}
-              <div className="rounded-lg border border-white/10 p-4 bg-white/2">
-                <p className="text-xs text-white/40 uppercase tracking-widest mb-3">vs. Staying in Current Career</p>
+              <div className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
+                <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">vs. Staying in Current Career</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-white/60">Total Program Cost</span>
-                    <span>{fmtUSD(result.totalProgramCost)}</span>
+                    <span>{formatCurrency(result.totalProgramCost, country)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-white/60">Opportunity Cost</span>
-                    <span>{fmtUSD(result.opportunityCost)}</span>
+                    <span>{formatCurrency(result.opportunityCost, country)}</span>
                   </div>
                   {result.loanDetails.totalInterest > 0 && (
                     <div className="flex justify-between">
                       <span className="text-white/60">Loan Interest</span>
-                      <span>{fmtUSD(result.loanDetails.totalInterest)}</span>
+                      <span>{formatCurrency(result.loanDetails.totalInterest, country)}</span>
                     </div>
                   )}
                 </div>
               </div>
 
               {/* Sensitivity */}
-              <div className="rounded-lg border border-white/10 p-4 bg-white/2">
-                <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Sensitivity (±10% Salary)</p>
+              <div className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
+                <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Sensitivity (±10% Salary)</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-green-400/80">Optimistic</span>
-                    <span className="text-green-400">{result.sensitivity.optimistic !== null ? fmtUSD(result.sensitivity.optimistic) : "—"}</span>
+                    <span className="text-green-400">{result.sensitivity.optimistic !== null ? formatCurrency(result.sensitivity.optimistic, country) : "—"}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-white/60">Base Case</span>
-                    <span>{result.npv !== null ? fmtUSD(result.npv) : "—"}</span>
+                    <span>{result.npv !== null ? formatCurrency(result.npv, country) : "—"}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-red-400/80">Conservative</span>
-                    <span className="text-red-400">{result.sensitivity.conservative !== null ? fmtUSD(result.sensitivity.conservative) : "—"}</span>
+                    <span className="text-red-400">{result.sensitivity.conservative !== null ? formatCurrency(result.sensitivity.conservative, country) : "—"}</span>
                   </div>
                 </div>
               </div>
 
               {/* Cash flow chart */}
-              <div className="rounded-lg border border-white/10 p-4 bg-white/2">
+              <div className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
                 <p className="text-xs text-white/40 uppercase tracking-widest mb-4">10-Year Cash Flow</p>
                 <div className="flex items-end gap-1 h-28">
                   {cashFlows.map((cf, i) => {

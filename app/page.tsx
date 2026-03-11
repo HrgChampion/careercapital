@@ -98,9 +98,86 @@ export default function HomePage() {
             href="/mba-roi-calculator"
             className="bg-linear-to-r from-indigo-600 to-violet-600 hover:opacity-90 transition-all px-8 py-4 rounded-xl font-medium text-white text-base shadow-[0_0_60px_rgba(99,102,241,0.35)]"
           >
-            Launch MBA ROI Calculator →
+            MBA ROI Calculator →
+          </Link>
+          <a
+            href="#career-tools"
+            className="border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all px-8 py-4 rounded-xl font-medium text-white text-base"
+          >
+            All 7 Career Tools ↓
+          </a>
+        </div>
+      </section>
+
+      {/* ── Career Return Tools ── */}
+      <section id="career-tools" className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16">
+        <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest mb-2">Career Return Tools</p>
+        <h2 className="text-2xl font-semibold tracking-tight mb-2">Financial Modeling for Career Returners</h2>
+        <p className="text-slate-400 text-sm mb-8 max-w-2xl">Whether you have a career gap, are evaluating a returnship program, or want to know what your skills gap is costing you — these tools model the exact dollar impact.</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <Link href="/career-gap-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-emerald-500/30 transition-all">
+            <div className="text-emerald-400 text-lg font-mono">↑</div>
+            <p className="font-semibold text-white group-hover:text-emerald-300 transition-colors">Career Gap Recovery Calculator</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              See exactly what your career break cost you and which re-entry path recovers earnings fastest.
+            </p>
+            <p className="text-emerald-400 text-sm font-medium">Calculate now →</p>
           </Link>
 
+          <Link href="/returnship-roi-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-blue-500/30 transition-all">
+            <div className="text-blue-400 text-lg font-mono">⇄</div>
+            <p className="font-semibold text-white group-hover:text-blue-300 transition-colors">Returnship ROI Analyzer</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Amazon, Goldman, McKinsey, Meta — is a returnship worth 16 weeks at 60% pay? Find the break-even.
+            </p>
+            <p className="text-blue-400 text-sm font-medium">Calculate now →</p>
+          </Link>
+
+          <Link href="/reskilling-roi-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-violet-500/30 transition-all">
+            <div className="text-violet-400 text-lg font-mono">▲</div>
+            <p className="font-semibold text-white group-hover:text-violet-300 transition-colors">Reskilling ROI Calculator</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Is a $15k bootcamp or Google certificate worth it? NPV, IRR, and payback across 9 program presets.
+            </p>
+            <p className="text-violet-400 text-sm font-medium">Calculate now →</p>
+          </Link>
+
+          <Link href="/salary-benchmark-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-amber-500/30 transition-all">
+            <div className="text-amber-400 text-lg font-mono">$</div>
+            <p className="font-semibold text-white group-hover:text-amber-300 transition-colors">Salary Benchmark Calculator</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Are you underpaid after your career break? See your market percentile and the NPV of negotiating now.
+            </p>
+            <p className="text-amber-400 text-sm font-medium">Calculate now →</p>
+          </Link>
+
+          <Link href="/education-comparison-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-sky-500/30 transition-all">
+            <div className="text-sky-400 text-lg font-mono">≡</div>
+            <p className="font-semibold text-white group-hover:text-sky-300 transition-colors">Education Comparison Engine</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              MBA vs bootcamp vs certificate vs Masters — side-by-side NPV ranking so you pick the highest-return path.
+            </p>
+            <p className="text-sky-400 text-sm font-medium">Calculate now →</p>
+          </Link>
+
+          <Link href="/skills-gap-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-rose-500/30 transition-all">
+            <div className="text-rose-400 text-lg font-mono">!</div>
+            <p className="font-semibold text-white group-hover:text-rose-300 transition-colors">Skills Gap Cost Calculator</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Not knowing Python costs $22k/year. Assess 12 skill categories and get a ranked upskilling action plan.
+            </p>
+            <p className="text-rose-400 text-sm font-medium">Calculate now →</p>
+          </Link>
+
+          <Link href="/lifetime-earnings-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-teal-500/30 transition-all md:col-span-2 lg:col-span-1">
+            <div className="text-teal-400 text-lg font-mono">∞</div>
+            <p className="font-semibold text-white group-hover:text-teal-300 transition-colors">Lifetime Earnings Modeler</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Stay, pivot, or take a break — model 3 career scenarios to retirement with real NPV and inflation-adjusted totals.
+            </p>
+            <p className="text-teal-400 text-sm font-medium">Calculate now →</p>
+          </Link>
 
         </div>
       </section>
@@ -288,7 +365,7 @@ export default function HomePage() {
         <div className="max-w-2xl space-y-6">
 
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">
-            Roadmap
+            The Platform
           </p>
 
           <h2 className="text-3xl font-semibold tracking-tight">
@@ -296,9 +373,8 @@ export default function HomePage() {
           </h2>
 
           <p className="text-slate-400 leading-relaxed">
-            Today: MBA ROI modeling.<br />
-            Next: Masters programs, bootcamps, career transitions,
-            and long-term compensation forecasting.
+            MBA ROI. Career gaps. Returnships. Reskilling. Skills gaps. Salary benchmarks. Lifetime earnings.<br />
+            Every major career investment decision — modeled with the same DCF rigor as a capital allocation decision.
           </p>
 
           <p className="text-slate-500 text-sm">

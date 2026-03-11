@@ -9,12 +9,11 @@ import {
   type ReturnshipProgram,
 } from "@/lib/returnshipEngine"
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
+import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { CountrySelect } from "@/components/CountrySelect"
 
 // ─── Helpers ────────────────────────────────────────────────────────────────────
 
-function fmtUSD(n: number) {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n)
-}
 function fmtPct(n: number) { return (n * 100).toFixed(0) + "%" }
 function fmtPct1(n: number) { return (n * 100).toFixed(1) + "%" }
 
@@ -39,6 +38,18 @@ const industryColors: Record<string, string> = {
 }
 
 export default function ReturnshipCalculator() {
+  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const handleCountryChange = (c: CountryCode) => {
+    setCountry(c)
+    const sal = COUNTRIES[c].defaultSalary
+    setInputs(prev => ({
+      ...prev,
+      preBreakSalary: sal,
+      postConversionSalary: Math.round(sal * 1.6),
+      directReentrySalary: Math.round(sal * 1.1),
+      returnshipWeeklyPay: Math.round(sal / 52 * 0.65),
+    }))
+  }
   const [selectedProgram, setSelectedProgram] = useState<string>("amazon_returnship")
   const [inputs, setInputs] = useState<ReturnshipInput>({
     currentGapYears: 2,
@@ -84,11 +95,15 @@ export default function ReturnshipCalculator() {
     : []
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white font-mono">
+    <main className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       {/* Hero */}
-      <section className="border-b border-white/10 px-6 py-12 max-w-5xl mx-auto">
-        <p className="text-xs text-white/40 uppercase tracking-widest mb-3">CareerReturns · Free Calculator · 2026</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
+      <section className="relative overflow-hidden border-b border-white/10 px-6 py-12 max-w-5xl mx-auto">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="relative flex items-start justify-between gap-4 mb-4">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Free Calculator · 2026</p>
+          <CountrySelect value={country} onChange={handleCountryChange} />
+        </div>
+        <h1 className="relative text-3xl md:text-4xl font-semibold tracking-tight mb-3 leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
           Amazon Returnship Converts at 90%.<br className="hidden md:block" /> But Is It Worth 16 Weeks of Your Time?
         </h1>
         <p className="text-white/60 max-w-2xl text-base mb-6">
@@ -103,7 +118,7 @@ export default function ReturnshipCalculator() {
             { stat: "~55%", label: "Break-even conversion rate" },
             { stat: "$280k+", label: "Amazon path NPV (10-yr)" },
           ].map(({ stat, label }) => (
-            <div key={label} className="border border-white/10 rounded-lg p-3 text-center bg-white/2">
+            <div key={label} className="border border-white/10 rounded-2xl p-3 text-center bg-white/5">
               <p className="text-white font-bold text-lg">{stat}</p>
               <p className="text-white/40 text-xs mt-0.5">{label}</p>
             </div>
@@ -123,7 +138,7 @@ export default function ReturnshipCalculator() {
       <div className="max-w-5xl mx-auto px-6 py-10">
         {/* Program picker */}
         <div className="mb-8">
-          <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Select a Returnship Program</p>
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Select a Returnship Program</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {RETURNSHIP_PROGRAMS.map(prog => (
               <button
@@ -141,7 +156,7 @@ export default function ReturnshipCalculator() {
                 </div>
                 <div className="flex gap-4 mt-1 text-xs text-white/40">
                   <span>{prog.durationWeeks} weeks</span>
-                  <span>{fmtUSD(prog.weeklyPayEstimate * 52)}/yr stipend</span>
+                  <span>{formatCurrency(prog.weeklyPayEstimate * 52, country)}/yr stipend</span>
                   <span>{fmtPct(prog.historicalConversionRate)} conversion</span>
                 </div>
               </button>
@@ -218,7 +233,7 @@ export default function ReturnshipCalculator() {
                 </div>
 
                 {/* Conversion break-even */}
-                <div className="rounded-lg border border-white/10 p-4 bg-white/2">
+                <div className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
                   <p className="text-xs text-white/40 uppercase tracking-widest mb-2">Conversion Break-Even</p>
                   <p className="text-2xl font-bold">
                     {result.conversionBreakEvenPct > 0 && result.conversionBreakEvenPct < 1
@@ -230,7 +245,7 @@ export default function ReturnshipCalculator() {
 
                 {/* Path comparison */}
                 {paths.map(({ key, data, color, border }) => (
-                  <div key={key} className={`rounded-lg border p-4 ${key === result.recommendedPath ? border : "border-white/10"} bg-white/2`}>
+                  <div key={key} className={`rounded-lg border p-4 ${key === result.recommendedPath ? border : "border-white/10"} bg-white/[0.02]`}>
                     <div className="flex justify-between items-center mb-3">
                       <div>
                         <span className={`text-sm font-medium ${key === result.recommendedPath ? color : "text-white/80"}`}>{data.label}</span>
@@ -242,7 +257,7 @@ export default function ReturnshipCalculator() {
                       <div>
                         <p className="text-white/40">NPV</p>
                         <p className={`font-medium ${data.npv !== null && data.npv > 0 ? "text-green-400" : "text-red-400"}`}>
-                          {data.npv !== null ? fmtUSD(data.npv) : "—"}
+                          {data.npv !== null ? formatCurrency(data.npv, country) : "—"}
                         </p>
                       </div>
                       <div>
@@ -251,19 +266,19 @@ export default function ReturnshipCalculator() {
                       </div>
                       <div>
                         <p className="text-white/40">Yr 1 Expected</p>
-                        <p className="font-medium">{fmtUSD(data.expectedYear1Salary)}</p>
+                        <p className="font-medium">{formatCurrency(data.expectedYear1Salary, country)}</p>
                       </div>
                       <div>
                         <p className="text-white/40">Yr 5 Expected</p>
-                        <p className="font-medium">{fmtUSD(data.expectedYear5Salary)}</p>
+                        <p className="font-medium">{formatCurrency(data.expectedYear5Salary, country)}</p>
                       </div>
                     </div>
                   </div>
                 ))}
 
                 {/* Conversion sweep mini chart */}
-                <div className="rounded-lg border border-white/10 p-4 bg-white/2">
-                  <p className="text-xs text-white/40 uppercase tracking-widest mb-3">NPV by Conversion Rate</p>
+                <div className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
+                  <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">NPV by Conversion Rate</p>
                   <div className="space-y-1">
                     {result.conversionSweep.filter((_, i) => i % 2 === 0).map(row => {
                       const maxNPV = Math.max(...result.conversionSweep.map(r => Math.max(r.returnshipNPV, r.directNPV)))
@@ -279,7 +294,7 @@ export default function ReturnshipCalculator() {
                             <div className="absolute left-0 top-0 h-full bg-green-400/30 rounded" style={{ width: `${rPct}%` }} />
                           </div>
                           <span className={`w-24 text-right ${rWins ? "text-green-400" : "text-blue-400"}`}>
-                            {fmtUSD(Math.max(row.returnshipNPV, row.directNPV))}
+                            {formatCurrency(Math.max(row.returnshipNPV, row.directNPV), country)}
                           </span>
                         </div>
                       )
