@@ -247,6 +247,7 @@ export default function ForEmployersPage() {
             <Link href="/contact" className="hover:text-slate-300 transition-colors">Contact</Link>
           </p>
           <p>Rational decisions. Compounding outcomes.</p>
+          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
         </footer>
 
       </div>

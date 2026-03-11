@@ -1,0 +1,313 @@
+"use client"
+
+import { useState, useMemo } from "react"
+import { calculateCompensation, GAP_PENALTY_PER_YEAR, type CompensationInput } from "@/lib/compensationEngine"
+import {
+  INDUSTRIES,
+  EXPERIENCE_BANDS,
+  LOCATION_TIERS,
+  COMPANY_SIZES,
+  type LocationTier,
+  type CompanySize,
+  type ExperienceBand,
+} from "@/lib/compensationBenchmarks"
+import { DISCOUNT_RATE, PROJECTION_YEARS } from "@/lib/mbaEngine"
+
+function fmtUSD(n: number) {
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n)
+}
+
+export default function SalaryBenchmarkCalculator() {
+  const [currentSalary, setCurrentSalary] = useState(85000)
+  const [gapYears, setGapYears] = useState(2)
+  const [yearsExperience, setYearsExperience] = useState(7)
+  const [industry, setIndustry] = useState("tech")
+  const [role, setRole] = useState("software_engineer")
+  const [experience, setExperience] = useState<ExperienceBand>("mid")
+  const [location, setLocation] = useState<LocationTier>("tier2")
+  const [companySize, setCompanySize] = useState<CompanySize>("enterprise")
+  const [growthRate] = useState(0.04)
+
+  const selectedIndustry = INDUSTRIES.find(i => i.id === industry)
+
+  // Auto-set role when industry changes
+  const handleIndustryChange = (ind: string) => {
+    setIndustry(ind)
+    const meta = INDUSTRIES.find(i => i.id === ind)
+    if (meta && meta.roles[0]) setRole(meta.roles[0].id)
+  }
+
+  const input: CompensationInput = {
+    currentSalary,
+    yearsExperience,
+    gapYears,
+    industry,
+    role,
+    location,
+    companySize,
+    experience,
+    discountRate: DISCOUNT_RATE,
+    annualGrowthRate: growthRate,
+  }
+
+  const result = useMemo(() => {
+    try { return calculateCompensation(input) }
+    catch { return null }
+  }, [currentSalary, gapYears, yearsExperience, industry, role, experience, location, companySize])
+
+  const isUnderpaid = result && result.currentVsMedian < -5000
+
+  return (
+    <main className="min-h-screen bg-[#0a0a0a] text-white font-mono">
+      {/* Hero */}
+      <section className="border-b border-white/10 px-6 py-12 max-w-5xl mx-auto">
+        <p className="text-xs text-white/40 uppercase tracking-widest mb-3">CareerReturns · Salary Intelligence</p>
+        <h1 className="text-3xl md:text-4xl font-bold mb-3">
+          Am I Underpaid After My Career Break?
+        </h1>
+        <p className="text-white/70 max-w-2xl mb-6 text-lg leading-relaxed">
+          Career returners accept <span className="text-white font-semibold">8–15% below market</span> just to get back in the door.
+          Enter your role and salary — we'll show you your percentile, the dollar gap, and the exact NPV of negotiating now vs. waiting vs. switching.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
+          {[
+            { stat: "8–15%", label: "Typical below-market offer for returners" },
+            { stat: "$47k", label: "Avg 10-yr NPV of a single $5k raise" },
+            { stat: "3 paths", label: "Raise now · build case · switch jobs" },
+            { stat: "60 sec", label: "To see your market position" },
+          ].map(({ stat, label }) => (
+            <div key={stat} className="border border-white/10 rounded-lg p-3 bg-white/2">
+              <div className="text-2xl font-bold text-white mb-1">{stat}</div>
+              <div className="text-xs text-white/40 leading-tight">{label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="max-w-5xl mx-auto px-6 py-10 grid md:grid-cols-[1fr_400px] gap-10">
+        {/* Left: inputs */}
+        <div className="space-y-6">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="text-xs text-white/50 uppercase tracking-widest block mb-1">Current Annual Salary ($)</label>
+              <input type="number" value={currentSalary} step={5000} min={0}
+                onChange={e => setCurrentSalary(parseFloat(e.target.value) || 0)}
+                className="w-full bg-white/5 border border-white/10 rounded px-3 py-2 text-sm focus:outline-none focus:border-white/30" />
+            </div>
+            <div>
+              <label className="text-xs text-white/50 uppercase tracking-widest block mb-1">Career Break Duration (yrs)</label>
+              <input type="number" value={gapYears} step={0.5} min={0} max={10}
+                onChange={e => setGapYears(parseFloat(e.target.value) || 0)}
+                className="w-full bg-white/5 border border-white/10 rounded px-3 py-2 text-sm focus:outline-none focus:border-white/30" />
+            </div>
+          </div>
+
+          <div>
+            <label className="text-xs text-white/50 uppercase tracking-widest block mb-2">Industry</label>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+              {INDUSTRIES.map(ind => (
+                <button key={ind.id} onClick={() => handleIndustryChange(ind.id)}
+                  className={`px-3 py-2 text-xs rounded border transition-all ${industry === ind.id ? "border-white/40 bg-white/5 text-white" : "border-white/10 text-white/40 hover:border-white/20 hover:text-white/60"}`}>
+                  {ind.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <label className="text-xs text-white/50 uppercase tracking-widest block mb-2">Role</label>
+            <div className="flex flex-wrap gap-2">
+              {(selectedIndustry?.roles ?? []).map(r => (
+                <button key={r.id} onClick={() => setRole(r.id)}
+                  className={`px-3 py-2 text-xs rounded border transition-all ${role === r.id ? "border-white/40 bg-white/5 text-white" : "border-white/10 text-white/40 hover:border-white/20"}`}>
+                  {r.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <label className="text-xs text-white/50 uppercase tracking-widest block mb-2">Experience Level</label>
+            <div className="flex flex-wrap gap-2">
+              {EXPERIENCE_BANDS.map(b => (
+                <button key={b.id} onClick={() => setExperience(b.id)}
+                  className={`px-3 py-2 text-xs rounded border transition-all ${experience === b.id ? "border-white/40 bg-white/5 text-white" : "border-white/10 text-white/40 hover:border-white/20"}`}>
+                  {b.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="text-xs text-white/50 uppercase tracking-widest block mb-2">Location</label>
+              <div className="space-y-1">
+                {LOCATION_TIERS.map(l => (
+                  <button key={l.id} onClick={() => setLocation(l.id)}
+                    className={`w-full text-left px-3 py-2 text-xs rounded border transition-all ${location === l.id ? "border-white/40 bg-white/5" : "border-white/10 text-white/40 hover:border-white/20"}`}>
+                    <span className="font-medium">{l.label}</span>
+                    <span className="block text-white/30 text-[10px]">{l.examples}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <label className="text-xs text-white/50 uppercase tracking-widest block mb-2">Company Size</label>
+              <div className="space-y-1">
+                {COMPANY_SIZES.map(c => (
+                  <button key={c.id} onClick={() => setCompanySize(c.id)}
+                    className={`w-full text-left px-3 py-2 text-xs rounded border transition-all ${companySize === c.id ? "border-white/40 bg-white/5" : "border-white/10 text-white/40 hover:border-white/20"}`}>
+                    <span className="font-medium">{c.label}</span>
+                    <span className="block text-white/30 text-[10px]">{c.examples}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: results */}
+        <div className="space-y-4">
+          {result ? (
+            <>
+              {/* Market position banner */}
+              <div className={`rounded-lg border p-5 ${isUnderpaid ? "border-red-400/30 bg-red-400/5" : "border-green-400/30 bg-green-400/5"}`}>
+                <p className="text-xs text-white/40 uppercase tracking-widest mb-2">Your Market Position</p>
+                <div className="flex items-end gap-2 mb-2">
+                  <span className={`text-4xl font-bold ${isUnderpaid ? "text-red-400" : "text-green-400"}`}>
+                    {result.currentPercentile}th
+                  </span>
+                  <span className="text-white/50 mb-1">percentile</span>
+                </div>
+                {result.benchmark && (
+                  <p className={`text-sm ${isUnderpaid ? "text-red-300" : "text-green-300"}`}>
+                    {isUnderpaid
+                      ? `You're ${fmtUSD(result.annualLeaveOnTable)} below market median`
+                      : `You're ${fmtUSD(-result.currentVsMedian)} above market median`}
+                  </p>
+                )}
+              </div>
+
+              {/* Benchmark band */}
+              {result.benchmark && (
+                <div className="rounded-lg border border-white/10 p-4 bg-white/2">
+                  <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Market Range for Your Profile</p>
+                  <div className="relative h-6 bg-white/5 rounded-full overflow-hidden mb-2">
+                    <div className="absolute inset-y-0 bg-white/10 rounded-full"
+                      style={{
+                        left: "0%",
+                        width: "100%",
+                      }} />
+                    <div className="absolute inset-y-0 bg-blue-400/30 rounded-full"
+                      style={{
+                        left: `${((result.benchmark.p25 / result.benchmark.p90) * 100)}%`,
+                        right: `${100 - ((result.benchmark.p75 / result.benchmark.p90) * 100)}%`,
+                      }} />
+                    {/* Current salary marker */}
+                    <div className="absolute inset-y-0 w-1 bg-white rounded"
+                      style={{ left: `${Math.min(98, Math.max(1, (currentSalary / result.benchmark.p90) * 100))}%` }} />
+                  </div>
+                  <div className="grid grid-cols-4 gap-1 text-xs text-center">
+                    {[
+                      { label: "P25", val: result.benchmark.p25 },
+                      { label: "Median", val: result.benchmark.p50 },
+                      { label: "P75", val: result.benchmark.p75 },
+                      { label: "P90", val: result.benchmark.p90 },
+                    ].map(b => (
+                      <div key={b.label}>
+                        <p className="text-white/30">{b.label}</p>
+                        <p className="font-medium text-white/80">{fmtUSD(b.val)}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-2 text-center">
+                    <span className="text-xs text-white/50">Your salary: </span>
+                    <span className="text-xs font-medium text-white">{fmtUSD(currentSalary)}</span>
+                  </div>
+                </div>
+              )}
+
+              {/* Gap penalty */}
+              {gapYears > 0 && (
+                <div className="rounded-lg border border-white/10 p-4 bg-white/2">
+                  <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Career Gap Impact</p>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <p className="text-xs text-white/40">Estimated Gap Penalty</p>
+                      <p className="font-medium text-orange-400">{fmtUSD(result.estimatedGapPenalty)}/yr</p>
+                      <p className="text-[10px] text-white/30">{GAP_PENALTY_PER_YEAR * 100}% per gap year</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-white/40">Penalty Erodes In</p>
+                      <p className="font-medium">{result.gapPenaltyRecoveryYears.toFixed(1)} yrs</p>
+                      <p className="text-[10px] text-white/30">As performance proves out</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Leave on table */}
+              {isUnderpaid && (
+                <div className="rounded-lg border border-red-400/20 p-4 bg-red-400/5">
+                  <p className="text-xs text-white/40 uppercase tracking-widest mb-3">What You&apos;re Leaving On The Table</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <p className="text-xs text-white/40">Per Year</p>
+                      <p className="text-xl font-bold text-red-400">{fmtUSD(result.annualLeaveOnTable)}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-white/40">{PROJECTION_YEARS}-Year NPV</p>
+                      <p className="text-xl font-bold text-red-400">{fmtUSD(result.tenYearNPVLeaveOnTable)}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Negotiation scenarios */}
+              <div>
+                <p className="text-xs text-white/40 uppercase tracking-widest mb-3">Your Options</p>
+                <div className="space-y-3">
+                  {result.negotiationScenarios.map((s, i) => (
+                    <div key={i} className="rounded-lg border border-white/10 p-4 bg-white/2">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <p className="text-sm font-medium">{s.label}</p>
+                          <p className="text-xs text-white/40">{s.description}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-sm font-bold text-green-400">
+                            {s.netNPVGain !== null && s.netNPVGain > 0 ? "+" + fmtUSD(s.netNPVGain) : "—"}
+                          </p>
+                          <p className="text-[10px] text-white/30">NPV gain</p>
+                        </div>
+                      </div>
+                      <p className="text-xs text-white/50 leading-relaxed">{s.recommendation}</p>
+                      <div className="mt-2 pt-2 border-t border-white/5 flex justify-between text-xs text-white/40">
+                        <span>Target salary: {fmtUSD(s.expectedSalaryYear1)}</span>
+                        <span>Action cost: {s.actionCost > 0 ? fmtUSD(s.actionCost) : "Free"}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="rounded-lg border border-white/10 p-6 text-center text-white/40 text-sm">
+              Select your profile to see results
+            </div>
+          )}
+        </div>
+      </div>
+
+      <section className="border-t border-white/10 px-6 py-8 max-w-5xl mx-auto">
+        <p className="text-xs text-white/30 uppercase tracking-widest mb-2">Methodology</p>
+        <p className="text-xs text-white/40 max-w-2xl">
+          Benchmarks sourced from BLS Occupational Employment Statistics, Levels.fyi, Glassdoor, and GMAC placement data.
+          Gap penalty model based on academic research showing ~3-5% salary discount per career break year.
+          NPV of underpayment discounted at {DISCOUNT_RATE * 100}% over {PROJECTION_YEARS} years.
+          All figures are base salary only — total comp may differ significantly in equity-heavy roles.
+        </p>
+      </section>
+    </main>
+  )
+}

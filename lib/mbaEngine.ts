@@ -146,12 +146,12 @@ export function calculateLoanDetails(
 // ─────────────────────────────────────────────────────────────────────
 
 /** NPV = Σ CF[t] / (1+r)^t for t = 0..n */
-function npvFromSeries(cashFlows: number[], rate: number): number {
+export function npvFromSeries(cashFlows: number[], rate: number): number {
   return cashFlows.reduce((sum, cf, t) => sum + cf / Math.pow(1 + rate, t), 0)
 }
 
 /** Find rate r where npvFromSeries(cashFlows, r) = 0 via bisection + fallback scan */
-function irrFromSeries(
+export function irrFromSeries(
   cashFlows: number[],
   options?: { tol?: number; maxIter?: number }
 ): number | null {

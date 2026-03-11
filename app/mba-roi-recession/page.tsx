@@ -34,10 +34,11 @@ export default function MbaRoiRecessionPage() {
           <h2 className="text-2xl font-semibold tracking-tight">Why MBA Applications Rise in Recessions</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             The MBA application cycle is counter-cyclical. When the economy contracts and job prospects worsen,
-            applications to graduate programs rise. GMAC data from 2008–09 and 2020 both confirm this pattern.
-            In 2009, MBA applications at top US programs rose 15–20% year-over-year. In 2020, many programs
-            reported application increases of 10–25% in the second application round following the initial
-            pandemic lockdown.
+            applications to graduate programs rise. Reported enrollment and application trends from 2008–09 and
+            2020 both confirm this pattern — GMAC&apos;s annual prospective student surveys showed meaningful
+            upticks in both periods. In 2009, top US programs broadly reported application increases in the
+            15–20% range year-over-year. In 2020, many programs reported application increases of 10–25% in
+            the second round following the initial pandemic lockdown.
           </p>
           <p className="text-slate-400 text-sm leading-relaxed">
             The strategic logic is defensible: if you are considering an MBA anyway, entering during a recession
@@ -351,6 +352,7 @@ export default function MbaRoiRecessionPage() {
             <Link href="/mba-break-even" className="hover:text-slate-300 transition-colors">MBA Break-Even</Link>
           </p>
           <p>Rational decisions. Compounding outcomes.</p>
+          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
         </footer>
 
       </div>

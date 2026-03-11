@@ -377,6 +377,7 @@ export default function MbaRoi100kDebtPage() {
             <Link href="/mba-roi-healthcare" className="hover:text-slate-300 transition-colors">Healthcare MBA ROI</Link>
           </p>
           <p>Rational decisions. Compounding outcomes.</p>
+          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
         </footer>
 
       </div>
