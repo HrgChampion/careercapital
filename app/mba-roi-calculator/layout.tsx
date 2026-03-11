@@ -1,3 +1,5 @@
+import { pageAlternates } from "@/lib/seo"
+
 export const metadata = {
   title: "MBA ROI Calculator — See Your Payback Period in 60 Seconds",
   description:
@@ -10,9 +12,7 @@ export const metadata = {
     "MBA IRR calculation",
     "MBA financial analysis",
   ],
-  alternates: {
-    canonical: "https://careerreturns.com/mba-roi-calculator",
-  },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-calculator"),
 }
 
 const faqSchema = {

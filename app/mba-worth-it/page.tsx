@@ -1,12 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
   description:
     "Is an MBA worth it financially in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math reliably fails. Calculate now →",
-  alternates: {
-    canonical: "https://careerreturns.com/mba-worth-it",
-  },
+  alternates: pageAlternates("https://careerreturns.com/mba-worth-it"),
   openGraph: {
     title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
     description: "Is an MBA worth it financially in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math reliably fails.",

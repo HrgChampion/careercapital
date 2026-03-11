@@ -22,6 +22,11 @@ export const metadata = {
     title: "CareerReturns — MBA ROI Calculator & Career Investment Tools",
     description: "Free DCF-based MBA ROI calculator. NPV, IRR, and break-even analysis across 12 industries.",
   },
+  alternates: {
+    languages: {
+      "x-default": "https://careerreturns.com",
+    },
+  },
 }
 
 const orgSchema = {

@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI 2026: IRR, NPV & Break-Even by Industry [Guide]",
   description:
     "MBA ROI in 2026: IRR by industry (4%–55%), break-even periods, scholarship impact, online vs full-time comparison, and US vs Europe data. See full guide →",
-  alternates: { canonical: "https://careerreturns.com/mba-roi" },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi"),
 }
 
 const roiTable = [

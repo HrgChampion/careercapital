@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI Calculator & Career Investment Tools (2026)",
   description:
     "Model your MBA return on investment with institutional-grade DCF analysis. NPV, IRR, and break-even calculator. Free tools for smarter career decisions.",
-  alternates: { canonical: "https://careerreturns.com" },
+  alternates: pageAlternates("https://careerreturns.com"),
   openGraph: {
     title: "MBA ROI Calculator & Career Investment Tools (2026)",
     description: "Free MBA ROI calculator using DCF, NPV, and IRR analysis. Compare 12 industries, school tiers, and scenarios. Make data-driven career investment decisions.",

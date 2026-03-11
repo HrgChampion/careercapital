@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "Average MBA Salary 2026: $150K Median by School & Industry",
   description:
     "Average MBA salary in 2026: $150K median post-MBA. Pay by school tier (M7, T15, online), by industry, and salary growth at years 1, 3, 5, and 10. See data →",
-  alternates: { canonical: "https://careerreturns.com/average-mba-salary" },
+  alternates: pageAlternates("https://careerreturns.com/average-mba-salary"),
 }
 
 const salaryByTier = [

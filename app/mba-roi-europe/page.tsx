@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI Europe 2026: INSEAD, LBS & Payback Data [Real]",
   description:
     "MBA ROI for European programs: INSEAD, LBS, and Oxford costs, one-year format advantages, post-MBA salaries, and when Europe beats a US M7. See full data →",
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-europe", true),
 }
 
 export default function MbaRoiEuropePage() {
