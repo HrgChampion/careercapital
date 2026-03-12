@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI for Healthcare (2026): Salaries, PSLF & Break-Even",
   description:
     "MBA ROI for healthcare. Hospital administration salary, healthcare consulting ROI, PSLF loan forgiveness strategy, top programs, and break-even math. See data →",
-  alternates: { canonical: "https://careerreturns.com/mba-roi-healthcare" },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-healthcare"),
 }
 
 export default function MbaRoiHealthcarePage() {

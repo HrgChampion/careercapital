@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "How Much Does an MBA Increase Salary? +47% Avg (2026)",
   description:
     "MBA salary increase data for 2026. Pre-MBA medians by role, post-MBA pay by sector (consulting +$105K, banking +$90K, tech +$60K). Calculate your ROI →",
+  alternates: pageAlternates("https://careerreturns.com/mba-salary-increase"),
 }
 
 export default function MbaSalaryIncreasePage() {

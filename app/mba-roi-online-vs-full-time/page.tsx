@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "Online vs Full-Time MBA ROI (2026): Which Pays Back Faster?",
   description:
     "Online vs full-time MBA ROI compared side by side. Opportunity cost math, salary outcomes, break-even timelines, and when each format wins. See data →",
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-online-vs-full-time"),
 }
 
 export default function MbaRoiOnlineVsFullTimePage() {

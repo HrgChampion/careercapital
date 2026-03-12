@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA Scholarship ROI (2026): How Aid Flips IRR & Break-Even",
   description:
     "MBA scholarship ROI. How 50% merit aid changes break-even, NPV, and IRR. When to choose full aid at a lower-ranked school over a top program. See math →",
-  alternates: { canonical: "https://careerreturns.com/mba-roi-scholarship" },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-scholarship"),
 }
 
 export default function MbaRoiScholarshipPage() {

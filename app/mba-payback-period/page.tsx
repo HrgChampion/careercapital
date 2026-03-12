@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA Payback Period 2026: 4–8 Years by Industry [Real Math]",
   description:
     "MBA payback period by career track: consulting 4.2 yrs, banking 4.5 yrs, tech 6.1 yrs. Calculation methodology and what compresses payback timelines. See math →",
-  alternates: { canonical: "https://careerreturns.com/mba-payback-period" },
+  alternates: pageAlternates("https://careerreturns.com/mba-payback-period"),
 }
 
 const paybackByTrack = [

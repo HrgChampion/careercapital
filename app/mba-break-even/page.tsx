@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA Break-Even Period (2026): MBB, Banking & Tech Timelines",
   description:
     "MBA break-even with real math. Three scenarios, factors that shift your payback timeline, and a free DCF calculator linked throughout. Calculate now →",
+  alternates: pageAlternates("https://careerreturns.com/mba-break-even"),
 }
 
 export default function MbaBreakEvenPage() {

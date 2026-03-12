@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI for Veterans (2026): GI Bill, Yellow Ribbon & MBB",
   description:
     "MBA ROI for veterans: GI Bill Yellow Ribbon math, MBB veteran recruiting, net cost after benefits, post-MBA salary, and top programs for officers. See data →",
-  alternates: { canonical: "https://careerreturns.com/mba-roi-military" },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-military"),
 }
 
 export default function MbaRoiMilitaryPage() {

@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI in a Recession (2026): 2008 & 2020 Hiring Data",
   description:
     "MBA ROI in a recession. 2008 and 2020 hiring data, NPV models with salary delays, industries that held, and how to structure your MBA for downturns. See data →",
-  alternates: { canonical: "https://careerreturns.com/mba-roi-recession" },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-recession"),
 }
 
 export default function MbaRoiRecessionPage() {

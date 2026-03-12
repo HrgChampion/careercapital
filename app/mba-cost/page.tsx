@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA Cost (2026): Tuition, Living Expenses & Opportunity Cost",
   description:
     "2026 MBA cost breakdown. Tuition at M7, T15, and online programs, living costs, opportunity cost, loan interest, and true total economic cost. See data →",
-  alternates: { canonical: "https://careerreturns.com/mba-cost" },
+  alternates: pageAlternates("https://careerreturns.com/mba-cost"),
 }
 
 const tuitionTable = [

@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI in Tech (2026): PM Roles, FAANG Pay & Break-Even",
   description:
     "MBA ROI for tech in 2026. PM salaries, RSU comp, the post-2022 recruiting shift, and why high pre-MBA tech salaries make the ROI math hard. See data →",
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-tech"),
 }
 
 export default function MbaRoiTechPage() {

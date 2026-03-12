@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI for Engineers (2026): When High Pay Kills the Case",
   description:
     "MBA ROI for engineers: compressed salary delta, SWE to PM math, consulting vs tech outcomes, and when the MBA makes financial sense for engineers. See data →",
-  alternates: { canonical: "https://careerreturns.com/mba-roi-engineers" },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-engineers"),
 }
 
 export default function MbaRoiEngineersPage() {

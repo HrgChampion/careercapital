@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState, useMemo } from "react"
 import {
   calculateComparison,
@@ -386,6 +387,23 @@ export default function EducationComparisonCalculator() {
           Rankings are purely financial — non-financial benefits (network, prestige, learning) are not modeled.
         </p>
       </section>
+
+      <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
+        <p>
+          <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
+          {" · "}
+          <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
+          {" · "}
+          <Link href="/mba-roi" className="hover:text-slate-300 transition-colors">MBA ROI Guide</Link>
+          {" · "}
+          <Link href="/mba-vs-masters-roi" className="hover:text-slate-300 transition-colors">MBA vs Master&apos;s ROI</Link>
+          {" · "}
+          <Link href="/about" className="hover:text-slate-300 transition-colors">About</Link>
+          {" · "}
+          <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
+        </p>
+        <p>Rational decisions. Compounding outcomes.</p>
+      </footer>
     </main>
   )
 }

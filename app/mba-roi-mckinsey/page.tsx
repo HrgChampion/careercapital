@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI for McKinsey (2026): $192K Salary, IRR & Break-Even",
   description:
     "MBA ROI for McKinsey: $192K associate salary, break-even math, school placement rates into MBB, and when the McKinsey financial case works. Calculate now →",
-  alternates: { canonical: "https://careerreturns.com/mba-roi-mckinsey" },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-mckinsey"),
 }
 
 export default function MbaRoiMcKinseyPage() {

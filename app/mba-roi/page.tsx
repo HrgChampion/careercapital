@@ -155,6 +155,7 @@ export default function MbaRoiPage() {
               { href: "/mba-roi-insead-vs-wharton", label: "INSEAD vs. Wharton", desc: "Head-to-head ROI comparison" },
               { href: "/mba-roi-online-vs-full-time", label: "Online vs. Full-Time MBA", desc: "When online wins on IRR" },
               { href: "/mba-roi-big4-vs-mbb", label: "Big 4 vs. MBB ROI", desc: "$47K salary gap explained" },
+              { href: "/mba-vs-masters-roi", label: "MBA vs. Master's ROI", desc: "MS Finance, MSCS & MFin vs MBA" },
               { href: "/mba-roi-report-2026", label: "MBA ROI Report 2026", desc: "Full dataset: all 12 industries" },
             ].map(({ href, label, desc }) => (
               <Link

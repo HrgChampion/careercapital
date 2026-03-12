@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA vs Master's ROI (2026): MS Finance, MSCS & MFin vs MBA",
   description:
     "MBA vs Master's ROI 2026. Salary, IRR, and break-even: MBA vs MS Finance, MSCS, MFin, MEM, and JD. Decision framework for when each degree wins. See data →",
-  alternates: { canonical: "https://careerreturns.com/mba-vs-masters-roi" },
+  alternates: pageAlternates("https://careerreturns.com/mba-vs-masters-roi"),
 }
 
 const costComparison = [

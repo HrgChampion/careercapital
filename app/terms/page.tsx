@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "Terms of Service | CareerReturns",
   description:
     "CareerReturns terms of service. Calculator results are for educational purposes only and do not constitute financial advice.",
+  alternates: pageAlternates("https://careerreturns.com/terms"),
 }
 
 export default function TermsPage() {

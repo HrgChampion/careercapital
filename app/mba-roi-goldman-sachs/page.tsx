@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI for Goldman Sachs (2026): $210K+ Pay & Break-Even",
   description:
     "MBA ROI for Goldman Sachs: GS associate salary, year-end bonus, break-even math, school placement rates, and the investment banking financial case. See data →",
-  alternates: { canonical: "https://careerreturns.com/mba-roi-goldman-sachs" },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-goldman-sachs"),
 }
 
 export default function MbaRoiGoldmanSachsPage() {

@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "Privacy Policy | CareerReturns",
   description:
     "CareerReturns privacy policy. What data we collect, how we use it, and your rights as a visitor.",
+  alternates: pageAlternates("https://careerreturns.com/privacy"),
 }
 
 export default function PrivacyPage() {

@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI: Consulting 2026 — $192K MBB Salary & Break-Even",
   description:
     "MBA ROI for consulting. MBB associate salary data, break-even math, which schools place into McKinsey, Bain, and BCG — and when the numbers work. See data →",
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-consulting"),
 }
 
 export default function MbaRoiConsultingPage() {

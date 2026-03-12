@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI With $100k Debt (2026): Loan Math & Career Tracks",
   description:
     "MBA ROI with $100K debt. Exact loan payment math, break-even by debt level, debt-to-income thresholds, and which career tracks produce positive ROI. See math →",
-  alternates: { canonical: "https://careerreturns.com/mba-roi-100k-debt" },
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-100k-debt"),
 }
 
 export default function MbaRoi100kDebtPage() {

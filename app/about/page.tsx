@@ -1,12 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "About CareerReturns — MBA ROI Methodology & Data Sources",
   description:
     "CareerReturns builds institutional-grade financial models for MBA ROI decisions. Learn about our DCF methodology, data sources, and the team behind the tools.",
-  alternates: {
-    canonical: "https://careerreturns.com/about",
-  },
+  alternates: pageAlternates("https://careerreturns.com/about"),
   openGraph: {
     title: "About CareerReturns — MBA ROI Methodology & Data Sources",
     description: "Learn how CareerReturns models MBA ROI using discounted cash flow analysis, NPV, and IRR across 12 industries and all major school tiers.",

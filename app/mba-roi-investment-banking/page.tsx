@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
   title: "MBA ROI: Investment Banking 2026 — $210K Pay & Break-Even",
   description:
     "MBA ROI for investment banking. Bulge bracket associate pay, PE exit math, break-even timeline, and when banking justifies M7 tuition. See full data →",
+  alternates: pageAlternates("https://careerreturns.com/mba-roi-investment-banking"),
 }
 
 export default function MbaRoiInvestmentBankingPage() {
