@@ -2,9 +2,9 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Average MBA Salary 2026: $150K Median by School & Industry",
+  title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
   description:
-    "Average MBA salary in 2026: $150K median post-MBA. Pay by school tier (M7, T15, online), by industry, and salary growth at years 1, 3, 5, and 10. See data →",
+    "What is the average salary for an MBA? MBA average salary in 2026 ranges from $85K at mid-tier online programs to $215K+ at M7 placements into MBB consulting. Earning an MBA from a top business school can increase your earning potential by 47–100%. Data by school tier, industry, and career stage.",
   alternates: pageAlternates("https://careerreturns.com/average-mba-salary"),
 }
 
@@ -40,13 +40,13 @@ export default function AverageMbaSalaryPage() {
         <header className="space-y-5">
           <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">CareerReturns · MBA Salary Data</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
-            Average MBA Salary (2026):<br />
-            <span className="text-slate-400">By School, Industry & Experience</span>
+            Average Salary for an MBA (2026):<br />
+            <span className="text-slate-400">MBA Average Salary by School & Experience</span>
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
-            Post-MBA salary varies from $85,000 at mid-tier online programs to $215,000+ at M7 programs
-            placed into MBB consulting. The right comparison depends on your school tier, target industry,
-            and where you are in your post-MBA career.
+            The average salary for an MBA graduate varies from $85,000 at mid-tier online programs to $215,000+
+            at M7 business schools placed into MBB consulting. For most MBA students, earning an MBA degree
+            raises earning potential by 47–100% depending on career path, school tier, and destination industry.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
@@ -157,6 +157,38 @@ export default function AverageMbaSalaryPage() {
           </Link>
         </section>
 
+
+        {/* About This Data */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">About This MBA Average Salary Data</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The salary figures on this page represent the average starting salary for MBA graduates based on
+            data from the Graduate Management Admission Council (GMAC) annual employment survey, school-published
+            placement reports, Glassdoor aggregates, and Levels.fyi total compensation data. All figures
+            reflect 2026 market conditions.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Base salary figures do not include signing bonuses, performance bonuses, or equity grants. Total
+            compensation — including year-end bonuses in banking and RSU grants in tech — can exceed the base
+            salary by 30–80% in high-paying tracks. Average starting salary for MBA graduates at full-time MBA
+            programs is significantly higher than for online MBA programs, primarily because full time MBA
+            students have access to on-campus structured recruiting pipelines that online MBA students do not.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            MBA graduates from Wharton School, Harvard Business School, and other M7 business schools command
+            a material salary premium over T15 and T25 peers — particularly in management consulting and
+            investment banking, where school tier directly determines recruiting access. For MBA students
+            targeting general management, CPG, or healthcare career paths, the salary gap between M7 and T15
+            programs narrows significantly. The higher salary for MBB-bound MBA graduates reflects both school
+            tier and selective on-campus recruiting, not the MBA degree alone.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Salary for MBA graduates in technology has converged with finance tracks at M7 programs due to
+            RSU appreciation at FAANG companies. However, this total compensation figure is more volatile
+            than consulting base salary, which is why IRR comparisons between career paths should stress-test
+            compensation assumptions. The MBA ROI calculator below models your personal numbers.
+          </p>
+        </section>
 
         {/* ── Related Guides ── */}
         <section className="border-t border-white/10 pt-10 mt-10">

@@ -90,8 +90,14 @@ export default function Home() {
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">MBA ROI Calculator – Is an MBA Worth It?</h1>
             <p className="mt-4 text-slate-400 text-lg leading-relaxed max-w-2xl">
               This MBA ROI calculator helps you determine if an MBA is worth it financially by modeling
-              tuition costs, lost income, student loans, and post-MBA salary increases using
-              Net Present Value (NPV), Internal Rate of Return (IRR), and break-even analysis.
+              tuition costs, forgone income during enrollment, student loans, pre-MBA salary, and
+              post-MBA salary increases using Net Present Value (NPV), Internal Rate of Return (IRR),
+              and break-even analysis — projecting your return on investment over a decade after graduation.
+            </p>
+            <p className="mt-3 text-slate-500 text-sm leading-relaxed max-w-2xl">
+              Unlike simplified Bloomberg ROI calculator tools, this business school ROI calculator uses a
+              full DCF model that accounts for opportunity cost, loan repayment schedules, and salary growth
+              compounding — giving you a more accurate picture of your MBA&apos;s true return on investment.
             </p>
           </section>
           <button

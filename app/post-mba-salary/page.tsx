@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Post-MBA Salary 2026: Pay by Industry & School Tier",
+  title: "What Is Salary After an MBA? Post-MBA Salary 2026 by Industry & School",
   description:
-    "Post-MBA salary data for 2026. First-year pay: consulting $192K, banking $210K, tech $195K. Includes M7 vs T15 breakdown and 10-year salary curves. See data →",
-  alternates: { canonical: "https://careerreturns.com/post-mba-salary" },
+    "What is salary after an MBA? Post-MBA salary in 2026: MBB consulting $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. MBA degree salary uplift averages +47% vs. pre-MBA base. Full data by school tier, industry, and career path.",
+  alternates: pageAlternates("https://careerreturns.com/post-mba-salary"),
 }
 
 const salaryByIndustry = [
@@ -95,10 +96,13 @@ export default function PostMbaSalaryPage() {
         <header className="space-y-5">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Post-MBA Salary Data</p>
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
-            Post-MBA Salary 2026
+            What Is Salary After an MBA?<br />
+            <span className="text-slate-400">2026 Data by Industry &amp; School</span>
           </h1>
           <p className="text-slate-400 leading-relaxed">
-            First-year pay by industry and school tier, 10-year salary growth curves, and how post-MBA compensation compares to pre-MBA earnings. All figures reflect 2026 market data.
+            Salary after an MBA degree ranges from $85,000 in nonprofit roles to $350,000+ in investment banking.
+            First-year pay by industry and school tier, 10-year salary growth curves, and how post-MBA
+            compensation compares to pre-MBA earnings. All figures reflect 2026 market data.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
@@ -303,6 +307,40 @@ export default function PostMbaSalaryPage() {
               </div>
             </Link>
           </div>
+        </section>
+
+        {/* Context & Methodology */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Understanding Salary After an MBA Degree</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Salary after an MBA is determined primarily by three factors: destination industry, business school
+            tier, and pre-MBA background. Candidates with a bachelor&apos;s degree in engineering or finance
+            entering tech or banking often see the largest absolute salary after MBA, but the percentage
+            uplift is frequently higher for candidates switching career paths from lower-paying fields. The
+            average starting salary for MBA graduates varies significantly by these factors — the national
+            average masks a wide distribution.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The Graduate Management Admission Council (GMAC) annual corporate recruiters survey consistently
+            shows that MBA degree holders command a higher salary than candidates with only a bachelor&apos;s
+            degree in management roles — with the premium widest in consulting, finance, and general
+            management. Salary for MBA graduates in the highest-paying jobs (MBB partner, PE principal,
+            FAANG senior PM) can reach $500K–$2M+ at the 10-year mark, but these are tail outcomes.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            For most MBA students, the realistic question is whether the salary delta — the difference between
+            what you would earn without the degree vs. with it — is large enough to boost your salary
+            sufficiently to justify the tuition cost and two years of forgone income. The MBA ROI calculator
+            models this delta precisely. Career advancement into senior roles (VP, Director, Partner) is the
+            long-term mechanism through which the MBA delivers higher salary and earning potential; the first-year
+            salary is just the starting point.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Signing bonuses (typically $5,000–$30,000 for MBA roles in consulting and banking) are excluded
+            from base salary figures above but meaningfully reduce payback period in the first year. For a
+            full return on investment analysis including loan repayment, forgone income, and salary growth
+            over time, use the MBA ROI calculator below.
+          </p>
         </section>
 
         {/* Footer */}

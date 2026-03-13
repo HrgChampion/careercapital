@@ -1,9 +1,9 @@
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Calculator — See Your Payback Period in 60 Seconds",
+  title: "MBA ROI Calculator — Business School ROI Calculator | NPV, IRR & Bloomberg-Style Analysis",
   description:
-    "Free MBA ROI calculator. Model NPV, IRR, and break-even using real DCF analysis — not simplified shortcuts. Enter your numbers and calculate now →",
+    "Free MBA ROI calculator and business school ROI calculator. Model NPV, IRR, and break-even using full DCF analysis — accounting for forgone income, pre-MBA salary, and salary growth over a decade after graduation. Enter your numbers now →",
   keywords: [
     "MBA ROI calculator",
     "is MBA worth it calculator",
@@ -24,7 +24,7 @@ const faqSchema = {
       name: "Is an MBA worth it financially?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "It depends on tuition, your pre- and post-MBA salary delta, how much you borrow, and your personal discount rate. This calculator models the MBA as a capital allocation decision. A positive NPV means the MBA creates value at your assumed discount rate.",
+        text: "It depends on tuition, your pre- and post-MBA salary delta, how much you borrow, and your personal discount rate. This calculator models the MBA as a capital allocation decision — similar to the Bloomberg Businessweek MBA ROI calculator methodology, but using a full DCF model. A positive NPV means the MBA creates value at your assumed discount rate.",
       },
     },
     {
