@@ -4,7 +4,7 @@ import { pageAlternates } from "@/lib/seo"
 export const metadata = {
   title: "MBA ROI for Engineers (2026): When High Pay Kills the Case",
   description:
-    "MBA ROI for engineers: compressed salary delta, SWE to PM math, consulting vs tech outcomes, and when the MBA makes financial sense for engineers. See data →",
+    "MBA ROI for engineers and data scientists in 2026: compressed salary delta, SWE to PM math, consulting vs tech outcomes. Should a software engineer get an MBA? Decision framework + MBA ROI for data scientists and ML engineers. Full data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-engineers"),
 }
 
@@ -61,7 +61,7 @@ export default function MbaRoiEngineersPage() {
 
         {/* Pre-MBA salary by engineer tier */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold tracking-tight">Engineer Pre-MBA Salary Benchmarks (2025)</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Engineer Pre-MBA Salary Benchmarks (2026)</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             Before calculating the delta, you need an accurate pre-MBA total compensation figure.
             Engineers systematically undercount their compensation by ignoring equity. The table below reflects
@@ -331,6 +331,106 @@ export default function MbaRoiEngineersPage() {
           </p>
         </section>
 
+        {/* MBA ROI for Data Scientists */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">MBA ROI for Data Scientists and ML Engineers</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Data scientists face an even sharper version of the compressed delta problem than software engineers.
+            The gap between a senior ML engineer&apos;s total compensation and a post-MBA consulting or PM salary
+            has narrowed significantly as AI roles command premium pay — making the financial case for an MBA
+            weaker than it was five years ago for this cohort.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                level: "Data Analyst / BI Engineer",
+                total: "$85,000–$110,000",
+                mbaCase: "Moderate",
+                color: "text-yellow-400",
+                note: "Salary delta into consulting ($80k–$100k/yr) is meaningful. MBA case is positive for those targeting MBB or strategy roles. Non-FAANG data analysts are the best MBA candidates in data.",
+              },
+              {
+                level: "Data Scientist (non-FAANG)",
+                total: "$110,000–$150,000",
+                mbaCase: "Neutral",
+                color: "text-orange-400",
+                note: "Break-even is 6–8 years into consulting; shorter into PM. The MBA case hinges on whether the target role (MBB, FAANG PM) is accessible without the degree.",
+              },
+              {
+                level: "Data Scientist / ML Engineer (FAANG, Senior)",
+                total: "$180,000–$350,000",
+                mbaCase: "Weak",
+                color: "text-red-400",
+                note: "RSU compensation makes the delta razor-thin. A senior data scientist at $250k total comp going to McKinsey at $205k base has a negative year-1 delta. The MBA case requires a very specific strategic rationale.",
+              },
+              {
+                level: "ML Engineer / AI Research (FAANG or AI Lab)",
+                total: "$200,000–$450,000+",
+                mbaCase: "Very Weak (financially)",
+                color: "text-red-400",
+                note: "AI/ML specialists at top labs (Google DeepMind, OpenAI, Anthropic) often earn more pre-MBA than any MBA track delivers in Year 1. An MBA for this group is almost never financially justified — the credential gap it closes is minimal.",
+              },
+            ].map(({ level, total, mbaCase, color, note }) => (
+              <div key={level} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <p className="text-white font-semibold text-sm">{level}</p>
+                  <p className={`${color} text-xs font-semibold`}>MBA Case: {mbaCase}</p>
+                </div>
+                <p className="text-slate-400 text-xs">Total comp: <span className={color}>{total}</span></p>
+                <p className="text-slate-400 text-xs leading-relaxed">{note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Decision Framework */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Should a Software Engineer Get an MBA? Decision Framework</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The answer depends almost entirely on four variables: your current total compensation, your target
+            post-MBA role, whether you have significant unvested equity, and which school tier you can access.
+            Use this framework before applying.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                condition: "Pre-MBA TC under $150k AND targeting consulting or finance",
+                answer: "YES — strong financial case",
+                color: "text-green-400",
+                borderColor: "border-green-900/30",
+                body: "This is the best MBA ROI profile for engineers. A $110k non-FAANG engineer targeting MBB has a $95k+ annual delta, producing an IRR of 18–22% at M7 cost. Apply to M7 and T15 programs with strong consulting pipelines.",
+              },
+              {
+                condition: "Pre-MBA TC over $200k at FAANG with significant unvested equity",
+                answer: "NO — wait until vesting cliff",
+                color: "text-red-400",
+                borderColor: "border-red-900/30",
+                body: "Forfeiting $200k–$400k in unvested RSUs to attend business school adds that amount to your effective MBA cost. The math rarely works. Wait until you are within 6 months of a vesting cliff, then reassess.",
+              },
+              {
+                condition: "Targeting a specific senior leadership pivot (PE, C-suite, startup CEO)",
+                answer: "DEPENDS — model the specific delta",
+                color: "text-yellow-400",
+                borderColor: "border-yellow-900/30",
+                body: "If the target role is genuinely credential-gated (e.g., PE associate at a top fund, McKinsey Consulting), the MBA may be the only path. Model the actual salary delta and break-even before committing. A 50% scholarship changes the math significantly.",
+              },
+              {
+                condition: "Staying in tech, want business education",
+                answer: "NO — cheaper alternatives exist",
+                color: "text-orange-400",
+                borderColor: "border-orange-900/30",
+                body: "An online MBA, executive education program, or internal rotation provides the business education at a fraction of the cost. An M7 MBA for a SWE who wants to stay in tech is rarely financially defensible — the credential does not unlock meaningfully higher comp on the engineering track.",
+              },
+            ].map(({ condition, answer, color, borderColor, body }) => (
+              <div key={condition} className={`bg-white/5 border ${borderColor} rounded-xl p-5 space-y-2`}>
+                <p className="text-slate-400 text-xs font-medium uppercase tracking-wide">If: {condition}</p>
+                <p className={`${color} font-semibold text-sm`}>{answer}</p>
+                <p className="text-slate-400 text-xs leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
           <p className="text-xs font-medium text-cyan-400 uppercase tracking-widest">Model Your Engineer MBA ROI</p>
@@ -407,7 +507,7 @@ export default function MbaRoiEngineersPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA worth it for software engineers?", "acceptedAnswer": {"@type": "Answer", "text": "For software engineers earning $150K–$200K pre-MBA, the compressed salary delta makes the MBA math difficult. A SWE targeting product management at $200K–$220K faces only a $20K–$50K annual delta, producing a 10-year NPV that is often negative or marginal at M7 tuition. The MBA math works better for engineers targeting consulting or finance, where the delta is $80K–$120K."}}, {"@type": "Question", "name": "Should engineers get an MBA to become a product manager?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA is one path to PM, but not the most efficient for engineers. Internal transfers, APM programs, and direct applications produce PMs without the $300K+ economic cost. If you specifically want to work at a major tech company as a PM, a Google APM, Meta RPM, or Microsoft PM program may be more effective than an MBA for that specific goal."}}, {"@type": "Question", "name": "What is the MBA ROI for engineers targeting consulting?", "acceptedAnswer": {"@type": "Answer", "text": "Engineers targeting MBB consulting through an M7 MBA face a salary delta of $80K–$120K over their pre-MBA engineering salary. This produces an IRR of 15–22% and break-even in 4–6 years — a strong ROI case. Engineers with high pre-MBA salaries ($150K+) face a compressed delta even into consulting, reducing ROI by 3–5 percentage points."}}, {"@type": "Question", "name": "Is an MBA worth it for a senior engineer?", "acceptedAnswer": {"@type": "Answer", "text": "For senior engineers (Staff, Principal) earning $250K–$400K total compensation, the MBA opportunity cost is extreme and the post-MBA salary uplift rarely closes the gap. An MBA is rarely financially justified for engineers beyond L6/Senior II. The exception is a deliberate career pivot to finance, private equity, or a senior corporate role where the credential gap is real."}}, {"@type": "Question", "name": "Which MBA programs are best for engineering backgrounds?", "acceptedAnswer": {"@type": "Answer", "text": "MIT Sloan, Booth, and Kellogg have strong quantitative programs that leverage engineering backgrounds. Wharton is ideal for engineers targeting finance. HBS and Stanford GSB are strong for entrepreneurship and tech product leadership. All M7 programs recruit engineers for MBB consulting, which values analytical and problem-structuring skills."}}]}) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA worth it for software engineers?", "acceptedAnswer": {"@type": "Answer", "text": "For software engineers earning $150K–$200K pre-MBA, the compressed salary delta makes the MBA math difficult. A SWE targeting product management at $200K–$220K faces only a $20K–$50K annual delta, producing a 10-year NPV that is often negative or marginal at M7 tuition. The MBA math works better for engineers targeting consulting or finance, where the delta is $80K–$120K."}}, {"@type": "Question", "name": "Is an MBA worth it for a data scientist?", "acceptedAnswer": {"@type": "Answer", "text": "For most data scientists, an MBA is not financially justified. Senior data scientists and ML engineers at FAANG earn $180k–$350k+ total compensation — more than most post-MBA roles deliver in Year 1. The MBA case is only strong for data analysts and junior data scientists at non-FAANG companies (earning $85k–$120k) who are targeting a pivot to MBB consulting or corporate strategy, where the annual salary delta exceeds $80k. For senior data roles, the opportunity cost of forfeited equity and salary makes the MBA math deeply negative."}}, {"@type": "Question", "name": "What is the MBA ROI for engineers targeting consulting?", "acceptedAnswer": {"@type": "Answer", "text": "Engineers targeting MBB consulting through an M7 MBA face a salary delta of $80K–$120K over their pre-MBA engineering salary. This produces an IRR of 15–22% and break-even in 4–6 years — a strong ROI case. Engineers with high pre-MBA salaries ($150K+) face a compressed delta even into consulting, reducing ROI by 3–5 percentage points."}}, {"@type": "Question", "name": "Is an MBA worth it for a senior engineer?", "acceptedAnswer": {"@type": "Answer", "text": "For senior engineers (Staff, Principal) earning $250K–$400K total compensation, the MBA opportunity cost is extreme and the post-MBA salary uplift rarely closes the gap. An MBA is rarely financially justified for engineers beyond L6/Senior II. The exception is a deliberate career pivot to finance, private equity, or a senior corporate role where the credential gap is real."}}, {"@type": "Question", "name": "Which MBA programs are best for engineering backgrounds?", "acceptedAnswer": {"@type": "Answer", "text": "MIT Sloan, Booth, and Kellogg have strong quantitative programs that leverage engineering backgrounds. Wharton is ideal for engineers targeting finance. HBS and Stanford GSB are strong for entrepreneurship and tech product leadership. All M7 programs recruit engineers for MBB consulting, which values analytical and problem-structuring skills."}}]}) }}
       />
     </main>
   )

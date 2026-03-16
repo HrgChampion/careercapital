@@ -138,6 +138,26 @@ export default function MbaRoiReport2026Page() {
           <p className="text-slate-500 text-xs">Published March 2026 · Updated quarterly · <span className="text-emerald-400 font-medium">Free to cite with attribution.</span></p>
         </header>
 
+        {/* Key Findings */}
+        <section className="bg-emerald-500/5 border border-emerald-500/20 rounded-2xl p-6 sm:p-8 space-y-4">
+          <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest">Key Findings — 2026</p>
+          <h2 className="text-xl font-semibold tracking-tight">What This Report Found</h2>
+          <ul className="space-y-3">
+            {[
+              "MBB consulting via M7 without scholarship produces a 22% IRR — more than double the S&P 500 hurdle rate. With a full scholarship, IRR reaches 40%.",
+              "European one-year programs (INSEAD, LBS) outperform US two-year programs on cost-adjusted IRR by 6–10 percentage points when targeting consulting roles.",
+              "Online MBA programs from top-tier providers (Kelley, UNC Online, USC) produce IRRs of 28–35% — competitive with full-time T15 programs — because low tuition and zero opportunity cost compress break-even to under 3 years.",
+              "In a severe recession scenario (hiring freeze, 6-month delayed placement, 15% salary reduction), MBB IRR drops to 12% and break-even extends to 7.8 years — still above the S&P 500 hurdle, but the margin of safety is thin.",
+              "The single highest-leverage MBA decision is scholarship negotiation: a 50% scholarship at a T15 program delivers a higher IRR than full-cost M7 for most career paths.",
+            ].map((finding, i) => (
+              <li key={i} className="flex gap-3 text-sm text-slate-300 leading-relaxed">
+                <span className="text-emerald-400 font-mono shrink-0 pt-0.5">{i + 1}.</span>
+                {finding}
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* ── METHODOLOGY (no H2 — styled block) ── */}
         <section className="space-y-4">
           <p className="text-xs font-medium text-slate-400 uppercase tracking-widest">Methodology & Assumptions</p>
@@ -563,6 +583,24 @@ export default function MbaRoiReport2026Page() {
               </div>
             </Link>
           </div>
+        </section>
+
+        {/* Cite This Report */}
+        <section className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4">
+          <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest">Citation & Usage</p>
+          <h2 className="text-xl font-semibold tracking-tight">Cite This Report</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            This report is free to cite, quote, and link to with attribution. If you reference data from this
+            report in an article, research paper, or educational resource, please attribute it as:
+          </p>
+          <div className="bg-slate-900 border border-white/10 rounded-xl p-4 font-mono text-xs text-slate-300 leading-relaxed">
+            CareerReturns. (2026). <span className="text-emerald-400">MBA ROI Report 2026: Top Schools, Salaries &amp; Payback Periods.</span> Retrieved from https://careerreturns.com/mba-roi-report-2026
+          </div>
+          <p className="text-slate-500 text-xs">
+            Journalists, researchers, and educators may use charts, tables, and findings from this report freely.
+            Commercial reproduction requires written permission. For press inquiries, contact us via the{" "}
+            <Link href="/contact" className="text-emerald-400 hover:text-emerald-300 transition-colors">contact page</Link>.
+          </p>
         </section>
 
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">

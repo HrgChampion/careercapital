@@ -339,6 +339,40 @@ export default function PostMbaSalaryPage() {
           </p>
         </section>
 
+        {/* Pre-MBA Background Delta */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">Background Impact</p>
+            <h2 className="text-2xl font-semibold tracking-tight">How Pre-MBA Background Affects Post-MBA Salary</h2>
+            <p className="text-slate-400 text-sm mt-2">The salary delta — the gap between pre-MBA and post-MBA pay — varies significantly by career background. Career switchers from lower-paying fields see the largest absolute gains; engineers and finance professionals often see smaller deltas due to high pre-MBA compensation.</p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10 text-slate-400 text-left">
+                  <th className="pb-3 pr-4 font-medium">Career Path</th>
+                  <th className="pb-3 pr-4 font-medium">Pre-MBA</th>
+                  <th className="pb-3 pr-4 font-medium">Post-MBA</th>
+                  <th className="pb-3 font-medium">Annual Delta</th>
+                </tr>
+              </thead>
+              <tbody>
+                {backgroundDelta.map((row, i) => (
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
+                    <td className="py-3 pr-4">
+                      <p className="text-white font-medium">{row.background}</p>
+                      <p className="text-slate-500 text-xs mt-0.5">{row.note}</p>
+                    </td>
+                    <td className="py-3 pr-4 text-slate-300">{row.preMba}</td>
+                    <td className="py-3 pr-4 text-slate-300">{row.postMba}</td>
+                    <td className="py-3 text-indigo-400 font-semibold">{row.delta}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="rounded-3xl bg-white/5 border border-white/10 p-6 sm:p-10 text-center space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">Model Your Post-MBA Salary</h2>
