@@ -4,7 +4,7 @@ import { pageAlternates } from "@/lib/seo"
 export const metadata = {
   title: "What Is Salary After an MBA? Post-MBA Salary 2026 by Industry & School",
   description:
-    "What is salary after an MBA? Post-MBA salary in 2026: MBB consulting $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. MBA degree salary uplift averages +47% vs. pre-MBA base. Full data by school tier, industry, and career path.",
+    "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. MBA salary by city (NYC, SF, Boston), signing bonus by industry ($5K–$75K), and how pre-MBA background affects salary delta. Full data by school tier and career path.",
   alternates: pageAlternates("https://careerreturns.com/post-mba-salary"),
 }
 
@@ -32,6 +32,33 @@ const salaryGrowth = [
   { year: "Year 5", mbb: "$300,000–$450,000", banking: "$400,000–$700,000", tech: "$250,000–$400,000", general: "$165,000–$210,000" },
   { year: "Year 7", mbb: "$400,000–$700,000", banking: "$500,000–$1,000,000+", tech: "$300,000–$600,000", general: "$180,000–$250,000" },
   { year: "Year 10", mbb: "$600,000–$2,000,000+", banking: "$700,000–$2,000,000+", tech: "$350,000–$800,000", general: "$200,000–$350,000" },
+]
+
+const signingBonuses = [
+  { industry: "Investment Banking (Bulge Bracket)", range: "$20,000–$50,000", avg: "$35,000", note: "Paid at start; sometimes deferred with clawback for departures < 1yr" },
+  { industry: "Tech / FAANG PM", range: "$25,000–$75,000", avg: "$45,000", note: "Higher for engineering roles; often structured as sign-on RSU accelerator" },
+  { industry: "Management Consulting (MBB)", range: "$5,000–$30,000", avg: "$15,000", note: "Lower than banking; core comp is base + performance bonus" },
+  { industry: "Big 4 Consulting (Strategy)", range: "$5,000–$15,000", avg: "$8,000", note: "PwC Strategy&, Deloitte S&O; varies by office and practice" },
+  { industry: "Healthcare Management", range: "$5,000–$15,000", avg: "$9,000", note: "Health systems and health consulting firms" },
+  { industry: "General Management / CPG", range: "$5,000–$10,000", avg: "$6,000", note: "Lower base with more focus on annual performance bonus" },
+]
+
+const salaryByCity = [
+  { city: "New York City", range: "$195,000–$235,000", driver: "IB and consulting hub; cost-of-living premium baked into comp", industries: "Banking, MBB, Finance" },
+  { city: "San Francisco / Bay Area", range: "$195,000–$240,000", driver: "Tech equity premium; FAANG PM and startup roles pull comp up", industries: "Tech, VC, Consulting" },
+  { city: "Boston", range: "$175,000–$215,000", driver: "MBB, biotech, fintech; MIT/HBS alumni density", industries: "Consulting, Biotech, Finance" },
+  { city: "Chicago", range: "$165,000–$200,000", driver: "Consulting (McKinsey, BCG flagship offices), finance", industries: "Consulting, Finance, CPG" },
+  { city: "Los Angeles", range: "$155,000–$190,000", driver: "Tech, media, entertainment strategy roles", industries: "Tech, Media, Healthcare" },
+  { city: "Houston", range: "$155,000–$185,000", driver: "Energy sector (oil & gas strategy, PE)", industries: "Energy, Healthcare, Finance" },
+  { city: "Non-metro / Remote", range: "$120,000–$155,000", driver: "Regional employers, remote roles; lower COL but compressed comp", industries: "General Mgmt, Healthcare, Tech" },
+]
+
+const backgroundDelta = [
+  { background: "Engineering → MBB Consulting", preMba: "$110,000", postMba: "$212,000", delta: "+$102,000/yr", note: "Strong MBA case; technical background valued for ops/tech consulting practices" },
+  { background: "Finance → Investment Banking", preMba: "$95,000", postMba: "$200,000", delta: "+$105,000/yr", note: "Highest delta for finance backgrounds; IB recruiting rewards prior exposure" },
+  { background: "Teaching / Nonprofit → Consulting", preMba: "$60,000", postMba: "$185,000", delta: "+$125,000/yr", note: "Largest percentage uplift; career switchers see biggest first-year impact" },
+  { background: "Military → General Management", preMba: "$75,000", postMba: "$145,000", delta: "+$70,000/yr", note: "MBA bridges civilian transition; leadership premium recognized by employers" },
+  { background: "Healthcare → Health Consulting", preMba: "$90,000", postMba: "$155,000", delta: "+$65,000/yr", note: "Domain expertise valued; delta compressed by specialized path" },
 ]
 
 const faqSchema = {
@@ -158,6 +185,37 @@ export default function PostMbaSalaryPage() {
           </div>
         </section>
 
+        {/* Signing Bonuses */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">Signing Bonuses</p>
+            <h2 className="text-2xl font-semibold tracking-tight">Post-MBA Signing Bonus by Industry</h2>
+            <p className="text-slate-400 text-sm mt-2">Signing bonuses are paid at offer acceptance and reduce your effective break-even period. They are excluded from base salary figures above but meaningfully shift year-one total compensation.</p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10 text-slate-400 text-left">
+                  <th className="pb-3 pr-4 font-medium">Industry</th>
+                  <th className="pb-3 pr-4 font-medium">Range</th>
+                  <th className="pb-3 pr-4 font-medium">Avg</th>
+                  <th className="pb-3 font-medium">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {signingBonuses.map((row, i) => (
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
+                    <td className="py-3 pr-4 text-white font-medium">{row.industry}</td>
+                    <td className="py-3 pr-4 text-slate-300">{row.range}</td>
+                    <td className="py-3 pr-4 text-indigo-400 font-medium">{row.avg}</td>
+                    <td className="py-3 text-slate-500 text-xs">{row.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Salary by School Tier */}
         <section className="space-y-5">
           <div>
@@ -189,6 +247,27 @@ export default function PostMbaSalaryPage() {
                     <p className="text-slate-300 mt-0.5">{row.general}</p>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Salary by City */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">By Metro Area</p>
+            <h2 className="text-2xl font-semibold tracking-tight">Post-MBA Salary by City</h2>
+            <p className="text-slate-400 text-sm mt-2">Geographic location is the third-largest driver of post-MBA salary after industry and school tier. NYC and SF carry the highest absolute compensation; cost-of-living adjustments shift the real-return picture significantly.</p>
+          </div>
+          <div className="space-y-3">
+            {salaryByCity.map((row, i) => (
+              <div key={i} className="rounded-2xl bg-white/5 border border-white/10 p-5 space-y-2">
+                <div className="flex items-start justify-between gap-4 flex-wrap">
+                  <p className="font-semibold text-white">{row.city}</p>
+                  <p className="text-indigo-400 font-semibold shrink-0">{row.range}</p>
+                </div>
+                <p className="text-slate-400 text-xs">{row.driver}</p>
+                <p className="text-slate-500 text-xs">Top industries: {row.industries}</p>
               </div>
             ))}
           </div>

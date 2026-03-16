@@ -4,7 +4,7 @@ import { pageAlternates } from "@/lib/seo"
 export const metadata = {
   title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
   description:
-    "What is the average salary for an MBA? MBA average salary in 2026 ranges from $85K at mid-tier online programs to $215K+ at M7 placements into MBB consulting. Earning an MBA from a top business school can increase your earning potential by 47–100%. Data by school tier, industry, and career stage.",
+    "MBA average salary in 2026: $175K median at M7, $105K at top online programs. MBA salaries by school tier, industry, specialization, and years of experience. Average salary of an MBA graduate vs. no MBA — lifetime earnings gap data. Does an MBA increase salary? Full data →",
   alternates: pageAlternates("https://careerreturns.com/average-mba-salary"),
 }
 
@@ -14,6 +14,33 @@ const salaryByTier = [
   { tier: "Top 15–25 (Kelley, Mendoza, Smeal, Kenan-Flagler, etc.)", median: "$120,000", top25: "$145,000+", consulting: "$130,000–$155,000", tech: "$125,000–$150,000", finance: "$120,000–$145,000" },
   { tier: "Online MBA (Top-Tier: UNC, Indiana, USC, Carnegie Mellon)", median: "$105,000", top25: "$130,000+", consulting: "$125,000–$145,000", tech: "$115,000–$140,000", finance: "$110,000–$130,000" },
   { tier: "Online MBA (Mid-Tier)", median: "$85,000", top25: "$105,000+", consulting: "$90,000–$110,000", tech: "$90,000–$110,000", finance: "$85,000–$105,000" },
+]
+
+const noMbaComparison = [
+  { credential: "No MBA (Bachelor's, Business/Liberal Arts)", year1: "$55,000–$75,000", year5: "$75,000–$100,000", year10: "$95,000–$130,000", cumulative20yr: "$2.0M–$2.8M", note: "Standard corporate trajectory without MBA credential" },
+  { credential: "Online MBA (Mid-Tier)", year1: "$85,000–$95,000", year5: "$105,000–$130,000", year10: "$125,000–$160,000", cumulative20yr: "$2.4M–$3.1M", note: "Modest premium; limited structured recruiting access" },
+  { credential: "Online MBA (Top-Tier: Kelley, UNC, USC)", year1: "$100,000–$120,000", year5: "$130,000–$160,000", year10: "$155,000–$200,000", cumulative20yr: "$2.9M–$3.9M", note: "Strong for tech and internal promotions" },
+  { credential: "T25 Full-Time MBA", year1: "$115,000–$140,000", year5: "$155,000–$195,000", year10: "$185,000–$250,000", cumulative20yr: "$3.4M–$4.8M", note: "Regional consulting and general management access" },
+  { credential: "T15 Full-Time MBA", year1: "$150,000–$175,000", year5: "$195,000–$250,000", year10: "$240,000–$350,000", cumulative20yr: "$4.4M–$6.5M", note: "MBB access limited; strong finance and CPG pipeline" },
+  { credential: "M7 MBA (All Tracks)", year1: "$175,000–$215,000", year5: "$250,000–$400,000", year10: "$380,000–$800,000+", cumulative20yr: "$6.5M–$15M+", note: "Full MBB / IB / FAANG recruiting access" },
+]
+
+const salaryBySpecialization = [
+  { concentration: "Finance / Investment Management", year1: "$175,000–$215,000", topIndustry: "Investment Banking, Private Equity", note: "Highest year-1 median; requires M7 or strong T15 for IB access" },
+  { concentration: "Consulting / Strategy", year1: "$170,000–$215,000", topIndustry: "MBB, Big 4 Strategy", note: "On-campus recruiting at M7 drives top end; T15 accesses Tier 2 consulting" },
+  { concentration: "Technology / Analytics", year1: "$165,000–$210,000", topIndustry: "FAANG PM, Tech Strategy", note: "RSU compensation adds $40k–$120k/yr on top of base at senior levels" },
+  { concentration: "Real Estate", year1: "$140,000–$185,000", topIndustry: "REPE, Development, REIT Management", note: "Strong at Wharton, Columbia, Booth; deal flow matters more than school tier" },
+  { concentration: "Healthcare Management", year1: "$135,000–$160,000", topIndustry: "Health Systems, Health Consulting", note: "Health consulting (BCG Health, Deloitte Health) on higher end" },
+  { concentration: "Marketing / Brand Management", year1: "$115,000–$145,000", topIndustry: "CPG, Luxury, Tech Marketing", note: "Kellogg, Darden have strongest brand management pipelines" },
+  { concentration: "Operations / Supply Chain", year1: "$115,000–$140,000", topIndustry: "Manufacturing, E-Commerce Ops, Consulting", note: "Amazon, Apple ops roles on higher end; consulting rotational programs common" },
+  { concentration: "Entrepreneurship", year1: "$80,000–$130,000", topIndustry: "Startups, VC-backed Ventures", note: "High variance; equity upside not reflected in Year 1 base" },
+]
+
+const salaryByExperience = [
+  { stage: "Year 1–2 (Post-MBA)", title: "Associate / Manager / Analyst", mbb: "$212,000–$232,000", banking: "$275,000–$350,000", tech: "$185,000–$220,000", general: "$130,000–$150,000", context: "Entry-level MBA hire; structured promotion track begins" },
+  { stage: "Year 3–5", title: "Senior Manager / Engagement Manager / VP", mbb: "$280,000–$420,000", banking: "$350,000–$600,000", tech: "$230,000–$380,000", general: "$155,000–$210,000", context: "First major divergence point — partner-track vs exit decisions" },
+  { stage: "Year 6–9", title: "Principal / Director / ED / Senior Director", mbb: "$400,000–$750,000", banking: "$450,000–$1,000,000+", tech: "$280,000–$600,000", general: "$185,000–$280,000", context: "Carry, RSU grants, and performance bonuses compound rapidly" },
+  { stage: "Year 10+", title: "Partner / MD / VP / SVP / C-Suite", mbb: "$700,000–$2,000,000+", banking: "$700,000–$2,000,000+", tech: "$350,000–$800,000", general: "$220,000–$400,000", context: "Top of distribution driven by partnership economics and equity" },
 ]
 
 const salaryByIndustry = [
@@ -141,6 +168,96 @@ export default function AverageMbaSalaryPage() {
           </div>
         </section>
 
+        {/* MBA Salary vs No MBA */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-violet-400 uppercase tracking-widest mb-1">Lifetime Earnings</p>
+            <h2 className="text-2xl font-semibold tracking-tight">MBA Salary vs. No MBA: The Lifetime Earnings Gap</h2>
+            <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+              The average salary for an MBA graduate vs. a non-MBA professional diverges most sharply after year 3, when structured MBA career tracks produce consistent promotion velocity. The cumulative earnings gap over 20 years — accounting for tuition cost and forgone income — is the core MBA ROI question.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {noMbaComparison.map((row, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-3">
+                <p className="text-white font-semibold text-sm">{row.credential}</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                  <div><p className="text-slate-500 mb-0.5">Year 1</p><p className="text-violet-300">{row.year1}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Year 5</p><p className="text-slate-300">{row.year5}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Year 10</p><p className="text-slate-300">{row.year10}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Cumulative 20-yr</p><p className="text-emerald-400 font-semibold">{row.cumulative20yr}</p></div>
+                </div>
+                <p className="text-slate-500 text-xs">{row.note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-slate-500 text-xs">Cumulative figures are pre-tax gross earnings estimates across all income sources at median trajectory. M7 figures include consulting/finance track outcomes; individual results vary significantly by path and school tier.</p>
+        </section>
+
+        {/* MBA Salary by Specialization */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-violet-400 uppercase tracking-widest mb-1">By Concentration</p>
+            <h2 className="text-2xl font-semibold tracking-tight">MBA Salary by Specialization / Concentration</h2>
+            <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+              The MBA concentration you choose is a signal to recruiters, not a hard constraint — most MBAs recruit across functions. But concentration affects which companies recruit you on campus and which alumni networks you access, which shapes your first-year MBA salary outcome.
+            </p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10 text-slate-400 text-left">
+                  <th className="pb-3 pr-4 font-medium">Concentration</th>
+                  <th className="pb-3 pr-4 font-medium">Year 1 Median</th>
+                  <th className="pb-3 font-medium">Top Industries</th>
+                </tr>
+              </thead>
+              <tbody>
+                {salaryBySpecialization.map((row, i) => (
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
+                    <td className="py-3 pr-4">
+                      <p className="text-white font-medium">{row.concentration}</p>
+                      <p className="text-slate-500 text-xs mt-0.5">{row.note}</p>
+                    </td>
+                    <td className="py-3 pr-4 text-violet-400 font-medium">{row.year1}</td>
+                    <td className="py-3 text-slate-300 text-xs">{row.topIndustry}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* MBA Salary by Experience Stage */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-violet-400 uppercase tracking-widest mb-1">Career Progression</p>
+            <h2 className="text-2xl font-semibold tracking-tight">MBA Salary by Years of Experience Post-Graduation</h2>
+            <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+              Average MBA salary by years of experience post-graduation shows the widest divergence across industries at the 5–7 year mark, where partner-track and equity-vesting dynamics compound compensation dramatically. The "average MBA salary" figure commonly cited in surveys reflects the Year 1–2 range; the long-term picture looks very different.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {salaryByExperience.map((row, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                  <div>
+                    <p className="text-white font-semibold text-sm">{row.stage}</p>
+                    <p className="text-slate-500 text-xs mt-0.5">Typical title: {row.title}</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                  <div><p className="text-slate-500 mb-0.5">MBB Consulting</p><p className="text-violet-300">{row.mbb}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Investment Banking</p><p className="text-slate-300">{row.banking}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Tech / PM</p><p className="text-slate-300">{row.tech}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">General Mgmt</p><p className="text-slate-300">{row.general}</p></div>
+                </div>
+                <p className="text-slate-400 text-xs">{row.context}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
           <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">Model Your Salary Delta</p>
@@ -249,7 +366,7 @@ export default function AverageMbaSalaryPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the average MBA salary in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The median post-MBA salary at M7 programs is approximately $175K–$210K for consulting and finance tracks. Across all MBA programs, the median first-year post-MBA salary is approximately $130K–$150K. Online MBA graduates earn a median of $90K–$110K post-degree. The national average across all programs is approximately $115K–$125K."}}, {"@type": "Question", "name": "How does MBA salary vary by school tier?", "acceptedAnswer": {"@type": "Answer", "text": "M7 programs (Harvard, Wharton, Booth, Kellogg, MIT Sloan, Columbia, Stanford) produce median post-MBA salaries of $175K–$210K. T15 programs produce $130K–$160K. T25 produces $100K–$130K. Online MBA programs from ranked schools (Indiana Kelley, UNC, USC) produce $90K–$115K. The gap between M7 and T25 is approximately $60K–$80K in first-year salary."}}, {"@type": "Question", "name": "What is the MBA salary at 5 and 10 years post-graduation?", "acceptedAnswer": {"@type": "Answer", "text": "At year 5, M7 MBB alumni earn $250K–$400K (engagement manager / principal level). At year 10, those who reach senior leadership at MBB or transition to PE/VC earn $400K–$1M+. Tech product leaders at year 5–10 earn $250K–$500K total comp. The 10-year salary trajectory is heavily path-dependent and diverges significantly by industry after year 3."}}, {"@type": "Question", "name": "Do MBA salaries differ by industry?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Investment banking: $200K–$250K base + $75K–$150K bonus. MBB consulting: $190K–$215K base + $20K–$40K bonus. Tech: $160K–$220K base + RSUs. Healthcare management: $130K–$170K. General management / CPG: $110K–$140K. Nonprofit: $70K–$110K. Industry is the primary determinant of post-MBA salary, more than school tier within the top 20 programs."}}, {"@type": "Question", "name": "Does an MBA increase long-term earning potential?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, significantly. Over a 20-year career, M7 MBA graduates in consulting, finance, or tech earn $2M–$5M more in cumulative income than comparable professionals without an MBA degree. The long-term premium is highest for MBB partners, investment bankers, and PE professionals, where senior-level compensation differences are measured in hundreds of thousands annually."}}]}) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the average MBA salary in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The median post-MBA salary at M7 programs is approximately $175K–$210K for consulting and finance tracks. Across all MBA programs, the median first-year post-MBA salary is approximately $130K–$150K. Online MBA graduates earn a median of $90K–$110K post-degree. The national average across all programs is approximately $115K–$125K."}}, {"@type": "Question", "name": "How does MBA salary vary by school tier?", "acceptedAnswer": {"@type": "Answer", "text": "M7 programs (Harvard, Wharton, Booth, Kellogg, MIT Sloan, Columbia, Stanford) produce median post-MBA salaries of $175K–$210K. T15 programs produce $130K–$160K. T25 produces $100K–$130K. Online MBA programs from ranked schools (Indiana Kelley, UNC, USC) produce $90K–$115K. The gap between M7 and T25 is approximately $60K–$80K in first-year salary."}}, {"@type": "Question", "name": "What is the MBA salary at 5 and 10 years post-graduation?", "acceptedAnswer": {"@type": "Answer", "text": "At year 5, M7 MBB alumni earn $250K–$400K (engagement manager / principal level). At year 10, those who reach senior leadership at MBB or transition to PE/VC earn $400K–$1M+. Tech product leaders at year 5–10 earn $250K–$500K total comp. The 10-year salary trajectory is heavily path-dependent and diverges significantly by industry after year 3."}}, {"@type": "Question", "name": "Do MBA salaries differ by industry?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Investment banking: $200K–$250K base + $75K–$150K bonus. MBB consulting: $190K–$215K base + $20K–$40K bonus. Tech: $160K–$220K base + RSUs. Healthcare management: $130K–$170K. General management / CPG: $110K–$140K. Nonprofit: $70K–$110K. Industry is the primary determinant of post-MBA salary, more than school tier within the top 20 programs."}}, {"@type": "Question", "name": "Does an MBA increase long-term earning potential?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, significantly. Over a 20-year career, M7 MBA graduates in consulting, finance, or tech earn $2M–$5M more in cumulative income than comparable professionals without an MBA degree. The long-term premium is highest for MBB partners, investment bankers, and PE professionals, where senior-level compensation differences are measured in hundreds of thousands annually."}}, {"@type": "Question", "name": "What is the average salary of an MBA graduate vs. someone without an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "A professional with only a bachelor's degree in a business or liberal arts field earns a median of $55K–$75K in Year 1 and $95K–$130K at Year 10. An M7 MBA graduate earns $175K–$215K in Year 1 and $380K–$800K+ at Year 10 on high-trajectory paths. The cumulative 20-year earnings gap between an M7 MBA (all tracks median) and a no-MBA professional is approximately $3.5M–$12M before accounting for tuition and forgone income during the program."}}, {"@type": "Question", "name": "What MBA concentration leads to the highest salary?", "acceptedAnswer": {"@type": "Answer", "text": "Finance/Investment and Consulting/Strategy concentrations produce the highest Year 1 median salaries — $170K–$215K — because they are the primary recruiting targets for investment banking and MBB consulting, the highest-paying first-year MBA job categories. Technology/Analytics concentrations produce $165K–$210K including equity. Entrepreneurship concentrations produce the most variable outcomes: $80K–$130K in Year 1 base, but potentially far higher through startup equity over a 5–10 year horizon."}}]}) }}
       />
     </main>
   )

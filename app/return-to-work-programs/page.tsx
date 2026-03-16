@@ -178,6 +178,75 @@ const programs = [
     npvVsDirect: "+$10k–$30k NPV depending on company",
     note: "Non-profit matching platform connecting returners with 100+ partner companies. Broadest access.",
   },
+  {
+    company: "Salesforce Returnship",
+    industry: "Technology / CRM",
+    duration: "16 weeks",
+    stipend: "$3,800/wk",
+    conversion: "72%",
+    postSalary: "$155k–$190k TC",
+    gapMin: "1+ year",
+    verdict: "Good ROI",
+    verdictColor: "text-emerald-400",
+    npvVsDirect: "+$25k NPV vs. direct re-entry",
+    note: "Product, engineering, sales operations, and customer success roles. Broad eligibility — gap as short as 12 months.",
+  },
+  {
+    company: "Cisco ReEntry Program",
+    industry: "Technology / Networking",
+    duration: "16 weeks",
+    stipend: "$3,600/wk",
+    conversion: "68%",
+    postSalary: "$145k–$175k TC",
+    gapMin: "2+ years",
+    verdict: "Good ROI",
+    verdictColor: "text-emerald-400",
+    npvVsDirect: "+$20k NPV vs. direct re-entry",
+    note: "Engineering, IT, and program management roles. Structured mentoring and cohort support throughout.",
+  },
+  {
+    company: "IBM Return to Work",
+    industry: "Technology / Consulting",
+    duration: "12 weeks",
+    stipend: "$3,200/wk",
+    conversion: "65%",
+    postSalary: "$130k–$165k TC",
+    gapMin: "2+ years",
+    verdict: "Moderate ROI",
+    verdictColor: "text-amber-400",
+    npvVsDirect: "+$16k NPV vs. direct re-entry",
+    note: "Tech, consulting, and operations roles across IBM and IBM Consulting. Global placements available.",
+  },
+  {
+    company: "Wells Fargo Returning Talent",
+    industry: "Financial Services",
+    duration: "12 weeks",
+    stipend: "$2,800/wk",
+    conversion: "67%",
+    postSalary: "$125k–$155k",
+    gapMin: "2+ years",
+    verdict: "Moderate ROI",
+    verdictColor: "text-amber-400",
+    npvVsDirect: "+$15k NPV vs. direct re-entry",
+    note: "Banking, operations, risk management, and technology roles. Open to broad professional backgrounds.",
+  },
+]
+
+const applicationWindows = [
+  { company: "Amazon Returnship", cohort1: "Feb–Mar (May start)", cohort2: "Aug–Sep (Oct start)", tip: "Apply early — cohorts fill 6–8 weeks after opening" },
+  { company: "Goldman Sachs Returnship", cohort1: "Jan–Feb (Apr start)", cohort2: "N/A (annual)", tip: "Single annual cohort; late applications rarely accepted" },
+  { company: "JPMorgan ReEntry", cohort1: "Jan–Mar (Jun start)", cohort2: "N/A (annual)", tip: "Finance and tech tracks open separately; check careers page" },
+  { company: "McKinsey Returner (Accelerate)", cohort1: "Rolling (Jan–Mar priority)", cohort2: "Rolling (Aug–Oct priority)", tip: "No hard deadline but Jan–Mar window gets most bandwidth" },
+  { company: "Microsoft LEAP", cohort1: "Feb–Apr (Jun start)", cohort2: "N/A (annual)", tip: "Engineering-focused; requires active interview prep for technical rounds" },
+  { company: "Meta Return to Work", cohort1: "Jan–Mar (May start)", cohort2: "N/A (annual)", tip: "Data and engineering roles fill fastest; apply immediately on opening" },
+  { company: "Salesforce Returnship", cohort1: "Mar–May (Jul start)", cohort2: "N/A (annual)", tip: "Check Salesforce Careers page under 'Returnship' keyword search" },
+]
+
+const industryBreakdown = [
+  { industry: "Technology", count: "8 programs", companies: "Amazon, Meta, Microsoft, PayPal, Salesforce, Cisco, IBM, Google (Path Forward)", note: "Largest sector for returnships. Strong conversion rates (68–90%). Broad role types from SWE to PM to Ops." },
+  { industry: "Finance", count: "5 programs", companies: "Goldman Sachs, JPMorgan, Fidelity, Wells Fargo, Morgan Stanley (Path Forward)", note: "Highest post-program salaries ($125k–$250k). Require prior finance experience; most mandate 2+ year gap minimum." },
+  { industry: "Consulting", count: "3 programs", companies: "McKinsey, Deloitte, Accenture", note: "Longest program durations (6–12 months). Full salary during program. Strongest NPV advantage vs. direct re-entry." },
+  { industry: "Defense / Aerospace", count: "2 programs", companies: "Northrop Grumman, Raytheon (Path Forward)", note: "Security clearance eligibility required for many roles. Engineering and program management focus. Stable conversion (65–70%)." },
 ]
 
 export default function ReturnToWorkProgramsPage() {
@@ -415,6 +484,63 @@ export default function ReturnToWorkProgramsPage() {
               </ul>
             </div>
           </div>
+        </section>
+
+        {/* Returnships by Industry */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-cyan-400 uppercase tracking-widest mb-1">By Sector</p>
+            <h2 className="text-2xl font-semibold tracking-tight">Returnships by Industry: Which Sectors Have the Most Programs</h2>
+            <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+              Technology has the most return-to-work programs by count, but finance offers the highest post-program salaries. Consulting programs run longest and produce the highest NPV advantage vs. direct re-entry.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {industryBreakdown.map((row, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <div className="flex items-center justify-between gap-4 flex-wrap">
+                  <p className="text-white font-semibold text-sm">{row.industry}</p>
+                  <span className="text-cyan-400 text-xs font-semibold">{row.count}</span>
+                </div>
+                <p className="text-slate-400 text-xs">{row.companies}</p>
+                <p className="text-slate-500 text-xs leading-relaxed">{row.note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 2026 Application Windows */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-cyan-400 uppercase tracking-widest mb-1">Timing</p>
+            <h2 className="text-2xl font-semibold tracking-tight">2026 Application Windows by Program</h2>
+            <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+              Most returnship programs run on fixed annual or semi-annual cohort cycles. Applications are reviewed in batches — late applicants regularly find cohorts filled even when the posting is still live. Apply in the first 2–3 weeks of the window.
+            </p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10 text-slate-400 text-left">
+                  <th className="pb-3 pr-4 font-medium">Program</th>
+                  <th className="pb-3 pr-4 font-medium">Primary Window</th>
+                  <th className="pb-3 pr-4 font-medium">Secondary Window</th>
+                  <th className="pb-3 font-medium">Tip</th>
+                </tr>
+              </thead>
+              <tbody>
+                {applicationWindows.map((row, i) => (
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
+                    <td className="py-3 pr-4 text-white font-medium">{row.company}</td>
+                    <td className="py-3 pr-4 text-cyan-400">{row.cohort1}</td>
+                    <td className="py-3 pr-4 text-slate-300">{row.cohort2}</td>
+                    <td className="py-3 text-slate-400 text-xs">{row.tip}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-slate-500 text-xs">Application windows are estimates based on historical program cycles. Verify exact dates on each company&apos;s careers page before applying.</p>
         </section>
 
         {/* CTA */}
