@@ -6,6 +6,19 @@ export const metadata = {
   description:
     "MBA vs Master's ROI 2026. Salary, IRR, and break-even: MBA vs MS Finance, MSCS, MFin, MEM, and JD. Decision framework for when each degree wins. See data →",
   alternates: pageAlternates("https://careerreturns.com/mba-vs-masters-roi"),
+  openGraph: {
+    title: "MBA vs. Master's ROI (2026): Which Degree Wins Financially?",
+    description: "MBA vs MS Finance, MSCS, MFin, MEM: full cost, IRR, and break-even comparison. Decision framework for when each degree produces higher lifetime earnings.",
+    url: "https://careerreturns.com/mba-vs-masters-roi",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@careerreturns",
+    title: "MBA vs. Master's ROI (2026): MS Finance vs MSCS vs MBA",
+    description: "IRR, break-even, and salary compared: MBA vs 5 specialized master's degrees. Data-driven decision framework.",
+  },
 }
 
 const costComparison = [

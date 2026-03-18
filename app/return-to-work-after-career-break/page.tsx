@@ -2,12 +2,12 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "How to Return to Work After a Career Break: Salary Data & Strategy (2026)",
+  title: "Return to Work After Career Break: Salary Data, Penalties & Strategy (2026)",
   description:
     "How does a career break affect your career? Salary penalty data by industry and break duration, 3 re-entry strategies compared by NPV, and a step-by-step recovery framework.",
   alternates: pageAlternates("https://careerreturns.com/return-to-work-after-career-break"),
   openGraph: {
-    title: "How to Return to Work After a Career Break: Salary Data & Strategy (2026)",
+    title: "Return to Work After Career Break: Salary Data, Penalties & Strategy (2026)",
     description:
       "Career breaks cost 6–18% in salary penalty. Here's the data by industry, break duration, and the 3 re-entry strategies ranked by 10-year NPV.",
     url: "https://careerreturns.com/return-to-work-after-career-break",
@@ -16,7 +16,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How to Return to Work After a Career Break (2026)",
+    title: "Return to Work After Career Break: Salary Penalties & Strategy (2026)",
     description: "Salary penalty data by industry and break length. 3 re-entry paths compared by NPV and IRR.",
   },
 }
@@ -90,12 +90,23 @@ export default function ReturnToWorkAfterCareerBreakPage() {
         <header className="space-y-5">
           <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest">CareerReturns · Career Break Guide</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
-            How to Return to Work After a Career Break: The Financial Reality
+            Return to Work After a Career Break: The Financial Reality
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
             The salary penalty is real. So is the recovery. Here&apos;s the data.
           </p>
         </header>
+
+        {/* Jump to nav */}
+        <nav className="bg-white/5 border border-white/10 rounded-xl p-4">
+          <p className="text-xs font-medium text-slate-500 uppercase tracking-widest mb-3">Jump to</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+            <a href="#salary-penalty" className="text-sm text-emerald-400 hover:text-emerald-300 transition-colors">Salary Penalty Data</a>
+            <a href="#industry-impact" className="text-sm text-emerald-400 hover:text-emerald-300 transition-colors">Industry Impact</a>
+            <a href="#re-entry-paths" className="text-sm text-emerald-400 hover:text-emerald-300 transition-colors">3 Re-entry Strategies</a>
+            <a href="#resume-framing" className="text-sm text-emerald-400 hover:text-emerald-300 transition-colors">Framing Your Gap</a>
+          </div>
+        </nav>
 
         {/* Short Answer */}
         <section className="space-y-4">
@@ -118,7 +129,7 @@ export default function ReturnToWorkAfterCareerBreakPage() {
         </section>
 
         {/* Salary Penalty by Duration */}
-        <section className="space-y-5">
+        <section id="salary-penalty" className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">The Salary Penalty: Data by Break Duration</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             Career break salary penalties are well-documented in labor economics research. The penalty reflects
@@ -152,7 +163,7 @@ export default function ReturnToWorkAfterCareerBreakPage() {
         </section>
 
         {/* Salary penalty by industry */}
-        <section className="space-y-5">
+        <section id="industry-impact" className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">How Career Breaks Affect Different Industries</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             The same career break affects industries differently. Technical fields with fast-moving skill sets
@@ -182,7 +193,7 @@ export default function ReturnToWorkAfterCareerBreakPage() {
         </section>
 
         {/* 3 Pathways */}
-        <section className="space-y-5">
+        <section id="re-entry-paths" className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">3 Re-entry Strategies: NPV Comparison</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             The re-entry decision is not binary. There are three distinct strategic paths, each with different
@@ -266,7 +277,7 @@ export default function ReturnToWorkAfterCareerBreakPage() {
         </section>
 
         {/* Resume Framing */}
-        <section className="space-y-5">
+        <section id="resume-framing" className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">Framing Your Gap: What Actually Works</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             The biggest mistake career returners make is treating the gap as something to hide.

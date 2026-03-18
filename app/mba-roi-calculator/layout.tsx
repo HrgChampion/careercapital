@@ -1,17 +1,9 @@
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Calculator — Business School ROI Calculator | NPV, IRR & Bloomberg-Style Analysis",
+  title: "MBA ROI Calculator: Free NPV, IRR & Break-Even Analysis (2026)",
   description:
-    "Free MBA ROI calculator and business school ROI calculator. Model NPV, IRR, and break-even using full DCF analysis — accounting for forgone income, pre-MBA salary, and salary growth over a decade after graduation. Enter your numbers now →",
-  keywords: [
-    "MBA ROI calculator",
-    "is MBA worth it calculator",
-    "MBA NPV calculator",
-    "MBA break even analysis",
-    "MBA IRR calculation",
-    "MBA financial analysis",
-  ],
+    "Free MBA ROI calculator. Model NPV, IRR, and break-even using full DCF analysis — accounting for forgone income, pre-MBA salary, and salary growth over a decade after graduation. Enter your numbers now →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-calculator"),
 }
 

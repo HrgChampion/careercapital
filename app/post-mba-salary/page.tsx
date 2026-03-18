@@ -151,8 +151,21 @@ export default function PostMbaSalaryPage() {
           </div>
         </header>
 
+        {/* Jump to nav */}
+        <nav className="bg-white/5 border border-white/10 rounded-xl p-4">
+          <p className="text-xs font-medium text-slate-500 uppercase tracking-widest mb-3">Jump to</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+            <a href="#salary-by-industry" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">By Industry</a>
+            <a href="#signing-bonus" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">Signing Bonuses</a>
+            <a href="#salary-by-tier" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">By School Tier</a>
+            <a href="#salary-by-city" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">By City</a>
+            <a href="#salary-growth" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">Salary Growth</a>
+            <a href="#pre-vs-post" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">Pre vs. Post-MBA</a>
+          </div>
+        </nav>
+
         {/* Salary by Industry */}
-        <section className="space-y-5">
+        <section id="salary-by-industry" className="space-y-5">
           <div>
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">Industry Data</p>
             <h2 className="text-2xl font-semibold tracking-tight">Post-MBA Salary by Industry</h2>
@@ -186,7 +199,7 @@ export default function PostMbaSalaryPage() {
         </section>
 
         {/* Signing Bonuses */}
-        <section className="space-y-5">
+        <section id="signing-bonus" className="space-y-5">
           <div>
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">Signing Bonuses</p>
             <h2 className="text-2xl font-semibold tracking-tight">Post-MBA Signing Bonus by Industry</h2>
@@ -217,7 +230,7 @@ export default function PostMbaSalaryPage() {
         </section>
 
         {/* Salary by School Tier */}
-        <section className="space-y-5">
+        <section id="salary-by-tier" className="space-y-5">
           <div>
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">School Tier</p>
             <h2 className="text-2xl font-semibold tracking-tight">Post-MBA Salary by School Tier</h2>
@@ -253,7 +266,7 @@ export default function PostMbaSalaryPage() {
         </section>
 
         {/* Salary by City */}
-        <section className="space-y-5">
+        <section id="salary-by-city" className="space-y-5">
           <div>
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">By Metro Area</p>
             <h2 className="text-2xl font-semibold tracking-tight">Post-MBA Salary by City</h2>
@@ -274,7 +287,7 @@ export default function PostMbaSalaryPage() {
         </section>
 
         {/* 10-Year Salary Growth */}
-        <section className="space-y-5">
+        <section id="salary-growth" className="space-y-5">
           <div>
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">10-Year Trajectory</p>
             <h2 className="text-2xl font-semibold tracking-tight">Post-MBA Salary Growth by Year</h2>
@@ -310,7 +323,7 @@ export default function PostMbaSalaryPage() {
         </section>
 
         {/* Pre vs Post-MBA Delta */}
-        <section className="space-y-5">
+        <section id="pre-vs-post" className="space-y-5">
           <div>
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">Salary Delta</p>
             <h2 className="text-2xl font-semibold tracking-tight">How Post-MBA Pay Compares to Pre-MBA</h2>

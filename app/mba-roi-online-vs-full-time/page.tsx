@@ -6,6 +6,19 @@ export const metadata = {
   description:
     "Online vs full-time MBA ROI compared side by side. Opportunity cost math, salary outcomes, break-even timelines, and when each format wins. See data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-online-vs-full-time"),
+  openGraph: {
+    title: "Online vs Full-Time MBA ROI (2026): Which Pays Back Faster?",
+    description: "Full-time MBA: $315K total outflow, 8–9 yr break-even. Online MBA: $48K outflow, 2 yr break-even. The opportunity cost math explained.",
+    url: "https://careerreturns.com/mba-roi-online-vs-full-time",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@careerreturns",
+    title: "Online vs Full-Time MBA ROI (2026)",
+    description: "Online MBA breaks even 6–7 years faster. The opportunity cost math that most comparisons miss.",
+  },
 }
 
 export default function MbaRoiOnlineVsFullTimePage() {
