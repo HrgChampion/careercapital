@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "MBA vs Bootcamp vs Certificate Calculator (2026) — Which Wins Financially?",
+  title: "MBA vs Bootcamp vs Master's ROI Calculator — Compare NPV Side-by-Side (Free)",
   description:
-    "Free side-by-side comparison: MBA ($160k all-in) vs coding bootcamp ($15k) vs Google certificate ($300). Real NPV, IRR, and break-even. Ranked by financial return — not prestige.",
+    "Which has higher NPV: $130K MBA, $15K bootcamp, or $50K Master's? Enter your salary and compare DCF-based ROI for up to 4 education paths simultaneously →",
   keywords: [
     "MBA vs bootcamp ROI",
     "MBA vs coding bootcamp calculator",

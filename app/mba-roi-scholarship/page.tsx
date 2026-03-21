@@ -2,9 +2,9 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA Scholarship ROI (2026): How Aid Flips IRR & Break-Even",
+  title: "MBA Scholarship ROI 2026: How 50% Aid Cuts Break-Even From 8 to 4 Years",
   description:
-    "MBA scholarship ROI. How 50% merit aid changes break-even, NPV, and IRR. When to choose full aid at a lower-ranked school over a top program. See math →",
+    "Exact math: $65K scholarship shifts MBA payback from 8 yrs to 4 yrs. When to take the lower-ranked school with full aid. Scholarship negotiation data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-scholarship"),
 }
 

@@ -2,9 +2,9 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Europe 2026: INSEAD, LBS & Payback Data [Real]",
+  title: "European MBA ROI 2026: INSEAD Saves $171K vs Wharton — Is It Worth It?",
   description:
-    "MBA ROI for European programs: INSEAD, LBS, and Oxford costs, one-year format advantages, post-MBA salaries, and when Europe beats a US M7. See full data →",
+    "INSEAD ($224K) vs US M7 ($395K): full IRR comparison, salary outcomes, who wins on NPV. European MBA ROI 2026 — real numbers, not rankings →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-europe", true),
 }
 

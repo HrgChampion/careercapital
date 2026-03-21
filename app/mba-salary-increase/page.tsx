@@ -8,6 +8,17 @@ export const metadata = {
   alternates: pageAlternates("https://careerreturns.com/mba-salary-increase"),
 }
 
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: "MBA Salary Increase Data 2026",
+  description: "Pre vs post-MBA salary increase data by industry and career track",
+  url: "https://careerreturns.com/mba-salary-increase",
+  creator: { "@type": "Organization", name: "CareerReturns", url: "https://careerreturns.com" },
+  temporalCoverage: "2026",
+  keywords: ["mba salary increase", "does mba increase salary", "how much does mba increase salary"],
+}
+
 export default function MbaSalaryIncreasePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
@@ -335,6 +346,10 @@ export default function MbaSalaryIncreasePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does an MBA increase salary on average?", "acceptedAnswer": {"@type": "Answer", "text": "The average MBA salary increase is 47–55% from pre-MBA to first post-MBA role. For M7 graduates entering consulting, the delta exceeds 100%. The median pre-MBA salary is approximately $85K; the median post-MBA M7 salary is $175K–$210K depending on sector."}}, {"@type": "Question", "name": "Which industry pays the most for MBA graduates?", "acceptedAnswer": {"@type": "Answer", "text": "Investment banking pays the highest post-MBA base salary at $200K–$250K for bulge bracket associates. Management consulting (MBB) follows at $190K–$215K. Tech product management roles average $195K–$220K total compensation including equity. General management and healthcare management pay $130K–$160K."}}, {"@type": "Question", "name": "Does an MBA increase salary more in consulting or banking?", "acceptedAnswer": {"@type": "Answer", "text": "The raw salary delta is slightly higher in investment banking (typically +$90K–$120K from pre-MBA median) versus MBB consulting (+$85K–$107K). However, banking requires longer hours and has a steeper promotion curve. On an annualized per-hour basis, consulting often produces a better effective salary increase."}}, {"@type": "Question", "name": "How long does it take for MBA salary increase to pay back the degree?", "acceptedAnswer": {"@type": "Answer", "text": "For M7 programs targeting consulting or banking, the salary increase pays back total MBA cost (tuition + foregone income) in 4–6 years. For regional programs with $30K–$50K salary uplifts, payback takes 8–12 years. The break-even calculation depends on total economic cost, not tuition alone."}}, {"@type": "Question", "name": "Is the MBA salary increase worth the cost?", "acceptedAnswer": {"@type": "Answer", "text": "At M7 programs with MBB or bulge bracket placement, the salary increase generates a positive net present value of $200K–$400K over a 10-year horizon, producing IRRs of 18–24%. At programs below T25 with modest uplifts, the salary increase rarely covers full economic cost on a discounted basis."}}]}) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
     </main>
   )

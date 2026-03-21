@@ -108,6 +108,17 @@ const faqSchema = {
   ],
 }
 
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: "Post-MBA Salary Data 2026",
+  description: "First-year post-MBA salary data by industry and school tier",
+  url: "https://careerreturns.com/post-mba-salary",
+  creator: { "@type": "Organization", name: "CareerReturns", url: "https://careerreturns.com" },
+  temporalCoverage: "2026",
+  keywords: ["post mba salary", "mba starting salary", "first year mba salary"],
+}
+
 export default function PostMbaSalaryPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
@@ -489,6 +500,10 @@ export default function PostMbaSalaryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
     </main>
   )

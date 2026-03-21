@@ -1,9 +1,9 @@
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Calculator: Free NPV, IRR & Break-Even Analysis (2026)",
+  title: "MBA ROI Calculator 2026: Free NPV, IRR & MBA Salary Calculator",
   description:
-    "Free MBA ROI calculator. Model NPV, IRR, and break-even using full DCF analysis — accounting for forgone income, pre-MBA salary, and salary growth over a decade after graduation. Enter your numbers now →",
+    "Free MBA ROI & salary calculator. Model NPV, IRR, break-even, and MBA cost vs return using full DCF analysis across 12 industries. Enter your numbers — results in 60 seconds →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-calculator"),
 }
 
@@ -49,6 +49,38 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "It depends on your MBA's IRR. If your modeled IRR exceeds the long-run equity return (~8%), the MBA generates more value than a passive index fund investment of the same principal. However, equity returns are diversified and liquid — an MBA is a concentrated, illiquid bet on a single career path.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does an MBA increase your salary?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The average MBA salary increase ranges from $35K to $90K per year depending on industry. Entering MBB consulting post-MBA adds $80–105K annually. Investment banking adds $90–120K. Tech PM roles add $40–70K. General management adds $35–50K. Our MBA salary calculator lets you model the exact salary delta for your specific situation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is an MBA return on investment calculator?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An MBA return on investment calculator computes the financial value created by an MBA using NPV (Net Present Value) and IRR (Internal Rate of Return). You enter your current salary, target post-MBA salary, total program cost, and loan details — and the calculator outputs NPV, IRR, break-even period, and a financial grade (A–F). This calculator uses institutional-grade DCF modeling, not simplified payback ratios.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does an MBA cost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Total MBA cost including tuition, living expenses, and forgone income ranges from $200K–$500K+ depending on program. Top US M7 programs (Harvard, Wharton, Booth): $350K–$500K all-in. Top-25 programs: $200K–$350K. Regional programs: $80K–$180K. European programs (INSEAD, LBS): $180K–$280K. Online MBAs: $20K–$80K. This calculator factors in the full economic cost including opportunity cost.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is an MBA worth it in 2026?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An MBA is worth it financially in 2026 when targeting high-delta industries: MBB consulting (IRR 22–40%), investment banking (21–38%), or PE/VC (23–41%). It typically fails financially when entering low-delta fields (nonprofit: IRR 4–14%) or taking on full debt for a non-target program. Use this free MBA value calculator to model your specific scenario.",
       },
     },
   ],

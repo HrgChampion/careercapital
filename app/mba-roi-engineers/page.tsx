@@ -2,9 +2,9 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI for Engineers (2026): When High Pay Kills the Case",
+  title: "MBA ROI for Engineers 2026: Why $400K RSUs Can Destroy Your Business Case",
   description:
-    "MBA ROI for engineers and data scientists in 2026: compressed salary delta, SWE to PM math, consulting vs tech outcomes. Should a software engineer get an MBA? Decision framework + MBA ROI for data scientists and ML engineers. Full data →",
+    "High SWE salary = compressed MBA delta. Exact math: SWE→PM switch, consulting path, equity vesting cliff impact on ROI. Should a software engineer get an MBA? Decision framework →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-engineers"),
 }
 

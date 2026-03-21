@@ -2,8 +2,8 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Report 2026: Top Schools, Salaries & Payback Periods",
-  description: "The 2026 MBA ROI report. IRR tables across 12 industries, scholarship impact, online vs full-time, US vs Europe, recession scenarios. Free to cite →",
+  title: "MBA ROI Report 2026: IRR Tables, Salary Data & Break-Even by Industry [Free]",
+  description: "Full 2026 MBA ROI report: IRR 4%–55% across 12 industries, M7 vs regional break-even, scholarship impact, recession scenarios. 7,000+ data points. Cite freely →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-report-2026"),
 }
 

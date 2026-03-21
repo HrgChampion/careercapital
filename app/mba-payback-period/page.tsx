@@ -2,9 +2,9 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA Payback Period 2026: 4–8 Years by Industry [Real Math]",
+  title: "MBA Payback Period Calculator 2026: 4.2–13 Yrs (Exact Math by Industry)",
   description:
-    "MBA payback period by career track: consulting 4.2 yrs, banking 4.5 yrs, tech 6.1 yrs. Calculation methodology and what compresses payback timelines. See math →",
+    "How many years to break even on your MBA? Consulting: 4.2 yrs. Banking: 4.5 yrs. Tech: 6.1 yrs. Nonprofit: 9–13 yrs. Calculate yours free →",
   alternates: pageAlternates("https://careerreturns.com/mba-payback-period"),
 }
 
