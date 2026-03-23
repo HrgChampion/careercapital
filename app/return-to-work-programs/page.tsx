@@ -591,6 +591,13 @@ export default function ReturnToWorkProgramsPage() {
                 <p className="text-slate-500 text-xs">Is your bootcamp worth the cost? →</p>
               </div>
             </Link>
+            <Link href="/returnship-programs-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-cyan-400 font-mono text-lg">⇒</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-cyan-300 transition-colors">Returnship Programs 2026</p>
+                <p className="text-slate-500 text-xs">50+ companies — deadlines, pay & how to apply →</p>
+              </div>
+            </Link>
           </div>
         </section>
 

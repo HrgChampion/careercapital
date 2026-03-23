@@ -362,6 +362,13 @@ export default function AverageMbaSalaryPage() {
                 <p className="text-slate-500 text-xs">Break-even timelines by career track →</p>
               </div>
             </Link>
+            <Link href="/average-mba-salary-after-5-years" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↗</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Salary After 5 & 10 Years</p>
+                <p className="text-slate-500 text-xs">Career trajectory by track — MBB to $400K+ →</p>
+              </div>
+            </Link>
           </div>
         </section>
 
