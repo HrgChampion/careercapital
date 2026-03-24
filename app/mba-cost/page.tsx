@@ -1,5 +1,14 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+
+const _articleSchema = articleSchema({
+  title: "MBA Cost (2026): Tuition, Living Expenses & Opportunity Cost",
+  description: "2026 MBA cost breakdown. Tuition at M7, T15, and online programs, living costs, opportunity cost, loan interest, and true total economic cost.",
+  url: "https://careerreturns.com/mba-cost",
+  datePublished: "2026-03-09",
+  dateModified: "2026-03-24",
+})
+const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Cost 2026", url: "https://careerreturns.com/mba-cost" }])
 
 export const metadata = {
   title: "MBA Cost (2026): Tuition, Living Expenses & Opportunity Cost",
@@ -281,6 +290,8 @@ export default function MbaCostPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the total cost of an MBA at a top school?", "acceptedAnswer": {"@type": "Answer", "text": "The total cost of a 2-year M7 MBA including tuition, fees, living expenses, and books is approximately $280K–$360K. Harvard Business School totals approximately $320K–$350K. Wharton and Booth are approximately $300K–$330K. These figures exclude opportunity cost (foregone salary), which adds another $180K–$250K for the full economic cost analysis."}}, {"@type": "Question", "name": "What is the real economic cost of an MBA including foregone salary?", "acceptedAnswer": {"@type": "Answer", "text": "The true economic cost of a full-time 2-year MBA includes: tuition ($160K–$190K), living expenses ($80K–$110K), and foregone salary net of taxes (approximately $100K–$160K for 2 years). Total economic cost for M7 programs is typically $340K–$460K. This is the correct figure for NPV and IRR analysis, not tuition alone."}}, {"@type": "Question", "name": "How does MBA cost vary between M7, T15, and online programs?", "acceptedAnswer": {"@type": "Answer", "text": "M7 programs cost $160K–$190K in tuition + $80K–$110K in living expenses = $240K–$300K out-of-pocket. T15 programs cost $100K–$130K in tuition + $70K–$90K living = $170K–$220K out-of-pocket. Online MBA programs cost $25K–$75K total for tuition, with zero living cost premium. The out-of-pocket gap between M7 and online programs is $200K–$250K."}}, {"@type": "Question", "name": "How much can scholarships reduce MBA cost?", "acceptedAnswer": {"@type": "Answer", "text": "Merit scholarships at M7 programs average $20K–$60K per year, reducing 2-year tuition by $40K–$120K. T15–T25 programs offer more generous merit aid, with full scholarships possible for top candidates. A 50% scholarship at Wharton saves approximately $90K in tuition, improving 10-year NPV by approximately $100K–$130K after tax adjustments."}}, {"@type": "Question", "name": "What is the cheapest way to get an MBA from a top school?", "acceptedAnswer": {"@type": "Answer", "text": "The lowest-cost path to an M7 MBA credential involves maximizing merit scholarships, applying in early rounds to maximize financial aid consideration, targeting Yellow Ribbon programs if eligible as a veteran, and selecting programs with the strongest scholarship budgets relative to peer rankings. INSEAD's 10-month format also reduces total cost by eliminating a second year of tuition and living expenses."}}]}) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
     </main>
   )
 }

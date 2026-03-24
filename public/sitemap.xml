@@ -1,333 +1,519 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── Homepage ──────────────────────────────────────────────────────── -->
   <url>
     <loc>https://careerreturns.com/</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/"/>
   </url>
+
+  <!-- ── Calculators ────────────────────────────────────────────────────── -->
   <url>
     <loc>https://careerreturns.com/mba-roi-calculator</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-calculator"/>
   </url>
   <url>
     <loc>https://careerreturns.com/career-gap-calculator</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/career-gap-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/career-gap-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/career-gap-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/career-gap-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/career-gap-calculator"/>
   </url>
   <url>
     <loc>https://careerreturns.com/returnship-roi-calculator</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/returnship-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/returnship-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/returnship-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/returnship-roi-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/returnship-roi-calculator"/>
   </url>
   <url>
     <loc>https://careerreturns.com/reskilling-roi-calculator</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/reskilling-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/reskilling-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/reskilling-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/reskilling-roi-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/reskilling-roi-calculator"/>
   </url>
   <url>
     <loc>https://careerreturns.com/salary-benchmark-calculator</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/salary-benchmark-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/salary-benchmark-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/salary-benchmark-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/salary-benchmark-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/salary-benchmark-calculator"/>
   </url>
   <url>
     <loc>https://careerreturns.com/education-comparison-calculator</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/education-comparison-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/education-comparison-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/education-comparison-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/education-comparison-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/education-comparison-calculator"/>
   </url>
   <url>
     <loc>https://careerreturns.com/skills-gap-calculator</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/skills-gap-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/skills-gap-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/skills-gap-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/skills-gap-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/skills-gap-calculator"/>
   </url>
   <url>
     <loc>https://careerreturns.com/lifetime-earnings-calculator</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/lifetime-earnings-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/lifetime-earnings-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/lifetime-earnings-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/lifetime-earnings-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/lifetime-earnings-calculator"/>
   </url>
-  <url>
-    <loc>https://careerreturns.com/mba-worth-it</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-worth-it"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-worth-it"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-salary-increase</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-salary-increase"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-salary-increase"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-break-even</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-break-even"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-break-even"/>
-  </url>
+
+  <!-- ── Primary MBA guides ─────────────────────────────────────────────── -->
   <url>
     <loc>https://careerreturns.com/mba-roi</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi"/>
   </url>
   <url>
-    <loc>https://careerreturns.com/average-mba-salary</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://careerreturns.com/mba-worth-it</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/average-mba-salary"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/average-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-worth-it"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-worth-it"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-worth-it"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-worth-it"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-worth-it"/>
   </url>
   <url>
-    <loc>https://careerreturns.com/post-mba-salary</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://careerreturns.com/mba-break-even</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/post-mba-salary"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/post-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-break-even"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-break-even"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-break-even"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-break-even"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-break-even"/>
   </url>
   <url>
     <loc>https://careerreturns.com/mba-cost</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-cost"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-cost"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-cost"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-cost"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-cost"/>
   </url>
   <url>
     <loc>https://careerreturns.com/mba-payback-period</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-payback-period"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-payback-period"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-payback-period"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-payback-period"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-payback-period"/>
   </url>
   <url>
-    <loc>https://careerreturns.com/mba-vs-masters-roi</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://careerreturns.com/mba-salary-increase</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-salary-increase"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-salary-increase"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-salary-increase"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-salary-increase"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-salary-increase"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/mba-vs-masters-roi</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-vs-masters-roi"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-vs-masters-roi"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-vs-masters-roi"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-vs-masters-roi"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-vs-masters-roi"/>
+  </url>
+
+  <!-- ── Salary data pages ───────────────────────────────────────────────── -->
+  <url>
+    <loc>https://careerreturns.com/average-mba-salary</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/average-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/average-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/average-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/average-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/average-mba-salary"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/post-mba-salary</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/post-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/post-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/post-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/post-mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/post-mba-salary"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/mba-salary</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-salary"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-salary"/>
   </url>
   <url>
     <loc>https://careerreturns.com/mba-salary-analytics</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-salary-analytics"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-salary-analytics"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-salary-analytics"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-salary-analytics"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-salary-analytics"/>
   </url>
   <url>
-    <loc>https://careerreturns.com/for-employers</loc>
-    <lastmod>2026-03-11</lastmod>
+    <loc>https://careerreturns.com/mba-investment-banking-salary</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/for-employers"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/for-employers"/>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-investment-banking-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-investment-banking-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-investment-banking-salary"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-investment-banking-salary"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-investment-banking-salary"/>
   </url>
   <url>
-    <loc>https://careerreturns.com/mba-roi-report-2026</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-report-2026"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-report-2026"/>
+    <loc>https://careerreturns.com/mba-salary-by-school</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-salary-by-school"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-salary-by-school"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-salary-by-school"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-salary-by-school"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-salary-by-school"/>
   </url>
+  <url>
+    <loc>https://careerreturns.com/average-mba-salary-after-5-years</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/average-mba-salary-after-5-years"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/average-mba-salary-after-5-years"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/average-mba-salary-after-5-years"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/average-mba-salary-after-5-years"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/average-mba-salary-after-5-years"/>
+  </url>
+
+  <!-- ── Industry ROI guides ────────────────────────────────────────────── -->
   <url>
     <loc>https://careerreturns.com/mba-roi-consulting</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-consulting"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-consulting"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-consulting"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-consulting"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-consulting"/>
   </url>
   <url>
     <loc>https://careerreturns.com/mba-roi-investment-banking</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-investment-banking"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-investment-banking"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-investment-banking"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-investment-banking"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-investment-banking"/>
   </url>
   <url>
     <loc>https://careerreturns.com/mba-roi-tech</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-tech"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-tech"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-tech"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-tech"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-tech"/>
   </url>
   <url>
-    <loc>https://careerreturns.com/mba-roi-europe</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-europe"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-europe"/>
-    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-europe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-europe"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-roi-online-vs-full-time</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-online-vs-full-time"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-online-vs-full-time"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-roi-mckinsey</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-mckinsey"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-mckinsey"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-roi-goldman-sachs</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-goldman-sachs"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-goldman-sachs"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-roi-big4-vs-mbb</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-big4-vs-mbb"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-big4-vs-mbb"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-roi-100k-debt</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-100k-debt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-100k-debt"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-roi-recession</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-recession"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-recession"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-roi-insead-vs-wharton</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-insead-vs-wharton"/>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-insead-vs-wharton"/>
-    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-insead-vs-wharton"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-insead-vs-wharton"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-roi-engineers</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-engineers"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-engineers"/>
-  </url>
-  <url>
     <loc>https://careerreturns.com/mba-roi-healthcare</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-healthcare"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-healthcare"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-healthcare"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-healthcare"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-healthcare"/>
   </url>
   <url>
+    <loc>https://careerreturns.com/mba-roi-engineers</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-engineers"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-engineers"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-engineers"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-engineers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-engineers"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/mba-roi-big4-vs-mbb</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-big4-vs-mbb"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-big4-vs-mbb"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-big4-vs-mbb"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-big4-vs-mbb"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-big4-vs-mbb"/>
+  </url>
+  <url>
     <loc>https://careerreturns.com/mba-roi-military</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-military"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-military"/>
   </url>
   <url>
-    <loc>https://careerreturns.com/mba-roi-scholarship</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://careerreturns.com/mba-roi-recession</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-recession"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-recession"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-recession"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-recession"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-recession"/>
+  </url>
+
+  <!-- ── Employer / school comparisons ─────────────────────────────────── -->
+  <url>
+    <loc>https://careerreturns.com/mba-roi-mckinsey</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-mckinsey"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-mckinsey"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-mckinsey"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-mckinsey"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-mckinsey"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/mba-roi-goldman-sachs</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-goldman-sachs"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-goldman-sachs"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-goldman-sachs"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-goldman-sachs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-goldman-sachs"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/mba-roi-insead-vs-wharton</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-insead-vs-wharton"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-insead-vs-wharton"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-insead-vs-wharton"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-insead-vs-wharton"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-insead-vs-wharton"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/mba-roi-europe</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-europe"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-europe"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-europe"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-europe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-europe"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/mba-roi-online-vs-full-time</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-online-vs-full-time"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-online-vs-full-time"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-online-vs-full-time"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-online-vs-full-time"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-online-vs-full-time"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/mba-roi-100k-debt</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-100k-debt"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-100k-debt"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-100k-debt"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-100k-debt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-100k-debt"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/mba-roi-scholarship</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-scholarship"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-scholarship"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-scholarship"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-scholarship"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-scholarship"/>
   </url>
   <url>
+    <loc>https://careerreturns.com/mba-roi-report-2026</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-roi-report-2026"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/mba-roi-report-2026"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/mba-roi-report-2026"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/mba-roi-report-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-roi-report-2026"/>
+  </url>
+
+  <!-- ── Return-to-work pages ───────────────────────────────────────────── -->
+  <url>
+    <loc>https://careerreturns.com/returnship-programs-2026</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/returnship-programs-2026"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/returnship-programs-2026"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/returnship-programs-2026"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/returnship-programs-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/returnship-programs-2026"/>
+  </url>
+  <url>
     <loc>https://careerreturns.com/return-to-work-programs</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/return-to-work-programs"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/return-to-work-programs"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/return-to-work-programs"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/return-to-work-programs"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/return-to-work-programs"/>
   </url>
   <url>
     <loc>https://careerreturns.com/return-to-work-after-career-break</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/return-to-work-after-career-break"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/return-to-work-after-career-break"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/return-to-work-after-career-break"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/return-to-work-after-career-break"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/return-to-work-after-career-break"/>
   </url>
   <url>
     <loc>https://careerreturns.com/rebuild-work-experience-after-career-break</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/rebuild-work-experience-after-career-break"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/rebuild-work-experience-after-career-break"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/rebuild-work-experience-after-career-break"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/rebuild-work-experience-after-career-break"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/rebuild-work-experience-after-career-break"/>
   </url>
   <url>
     <loc>https://careerreturns.com/women-returning-to-work</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/women-returning-to-work"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/women-returning-to-work"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/women-returning-to-work"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/women-returning-to-work"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/women-returning-to-work"/>
   </url>
+
+  <!-- ── Other content pages ────────────────────────────────────────────── -->
+  <url>
+    <loc>https://careerreturns.com/for-employers</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/for-employers"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://careerreturns.com/for-employers"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://careerreturns.com/for-employers"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://careerreturns.com/for-employers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/for-employers"/>
+  </url>
+
+  <!-- ── Utility pages ──────────────────────────────────────────────────── -->
   <url>
     <loc>https://careerreturns.com/about</loc>
-    <lastmod>2026-03-10</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/about"/>
@@ -335,7 +521,7 @@
   </url>
   <url>
     <loc>https://careerreturns.com/contact</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/contact"/>
@@ -343,7 +529,7 @@
   </url>
   <url>
     <loc>https://careerreturns.com/privacy</loc>
-    <lastmod>2026-03-02</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/privacy"/>
@@ -351,50 +537,11 @@
   </url>
   <url>
     <loc>https://careerreturns.com/terms</loc>
-    <lastmod>2026-03-02</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/terms"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/terms"/>
   </url>
-  <url>
-    <loc>https://careerreturns.com/returnship-programs-2026</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/returnship-programs-2026"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/returnship-programs-2026"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-salary</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-salary"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-salary"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-investment-banking-salary</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-investment-banking-salary"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-investment-banking-salary"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/average-mba-salary-after-5-years</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/average-mba-salary-after-5-years"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/average-mba-salary-after-5-years"/>
-  </url>
-  <url>
-    <loc>https://careerreturns.com/mba-salary-by-school</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/mba-salary-by-school"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/mba-salary-by-school"/>
-  </url>
+
 </urlset>

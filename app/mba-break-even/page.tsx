@@ -1,5 +1,14 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+
+const _articleSchema = articleSchema({
+  title: "MBA Break-Even Period (2026): MBB, Banking & Tech Timelines",
+  description: "MBA break-even with real math. Three scenarios, factors that shift your payback timeline, and a free DCF calculator.",
+  url: "https://careerreturns.com/mba-break-even",
+  datePublished: "2026-03-03",
+  dateModified: "2026-03-24",
+})
+const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Break-Even Period", url: "https://careerreturns.com/mba-break-even" }])
 
 export const metadata = {
   title: "MBA Break-Even Period (2026): MBB, Banking & Tech Timelines",
@@ -464,6 +473,8 @@ export default function MbaBreakEvenPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "HowTo", "name": "How to Calculate MBA Break-Even Period", "step": [{"@type": "HowToStep", "name": "Calculate Total Cost", "text": "Add tuition + living expenses + 2 years of foregone salary (your pre-MBA salary × 2)."}, {"@type": "HowToStep", "name": "Calculate Annual Salary Delta", "text": "Subtract your expected pre-MBA salary from your expected post-MBA salary."}, {"@type": "HowToStep", "name": "Model Loan Payments", "text": "Compute monthly loan payment using PMT = rL / (1-(1+r)^-n), where r = monthly rate, L = loan amount, n = number of payments."}, {"@type": "HowToStep", "name": "Build Cumulative Cash Flow", "text": "Track net annual cash flows (salary delta minus loan payments) year by year post-graduation."}, {"@type": "HowToStep", "name": "Find Zero-Crossing", "text": "The year when cumulative cash flow crosses zero and equals total economic cost is your break-even point."}]}) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
     </main>
   )
 }

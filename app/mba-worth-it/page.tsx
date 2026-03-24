@@ -1,5 +1,14 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+
+const _articleSchema = articleSchema({
+  title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
+  description: "Is an MBA worth it financially in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math reliably fails.",
+  url: "https://careerreturns.com/mba-worth-it",
+  datePublished: "2026-03-03",
+  dateModified: "2026-03-24",
+})
+const _breadcrumbSchema = breadcrumbSchema([{ name: "Is an MBA Worth It?", url: "https://careerreturns.com/mba-worth-it" }])
 
 export const metadata = {
   title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
@@ -348,6 +357,8 @@ export default function MbaWorthItPage() {
           }),
         }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
     </main>
   )
 }

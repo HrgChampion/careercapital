@@ -1,5 +1,14 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+
+const _articleSchema = articleSchema({
+  title: "MBA Salary 2026: Average, Starting & Median Pay by Industry [Full Data]",
+  description: "$175K median at M7. $125K at top-25. Full MBA salary data by school tier, industry, specialization, and years of experience.",
+  url: "https://careerreturns.com/mba-salary",
+  datePublished: "2026-03-21",
+  dateModified: "2026-03-24",
+})
+const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Salary 2026", url: "https://careerreturns.com/mba-salary" }])
 
 export const metadata = {
   title: "MBA Salary 2026: Average, Starting & Median Pay by Industry [Full Data]",
@@ -678,6 +687,8 @@ export default function MbaSalaryPage() {
           }),
         }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
 
     </main>
   )

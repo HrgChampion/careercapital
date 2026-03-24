@@ -1,5 +1,14 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+
+const _articleSchema = articleSchema({
+  title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
+  description: "MBA average salary in 2026: $175K median at M7, $105K at top online programs. MBA salaries by school tier, industry, specialization, and years of experience.",
+  url: "https://careerreturns.com/average-mba-salary",
+  datePublished: "2026-03-09",
+  dateModified: "2026-03-24",
+})
+const _breadcrumbSchema = breadcrumbSchema([{ name: "Average MBA Salary 2026", url: "https://careerreturns.com/average-mba-salary" }])
 
 export const metadata = {
   title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
@@ -402,6 +411,8 @@ export default function AverageMbaSalaryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
     </main>
   )
 }

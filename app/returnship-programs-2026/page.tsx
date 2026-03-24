@@ -1,5 +1,14 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+
+const _articleSchema = articleSchema({
+  title: "Returnship Programs 2026: 50+ Companies, Pay & Application Deadlines",
+  description: "Complete list of returnship programs 2026: Amazon, Goldman, McKinsey, Meta, Microsoft and 45+ more. Stipends, conversion rates, application deadlines, and how to qualify.",
+  url: "https://careerreturns.com/returnship-programs-2026",
+  datePublished: "2026-03-21",
+  dateModified: "2026-03-24",
+})
+const _breadcrumbSchema = breadcrumbSchema([{ name: "Returnship Programs 2026", url: "https://careerreturns.com/returnship-programs-2026" }])
 
 export const metadata = {
   title: "Returnship Programs 2026: 50+ Companies, Pay & Application Deadlines",
@@ -522,6 +531,8 @@ export default function ReturnshipPrograms2026Page() {
           }),
         }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
 
     </main>
   )
