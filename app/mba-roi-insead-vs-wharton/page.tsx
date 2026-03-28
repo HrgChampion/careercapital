@@ -2,10 +2,21 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "INSEAD vs Wharton ROI 2026: $171K Cost Gap — Which Wins on IRR?",
-  description:
-    "INSEAD: $224K total cost, 1-yr format. Wharton: $395K total cost, 2-yr. Full IRR, NPV, and break-even head-to-head. Surprise winner for international careers →",
+  title: "INSEAD vs Wharton 2026: $171K Cost Gap — Which MBA Wins?",
+  description: "INSEAD: $224K total cost, 1 year. Wharton: $395K, 2 years. Full cost, salary outcomes & break-even comparison. Surprise winner for international careers →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-insead-vs-wharton", true),
+  openGraph: {
+    title: "INSEAD vs Wharton 2026: $171K Cost Gap — Which MBA Wins?",
+    description: "INSEAD: $224K total cost, 1 year. Wharton: $395K, 2 years. Full cost, salary outcomes & break-even comparison. Surprise winner for international careers →",
+    url: "https://careerreturns.com/mba-roi-insead-vs-wharton",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "INSEAD vs Wharton 2026: $171K Cost Gap — Which MBA Wins?",
+    description: "INSEAD: $224K total cost, 1 year. Wharton: $395K, 2 years. Full salary & break-even comparison. Surprise winner for international careers.",
+  },
 }
 
 export default function MbaRoiInseadVsWhartonPage() {

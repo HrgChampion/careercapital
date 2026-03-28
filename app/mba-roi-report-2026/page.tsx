@@ -2,9 +2,21 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Report 2026: IRR Tables, Salary Data & Break-Even by Industry [Free]",
-  description: "Full 2026 MBA ROI report: IRR 4%–55% across 12 industries, M7 vs regional break-even, scholarship impact, recession scenarios. 7,000+ data points. Cite freely →",
+  title: "MBA ROI Report 2026: Is Your MBA Worth It? Full Data",
+  description: "IRR 4%–55% across 12 industries. M7 vs regional break-even, scholarship impact & recession scenarios. 7,000+ data points — free to cite.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-report-2026"),
+  openGraph: {
+    title: "MBA ROI Report 2026: Is Your MBA Worth It? Full Data",
+    description: "IRR 4%–55% across 12 industries. M7 vs regional break-even, scholarship impact & recession scenarios. 7,000+ data points — free to cite.",
+    url: "https://careerreturns.com/mba-roi-report-2026",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MBA ROI Report 2026: Is Your MBA Worth It? Full Data",
+    description: "IRR 4%–55% across 12 industries. M7 vs regional break-even, scholarship impact & recession scenarios. 7,000+ data points — free to cite.",
+  },
 }
 
 const industryTable = [

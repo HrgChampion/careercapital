@@ -2,10 +2,21 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Big 4 vs MBB: $47K Annual Gap — Does MBB MBA ROI Justify the Risk? (2026)",
-  description:
-    "McKinsey associate vs Deloitte manager: $47K/yr salary gap, 3.8yr break-even difference, and when Big 4 beats MBB on risk-adjusted IRR. Side-by-side 2026 data →",
+  title: "Big 4 vs MBB MBA ROI 2026: The $47K Annual Pay Gap Analyzed",
+  description: "McKinsey associate vs Deloitte manager: $47K/yr salary gap, 3.8yr break-even difference. When Big 4 beats MBB on risk-adjusted return. Full 2026 data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-big4-vs-mbb"),
+  openGraph: {
+    title: "Big 4 vs MBB MBA ROI 2026: The $47K Annual Pay Gap Analyzed",
+    description: "McKinsey associate vs Deloitte manager: $47K/yr salary gap, 3.8yr break-even difference. When Big 4 beats MBB on risk-adjusted return. Full 2026 data →",
+    url: "https://careerreturns.com/mba-roi-big4-vs-mbb",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Big 4 vs MBB MBA ROI 2026: The $47K Annual Pay Gap Analyzed",
+    description: "McKinsey associate vs Deloitte manager: $47K/yr salary gap, 3.8yr break-even difference. When Big 4 beats MBB on risk-adjusted return.",
+  },
 }
 
 export default function MbaRoiBig4VsMbbPage() {

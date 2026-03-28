@@ -2,8 +2,8 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 
 const _articleSchema = articleSchema({
-  title: "Returnship Programs 2026: 50+ Companies, Pay & Application Deadlines",
-  description: "Complete list of returnship programs 2026: Amazon, Goldman, McKinsey, Meta, Microsoft and 45+ more. Stipends, conversion rates, application deadlines, and how to qualify.",
+  title: "Returnship Programs 2026: 50+ Companies, Pay & Deadlines",
+  description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ programs compared by stipend, deadline & how to qualify.",
   url: "https://careerreturns.com/returnship-programs-2026",
   datePublished: "2026-03-21",
   dateModified: "2026-03-24",
@@ -11,23 +11,20 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Returnship Programs 2026", url: "https://careerreturns.com/returnship-programs-2026" }])
 
 export const metadata = {
-  title: "Returnship Programs 2026: 50+ Companies, Pay & Application Deadlines",
-  description:
-    "Complete list of returnship programs 2026: Amazon, Goldman, McKinsey, Meta, Microsoft and 45+ more. Stipends, conversion rates, application deadlines, and how to qualify →",
+  title: "Returnship Programs 2026: 50+ Companies, Pay & Deadlines",
+  description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ programs compared by stipend, deadline & how to qualify →",
   alternates: pageAlternates("https://careerreturns.com/returnship-programs-2026"),
   openGraph: {
-    title: "Returnship Programs 2026: 50+ Companies, Pay & Application Deadlines",
-    description:
-      "Complete list of returnship programs 2026: Amazon, Goldman, McKinsey, Meta, Microsoft and 45+ more. Stipends, conversion rates, application deadlines, and how to qualify.",
+    title: "Returnship Programs 2026: 50+ Companies, Pay & Deadlines",
+    description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ programs compared by stipend, deadline & how to qualify →",
     url: "https://careerreturns.com/returnship-programs-2026",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Returnship Programs 2026: 50+ Companies (Deadlines, Pay & How to Apply)",
-    description:
-      "Amazon converts at 90%. Goldman at 75%. McKinsey full salary. 50+ returnship programs compared by stipend, conversion rate, and how to qualify.",
+    title: "Returnship Programs 2026: 50+ Companies, Pay & Deadlines",
+    description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ programs compared by stipend, deadline & how to qualify.",
   },
 }
 

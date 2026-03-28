@@ -2,10 +2,21 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI for Engineers 2026: Why $400K RSUs Can Destroy Your Business Case",
-  description:
-    "High SWE salary = compressed MBA delta. Exact math: SWE→PM switch, consulting path, equity vesting cliff impact on ROI. Should a software engineer get an MBA? Decision framework →",
+  title: "MBA ROI for Engineers 2026: Should a SWE Get an MBA?",
+  description: "High pre-MBA salary compresses the delta. SWE→PM switch, consulting path & equity vesting cliff — exact ROI math for engineers. Decision framework →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-engineers"),
+  openGraph: {
+    title: "MBA ROI for Engineers 2026: Should a SWE Get an MBA?",
+    description: "High pre-MBA salary compresses the delta. SWE→PM switch, consulting path & equity vesting cliff — exact ROI math for engineers. Decision framework →",
+    url: "https://careerreturns.com/mba-roi-engineers",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MBA ROI for Engineers 2026: Should a SWE Get an MBA?",
+    description: "High pre-MBA salary compresses the delta. SWE→PM, consulting path & equity vesting cliff — exact ROI math for engineers. Decision framework.",
+  },
 }
 
 export default function MbaRoiEngineersPage() {

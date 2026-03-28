@@ -2,10 +2,21 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "European MBA ROI 2026: INSEAD Saves $171K vs Wharton — Is It Worth It?",
-  description:
-    "INSEAD ($224K) vs US M7 ($395K): full IRR comparison, salary outcomes, who wins on NPV. European MBA ROI 2026 — real numbers, not rankings →",
+  title: "European MBA ROI 2026: INSEAD vs US Programs Compared",
+  description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): full cost, salary outcomes & break-even. $171K cost gap — who wins for international careers? Real data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-europe", true),
+  openGraph: {
+    title: "European MBA ROI 2026: INSEAD vs US Programs Compared",
+    description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): full cost, salary outcomes & break-even. $171K cost gap — who wins for international careers? Real data →",
+    url: "https://careerreturns.com/mba-roi-europe",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "European MBA ROI 2026: INSEAD vs US Programs Compared",
+    description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): full cost, salary outcomes & break-even. $171K cost gap — who wins for international careers?",
+  },
 }
 
 export default function MbaRoiEuropePage() {
