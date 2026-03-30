@@ -14,7 +14,21 @@ export const metadata = {
   title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
   description:
     "MBA average salary in 2026: $175K median at M7, $105K at top online programs. MBA salaries by school tier, industry, specialization, and years of experience. Average salary of an MBA graduate vs. no MBA — lifetime earnings gap data. Does an MBA increase salary? Full data →",
-  alternates: pageAlternates("https://careerreturns.com/average-mba-salary"),
+  alternates: pageAlternates("https://careerreturns.com/average-mba-salary", true),
+  openGraph: {
+    title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
+    description:
+      "MBA average salary in 2026: $175K median at M7, $105K at top online programs. MBA salaries by school tier, industry, specialization, and years of experience. Average salary of an MBA graduate vs. no MBA — lifetime earnings gap data.",
+    url: "https://careerreturns.com/average-mba-salary",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
+    description:
+      "$175K median at M7. $105K at top online programs. Full MBA salary data by school tier, industry, and years of experience. Updated 2026.",
+  },
 }
 
 const datasetSchema = {

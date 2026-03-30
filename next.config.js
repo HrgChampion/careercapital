@@ -3,6 +3,17 @@ const nextConfig = {
   // Compress responses
   compress: true,
 
+  // 301 redirects for cannibalised pages
+  async redirects() {
+    return [
+      {
+        source: '/mba-salary',
+        destination: '/average-mba-salary',
+        permanent: true,
+      },
+    ]
+  },
+
   // Security & SEO headers
   async headers() {
     return [
