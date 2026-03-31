@@ -109,6 +109,16 @@ export default function AverageMbaSalaryPage() {
             at M7 business schools placed into MBB consulting. For most MBA students, earning an MBA degree
             raises earning potential by 47–100% depending on career path, school tier, and destination industry.
           </p>
+          <div className="flex items-center gap-3 pt-1 border-t border-white/8">
+            <div className="w-7 h-7 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0">
+              <span className="text-violet-400 text-xs font-semibold">HG</span>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-sm text-white font-medium">Himanshu Gauba</span>
+              <span className="text-slate-600 text-xs">·</span>
+              <span className="text-slate-500 text-xs">Updated March 24, 2026</span>
+            </div>
+          </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { label: "M7 Median Salary", value: "$175k" },

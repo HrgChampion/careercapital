@@ -162,6 +162,16 @@ export default function ReturnshipPrograms2026Page() {
             The complete directory of returnship programs open in 2026 — ranked by stipend, conversion rate,
             and application timing. Built for career returners who want numbers, not vague encouragement.
           </p>
+          <div className="flex items-center gap-3 pt-1 border-t border-white/8">
+            <div className="w-7 h-7 rounded-full bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center shrink-0">
+              <span className="text-cyan-400 text-xs font-semibold">HG</span>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-sm text-white font-medium">Himanshu Gauba</span>
+              <span className="text-slate-600 text-xs">·</span>
+              <span className="text-slate-500 text-xs">Updated March 24, 2026</span>
+            </div>
+          </div>
           <div className="flex flex-wrap gap-3">
             <Link
               href="/returnship-roi-calculator"

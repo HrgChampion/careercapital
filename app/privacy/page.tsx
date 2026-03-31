@@ -6,6 +6,7 @@ export const metadata = {
   description:
     "CareerReturns privacy policy. What data we collect, how we use it, and your rights as a visitor.",
   alternates: pageAlternates("https://careerreturns.com/privacy"),
+  robots: { index: false, follow: true },
 }
 
 export default function PrivacyPage() {

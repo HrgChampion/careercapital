@@ -534,4 +534,62 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/terms"/>
   </url>
 
+  <!-- ── Blog ──────────────────────────────────────────────────────────── -->
+  <url>
+    <loc>https://careerreturns.com/blog</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/blog"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/blog/is-mba-worth-it-2026</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/blog/is-mba-worth-it-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/blog/is-mba-worth-it-2026"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/blog/how-to-calculate-mba-roi</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/blog/how-to-calculate-mba-roi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/blog/how-to-calculate-mba-roi"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/blog/mba-salary-negotiation</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/blog/mba-salary-negotiation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/blog/mba-salary-negotiation"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/blog/mba-vs-masters-vs-bootcamp</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/blog/mba-vs-masters-vs-bootcamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/blog/mba-vs-masters-vs-bootcamp"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/blog/career-break-return-strategies</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/blog/career-break-return-strategies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/blog/career-break-return-strategies"/>
+  </url>
+  <url>
+    <loc>https://careerreturns.com/blog/women-mba-roi</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://careerreturns.com/blog/women-mba-roi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://careerreturns.com/blog/women-mba-roi"/>
+  </url>
+
 </urlset>

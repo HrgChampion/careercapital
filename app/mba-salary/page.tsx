@@ -282,6 +282,16 @@ export default function MbaSalaryPage() {
             Full MBA salary data by school tier, industry, specialization, geography, and years of experience.
             Not averages that obscure the numbers — the actual ranges that drive the MBA ROI decision.
           </p>
+          <div className="flex items-center gap-3 pt-1 border-t border-white/8">
+            <div className="w-7 h-7 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0">
+              <span className="text-violet-400 text-xs font-semibold">HG</span>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-sm text-white font-medium">Himanshu Gauba</span>
+              <span className="text-slate-600 text-xs">·</span>
+              <span className="text-slate-500 text-xs">Updated March 24, 2026</span>
+            </div>
+          </div>
 
           {/* Quick answer box */}
           <div className="bg-white/5 border border-violet-500/20 rounded-2xl p-5 sm:p-6 space-y-3">
