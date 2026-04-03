@@ -2,20 +2,20 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Report 2026: Is Your MBA Worth It? Full Data",
-  description: "IRR 4%–55% across 12 industries. M7 vs regional break-even, scholarship impact & recession scenarios. 7,000+ data points — free to cite.",
+  title: "MBA ROI 2026: Is Your MBA Worth It? Salary Uplifts by Industry & School",
+  description: "MBA worth it for YOU? See salary uplifts, payback periods & ROI by industry. MBB: 4.2-yr break-even. Tech: 6.1 yrs. Nonprofit: 13 yrs. Free data, 2026.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-report-2026"),
   openGraph: {
-    title: "MBA ROI Report 2026: Is Your MBA Worth It? Full Data",
-    description: "IRR 4%–55% across 12 industries. M7 vs regional break-even, scholarship impact & recession scenarios. 7,000+ data points — free to cite.",
+    title: "MBA ROI 2026: Is Your MBA Worth It? Salary Uplifts by Industry & School",
+    description: "MBA worth it for YOU? See salary uplifts, payback periods & ROI by industry. MBB: 4.2-yr break-even. Tech: 6.1 yrs. Nonprofit: 13 yrs. Free data, 2026.",
     url: "https://careerreturns.com/mba-roi-report-2026",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MBA ROI Report 2026: Is Your MBA Worth It? Full Data",
-    description: "IRR 4%–55% across 12 industries. M7 vs regional break-even, scholarship impact & recession scenarios. 7,000+ data points — free to cite.",
+    title: "MBA ROI 2026: Is Your MBA Worth It? Salary Uplifts by Industry & School",
+    description: "MBA worth it for YOU? See salary uplifts, payback periods & ROI by industry. MBB: 4.2-yr break-even. Tech: 6.1 yrs. Nonprofit: 13 yrs. Free data, 2026.",
   },
 }
 

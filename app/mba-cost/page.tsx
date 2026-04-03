@@ -2,8 +2,8 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 
 const _articleSchema = articleSchema({
-  title: "MBA Cost (2026): Tuition, Living Expenses & Opportunity Cost",
-  description: "2026 MBA cost breakdown. Tuition at M7, T15, and online programs, living costs, opportunity cost, loan interest, and true total economic cost.",
+  title: "MBA Total Cost 2026: $22K–$492K True Economic Cost by School",
+  description: "True MBA cost goes beyond tuition. M7 programs cost $460K–$492K total (tuition + living + lost income). Online MBAs from $22K. See full breakdown by school.",
   url: "https://careerreturns.com/mba-cost",
   datePublished: "2026-03-09",
   dateModified: "2026-03-24",
@@ -11,10 +11,22 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Cost 2026", url: "https://careerreturns.com/mba-cost" }])
 
 export const metadata = {
-  title: "MBA Cost (2026): Tuition, Living Expenses & Opportunity Cost",
+  title: "MBA Total Cost 2026: $22K–$492K True Economic Cost by School",
   description:
-    "2026 MBA cost breakdown. Tuition at M7, T15, and online programs, living costs, opportunity cost, loan interest, and true total economic cost. See data →",
+    "True MBA cost goes beyond tuition. M7 programs cost $460K–$492K total (tuition + living + lost income). Online MBAs from $22K. See full breakdown by school.",
   alternates: pageAlternates("https://careerreturns.com/mba-cost"),
+  openGraph: {
+    title: "MBA Total Cost 2026: $22K–$492K True Economic Cost by School",
+    description: "True MBA cost goes beyond tuition. M7 programs cost $460K–$492K total (tuition + living + lost income). Online MBAs from $22K. See full breakdown by school.",
+    url: "https://careerreturns.com/mba-cost",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MBA Total Cost 2026: $22K–$492K True Economic Cost by School",
+    description: "True MBA cost goes beyond tuition. M7 programs cost $460K–$492K total (tuition + living + lost income). Online MBAs from $22K. See full breakdown by school.",
+  },
 }
 
 const tuitionTable = [
