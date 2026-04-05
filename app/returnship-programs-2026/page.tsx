@@ -186,6 +186,23 @@ export default function ReturnshipPrograms2026Page() {
               Browse All 50+ Programs ↓
             </Link>
           </div>
+
+          {/* Roadmap CTA */}
+          <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+            <div className="shrink-0 w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center">
+              <span className="text-cyan-400 text-base">🗺</span>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-white text-sm font-medium">Not sure which program fits your profile?</p>
+              <p className="text-slate-500 text-xs mt-0.5">Get a personalized 90-day return plan that tells you exactly which programs to target — and when.</p>
+            </div>
+            <Link
+              href="/career-return-roadmap"
+              className="shrink-0 text-cyan-400 text-sm font-medium hover:text-cyan-300 transition-colors whitespace-nowrap"
+            >
+              Build My Plan →
+            </Link>
+          </div>
         </header>
 
         {/* Quick Stats Bar */}

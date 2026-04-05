@@ -104,7 +104,7 @@ export default function HomePage() {
             href="#career-tools"
             className="border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all px-8 py-4 rounded-xl font-medium text-white text-base"
           >
-            All 7 Career Tools ↓
+            All Tools ↓
           </a>
         </div>
       </section>
@@ -114,6 +114,23 @@ export default function HomePage() {
         <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest mb-2">Career Return Tools</p>
         <h2 className="text-2xl font-semibold tracking-tight mb-2">Financial Modeling for Career Returners</h2>
         <p className="text-slate-400 text-sm mb-8 max-w-2xl">Whether you have a career gap, are evaluating a returnship program, or want to know what your skills gap is costing you — these tools model the exact dollar impact.</p>
+
+        {/* Roadmap — featured full-width card */}
+        <Link
+          href="/career-return-roadmap"
+          className="group flex items-center gap-5 rounded-2xl bg-linear-to-r from-cyan-950/60 to-teal-950/60 border border-cyan-500/25 hover:border-cyan-500/50 p-5 sm:p-7 mb-5 transition-all"
+        >
+          <div className="shrink-0 w-12 h-12 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-2xl">🗺</div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-1">
+              <p className="font-semibold text-white group-hover:text-cyan-300 transition-colors">Career Return Roadmap</p>
+              <span className="text-[10px] font-semibold uppercase tracking-wide text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 px-2 py-0.5 rounded-full">New</span>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed">Answer 6 questions. Get a personalized 90-day plan with weekly tasks, the right programs for your background, and a tool linked to every phase.</p>
+          </div>
+          <p className="shrink-0 text-cyan-400 text-sm font-medium group-hover:translate-x-1 transition-transform">Build my plan →</p>
+        </Link>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
           <Link href="/career-gap-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-emerald-500/30 transition-all">

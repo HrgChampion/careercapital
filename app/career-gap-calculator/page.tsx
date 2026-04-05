@@ -166,6 +166,23 @@ export default function CareerGapCalculator() {
           <span>·</span>
           <span>Free — no signup</span>
         </div>
+
+        {/* Roadmap CTA */}
+        <div className="mt-5 flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+          <div className="shrink-0 w-9 h-9 rounded-xl bg-indigo-500/15 border border-indigo-500/25 flex items-center justify-center">
+            <span className="text-indigo-400 text-base">🗺</span>
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-white text-sm font-medium">Want a full 90-day plan, not just numbers?</p>
+            <p className="text-white/40 text-xs mt-0.5">The Career Return Roadmap turns your calculator results into a week-by-week action plan for your specific gap and industry.</p>
+          </div>
+          <Link
+            href="/career-return-roadmap"
+            className="shrink-0 text-indigo-400 text-sm font-medium hover:text-indigo-300 transition-colors whitespace-nowrap"
+          >
+            Build My Plan →
+          </Link>
+        </div>
       </section>
 
       <div className="max-w-5xl mx-auto px-6 py-10">

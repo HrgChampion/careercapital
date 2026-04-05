@@ -584,6 +584,13 @@ export default function ReturnToWorkProgramsPage() {
                 <p className="text-slate-500 text-xs">Are you underpaid after your break? →</p>
               </div>
             </Link>
+            <Link href="/career-return-roadmap" className="group flex items-center gap-3 rounded-xl bg-cyan-500/8 border border-cyan-500/20 p-4 hover:bg-cyan-500/12 hover:border-cyan-500/35 transition-all">
+              <div className="text-cyan-400 text-lg">🗺</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-cyan-300 transition-colors">Career Return Roadmap</p>
+                <p className="text-slate-500 text-xs">Get your personalized 90-day plan →</p>
+              </div>
+            </Link>
             <Link href="/reskilling-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-cyan-400 font-mono text-lg">▲</div>
               <div>

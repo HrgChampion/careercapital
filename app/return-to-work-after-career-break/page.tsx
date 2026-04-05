@@ -97,6 +97,23 @@ export default function ReturnToWorkAfterCareerBreakPage() {
           </p>
         </header>
 
+        {/* Roadmap CTA */}
+        <div className="flex items-center gap-4 bg-emerald-500/8 border border-emerald-500/20 rounded-xl px-5 py-4">
+          <div className="shrink-0 w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center">
+            <span className="text-emerald-400 text-base">🗺</span>
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-white text-sm font-medium">Want a step-by-step plan for your specific situation?</p>
+            <p className="text-slate-500 text-xs mt-0.5">Answer 6 questions and get a personalized 90-day return roadmap — with weekly tasks and the right tools for each phase.</p>
+          </div>
+          <Link
+            href="/career-return-roadmap"
+            className="shrink-0 text-emerald-400 text-sm font-medium hover:text-emerald-300 transition-colors whitespace-nowrap"
+          >
+            Get My Plan →
+          </Link>
+        </div>
+
         {/* Jump to nav */}
         <nav className="bg-white/5 border border-white/10 rounded-xl p-4">
           <p className="text-xs font-medium text-slate-500 uppercase tracking-widest mb-3">Jump to</p>

@@ -141,6 +141,23 @@ export default function WomenReturningToWorkPage() {
           <p className="text-slate-400 text-lg leading-relaxed">
             The gender gap in career break penalties is real — and closeable.
           </p>
+
+          {/* Roadmap CTA */}
+          <div className="flex items-center gap-4 bg-rose-500/8 border border-rose-500/20 rounded-xl px-5 py-4">
+            <div className="shrink-0 w-9 h-9 rounded-xl bg-rose-500/15 border border-rose-500/25 flex items-center justify-center">
+              <span className="text-rose-400 text-base">🗺</span>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-white text-sm font-medium">Get a personalized 90-day return roadmap</p>
+              <p className="text-slate-500 text-xs mt-0.5">Answer 6 questions. Get weekly tasks, the right programs for your background, and salary targets at every phase.</p>
+            </div>
+            <Link
+              href="/career-return-roadmap"
+              className="shrink-0 text-rose-400 text-sm font-medium hover:text-rose-300 transition-colors whitespace-nowrap"
+            >
+              Build My Plan →
+            </Link>
+          </div>
         </header>
 
         {/* Short Answer */}
