@@ -363,6 +363,91 @@ export default function AverageMbaSalaryPage() {
           </p>
         </section>
 
+        {/* ── MBA Salary by City ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <h2 className="text-xl font-semibold tracking-tight mb-6">Average MBA Salary by City</h2>
+          <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-3xl">
+            Location significantly affects post-MBA compensation. Major finance and consulting hubs pay the highest
+            nominal salaries, though cost-of-living adjustments reduce real purchasing power in New York and San
+            Francisco. Here are median first-year post-MBA base salaries by metro, across all industries.
+          </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl">
+            {[
+              { city: "New York City", salary: "$175k – $215k", note: "Finance & consulting hub; highest nominal salaries" },
+              { city: "San Francisco / Bay Area", salary: "$170k – $210k", note: "Tech-weighted; includes RSU in total comp" },
+              { city: "Boston", salary: "$160k – $195k", note: "Consulting + biotech/healthcare management" },
+              { city: "Chicago", salary: "$155k – $185k", note: "Finance, consulting, and CPG sectors" },
+              { city: "Los Angeles", salary: "$145k – $175k", note: "Entertainment, tech, and real estate strategy" },
+              { city: "Houston", salary: "$140k – $165k", note: "Energy sector; lower cost of living" },
+            ].map(({ city, salary, note }) => (
+              <div key={city} className="bg-white/5 border border-white/10 rounded-xl p-4 space-y-1">
+                <p className="text-white text-sm font-medium">{city}</p>
+                <p className="text-indigo-300 font-semibold text-base">{salary}</p>
+                <p className="text-slate-500 text-xs leading-relaxed">{note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Highest-Paying MBA Jobs ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <h2 className="text-xl font-semibold tracking-tight mb-6">Highest Paying MBA Jobs in 2026</h2>
+          <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-3xl">
+            Total compensation varies dramatically by job function. The highest-paying MBA jobs concentrate in
+            finance, consulting, and technology — sectors with structured post-MBA recruiting pipelines at
+            M7 and select T15 programs.
+          </p>
+          <div className="space-y-3 max-w-3xl">
+            {[
+              { role: "Private Equity Associate", comp: "$300k – $500k+", note: "Base + bonus + carry. Highly selective; most require pre-MBA banking or consulting." },
+              { role: "Investment Banking Associate", comp: "$250k – $350k", note: "Base $175k–$225k + bonus. Bulge bracket and elite boutiques recruit on-campus at M7." },
+              { role: "Hedge Fund Analyst (post-MBA)", comp: "$250k – $400k+", note: "Total comp varies widely; AUM-dependent. Usually requires finance pre-MBA background." },
+              { role: "MBB Management Consultant", comp: "$210k – $250k", note: "Base $190k–$215k + $20k–$40k bonus. Most competitive post-MBA job category by applications." },
+              { role: "Tech Product Manager (FAANG)", comp: "$200k – $320k", note: "Base $175k–$200k + RSU grants $50k–$120k/yr. More selective post-2022 layoffs." },
+              { role: "Venture Capital Associate", comp: "$150k – $250k", note: "Base lower; carry potential is high but illiquid and long-horizon." },
+            ].map(({ role, comp, note }) => (
+              <div key={role} className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                <div className="sm:w-56 shrink-0">
+                  <p className="text-white text-sm font-medium">{role}</p>
+                  <p className="text-indigo-300 font-semibold text-sm mt-0.5">{comp}</p>
+                </div>
+                <p className="text-slate-400 text-xs leading-relaxed">{note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── MBA Salary by Gender ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <h2 className="text-xl font-semibold tracking-tight mb-6">MBA Salary by Gender: 2026 Data</h2>
+          <div className="space-y-4 max-w-3xl">
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The gender pay gap in post-MBA compensation persists across industries, though it is narrower at the
+              point of offer than at the 5–10 year mark. GMAC survey data and school employment reports show the
+              following patterns for 2025–2026 graduates:
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Year 1 Median — Men</p>
+                <p className="text-white font-semibold text-lg">$155k – $185k</p>
+                <p className="text-slate-400 text-xs">M7 programs, all industries. Finance and consulting tracks skew this higher.</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Year 1 Median — Women</p>
+                <p className="text-white font-semibold text-lg">$145k – $175k</p>
+                <p className="text-slate-400 text-xs">Gap is $8k–$12k at Year 1. Driven partly by industry mix, partly by negotiation patterns.</p>
+              </div>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The gap widens over time: at year 10, male M7 MBA alumni in finance and consulting earn approximately
+              15–22% more than female counterparts in the same sectors. Research from Harvard Business School
+              attributes most of the long-term gap to industry tenure, promotion pace, and career interruptions — not
+              initial offer differences. Within MBB consulting specifically, the structured leveling system reduces
+              year-1 and year-3 gaps to under 5%.
+            </p>
+          </div>
+        </section>
+
         {/* ── Related Guides ── */}
         <section className="border-t border-white/10 pt-10 mt-10">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>

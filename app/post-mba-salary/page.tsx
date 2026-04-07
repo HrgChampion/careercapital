@@ -411,6 +411,126 @@ export default function PostMbaSalaryPage() {
           </Link>
         </section>
 
+        {/* ── MBA Salary by Function ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <h2 className="text-xl font-semibold tracking-tight mb-6">Post-MBA Salary by Job Function</h2>
+          <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-3xl">
+            Industry is the primary salary driver, but <span className="text-white font-medium">job function within an industry</span> creates
+            meaningful variation. Two MBA graduates at the same firm in different functions can see $40k–$80k
+            differences in total first-year compensation.
+          </p>
+          <div className="space-y-3 max-w-3xl">
+            {[
+              { fn: "Strategy / Corporate Development", base: "$145k – $180k", note: "Competitive with consulting; typically in-house M&A and planning teams at large corporates." },
+              { fn: "Finance / FP&A", base: "$120k – $155k", note: "Broad range depending on company size. PE-backed companies skew higher with carry exposure." },
+              { fn: "Product Management", base: "$155k – $200k", note: "Tech-sector function. RSU grants add significantly to total comp at FAANG-tier companies." },
+              { fn: "Operations / Supply Chain", base: "$110k – $145k", note: "Strong at CPG, manufacturing, and logistics firms. Amazon and operations-heavy tech firms pay more." },
+              { fn: "Marketing / Brand Management", base: "$100k – $135k", note: "CPG (P&G, Unilever) and consumer tech. Lower base but strong long-term brand leadership track." },
+              { fn: "General Management / Rotational", base: "$115k – $150k", note: "Leadership development programs at major corporates. Trade-off: breadth over immediate salary." },
+            ].map(({ fn, base, note }) => (
+              <div key={fn} className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                <div className="sm:w-64 shrink-0">
+                  <p className="text-white text-sm font-medium">{fn}</p>
+                  <p className="text-indigo-300 font-semibold text-sm mt-0.5">{base} base</p>
+                </div>
+                <p className="text-slate-400 text-xs leading-relaxed">{note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Post-MBA Salary Negotiation ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <h2 className="text-xl font-semibold tracking-tight mb-6">Post-MBA Salary Negotiation: What Actually Works</h2>
+          <div className="space-y-5 max-w-3xl">
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Post-MBA offers at structured on-campus recruiting programs (consulting, investment banking) have almost
+              no base salary negotiation — firms use locked band structures and will not deviate. But <span className="text-white font-medium">signing bonuses,
+              start dates, relocation packages, and RSU cliff timing</span> are negotiable in most roles. Here is what
+              to focus on by sector.
+            </p>
+            <div className="space-y-4">
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-white font-semibold text-sm">Consulting (MBB / Big 4)</p>
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  Base salary is non-negotiable at MBB — all associates at the same office start at the same number.
+                  The only lever is <span className="text-white">office location</span> (New York pays more than Chicago). Signing bonus timing
+                  and relocation allowances can sometimes be adjusted. Do not waste negotiating capital trying to
+                  move base salary at McKinsey, Bain, or BCG.
+                </p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-white font-semibold text-sm">Investment Banking</p>
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  Bulge-bracket associate base salaries are fixed by class year. Signing bonuses at elite boutiques
+                  (Lazard, Evercore, Moelis) have more flexibility — especially if you have a competing offer from
+                  another firm. <span className="text-white">Competing offers are the only effective negotiating leverage</span> in
+                  structured banking recruiting.
+                </p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-white font-semibold text-sm">Tech / Product Management</p>
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  The most negotiable sector post-MBA. Base, signing bonus, RSU grant size, and RSU cliff timing are
+                  all on the table. Use <span className="text-white">Levels.fyi data</span> to benchmark total comp by level, not just base
+                  salary. A 10% increase in RSU grant at a FAANG company is worth $10k–$20k/year for four years —
+                  a better ROI than negotiating base by $5k.
+                </p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-white font-semibold text-sm">General / Corporate Roles</p>
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  The highest negotiating flexibility. Use competing MBA offers, referencing the median salary for
+                  your target role from GMAC data or this page. Focus on <span className="text-white">title, level, and
+                  performance review timing</span> alongside base — a title bump of one level can be worth more than
+                  a $10k base increase over a 3-year horizon.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Online vs Full-Time MBA Salary ── */}
+        <section className="border-t border-white/10 pt-10 mt-10">
+          <h2 className="text-xl font-semibold tracking-tight mb-6">Online MBA vs. Full-Time MBA: Salary Comparison</h2>
+          <div className="space-y-5 max-w-3xl">
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The salary gap between online and full-time MBA graduates has narrowed significantly since 2020, as
+              accredited online programs from ranked schools (Indiana Kelley, UNC Kenan-Flagler, Carnegie Mellon
+              Tepper, USC Marshall) have gained employer recognition. Here is how the outcomes differ:
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-3">
+                <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Full-Time MBA (M7 / T15)</p>
+                <p className="text-white font-semibold text-lg">$155k – $215k</p>
+                <ul className="text-slate-400 text-xs space-y-1 leading-relaxed">
+                  <li>• Access to structured on-campus recruiting</li>
+                  <li>• MBB / IB pipelines almost exclusively here</li>
+                  <li>• High opportunity cost (2 years forgone salary)</li>
+                  <li>• Career pivot potential: highest</li>
+                </ul>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-3">
+                <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Online / Part-Time MBA (Ranked)</p>
+                <p className="text-white font-semibold text-lg">$90k – $130k</p>
+                <ul className="text-slate-400 text-xs space-y-1 leading-relaxed">
+                  <li>• No opportunity cost — continue working</li>
+                  <li>• Best for in-place promotions and credential</li>
+                  <li>• Limited access to MBB / IB recruiting</li>
+                  <li>• Career pivot potential: moderate</li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The salary difference is real, but the ROI comparison favors online MBAs for professionals who are
+              not targeting consulting or banking. Eliminating two years of forgone salary ($160k–$200k for most
+              applicants) often outweighs the $30k–$50k first-year salary gap. Use the{" "}
+              <a href="/mba-roi-calculator" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA ROI calculator</a>{" "}
+              to model both formats with your specific numbers.
+            </p>
+          </div>
+        </section>
+
         {/* Related Guides */}
         <section className="border-t border-white/10 pt-10 mt-10">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>

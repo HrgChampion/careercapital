@@ -87,7 +87,7 @@ export default function Home() {
             <p className="text-xs font-medium text-purple-400 uppercase tracking-widest mb-3">
               Capital Allocation Simulator
             </p>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">MBA ROI Calculator – Is an MBA Worth It?</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">MBA ROI Calculator – Is an MBA Worth It? (Bloomberg ROI Calculator Alternative)</h1>
             <p className="mt-4 text-slate-400 text-lg leading-relaxed max-w-2xl">
               This MBA ROI calculator helps you determine if an MBA is worth it financially by modeling
               tuition costs, forgone income during enrollment, student loans, pre-MBA salary, and
@@ -460,6 +460,112 @@ export default function Home() {
                 <span className="text-white font-medium">The financial model is not.</span> Run your actual numbers in
                 the calculator above before making a decision based on optimistic assumptions or anecdotal outcomes.
               </p>
+            </div>
+          </section>
+
+          {/* Bloomberg ROI Calculator Comparison */}
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight mb-10">How This Compares to the Bloomberg ROI Calculator</h2>
+            <div className="space-y-6 max-w-3xl">
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Bloomberg Businessweek&apos;s MBA ROI calculator is one of the most widely referenced tools for evaluating
+                business school returns. It uses reported median salary data from schools and a simplified payback-period
+                model. This calculator takes a different approach — a <span className="text-white font-medium">full discounted cash flow (DCF) model</span> that
+                accounts for opportunity cost, loan repayment schedules, salary growth compounding, and your personal
+                discount rate. Here is how the two approaches differ:
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm text-left border border-white/10 rounded-xl overflow-hidden">
+                  <thead className="bg-white/5 text-slate-400 text-xs uppercase tracking-widest">
+                    <tr>
+                      <th className="px-4 py-3">Factor</th>
+                      <th className="px-4 py-3">Bloomberg ROI Calculator</th>
+                      <th className="px-4 py-3 text-purple-300">This Calculator</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/10">
+                    <tr className="bg-white/2">
+                      <td className="px-4 py-3 text-slate-300 font-medium">Methodology</td>
+                      <td className="px-4 py-3 text-slate-400">Payback period (simplified)</td>
+                      <td className="px-4 py-3 text-white">Full DCF — NPV + IRR</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-slate-300 font-medium">Opportunity Cost</td>
+                      <td className="px-4 py-3 text-slate-400">Not modeled</td>
+                      <td className="px-4 py-3 text-white">Included (major driver)</td>
+                    </tr>
+                    <tr className="bg-white/2">
+                      <td className="px-4 py-3 text-slate-300 font-medium">Loan Repayment</td>
+                      <td className="px-4 py-3 text-slate-400">Not modeled</td>
+                      <td className="px-4 py-3 text-white">Full amortization schedule</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-slate-300 font-medium">Salary Input</td>
+                      <td className="px-4 py-3 text-slate-400">School-reported median</td>
+                      <td className="px-4 py-3 text-white">Your actual target salary</td>
+                    </tr>
+                    <tr className="bg-white/2">
+                      <td className="px-4 py-3 text-slate-300 font-medium">Discount Rate</td>
+                      <td className="px-4 py-3 text-slate-400">Fixed or not applied</td>
+                      <td className="px-4 py-3 text-white">Configurable (default 6%)</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-slate-300 font-medium">Output</td>
+                      <td className="px-4 py-3 text-slate-400">Years to break even</td>
+                      <td className="px-4 py-3 text-white">NPV, IRR, grade A–F, break-even</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Bloomberg&apos;s tool is useful for quick school-level benchmarking using their survey data. This calculator
+                is built for <span className="text-white font-medium">personal decision modeling</span> — enter your specific pre-MBA salary, target post-MBA role,
+                actual program cost, and financing plan to get a result that reflects your situation, not a median.
+              </p>
+            </div>
+          </section>
+
+          {/* MBA vs. Alternatives */}
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight mb-10">MBA ROI vs. Other Graduate Credentials</h2>
+            <div className="space-y-6 max-w-3xl">
+              <p className="text-slate-400 text-sm leading-relaxed">
+                An MBA is not the only path to a salary increase or career pivot. The right comparison depends on your
+                target role and current background. Here is how MBA ROI stacks up against the two most common alternatives.
+              </p>
+
+              <div className="space-y-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3">
+                  <p className="text-white font-semibold text-sm">MBA vs. Coding Bootcamp</p>
+                  <div className="grid sm:grid-cols-3 gap-3 text-sm">
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Bootcamp Cost</p><p className="text-white font-medium">$10k – $20k</p><p className="text-slate-400 text-xs">3–6 months, no opportunity cost</p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Salary Outcome</p><p className="text-white font-medium">$70k – $110k</p><p className="text-slate-400 text-xs">Software dev / data analyst entry roles</p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Best For</p><p className="text-purple-300 font-semibold">Technical career switch</p></div>
+                  </div>
+                  <p className="text-slate-400 text-xs leading-relaxed">
+                    Bootcamps have a dramatically better ROI for technical career switchers — lower cost, faster break-even,
+                    no opportunity cost. However, they do not confer the management credentialing or network that an MBA
+                    provides. If your target is a senior IC engineering role, a bootcamp wins financially. If your target
+                    is a management consulting or corporate strategy role, an MBA is still the primary pathway.
+                  </p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3">
+                  <p className="text-white font-semibold text-sm">MBA vs. Specialized Master&apos;s Degree (MS Finance, MS Data Science)</p>
+                  <div className="grid sm:grid-cols-3 gap-3 text-sm">
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Master&apos;s Cost</p><p className="text-white font-medium">$40k – $90k</p><p className="text-slate-400 text-xs">1–1.5 years, lower opp. cost</p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Salary Outcome</p><p className="text-white font-medium">$100k – $160k</p><p className="text-slate-400 text-xs">Depends heavily on specialization</p></div>
+                    <div><p className="text-slate-500 text-xs uppercase tracking-wide mb-1">Best For</p><p className="text-purple-300 font-semibold">Deepening a technical field</p></div>
+                  </div>
+                  <p className="text-slate-400 text-xs leading-relaxed">
+                    An MS in Finance or Data Science targets technical depth in a single domain. MBAs provide breadth,
+                    management signaling, and a broader recruiting network across functions. For roles in quantitative
+                    finance, data engineering, or specialized tech, an MS often has better ROI. For roles in general
+                    management, strategy, consulting, or cross-functional leadership, the MBA&apos;s recruiting infrastructure
+                    is not replicable by a specialized master&apos;s degree.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
 

@@ -1,7 +1,7 @@
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Calculator 2026: Free NPV, IRR & MBA Salary Calculator",
+  title: "MBA ROI Calculator 2026: Bloomberg ROI Calculator with Free NPV, IRR & Break-Even",
   description:
     "Free MBA ROI & salary calculator. Model NPV, IRR, break-even, and MBA cost vs return using full DCF analysis across 12 industries. Enter your numbers — results in 60 seconds →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-calculator"),
