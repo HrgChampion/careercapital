@@ -285,6 +285,28 @@ export default function CareerReturnRoadmapPage() {
           </button>
 
           <p className="text-slate-600 text-xs">Free. No account needed. All data stays in your browser.</p>
+
+          <div className="w-full pt-6 border-t border-white/8">
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">Related Tools</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+              <Link href="/career-gap-calculator" className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:border-white/20 transition-all">
+                <p className="text-white text-xs font-semibold">Career Gap Calculator</p>
+                <p className="text-slate-500 text-[11px] mt-0.5">Cost of your break</p>
+              </Link>
+              <Link href="/salary-benchmark-calculator" className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:border-white/20 transition-all">
+                <p className="text-white text-xs font-semibold">Salary Benchmark</p>
+                <p className="text-slate-500 text-[11px] mt-0.5">Where you stand in market</p>
+              </Link>
+              <Link href="/reskilling-roi-calculator" className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:border-white/20 transition-all">
+                <p className="text-white text-xs font-semibold">Reskilling ROI</p>
+                <p className="text-slate-500 text-[11px] mt-0.5">Is a bootcamp worth it?</p>
+              </Link>
+              <Link href="/returnship-roi-calculator" className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:border-white/20 transition-all">
+                <p className="text-white text-xs font-semibold">Returnship ROI</p>
+                <p className="text-slate-500 text-[11px] mt-0.5">Evaluate return programs</p>
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
     )

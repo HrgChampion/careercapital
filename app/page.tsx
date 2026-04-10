@@ -286,6 +286,14 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
+          <Link href="/mba-salary-by-school" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Salary by School 2026</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Median base salary, total comp, and class size data for M7, Top 25, and online MBA programs side by side.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
         </div>
       </section>
 
