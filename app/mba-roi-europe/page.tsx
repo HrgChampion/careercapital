@@ -2,20 +2,20 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "European MBA ROI 2026: INSEAD vs US Programs Compared",
-  description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): full cost, salary outcomes & break-even. $171K cost gap — who wins for international careers? Real data →",
+  title: "UK vs US MBA ROI 2026: INSEAD vs Wharton — $171K Cost Gap Compared",
+  description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): $171K cheaper, 5-yr break-even vs 7.2 yrs. Which wins for international careers? Full salary & ROI data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-europe", true),
   openGraph: {
-    title: "European MBA ROI 2026: INSEAD vs US Programs Compared",
-    description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): full cost, salary outcomes & break-even. $171K cost gap — who wins for international careers? Real data →",
+    title: "UK vs US MBA ROI 2026: INSEAD vs Wharton — $171K Cost Gap Compared",
+    description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): $171K cheaper, 5-yr break-even vs 7.2 yrs. Which wins for international careers? Full salary & ROI data →",
     url: "https://careerreturns.com/mba-roi-europe",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "European MBA ROI 2026: INSEAD vs US Programs Compared",
-    description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): full cost, salary outcomes & break-even. $171K cost gap — who wins for international careers?",
+    title: "UK vs US MBA ROI 2026: INSEAD vs Wharton — $171K Cost Gap Compared",
+    description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): $171K cheaper, 5-yr break-even vs 7.2 yrs. Full salary & ROI data.",
   },
 }
 

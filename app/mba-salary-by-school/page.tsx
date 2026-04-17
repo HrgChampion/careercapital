@@ -1,5 +1,14 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+
+const _articleSchema = articleSchema({
+  title: "MBA Salary by School 2026: Full Rankings — Stanford $210K to Online $65K",
+  description: "What do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K. Full salary rankings for M7, T15, T25 & online programs. 2026 data.",
+  url: "https://careerreturns.com/mba-salary-by-school",
+  datePublished: "2026-03-21",
+  dateModified: "2026-04-17",
+})
+const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Salary by School 2026", url: "https://careerreturns.com/mba-salary-by-school" }])
 
 export const metadata = {
   title: "MBA Salary by School 2026: Full Rankings — Stanford $210K to Online $65K",
@@ -575,7 +584,7 @@ export default function MbaSalaryBySchoolPage() {
                 <p className="text-slate-500 text-xs">By school tier, industry & experience →</p>
               </div>
             </Link>
-            <Link href="/mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/average-mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-violet-400 font-mono text-lg">↗</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-violet-300 transition-colors">MBA Salary Guide</p>
@@ -605,7 +614,7 @@ export default function MbaSalaryBySchoolPage() {
             {" · "}
             <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">Average MBA Salary</Link>
             {" · "}
-            <Link href="/mba-salary" className="hover:text-slate-300 transition-colors">MBA Salary</Link>
+            <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">MBA Salary</Link>
             {" · "}
             <Link href="/post-mba-salary" className="hover:text-slate-300 transition-colors">Post-MBA Salary</Link>
             {" · "}
@@ -626,6 +635,14 @@ export default function MbaSalaryBySchoolPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }}
       />
     </main>
   )

@@ -383,7 +383,7 @@ export default function MbaSalaryNegotiationPage() {
           <h2 className="text-xl font-semibold tracking-tight">Related Guides</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { href: "/mba-salary", label: "MBA Salary by School & Industry" },
+              { href: "/average-mba-salary", label: "MBA Salary by School & Industry" },
               { href: "/average-mba-salary", label: "Average MBA Salary 2026" },
               { href: "/mba-roi-consulting", label: "MBA ROI in Management Consulting" },
               { href: "/salary-benchmark-calculator", label: "Salary Benchmark Calculator" },

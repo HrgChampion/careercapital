@@ -2,10 +2,24 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI for Goldman Sachs (2026): $210K+ Pay & Break-Even",
+  title: "Goldman Sachs MBA Salary 2026: $210K Base + Bonus & ROI Math",
   description:
-    "MBA ROI for Goldman Sachs: GS associate salary, year-end bonus, break-even math, school placement rates, and the investment banking financial case. See data →",
+    "Goldman Sachs MBA associate: $175K–$225K base + $75K–$150K bonus = $250K–$350K total comp Year 1. Break-even in 4.5 yrs. Which schools GS recruits from. Full 2026 data.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-goldman-sachs"),
+  openGraph: {
+    title: "Goldman Sachs MBA Salary 2026: $210K Base + Bonus & ROI Math",
+    description:
+      "Goldman Sachs MBA associate: $175K–$225K base + $75K–$150K bonus = $250K–$350K total comp Year 1. Break-even in 4.5 yrs. Which schools GS recruits from. Full 2026 data.",
+    url: "https://careerreturns.com/mba-roi-goldman-sachs",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Goldman Sachs MBA Salary 2026: $210K Base + Bonus & ROI Math",
+    description:
+      "Goldman Sachs MBA associate: $175K–$225K base + $75K–$150K bonus = $250K–$350K total comp Year 1. Break-even in 4.5 yrs.",
+  },
 }
 
 export default function MbaRoiGoldmanSachsPage() {

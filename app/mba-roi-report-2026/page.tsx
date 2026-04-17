@@ -2,20 +2,20 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI 2026: Is Your MBA Worth It? Salary Uplifts by Industry & School",
-  description: "MBA worth it for YOU? See salary uplifts, payback periods & ROI by industry. MBB: 4.2-yr break-even. Tech: 6.1 yrs. Nonprofit: 13 yrs. Free data, 2026.",
+  title: "MBA ROI Statistics 2026: Salary Uplifts, Break-Even & IRR by Industry",
+  description: "2026 MBA ROI data: MBB break-even 4.2 yrs (IRR 22%), IB 4.5 yrs, Tech 6.1 yrs, Nonprofit 13 yrs. Full salary uplift table for 12 industries. Free report.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-report-2026"),
   openGraph: {
-    title: "MBA ROI 2026: Is Your MBA Worth It? Salary Uplifts by Industry & School",
-    description: "MBA worth it for YOU? See salary uplifts, payback periods & ROI by industry. MBB: 4.2-yr break-even. Tech: 6.1 yrs. Nonprofit: 13 yrs. Free data, 2026.",
+    title: "MBA ROI Statistics 2026: Salary Uplifts, Break-Even & IRR by Industry",
+    description: "2026 MBA ROI data: MBB break-even 4.2 yrs (IRR 22%), IB 4.5 yrs, Tech 6.1 yrs, Nonprofit 13 yrs. Full salary uplift table for 12 industries. Free report.",
     url: "https://careerreturns.com/mba-roi-report-2026",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MBA ROI 2026: Is Your MBA Worth It? Salary Uplifts by Industry & School",
-    description: "MBA worth it for YOU? See salary uplifts, payback periods & ROI by industry. MBB: 4.2-yr break-even. Tech: 6.1 yrs. Nonprofit: 13 yrs. Free data, 2026.",
+    title: "MBA ROI Statistics 2026: Salary Uplifts, Break-Even & IRR by Industry",
+    description: "2026 MBA ROI data: MBB break-even 4.2 yrs (IRR 22%), IB 4.5 yrs, Tech 6.1 yrs, Nonprofit 13 yrs. Full salary uplift table for 12 industries.",
   },
 }
 

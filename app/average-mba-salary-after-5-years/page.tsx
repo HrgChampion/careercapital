@@ -492,7 +492,7 @@ export default function AverageMbaSalaryAfter5YearsPage() {
                 <p className="text-slate-500 text-xs">Model your NPV and break-even →</p>
               </div>
             </Link>
-            <Link href="/mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/average-mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">≈</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Salary by School & Industry</p>
@@ -512,7 +512,7 @@ export default function AverageMbaSalaryAfter5YearsPage() {
             {" · "}
             <Link href="/post-mba-salary" className="hover:text-slate-300 transition-colors">Post-MBA Salary</Link>
             {" · "}
-            <Link href="/mba-salary" className="hover:text-slate-300 transition-colors">MBA Salary by Industry</Link>
+            <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">MBA Salary by Industry</Link>
             {" · "}
             <Link href="/lifetime-earnings-calculator" className="hover:text-slate-300 transition-colors">Lifetime Earnings Calculator</Link>
             {" · "}
