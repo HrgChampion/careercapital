@@ -500,6 +500,7 @@ export default function MbaScholarshipsPage() {
               { href: "/mba-roi-calculator", icon: "Σ", title: "MBA ROI Calculator", sub: "Model your specific scholarship scenario →" },
               { href: "/mba-cost", icon: "$", title: "MBA Cost Breakdown 2026", sub: "Full program cost by school tier →" },
               { href: "/mba-roi", icon: "→", title: "MBA ROI Complete Guide", sub: "IRR, NPV & break-even by industry →" },
+              { href: "/no-gmat-mba-roi", icon: "◎", title: "No-GMAT MBA ROI", sub: "GMAT waiver vs. prep cost decision →" },
             ].map(({ href, icon, title, sub }) => (
               <Link
                 key={href}

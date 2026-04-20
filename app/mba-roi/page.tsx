@@ -176,6 +176,8 @@ export default function MbaRoiPage() {
               { href: "/mba-roi-big4-vs-mbb", label: "Big 4 vs. MBB ROI", desc: "$47K salary gap explained" },
               { href: "/mba-vs-masters-roi", label: "MBA vs. Master's ROI", desc: "MS Finance, MSCS & MFin vs MBA" },
               { href: "/mba-roi-report-2026", label: "MBA ROI Report 2026", desc: "Full dataset: all 12 industries" },
+              { href: "/mba-roi-career-changers", label: "MBA ROI: Career Changers", desc: "Highest-variance return in grad ed" },
+              { href: "/no-gmat-mba-roi", label: "No-GMAT MBA ROI", desc: "Does skipping the GMAT hurt returns?" },
             ].map(({ href, label, desc }) => (
               <Link
                 key={href}

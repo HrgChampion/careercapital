@@ -218,6 +218,13 @@ export default function MbaRoiInvestmentBankingPage() {
                 <p className="text-slate-500 text-xs">Goldman, JPM, MS — base, bonus & total comp →</p>
               </div>
             </Link>
+            <Link href="/mba-roi-career-changers" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">⇄</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Career Changers</p>
+                <p className="text-slate-500 text-xs">Binary outcome variance for pivots →</p>
+              </div>
+            </Link>
           </div>
         </section>
 
