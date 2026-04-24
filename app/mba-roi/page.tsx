@@ -191,6 +191,132 @@ export default function MbaRoiPage() {
           </div>
         </section>
 
+        {/* ── How MBA ROI is Calculated ─────────────────────────────────────── */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">How MBA ROI Is Actually Calculated</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Most MBA ROI comparisons use a simple payback period: divide total program cost by the annual
+            salary increase. This is wrong in a way that systematically understates the cost of low-IRR programs
+            and overstates the benefit of high-cost ones. The correct framework is Discounted Cash Flow (DCF)
+            analysis — the same methodology used to value businesses and capital projects.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            A proper MBA ROI model treats all program costs as negative cash flows: tuition, living expenses
+            above your baseline, and foregone pre-MBA salary during enrollment. These outflows occur in years
+            0 and 1 for a two-year program. Post-graduation, positive cash flows enter the model as the
+            marginal salary delta — the difference between your actual post-MBA compensation and what you
+            would have earned without the degree, net of loan repayments and any incremental taxes. The
+            Internal Rate of Return (IRR) is the discount rate that makes the net present value of all these
+            cash flows equal to zero. A higher IRR means the investment returns money faster and with
+            more cushion above the cost of capital.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            At CareerReturns, we model MBA ROI using a 6% discount rate (approximately the long-run real
+            cost of debt for graduate student borrowers), a 10-year projection horizon, and a 5-year standard
+            amortization for federal graduate PLUS loans at prevailing fixed rates. The salary delta is the
+            industry-specific post-MBA median minus the pre-MBA median for the same experience band, sourced
+            from GMAC employer surveys, school employment reports, Glassdoor, and Levels.fyi. We use
+            Newton-Raphson iteration to solve for the exact IRR rather than approximating it — the difference
+            matters at the margins where programs are borderline viable.
+          </p>
+        </section>
+
+        {/* ── School Tier Impact ────────────────────────────────────────────── */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">School Tier: How Much Does It Change ROI?</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            School tier matters significantly for consulting and banking placements and almost not at all for
+            general management, healthcare, and government roles. The mechanism is specific: MBB consulting
+            firms (McKinsey, Bain, BCG) and bulge-bracket banks conduct on-campus recruiting almost exclusively
+            at M7 programs (Harvard, Wharton, Booth, Kellogg, Columbia, Sloan, Stern) and a handful of T15
+            programs. If MBB or banking is your target, a T25 program produces a materially lower probability
+            of entry into those roles, which collapses expected ROI even if the sticker price is lower.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            For tech product management and strategy roles, school tier matters less at the top — a T15 program
+            with strong tech recruiter relationships can produce outcomes within 10–15% of an M7 placement in
+            total compensation. For roles in healthcare management, CPG brand management, and regional general
+            management, a T25 or even a strong regional program can produce positive ROI if the program cost
+            is proportionally lower and the target employer is not screen-filtering by school rank.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The scholarship variable dominates school tier for non-consulting, non-banking tracks. A 50%
+            scholarship at a T15 program produces higher IRR than full-price attendance at an M7, because
+            the salary delta between T10 and T15 outcomes in tech, healthcare, and CPG is smaller than the
+            $80,000–$120,000 cost difference a scholarship offsets. For consulting and banking, the placement
+            probability difference between M7 and T15 can be large enough that full-price M7 still wins on
+            expected IRR — but not universally.
+          </p>
+        </section>
+
+        {/* ── Recession Data ────────────────────────────────────────────────── */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">MBA ROI Through Recessions: 2008 and 2020 Data</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The 2008 financial crisis is the most relevant historical stress test for MBA ROI, because it hit
+            the two highest-ROI industries — consulting and investment banking — disproportionately hard.
+            Bulge-bracket banks rescinded offers, deferred start dates, and eliminated entire analyst and
+            associate classes in 2008–2009. MBA graduates who enrolled in 2006 and 2007 anticipating banking
+            placements experienced break-even periods 2–3 years longer than the pre-crisis model predicted,
+            because their first 1–2 post-MBA years produced lower compensation than projected.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Consulting held up better than banking in 2008–2009. McKinsey, Bain, and BCG reduced hiring
+            volumes but did not rescind as many offers, and post-crisis recovery was faster — MBB salaries
+            returned to trend by 2011–2012. The 2008 data suggest that consulting ROI is more recession-resistant
+            than banking ROI, even though both are cyclical relative to healthcare or government.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The 2020 COVID recession had a different pattern. The disruption was short and concentrated in
+            hospitality, travel, and physical retail — industries with low MBA placement rates. Tech, consulting,
+            and healthcare management were relatively insulated. MBA programs that graduated students in 2020
+            reported only modestly lower placement rates, and by 2021 compensation had surpassed pre-pandemic
+            levels in most high-ROI sectors due to talent competition. If you are modeling MBA ROI in 2026,
+            the 2020 recession is a weak stress test for M7 programs but a relevant one for programs with
+            strong hospitality, travel, or retail concentrations.
+          </p>
+        </section>
+
+        {/* ── When MBA ROI Is Negative ──────────────────────────────────────── */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">When MBA ROI Is Negative or Near-Zero</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The table above shows a wide spread: from 55% IRR for veterans using full GI Bill benefits
+            entering consulting, to negative NPV for civilian government workers at full sticker price.
+            Understanding the specific conditions that produce near-zero or negative ROI is as important
+            as knowing which tracks generate the highest returns.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                label: "High pre-MBA salary with small post-MBA delta",
+                text: "A FAANG software engineer at $280,000–$320,000 total compensation who enters an MBA and returns to tech as a product manager at $230,000–$270,000 TC has a negative salary delta — the MBA reduced income. This is common for senior engineers who underestimate their pre-MBA market position.",
+                color: "text-red-400"
+              },
+              {
+                label: "Full-price attendance at a non-target program",
+                text: "A $120,000–$150,000 regional MBA at full cost with a $15,000–$25,000 salary delta produces an IRR of 2–5%, which does not clear the cost of student debt. The math only works with significant scholarship aid or a very large salary delta.",
+                color: "text-orange-400"
+              },
+              {
+                label: "Targeting nonprofit or government without PSLF",
+                text: "Post-MBA salaries in nonprofit management and civilian government average $75,000–$95,000 — often $10,000–$30,000 below the pre-MBA salary of candidates from finance or consulting. Without Public Service Loan Forgiveness after 10 years of qualifying payments, this track produces negative NPV at most program prices.",
+                color: "text-orange-400"
+              },
+              {
+                label: "Two-year program when a one-year equivalent exists",
+                text: "For candidates with international backgrounds or specific finance or strategy targets, European one-year programs (INSEAD, LBS, IMD) save one full year of foregone salary — often $100,000–$150,000 in opportunity cost. Choosing a US two-year program in this situation adds cost without a proportional salary delta.",
+                color: "text-amber-400"
+              },
+            ].map(({ label, text, color }) => (
+              <div key={label} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className={`${color} font-semibold text-sm`}>{label}</p>
+                <p className="text-slate-400 text-xs leading-relaxed">{text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
           <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest">Model Your Numbers</p>
@@ -212,28 +338,28 @@ export default function MbaRoiPage() {
         <section className="border-t border-white/10 pt-10 mt-10">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
           <div className="grid sm:grid-cols-2 gap-3">
-            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">Σ</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
                 <p className="text-slate-500 text-xs">Model your specific numbers →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">↗</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
                 <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
               </div>
             </Link>
-            <Link href="/mba-worth-it" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-worth-it" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">?</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Is an MBA Worth It?</p>
                 <p className="text-slate-500 text-xs">Full financial breakdown 2026 →</p>
               </div>
             </Link>
-            <Link href="/mba-break-even" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-break-even" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">⌛</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Break-Even Period</p>

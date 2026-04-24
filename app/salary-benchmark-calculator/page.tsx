@@ -321,6 +321,190 @@ export default function SalaryBenchmarkCalculator() {
         </p>
       </section>
 
+      {/* ── Educational Content ─────────────────────────────────────────────── */}
+      <div className="max-w-5xl mx-auto px-6 pb-16 space-y-14">
+
+        {/* How the calculator works */}
+        <section className="space-y-5 border-t border-white/10 pt-12">
+          <h2 className="text-2xl font-semibold tracking-tight">How the Salary Benchmark Calculator Works</h2>
+          <p className="text-slate-400 leading-relaxed">
+            This calculator benchmarks your current salary against market data for your specific role, industry,
+            experience level, location tier, and company size — then models the financial cost of any gap between
+            where you are and where you should be. It answers a question that most salary tools ignore: not just
+            what the market pays, but what the present value of closing that gap is worth to you over the next
+            decade.
+          </p>
+          <p className="text-slate-400 leading-relaxed">
+            The benchmark data is drawn from BLS Occupational Employment Statistics, Levels.fyi for tech roles,
+            GMAC placement reports for post-MBA salaries, and Glassdoor compensation surveys. For career returners,
+            we layer in a gap penalty model derived from academic research on re-entry salary discounts, which
+            shows a 3–5% annual penalty for each year of career break, recovering over 3–5 years as performance
+            proves out. This recovery curve varies significantly by industry — tech and consulting recover faster
+            than healthcare or government roles.
+          </p>
+          <p className="text-slate-400 leading-relaxed">
+            The NPV calculation uses a 6% discount rate — the long-run real return on a balanced portfolio —
+            projected over 10 years. This is intentionally conservative. At this discount rate, a $10,000
+            annual salary shortfall costs you roughly $73,600 in present value over a decade. That figure is
+            why negotiating at re-entry matters far more than negotiating after your first performance review:
+            every dollar of base salary compounds forward through every future raise, bonus, and equity grant.
+          </p>
+        </section>
+
+        {/* Understanding your market position */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Understanding Your Market Position</h2>
+          <p className="text-slate-400 leading-relaxed">
+            The percentile shown in your results reflects where your current salary falls within the distribution
+            for your specific profile — not against all workers, but against people with the same industry, role
+            category, experience band, location tier, and company size. This precision matters. A software
+            engineer at a 500-person tech company in Austin is benchmarked differently from one at a FAANG in
+            San Francisco, even if their job titles are identical.
+          </p>
+          <p className="text-slate-400 leading-relaxed">
+            Being in the 25th–40th percentile is the most common situation for career returners. Companies
+            routinely offer returning professionals salaries at or below the 25th percentile, framing it as
+            "accounting for the gap." This framing is financially illiterate on your behalf: a gap in employment
+            does not reduce the market rate for the work you are doing now. The P50 (median) is the floor you
+            should be negotiating toward at re-entry. The P75 is achievable if you have a specific high-value
+            skill, relevant certifications, or a competing offer.
+          </p>
+          <p className="text-slate-400 leading-relaxed">
+            If your current salary is above the P75 for your profile, you are likely in a strong market position
+            and the highest-leverage next move is lateral growth — expanding your scope, picking up adjacent
+            skills, or targeting a promotion rather than a salary correction. The calculator shows you which
+            of the three negotiation paths (negotiate now, build case first, or switch employers) produces the
+            highest 10-year NPV for your specific situation.
+          </p>
+        </section>
+
+        {/* Career gap penalty explained */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">The Career Gap Salary Penalty: What the Research Says</h2>
+          <p className="text-slate-400 leading-relaxed">
+            Academic research consistently finds that career breaks reduce re-entry salaries by 3–5% per year
+            of absence, with the effect front-loaded in the first offer rather than spread across performance
+            reviews. A two-year break typically produces an 8–12% initial salary discount; a four-year break
+            can produce a 15–22% discount in the first offer from employers who are not explicitly running
+            returnship programs.
+          </p>
+          <p className="text-slate-400 leading-relaxed">
+            The penalty varies sharply by industry. In technology, where skills decay faster and role definitions
+            shift more quickly, a two-year break can look like four years of drift to a hiring manager. In
+            healthcare administration, government, and operations management, institutional knowledge and
+            process experience hold value longer, producing smaller initial discounts. Consulting falls in the
+            middle: MBB and Big 4 firms actively run returnship programs that hire at 90–95% of market rate,
+            while smaller boutiques may discount more aggressively.
+          </p>
+          <p className="text-slate-400 leading-relaxed">
+            The good news is that the penalty is not permanent. Research also shows that performance-based
+            raises and promotional cycles tend to close the gap within 3–5 years for strong performers —
+            but only if you negotiated at re-entry and did not accept a salary so far below market that even
+            strong performance reviews leave you underpaid relative to peers hired without a gap. This is
+            the compounding problem: a $15,000 annual shortfall at year one, with typical 4–5% annual raises,
+            will still leave you $8,000–$11,000 below market at year five.
+          </p>
+        </section>
+
+        {/* Negotiation strategies */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Salary Negotiation Strategies for Career Returners</h2>
+          <p className="text-slate-400 leading-relaxed">
+            The calculator models three distinct negotiation strategies, each with a different risk-return
+            profile. Understanding when to use each one is as important as the salary number itself.
+          </p>
+          <div className="space-y-4">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Strategy 1: Negotiate Now — Counter the First Offer</p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Appropriate when you have a competing offer, a strong pre-break track record in a visible role,
+                or are entering through a structured returnship that benchmarks salaries internally. The NPV
+                of negotiating at the offer stage is always higher than negotiating six months later, because
+                the base effect compounds forward. Counter to P50 as a floor, with P75 as your anchor. If the
+                employer says the gap is the reason for the lower offer, ask them to show you their internal
+                compensation band for the role — most cannot justify paying below P25 if they're being transparent.
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Strategy 2: Accept and Build the Case — 90-Day Review</p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Appropriate when you are entering a new industry, changing roles significantly, or returning
+                after a 3+ year gap in a field that has changed substantially. Accepting slightly below market
+                to prove performance, then negotiating aggressively at a 90-day or 6-month review, can produce
+                higher total compensation over 3 years than refusing an offer and waiting for a better one.
+                This strategy requires documenting specific, quantified outputs from day one and asking for
+                the review date in writing at acceptance.
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Strategy 3: Switch Employers — Target Market Rate from Day One</p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Appropriate when you have been in your current role for 12+ months, have documented performance,
+                and are still being paid below P40 of the market. Internal pay compression — where new hires
+                are offered market rates but existing employees receive smaller annual raises — makes
+                employer-switching the fastest path to market correction for established performers. The NPV
+                model in this calculator accounts for the cost of a job search (typically 2–4 months of
+                reduced or no income) versus the lifetime gain from a market-rate reset.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold tracking-tight">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {[
+              {
+                q: "How accurate are the salary benchmarks?",
+                a: "Benchmarks are aggregated from BLS OES data, Levels.fyi (for tech roles), GMAC placement reports (for post-MBA roles), and Glassdoor surveys. They reflect median ranges for US-based roles by default; the country selector adjusts ranges using purchasing-power-parity-adjusted multipliers for UK, Canada, Australia, India, Germany, and Singapore. All figures are base salary — total compensation in equity-heavy roles (especially tech) can be 30–80% higher."
+              },
+              {
+                q: "Why does my industry selection change the salary range significantly?",
+                a: "Salary ranges vary sharply by industry because of structural differences in how companies are funded, how productivity is measured, and how compensation is structured. A software engineer at a tech company and a software engineer at a hospital system performing similar work will see 20–40% salary differences simply due to industry. This calculator accounts for industry as the primary driver of your market rate, which is more accurate than role-title benchmarks alone."
+              },
+              {
+                q: "What is the gap penalty based on?",
+                a: "The 3–5% annual gap penalty is derived from peer-reviewed research on re-entry salary discounts, including work published in the American Economic Review and Journal of Labor Economics studying career interruptions by gender, industry, and duration. The recovery curve — where the penalty diminishes over 3–5 years — is modeled on performance-review cycles assuming standard 4–5% annual merit increases. Individual outcomes vary based on the reason for the gap, skills maintenance during the break, and employer attitudes toward career returners."
+              },
+              {
+                q: "Should I disclose my career break salary history?",
+                a: "Many US states (including California, New York, Massachusetts, and Illinois) prohibit employers from asking for salary history. Even where it is legal, you are not obligated to disclose it. Instead, anchor your negotiation on the market rate for the role you are entering, not on what you were paid before or during a gap. If asked directly, you can respond: 'I've benchmarked this role at $X–$Y in this market. I'm looking for an offer in that range.' This calculator gives you the data to support that anchor."
+              },
+              {
+                q: "How is the 10-year NPV of underpayment calculated?",
+                a: "The NPV calculation treats the annual salary shortfall (your salary minus the P50 market rate for your profile) as a stream of cash flows discounted at 6% per year over 10 years. This assumes the gap remains constant — it does not model raises, which would actually make the real gap larger over time due to base compounding. The 6% discount rate reflects the long-run real return on a balanced investment portfolio, the opportunity cost of money received in the future versus today."
+              },
+            ].map(({ q, a }) => (
+              <div key={q} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-white font-semibold text-sm">{q}</p>
+                <p className="text-slate-400 text-sm leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Related tools */}
+        <section className="space-y-4 border-t border-white/10 pt-10">
+          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Related Tools & Guides</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              { href: "/career-gap-calculator", label: "Career Gap Recovery Calculator", desc: "Model your re-entry path and recovery timeline" },
+              { href: "/return-to-work-after-career-break", label: "Return to Work After a Career Break", desc: "Research-backed strategies and salary data" },
+              { href: "/returnship-roi-calculator", label: "Returnship ROI Calculator", desc: "Compare returnship programs vs. direct re-entry" },
+              { href: "/women-returning-to-work", label: "Women Returning to Work", desc: "Gender-specific salary penalty data and programs" },
+            ].map(({ href, label, desc }) => (
+              <Link key={href} href={href}
+                className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/8 transition-colors space-y-1 block">
+                <p className="text-white font-medium text-sm">{label}</p>
+                <p className="text-slate-500 text-xs">{desc}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+      </div>
+
       <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
         <p>
           <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>

@@ -25,7 +25,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-slate-400 text-sm">
-            Last updated: <span className="text-white">March 2, 2026</span>
+            Last updated: <span className="text-white">April 24, 2026</span>
           </p>
           <p className="text-slate-400 text-base leading-relaxed">
             CareerReturns (<strong className="text-white">careerreturns.com</strong>) is a free informational tool. We collect
@@ -72,8 +72,14 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold tracking-tight">2. Cookies</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             CareerReturns does not set first-party cookies. Vercel Analytics operates without cookies
-            by default. We do not use advertising cookies, tracking pixels, or retargeting scripts.
-            If you have a browser that blocks cookies, the site functions identically.
+            by default. Google AdSense, however, may set third-party cookies on your browser to serve
+            personalized advertisements. These cookies are set by Google, not by CareerReturns.
+            You can disable personalized ads at{" "}
+            <a href="https://www.aboutads.info/choices" className="text-purple-400 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
+              aboutads.info/choices
+            </a>.
+            If you block all cookies in your browser, the calculators and content on this site will
+            continue to function normally; only ad personalization will be affected.
           </p>
         </section>
 
@@ -99,13 +105,38 @@ export default function PrivacyPage() {
                   <td className="text-slate-400 py-3 pr-6">Website infrastructure</td>
                   <td className="text-slate-400 py-3">Standard server access logs</td>
                 </tr>
+                <tr>
+                  <td className="text-white py-3 pr-6">Google AdSense</td>
+                  <td className="text-slate-400 py-3 pr-6">Display advertising</td>
+                  <td className="text-slate-400 py-3">Ad interaction data, browser cookies (third-party)</td>
+                </tr>
               </tbody>
             </table>
           </div>
           <p className="text-slate-400 text-sm leading-relaxed">
-            We do not use Google Analytics, Facebook Pixel, or any advertising network. We do not
-            integrate with data brokers.
+            We do not use Google Analytics, Facebook Pixel, or data broker integrations. We do not
+            sell your information to third parties.
           </p>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+            <p className="text-white font-semibold text-sm">Google AdSense (Advertising)</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              CareerReturns uses <span className="text-white">Google AdSense</span> to display advertisements.
+              Google AdSense may set cookies and use web beacons to serve ads based on your prior visits to
+              this site and other sites on the internet. Google&apos;s use of advertising cookies enables it
+              and its partners to serve ads based on your visit to careerreturns.com and/or other sites on
+              the internet. You may opt out of personalized advertising by visiting{" "}
+              <a href="https://www.aboutads.info/choices" className="text-purple-400 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
+                aboutads.info/choices
+              </a>{" "}or{" "}
+              <a href="https://www.google.com/settings/ads" className="text-purple-400 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
+                Google Ads Settings
+              </a>.
+              For more information on how Google uses data when you visit sites that use Google services, see{" "}
+              <a href="https://policies.google.com/technologies/partner-sites" className="text-purple-400 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
+                Google&apos;s privacy policy
+              </a>.
+            </p>
+          </div>
         </section>
 
         <section className="space-y-4">
