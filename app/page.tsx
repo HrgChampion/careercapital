@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import OpportunityCostClock from "@/components/OpportunityCostClock"
 
 export const metadata = {
   title: "MBA ROI Calculator & Career Investment Tools (2026)",
@@ -106,6 +107,67 @@ export default function HomePage() {
           >
             All Tools ↓
           </a>
+        </div>
+
+        <OpportunityCostClock />
+      </section>
+
+      {/* ── New Tools ── */}
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16">
+        <p className="text-xs font-medium text-pink-400 uppercase tracking-widest mb-2">New</p>
+        <h2 className="text-2xl font-semibold tracking-tight mb-2">Out-of-the-Box Career Tools</h2>
+        <p className="text-slate-400 text-sm mb-8 max-w-2xl">Beyond calculators — interactive simulators, scoreboards, and portfolio builders for every career decision.</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <Link href="/career-roi-score" className="group rounded-2xl bg-linear-to-br from-indigo-950/60 to-violet-950/60 border border-indigo-500/25 hover:border-indigo-500/50 p-5 sm:p-7 space-y-3 transition-all">
+            <div className="text-indigo-400 text-lg font-mono">◈</div>
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Career ROI Score</p>
+            <p className="text-slate-400 text-sm leading-relaxed">Your composite 300–850 score for career financial health — like a credit score, across 5 dimensions.</p>
+            <p className="text-indigo-400 text-sm font-medium">Get your score →</p>
+          </Link>
+
+          <Link href="/mba-myth-buster" className="group rounded-2xl bg-linear-to-br from-violet-950/60 to-purple-950/60 border border-violet-500/25 hover:border-violet-500/50 p-5 sm:p-7 space-y-3 transition-all">
+            <div className="text-violet-400 text-lg font-mono">?</div>
+            <p className="font-semibold text-white group-hover:text-violet-300 transition-colors">MBA Myth Buster</p>
+            <p className="text-slate-400 text-sm leading-relaxed">10 common beliefs about MBA ROI — backed by real data. How many do you actually believe?</p>
+            <p className="text-violet-400 text-sm font-medium">Take the quiz →</p>
+          </Link>
+
+          <Link href="/employer-scorecard" className="group rounded-2xl bg-linear-to-br from-blue-950/60 to-indigo-950/60 border border-blue-500/25 hover:border-blue-500/50 p-5 sm:p-7 space-y-3 transition-all">
+            <div className="text-blue-400 text-lg font-mono">★</div>
+            <p className="font-semibold text-white group-hover:text-blue-300 transition-colors">Employer Return Scorecard</p>
+            <p className="text-slate-400 text-sm leading-relaxed">Amazon, Goldman, McKinsey — ranked on conversion rate, salary recovery, and program quality.</p>
+            <p className="text-blue-400 text-sm font-medium">See rankings →</p>
+          </Link>
+
+          <Link href="/career-compounder" className="group rounded-2xl bg-linear-to-br from-emerald-950/60 to-teal-950/60 border border-emerald-500/25 hover:border-emerald-500/50 p-5 sm:p-7 space-y-3 transition-all">
+            <div className="text-emerald-400 text-lg font-mono">∞</div>
+            <p className="font-semibold text-white group-hover:text-emerald-300 transition-colors">Career Compounder</p>
+            <p className="text-slate-400 text-sm leading-relaxed">See how a small raise compounds into life-changing wealth over 20 years. The math is counterintuitive.</p>
+            <p className="text-emerald-400 text-sm font-medium">See the curve →</p>
+          </Link>
+
+          <Link href="/career-time-machine" className="group rounded-2xl bg-linear-to-br from-purple-950/60 to-pink-950/60 border border-purple-500/25 hover:border-purple-500/50 p-5 sm:p-7 space-y-3 transition-all">
+            <div className="text-purple-400 text-lg font-mono">⏳</div>
+            <p className="font-semibold text-white group-hover:text-purple-300 transition-colors">Career Time Machine</p>
+            <p className="text-slate-400 text-sm leading-relaxed">What if you had made a different decision 3 years ago? See the financial divergence from then to now.</p>
+            <p className="text-purple-400 text-sm font-medium">Travel back →</p>
+          </Link>
+
+          <Link href="/salary-negotiation-simulator" className="group rounded-2xl bg-linear-to-br from-cyan-950/60 to-blue-950/60 border border-cyan-500/25 hover:border-cyan-500/50 p-5 sm:p-7 space-y-3 transition-all">
+            <div className="text-cyan-400 text-lg font-mono">⇌</div>
+            <p className="font-semibold text-white group-hover:text-cyan-300 transition-colors">Salary Negotiation Simulator</p>
+            <p className="text-slate-400 text-sm leading-relaxed">Practice the conversation before it matters. Each choice shows the 10-year NPV impact in real time.</p>
+            <p className="text-cyan-400 text-sm font-medium">Start negotiating →</p>
+          </Link>
+
+          <Link href="/skills-portfolio" className="group rounded-2xl bg-linear-to-br from-violet-950/60 to-blue-950/60 border border-violet-500/25 hover:border-violet-500/50 p-5 sm:p-7 space-y-3 transition-all">
+            <div className="text-violet-400 text-lg font-mono">◉</div>
+            <p className="font-semibold text-white group-hover:text-violet-300 transition-colors">Skills Portfolio Builder</p>
+            <p className="text-slate-400 text-sm leading-relaxed">Treat your skillset like an investment portfolio. Find gaps, concentration risks, and best bets.</p>
+            <p className="text-violet-400 text-sm font-medium">Build portfolio →</p>
+          </Link>
+
         </div>
       </section>
 

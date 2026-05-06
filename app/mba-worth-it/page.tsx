@@ -13,7 +13,7 @@ const _breadcrumbSchema = breadcrumbSchema([{ name: "Is an MBA Worth It?", url: 
 export const metadata = {
   title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
   description:
-    "Is an MBA worth it financially in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math reliably fails. Calculate now →",
+    "What is an MBA and is it worth it in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, MBA meaning explained, and when the math reliably fails. Calculate now →",
   alternates: pageAlternates("https://careerreturns.com/mba-worth-it"),
   openGraph: {
     title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
@@ -60,6 +60,50 @@ export default function MbaWorthItPage() {
             </div>
           </div>
         </header>
+
+        {/* What Is an MBA? */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">What Is an MBA?</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            An MBA (Master of Business Administration) is a graduate-level degree covering finance, strategy,
+            operations, marketing, and leadership. It is a professional credential designed to qualify
+            graduates for senior management and executive roles — not primarily an academic degree. The MBA
+            meaning in a career context is straightforward: it signals business fluency, executive readiness,
+            and access to alumni networks that control hiring at top firms.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                type: "Full-Time MBA (2-year)",
+                desc: "The traditional format. Students leave work for 2 years for coursework, internships, and on-campus recruiting. Required for access to MBB consulting and bulge-bracket banking pipelines. Highest total cost due to opportunity cost.",
+              },
+              {
+                type: "Part-Time / Online MBA (2–3 years)",
+                desc: "Completed alongside full-time employment. Eliminates opportunity cost — typically the largest expense in a full-time program. Best financial ROI for candidates seeking a salary uplift without a career break.",
+              },
+              {
+                type: "Executive MBA (EMBA)",
+                desc: "Designed for candidates with 10+ years of experience. Completed on weekends over 18–24 months. Employers often sponsor EMBA tuition fully, making it the most common path to a zero out-of-pocket MBA.",
+              },
+              {
+                type: "1-Year MBA (European format)",
+                desc: "Primarily INSEAD, LBS, and HEC Paris. Reduces opportunity cost by 50% vs. 2-year programs while delivering comparable outcomes for international careers. Total cost typically $220K–$250K vs. $460K–$492K for M7 full-time.",
+              },
+            ].map(({ type, desc }) => (
+              <div key={type} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-1">
+                <p className="text-white font-semibold text-sm">{type}</p>
+                <p className="text-slate-400 text-xs leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The salary premium from an MBA is real but varies sharply by industry. The MBA meaning
+            in financial terms is a salary delta: the annual income increase attributable to the degree.
+            In consulting (MBB), that delta runs $40K–$60K annually. In finance, $35K–$55K. In
+            technology product management, $25K–$40K. In general management at regional companies,
+            $10K–$20K — often too low to justify M7 full-time costs.
+          </p>
+        </section>
 
         {/* Direct answer — first 150 words */}
         <section className="space-y-4">
@@ -263,32 +307,46 @@ export default function MbaWorthItPage() {
         <section className="border-t border-white/10 pt-10 mt-10">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
           <div className="grid sm:grid-cols-2 gap-3">
-            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">Σ</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
                 <p className="text-slate-500 text-xs">Model your specific numbers →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">↗</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
                 <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
               </div>
             </Link>
-            <Link href="/mba-roi" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">→</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Complete Guide</p>
                 <p className="text-slate-500 text-xs">IRR, NPV & break-even by industry →</p>
               </div>
             </Link>
-            <Link href="/mba-break-even" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-break-even" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">⌛</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Break-Even Period</p>
                 <p className="text-slate-500 text-xs">Real math for all scenarios →</p>
+              </div>
+            </Link>
+            <Link href="/mba-myth-buster" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
+              <div className="text-violet-400 font-mono text-lg">?</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-violet-300 transition-colors">MBA Myth Buster Quiz</p>
+                <p className="text-slate-500 text-xs">10 beliefs tested against real data →</p>
+              </div>
+            </Link>
+            <Link href="/career-compounder" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
+              <div className="text-emerald-400 font-mono text-lg">∞</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-emerald-300 transition-colors">Career Compounder</p>
+                <p className="text-slate-500 text-xs">See how the salary boost compounds →</p>
               </div>
             </Link>
           </div>

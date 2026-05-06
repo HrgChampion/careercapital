@@ -489,6 +489,8 @@ export default function SalaryBenchmarkCalculator() {
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Related Tools & Guides</p>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
+              { href: "/salary-negotiation-simulator", label: "Salary Negotiation Simulator", desc: "Practice the conversation — see NPV impact of each move" },
+              { href: "/career-roi-score", label: "Career ROI Score", desc: "Your composite 300–850 career financial health score" },
               { href: "/career-gap-calculator", label: "Career Gap Recovery Calculator", desc: "Model your re-entry path and recovery timeline" },
               { href: "/return-to-work-after-career-break", label: "Return to Work After a Career Break", desc: "Research-backed strategies and salary data" },
               { href: "/returnship-roi-calculator", label: "Returnship ROI Calculator", desc: "Compare returnship programs vs. direct re-entry" },

@@ -451,6 +451,23 @@ export default function CareerGapCalculator() {
         </p>
       </section>
 
+      {/* Related interactive tools */}
+      <section className="border-t border-white/10 px-6 py-8 max-w-5xl mx-auto">
+        <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest mb-4">More Tools</p>
+        <div className="grid sm:grid-cols-3 gap-3">
+          {[
+            { href: "/career-roi-score", label: "Career ROI Score", desc: "Your composite 300–850 career financial health score" },
+            { href: "/employer-scorecard", label: "Employer Return Scorecard", desc: "Which employers are genuinely return-to-work friendly?" },
+            { href: "/career-time-machine", label: "Career Time Machine", desc: "See the financial divergence from your career break decision" },
+          ].map(({ href, label, desc }) => (
+            <Link key={href} href={href} className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/8 transition-colors space-y-1 block">
+              <p className="text-white font-medium text-sm">{label}</p>
+              <p className="text-slate-500 text-xs">{desc}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
         <p>
           <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>

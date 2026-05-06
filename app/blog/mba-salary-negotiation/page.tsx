@@ -383,10 +383,10 @@ export default function MbaSalaryNegotiationPage() {
           <h2 className="text-xl font-semibold tracking-tight">Related Guides</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { href: "/average-mba-salary", label: "MBA Salary by School & Industry" },
-              { href: "/average-mba-salary", label: "Average MBA Salary 2026" },
-              { href: "/mba-roi-consulting", label: "MBA ROI in Management Consulting" },
+              { href: "/salary-negotiation-simulator", label: "Salary Negotiation Simulator" },
               { href: "/salary-benchmark-calculator", label: "Salary Benchmark Calculator" },
+              { href: "/career-compounder", label: "Career Compounder — See the NPV of a Raise" },
+              { href: "/mba-roi-consulting", label: "MBA ROI in Management Consulting" },
             ].map(({ href, label }) => (
               <Link key={href} href={href} className="block text-sm text-violet-400 hover:text-violet-300 transition-colors py-2 px-3 rounded-lg border border-white/8 hover:border-white/15">
                 {label} →

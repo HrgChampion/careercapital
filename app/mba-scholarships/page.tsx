@@ -185,6 +185,77 @@ export default function MbaScholarshipsPage() {
           </div>
         </section>
 
+        {/* MBA Admissions Requirements */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">MBA Admissions Requirements: What Scores Unlock Merit Aid</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Merit scholarship amounts are directly tied to your admissions profile. Understanding the
+            requirements for each school tier tells you both whether you are likely to be admitted and
+            how much scholarship leverage you will have. The three variables that drive most scholarship
+            decisions are GMAT/GRE score, undergraduate GPA, and work experience quality.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                tier: "M7 Programs (Harvard, Wharton, Booth, Kellogg, MIT Sloan, Columbia, Tuck)",
+                gmat: "720–780+ (median ~730)",
+                gre: "163–170 V / 163–170 Q",
+                gpa: "3.5–3.9 (median ~3.7)",
+                workExp: "4–6 years (median 5)",
+                schNote: "HBS and Stanford GSB offer no merit aid — need-based only. Wharton, Booth, and Kellogg offer merit aid to top-quartile applicants. GMAT 760+ positions you for scholarship consideration.",
+                color: "text-amber-400",
+              },
+              {
+                tier: "T15 Programs (Darden, Fuqua, Tuck, Ross, Haas, Yale SOM)",
+                gmat: "690–740 (median ~720)",
+                gre: "160–167 V / 160–167 Q",
+                gpa: "3.3–3.8 (median ~3.5)",
+                workExp: "3–5 years (median 4–5)",
+                schNote: "Most generous scholarship tier relative to ranking. A GMAT 730+ profile at a T15 school typically qualifies for $30K–$60K in merit aid. T15 programs actively use scholarships to compete for M7-range candidates.",
+                color: "text-amber-300",
+              },
+              {
+                tier: "T25 Programs (McCombs, Mendoza, Foster, Kenan-Flagler)",
+                gmat: "650–710 (median ~690)",
+                gre: "156–163 V / 156–163 Q",
+                gpa: "3.1–3.6 (median ~3.3)",
+                workExp: "3–5 years",
+                schNote: "Full-tuition scholarships are realistic for top-quartile applicants. A 700+ GMAT applicant at a T25 school frequently receives 50–100% tuition coverage. The scholarship ROI at T25 programs can exceed M7 full-price.",
+                color: "text-amber-200",
+              },
+              {
+                tier: "Online / Part-Time MBA (Kelley Direct, UNC, Illinois iMBA)",
+                gmat: "Often optional or 550–650",
+                gre: "Optional at most programs",
+                gpa: "2.8–3.5 (less weight than full-time)",
+                workExp: "2–5 years (some programs allow 0)",
+                schNote: "Most top online MBA programs are test-optional or accept lower GMAT scores. Merit scholarships are available but less common. The ROI advantage comes from low tuition, not scholarship aid.",
+                color: "text-slate-300",
+              },
+            ].map(({ tier, gmat, gre, gpa, workExp, schNote, color }) => (
+              <div key={tier} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-3">
+                <h3 className={`text-sm font-semibold ${color}`}>{tier}</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                  <div><p className="text-slate-500 mb-0.5">GMAT Range</p><p className="text-slate-200">{gmat}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">GRE Range</p><p className="text-slate-200">{gre}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Undergrad GPA</p><p className="text-slate-200">{gpa}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Work Experience</p><p className="text-slate-200">{workExp}</p></div>
+                </div>
+                <p className="text-slate-400 text-xs leading-relaxed border-t border-white/5 pt-2">{schNote}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-5">
+            <p className="text-amber-200 text-sm leading-relaxed">
+              <span className="font-semibold text-white">MBA admissions strategy:</span> A GMAT score
+              one standard deviation above a school&apos;s median (~30–40 points) significantly increases
+              both admit probability and scholarship offer size. Retaking the GMAT to move from 700 to 730
+              at a T15 school can unlock $20K–$40K in additional merit aid — a return of $10K+ per
+              test-prep hour at the margin.
+            </p>
+          </div>
+        </section>
+
         {/* Section 3: External Fellowships */}
         <section className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">External Fellowships and Grants</h2>

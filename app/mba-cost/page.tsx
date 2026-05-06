@@ -34,7 +34,9 @@ const tuitionTable = [
   { program: "Wharton (UPenn)", tuition2yr: "$228,000", living: "$58,000", opportunityCost: "$170,000", loanInterest: "$31,000", total: "$487,000", type: "M7 Full-Time (2yr)" },
   { program: "Booth (Chicago)", tuition2yr: "$220,000", living: "$56,000", opportunityCost: "$170,000", loanInterest: "$30,000", total: "$476,000", type: "M7 Full-Time (2yr)" },
   { program: "Kellogg (Northwestern)", tuition2yr: "$218,000", living: "$56,000", opportunityCost: "$170,000", loanInterest: "$29,000", total: "$473,000", type: "M7 Full-Time (2yr)" },
+  { program: "MIT Sloan", tuition2yr: "$222,000", living: "$56,000", opportunityCost: "$170,000", loanInterest: "$30,000", total: "$478,000", type: "M7 Full-Time (2yr)" },
   { program: "Darden (Virginia)", tuition2yr: "$210,000", living: "$52,000", opportunityCost: "$170,000", loanInterest: "$28,000", total: "$460,000", type: "Top 10 Full-Time (2yr)" },
+  { program: "NYU Stern", tuition2yr: "$198,000", living: "$62,000", opportunityCost: "$170,000", loanInterest: "$27,000", total: "$457,000", type: "Top 10 Full-Time (2yr)" },
   { program: "Ross (Michigan)", tuition2yr: "$185,000", living: "$50,000", opportunityCost: "$170,000", loanInterest: "$25,000", total: "$430,000", type: "Top 10 Full-Time (2yr)" },
   { program: "INSEAD (1-year)", tuition2yr: "$115,000", living: "$35,000", opportunityCost: "$85,000", loanInterest: "$15,000", total: "$250,000", type: "1-Year European" },
   { program: "London Business School (1-year)", tuition2yr: "$110,000", living: "$40,000", opportunityCost: "$85,000", loanInterest: "$14,000", total: "$249,000", type: "1-Year European" },
@@ -46,6 +48,7 @@ const scholarshipTable = [
   { program: "Harvard Business School", fullCost: "$492,000", halfAid: "$376,000", fullAid: "$260,000", halfAidIRR: "31%", fullAidIRR: "42%", noAidIRR: "21%", aidAvail: "~30% receive some aid" },
   { program: "Wharton (UPenn)", fullCost: "$487,000", halfAid: "$373,000", fullAid: "$259,000", halfAidIRR: "32%", fullAidIRR: "43%", noAidIRR: "22%", aidAvail: "~40% receive merit aid" },
   { program: "Kellogg (Northwestern)", fullCost: "$473,000", halfAid: "$364,000", fullAid: "$255,000", halfAidIRR: "30%", fullAidIRR: "40%", noAidIRR: "20%", aidAvail: "~45% receive merit aid" },
+  { program: "MIT Sloan", fullCost: "$478,000", halfAid: "$367,000", fullAid: "$256,000", halfAidIRR: "31%", fullAidIRR: "42%", noAidIRR: "21%", aidAvail: "~35% receive merit aid" },
   { program: "Darden (Virginia)", fullCost: "$460,000", halfAid: "$355,000", fullAid: "$250,000", halfAidIRR: "31%", fullAidIRR: "41%", noAidIRR: "21%", aidAvail: "~50% receive some aid" },
   { program: "Ross (Michigan)", fullCost: "$430,000", halfAid: "$338,000", fullAid: "$245,000", halfAidIRR: "30%", fullAidIRR: "40%", noAidIRR: "19%", aidAvail: "~55% receive merit aid" },
   { program: "Foster (UW)", fullCost: "$300,000", halfAid: "$240,000", fullAid: "$180,000", halfAidIRR: "32%", fullAidIRR: "43%", noAidIRR: "21%", aidAvail: "~60% receive some aid" },
@@ -232,6 +235,106 @@ export default function MbaCostPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Top MBA Programs Ranked by ROI */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Top MBA Programs Ranked by ROI (2026)</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Prestige rankings (US News, FT, Poets&amp;Quants) measure reputation. ROI rankings measure
+            financial return per dollar invested. The two lists diverge significantly. A lower-ranked school
+            with strong scholarship availability often outperforms an M7 program on ROI for candidates who
+            do not target MBB consulting or bulge-bracket banking.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                rank: "1",
+                program: "Online MBA (Kelley / UNC / Illinois iMBA)",
+                totalCost: "$22K–$65K",
+                medianSalary: "$105K–$120K",
+                breakEven: "1–3 years",
+                irrRange: "25–45%",
+                note: "Best financial ROI for candidates staying in current roles or seeking modest salary bumps. Near-zero opportunity cost is the key driver.",
+                color: "text-green-400",
+              },
+              {
+                rank: "2",
+                program: "INSEAD / LBS (1-year European)",
+                totalCost: "$249K–$250K",
+                medianSalary: "$145K–$165K",
+                breakEven: "5–6 years",
+                irrRange: "22–28%",
+                note: "Half the duration of a US 2-year program. Strong for international careers and consulting. Total cost 45% below M7 full-time.",
+                color: "text-blue-400",
+              },
+              {
+                rank: "3",
+                program: "Harvard / Wharton (M7 → MBB or Finance)",
+                totalCost: "$487K–$492K",
+                medianSalary: "$175K–$200K",
+                breakEven: "8–10 years",
+                irrRange: "18–24%",
+                note: "Justified only by the MBB consulting and bulge-bracket banking salary premium. General management roles do not produce sufficient delta to clear the opportunity cost.",
+                color: "text-amber-400",
+              },
+              {
+                rank: "4",
+                program: "MIT Sloan / Kellogg / Booth (M7 → Tech or Consulting)",
+                totalCost: "$473K–$478K",
+                medianSalary: "$165K–$190K",
+                breakEven: "8–10 years",
+                irrRange: "18–23%",
+                note: "Strong for tech strategy and consulting. MIT Sloan specifically dominant for product management and tech leadership pipelines.",
+                color: "text-amber-300",
+              },
+              {
+                rank: "5",
+                program: "NYU Stern (Finance / Wall Street track)",
+                totalCost: "$457K",
+                medianSalary: "$155K–$175K",
+                breakEven: "8–9 years",
+                irrRange: "17–22%",
+                note: "Best positioned for NYC finance recruiting. Stronger ROI than M7 for finance-track candidates who receive merit aid at Stern vs. no aid at Wharton.",
+                color: "text-indigo-300",
+              },
+              {
+                rank: "6",
+                program: "T15 with 50%+ Scholarship (Darden, Tuck, Fuqua)",
+                totalCost: "$230K–$280K",
+                medianSalary: "$140K–$160K",
+                breakEven: "5–7 years",
+                irrRange: "20–28%",
+                note: "Full scholarship from a T15 program regularly outperforms M7 at full price on IRR. Scholarship negotiation is the highest-leverage action in MBA ROI.",
+                color: "text-green-300",
+              },
+            ].map(({ rank, program, totalCost, medianSalary, breakEven, irrRange, note, color }) => (
+              <div key={rank} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-3">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
+                  <div className="flex items-center gap-3">
+                    <span className="text-slate-600 font-mono text-sm">#{rank}</span>
+                    <p className="text-white font-semibold text-sm">{program}</p>
+                  </div>
+                  <p className={`${color} text-sm font-semibold`}>IRR: {irrRange}</p>
+                </div>
+                <div className="grid grid-cols-3 gap-2 text-xs">
+                  <div><p className="text-slate-500 mb-0.5">True Cost</p><p className="text-slate-300">{totalCost}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Median Post-MBA</p><p className="text-slate-300">{medianSalary}</p></div>
+                  <div><p className="text-slate-500 mb-0.5">Break-Even</p><p className="text-slate-300">{breakEven}</p></div>
+                </div>
+                <p className="text-slate-400 text-xs leading-relaxed">{note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            ROI rankings use IRR on a 10-year post-MBA earnings horizon assuming consulting or finance placement
+            where applicable. General management outcomes produce lower IRR across all school tiers. For
+            industry-specific ROI, see the{" "}
+            <Link href="/mba-roi-consulting" className="text-amber-400 hover:text-amber-300 transition-colors underline underline-offset-2">consulting</Link>,{" "}
+            <Link href="/mba-roi-tech" className="text-amber-400 hover:text-amber-300 transition-colors underline underline-offset-2">technology</Link>, and{" "}
+            <Link href="/mba-roi-healthcare" className="text-amber-400 hover:text-amber-300 transition-colors underline underline-offset-2">healthcare</Link>
+            {" "}ROI guides.
+          </p>
         </section>
 
         {/* CTA */}

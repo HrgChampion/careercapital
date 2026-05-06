@@ -2,13 +2,13 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Online vs Full-Time MBA ROI (2026): Which Pays Back Faster?",
+  title: "Best Online MBA Programs ROI (2026): Which Pays Back Fastest?",
   description:
-    "Online vs full-time MBA ROI compared side by side. Opportunity cost math, salary outcomes, break-even timelines, and when each format wins. See data →",
+    "Best online MBA programs ranked by ROI. Online vs full-time MBA compared side by side — opportunity cost math, salary outcomes, break-even timelines by program, and when each format wins. See data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-online-vs-full-time"),
   openGraph: {
-    title: "Online vs Full-Time MBA ROI (2026): Which Pays Back Faster?",
-    description: "Full-time MBA: $315K total outflow, 8–9 yr break-even. Online MBA: $48K outflow, 2 yr break-even. The opportunity cost math explained.",
+    title: "Best Online MBA Programs ROI (2026): Which Pays Back Fastest?",
+    description: "Best online MBA programs ranked by ROI. Full-time MBA: $315K total outflow, 8–9 yr break-even. Online MBA: $48K outflow, 2 yr break-even. The opportunity cost math explained.",
     url: "https://careerreturns.com/mba-roi-online-vs-full-time",
     siteName: "CareerReturns",
     type: "article",
@@ -16,8 +16,8 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "Online vs Full-Time MBA ROI (2026)",
-    description: "Online MBA breaks even 6–7 years faster. The opportunity cost math that most comparisons miss.",
+    title: "Best Online MBA Programs ROI (2026)",
+    description: "Best online MBA programs ranked by ROI. Online MBA breaks even 6–7 years faster. The opportunity cost math that most comparisons miss.",
   },
 }
 
@@ -117,27 +117,85 @@ export default function MbaRoiOnlineVsFullTimePage() {
 
         {/* Online MBA programs worth considering */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold tracking-tight">Online MBA Programs with Real Employer Recognition</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Best Online MBA Programs: ROI Comparison</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             The online MBA market matured significantly after 2018. A small set of accredited programs
-            now carry employer recognition comparable to their parent school's residential brand.
+            now carry employer recognition comparable to their parent school's residential brand. The
+            programs below are ranked by financial ROI — total cost divided by salary outcome and break-even timeline.
           </p>
           <div className="space-y-3">
             {[
-              { school: "UNC Kenan-Flagler Online MBA", cost: "~$65,000", note: "AACSB accredited. Identical diploma to residential program. Strong nationwide employer recognition." },
-              { school: "Indiana University Kelley Direct", cost: "~$62,000", note: "Consistently ranked top online MBA. Strong corporate recruiting relationships in Midwest and nationally." },
-              { school: "Carnegie Mellon Tepper Online MBA", cost: "~$95,000", note: "Higher cost but strong tech and finance employer relationships. CMU brand carries in recruiting." },
-              { school: "Arizona State University W. P. Carey Online", cost: "~$40,000", note: "Lowest cost of the major accredited online programs. Best ROI for candidates staying in current roles." },
-              { school: "University of Illinois Gies iMBA", cost: "~$22,000", note: "Lowest cost fully accredited online MBA. Ideal for early-career credential building with minimal debt." },
-            ].map(({ school, cost, note }) => (
+              {
+                school: "University of Illinois Gies iMBA",
+                cost: "~$22,000",
+                medianSalary: "$95K–$110K",
+                breakEven: "~1 year",
+                note: "Lowest cost fully accredited online MBA. AACSB accredited. Best percentage ROI available. Ideal for early-career credential building with minimal debt.",
+              },
+              {
+                school: "Arizona State University W. P. Carey Online",
+                cost: "~$40,000",
+                medianSalary: "$100K–$115K",
+                breakEven: "~2 years",
+                note: "Low cost with strong employer recognition in the Southwest and nationally. Best ROI for candidates staying in current roles seeking a salary uplift.",
+              },
+              {
+                school: "Indiana University Kelley Direct",
+                cost: "~$62,000",
+                medianSalary: "$110K–$130K",
+                breakEven: "~3 years",
+                note: "Consistently top-ranked online MBA. Strong corporate recruiting relationships in Midwest and nationally. Kelley brand well-recognized in finance and consulting.",
+              },
+              {
+                school: "UNC Kenan-Flagler Online MBA",
+                cost: "~$65,000",
+                medianSalary: "$115K–$135K",
+                breakEven: "~3 years",
+                note: "AACSB accredited. Identical diploma to residential program. Strong nationwide employer recognition across industries.",
+              },
+              {
+                school: "UT McCombs Online MBA",
+                cost: "~$55,000",
+                medianSalary: "$110K–$125K",
+                breakEven: "~2–3 years",
+                note: "Strong Texas employer network and growing national recognition. Cost-competitive with Kelley while carrying the UT Austin brand in tech and energy sectors.",
+              },
+              {
+                school: "USC Marshall Online MBA",
+                cost: "~$78,000",
+                medianSalary: "$120K–$140K",
+                breakEven: "~3–4 years",
+                note: "Strong West Coast and LA market recognition. Best for candidates in media, entertainment, tech, and consumer goods who want LA network access without relocating.",
+              },
+              {
+                school: "Carnegie Mellon Tepper Online MBA",
+                cost: "~$95,000",
+                medianSalary: "$130K–$155K",
+                breakEven: "~4 years",
+                note: "Higher cost but strong tech and finance employer relationships. CMU brand carries in Pittsburgh, NYC, and SF tech markets. Best for quant-heavy career tracks.",
+              },
+            ].map(({ school, cost, medianSalary, breakEven, note }) => (
               <div key={school} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                   <p className="text-white font-semibold text-sm">{school}</p>
                   <p className="text-indigo-300 font-semibold text-sm">{cost}</p>
                 </div>
+                <div className="flex gap-4 text-xs">
+                  <span className="text-slate-400">Median post-MBA: <span className="text-slate-200">{medianSalary}</span></span>
+                  <span className="text-slate-400">Break-even: <span className="text-green-400 font-medium">{breakEven}</span></span>
+                </div>
                 <p className="text-slate-500 text-xs">{note}</p>
               </div>
             ))}
+          </div>
+          <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-xl p-5">
+            <p className="text-indigo-200 text-sm leading-relaxed">
+              <span className="font-semibold text-white">Key insight:</span> The best online MBA program
+              is not the highest-ranked one — it is the one whose cost-to-salary-delta ratio is lowest
+              for your specific career track. For most general management and operations roles, Illinois
+              iMBA or ASU W. P. Carey produce IRR above 25%, outperforming M7 full-time programs on
+              financial return.
+            </p>
           </div>
         </section>
 
@@ -190,28 +248,28 @@ export default function MbaRoiOnlineVsFullTimePage() {
         <section className="border-t border-white/10 pt-10 mt-10">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
           <div className="grid sm:grid-cols-2 gap-3">
-            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">Σ</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
                 <p className="text-slate-500 text-xs">Model your specific numbers →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">↗</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
                 <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
               </div>
             </Link>
-            <Link href="/mba-cost" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-cost" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">$</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Cost Breakdown 2026</p>
                 <p className="text-slate-500 text-xs">Full vs online program costs →</p>
               </div>
             </Link>
-            <Link href="/mba-roi" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">→</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Complete Guide</p>
