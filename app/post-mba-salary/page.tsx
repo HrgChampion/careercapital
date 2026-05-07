@@ -139,6 +139,8 @@ export default function PostMbaSalaryPage() {
           </h1>
           <p className="text-slate-400 leading-relaxed">
             Salary after an MBA degree ranges from $85,000 in nonprofit roles to $350,000+ in investment banking.
+            Earning an MBA at a top-tier program shifts annual salaries dramatically — the median first-year
+            post-MBA pay at M7 programs is more than double the national median for bachelor&apos;s-only professionals.
             First-year pay by industry and school tier, 10-year salary growth curves, and how post-MBA
             compensation compares to pre-MBA earnings. All figures reflect 2026 market data.
           </p>
@@ -302,7 +304,7 @@ export default function PostMbaSalaryPage() {
           <div>
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">10-Year Trajectory</p>
             <h2 className="text-2xl font-semibold tracking-tight">Post-MBA Salary Growth by Year</h2>
-            <p className="text-slate-400 text-sm mt-2">Salary trajectories diverge sharply after year 3. Industry is the primary determinant of 10-year earning power.</p>
+            <p className="text-slate-400 text-sm mt-2">Salary trajectories diverge sharply after year 3. Industry is the primary determinant of 10-year earning power. The spread in post-MBA salary across tracks is narrow at Year 1 but compounds to a $400K–$1.5M gap by Year 10, making industry selection the most consequential decision MBA graduates make.</p>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -571,7 +573,9 @@ export default function PostMbaSalaryPage() {
           <h2 className="text-2xl font-semibold tracking-tight">Understanding Salary After an MBA Degree</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             Salary after an MBA is determined primarily by three factors: destination industry, business school
-            tier, and pre-MBA background. Candidates with a bachelor&apos;s degree in engineering or finance
+            tier, and pre-MBA background. Across all MBA programs — from M7 full-time programs to ranked online
+            options — the structure of annual salaries follows a consistent pattern: consulting and finance pay
+            the most at Year 1, while tech and general management catch up through equity and promotion velocity. Candidates with a bachelor&apos;s degree in engineering or finance
             entering tech or banking often see the largest absolute salary after MBA, but the percentage
             uplift is frequently higher for candidates switching career paths from lower-paying fields. The
             average starting salary for MBA graduates varies significantly by these factors — the national

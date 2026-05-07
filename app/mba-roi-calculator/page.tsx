@@ -144,7 +144,8 @@ export default function Home() {
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Your MBA is modeled as a capital investment. The initial outflow includes tuition,
                   opportunity cost (lost income during the program), and equity paid. Post-graduation
-                  cash flows are the salary increase net of loan payments, discounted at 6% per year.
+                  cash flows are the post-MBA pay increase net of loan interest payments, discounted
+                  at 6% per year.
                 </p>
               </div>
 
@@ -155,7 +156,8 @@ export default function Home() {
                 </div>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   IRR is the annualized return of the MBA investment — the discount rate at which NPV
-                  equals zero. It is solved numerically using a bisection method over the full
+                  equals zero. Conceptually, it measures profit relative to initial principal, expressed
+                  as an annual rate. It is solved numerically using a bisection method over the full
                   projected cash flow series, not a simplified approximation.
                 </p>
               </div>
@@ -251,9 +253,10 @@ export default function Home() {
               <p className="text-slate-400 text-sm leading-relaxed">
                 The post-2022 tech layoff cycle changed the calculus for anyone targeting product management or
                 engineering-adjacent MBA roles. Big Tech companies that once recruited aggressively on campus pulled
-                back sharply. That has pushed more MBA graduates toward consulting and finance — sectors that have
-                maintained placement, but are also more selective and cyclically sensitive. If your primary goal is
-                a FAANG PM role, an MBA is no longer the reliable pathway it was in 2019–2021.
+                back sharply — and for many tech-track graduates, the degree&apos;s return on investment fell
+                materially as a result. That has pushed more MBA graduates toward consulting and finance — sectors
+                that have maintained placement, but are also more selective and cyclically sensitive. If your primary
+                goal is a FAANG PM role, an MBA is no longer the reliable pathway it was in 2019–2021.
               </p>
               <p className="text-slate-400 text-sm leading-relaxed">
                 There is a third path that has genuinely improved: <span className="text-white font-medium">accredited online and part-time MBAs.</span> Programs
@@ -305,7 +308,9 @@ export default function Home() {
               <p className="text-slate-400 text-sm leading-relaxed">
                 The most common mistake prospective students make is modeling only tuition. Enter the full cost —
                 tuition plus living expenses plus foregone income — into the Total MBA Cost field above to get an
-                accurate NPV.
+                accurate NPV. For the interest rate input in the MBA ROI calculator, the Department of Education&apos;s
+                unsubsidized graduate loan rate (currently 8.08%) is a reasonable default if you plan to finance
+                through federal student loans, based on surveys of education&apos;s unsubsidized graduate lending rates.
               </p>
             </div>
           </section>
@@ -317,8 +322,10 @@ export default function Home() {
               <p className="text-slate-400 text-sm leading-relaxed">
                 GMAC&apos;s most recent survey puts the median pre-MBA base salary at approximately $85,000 for
                 full-time program applicants. Post-MBA, M7 graduates entering consulting or finance routinely report
-                total first-year compensation exceeding $200,000 when signing bonuses are included. The gap between
-                sectors is large enough that industry target matters as much as school tier.
+                total first-year compensation exceeding $200,000 when signing bonuses are included. The delta between
+                post-MBA and pre-MBA pay is the single most important input in any ROI model — a larger gap compresses
+                break-even faster than any other variable. The gap between sectors is large enough that industry
+                target matters as much as school tier.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-1">
@@ -468,11 +475,12 @@ export default function Home() {
             <h2 className="text-2xl font-semibold tracking-tight mb-10">How This Compares to the Bloomberg ROI Calculator</h2>
             <div className="space-y-6 max-w-3xl">
               <p className="text-slate-400 text-sm leading-relaxed">
-                Bloomberg Businessweek&apos;s MBA ROI calculator is one of the most widely referenced tools for evaluating
-                business school returns. It uses reported median salary data from schools and a simplified payback-period
-                model. This calculator takes a different approach — a <span className="text-white font-medium">full discounted cash flow (DCF) model</span> that
-                accounts for opportunity cost, loan repayment schedules, salary growth compounding, and your personal
-                discount rate. Here is how the two approaches differ:
+                Based on Bloomberg Businessweek&apos;s rankings methodology, their MBA ROI calculator surveyed roughly
+                9,500 students and alumni across top programs to build its salary dataset. It uses reported median
+                salary data from schools and a simplified payback-period model. This calculator takes a different
+                approach — a <span className="text-white font-medium">full discounted cash flow (DCF) model</span> that accounts for opportunity cost,
+                loan repayment schedules, salary growth compounding, and your personal discount rate. Here is how
+                the two approaches differ:
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm text-left border border-white/10 rounded-xl overflow-hidden">

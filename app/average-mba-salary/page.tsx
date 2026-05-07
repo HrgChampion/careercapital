@@ -108,6 +108,8 @@ export default function AverageMbaSalaryPage() {
             The average salary for an MBA graduate varies from $85,000 at mid-tier online programs to $215,000+
             at M7 business schools placed into MBB consulting. For most MBA students, earning an MBA degree
             raises earning potential by 47–100% depending on career path, school tier, and destination industry.
+            Salary expectations after an MBA vary significantly based on prior work experience, program tier, and
+            target function — making it essential to model your specific scenario rather than rely on headline averages.
           </p>
           <div className="flex items-center gap-3 pt-1 border-t border-white/8">
             <div className="w-7 h-7 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0">
@@ -211,7 +213,7 @@ export default function AverageMbaSalaryPage() {
               { factor: "Destination industry", impact: "Highest impact. MBB consulting pays $70,000–$90,000 more per year than general management at the same school tier. Industry choice alone can shift 10-year NPV by $200,000+.", weight: "~50% of variance" },
               { factor: "School tier and MBB access", impact: "M7 programs provide on-campus MBB recruiting access. Outside M7, MBB offers become rare — the average salary difference between M7 and T15 for consulting-track graduates is $35,000–$50,000/yr.", weight: "~25% of variance" },
               { factor: "Scholarship negotiation (affects realized ROI, not pay)", impact: "Scholarship does not change your post-MBA salary but reduces cost by $50,000–$120,000. This is the highest-leverage negotiation of the MBA process.", weight: "N/A — affects ROI" },
-              { factor: "Pre-MBA experience and lateral vs. career switch", impact: "Career switchers (teaching → consulting, military → MBB) typically see larger salary deltas than lateral movers within an industry. The MBA ROI case is structurally stronger for switchers.", weight: "~25% of variance" },
+              { factor: "Pre-MBA work experience and lateral vs. career switch", impact: "Career switchers (teaching → consulting, military → MBB) typically see larger salary deltas than lateral movers within an industry. Candidates with 4–6 years of work experience tend to enter higher-level post-MBA roles, which directly raises first-year compensation. The MBA ROI case is structurally stronger for switchers.", weight: "~25% of variance" },
             ].map(({ factor, impact, weight }) => (
               <div key={factor} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
                 <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
@@ -290,7 +292,7 @@ export default function AverageMbaSalaryPage() {
             <p className="text-xs font-medium text-violet-400 uppercase tracking-widest mb-1">Career Progression</p>
             <h2 className="text-2xl font-semibold tracking-tight">MBA Salary by Years of Experience Post-Graduation</h2>
             <p className="text-slate-400 text-sm mt-2 leading-relaxed">
-              Average MBA salary by years of experience post-graduation shows the widest divergence across industries at the 5–7 year mark, where partner-track and equity-vesting dynamics compound compensation dramatically. The "average MBA salary" figure commonly cited in surveys reflects the Year 1–2 range; the long-term picture looks very different.
+              Average MBA salary by years of experience post-graduation shows the widest divergence across industries at the 5–7 year mark, where partner-track and equity-vesting dynamics compound compensation dramatically. The differences in average MBA salary between industries compound over time — a gap of $60,000–$80,000 at Year 1 can widen to $300,000–$500,000 by Year 10. The "average MBA salary" figure commonly cited in surveys reflects the Year 1–2 range; the long-term picture looks very different.
             </p>
           </div>
           <div className="space-y-3">
