@@ -13,7 +13,7 @@ const _breadcrumbSchema = breadcrumbSchema([{ name: "Is an MBA Worth It?", url: 
 export const metadata = {
   title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
   description:
-    "What is an MBA and is it worth it in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, MBA meaning explained, and when the math reliably fails. Calculate now →",
+    "Is an MBA worth it in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math fails. Calculate now →",
   alternates: pageAlternates("https://careerreturns.com/mba-worth-it"),
   openGraph: {
     title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",

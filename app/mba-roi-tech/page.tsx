@@ -2,7 +2,7 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI in Tech 2026: FAANG PM Salary, Equity Math & SWE vs MBA Break-Even",
+  title: "MBA ROI in Tech 2026: FAANG PM Salary, Equity & Break-Even",
   description:
     "MBA into Google/Amazon/Meta: PM salary vs SWE track, RSU vesting cliff analysis, M7 vs no-MBA PM paths. IRR calculation for tech-focused MBA candidates →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-tech"),

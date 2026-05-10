@@ -2,11 +2,11 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Statistics 2026: Salary Uplifts, Break-Even & IRR by Industry",
+  title: "MBA ROI Statistics 2026: IRR & Break-Even by Industry [Free Report]",
   description: "2026 MBA ROI data: MBB break-even 4.2 yrs (IRR 22%), IB 4.5 yrs, Tech 6.1 yrs, Nonprofit 13 yrs. Full salary uplift table for 12 industries. Free report.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-report-2026"),
   openGraph: {
-    title: "MBA ROI Statistics 2026: Salary Uplifts, Break-Even & IRR by Industry",
+    title: "MBA ROI Statistics 2026: IRR & Break-Even by Industry [Free Report]",
     description: "2026 MBA ROI data: MBB break-even 4.2 yrs (IRR 22%), IB 4.5 yrs, Tech 6.1 yrs, Nonprofit 13 yrs. Full salary uplift table for 12 industries. Free report.",
     url: "https://careerreturns.com/mba-roi-report-2026",
     siteName: "CareerReturns",
@@ -14,7 +14,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MBA ROI Statistics 2026: Salary Uplifts, Break-Even & IRR by Industry",
+    title: "MBA ROI Statistics 2026: IRR & Break-Even by Industry [Free Report]",
     description: "2026 MBA ROI data: MBB break-even 4.2 yrs (IRR 22%), IB 4.5 yrs, Tech 6.1 yrs, Nonprofit 13 yrs. Full salary uplift table for 12 industries.",
   },
 }

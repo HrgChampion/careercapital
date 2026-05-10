@@ -2,12 +2,12 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Return to Work After Career Break: Salary Data, Penalties & Strategy (2026)",
+  title: "Return to Work After Career Break: 2026 Salary & Strategy",
   description:
     "How does a career break affect your career? Salary penalty data by industry and break duration, 3 re-entry strategies compared by NPV, and a step-by-step recovery framework.",
   alternates: pageAlternates("https://careerreturns.com/return-to-work-after-career-break"),
   openGraph: {
-    title: "Return to Work After Career Break: Salary Data, Penalties & Strategy (2026)",
+    title: "Return to Work After Career Break: 2026 Salary & Strategy",
     description:
       "Career breaks cost 6–18% in salary penalty. Here's the data by industry, break duration, and the 3 re-entry strategies ranked by 10-year NPV.",
     url: "https://careerreturns.com/return-to-work-after-career-break",

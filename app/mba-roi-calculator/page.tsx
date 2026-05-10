@@ -56,6 +56,85 @@ const DEFAULTS: Inputs = {
 
 const STEPS = ["Career", "Cost", "Financing"] as const
 
+// ─── Schema data ───────────────────────────────────────────────────────────────
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do I calculate MBA ROI?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "To calculate MBA ROI, use a discounted cash flow (DCF) model: (1) Compute the total MBA investment — tuition + fees + forgone income during enrollment. (2) Calculate annual post-MBA salary delta (post-MBA salary minus pre-MBA salary). (3) Subtract annual loan repayment from the delta. (4) Discount each year's net cash flow at your personal rate (typically 6%). (5) Sum the discounted flows to get Net Present Value (NPV). A positive NPV means the MBA creates value at your discount rate. The MBA ROI formula is: NPV = Σ(salary delta – loan payment) / (1 + r)^t − initial investment.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is an MBA worth it financially?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It depends on tuition, your pre- and post-MBA salary delta, how much you borrow, and your personal discount rate. This calculator models the MBA as a capital allocation decision. A positive NPV means the MBA creates value at your assumed discount rate. At M7 programs targeting consulting or finance, the MBA typically produces a positive NPV. At lower-ranked programs with modest salary increases, the NPV is often negative or marginal.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a good IRR for an MBA?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An IRR above your cost of capital (typically 6–8%) indicates value creation. Elite programs with strong placement in finance, consulting, or tech frequently produce IRRs in the 12–20% range. An MBA IRR below 6% suggests the financial return alone does not justify the investment. An IRR of 15%+ is considered excellent for an MBA — comparable to strong equity market returns.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the average MBA return on investment?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The average MBA ROI depends heavily on program tier and target industry. M7 MBAs entering consulting or finance typically generate a 10-year NPV of $200,000–$600,000 and an IRR of 15–22%. Mid-tier programs in general management produce NPVs of $50,000–$150,000 and IRRs of 7–12%. Online MBAs with low opportunity cost often produce the best financial ROI — break-even in 2–3 years with a modest salary increase.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take to break even on an MBA?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most programs break even between 4 and 8 years depending on post-MBA salary uplift, financing structure, and total program cost. M7 programs targeting MBB consulting break even in approximately 5–6 years. Mid-tier programs in general management break even in 7–9 years. Online part-time MBAs — where the student keeps working — can break even in as little as 2–3 years because there is no forgone income.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does this MBA ROI calculator compare to the Bloomberg ROI calculator?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Bloomberg Businessweek MBA ROI calculator uses school-reported median salary data and a simplified payback period model. It does not model opportunity cost or loan repayment schedules. This calculator uses a full DCF model (NPV + IRR) that accounts for opportunity cost, a complete loan amortization schedule, your personal discount rate, and your actual target salary — not a school median. For personal decision modeling, the DCF approach is significantly more accurate than the Bloomberg methodology.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What discount rate should I use for an MBA ROI calculation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The model uses 6% as the default discount rate, which approximates a long-run risk-adjusted return on diversified equity investments. If you have high-yield student loan debt, using your loan interest rate as the discount rate is more conservative and appropriate. For federal graduate loans (currently 8.08%), use 8% as your discount rate to stress-test the MBA cost benefit analysis.",
+      },
+    },
+  ],
+}
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Use the MBA ROI Calculator",
+  description: "Calculate your MBA return on investment using NPV, IRR, and break-even analysis in 5 steps.",
+  step: [
+    { "@type": "HowToStep", name: "Enter your current salary", text: "Input your current annual base salary before enrolling in the MBA program. This is used to calculate the opportunity cost — the income you forfeit during enrollment.", position: 1 },
+    { "@type": "HowToStep", name: "Enter your expected post-MBA salary", text: "Input the target first-year post-MBA salary for your target role and industry. Use realistic figures based on school placement reports or Glassdoor data for your target role.", position: 2 },
+    { "@type": "HowToStep", name: "Enter total MBA cost", text: "Input the full economic cost — tuition + fees + living expenses over the program duration. Do not use tuition alone; opportunity cost is typically the largest single component of MBA total cost.", position: 3 },
+    { "@type": "HowToStep", name: "Enter your financing structure", text: "Set the percentage of cost you plan to finance with student loans and your expected interest rate. The calculator runs a full loan amortization schedule against your post-MBA salary delta.", position: 4 },
+    { "@type": "HowToStep", name: "Review your MBA ROI results", text: "The results panel shows your NPV (net present value of the MBA investment), IRR (annualized return rate), break-even year, and an A–F investment grade. A positive NPV means the MBA creates financial value at your assumed discount rate.", position: 5 },
+  ],
+}
+
 // ─── Main component ────────────────────────────────────────────────────────────
 
 export default function Home() {
@@ -130,6 +209,31 @@ export default function Home() {
 
         {/* ── Below-fold SEO content ── */}
         <div className="mt-16 sm:mt-28 border-t border-white/10 pt-12 sm:pt-20 space-y-12 sm:space-y-20">
+
+          {/* How to Use */}
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">How to Use This MBA ROI Calculator</h2>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-3xl">
+              This calculator uses a full DCF model to calculate MBA return on investment — the same net present value mba framework used by institutional investors to evaluate capital projects. Enter your specific inputs to get a personalized result, not a school median.
+            </p>
+            <ol className="space-y-4 max-w-3xl">
+              {[
+                { n: 1, title: "Enter your current salary", detail: "Input your annual base salary before enrolling. This calculates your opportunity cost — the income you forfeit during the program. It is typically the largest single cost component in any MBA cost benefit analysis." },
+                { n: 2, title: "Enter your expected post-MBA salary", detail: "Use your realistic target first-year salary for your target role. Consult school employment reports and Glassdoor/Levels.fyi for your target function. The salary delta (post minus pre) is the most important variable in the MBA ROI formula." },
+                { n: 3, title: "Enter total MBA cost (not just tuition)", detail: "Input tuition + fees + estimated living expenses over the program duration. Most students underestimate total cost by 40–60% by anchoring only on tuition. This is the initial outflow in the NPV calculation." },
+                { n: 4, title: "Set your financing structure", detail: "Enter the percentage financed with student loans and your expected interest rate. The calculator runs a complete loan amortization schedule. Federal unsubsidized graduate loans currently carry an 8.08% interest rate." },
+                { n: 5, title: "Review your NPV, IRR, and investment grade", detail: "The results panel shows Net Present Value (positive = value created), IRR (your annualized return — compare to 8% stock market benchmark), break-even year, and an A–F investment grade. Use these to compare MBB ROI calculator results against your program." },
+              ].map(({ n, title, detail }) => (
+                <li key={n} className="flex gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+                  <span className="shrink-0 w-7 h-7 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300 text-xs font-semibold">{n}</span>
+                  <div className="space-y-1">
+                    <p className="text-white font-semibold text-sm">{title}</p>
+                    <p className="text-slate-400 text-xs leading-relaxed">{detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
 
           {/* Financial explanation */}
           <section>
@@ -530,6 +634,12 @@ export default function Home() {
                 is built for <span className="text-white font-medium">personal decision modeling</span> — enter your specific pre-MBA salary, target post-MBA role,
                 actual program cost, and financing plan to get a result that reflects your situation, not a median.
               </p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Most users searching for a Bloomberg ROI calculator are trying to answer one question: <span className="text-white font-medium">&ldquo;Is my specific MBA worth the investment?&rdquo;</span> The Bloomberg Businessweek MBA ranking methodology focuses on school-level salary and employment data — useful for comparing programs, but not designed for personal financial modeling. It does not capture your loan structure, your opportunity cost, or your specific target role&apos;s salary.
+              </p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                This calculator closes that gap. It uses the same net present value MBA framework that financial analysts use for capital allocation decisions — a <span className="text-white font-medium">full discounted cash flow model</span> with configurable discount rate, loan amortization, and salary growth assumptions. Whether you are comparing two programs head-to-head or evaluating whether any MBA is worth it at all, entering your actual numbers produces a more accurate mba cost benefit analysis than any school-reported median can provide.
+              </p>
             </div>
           </section>
 
@@ -579,6 +689,15 @@ export default function Home() {
 
         </div>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
 
       {/* Slide-in assumptions drawer */}
       <AssumptionsDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />

@@ -2,30 +2,30 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 
 const _articleSchema = articleSchema({
-  title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
-  description: "MBA average salary in 2026: $175K median at M7, $105K at top online programs. MBA salaries by school tier, industry, specialization, and years of experience.",
+  title: "Average MBA Salary 2026: $175K at M7 — Full Data by School",
+  description: "Average MBA salary 2026: $175K median at M7, $105K at top online programs. Data by school tier, industry, specialization, and experience. Full guide →",
   url: "https://careerreturns.com/average-mba-salary",
   datePublished: "2026-03-09",
-  dateModified: "2026-03-24",
+  dateModified: "2026-05-10",
 })
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Average MBA Salary 2026", url: "https://careerreturns.com/average-mba-salary" }])
 
 export const metadata = {
-  title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
+  title: "Average MBA Salary 2026: $175K at M7 — Full Data by School",
   description:
-    "MBA average salary in 2026: $175K median at M7, $105K at top online programs. MBA salaries by school tier, industry, specialization, and years of experience. Average salary of an MBA graduate vs. no MBA — lifetime earnings gap data. Does an MBA increase salary? Full data →",
+    "Average MBA salary 2026: $175K median at M7, $105K at top online programs. Data by school tier, industry, specialization, and experience. Full guide →",
   alternates: pageAlternates("https://careerreturns.com/average-mba-salary", true),
   openGraph: {
-    title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
+    title: "Average MBA Salary 2026: $175K at M7 — Full Data by School",
     description:
-      "MBA average salary in 2026: $175K median at M7, $105K at top online programs. MBA salaries by school tier, industry, specialization, and years of experience. Average salary of an MBA graduate vs. no MBA — lifetime earnings gap data.",
+      "Average MBA salary 2026: $175K median at M7, $105K at top online programs. Data by school tier, industry, specialization, and experience. Full guide →",
     url: "https://careerreturns.com/average-mba-salary",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Average Salary for an MBA 2026: MBA Average Salary by School & Industry",
+    title: "Average MBA Salary 2026: $175K at M7 — Full Data by School",
     description:
       "$175K median at M7. $105K at top online programs. Full MBA salary data by school tier, industry, and years of experience. Updated 2026.",
   },
@@ -121,6 +121,13 @@ export default function AverageMbaSalaryPage() {
               <span className="text-slate-500 text-xs">Updated March 24, 2026</span>
             </div>
           </div>
+          {/* Quick Answer — targets featured snippet for "average salary for an mba" */}
+          <div className="rounded-xl border border-violet-500/30 bg-violet-500/5 px-5 py-4 space-y-1.5">
+            <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">Quick Answer</p>
+            <p className="text-white font-semibold text-sm">The average salary for an MBA graduate in 2026 is <strong>$115,000–$175,000</strong>, depending on school tier and industry.</p>
+            <p className="text-slate-400 text-xs leading-relaxed">M7 programs (Harvard, Wharton, Booth) produce a median of $175,000+. Top online MBA programs (Indiana Kelley, UNC) produce $90,000–$105,000. The national MBA average salary across all accredited programs is approximately $115,000–$125,000. For consulting and finance tracks, average first-year total compensation exceeds $200,000.</p>
+          </div>
+
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { label: "M7 Median Salary", value: "$175k" },
@@ -250,6 +257,50 @@ export default function AverageMbaSalaryPage() {
             ))}
           </div>
           <p className="text-slate-500 text-xs">Cumulative figures are pre-tax gross earnings estimates across all income sources at median trajectory. M7 figures include consulting/finance track outcomes; individual results vary significantly by path and school tier.</p>
+        </section>
+
+        {/* MBA Average Salary vs. Other Graduate Degrees */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-violet-400 uppercase tracking-widest mb-1">Degree Comparison</p>
+            <h2 className="text-2xl font-semibold tracking-tight">MBA Average Salary vs. Other Graduate Degrees (2026)</h2>
+            <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+              How does the average MBA salary compare to other graduate credentials? The MBA vs. Masters salary comparison shows the MBA produces the highest median starting salary among business-focused credentials — but the right degree depends on your target industry. Graduate degree salary comparison 2026 data below.
+            </p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <caption className="text-left text-xs text-slate-500 pb-3">Average starting salary and 5-year salary by graduate credential. US national median estimates, 2026.</caption>
+              <thead>
+                <tr className="border-b border-white/10 text-slate-400 text-left">
+                  <th className="pb-3 pr-4 font-medium">Graduate Degree</th>
+                  <th className="pb-3 pr-4 font-medium">Avg Starting Salary</th>
+                  <th className="pb-3 pr-4 font-medium">Salary at Year 5</th>
+                  <th className="pb-3 font-medium">Best Career Path</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { degree: "MBA (M7 / Top 15)", starting: "$155,000–$210,000", year5: "$250,000–$400,000", bestFor: "Consulting, finance, general management" },
+                  { degree: "MBA (Online / T25)", starting: "$90,000–$130,000", year5: "$120,000–$185,000", bestFor: "Internal promotions, tech, regional employers" },
+                  { degree: "MS Engineering / MS Computer Science", starting: "$120,000–$160,000", year5: "$160,000–$260,000", bestFor: "Software engineering, ML, hardware" },
+                  { degree: "MS Data Science / MS Analytics", starting: "$105,000–$140,000", year5: "$145,000–$220,000", bestFor: "Data engineering, analytics, quant roles" },
+                  { degree: "JD (Law Degree)", starting: "$85,000–$215,000", year5: "$120,000–$300,000", bestFor: "BigLaw, in-house counsel, government" },
+                  { degree: "MD (Medical Degree)", starting: "$60,000–$85,000 (residency)", year5: "$250,000–$400,000", bestFor: "Clinical medicine; high long-term earnings" },
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
+                    <td className="py-3 pr-4 text-white font-medium">{row.degree}</td>
+                    <td className="py-3 pr-4 text-violet-400 font-medium">{row.starting}</td>
+                    <td className="py-3 pr-4 text-slate-300">{row.year5}</td>
+                    <td className="py-3 text-slate-400 text-xs">{row.bestFor}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-slate-500 text-xs">
+            MBA vs. Masters salary: for business management roles, the MBA produces materially higher average starting salaries than specialized Master&apos;s programs. For engineering and data science roles, MS degrees are often preferred. The MBA&apos;s salary advantage is widest in consulting, finance, and general management career paths.
+          </p>
         </section>
 
         {/* MBA Salary by Specialization */}
@@ -516,7 +567,7 @@ export default function AverageMbaSalaryPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the average MBA salary in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The median post-MBA salary at M7 programs is approximately $175K–$210K for consulting and finance tracks. Across all MBA programs, the median first-year post-MBA salary is approximately $130K–$150K. Online MBA graduates earn a median of $90K–$110K post-degree. The national average across all programs is approximately $115K–$125K."}}, {"@type": "Question", "name": "How does MBA salary vary by school tier?", "acceptedAnswer": {"@type": "Answer", "text": "M7 programs (Harvard, Wharton, Booth, Kellogg, MIT Sloan, Columbia, Stanford) produce median post-MBA salaries of $175K–$210K. T15 programs produce $130K–$160K. T25 produces $100K–$130K. Online MBA programs from ranked schools (Indiana Kelley, UNC, USC) produce $90K–$115K. The gap between M7 and T25 is approximately $60K–$80K in first-year salary."}}, {"@type": "Question", "name": "What is the MBA salary at 5 and 10 years post-graduation?", "acceptedAnswer": {"@type": "Answer", "text": "At year 5, M7 MBB alumni earn $250K–$400K (engagement manager / principal level). At year 10, those who reach senior leadership at MBB or transition to PE/VC earn $400K–$1M+. Tech product leaders at year 5–10 earn $250K–$500K total comp. The 10-year salary trajectory is heavily path-dependent and diverges significantly by industry after year 3."}}, {"@type": "Question", "name": "Do MBA salaries differ by industry?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Investment banking: $200K–$250K base + $75K–$150K bonus. MBB consulting: $190K–$215K base + $20K–$40K bonus. Tech: $160K–$220K base + RSUs. Healthcare management: $130K–$170K. General management / CPG: $110K–$140K. Nonprofit: $70K–$110K. Industry is the primary determinant of post-MBA salary, more than school tier within the top 20 programs."}}, {"@type": "Question", "name": "Does an MBA increase long-term earning potential?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, significantly. Over a 20-year career, M7 MBA graduates in consulting, finance, or tech earn $2M–$5M more in cumulative income than comparable professionals without an MBA degree. The long-term premium is highest for MBB partners, investment bankers, and PE professionals, where senior-level compensation differences are measured in hundreds of thousands annually."}}, {"@type": "Question", "name": "What is the average salary of an MBA graduate vs. someone without an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "A professional with only a bachelor's degree in a business or liberal arts field earns a median of $55K–$75K in Year 1 and $95K–$130K at Year 10. An M7 MBA graduate earns $175K–$215K in Year 1 and $380K–$800K+ at Year 10 on high-trajectory paths. The cumulative 20-year earnings gap between an M7 MBA (all tracks median) and a no-MBA professional is approximately $3.5M–$12M before accounting for tuition and forgone income during the program."}}, {"@type": "Question", "name": "What MBA concentration leads to the highest salary?", "acceptedAnswer": {"@type": "Answer", "text": "Finance/Investment and Consulting/Strategy concentrations produce the highest Year 1 median salaries — $170K–$215K — because they are the primary recruiting targets for investment banking and MBB consulting, the highest-paying first-year MBA job categories. Technology/Analytics concentrations produce $165K–$210K including equity. Entrepreneurship concentrations produce the most variable outcomes: $80K–$130K in Year 1 base, but potentially far higher through startup equity over a 5–10 year horizon."}}, {"@type": "Question", "name": "What is the average MBA salary after 5 years?", "acceptedAnswer": {"@type": "Answer", "text": "The average MBA salary after 5 years ranges from $155,000–$195,000 for T25 program graduates in general management, to $250,000–$400,000 for M7 alumni in MBB consulting or investment banking. Tech track graduates average $230,000–$350,000 total compensation at year 5 including equity. Healthcare management averages $165,000–$210,000 at year 5. The 5-year figure is where compensation trajectories diverge most sharply by industry."}}]}) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the average MBA salary in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The median post-MBA salary at M7 programs is approximately $175K–$210K for consulting and finance tracks. Across all MBA programs, the median first-year post-MBA salary is approximately $130K–$150K. Online MBA graduates earn a median of $90K–$110K post-degree. The national average across all programs is approximately $115K–$125K."}}, {"@type": "Question", "name": "How does MBA salary vary by school tier?", "acceptedAnswer": {"@type": "Answer", "text": "M7 programs (Harvard, Wharton, Booth, Kellogg, MIT Sloan, Columbia, Stanford) produce median post-MBA salaries of $175K–$210K. T15 programs produce $130K–$160K. T25 produces $100K–$130K. Online MBA programs from ranked schools (Indiana Kelley, UNC, USC) produce $90K–$115K. The gap between M7 and T25 is approximately $60K–$80K in first-year salary."}}, {"@type": "Question", "name": "What is the MBA salary at 5 and 10 years post-graduation?", "acceptedAnswer": {"@type": "Answer", "text": "At year 5, M7 MBB alumni earn $250K–$400K (engagement manager / principal level). At year 10, those who reach senior leadership at MBB or transition to PE/VC earn $400K–$1M+. Tech product leaders at year 5–10 earn $250K–$500K total comp. The 10-year salary trajectory is heavily path-dependent and diverges significantly by industry after year 3."}}, {"@type": "Question", "name": "Do MBA salaries differ by industry?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Investment banking: $200K–$250K base + $75K–$150K bonus. MBB consulting: $190K–$215K base + $20K–$40K bonus. Tech: $160K–$220K base + RSUs. Healthcare management: $130K–$170K. General management / CPG: $110K–$140K. Nonprofit: $70K–$110K. Industry is the primary determinant of post-MBA salary, more than school tier within the top 20 programs."}}, {"@type": "Question", "name": "Does an MBA increase long-term earning potential?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, significantly. Over a 20-year career, M7 MBA graduates in consulting, finance, or tech earn $2M–$5M more in cumulative income than comparable professionals without an MBA degree. The long-term premium is highest for MBB partners, investment bankers, and PE professionals, where senior-level compensation differences are measured in hundreds of thousands annually."}}, {"@type": "Question", "name": "What is the average salary of an MBA graduate vs. someone without an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "A professional with only a bachelor's degree in a business or liberal arts field earns a median of $55K–$75K in Year 1 and $95K–$130K at Year 10. An M7 MBA graduate earns $175K–$215K in Year 1 and $380K–$800K+ at Year 10 on high-trajectory paths. The cumulative 20-year earnings gap between an M7 MBA (all tracks median) and a no-MBA professional is approximately $3.5M–$12M before accounting for tuition and forgone income during the program."}}, {"@type": "Question", "name": "What MBA concentration leads to the highest salary?", "acceptedAnswer": {"@type": "Answer", "text": "Finance/Investment and Consulting/Strategy concentrations produce the highest Year 1 median salaries — $170K–$215K — because they are the primary recruiting targets for investment banking and MBB consulting, the highest-paying first-year MBA job categories. Technology/Analytics concentrations produce $165K–$210K including equity. Entrepreneurship concentrations produce the most variable outcomes: $80K–$130K in Year 1 base, but potentially far higher through startup equity over a 5–10 year horizon."}}, {"@type": "Question", "name": "What is the average MBA salary after 5 years?", "acceptedAnswer": {"@type": "Answer", "text": "The average MBA salary after 5 years ranges from $155,000–$195,000 for T25 program graduates in general management, to $250,000–$400,000 for M7 alumni in MBB consulting or investment banking. Tech track graduates average $230,000–$350,000 total compensation at year 5 including equity. Healthcare management averages $165,000–$210,000 at year 5. The 5-year figure is where compensation trajectories diverge most sharply by industry."}}, {"@type": "Question", "name": "How does the average MBA salary vary by years of experience post-graduation?", "acceptedAnswer": {"@type": "Answer", "text": "At Year 1–2, the average MBA salary is $130,000–$210,000 across industries (associate/manager level). At Year 3–5, salaries reach $155,000–$400,000 depending on industry and promotion trajectory. At Year 6–9, the average MBA salary for those on consulting/banking tracks is $400,000–$750,000 (principal/director level). At Year 10+, average MBA compensation at partner/MD/VP level ranges from $350,000 in general management to $700,000–$2,000,000+ in consulting and finance. The variance by industry compounds significantly after Year 3."}}, {"@type": "Question", "name": "How does average MBA salary compare to a Master's in Finance or Engineering?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA from a top-15 program produces a higher average starting salary ($155,000–$210,000) than most specialized Master's degrees for business-track careers. A Master's in Engineering produces $120,000–$160,000 at entry and $160,000–$260,000 at Year 5 — competitive with online MBAs but below M7 MBA salary for consulting and finance. A Master's in Data Science produces $105,000–$140,000 at entry. For pure engineering or data roles, an MS degree is often preferred over an MBA. The MBA salary advantage is widest in consulting, finance, and leadership roles where the MBA credential directly gates recruiting access."}}, {"@type": "Question", "name": "What is the average MBA salary for women in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Female MBA graduates at M7 programs earn a Year 1 median of approximately $145,000–$175,000, compared to $155,000–$185,000 for male graduates — a gap of roughly $8,000–$12,000 at the point of hire. This gap is partly driven by industry mix (women are proportionally less represented in highest-paying IB roles) and negotiation differences. Within MBB consulting specifically, the structured leveling system reduces Year 1 gender pay gaps to under 5%. The gap widens at Year 10, where male M7 alumni in finance and consulting earn approximately 15–22% more than female peers, primarily due to career interruptions and promotion pace differences."}}]}) }}
       />
       <script
         type="application/ld+json"

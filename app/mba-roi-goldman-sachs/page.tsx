@@ -2,23 +2,23 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Goldman Sachs MBA Salary 2026: $210K Base + Bonus & ROI Math",
+  title: "Goldman Sachs MBA Salary 2026: $200K Base + $150K Bonus",
   description:
-    "Goldman Sachs MBA associate: $175K–$225K base + $75K–$150K bonus = $250K–$350K total comp Year 1. Break-even in 4.5 yrs. Which schools GS recruits from. Full 2026 data.",
+    "GS MBA associate: $200K base + $75K–$150K bonus = $250K–$350K Y1 total comp. Break-even 4.5 yrs. Which schools Goldman Sachs recruits. Full 2026 data.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-goldman-sachs"),
   openGraph: {
-    title: "Goldman Sachs MBA Salary 2026: $210K Base + Bonus & ROI Math",
+    title: "Goldman Sachs MBA Salary 2026: $200K Base + $150K Bonus",
     description:
-      "Goldman Sachs MBA associate: $175K–$225K base + $75K–$150K bonus = $250K–$350K total comp Year 1. Break-even in 4.5 yrs. Which schools GS recruits from. Full 2026 data.",
+      "GS MBA associate: $200K base + $75K–$150K bonus = $250K–$350K Y1 total comp. Break-even 4.5 yrs. Which schools Goldman Sachs recruits. Full 2026 data.",
     url: "https://careerreturns.com/mba-roi-goldman-sachs",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Goldman Sachs MBA Salary 2026: $210K Base + Bonus & ROI Math",
+    title: "Goldman Sachs MBA Salary 2026: $200K Base + $150K Bonus",
     description:
-      "Goldman Sachs MBA associate: $175K–$225K base + $75K–$150K bonus = $250K–$350K total comp Year 1. Break-even in 4.5 yrs.",
+      "GS MBA associate: $200K base + $75K–$150K bonus = $250K–$350K Y1 total comp. Break-even 4.5 yrs. Which schools Goldman Sachs recruits.",
   },
 }
 

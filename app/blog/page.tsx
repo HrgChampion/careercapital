@@ -2,12 +2,12 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Blog | MBA ROI, Career Finance & Return-to-Work Insights | CareerReturns",
+  title: "MBA ROI & Career Finance Blog — CareerReturns",
   description:
     "In-depth articles on MBA ROI, career finance, salary negotiation, and return-to-work strategies. Data-driven analysis from the CareerReturns team.",
   alternates: pageAlternates("https://careerreturns.com/blog"),
   openGraph: {
-    title: "Blog | MBA ROI, Career Finance & Return-to-Work Insights | CareerReturns",
+    title: "MBA ROI & Career Finance Blog — CareerReturns",
     description: "Data-driven articles on MBA ROI, career finance, salary negotiation, and return-to-work strategies.",
     url: "https://careerreturns.com/blog",
     siteName: "CareerReturns",

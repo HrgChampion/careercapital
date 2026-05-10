@@ -2,7 +2,7 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 
 const _articleSchema = articleSchema({
-  title: "Best Career Re-Entry & Returnship Programs 2026: 50+ Companies, Pay & Deadlines",
+  title: "Best Returnship Programs 2026: 50+ Companies Compared, Pay & Deadlines",
   description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ career re-entry programs compared by stipend, deadline & how to qualify.",
   url: "https://careerreturns.com/returnship-programs-2026",
   datePublished: "2026-03-21",
@@ -11,11 +11,11 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Returnship Programs 2026", url: "https://careerreturns.com/returnship-programs-2026" }])
 
 export const metadata = {
-  title: "Best Career Re-Entry & Returnship Programs 2026: 50+ Companies",
+  title: "Best Returnship Programs 2026: 50+ Companies Compared",
   description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ career re-entry programs compared by stipend, conversion rate & deadline →",
   alternates: pageAlternates("https://careerreturns.com/returnship-programs-2026"),
   openGraph: {
-    title: "Best Career Re-Entry & Returnship Programs 2026: 50+ Companies",
+    title: "Best Returnship Programs 2026: 50+ Companies Compared",
     description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ career re-entry programs compared by stipend, conversion rate & deadline →",
     url: "https://careerreturns.com/returnship-programs-2026",
     siteName: "CareerReturns",
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Career Re-Entry & Returnship Programs 2026: 50+ Companies",
+    title: "Best Returnship Programs 2026: 50+ Companies Compared",
     description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ career re-entry programs compared.",
   },
 }

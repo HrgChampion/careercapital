@@ -4,7 +4,7 @@ import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 const _articleSchema = articleSchema({
   title: "The Gender MBA ROI Gap: What the Data Actually Shows",
   description:
-    "Women face a persistent salary gap pre-MBA and a different one post-MBA. We break down the numbers and what that means for ROI projections, school selection, and career path.",
+    "Women face a persistent salary gap pre-MBA and a different one post-MBA. We break down the numbers and what that means for ROI projections.",
   url: "https://careerreturns.com/blog/women-mba-roi",
   datePublished: "2026-03-07",
   dateModified: "2026-03-07",
@@ -57,7 +57,7 @@ const faqSchema = {
 export const metadata = {
   title: "The Gender MBA ROI Gap: What the Data Actually Shows | CareerReturns",
   description:
-    "Women face a persistent salary gap pre-MBA and a different one post-MBA. We break down the numbers and what that means for ROI projections, school selection, and career path.",
+    "Women face a persistent salary gap pre-MBA and a different one post-MBA. We break down the numbers and what that means for ROI projections.",
   alternates: pageAlternates("https://careerreturns.com/blog/women-mba-roi"),
   openGraph: {
     title: "The Gender MBA ROI Gap: What the Data Actually Shows",

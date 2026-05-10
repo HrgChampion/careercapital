@@ -1,10 +1,10 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema } from "@/lib/seo"
 
 export const metadata = {
-  title: "What Is Salary After an MBA? Post-MBA Salary 2026 by Industry & School",
+  title: "Post-MBA Salary 2026: $185K–$350K by Industry & School",
   description:
-    "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. MBA salary by city (NYC, SF, Boston), signing bonus by industry ($5K–$75K), and how pre-MBA background affects salary delta. Full data by school tier and career path.",
+    "Post-MBA salary 2026: MBB $212K–$232K, IB $275K–$350K, tech $185K–$200K. Salary by city, signing bonuses, school tier & pre-MBA background. Full data →",
   alternates: pageAlternates("https://careerreturns.com/post-mba-salary"),
 }
 
@@ -105,8 +105,40 @@ const faqSchema = {
         text: "M7 MBA graduates earn a median first-year post-MBA salary of $185,000–$210,000, driven by higher consulting and banking placement rates. T15 programs produce medians of $150,000–$175,000. T25 programs produce $110,000–$140,000. The gap between M7 and T25 is approximately $60,000–$80,000 in first-year salary, which compounds significantly over a career.",
       },
     },
+    {
+      "@type": "Question",
+      name: "What is the average signing bonus after an MBA?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The average MBA signing bonus ranges from $5,000–$75,000 depending on industry. Tech and FAANG roles pay the highest signing bonuses at $25,000–$75,000. Investment banking (bulge bracket) pays $20,000–$50,000. MBB consulting pays $5,000–$30,000. General management and corporate roles typically pay $5,000–$10,000. Signing bonuses are paid at hire and are sometimes subject to clawback if you leave within 12 months.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does post-MBA salary compare to pre-MBA salary?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The average pre-MBA salary for M7 applicants is approximately $85,000. Post-MBA median salary at M7 programs is $185,000–$210,000, representing a salary delta of roughly $100,000–$125,000 per year. Career switchers from lower-paying fields (teaching, nonprofit) see the largest percentage increase — sometimes exceeding 100%. Engineers and finance professionals see smaller percentage gains due to their higher pre-MBA starting point.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is post-MBA total compensation at top consulting and banking firms?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Post-MBA total compensation at top firms includes base salary, annual performance bonus, and signing bonus. At MBB (McKinsey, Bain, BCG), year-1 total comp is $212,000–$232,000 (base $192K + bonus $20K–$40K). At bulge bracket investment banks (Goldman Sachs, JPMorgan, Morgan Stanley), year-1 total comp is $275,000–$350,000 (base $200K + year-end bonus $75K–$150K). Tech product managers at FAANG earn $185,000–$200,000 in cash plus $60,000–$120,000 in annual RSU value.",
+      },
+    },
   ],
 }
+
+const articleSchemaData = articleSchema({
+  title: "What Is Salary After an MBA? Post-MBA Salary 2026 by Industry & School",
+  description: "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. MBA salary by city, signing bonus by industry, and how pre-MBA background affects salary delta.",
+  url: "https://careerreturns.com/post-mba-salary",
+  datePublished: "2026-03-12",
+  dateModified: "2026-04-09",
+})
 
 const datasetSchema = {
   "@context": "https://schema.org",
@@ -138,12 +170,22 @@ export default function PostMbaSalaryPage() {
             <span className="text-slate-400">2026 Data by Industry &amp; School</span>
           </h1>
           <p className="text-slate-400 leading-relaxed">
-            Salary after an MBA degree ranges from $85,000 in nonprofit roles to $350,000+ in investment banking.
-            Earning an MBA at a top-tier program shifts annual salaries dramatically — the median first-year
-            post-MBA pay at M7 programs is more than double the national median for bachelor&apos;s-only professionals.
-            First-year pay by industry and school tier, 10-year salary growth curves, and how post-MBA
-            compensation compares to pre-MBA earnings. All figures reflect 2026 market data.
+            Salary after an MBA degree ranges from $85,000 in nonprofit roles to $350,000+ in investment banking — driven primarily by industry, school tier, and pre-MBA background.
           </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Below: first-year post-MBA salary by industry and school tier, 10-year salary growth trajectories, signing bonuses, post-MBA total compensation breakdowns, and how post-MBA pay compares to pre-MBA earnings. All data reflects 2026 market figures.
+          </p>
+
+          {/* Key Takeaways */}
+          <ul className="space-y-1.5 text-sm text-slate-300 border border-white/10 rounded-xl bg-white/5 px-5 py-4">
+            <li className="text-xs font-medium text-slate-500 uppercase tracking-widest mb-2">Key Takeaways</li>
+            <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Median first-year post-MBA salary at M7 programs: <strong className="text-white">$185,000–$210,000</strong></span></li>
+            <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Investment banking pays the highest first-year total comp: <strong className="text-white">$275,000–$350,000</strong> including year-end bonus</span></li>
+            <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Average MBA salary increase vs. pre-MBA: <strong className="text-white">+47–55%</strong>; career switchers can exceed +100%</span></li>
+            <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Tech roles add <strong className="text-white">$60K–$120K/yr</strong> in RSU equity on top of cash compensation</span></li>
+            <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Post-MBA salary diverges sharply by Year 3 — industry selection is the biggest 10-year multiplier</span></li>
+          </ul>
+
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
               <p className="text-2xl font-semibold text-indigo-400">$150K+</p>
@@ -240,6 +282,52 @@ export default function PostMbaSalaryPage() {
               </tbody>
             </table>
           </div>
+        </section>
+
+        {/* Post-MBA Total Compensation Breakdown */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-1">Total Comp</p>
+            <h2 className="text-2xl font-semibold tracking-tight">Post-MBA Total Compensation Breakdown</h2>
+            <p className="text-slate-400 text-sm mt-2">
+              &ldquo;Salary after an MBA&rdquo; can mean different things depending on the source. MBA base salary, annual bonus, signing bonus, and equity are four separate components — and comparing offers accurately requires understanding each one.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {[
+              {
+                label: "MBA Base Salary",
+                range: "$85,000–$200,000",
+                description: "The fixed annual salary component guaranteed regardless of firm performance. This is the figure most school employment reports cite. Ranges from $85K in nonprofit to $200K in investment banking for first-year associates.",
+              },
+              {
+                label: "Annual Bonus (Performance)",
+                range: "$10,000–$150,000+",
+                description: "Paid at year-end based on individual and firm performance. MBB year-1 performance bonuses are $20K–$40K. IB year-end bonuses are $75K–$150K+ and highly variable. Annual bonus after an MBA in tech is typically $20K–$35K in cash.",
+              },
+              {
+                label: "MBA Signing Bonus 2026",
+                range: "$5,000–$75,000",
+                description: "A one-time payment made at hire or start date. Highest in tech ($25K–$75K) and investment banking ($20K–$50K). Often structured with a clawback clause if you leave within 12 months of joining.",
+              },
+              {
+                label: "MBA Equity Compensation",
+                range: "$0–$200,000/yr (vested)",
+                description: "Stock or RSU grants most common in tech and PE-backed roles. FAANG-tier product managers receive RSU grants of $200K–$600K vesting over 4 years — equivalent to $50K–$150K per year in additional MBA equity compensation.",
+              },
+            ].map(({ label, range, description }) => (
+              <div key={label} className="rounded-2xl bg-white/5 border border-white/10 p-5 space-y-1.5">
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <p className="font-semibold text-white">{label}</p>
+                  <p className="text-indigo-400 font-medium text-sm">{range}</p>
+                </div>
+                <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-slate-500 text-xs">
+            Post-MBA total compensation = MBA base salary + annual bonus + signing bonus. Equity vests over 4 years and is typically excluded from year-1 cash figures unless stated otherwise.
+          </p>
         </section>
 
         {/* Salary by School Tier */}
@@ -628,6 +716,10 @@ export default function PostMbaSalaryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchemaData) }}
       />
     </main>
   )

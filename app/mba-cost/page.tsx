@@ -11,13 +11,13 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Cost 2026", url: "https://careerreturns.com/mba-cost" }])
 
 export const metadata = {
-  title: "MBA Total Cost 2026: $22K–$492K True Economic Cost by School",
+  title: "MBA Cost 2026: $22K–$492K True Total Cost by School",
   description:
-    "True MBA cost goes beyond tuition. M7 programs cost $460K–$492K total (tuition + living + lost income). Online MBAs from $22K. See full breakdown by school.",
+    "True MBA cost in 2026: M7 programs $460K–$492K total (tuition + living + forgone income). Online MBAs from $22K. Full breakdown by school tier →",
   alternates: pageAlternates("https://careerreturns.com/mba-cost"),
   openGraph: {
-    title: "MBA Total Cost 2026: $22K–$492K True Economic Cost by School",
-    description: "True MBA cost goes beyond tuition. M7 programs cost $460K–$492K total (tuition + living + lost income). Online MBAs from $22K. See full breakdown by school.",
+    title: "MBA Cost 2026: $22K–$492K True Total Cost by School",
+    description: "True MBA cost in 2026: M7 programs $460K–$492K total (tuition + living + forgone income). Online MBAs from $22K. Full breakdown by school tier →",
     url: "https://careerreturns.com/mba-cost",
     siteName: "CareerReturns",
     type: "article",
