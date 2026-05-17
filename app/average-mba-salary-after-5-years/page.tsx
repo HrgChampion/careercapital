@@ -185,6 +185,19 @@ export default function AverageMbaSalaryAfter5YearsPage() {
             trajectory data by industry track and school.
           </p>
 
+          <div className="flex items-center gap-3 pt-1 border-t border-white/8">
+            <div className="w-7 h-7 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0">
+              <span className="text-violet-400 text-xs font-semibold">HG</span>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-sm text-white font-medium">Himanshu Gauba</span>
+              <span className="text-slate-600 text-xs">·</span>
+              <span className="text-slate-500 text-xs">Updated May 2026</span>
+              <span className="text-slate-600 text-xs">·</span>
+              <span className="text-slate-500 text-xs">Data: GMAC, HBS & Wharton career reports, Glassdoor</span>
+            </div>
+          </div>
+
           {/* Quick answer box */}
           <div className="bg-violet-500/10 border border-violet-500/25 rounded-2xl p-6 space-y-3">
             <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">Quick Answer — MBB Consulting</p>

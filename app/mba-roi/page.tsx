@@ -369,6 +369,29 @@ export default function MbaRoiPage() {
           </div>
         </section>
 
+        {/* Long-tail audience-specific sections */}
+        <section className="space-y-8">
+          <h2 className="text-2xl font-semibold tracking-tight">Is MBA ROI Worth It for Software Engineers?</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            For software engineers already earning $150,000–$300,000+ in total compensation, the MBA salary delta is the most compressed of any career track. A senior SWE moving from $220k to a post-MBA PM role at $200k actually takes a Year 1 pay cut. The financial case for engineers is based on role transition — moving from IC to product leadership — and on long-run equity upside that compounds differently. Engineers should calculate their specific scenario using a pre-MBA salary above $150k before assuming standard IRR benchmarks apply. See the <Link href="/mba-roi-engineers" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">full engineer MBA ROI analysis</Link>.
+          </p>
+
+          <h2 className="text-2xl font-semibold tracking-tight">MBA ROI With $100,000 in Student Debt</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            At $100,000 in student loans (roughly 60–65% of M7 tuition), monthly payments run approximately $1,060–$1,200 on a 10-year standard repayment plan at 7–8% federal rates. For consulting track graduates earning $210k+, this is manageable: loan payments represent roughly 7–8% of gross income, and the salary delta easily covers debt service. For general management tracks earning $140k post-MBA, debt-to-income pressure is real. The <Link href="/mba-roi-100k-debt" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">$100k debt MBA ROI guide</Link> shows the exact break-even math at four debt levels across five career tracks.
+          </p>
+
+          <h2 className="text-2xl font-semibold tracking-tight">MBA ROI for Career Changers (Highest Variance Return)</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Career changers — particularly those moving from nonprofit, government, education, or non-business functions into consulting, finance, or tech — represent the highest-variance MBA ROI scenario. When the career switch produces a salary delta of $80k–$130k/year, the MBA pays back quickly even at full sticker price. When the switch is lateral (same industry, slightly higher role), the delta rarely justifies a full-price M7 program. The key variable is whether the MBA is a <em>gateway</em> (required for entry into the target function) or a <em>credential</em> (helpful but not gating). See <Link href="/mba-roi-career-changers" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">MBA ROI for career changers</Link>.
+          </p>
+
+          <h2 className="text-2xl font-semibold tracking-tight">Does a 50% Scholarship Change MBA ROI?</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Yes — significantly. A 50% merit scholarship at an M7 program reduces the tuition component from ~$160k to ~$80k. Combined with unchanged opportunity cost (~$170k for a 2-year full-time program), the total economic cost drops from roughly $330k to $250k. At MBB consulting salary levels, break-even compresses from 4.7 years to approximately 2.4 years. The IRR of the same consulting outcome improves from ~22% to ~38%. Scholarship recipients who would have attended anyway capture nearly all of the gain. See the detailed <Link href="/mba-roi-scholarship" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">MBA scholarship ROI analysis</Link>.
+          </p>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>

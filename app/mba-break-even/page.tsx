@@ -35,7 +35,7 @@ export default function MbaBreakEvenPage() {
             MBA Break-Even Period:<br />When Does It Pay Off?
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
-            How long until your MBA investment turns cash flow positive — and what determines that timeline.
+            The MBA break-even period is <span className="text-white font-medium">4.2–4.7 years</span> for M7 graduates entering MBB consulting, <span className="text-white font-medium">4.5–5.0 years</span> for investment banking, and <span className="text-white font-medium">6.1–8.0 years</span> for tech or general management roles. At programs outside the top 25, break-even commonly extends beyond 10 years — and may never be reached for nonprofit or government career tracks.
           </p>
           <div className="flex items-center gap-3 pt-1 border-t border-white/8">
             <div className="w-7 h-7 rounded-full bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center shrink-0">
@@ -45,6 +45,8 @@ export default function MbaBreakEvenPage() {
               <span className="text-sm text-white font-medium">Himanshu Gauba</span>
               <span className="text-slate-600 text-xs">·</span>
               <span className="text-slate-500 text-xs">Updated March 24, 2026</span>
+              <span className="text-slate-600 text-xs">·</span>
+              <span className="text-slate-500 text-xs">Data: GMAC, school employment reports</span>
             </div>
           </div>
         </header>

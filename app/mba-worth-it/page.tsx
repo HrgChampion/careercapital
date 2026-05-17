@@ -47,7 +47,7 @@ export default function MbaWorthItPage() {
             Is an MBA Worth It?
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
-            A financial answer — not a motivational one.
+            An MBA is worth it financially when it produces an IRR above 10–12% — the long-run equity market benchmark. At M7 programs targeting MBB consulting or investment banking, IRRs range from <span className="text-white font-medium">18–40%</span>, making the degree one of the highest-returning investments available. At programs outside the top 25 targeting general management roles, IRRs of 2–6% rarely justify the full economic cost of $150,000–$300,000.
           </p>
           <div className="flex items-center gap-3 pt-1 border-t border-white/8">
             <div className="w-7 h-7 rounded-full bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center shrink-0">
@@ -57,6 +57,8 @@ export default function MbaWorthItPage() {
               <span className="text-sm text-white font-medium">Himanshu Gauba</span>
               <span className="text-slate-600 text-xs">·</span>
               <span className="text-slate-500 text-xs">Updated March 24, 2026</span>
+              <span className="text-slate-600 text-xs">·</span>
+              <span className="text-slate-500 text-xs">Data: GMAC, Bloomberg, Glassdoor</span>
             </div>
           </div>
         </header>

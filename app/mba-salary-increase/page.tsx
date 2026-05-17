@@ -37,9 +37,20 @@ export default function MbaSalaryIncreasePage() {
             MBA Salary Increase:<br />What the Numbers Actually Show
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
-            Pre-MBA vs. post-MBA compensation, broken down by industry and school tier.
-            Not averages that flatter — numbers that help you model your specific outcome.
+            An MBA increases salary by an average of <span className="text-white font-medium">47–55%</span> — from a pre-MBA median of ~$85,000 to a post-MBA median of $175,000+ at M7 programs. Consulting track graduates entering MBB firms see a salary delta exceeding $100,000 in Year 1 alone. The size of the increase depends almost entirely on your pre-MBA salary, target industry, and program tier.
           </p>
+          <div className="flex items-center gap-3 pt-1 border-t border-white/8">
+            <div className="w-7 h-7 rounded-full bg-purple-600/20 border border-purple-500/30 flex items-center justify-center shrink-0">
+              <span className="text-purple-400 text-xs font-semibold">HG</span>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-sm text-white font-medium">Himanshu Gauba</span>
+              <span className="text-slate-600 text-xs">·</span>
+              <span className="text-slate-500 text-xs">Updated May 2026</span>
+              <span className="text-slate-600 text-xs">·</span>
+              <span className="text-slate-500 text-xs">Data: GMAC, Glassdoor, Levels.fyi</span>
+            </div>
+          </div>
         </header>
 
         {/* Pre-MBA median */}
@@ -268,6 +279,58 @@ export default function MbaSalaryIncreasePage() {
           </p>
         </section>
 
+        {/* MBA Salary Increase by Year — YoY data table */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">MBA Salary Increase by Year (2019–2026)</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Post-MBA median salaries have risen consistently since 2019, driven by consulting and finance compensation inflation. The table below shows how Year 1 post-MBA median pay has trended at M7 programs across career tracks.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left text-slate-500 text-xs font-medium py-3 pr-4">Year</th>
+                  <th className="text-right text-slate-500 text-xs font-medium py-3 px-3">MBB Consulting</th>
+                  <th className="text-right text-slate-500 text-xs font-medium py-3 px-3">Investment Banking</th>
+                  <th className="text-right text-slate-500 text-xs font-medium py-3 px-3">Tech (FAANG)</th>
+                  <th className="text-right text-slate-500 text-xs font-medium py-3 pl-3">Gen. Management</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { year: "2019", mbb: "$165k", ib: "$175k", tech: "$145k", gm: "$110k" },
+                  { year: "2020", mbb: "$165k", ib: "$175k", tech: "$148k", gm: "$108k" },
+                  { year: "2021", mbb: "$175k", ib: "$200k", tech: "$165k", gm: "$115k" },
+                  { year: "2022", mbb: "$192k", ib: "$225k", tech: "$185k", gm: "$125k" },
+                  { year: "2023", mbb: "$195k", ib: "$225k", tech: "$175k", gm: "$128k" },
+                  { year: "2024", mbb: "$200k", ib: "$230k", tech: "$178k", gm: "$132k" },
+                  { year: "2025", mbb: "$205k", ib: "$235k", tech: "$180k", gm: "$138k" },
+                  { year: "2026", mbb: "$210k", ib: "$240k", tech: "$185k", gm: "$145k" },
+                ].map(({ year, mbb, ib, tech, gm }, i, arr) => (
+                  <tr key={year} className={`border-b border-white/5 ${i === arr.length - 1 ? "text-white font-medium" : "text-slate-400"}`}>
+                    <td className="py-3 pr-4 text-xs">{year}{i === arr.length - 1 ? " ★" : ""}</td>
+                    <td className="py-3 px-3 text-right text-xs tabular-nums">{mbb}</td>
+                    <td className="py-3 px-3 text-right text-xs tabular-nums">{ib}</td>
+                    <td className="py-3 px-3 text-right text-xs tabular-nums">{tech}</td>
+                    <td className="py-3 pl-3 text-right text-xs tabular-nums">{gm}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-slate-600 text-xs">Base salary only. Sources: GMAC Employment Reports, school employment reports (Wharton, HBS, Booth, Kellogg), Glassdoor. 2026 figures reflect current recruiting cycle data.</p>
+
+          <h2 className="text-2xl font-semibold tracking-tight pt-4">Does an MBA Increase Salary More in Consulting or Tech?</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            In absolute dollar terms, consulting (MBB) produces a higher base salary delta than tech for most pre-MBA professionals — primarily because the pre-MBA baseline for tech candidates is already higher. An engineer earning $145k who joins FAANG as a PM at $185k sees a $40k delta. A marketing manager earning $75k who joins MBB at $210k sees a $135k delta. The absolute salary is higher in consulting, but total compensation (including equity) at FAANG often exceeds MBB within 3–4 years.
+          </p>
+
+          <h2 className="text-2xl font-semibold tracking-tight pt-4">How Much Does an MBA Increase Salary for Engineers?</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            For software engineers, the MBA salary increase is the most compressed. Senior SWEs at FAANG already earn $200k–$350k total compensation. Moving to an MBA PM or strategy role rarely produces a base salary increase — and often a short-term decrease. The ROI case for engineers is based on role transition (IC to product/strategy leadership) and long-run equity upside, not Year 1 salary. Engineers should model a <Link href="/mba-roi-engineers" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">specialized engineer MBA ROI scenario</Link> before assuming a standard salary delta applies.
+          </p>
+        </section>
+
         {/* CTA */}
         <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
           <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">Personalized Modeling</p>
@@ -290,28 +353,28 @@ export default function MbaSalaryIncreasePage() {
         <section className="border-t border-white/10 pt-10 mt-10">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
           <div className="grid sm:grid-cols-2 gap-3">
-            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">Σ</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Calculator</p>
                 <p className="text-slate-500 text-xs">Model your specific numbers →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-report-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">↗</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI Report 2026</p>
                 <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
               </div>
             </Link>
-            <Link href="/average-mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/average-mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">$</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Average MBA Salary 2026</p>
                 <p className="text-slate-500 text-xs">Pay by school tier and industry →</p>
               </div>
             </Link>
-            <Link href="/mba-payback-period" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-payback-period" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">⌛</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Payback Period</p>
