@@ -2,22 +2,22 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Women Returning to Work: Programs, Salary Data & ROI (2026)",
+  title: "Women Returning to Work (2026): 20+ Programs & How to Close the 15–22% Salary Gap",
   description:
-    "Women returning to work after career breaks face a 15–22% salary penalty vs. 8–12% for men. See gender-specific data, top returnship programs for women, and the financial recovery strategy.",
+    "Women face a 15–22% salary penalty returning after career breaks — nearly double the male gap. See 20+ returnship programs for women (Amazon, Goldman, Path Forward), stipends, conversion rates & the fastest recovery strategy.",
   alternates: pageAlternates("https://careerreturns.com/women-returning-to-work"),
   openGraph: {
-    title: "Women Returning to Work: Programs, Salary Data & ROI (2026)",
+    title: "Women Returning to Work (2026): 20+ Programs & How to Close the 15–22% Salary Gap",
     description:
-      "Women face a higher career break salary penalty than men. Here's the data, 10+ programs specifically for women returners, and the financial strategy to close the gap.",
+      "Women face a 15–22% salary penalty returning after career breaks — nearly double the male gap. 20+ programs compared: Amazon, Goldman, Path Forward, Microsoft. Stipends, conversion rates & recovery strategy.",
     url: "https://careerreturns.com/women-returning-to-work",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Women Returning to Work: Salary Data, Programs & ROI (2026)",
-    description: "15–22% salary penalty for women returners. Here are the programs and strategies that close it fastest.",
+    title: "Women Returning to Work (2026): 20+ Programs & Salary Gap Recovery",
+    description: "15–22% salary penalty for women returners. 20+ programs (Amazon, Goldman, Path Forward) compared by stipend, conversion rate & how to qualify.",
   },
 }
 

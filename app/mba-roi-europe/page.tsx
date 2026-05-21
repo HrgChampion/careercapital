@@ -2,20 +2,20 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "UK vs US MBA ROI 2026: INSEAD vs Wharton — $171K Cost Gap Compared",
-  description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): $171K cheaper, 5-yr break-even vs 7.2 yrs. Which wins for international careers? Full salary & ROI data →",
+  title: "UK vs US MBA ROI 2026: Full Comparison — INSEAD $224K vs Wharton $395K ($171K Gap)",
+  description: "INSEAD vs Wharton ROI compared: $171K cheaper, breaks even in 5 yrs vs 7.2 yrs. UK MBA salaries: London consulting £85K–£110K, IB £150K–£200K. Which wins for UK & international careers? →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-europe", true),
   openGraph: {
-    title: "UK vs US MBA ROI 2026: INSEAD vs Wharton — $171K Cost Gap Compared",
-    description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): $171K cheaper, 5-yr break-even vs 7.2 yrs. Which wins for international careers? Full salary & ROI data →",
+    title: "UK vs US MBA ROI 2026: Full Comparison — INSEAD $224K vs Wharton $395K ($171K Gap)",
+    description: "INSEAD vs Wharton ROI compared: $171K cheaper, breaks even in 5 yrs vs 7.2 yrs. UK MBA salaries: London consulting £85K–£110K, IB £150K–£200K. Which wins for UK & international careers?",
     url: "https://careerreturns.com/mba-roi-europe",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "UK vs US MBA ROI 2026: INSEAD vs Wharton — $171K Cost Gap Compared",
-    description: "INSEAD ($224K, 1 yr) vs Wharton ($395K, 2 yrs): $171K cheaper, 5-yr break-even vs 7.2 yrs. Full salary & ROI data.",
+    title: "UK vs US MBA ROI 2026: INSEAD $224K vs Wharton $395K — Full Comparison",
+    description: "INSEAD vs Wharton: $171K cheaper, 5-yr vs 7.2-yr break-even. UK MBA salaries, London consulting & IB data included.",
   },
 }
 

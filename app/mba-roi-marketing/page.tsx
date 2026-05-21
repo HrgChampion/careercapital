@@ -2,14 +2,14 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA in Marketing ROI (2026): Is a Marketing MBA Worth It?",
+  title: "Marketing MBA Salary 2026: $130K–$155K Brand Management, CMO Track & ROI Data",
   description:
-    "MBA in marketing ROI analyzed: salary outcomes, break-even timelines, and which programs dominate marketing placement. Brand management, CMO track, and digital marketing data. See numbers →",
+    "Marketing MBA salary 2026: brand management $130K–$155K, digital marketing $125K–$145K, CMO track $250K–$500K. Break-even 5–8 years. Which programs dominate marketing recruiting & is it worth it? →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-marketing"),
   openGraph: {
-    title: "MBA in Marketing ROI (2026): Is a Marketing MBA Worth It?",
+    title: "Marketing MBA Salary 2026: $130K–$155K Brand Management, CMO Track & ROI Data",
     description:
-      "MBA marketing salary data: brand management $130K–$155K, CMO track, digital marketing. Break-even 5–8 years. Which programs dominate marketing recruiting.",
+      "Marketing MBA salary 2026: brand management $130K–$155K, digital marketing $125K–$145K, CMO track $250K–$500K. Break-even 5–8 years. Which programs dominate marketing recruiting.",
     url: "https://careerreturns.com/mba-roi-marketing",
     siteName: "CareerReturns",
     type: "article",
@@ -17,9 +17,9 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "MBA in Marketing ROI (2026)",
+    title: "Marketing MBA Salary 2026: $130K–$155K Brand Mgmt, CMO Track",
     description:
-      "Brand management $130K–$155K, CMO track economics, digital marketing post-MBA. Which MBA programs actually place into top marketing roles.",
+      "Marketing MBA salaries: brand management $130K–$155K, digital marketing $125K–$145K, CMO track $250K–$500K. Programs, ROI & break-even data.",
   },
 }
 

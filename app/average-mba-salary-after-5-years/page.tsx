@@ -2,19 +2,21 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Average MBA Salary After 5 & 10 Years: Career Trajectory Data (2026)",
+  title: "Average MBA Salary After 5 Years (2026): $250K–$400K MBB · $230K–$350K Tech",
   description:
-    "MBA salary after 5 years: $250K–$400K for MBB alumni, $230K–$350K for tech. After 10 years: $400K–$1M+. Full trajectory data by industry and school →",
+    "The average MBA salary after 5 years: $250K–$400K (MBB consulting), $230K–$350K (tech), $180K–$220K (corporate). After 10 years: $400K–$1M+. Full trajectory by school & industry, 2026 data →",
   openGraph: {
-    title: "Average MBA Salary After 5 & 10 Years: Career Trajectory Data (2026)",
+    title: "Average MBA Salary After 5 Years (2026): $250K–$400K MBB · $230K–$350K Tech",
     description:
-      "MBA salary after 5 years: $250K–$400K for MBB alumni, $230K–$350K for tech. After 10 years: $400K–$1M+. Full trajectory data by industry and school →",
+      "The average MBA salary after 5 years: $250K–$400K (MBB consulting), $230K–$350K (tech), $180K–$220K (corporate). After 10 years: $400K–$1M+. Full trajectory by school & industry.",
     url: "https://careerreturns.com/average-mba-salary-after-5-years",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
+    title: "Average MBA Salary After 5 Years (2026): MBB $250K–$400K, Tech $230K–$350K",
+    description: "5-year post-MBA salaries by track: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. 10-year: $400K–$1M+. Full data by school.",
   },
   alternates: pageAlternates("https://careerreturns.com/average-mba-salary-after-5-years"),
 }

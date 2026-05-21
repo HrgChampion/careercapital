@@ -2,20 +2,20 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "INSEAD vs Wharton 2026: $171K Cost Gap — Which MBA Wins?",
-  description: "INSEAD: $224K total cost, 1 year. Wharton: $395K, 2 years. Full cost, salary outcomes & break-even comparison. Surprise winner for international careers →",
+  title: "INSEAD vs Wharton MBA 2026: Cost, Salary & ROI — $171K Gap Fully Analyzed",
+  description: "INSEAD ($224K, 1 yr, 5-yr break-even) vs Wharton ($395K, 2 yrs, 7.2-yr break-even). Post-MBA salaries, MBB placement rates & ROI compared for US and international careers →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-insead-vs-wharton", true),
   openGraph: {
-    title: "INSEAD vs Wharton 2026: $171K Cost Gap — Which MBA Wins?",
-    description: "INSEAD: $224K total cost, 1 year. Wharton: $395K, 2 years. Full cost, salary outcomes & break-even comparison. Surprise winner for international careers →",
+    title: "INSEAD vs Wharton MBA 2026: Cost, Salary & ROI — $171K Gap Fully Analyzed",
+    description: "INSEAD ($224K, 1 yr, 5-yr break-even) vs Wharton ($395K, 2 yrs, 7.2-yr break-even). Post-MBA salaries, MBB placement rates & ROI compared for US and international careers.",
     url: "https://careerreturns.com/mba-roi-insead-vs-wharton",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "INSEAD vs Wharton 2026: $171K Cost Gap — Which MBA Wins?",
-    description: "INSEAD: $224K total cost, 1 year. Wharton: $395K, 2 years. Full salary & break-even comparison. Surprise winner for international careers.",
+    title: "INSEAD vs Wharton MBA 2026: $171K Cost Gap — Full ROI Analysis",
+    description: "INSEAD $224K (5-yr break-even) vs Wharton $395K (7.2-yr break-even). Salary outcomes, MBB placement & who should choose which program.",
   },
 }
 

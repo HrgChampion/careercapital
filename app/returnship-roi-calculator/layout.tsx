@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Returnship ROI Calculator (2026) — Amazon, Goldman, McKinsey, Meta & More",
+  title: "Returnship Calculator 2026: Is Amazon $4,200/wk or Goldman $3,500/wk Worth It? [Free]",
   description:
-    "Is the Amazon Returnship worth it vs. applying directly? Free calculator: model NPV, conversion break-even %, and expected salary across 9 major returnship programs. Takes 60 seconds.",
+    "Amazon returnship pays $4,200/wk and converts 90% of participants. Goldman pays $3,500/wk at 85%. Free calculator compares NPV, break-even & expected salary across 9 programs vs. applying directly. 60 seconds.",
   keywords: [
     "returnship ROI calculator",
     "Amazon returnship salary",

@@ -11,20 +11,20 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Returnship Programs 2026", url: "https://careerreturns.com/returnship-programs-2026" }])
 
 export const metadata = {
-  title: "Best Returnship Programs 2026: 50+ Companies Compared",
-  description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ career re-entry programs compared by stipend, conversion rate & deadline →",
+  title: "Best Returnship Programs 2026: Amazon $4,200/wk · Goldman 85% Hire Rate · 50+ Programs",
+  description: "50+ returnship programs ranked: Amazon (90% conversion, $4,200/wk), Goldman Sachs ($3,500/wk, 85% hire), McKinsey (full salary), Meta (88% conversion). Application deadlines, stipends & qualification requirements →",
   alternates: pageAlternates("https://careerreturns.com/returnship-programs-2026"),
   openGraph: {
-    title: "Best Returnship Programs 2026: 50+ Companies Compared",
-    description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ career re-entry programs compared by stipend, conversion rate & deadline →",
+    title: "Best Returnship Programs 2026: Amazon $4,200/wk · Goldman 85% Hire Rate · 50+ Programs",
+    description: "50+ returnship programs ranked: Amazon (90% conversion, $4,200/wk), Goldman Sachs ($3,500/wk, 85% hire), McKinsey (full salary), Meta (88% conversion). Application deadlines, stipends & qualification requirements.",
     url: "https://careerreturns.com/returnship-programs-2026",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Returnship Programs 2026: 50+ Companies Compared",
-    description: "Amazon converts 90% of returnship hires. Goldman: 75%. McKinsey: full salary. 50+ career re-entry programs compared.",
+    title: "Best Returnship Programs 2026: Amazon $4,200/wk · Goldman 85% Hire Rate",
+    description: "50+ career re-entry programs: Amazon 90% conversion, Goldman $3,500/wk, McKinsey full salary. Deadlines, stipends & how to qualify.",
   },
 }
 

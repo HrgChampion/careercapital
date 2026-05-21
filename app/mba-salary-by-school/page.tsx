@@ -11,13 +11,13 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Salary by School 2026", url: "https://careerreturns.com/mba-salary-by-school" }])
 
 export const metadata = {
-  title: "MBA Salary by School 2026: Stanford $210K, M7 to Online",
+  title: "MBA Salary by School 2026: Stanford $210K · Wharton $200K · Booth $195K — Full Rankings",
   description:
-    "Stanford $210K, HBS $205K, Wharton $200K, Booth $195K. Full MBA salary rankings — M7, T15, T25 & online. Updated 2026 data →",
+    "MBA salaries by school 2026: Stanford $210K, HBS $205K, Wharton $200K, Booth $195K, Kellogg $185K, MIT $190K, Columbia $185K. Full M7, T15, T25 & online rankings with salary ranges →",
   openGraph: {
-    title: "MBA Salary by School 2026: Stanford $210K, M7 to Online",
+    title: "MBA Salary by School 2026: Stanford $210K · Wharton $200K · Booth $195K — Full Rankings",
     description:
-      "Stanford $210K, HBS $205K, Wharton $200K, Booth $195K. Full MBA salary rankings — M7, T15, T25 & online. Updated 2026 data →",
+      "MBA salaries by school 2026: Stanford $210K, HBS $205K, Wharton $200K, Booth $195K, Kellogg $185K, MIT $190K, Columbia $185K. Full M7, T15, T25 & online rankings.",
     url: "https://careerreturns.com/mba-salary-by-school",
     siteName: "CareerReturns",
     type: "website",

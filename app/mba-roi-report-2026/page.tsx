@@ -2,20 +2,20 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Statistics 2026: IRR & Break-Even by Industry [Free Report]",
-  description: "2026 MBA ROI data: MBB break-even 4.2 yrs (IRR 22%), IB 4.5 yrs, Tech 6.1 yrs, Nonprofit 13 yrs. Full salary uplift table for 12 industries. Free report.",
+  title: "MBA ROI Report 2026: Which Programs Pay Back in Under 4 Years? [Full Data]",
+  description: "MBB consulting breaks even in 4.2 yrs (IRR 22%). IB: 4.5 yrs. Tech: 6.1 yrs. Nonprofit: 13 yrs. Full salary uplift, IRR & break-even table for 12 industries — 2026 data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-report-2026"),
   openGraph: {
-    title: "MBA ROI Statistics 2026: IRR & Break-Even by Industry [Free Report]",
-    description: "2026 MBA ROI data: MBB break-even 4.2 yrs (IRR 22%), IB 4.5 yrs, Tech 6.1 yrs, Nonprofit 13 yrs. Full salary uplift table for 12 industries. Free report.",
+    title: "MBA ROI Report 2026: Which Programs Pay Back in Under 4 Years? [Full Data]",
+    description: "MBB consulting breaks even in 4.2 yrs (IRR 22%). IB: 4.5 yrs. Tech: 6.1 yrs. Nonprofit: 13 yrs. Full salary uplift, IRR & break-even table for 12 industries — 2026 data.",
     url: "https://careerreturns.com/mba-roi-report-2026",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MBA ROI Statistics 2026: IRR & Break-Even by Industry [Free Report]",
-    description: "2026 MBA ROI data: MBB break-even 4.2 yrs (IRR 22%), IB 4.5 yrs, Tech 6.1 yrs, Nonprofit 13 yrs. Full salary uplift table for 12 industries.",
+    title: "MBA ROI Report 2026: Which Programs Pay Back in Under 4 Years?",
+    description: "MBB: 4.2 yrs break-even (IRR 22%). IB: 4.5 yrs. Tech: 6.1 yrs. Nonprofit: 13 yrs. Full 12-industry MBA ROI data for 2026.",
   },
 }
 

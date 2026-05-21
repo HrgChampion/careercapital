@@ -2,19 +2,19 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA Investment Banking Salary 2026: $210K–$350K Pay",
-  description: "$175K–$200K base + $75K–$150K year-end bonus at Goldman, JPM & Morgan Stanley. Bank-by-bank comparison, Y1–MD progression & break-even math. 2026 →",
+  title: "MBA Investment Banking Salary 2026: $265K–$360K Total Comp [Bank-by-Bank]",
+  description: "Post-MBA IB associate total comp 2026: Goldman $360K ($210K base + $150K bonus), JPM $320K, Morgan Stanley $315K. Full bank-by-bank breakdown, Y1→MD trajectory & ROI vs. MBA cost →",
   openGraph: {
-    title: "MBA Investment Banking Salary 2026: $210K–$350K Pay",
-    description: "$175K–$200K base + $75K–$150K year-end bonus at Goldman, JPM & Morgan Stanley. Bank-by-bank comparison, Y1–MD progression & break-even math. 2026 →",
+    title: "MBA Investment Banking Salary 2026: $265K–$360K Total Comp [Bank-by-Bank]",
+    description: "Post-MBA IB associate total comp 2026: Goldman $360K ($210K base + $150K bonus), JPM $320K, Morgan Stanley $315K. Full bank-by-bank breakdown, Y1→MD trajectory & ROI vs. MBA cost.",
     url: "https://careerreturns.com/mba-investment-banking-salary",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MBA Investment Banking Salary 2026: $210K–$350K Pay",
-    description: "$175K–$200K base + $75K–$150K year-end bonus at Goldman, JPM & Morgan Stanley. Bank-by-bank comparison, Y1–MD progression & break-even math.",
+    title: "MBA Investment Banking Salary 2026: $265K–$360K Total Comp",
+    description: "Goldman $360K, JPM $320K, MS $315K. Bank-by-bank post-MBA IB associate comp, bonus breakdown & career progression to MD.",
   },
   alternates: pageAlternates("https://careerreturns.com/mba-investment-banking-salary"),
 }
