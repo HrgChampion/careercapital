@@ -358,6 +358,33 @@ export default function MbaRoiMcKinseyPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section id="faq" className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What does a McKinsey associate earn after an MBA?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">McKinsey MBA associates earn a base salary of $192K in 2026. Total first-year compensation including performance bonus (10–20% of base) and a signing bonus of $30K is approximately $225K–$260K. Compensation increases approximately 15–20% per year for strong performers.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Which MBA programs place into McKinsey?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">McKinsey recruits primarily from Harvard Business School, Wharton, Booth, Kellogg, MIT Sloan, Columbia, and Stanford GSB. Approximately 10–15% of M7 classes receive McKinsey offers annually. Outside M7, placement rates drop to under 2% at most programs.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">How long to break even on an MBA targeting McKinsey?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Breaking even on an MBA targeting McKinsey takes approximately 4.2 years. At $192K base + $50K bonus against a total economic cost of $300K–$350K, the annual salary delta of $140K–$160K generates payback in the early post-MBA years.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Is McKinsey worth an M7 MBA financially?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Yes, McKinsey produces one of the strongest MBA financial cases. The 22% IRR for M7 programs with MBB placement significantly exceeds both the risk-free rate and long-run equity market returns (~8%). Candidates who receive McKinsey offers from M7 programs typically generate a positive net present value of $300K–$500K over 10 years.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Is it better to target McKinsey or Goldman Sachs with an MBA?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Both tracks produce similar 10-year NPVs. Goldman Sachs pays slightly higher in years 1–3 due to banking bonuses. McKinsey offers faster promotion visibility, better exit opportunities in private equity and corporate strategy, and lower variance in total compensation. The choice depends more on career goals than pure financial optimization.</p>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Model Your Numbers</p>

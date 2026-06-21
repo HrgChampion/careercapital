@@ -2,10 +2,23 @@ import Link from "next/link"
 import { pageAlternates, articleSchema } from "@/lib/seo"
 
 export const metadata = {
-  title: "Post-MBA Salary 2026: $185K–$350K by Industry & School",
+  title: "Post-MBA Salary 2026: MBB $232K · IB $350K · Tech $200K (All Schools + Cities)",
   description:
-    "Post-MBA salary 2026: MBB $212K–$232K, IB $275K–$350K, tech $185K–$200K. Salary by city, signing bonuses, school tier & pre-MBA background. Full data →",
+    "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. Full breakdown by school tier, city, signing bonus, and pre-MBA background. Updated June 2026.",
   alternates: pageAlternates("https://careerreturns.com/post-mba-salary"),
+  openGraph: {
+    title: "Post-MBA Salary 2026: MBB $232K · IB $350K · Tech $200K (All Schools + Cities)",
+    description:
+      "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. Breakdown by school tier, city, and pre-MBA background.",
+    url: "https://careerreturns.com/post-mba-salary",
+    siteName: "CareerReturns",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Post-MBA Salary 2026: MBB $232K · IB $350K · Tech $200K",
+    description: "Full salary data by industry, school tier, and city. MBB $232K, IB $350K, tech $200K. Updated June 2026.",
+  },
 }
 
 const salaryByIndustry = [
@@ -164,7 +177,10 @@ export default function PostMbaSalaryPage() {
 
         {/* Header */}
         <header className="space-y-5">
-          <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Post-MBA Salary Data</p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Post-MBA Salary Data</p>
+            <p className="text-xs text-slate-500">Updated <time dateTime="2026-06-21">June 2026</time> · CareerReturns Research Team</p>
+          </div>
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
             What Is Salary After an MBA?<br />
             <span className="text-slate-400">2026 Data by Industry &amp; School</span>
@@ -653,6 +669,20 @@ export default function PostMbaSalaryPage() {
                 <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
               </div>
             </Link>
+            <Link href="/mba-investment-banking-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">$</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">IB Salary After MBA 2026</p>
+                <p className="text-slate-500 text-xs">Goldman $360K · JPM $320K · MS $315K →</p>
+              </div>
+            </Link>
+            <Link href="/mba-salary-by-school" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-indigo-400 font-mono text-lg">↓</div>
+              <div>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Salary by School 2026</p>
+                <p className="text-slate-500 text-xs">Stanford $210K → Online $65K →</p>
+              </div>
+            </Link>
           </div>
         </section>
 
@@ -690,6 +720,19 @@ export default function PostMbaSalaryPage() {
             full return on investment analysis including loan repayment, forgone income, and salary growth
             over time, use the MBA ROI calculator below.
           </p>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq" className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqSchema.mainEntity.map((item, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-white font-semibold text-sm">{item.name}</p>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Footer */}

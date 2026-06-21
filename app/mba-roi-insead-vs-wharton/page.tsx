@@ -2,20 +2,20 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "INSEAD vs Wharton MBA 2026: Cost, Salary & ROI — $171K Gap Fully Analyzed",
-  description: "INSEAD ($224K, 1 yr, 5-yr break-even) vs Wharton ($395K, 2 yrs, 7.2-yr break-even). Post-MBA salaries, MBB placement rates & ROI compared for US and international careers →",
+  title: "INSEAD vs Wharton 2026: Which MBA Has Better ROI? ($171K Cost Gap Analyzed)",
+  description: "INSEAD 1-yr ($224K, 5-yr payback) vs Wharton 2-yr ($395K, 7.2-yr payback). MBB placement rates, post-MBA salary, and which program wins for US vs international careers. Full DCF analysis.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-insead-vs-wharton", true),
   openGraph: {
-    title: "INSEAD vs Wharton MBA 2026: Cost, Salary & ROI — $171K Gap Fully Analyzed",
-    description: "INSEAD ($224K, 1 yr, 5-yr break-even) vs Wharton ($395K, 2 yrs, 7.2-yr break-even). Post-MBA salaries, MBB placement rates & ROI compared for US and international careers.",
+    title: "INSEAD vs Wharton 2026: Which MBA Has Better ROI? ($171K Cost Gap Analyzed)",
+    description: "INSEAD 1-yr ($224K, 5-yr payback) vs Wharton 2-yr ($395K, 7.2-yr payback). MBB placement rates, post-MBA salary, and which program wins for US vs international careers.",
     url: "https://careerreturns.com/mba-roi-insead-vs-wharton",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "INSEAD vs Wharton MBA 2026: $171K Cost Gap — Full ROI Analysis",
-    description: "INSEAD $224K (5-yr break-even) vs Wharton $395K (7.2-yr break-even). Salary outcomes, MBB placement & who should choose which program.",
+    title: "INSEAD vs Wharton 2026: Which MBA Has Better ROI? ($171K Cost Gap)",
+    description: "INSEAD $224K (5-yr payback) vs Wharton $395K (7.2-yr payback). MBB placement, post-MBA salary & who should choose which program.",
   },
 }
 
@@ -30,7 +30,10 @@ export default function MbaRoiInseadVsWhartonPage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-12 sm:space-y-20">
 
         <header className="space-y-5">
-          <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">CareerReturns · MBA Program Comparisons</p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">CareerReturns · MBA Program Comparisons</p>
+            <p className="text-xs text-slate-500">Updated <time dateTime="2026-06-21">June 2026</time> · CareerReturns Research Team</p>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             INSEAD vs. Wharton:<br />The ROI Case for Each
           </h1>
@@ -274,6 +277,33 @@ export default function MbaRoiInseadVsWhartonPage() {
                   <p className="text-slate-500 text-xs leading-relaxed">{detail}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq" className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What is the total cost difference between INSEAD and Wharton?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">INSEAD&apos;s one-year MBA costs approximately $110K in tuition plus $50K–$70K in living expenses, for a total of $160K–$180K. Wharton&apos;s two-year MBA costs approximately $185K in tuition plus $120K–$140K in living expenses, for a total of $305K–$325K. The total cost gap is approximately $140K–$150K in favor of INSEAD.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Does Wharton or INSEAD pay more after graduation?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Wharton MBA graduates entering MBB consulting or investment banking in the US earn $190K–$250K total compensation. INSEAD graduates earn €90K–€130K ($95K–$140K) in Europe or $180K–$220K if placed in the US. Wharton has better US salary outcomes; INSEAD is competitive globally, particularly in Asia, Europe, and the Middle East.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Which is better for ROI — INSEAD or Wharton?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">INSEAD produces a higher IRR in most scenarios due to lower total cost. At comparable post-MBA salaries, INSEAD&apos;s $160K total cost vs Wharton&apos;s $310K total cost generates a higher IRR even with a 15–20% salary discount. The NPV is comparable only when Wharton placement produces significantly higher US compensation.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Is INSEAD or Wharton better for consulting careers?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Both programs place strongly into MBB consulting. Wharton has stronger US office placement at McKinsey, BCG, and Bain. INSEAD has stronger European, Middle Eastern, and Asian office placement. Candidates targeting US-based MBB roles are better served by Wharton; those targeting global or European roles should strongly consider INSEAD.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">How long is the INSEAD MBA compared to Wharton?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">The INSEAD MBA is a 10-month, one-year program. Wharton is a 21-month, two-year program. The one-year format eliminates approximately $90K–$120K in foregone salary and reduces total program duration by 11 months. This structural advantage drives INSEAD&apos;s superior IRR in most financial models.</p>
             </div>
           </div>
         </section>

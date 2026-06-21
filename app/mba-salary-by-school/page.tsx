@@ -2,31 +2,31 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 
 const _articleSchema = articleSchema({
-  title: "MBA Salary by School 2026: Full Rankings — Stanford $210K to Online $65K",
-  description: "What do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K. Full salary rankings for M7, T15, T25 & online programs. 2026 data.",
+  title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
+  description: "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K — broken down by school tier, industry, and city. Updated June 2026.",
   url: "https://careerreturns.com/mba-salary-by-school",
   datePublished: "2026-03-21",
-  dateModified: "2026-04-17",
+  dateModified: "2026-06-21",
 })
 const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Salary by School 2026", url: "https://careerreturns.com/mba-salary-by-school" }])
 
 export const metadata = {
-  title: "MBA Salary by School 2026: Stanford $210K · Wharton $200K · Booth $195K — Full Rankings",
+  title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
   description:
-    "MBA salaries by school 2026: Stanford $210K, HBS $205K, Wharton $200K, Booth $195K, Kellogg $185K, MIT $190K, Columbia $185K. Full M7, T15, T25 & online rankings with salary ranges →",
+    "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — broken down by school tier, industry, and city. Updated June 2026.",
   openGraph: {
-    title: "MBA Salary by School 2026: Stanford $210K · Wharton $200K · Booth $195K — Full Rankings",
+    title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
     description:
-      "MBA salaries by school 2026: Stanford $210K, HBS $205K, Wharton $200K, Booth $195K, Kellogg $185K, MIT $190K, Columbia $185K. Full M7, T15, T25 & online rankings.",
+      "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — broken down by school tier, industry, and city. Updated June 2026.",
     url: "https://careerreturns.com/mba-salary-by-school",
     siteName: "CareerReturns",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MBA Salary by School 2026: Full Rankings — Stanford $210K to Online $65K",
+    title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
     description:
-      "What do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K. Full salary rankings for M7, T15, T25 & online programs. 2026 data.",
+      "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — by school tier, industry, and city. Updated June 2026.",
   },
   alternates: pageAlternates("https://careerreturns.com/mba-salary-by-school"),
 }
@@ -215,7 +215,10 @@ export default function MbaSalaryBySchoolPage() {
 
         {/* Hero */}
         <header className="space-y-5">
-          <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">CareerReturns · MBA Salary Data</p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">CareerReturns · MBA Salary Data</p>
+            <p className="text-xs text-slate-500">Updated <time dateTime="2026-06-21">June 2026</time> · CareerReturns Research Team</p>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA Salary by School 2026
           </h1>

@@ -3,13 +3,13 @@ import { pageAlternates } from "@/lib/seo"
 import OpportunityCostClock from "@/components/OpportunityCostClock"
 
 export const metadata = {
-  title: "MBA ROI Calculator & Career Investment Tools (2026)",
+  title: "MBA ROI Calculator 2026 — Free NPV, IRR & Career Investment Tools",
   description:
-    "Model your MBA return on investment with institutional-grade DCF analysis. NPV, IRR, and break-even calculator. Free tools for smarter career decisions.",
+    "Free MBA ROI calculator + 8 career tools. Calculate NPV, IRR & break-even for any MBA program. Salary benchmarks, career gap analysis, and returnship ROI. Used by 10,000+ professionals.",
   alternates: pageAlternates("https://careerreturns.com"),
   openGraph: {
-    title: "MBA ROI Calculator & Career Investment Tools (2026)",
-    description: "Free MBA ROI calculator using DCF, NPV, and IRR analysis. Compare 12 industries, school tiers, and scenarios. Make data-driven career investment decisions.",
+    title: "MBA ROI Calculator 2026 — Free NPV, IRR & Career Investment Tools",
+    description: "Free MBA ROI calculator using full DCF analysis. NPV, IRR, break-even, salary benchmarks, and career gap tools. Compare any program across 12 industries.",
     url: "https://careerreturns.com",
     siteName: "CareerReturns",
     type: "website",
@@ -17,8 +17,8 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "MBA ROI Calculator & Career Investment Tools (2026)",
-    description: "Free DCF-based MBA ROI calculator. NPV, IRR, and break-even analysis across 12 industries.",
+    title: "MBA ROI Calculator 2026 — Free NPV, IRR & Career Investment Tools",
+    description: "Free MBA ROI calculator + 8 career tools. NPV, IRR, break-even analysis across 12 industries and all school tiers.",
   },
 }
 

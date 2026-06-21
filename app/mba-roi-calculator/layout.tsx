@@ -1,14 +1,14 @@
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Calculator 2026: Free NPV, IRR & Break-Even Tool",
+  title: "MBA ROI Calculator 2026: Free NPV, IRR & Break-Even — Is Your MBA Worth It?",
   description:
-    "Free MBA ROI calculator. Model NPV, IRR & break-even with full DCF analysis. Is your MBA worth it? Enter your numbers → results in 60 seconds.",
+    "Free MBA ROI calculator using full DCF analysis. Calculate NPV, IRR & break-even payback period in 60 seconds. Used by 10,000+ MBA applicants. Try it free →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-calculator"),
   openGraph: {
-    title: "MBA ROI Calculator 2026: Free NPV, IRR & Break-Even Tool",
+    title: "MBA ROI Calculator 2026: Free NPV, IRR & Break-Even — Is Your MBA Worth It?",
     description:
-      "Free MBA ROI calculator. Model NPV, IRR & break-even with full DCF analysis. Is your MBA worth it? Enter your numbers → results in 60 seconds.",
+      "Free MBA ROI calculator using full DCF analysis. Calculate NPV, IRR & break-even payback period in 60 seconds. Compare any program vs. your alternatives.",
     url: "https://careerreturns.com/mba-roi-calculator",
     siteName: "CareerReturns",
     type: "website",
@@ -17,7 +17,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "MBA ROI Calculator 2026: Free NPV, IRR & Break-Even Tool",
     description:
-      "Free MBA ROI calculator. Model NPV, IRR & break-even with full DCF analysis. Is your MBA worth it? Results in 60 seconds.",
+      "Calculate MBA ROI in 60 seconds. Full DCF model: NPV, IRR, break-even payback. Free for all programs.",
   },
 }
 

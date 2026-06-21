@@ -350,6 +350,33 @@ export default function MbaBreakEvenPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section id="faq" className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">How long does it take to break even on an MBA?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">MBA break-even ranges from 4–6 years for M7 programs with consulting or finance placement, 7–10 years for regional top-30 programs targeting general management, and 2–4 years for online or part-time MBAs. The key variables are salary delta, opportunity cost, total tuition, and loan structure.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What is the MBA payback period for consulting?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">For an M7 MBA graduate entering MBB consulting (McKinsey, Bain, BCG), the payback period is typically 4.5–6 years. With a pre-MBA salary of $85,000 and a post-MBA MBB base of $200,000 plus $40,000 signing bonus, the net annual benefit after loan payments is approximately $95,000–$115,000.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Does an online MBA break even faster than a full-time MBA?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Yes, significantly. An online or part-time MBA eliminates opportunity cost entirely since you keep working during the program. For the same salary outcome, an online MBA with $48,000 in tuition breaks even in approximately 2–3 years. A full-time program with $155,000 in tuition plus $160,000 in foregone income breaks even in 8–9 years with the same salary delta.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">How does opportunity cost affect MBA break-even?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Opportunity cost is the single most underestimated factor. For a two-year full-time program, foregone salary equals two years of pre-MBA income — often $160,000–$220,000 for most applicants. This is typically larger than tuition itself. A correct break-even model must include opportunity cost, not just tuition, in the total outflow.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What factors most affect how long an MBA takes to pay off?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">The five factors: (1) salary delta — the annual income increase from the degree; (2) program format — full-time vs. part-time; (3) opportunity cost — pre-MBA salary times program duration; (4) loan percentage and interest rate — higher debt extends break-even; (5) total tuition — important but typically less impactful than opportunity cost for mid-career candidates.</p>
+            </div>
+          </div>
+        </section>
+
         {/* CTA embed */}
         <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Your Numbers</p>

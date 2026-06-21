@@ -294,6 +294,33 @@ export default function MbaRoiMilitaryPage() {
           </p>
         </section>
 
+        {/* FAQ */}
+        <section id="faq" className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Can veterans use the GI Bill for an MBA?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Yes. Veterans with 36+ months of active duty service are eligible for the Post-9/11 GI Bill (Chapter 33), which covers full tuition at public schools or up to $28,937/yr at private schools (2024–25 rate), a Monthly Housing Allowance (MHA) based on E-5 BAH rates, and $1,000/yr for books and supplies.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What is the Yellow Ribbon Program for MBA programs?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">The Yellow Ribbon Program is an agreement between participating schools and the VA to fund tuition beyond the GI Bill&apos;s private school cap. Participating schools contribute additional aid matched dollar-for-dollar by the VA. With full Yellow Ribbon participation, veterans can attend M7 MBA programs (Wharton, Booth, HBS) with zero out-of-pocket tuition.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Which MBA programs have the best Yellow Ribbon benefits for veterans?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">All M7 programs participate in Yellow Ribbon with full coverage. Wharton, Booth, Kellogg, MIT Sloan, and Columbia fully cover tuition above the GI Bill cap. Stanford GSB does not participate in Yellow Ribbon. Additionally, Tuck, Fuqua, and Ross have strong veteran recruiting programs.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What is the net cost of an MBA for a veteran using the GI Bill?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">A veteran using the Post-9/11 GI Bill + Yellow Ribbon at a fully-participating M7 program pays zero tuition. The GI Bill provides monthly housing allowance ($2,200–$3,500/mo depending on zip code) and $1,000/yr for books. Net out-of-pocket cost is typically limited to living expenses above the BAH stipend.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What post-MBA careers are best for military veterans?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">McKinsey, Bain, and BCG actively recruit military veterans through dedicated programs (McK Veterans, Bain Military, BCG Veterans). Operations consulting, supply chain, government and defense consulting, and private equity are strong fits. Veterans with leadership experience and quantitative backgrounds are competitive for M7 programs and subsequent MBB placement.</p>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
           <p className="text-xs font-medium text-blue-400 uppercase tracking-widest">Model Your Veteran MBA ROI</p>

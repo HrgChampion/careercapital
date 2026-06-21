@@ -2,21 +2,21 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Average MBA Salary After 5 Years (2026): $250K–$400K MBB · $230K–$350K Tech",
+  title: "Average MBA Salary After 5 Years (2026): What You Really Earn",
   description:
-    "The average MBA salary after 5 years: $250K–$400K (MBB consulting), $230K–$350K (tech), $180K–$220K (corporate). After 10 years: $400K–$1M+. Full trajectory by school & industry, 2026 data →",
+    "Average MBA salary after 5 years: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. After 10 years: $400K–$1M+. Full data by industry, school tier, and career path. Updated June 2026.",
   openGraph: {
-    title: "Average MBA Salary After 5 Years (2026): $250K–$400K MBB · $230K–$350K Tech",
+    title: "Average MBA Salary After 5 Years (2026): What You Really Earn",
     description:
-      "The average MBA salary after 5 years: $250K–$400K (MBB consulting), $230K–$350K (tech), $180K–$220K (corporate). After 10 years: $400K–$1M+. Full trajectory by school & industry.",
+      "Average MBA salary after 5 years: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. After 10 years: $400K–$1M+. Full data by school and industry.",
     url: "https://careerreturns.com/average-mba-salary-after-5-years",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Average MBA Salary After 5 Years (2026): MBB $250K–$400K, Tech $230K–$350K",
-    description: "5-year post-MBA salaries by track: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. 10-year: $400K–$1M+. Full data by school.",
+    title: "Average MBA Salary After 5 Years (2026): MBB $350K, Tech $300K, Corp $200K",
+    description: "5-year post-MBA salaries: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. 10-year trajectories + school breakdowns.",
   },
   alternates: pageAlternates("https://careerreturns.com/average-mba-salary-after-5-years"),
 }
@@ -176,7 +176,10 @@ export default function AverageMbaSalaryAfter5YearsPage() {
 
         {/* ── Hero ── */}
         <header className="space-y-5">
-          <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">CareerReturns · MBA Salary Trajectory</p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">CareerReturns · MBA Salary Trajectory</p>
+            <p className="text-xs text-slate-500">Updated <time dateTime="2026-06-21">June 2026</time> · CareerReturns Research Team</p>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             Average MBA Salary After 5 &amp; 10 Years (2026)
           </h1>
