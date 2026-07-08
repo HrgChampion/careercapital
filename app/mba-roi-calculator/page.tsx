@@ -214,7 +214,7 @@ export default function Home() {
           <section>
             <h2 className="text-2xl font-semibold tracking-tight mb-6">How to Use This MBA ROI Calculator</h2>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-3xl">
-              This calculator uses a full DCF model to calculate MBA return on investment — the same net present value mba framework used by institutional investors to evaluate capital projects. Enter your specific inputs to get a personalized result, not a school median.
+              This calculator uses a full DCF model to calculate MBA return on investment — the same net present value mba framework used by institutional investors to evaluate capital projects. Enter your specific inputs to get a personalized result, not a school median. For a step-by-step walkthrough of the underlying formula, read our guide on <Link href="/blog/how-to-calculate-mba-roi" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">how to calculate MBA ROI</Link>.
             </p>
             <ol className="space-y-4 max-w-3xl">
               {[
@@ -415,6 +415,7 @@ export default function Home() {
                 accurate NPV. For the interest rate input in the MBA ROI calculator, the Department of Education&apos;s
                 unsubsidized graduate loan rate (currently 8.08%) is a reasonable default if you plan to finance
                 through federal student loans, based on surveys of education&apos;s unsubsidized graduate lending rates.
+                If you are still weighing funding sources, see our guide on <Link href="/how-to-pay-for-mba" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">how to pay for an MBA</Link>, then estimate monthly payments with the <Link href="/mba-loan-repayment-calculator" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">MBA loan repayment calculator</Link>.
               </p>
             </div>
           </section>

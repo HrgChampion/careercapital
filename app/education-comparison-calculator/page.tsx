@@ -385,6 +385,7 @@ export default function EducationComparisonCalculator() {
           All programs evaluated using the same DCF model: CF[0] = upfront cost + opportunity cost;
           CF[t] = salary delta − loan payments (5-year term). NPV discounted at {DISCOUNT_RATE * 100}%.
           Rankings are purely financial — non-financial benefits (network, prestige, learning) are not modeled.
+          For a narrative comparison of these paths, read <Link href="/blog/mba-vs-masters-vs-bootcamp" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA vs. master&apos;s vs. bootcamp</Link>.
         </p>
       </section>
 

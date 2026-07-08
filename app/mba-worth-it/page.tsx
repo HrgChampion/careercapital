@@ -122,7 +122,8 @@ export default function MbaWorthItPage() {
               or finance placement, the numbers typically work. At programs outside the top 25 with modest
               salary uplifts, they often do not. The degree itself is not the variable. The combination of
               school tier, target industry, total cost, and financing structure is what determines the outcome.
-              There is no universal answer — only your specific numbers modeled correctly.
+              There is no universal answer — only your specific numbers modeled correctly. For the full 2026
+              breakdown, read our analysis of <Link href="/blog/is-mba-worth-it-2026" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">whether an MBA is worth it in 2026</Link>.
             </p>
           </div>
         </section>

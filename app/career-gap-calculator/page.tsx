@@ -448,6 +448,8 @@ export default function CareerGapCalculator() {
           Cash flows are probability-weighted by path success rate. The peer baseline compounds pre-break salary
           at your specified growth rate as if no break occurred. NPV discounted at {DISCOUNT_RATE * 100}%.
           Break-even vs peer is the first year cumulative path earnings equal cumulative peer earnings.
+          For tactical guidance beyond the numbers, see our <Link href="/blog/career-break-return-strategies" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">career break return strategies</Link>.
+          If you are considering business school as a re-entry route, compare <Link href="/mba-roi-career-changers" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA ROI for career changers</Link>.
         </p>
       </section>
 

@@ -215,6 +215,12 @@ export default function ForEmployersPage() {
               MBA salary analytics provider comparison
             </Link>.
           </p>
+          <p className="text-slate-500 text-xs">
+            Sponsoring employees through business school? See the full{" "}
+            <Link href="/employer-sponsored-mba-roi" className="text-violet-400 hover:text-violet-300">
+              employer-sponsored MBA ROI analysis
+            </Link>.
+          </p>
         </section>
 
         {/* FAQs */}

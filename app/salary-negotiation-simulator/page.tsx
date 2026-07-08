@@ -145,7 +145,7 @@ export default function SalaryNegotiationSimulatorPage() {
           Salary Negotiation<br />Simulator
         </h1>
         <p className="text-slate-400 text-lg leading-relaxed mb-8 max-w-xl">
-          Practice the conversation before it matters. Each choice shows the 10-year NPV impact in real time — because negotiating is just applied financial modeling.
+          Practice the conversation before it matters. Each choice shows the 10-year NPV impact in real time — because negotiating is just applied financial modeling. For MBA-specific scripts and tactics, read our guide to <Link href="/blog/mba-salary-negotiation" className="text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-2">post-MBA salary negotiation</Link>.
         </p>
 
         {!started && (

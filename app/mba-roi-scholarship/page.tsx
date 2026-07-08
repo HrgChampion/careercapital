@@ -241,7 +241,8 @@ export default function MbaRoiScholarshipPage() {
             Approximately 25–35% of MBA candidates who actively negotiate their scholarship offer receive an
             improvement. This is one of the highest-ROI activities an admitted candidate can undertake — a
             successful negotiation of $20,000 in additional scholarship reduces the 10-year NPV gap by $20,000
-            immediately, requiring zero additional work after graduation.
+            immediately, requiring zero additional work after graduation. Start by identifying the awards you
+            qualify for in our directory of <Link href="/mba-scholarships" className="text-yellow-400 hover:text-yellow-300 transition-colors underline underline-offset-2">MBA scholarships</Link>.
           </p>
           <div className="space-y-3">
             {[

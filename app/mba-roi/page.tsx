@@ -392,6 +392,16 @@ export default function MbaRoiPage() {
           </p>
         </section>
 
+        {/* ── Related guides ── */}
+        <section className="border-t border-white/10 pt-8">
+          <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest mb-4">Related guides</p>
+          <ul className="space-y-2 text-sm text-slate-400 leading-relaxed list-disc list-inside">
+            <li>Weighing a program you can do while working? Compare <Link href="/executive-mba-roi" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">Executive MBA ROI</Link> and <Link href="/part-time-mba-roi" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">part-time MBA ROI</Link>.</li>
+            <li>Choosing a format or skipping the test? See <Link href="/mba-roi-online-vs-full-time" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">online vs. full-time MBA ROI</Link> and <Link href="/no-gmat-mba-roi" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">no-GMAT MBA ROI</Link>.</li>
+            <li>For more scenario analysis and 2026 updates, read the <Link href="/blog" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">CareerReturns blog</Link>.</li>
+          </ul>
+        </section>
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>

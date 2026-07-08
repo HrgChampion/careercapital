@@ -447,6 +447,178 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── MBA Cost & Funding ── */}
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16">
+        <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">MBA Cost &amp; Funding</p>
+        <div className="grid md:grid-cols-3 gap-5">
+
+          <Link href="/how-to-pay-for-mba" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">How to Pay for an MBA</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Federal and private loans, scholarships, employer aid, fellowships, and the GI Bill — with the ROI impact of each funding source.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-scholarships" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Scholarships 2026</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Merit aid, fellowships, and negotiation tactics — plus how every scholarship dollar changes your break-even and ROI.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/free-mba-programs" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Free MBA Programs</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Fully-funded, fellowship, assistantship, and near-zero-tuition options for 2026, with real salary outcome data.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-loan-repayment-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Loan Repayment Calculator</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Enter loan amount, rate, and term to see monthly payment, total interest, payoff timeline, and salary-to-debt ratio.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Open calculator →</p>
+          </Link>
+
+          <Link href="/employer-sponsored-mba-roi" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Employer-Sponsored MBA ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              When your employer pays tuition, IRR on your own investment goes near-infinite. The math, negotiation steps, and clawback risk.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+        </div>
+      </section>
+
+      {/* ── MBA ROI by Format & Path ── */}
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16">
+        <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">MBA ROI by Format &amp; Path</p>
+        <div className="grid md:grid-cols-3 gap-5">
+
+          <Link href="/executive-mba-roi" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Executive MBA ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Zero opportunity cost, break-even scenarios, salary deltas by track, and EMBA vs. full-time head to head.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/part-time-mba-roi" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Part-Time MBA ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The format most financial analyses get wrong — zero opportunity cost, break-even profiles, and when it beats full-time.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-online-vs-full-time" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Online vs Full-Time MBA ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Online MBA programs ranked by ROI, with opportunity-cost math and break-even timelines compared to full-time.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/no-gmat-mba-roi" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">No-GMAT MBA ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Does skipping the GMAT hurt your return? Salary outcomes, employer perception, and accreditation for GMAT-waiver programs.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-roi-career-changers" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI for Career Changers</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The highest-variance segment in graduate education: 25–40% IRR on a successful pivot, negative NPV on a failed one.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-vs-masters-roi" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA vs Master's ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              MBA compared to MS Finance, MSCS, MFin, MEM, and JD on salary, IRR, and break-even — with a decision framework.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+        </div>
+      </section>
+
+      {/* ── MBA Salary & Jobs ── */}
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16">
+        <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">MBA Salary &amp; Jobs</p>
+        <div className="grid md:grid-cols-3 gap-5">
+
+          <Link href="/mba-jobs-200k" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Jobs That Pay $200K+</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The IB, PE, MBB, and tech roles that clear $200k post-MBA, and the compensation math behind each.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/mba-salary-analytics" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Salary Analytics</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The best free and paid MBA salary data sources in the US, and how to use them for career planning.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
+          </Link>
+
+          <Link href="/for-employers" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">For Employers: Benchmarking</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              MBA compensation benchmarking for HR and talent teams — set competitive offers and design retention packages.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Learn more →</p>
+          </Link>
+
+        </div>
+      </section>
+
+      {/* ── From the Blog ── */}
+      <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16 sm:pb-28">
+        <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest mb-6">From the Blog</p>
+        <div className="grid md:grid-cols-3 gap-5">
+
+          <Link href="/blog/is-mba-worth-it-2026" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-emerald-300 transition-colors">Is an MBA Worth It in 2026?</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              NPV and IRR run across 12 industries and 4 school tiers — exactly when an MBA pays off, and when it doesn't.
+            </p>
+            <p className="text-emerald-400 text-sm font-medium">Read article →</p>
+          </Link>
+
+          <Link href="/blog/how-to-calculate-mba-roi" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-emerald-300 transition-colors">How to Calculate MBA ROI</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The correct discounted-cash-flow framework — opportunity cost, loan amortization, and the mistakes most calculators make.
+            </p>
+            <p className="text-emerald-400 text-sm font-medium">Read article →</p>
+          </Link>
+
+          <Link href="/blog/mba-vs-masters-vs-bootcamp" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-emerald-300 transition-colors">MBA vs Master's vs Bootcamp</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Three paths, three cost structures, three ROI profiles — modeled side by side before you commit six figures.
+            </p>
+            <p className="text-emerald-400 text-sm font-medium">Read article →</p>
+          </Link>
+
+        </div>
+        <p className="text-slate-400 text-sm mt-6">
+          Read more on the{" "}
+          <Link href="/blog" className="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">CareerReturns blog →</Link>
+        </p>
+      </section>
+
       {/* ── Vision ── */}
       <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 pb-16 sm:pb-28 border-t border-white/10 pt-14 sm:pt-20">
         <div className="max-w-2xl space-y-6">

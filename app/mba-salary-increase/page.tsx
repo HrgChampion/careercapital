@@ -283,7 +283,7 @@ export default function MbaSalaryIncreasePage() {
         <section className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">MBA Salary Increase by Year (2019–2026)</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            Post-MBA median salaries have risen consistently since 2019, driven by consulting and finance compensation inflation. The table below shows how Year 1 post-MBA median pay has trended at M7 programs across career tracks.
+            Post-MBA median salaries have risen consistently since 2019, driven by consulting and finance compensation inflation. The table below shows how Year 1 post-MBA median pay has trended at M7 programs across career tracks. For institutional-grade benchmarking data behind these figures, see our <Link href="/mba-salary-analytics" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">MBA salary analytics</Link>.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">

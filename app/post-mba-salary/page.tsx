@@ -705,6 +705,7 @@ export default function PostMbaSalaryPage() {
             degree in management roles — with the premium widest in consulting, finance, and general
             management. Salary for MBA graduates in the highest-paying jobs (MBB partner, PE principal,
             FAANG senior PM) can reach $500K–$2M+ at the 10-year mark, but these are tail outcomes.
+            See which roles clear six figures early in our guide to <Link href="/mba-jobs-200k" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA jobs that pay $200k</Link>.
           </p>
           <p className="text-slate-400 text-sm leading-relaxed">
             For most MBA students, the realistic question is whether the salary delta — the difference between

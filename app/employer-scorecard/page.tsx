@@ -72,7 +72,7 @@ export default function EmployerScorecardPage() {
           Career Return<br />Employer Rankings
         </h1>
         <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-xl">
-          Which employers are genuinely return-to-work friendly? Scored on returnship conversion rate, salary recovery, promotion velocity, and program quality — not marketing.
+          Which employers are genuinely return-to-work friendly? Scored on returnship conversion rate, salary recovery, promotion velocity, and program quality — not marketing. Hiring managers can pair this with our compensation benchmarks <Link href="/for-employers" className="text-indigo-400 hover:text-indigo-300 transition-colors">for employers</Link>.
         </p>
 
         {/* Filters */}
