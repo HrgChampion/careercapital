@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 
 export const metadata = {
@@ -68,13 +69,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <script
-          async
+      </head>
+      <body>
+        <Script
+          strategy="lazyOnload"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3531438820494924"
           crossOrigin="anonymous"
         />
-      </head>
-      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}

@@ -28,14 +28,14 @@ export default function OpportunityCostClock() {
 
   return (
     <div className="mt-8 flex flex-col items-center gap-2">
-      <p className="text-xs text-slate-500 uppercase tracking-widest">
+      <p className="text-xs text-slate-400 uppercase tracking-widest">
         Since you opened this page, delaying your career decision has cost
       </p>
       <p className="text-3xl sm:text-4xl font-mono font-bold text-red-400 tabular-nums">
         {formatCurrency(cost)}
       </p>
-      <p className="text-xs text-slate-600">
-        Based on median $55K/year MBA opportunity cost · <a href="/mba-roi-calculator" className="text-indigo-400 hover:underline">personalize it →</a>
+      <p className="text-xs text-slate-400">
+        Based on median $55K/year MBA opportunity cost · <a href="/mba-roi-calculator" className="text-indigo-400 underline underline-offset-4 decoration-indigo-400/50 hover:decoration-indigo-400">personalize it →</a>
       </p>
     </div>
   )

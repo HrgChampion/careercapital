@@ -75,7 +75,10 @@ export default function HomePage() {
 
       {/* ── Background Glow ── */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200 bg-indigo-600/20 rounded-full blur-[140px]" />
+        <div
+          className="absolute -top-50 left-1/2 -translate-x-1/2 w-200 h-200"
+          style={{ background: 'radial-gradient(circle, rgba(79,70,229,0.2) 0%, rgba(79,70,229,0.08) 45%, transparent 70%)' }}
+        />
       </div>
 
       {/* ── Hero ── */}
@@ -615,7 +618,7 @@ export default function HomePage() {
         </div>
         <p className="text-slate-400 text-sm mt-6">
           Read more on the{" "}
-          <Link href="/blog" className="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">CareerReturns blog →</Link>
+          <Link href="/blog" className="text-emerald-400 hover:text-emerald-300 font-medium underline underline-offset-4 decoration-emerald-400/50 transition-colors">CareerReturns blog →</Link>
         </p>
       </section>
 
@@ -636,7 +639,7 @@ export default function HomePage() {
             Every major career investment decision — modeled with the same DCF rigor as a capital allocation decision.
           </p>
 
-          <p className="text-slate-500 text-sm">
+          <p className="text-slate-400 text-sm">
             Education is capital. Model it accordingly.
           </p>
 
@@ -663,21 +666,21 @@ export default function HomePage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-white/10 py-8 text-center text-slate-500 text-xs space-y-2">
+      <footer className="border-t border-white/10 py-8 text-center text-slate-400 text-xs space-y-2">
         <p>
-          <Link href="/about" className="hover:text-slate-300 transition-colors">
+          <Link href="/about" className="underline underline-offset-4 decoration-slate-600 hover:text-slate-300 transition-colors">
             About
           </Link>
           {" · "}
-          <Link href="/privacy" className="hover:text-slate-300 transition-colors">
+          <Link href="/privacy" className="underline underline-offset-4 decoration-slate-600 hover:text-slate-300 transition-colors">
             Privacy Policy
           </Link>
           {" · "}
-          <Link href="/terms" className="hover:text-slate-300 transition-colors">
+          <Link href="/terms" className="underline underline-offset-4 decoration-slate-600 hover:text-slate-300 transition-colors">
             Terms
           </Link>
           {" · "}
-          <Link href="/contact" className="hover:text-slate-300 transition-colors">
+          <Link href="/contact" className="underline underline-offset-4 decoration-slate-600 hover:text-slate-300 transition-colors">
             Contact
           </Link>
         </p>
