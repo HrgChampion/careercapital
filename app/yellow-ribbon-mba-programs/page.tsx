@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import SiteFooter from "@/components/SiteFooter"
 
 const _articleSchema = articleSchema({
   title: "Yellow Ribbon MBA Programs 2026: Full List, GI Bill Benefits & ROI for Veterans",
@@ -11,12 +12,12 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Yellow Ribbon MBA Programs", url: "https://careerreturns.com/yellow-ribbon-mba-programs" }])
 
 export const metadata = {
-  title: "Yellow Ribbon MBA Programs 2026: GI Bill Benefits, Full Program List & Veteran ROI",
+  title: "Yellow Ribbon MBA Programs (2026): Full List & GI Bill Savings",
   description:
     "Yellow Ribbon Program MBA 2026: veterans can attend top MBA programs at near-zero tuition using GI Bill + YRP. Full program list, benefit calculations ($150K–$200K savings), eligibility & ROI →",
   alternates: pageAlternates("https://careerreturns.com/yellow-ribbon-mba-programs"),
   openGraph: {
-    title: "Yellow Ribbon MBA Programs 2026: GI Bill Benefits, Full Program List & Veteran ROI",
+    title: "Yellow Ribbon MBA Programs (2026): Full List & GI Bill Savings",
     description:
       "Yellow Ribbon Program MBA 2026: veterans save $150K–$200K on top MBA programs. Full program list, GI Bill + YRP calculations & eligibility.",
     url: "https://careerreturns.com/yellow-ribbon-mba-programs",
@@ -167,6 +168,7 @@ export default function YellowRibbonMbaProgramsPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
       </div>
+      <SiteFooter />
     </main>
   )
 }

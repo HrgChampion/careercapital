@@ -38,14 +38,6 @@ const websiteSchema = {
   "@type": "WebSite",
   "name": "CareerReturns",
   "url": "https://careerreturns.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://careerreturns.com/mba-roi-calculator",
-    },
-    "query-input": "required name=search_term_string",
-  },
 }
 
 const siteNavSchema = {

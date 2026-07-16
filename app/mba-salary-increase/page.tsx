@@ -1,10 +1,12 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 export const metadata = {
-  title: "How Much Does an MBA Increase Salary? +47% Avg (2026)",
+  title: "Does an MBA Increase Your Salary? +47% Average (2026 Data)",
   description:
-    "MBA salary increase data for 2026. Pre-MBA medians by role, post-MBA pay by sector (consulting +$105K, banking +$90K, tech +$60K). Calculate your ROI →",
+    "Yes — the average MBA salary increase is +47%. Full 2026 data: consulting +$105K, banking +$90K, tech +$60K, by role and sector. Calculate your exact ROI →",
   alternates: pageAlternates("https://careerreturns.com/mba-salary-increase"),
 }
 
@@ -34,10 +36,10 @@ export default function MbaSalaryIncreasePage() {
         <header className="space-y-5">
           <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">CareerReturns</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
-            MBA Salary Increase:<br />What the Numbers Actually Show
+            Does an MBA Increase<br />Your Salary?
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
-            An MBA increases salary by an average of <span className="text-white font-medium">47–55%</span> — from a pre-MBA median of ~$85,000 to a post-MBA median of $175,000+ at M7 programs. Consulting track graduates entering MBB firms see a salary delta exceeding $100,000 in Year 1 alone. The size of the increase depends almost entirely on your pre-MBA salary, target industry, and program tier.
+            Yes — an MBA increases salary by an average of <span className="text-white font-medium">47–55%</span>, from a pre-MBA median of ~$85,000 to a post-MBA median of $175,000+ at M7 programs. Consulting track graduates entering MBB firms see a salary delta exceeding $100,000 in Year 1 alone. The size of the increase depends almost entirely on your pre-MBA salary, target industry, and program tier.
           </p>
           <div className="flex items-center gap-3 pt-1 border-t border-white/8">
             <div className="w-7 h-7 rounded-full bg-purple-600/20 border border-purple-500/30 flex items-center justify-center shrink-0">
@@ -46,7 +48,7 @@ export default function MbaSalaryIncreasePage() {
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-sm text-white font-medium">Himanshu Gauba</span>
               <span className="text-slate-600 text-xs">·</span>
-              <span className="text-slate-500 text-xs">Updated May 2026</span>
+              <span className="text-slate-500 text-xs">Updated July 2026</span>
               <span className="text-slate-600 text-xs">·</span>
               <span className="text-slate-500 text-xs">Data: GMAC, Glassdoor, Levels.fyi</span>
             </div>
@@ -336,6 +338,10 @@ export default function MbaSalaryIncreasePage() {
           <h2 className="text-2xl font-semibold tracking-tight">Frequently Asked Questions</h2>
           <div className="space-y-4">
             <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">Does an MBA increase salary?</p>
+              <p className="text-slate-400 text-sm leading-relaxed">Yes. The median MBA graduate earns 47–55% more in their first post-MBA role than before business school. The increase is largest when switching into consulting, banking, or tech from a lower-paying function, and smallest when staying in an already high-paying field like senior engineering.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
               <p className="text-white font-semibold text-sm">How much does an MBA increase salary on average?</p>
               <p className="text-slate-400 text-sm leading-relaxed">The average MBA salary increase is 47–55% from pre-MBA to first post-MBA role. For M7 graduates entering consulting, the delta exceeds 100%. The median pre-MBA salary is approximately $85K; the median post-MBA M7 salary is $175K–$210K depending on sector.</p>
             </div>
@@ -411,31 +417,22 @@ export default function MbaSalaryIncreasePage() {
           </div>
         </section>
 
-        <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
-          <p>
-            <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-            {" · "}
-            <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-            {" · "}
-            <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
-            {" · "}
-            <Link href="/mba-break-even" className="hover:text-slate-300 transition-colors">MBA Break-Even</Link>
-            {" · "}
-            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: McKinsey</Link>
-            {" · "}
-            <Link href="/mba-roi-goldman-sachs" className="hover:text-slate-300 transition-colors">MBA ROI: Goldman Sachs</Link>
-            {" · "}
-            <Link href="/mba-roi-engineers" className="hover:text-slate-300 transition-colors">MBA ROI: Engineers</Link>
-          </p>
-          <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
-        </footer>
+        <RelatedLinks
+          links={[
+            { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
+            { href: "/mba-worth-it", label: "Is an MBA worth it?", description: "2026 ROI data across 12 industries — and when the math fails." },
+            { href: "/mba-break-even", label: "MBA break-even period", description: "MBB 4.2–4.7 years, banking 4.5–5, tech 6–7." },
+            { href: "/post-mba-salary", label: "Post-MBA salary 2026", description: "MBB $232K, IB $350K, tech $200K — by school tier and city." },
+          ]}
+        />
+
+        <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does an MBA increase salary on average?", "acceptedAnswer": {"@type": "Answer", "text": "The average MBA salary increase is 47–55% from pre-MBA to first post-MBA role. For M7 graduates entering consulting, the delta exceeds 100%. The median pre-MBA salary is approximately $85K; the median post-MBA M7 salary is $175K–$210K depending on sector."}}, {"@type": "Question", "name": "Which industry pays the most for MBA graduates?", "acceptedAnswer": {"@type": "Answer", "text": "Investment banking pays the highest post-MBA base salary at $200K–$250K for bulge bracket associates. Management consulting (MBB) follows at $190K–$215K. Tech product management roles average $195K–$220K total compensation including equity. General management and healthcare management pay $130K–$160K."}}, {"@type": "Question", "name": "Does an MBA increase salary more in consulting or banking?", "acceptedAnswer": {"@type": "Answer", "text": "The raw salary delta is slightly higher in investment banking (typically +$90K–$120K from pre-MBA median) versus MBB consulting (+$85K–$107K). However, banking requires longer hours and has a steeper promotion curve. On an annualized per-hour basis, consulting often produces a better effective salary increase."}}, {"@type": "Question", "name": "How long does it take for MBA salary increase to pay back the degree?", "acceptedAnswer": {"@type": "Answer", "text": "For M7 programs targeting consulting or banking, the salary increase pays back total MBA cost (tuition + foregone income) in 4–6 years. For regional programs with $30K–$50K salary uplifts, payback takes 8–12 years. The break-even calculation depends on total economic cost, not tuition alone."}}, {"@type": "Question", "name": "Is the MBA salary increase worth the cost?", "acceptedAnswer": {"@type": "Answer", "text": "At M7 programs with MBB or bulge bracket placement, the salary increase generates a positive net present value of $200K–$400K over a 10-year horizon, producing IRRs of 18–24%. At programs below T25 with modest uplifts, the salary increase rarely covers full economic cost on a discounted basis."}}]}) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does an MBA increase salary?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The median MBA graduate earns 47–55% more in their first post-MBA role than before business school. The increase is largest when switching into consulting, banking, or tech from a lower-paying function, and smallest when staying in an already high-paying field like senior engineering."}}, {"@type": "Question", "name": "How much does an MBA increase salary on average?", "acceptedAnswer": {"@type": "Answer", "text": "The average MBA salary increase is 47–55% from pre-MBA to first post-MBA role. For M7 graduates entering consulting, the delta exceeds 100%. The median pre-MBA salary is approximately $85K; the median post-MBA M7 salary is $175K–$210K depending on sector."}}, {"@type": "Question", "name": "Which industry pays the most for MBA graduates?", "acceptedAnswer": {"@type": "Answer", "text": "Investment banking pays the highest post-MBA base salary at $200K–$250K for bulge bracket associates. Management consulting (MBB) follows at $190K–$215K. Tech product management roles average $195K–$220K total compensation including equity. General management and healthcare management pay $130K–$160K."}}, {"@type": "Question", "name": "Does an MBA increase salary more in consulting or banking?", "acceptedAnswer": {"@type": "Answer", "text": "The raw salary delta is slightly higher in investment banking (typically +$90K–$120K from pre-MBA median) versus MBB consulting (+$85K–$107K). However, banking requires longer hours and has a steeper promotion curve. On an annualized per-hour basis, consulting often produces a better effective salary increase."}}, {"@type": "Question", "name": "How long does it take for MBA salary increase to pay back the degree?", "acceptedAnswer": {"@type": "Answer", "text": "For M7 programs targeting consulting or banking, the salary increase pays back total MBA cost (tuition + foregone income) in 4–6 years. For regional programs with $30K–$50K salary uplifts, payback takes 8–12 years. The break-even calculation depends on total economic cost, not tuition alone."}}, {"@type": "Question", "name": "Is the MBA salary increase worth the cost?", "acceptedAnswer": {"@type": "Answer", "text": "At M7 programs with MBB or bulge bracket placement, the salary increase generates a positive net present value of $200K–$400K over a 10-year horizon, producing IRRs of 18–24%. At programs below T25 with modest uplifts, the salary increase rarely covers full economic cost on a discounted basis."}}]}) }}
       />
       <script
         type="application/ld+json"

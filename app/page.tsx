@@ -1,15 +1,16 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 import OpportunityCostClock from "@/components/OpportunityCostClock"
+import SiteFooter from "@/components/SiteFooter"
 
 export const metadata = {
-  title: "MBA ROI Calculator 2026 — Free NPV, IRR & Career Investment Tools",
+  title: "CareerReturns — Career ROI Platform: MBA, Salary & Career Investment Tools",
   description:
-    "Free MBA ROI calculator + 8 career tools. Calculate NPV, IRR & break-even for any MBA program. Salary benchmarks, career gap analysis, and returnship ROI. Used by 10,000+ professionals.",
+    "14+ free tools to price every career decision with DCF rigor — MBA ROI, salary benchmarks, career gaps, returnships, and lifetime earnings. Used by 10,000+ professionals.",
   alternates: pageAlternates("https://careerreturns.com"),
   openGraph: {
-    title: "MBA ROI Calculator 2026 — Free NPV, IRR & Career Investment Tools",
-    description: "Free MBA ROI calculator using full DCF analysis. NPV, IRR, break-even, salary benchmarks, and career gap tools. Compare any program across 12 industries.",
+    title: "CareerReturns — Career ROI Platform: MBA, Salary & Career Investment Tools",
+    description: "14+ free tools to price every career decision with DCF rigor — MBA ROI, salary benchmarks, career gaps, returnships, and lifetime earnings.",
     url: "https://careerreturns.com",
     siteName: "CareerReturns",
     type: "website",
@@ -17,8 +18,8 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "MBA ROI Calculator 2026 — Free NPV, IRR & Career Investment Tools",
-    description: "Free MBA ROI calculator + 8 career tools. NPV, IRR, break-even analysis across 12 industries and all school tiers.",
+    title: "CareerReturns — Career ROI Platform: MBA, Salary & Career Investment Tools",
+    description: "14+ free tools to price every career decision with DCF rigor — MBA ROI, salary benchmarks, career gaps, and lifetime earnings.",
   },
 }
 
@@ -28,42 +29,42 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is MBA ROI?",
+      "name": "What is CareerReturns?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "MBA ROI (Return on Investment) is the financial return you earn from an MBA program relative to its total cost. It's calculated using NPV (Net Present Value) and IRR (Internal Rate of Return) to account for tuition, living expenses, opportunity cost, and post-MBA salary gains over a 10-year horizon."
+        "text": "CareerReturns is a free career ROI platform that models major career investment decisions — MBA programs, career breaks, returnships, reskilling, and job changes — using the same DCF (discounted cash flow) rigor institutional investors apply to capital allocation. Every tool outputs NPV, IRR, or break-even so you can compare options on hard numbers."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I calculate MBA ROI?",
+      "name": "What is human capital ROI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Calculate MBA ROI by subtracting total costs (tuition + opportunity cost + living expenses) from the discounted present value of future salary increases. Our free MBA ROI calculator uses institutional-grade DCF modeling to compute NPV, IRR, and break-even period automatically."
+        "text": "Human capital ROI is the financial return on investments in your own earning power — education, skills, career moves, and time out of the workforce. It's measured by discounting the future salary changes an investment produces against its full cost, including tuition and forgone income."
       }
     },
     {
       "@type": "Question",
-      "name": "Is an MBA worth it financially in 2026?",
+      "name": "Are the CareerReturns tools free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An MBA is worth it financially when targeting high-delta industries: MBB consulting (IRR 22–40%), investment banking (21–38%), or PE/VC (23–41%). It typically fails financially when entering low-delta fields like nonprofit/government (IRR 4–14%) or taking on full debt for a non-target program."
+        "text": "Yes. All 14+ tools — including the MBA ROI calculator, career gap calculator, salary benchmarks, and lifetime earnings calculator — are free, require no sign-up, and run entirely in your browser."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the average MBA salary increase?",
+      "name": "Which career decisions can I model?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The average MBA salary increase ranges from $35k to $90k per year depending on industry. MBB consulting offers the largest delta ($80–90k/year), while general management offers a smaller lift ($35–50k/year). The 10-year cumulative NPV ranges from -$20k (nonprofit) to +$600k (military with GI Bill)."
+        "text": "You can model MBA and graduate degree ROI, career gaps and returnships, reskilling and bootcamps, salary negotiation outcomes, geographic arbitrage, return-to-office costs, and lifetime earnings across stay/pivot/break scenarios — each with explicit NPV, IRR, or break-even outputs."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does it take to break even on an MBA?",
+      "name": "How does DCF modeling apply to career decisions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "MBA break-even periods range from 2–13 years depending on industry and scholarship aid. MBB consulting breaks even in 4.2–4.7 years. Investment banking: 4.5–5 years. Technology: 6.1–7 years. Nonprofit/government can take 9–13 years or never break even with full debt."
+        "text": "A career investment produces cash flows: upfront costs (tuition, lost salary) followed by years of higher earnings. Discounting those flows to present value — exactly as a company evaluates a capital project — reveals whether the decision creates or destroys value at your discount rate, and how long it takes to break even."
       }
     }
   ]
@@ -88,13 +89,14 @@ export default function HomePage() {
         </p>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight bg-linear-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
-          MBA ROI Calculator &amp;<br />Career Investment Tools
+          Price Every Career Decision<br />Like a Capital Allocation
         </h1>
 
         <p className="mt-6 text-slate-400 text-lg leading-relaxed max-w-2xl">
-          Use institutional-grade discounted cash flow (DCF) analysis to calculate your MBA return on investment.
-          Model NPV, IRR, and break-even across 12 industries and every major school tier —
-          so you make your career investment decision with the same rigor as a capital allocation decision.
+          Institutional-grade discounted cash flow (DCF) analysis for your biggest career investments.
+          Start with the free <Link href="/mba-roi-calculator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-4 decoration-indigo-400/50 transition-colors">MBA ROI calculator</Link> —
+          NPV, IRR, and break-even across 12 industries and every major school tier — then model career gaps,
+          returnships, reskilling, and salary moves with the same rigor.
         </p>
 
         <div className="mt-10 flex gap-4 flex-wrap justify-center">
@@ -666,27 +668,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-white/10 py-8 text-center text-slate-400 text-xs space-y-2">
-        <p>
-          <Link href="/about" className="underline underline-offset-4 decoration-slate-600 hover:text-slate-300 transition-colors">
-            About
-          </Link>
-          {" · "}
-          <Link href="/privacy" className="underline underline-offset-4 decoration-slate-600 hover:text-slate-300 transition-colors">
-            Privacy Policy
-          </Link>
-          {" · "}
-          <Link href="/terms" className="underline underline-offset-4 decoration-slate-600 hover:text-slate-300 transition-colors">
-            Terms
-          </Link>
-          {" · "}
-          <Link href="/contact" className="underline underline-offset-4 decoration-slate-600 hover:text-slate-300 transition-colors">
-            Contact
-          </Link>
-        </p>
-        <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
-      </footer>
+      <SiteFooter />
 
     </main>
   )

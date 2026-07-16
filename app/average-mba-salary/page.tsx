@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 const _articleSchema = articleSchema({
   title: "Average MBA Salary 2026: $175K at M7 — Full Data by School",
@@ -543,25 +545,16 @@ export default function AverageMbaSalaryPage() {
           </div>
         </section>
 
-        <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
-          <p>
-            <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-            {" · "}
-            <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-            {" · "}
-            <Link href="/mba-salary-increase" className="hover:text-slate-300 transition-colors">MBA Salary Increase</Link>
-            {" · "}
-            <Link href="/mba-roi" className="hover:text-slate-300 transition-colors">MBA ROI Guide</Link>
-            {" · "}
-            <Link href="/mba-cost" className="hover:text-slate-300 transition-colors">MBA Cost</Link>
-            {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
-            {" · "}
-            <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
-          </p>
-          <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
-        </footer>
+        <RelatedLinks
+          links={[
+            { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
+            { href: "/mba-salary-increase", label: "Does an MBA increase salary?", description: "+47% average increase — full 2026 data by role and sector." },
+            { href: "/post-mba-salary", label: "Post-MBA salary 2026", description: "MBB $232K, IB $350K, tech $200K — by school tier and city." },
+            { href: "/mba-salary-by-school", label: "MBA salary by school", description: "M7 vs T15 vs online — full rankings and data." },
+          ]}
+        />
+
+        <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 

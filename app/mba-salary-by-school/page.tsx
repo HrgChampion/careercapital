@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 const _articleSchema = articleSchema({
   title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
@@ -611,23 +613,16 @@ export default function MbaSalaryBySchoolPage() {
           </div>
         </section>
 
-        <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
-          <p>
-            <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-            {" · "}
-            <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">Average MBA Salary</Link>
-            {" · "}
-            <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">MBA Salary</Link>
-            {" · "}
-            <Link href="/post-mba-salary" className="hover:text-slate-300 transition-colors">Post-MBA Salary</Link>
-            {" · "}
-            <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-            {" · "}
-            <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
-          </p>
-          <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
-        </footer>
+        <RelatedLinks
+          links={[
+            { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
+            { href: "/average-mba-salary-after-5-years", label: "MBA salary after 5 & 10 years", description: "Career trajectory data at Wharton, HBS & M7 schools." },
+            { href: "/post-mba-salary", label: "Post-MBA salary 2026", description: "MBB $232K, IB $350K, tech $200K — by city and background." },
+            { href: "/mba-roi-insead-vs-wharton", label: "INSEAD vs Wharton ROI", description: "Head-to-head cost, salary and NPV comparison." },
+          ]}
+        />
+
+        <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 

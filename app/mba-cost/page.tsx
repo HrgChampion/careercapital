@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 const _articleSchema = articleSchema({
   title: "MBA Total Cost 2026: $22K–$492K True Economic Cost by School",
@@ -389,25 +391,16 @@ export default function MbaCostPage() {
           </div>
         </section>
 
-        <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
-          <p>
-            <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-            {" · "}
-            <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-            {" · "}
-            <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
-            {" · "}
-            <Link href="/mba-roi" className="hover:text-slate-300 transition-colors">MBA ROI Guide</Link>
-            {" · "}
-            <Link href="/mba-roi-europe" className="hover:text-slate-300 transition-colors">European MBA ROI</Link>
-            {" · "}
-            <Link href="/mba-roi-online-vs-full-time" className="hover:text-slate-300 transition-colors">Online vs. Full-Time MBA</Link>
-            {" · "}
-            <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
-          </p>
-          <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
-        </footer>
+        <RelatedLinks
+          links={[
+            { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
+            { href: "/mba-roi-scholarship", label: "MBA scholarship ROI", description: "How aid changes the NPV math — and how to negotiate it." },
+            { href: "/mba-roi", label: "MBA ROI guide", description: "The full framework: NPV, IRR and break-even explained." },
+            { href: "/mba-worth-it", label: "Is an MBA worth it?", description: "2026 ROI data across 12 industries." },
+          ]}
+        />
+
+        <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 

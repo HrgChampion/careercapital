@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 export const metadata = {
   title: "MBA Jobs That Pay $200K or More (2026): IB, PE, MBB & Tech Roles",
@@ -324,21 +326,16 @@ export default function MbaJobs200kPage() {
           </div>
         </section>
 
-        <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
-          <p>
-            <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-            {" · "}
-            <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-            {" · "}
-            <Link href="/post-mba-salary" className="hover:text-slate-300 transition-colors">Post-MBA Salary</Link>
-            {" · "}
-            <Link href="/mba-investment-banking-salary" className="hover:text-slate-300 transition-colors">IB Salary</Link>
-            {" · "}
-            <Link href="/mba-salary-by-school" className="hover:text-slate-300 transition-colors">Salary by School</Link>
-          </p>
-          <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">Salary data sourced from GMAC Employment Report, school placement reports, Glassdoor, Levels.fyi, Wall Street Oasis, and industry compensation surveys. All figures are estimates; individual outcomes vary.</p>
-        </footer>
+        <RelatedLinks
+          links={[
+            { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
+            { href: "/post-mba-salary", label: "Post-MBA salary 2026", description: "Full salary breakdown by industry, school tier and city." },
+            { href: "/mba-investment-banking-salary", label: "MBA investment banking salary", description: "Associate comp $275K–$350K — base, bonus and trajectory." },
+            { href: "/mba-salary-by-school", label: "MBA salary by school", description: "M7 vs T15 vs online — full rankings and data." },
+          ]}
+        />
+
+        <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 

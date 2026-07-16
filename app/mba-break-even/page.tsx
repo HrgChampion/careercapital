@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 const _articleSchema = articleSchema({
   title: "MBA Break-Even Period 2026: MBB, Banking & Tech Timelines",
@@ -11,9 +13,9 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Break-Even Period", url: "https://careerreturns.com/mba-break-even" }])
 
 export const metadata = {
-  title: "MBA Break-Even Period 2026: MBB, Banking & Tech Timelines",
+  title: "MBA Break-Even Period 2026: 4–8 Years — Timelines by Industry",
   description:
-    "MBA break-even with real math. Three scenarios, factors that shift your payback timeline, and a free DCF calculator linked throughout. Calculate now →",
+    "MBA break-even and payback period with real math: MBB 4.2–4.7 years, banking 4.5–5, tech 6–7. Factors that shift your timeline + a free DCF calculator. Updated July 2026.",
   alternates: pageAlternates("https://careerreturns.com/mba-break-even"),
 }
 
@@ -434,25 +436,16 @@ export default function MbaBreakEvenPage() {
           </div>
         </section>
 
-        <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
-          <p>
-            <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-            {" · "}
-            <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-            {" · "}
-            <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
-            {" · "}
-            <Link href="/mba-salary-increase" className="hover:text-slate-300 transition-colors">MBA Salary Increase</Link>
-            {" · "}
-            <Link href="/mba-roi-100k-debt" className="hover:text-slate-300 transition-colors">MBA $100k Debt ROI</Link>
-            {" · "}
-            <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
-            {" · "}
-            <Link href="/mba-roi-military" className="hover:text-slate-300 transition-colors">MBA ROI: Veterans</Link>
-          </p>
-          <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
-        </footer>
+        <RelatedLinks
+          links={[
+            { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
+            { href: "/mba-payback-period", label: "MBA payback period calculator", description: "Compute your exact payback timeline from cash flows." },
+            { href: "/mba-worth-it", label: "Is an MBA worth it?", description: "2026 ROI data across 12 industries." },
+            { href: "/mba-roi-scholarship", label: "MBA scholarship ROI", description: "How aid shortens your break-even timeline." },
+          ]}
+        />
+
+        <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 

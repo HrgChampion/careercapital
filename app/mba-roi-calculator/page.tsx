@@ -11,6 +11,8 @@ import {
   type MBAResult,
   type ScoreResult,
 } from "@/lib/mbaEngine"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 // ─── Color maps & copy ─────────────────────────────────────────────────────────
 
@@ -720,20 +722,16 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
-        <p>
-          <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-          {" · "}
-          <Link href="/mba-roi" className="hover:text-slate-300 transition-colors">MBA ROI Guide</Link>
-          {" · "}
-          <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
-          {" · "}
-          <Link href="/about" className="hover:text-slate-300 transition-colors">About</Link>
-          {" · "}
-          <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
-        </p>
-        <p>Rational decisions. Compounding outcomes.</p>
-      </footer>
+      <RelatedLinks
+        links={[
+          { href: "/average-mba-salary-after-5-years", label: "MBA salary after 5 & 10 years", description: "Career trajectory data at Wharton, HBS & M7 schools." },
+          { href: "/post-mba-salary", label: "Post-MBA salary 2026", description: "MBB $232K, IB $350K, tech $200K — by school tier and city." },
+          { href: "/mba-salary-by-school", label: "MBA salary by school", description: "M7 vs T15 vs online — full rankings and data." },
+          { href: "/mba-worth-it", label: "Is an MBA worth it?", description: "2026 ROI data across 12 industries." },
+        ]}
+      />
+
+      <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
     </main>
   )
 }

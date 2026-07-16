@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 const _articleSchema = articleSchema({
   title: "MBA ROI 2026: IRR, NPV & Break-Even by Industry [Guide]",
@@ -402,25 +404,16 @@ export default function MbaRoiPage() {
           </ul>
         </section>
 
-        <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
-          <p>
-            <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-            {" · "}
-            <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-            {" · "}
-            <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
-            {" · "}
-            <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">Average MBA Salary</Link>
-            {" · "}
-            <Link href="/mba-cost" className="hover:text-slate-300 transition-colors">MBA Cost</Link>
-            {" · "}
-            <Link href="/mba-payback-period" className="hover:text-slate-300 transition-colors">MBA Payback Period</Link>
-            {" · "}
-            <Link href="/mba-roi-report-2026" className="hover:text-slate-300 transition-colors">MBA ROI Report 2026</Link>
-          </p>
-          <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
-        </footer>
+        <RelatedLinks
+          links={[
+            { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
+            { href: "/mba-worth-it", label: "Is an MBA worth it?", description: "2026 ROI data across 12 industries — and when the math fails." },
+            { href: "/mba-cost", label: "MBA cost breakdown", description: "Tuition, living expenses & opportunity cost by program tier." },
+            { href: "/mba-payback-period", label: "MBA payback period calculator", description: "How long until your MBA pays for itself." },
+          ]}
+        />
+
+        <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 

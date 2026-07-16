@@ -1,13 +1,15 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema } from "@/lib/seo"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 export const metadata = {
-  title: "Post-MBA Salary 2026: MBB $232K · IB $350K · Tech $200K (All Schools + Cities)",
+  title: "Post-MBA Salary 2026: MBB $232K, IB $350K, Tech $200K",
   description:
-    "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. Full breakdown by school tier, city, signing bonus, and pre-MBA background. Updated June 2026.",
+    "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. Full breakdown by school tier, city, signing bonus, and pre-MBA background. Updated July 2026.",
   alternates: pageAlternates("https://careerreturns.com/post-mba-salary"),
   openGraph: {
-    title: "Post-MBA Salary 2026: MBB $232K · IB $350K · Tech $200K (All Schools + Cities)",
+    title: "Post-MBA Salary 2026: MBB $232K, IB $350K, Tech $200K",
     description:
       "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. Breakdown by school tier, city, and pre-MBA background.",
     url: "https://careerreturns.com/post-mba-salary",
@@ -737,19 +739,16 @@ export default function PostMbaSalaryPage() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
-          <p>
-            <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-            {" · "}
-            <Link href="/mba-roi-report-2026" className="hover:text-slate-300 transition-colors">2026 Report</Link>
-            {" · "}
-            <Link href="/mba-salary-increase" className="hover:text-slate-300 transition-colors">Salary Increase Guide</Link>
-            {" · "}
-            <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">Average MBA Salary</Link>
-          </p>
-          <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
-        </footer>
+        <RelatedLinks
+          links={[
+            { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
+            { href: "/mba-salary-increase", label: "Does an MBA increase salary?", description: "+47% average increase — full 2026 data by role and sector." },
+            { href: "/mba-jobs-200k", label: "MBA jobs that pay $200K+", description: "IB, PE, MBB & tech roles clearing $200K, by firm." },
+            { href: "/average-mba-salary-after-5-years", label: "MBA salary after 5 & 10 years", description: "Career trajectory data at Wharton, HBS & M7 schools." },
+          ]}
+        />
+
+        <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 

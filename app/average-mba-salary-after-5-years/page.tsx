@@ -1,12 +1,14 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import RelatedLinks from "@/components/RelatedLinks"
+import SiteFooter from "@/components/SiteFooter"
 
 export const metadata = {
-  title: "Average MBA Salary After 5 Years (2026): What You Really Earn",
+  title: "Average MBA Salary After 5 & 10 Years (2026): Wharton, HBS & M7 Data",
   description:
-    "Average MBA salary after 5 years: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. After 10 years: $400K–$1M+. Full data by industry, school tier, and career path. Updated June 2026.",
+    "Average MBA salary after 5 years: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. After 10 years: $400K–$1M+ at Wharton, Harvard & M7 schools. Updated July 2026.",
   openGraph: {
-    title: "Average MBA Salary After 5 Years (2026): What You Really Earn",
+    title: "Average MBA Salary After 5 & 10 Years (2026): Wharton, HBS & M7 Data",
     description:
       "Average MBA salary after 5 years: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. After 10 years: $400K–$1M+. Full data by school and industry.",
     url: "https://careerreturns.com/average-mba-salary-after-5-years",
@@ -15,7 +17,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Average MBA Salary After 5 Years (2026): MBB $350K, Tech $300K, Corp $200K",
+    title: "Average MBA Salary After 5 & 10 Years (2026): Wharton, HBS & M7 Data",
     description: "5-year post-MBA salaries: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. 10-year trajectories + school breakdowns.",
   },
   alternates: pageAlternates("https://careerreturns.com/average-mba-salary-after-5-years"),
@@ -520,30 +522,16 @@ export default function AverageMbaSalaryAfter5YearsPage() {
           </div>
         </section>
 
-        <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
-          <p>
-            <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-            {" · "}
-            <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-            {" · "}
-            <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">Average MBA Salary</Link>
-            {" · "}
-            <Link href="/post-mba-salary" className="hover:text-slate-300 transition-colors">Post-MBA Salary</Link>
-            {" · "}
-            <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">MBA Salary by Industry</Link>
-            {" · "}
-            <Link href="/lifetime-earnings-calculator" className="hover:text-slate-300 transition-colors">Lifetime Earnings Calculator</Link>
-            {" · "}
-            <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
-          </p>
-          <p>Rational decisions. Compounding outcomes.</p>
-          <p className="mt-1">
-            Salary data sourced from GMAC Employment Report, Harvard Business School and Wharton career
-            outcomes publications, Glassdoor, Levels.fyi, Wall Street Oasis, and CareerReturns industry
-            research. All figures are estimates; individual outcomes vary significantly by career path,
-            employer, and performance.
-          </p>
-        </footer>
+        <RelatedLinks
+          links={[
+            { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
+            { href: "/post-mba-salary", label: "Post-MBA salary 2026", description: "Year-1 pay by industry, school tier and city." },
+            { href: "/mba-salary-by-school", label: "MBA salary by school", description: "Stanford $210K, HBS $205K, Wharton $200K — full rankings." },
+            { href: "/mba-salary-increase", label: "Does an MBA increase salary?", description: "+47% average increase — full 2026 data by role and sector." },
+          ]}
+        />
+
+        <SiteFooter note="Salary data sourced from GMAC Employment Report, Harvard Business School and Wharton career outcomes publications, Glassdoor, Levels.fyi, Wall Street Oasis, and CareerReturns industry research. All figures are estimates; individual outcomes vary significantly by career path, employer, and performance." />
 
       </div>
 
