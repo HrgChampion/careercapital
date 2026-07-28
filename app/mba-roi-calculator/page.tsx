@@ -728,6 +728,7 @@ export default function Home() {
           { href: "/post-mba-salary", label: "Post-MBA salary 2026", description: "MBB $232K, IB $350K, tech $200K — by school tier and city." },
           { href: "/mba-salary-by-school", label: "MBA salary by school", description: "M7 vs T15 vs online — full rankings and data." },
           { href: "/mba-worth-it", label: "Is an MBA worth it?", description: "2026 ROI data across 12 industries." },
+          { href: "/mba-roi-widget", label: "Embed this calculator on your site", description: "Free widget for consultants, universities & blogs — one line of HTML." },
         ]}
       />
 

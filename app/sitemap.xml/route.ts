@@ -100,7 +100,7 @@ const DEFAULTS = { priority: "0.8", changefreq: "monthly", langs: ["en-US", "x-d
 // lastmod applied to routes not present in SEED (new pages).
 const NEW_ROUTE_LASTMOD = "2026-07-16"
 
-const EXCLUDED = new Set(["test"])
+const EXCLUDED = new Set(["test", "embed"])
 
 function collectRoutes(dir: string, prefix = ""): string[] {
   const routes: string[] = []
