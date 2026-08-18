@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "Big 4 vs MBB MBA ROI 2026: The $47K Annual Pay Gap Analyzed",
@@ -18,6 +19,14 @@ export const metadata = {
     description: "McKinsey associate vs Deloitte manager: $47K/yr salary gap, 3.8yr break-even difference. When Big 4 beats MBB on risk-adjusted return.",
   },
 }
+
+const faqItems: FaqItem[] = [
+  { q: "What is the salary difference between Big 4 and MBB consulting after an MBA?", a: "MBB (McKinsey, Bain, BCG) post-MBA associates earn $190K–$215K base salary plus a performance bonus of $20K–$40K. Big 4 strategy consulting (Deloitte S&O, PwC Strategy&, EY-Parthenon, KPMG Strategy) post-MBA associates earn $130K–$160K base. The annual salary gap is approximately $50K–$70K, compounding significantly over 5–10 years." },
+  { q: "Is Big 4 consulting worth an MBA financially?", a: "At M7 tuition levels ($160K+), Big 4 consulting produces marginal or negative NPV without scholarship support. The $130K–$160K post-MBA salary at Big 4 generates a salary delta too small to justify $280K–$350K total economic cost. T25 program costs of $100K–$150K total produce better ROI for Big 4 targeting." },
+  { q: "How does Big 4 vs MBB affect long-term career earnings?", a: "MBB associates who reach engagement manager/principal earn $250K–$400K at years 4–6. Partner track at MBB produces $600K–$2M+. Big 4 managers at years 4–6 earn $150K–$200K; partnership track is longer and less compensated. The lifetime earnings gap between MBB and Big 4 for top performers is $1M–$3M+ over a 20-year career." },
+  { q: "Can I get into MBB without a top MBA?", a: "MBB recruits primarily from M7 programs. Getting into McKinsey, Bain, or BCG without an M7 MBA requires either exceptional undergraduate credentials from a target school, a PhD from a top program, or a specialized expert hire track. The MBA associate pathway from M7 is the most reliable and well-structured route for career changers." },
+  { q: "What is the break-even comparison between Big 4 and MBB paths?", a: "At M7 tuition, MBB path breaks even in 4–5 years at $192K salary. Big 4 path at $145K salary breaks even in 8–10 years from the same program — if the break-even is positive at all. The implication: targeting Big 4 from a full-price M7 program is rarely financially rational unless supported by a significant scholarship." },
+]
 
 export default function MbaRoiBig4VsMbbPage() {
   return (
@@ -365,6 +374,8 @@ export default function MbaRoiBig4VsMbbPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -387,10 +398,6 @@ export default function MbaRoiBig4VsMbbPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the salary difference between Big 4 and MBB consulting after an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "MBB (McKinsey, Bain, BCG) post-MBA associates earn $190K–$215K base salary plus a performance bonus of $20K–$40K. Big 4 strategy consulting (Deloitte S&O, PwC Strategy&, EY-Parthenon, KPMG Strategy) post-MBA associates earn $130K–$160K base. The annual salary gap is approximately $50K–$70K, compounding significantly over 5–10 years."}}, {"@type": "Question", "name": "Is Big 4 consulting worth an MBA financially?", "acceptedAnswer": {"@type": "Answer", "text": "At M7 tuition levels ($160K+), Big 4 consulting produces marginal or negative NPV without scholarship support. The $130K–$160K post-MBA salary at Big 4 generates a salary delta too small to justify $280K–$350K total economic cost. T25 program costs of $100K–$150K total produce better ROI for Big 4 targeting."}}, {"@type": "Question", "name": "How does Big 4 vs MBB affect long-term career earnings?", "acceptedAnswer": {"@type": "Answer", "text": "MBB associates who reach engagement manager/principal earn $250K–$400K at years 4–6. Partner track at MBB produces $600K–$2M+. Big 4 managers at years 4–6 earn $150K–$200K; partnership track is longer and less compensated. The lifetime earnings gap between MBB and Big 4 for top performers is $1M–$3M+ over a 20-year career."}}, {"@type": "Question", "name": "Can I get into MBB without a top MBA?", "acceptedAnswer": {"@type": "Answer", "text": "MBB recruits primarily from M7 programs. Getting into McKinsey, Bain, or BCG without an M7 MBA requires either exceptional undergraduate credentials from a target school, a PhD from a top program, or a specialized expert hire track. The MBA associate pathway from M7 is the most reliable and well-structured route for career changers."}}, {"@type": "Question", "name": "What is the break-even comparison between Big 4 and MBB paths?", "acceptedAnswer": {"@type": "Answer", "text": "At M7 tuition, MBB path breaks even in 4–5 years at $192K salary. Big 4 path at $145K salary breaks even in 8–10 years from the same program — if the break-even is positive at all. The implication: targeting Big 4 from a full-price M7 program is rarely financially rational unless supported by a significant scholarship."}}]}) }}
-      />
     </main>
   )
 }

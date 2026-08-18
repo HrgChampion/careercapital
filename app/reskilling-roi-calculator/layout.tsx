@@ -47,43 +47,12 @@ const calculatorSchema = {
   "url": "https://careerreturns.com/reskilling-roi-calculator",
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is a coding bootcamp worth it financially?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A $15,000 full-stack bootcamp targeting a $95k software engineer role has a 10-year NPV of approximately $180,000–$240,000 at a 6% discount rate, with a break-even period of 1.5–2.5 years. The ROI is substantially higher than most MBA programs on a cost-per-dollar-returned basis.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "What is the ROI of a Google certificate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Google Data Analytics Certificate ($300, ~6 months) typically produces an annual salary impact of $10,000–$15,000, giving a 10-year NPV of $80,000–$120,000 at a 6% hurdle rate. It is one of the highest-ROI reskilling investments available.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Bootcamp or part-time Masters — which has better ROI?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bootcamps have shorter payback (12–18 months vs 3–5 years for an MS) and lower total investment. Part-time Masters produce larger long-term salary deltas for senior/management roles. If you need near-term income recovery, a bootcamp wins on NPV. If you're targeting senior technical or research roles, an MS may produce higher lifetime earnings.",
-      },
-    },
-  ],
-}
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {children}
+
     </>
   )
 }

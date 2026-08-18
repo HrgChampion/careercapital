@@ -16,6 +16,13 @@ import {
 import { DISCOUNT_RATE, PROJECTION_YEARS } from "@/lib/mbaEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
+
+const faqItems: FaqItem[] = [
+  { q: "How much does a career break affect your salary?", a: "Research by Harvard economist Claudia Goldin and LinkedIn's Economic Graph estimates a salary penalty of 3–7% per year of career break, with the penalty declining over 2–4 years as performance proves out. A 2-year break typically results in a 6–14% salary discount vs. peers at re-entry. In fast-moving fields like tech, the penalty can be higher (7–10% per year) due to skills obsolescence." },
+  { q: "What is the NPV of being underpaid by $15,000 per year?", a: "Being underpaid by $15,000/year has a 10-year NPV of approximately $110,000 at a 6% discount rate (assuming 3% annual raise). Over a 20-year career, the compounded lifetime earnings gap reaches $330,000–$450,000 including the effect of salary-based bonuses, 401k matches, and future salary negotiations anchored to a lower base." },
+  { q: "Should I ask for a raise or switch jobs to recover salary after a career break?", a: "Switching jobs typically produces a 15–25% salary increase vs. 5–10% for internal raises. However, job switches come with a 2–4 month search period (zero income delta) and the loss of institutional knowledge and tenure. The NPV crossover depends on your underpayment amount: if you're underpaid by more than $20,000/year, switching typically has higher NPV within 3–4 years." },
+]
 
 export default function SalaryBenchmarkCalculator() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -505,6 +512,10 @@ export default function SalaryBenchmarkCalculator() {
           </div>
         </section>
 
+      </div>
+
+      <div className="mx-auto w-full max-w-5xl px-6 pb-12">
+        <FaqSection items={faqItems} />
       </div>
 
       <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">

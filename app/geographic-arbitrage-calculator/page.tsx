@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useMemo } from "react"
 import { calculateArbitrage, CITIES } from "@/lib/geographicArbitrageEngine"
 import { formatCurrency } from "@/lib/locale"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 const CITY_KEYS = Object.keys(CITIES)
 
@@ -20,6 +21,12 @@ function formatYears(years: number): string {
   if (years < 1) return "< 1 year"
   return `${years.toFixed(1)} years`
 }
+
+const faqItems: FaqItem[] = [
+  { q: "What is geographic arbitrage?", a: "Geographic arbitrage is the practice of earning income in a high-wage market (like San Francisco or New York) while living in a lower cost-of-living location (like Lisbon, Medellín, or Chiang Mai). Remote workers can maintain their salary while dramatically reducing their expenses, increasing their purchasing power and accelerating their path to financial independence." },
+  { q: "How much can I save with geographic arbitrage?", a: "A $180,000 San Francisco salary translates to approximately $111,600 after federal and state taxes. In Lisbon, the same gross salary (taxed at Portugal's NHR regime at ~20%) yields $144,000 net, with a cost of living that is 58% lower. The result is a 2.1× wealth multiplier — a monthly surplus roughly 3× higher than in San Francisco, allowing financial independence years earlier." },
+  { q: "What are the best cities for geographic arbitrage in 2026?", a: "Top destinations for US remote workers in 2026 include Lisbon (Portugal), Medellín (Colombia), Chiang Mai (Thailand), Bali (Indonesia), Tallinn (Estonia), Prague (Czech Republic), and Mexico City. All offer low cost of living, digital nomad visas or residency programs, reliable internet, and strong expat communities. Dubai is notable for its 0% income tax." },
+]
 
 export default function GeographicArbitrageCalculatorPage() {
   const [grossSalary, setGrossSalary] = useState(150000)
@@ -305,6 +312,10 @@ export default function GeographicArbitrageCalculatorPage() {
           ))}
         </div>
       </section>
+    <div className="mx-auto w-full max-w-5xl px-6 pb-12">
+      <FaqSection items={faqItems} />
+    </div>
+
     </main>
   )
 }

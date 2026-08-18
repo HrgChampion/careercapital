@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "MBA Payback Period Calculator 2026: 4.2–13 Yrs (Exact Math by Industry)",
@@ -21,6 +22,14 @@ const paybackByTrack = [
   { track: "Top-Tier Online MBA (promotion path)", years: 2.8, maxYears: 13, color: "bg-sky-500", textColor: "text-sky-400", irr: "28%", note: "No opportunity cost + low tuition = fastest non-veteran payback" },
   { track: "Military Veteran → MBB (GI Bill + Yellow Ribbon)", years: 2.0, maxYears: 13, color: "bg-blue-400", textColor: "text-blue-300", irr: "40–55%", note: "GI Bill eliminates tuition; 2.0 yr payback is the dataset floor" },
   { track: "Nonprofit / Government (M7, no scholarship)", years: 13.1, maxYears: 13, color: "bg-red-500", textColor: "text-red-400", irr: "4%", note: "Negative NPV at sticker. PSLF is the only scenario that works." },
+]
+
+const faqItems: FaqItem[] = [
+  { q: "How long does it take to pay back an MBA?", a: "The average MBA payback period is 4–8 years depending on career track. Consulting (MBB) payback is approximately 4.2 years. Investment banking is approximately 4.5 years. Tech product management is approximately 6.1 years. General management payback ranges from 7–10 years. Online MBA payback is 2–3 years due to lower total cost." },
+  { q: "What factors affect the MBA payback period?", a: "The five primary factors are: (1) Post-MBA salary delta — the single most powerful variable. (2) Total economic cost including foregone salary, not tuition alone. (3) Loan interest rate and debt level, which increase early annual payments. (4) Pre-MBA salary — higher pre-MBA salaries increase the opportunity cost hole. (5) Career track — consulting compresses payback the most." },
+  { q: "How is MBA break-even calculated?", a: "MBA break-even is the year when cumulative post-graduation cash flows (salary delta minus loan payments) offset the total economic cost (tuition + living + foregone salary). The calculation requires year-by-year cash flow modeling, not a simple division. Discount rates affect present-value break-even differently than nominal break-even." },
+  { q: "Is 8 years a good MBA payback period?", a: "An 8-year payback is at the upper limit of financial justification for most MBA programs. At M7 tuition levels ($280K–$360K total cost), an 8-year payback implies a modest salary delta of approximately $35K–$45K per year. This indicates either a high pre-MBA salary (compressed delta) or a modest post-MBA outcome — both signal weak financial justification at M7 cost." },
+  { q: "How does foregone salary affect MBA payback?", a: "Foregone salary is often the largest single cost in MBA ROI calculations, exceeding tuition for high earners. A candidate earning $120K pre-MBA foregoes approximately $220K–$240K gross over two years (after accounting for living expenses). This adds to the total cost hole that post-MBA salary delta must overcome, extending payback by 1–3 years versus lower-earning peers." },
 ]
 
 export default function MbaPaybackPeriodPage() {
@@ -221,6 +230,8 @@ export default function MbaPaybackPeriodPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -243,10 +254,6 @@ export default function MbaPaybackPeriodPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take to pay back an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "The average MBA payback period is 4–8 years depending on career track. Consulting (MBB) payback is approximately 4.2 years. Investment banking is approximately 4.5 years. Tech product management is approximately 6.1 years. General management payback ranges from 7–10 years. Online MBA payback is 2–3 years due to lower total cost."}}, {"@type": "Question", "name": "What factors affect the MBA payback period?", "acceptedAnswer": {"@type": "Answer", "text": "The five primary factors are: (1) Post-MBA salary delta — the single most powerful variable. (2) Total economic cost including foregone salary, not tuition alone. (3) Loan interest rate and debt level, which increase early annual payments. (4) Pre-MBA salary — higher pre-MBA salaries increase the opportunity cost hole. (5) Career track — consulting compresses payback the most."}}, {"@type": "Question", "name": "How is MBA break-even calculated?", "acceptedAnswer": {"@type": "Answer", "text": "MBA break-even is the year when cumulative post-graduation cash flows (salary delta minus loan payments) offset the total economic cost (tuition + living + foregone salary). The calculation requires year-by-year cash flow modeling, not a simple division. Discount rates affect present-value break-even differently than nominal break-even."}}, {"@type": "Question", "name": "Is 8 years a good MBA payback period?", "acceptedAnswer": {"@type": "Answer", "text": "An 8-year payback is at the upper limit of financial justification for most MBA programs. At M7 tuition levels ($280K–$360K total cost), an 8-year payback implies a modest salary delta of approximately $35K–$45K per year. This indicates either a high pre-MBA salary (compressed delta) or a modest post-MBA outcome — both signal weak financial justification at M7 cost."}}, {"@type": "Question", "name": "How does foregone salary affect MBA payback?", "acceptedAnswer": {"@type": "Answer", "text": "Foregone salary is often the largest single cost in MBA ROI calculations, exceeding tuition for high earners. A candidate earning $120K pre-MBA foregoes approximately $220K–$240K gross over two years (after accounting for living expenses). This adds to the total cost hole that post-MBA salary delta must overcome, extending payback by 1–3 years versus lower-earning peers."}}]}) }}
-      />
     </main>
   )
 }

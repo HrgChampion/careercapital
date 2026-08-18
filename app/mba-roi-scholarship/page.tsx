@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "MBA Scholarship ROI 2026: How 50% Aid Cuts Break-Even From 8 to 4 Years",
@@ -7,6 +8,14 @@ export const metadata = {
     "Exact math: $65K scholarship shifts MBA payback from 8 yrs to 4 yrs. When to take the lower-ranked school with full aid. Scholarship negotiation data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-scholarship"),
 }
+
+const faqItems: FaqItem[] = [
+  { q: "How much does a 50% scholarship change MBA ROI?", a: "A 50% merit scholarship on a $160K tuition program ($80K scholarship) reduces total economic cost by approximately $80K, improving NPV by $80K–$100K after tax. The IRR improves by approximately 6–10 percentage points. For programs where full-cost ROI is marginal, a 50% scholarship can shift the outcome from negative to strongly positive NPV." },
+  { q: "Should I take a lower-ranked MBA with a full scholarship?", a: "This depends on post-MBA salary outcomes. If the lower-ranked school places into the same salary outcome (e.g., local MBB office or regional finance roles) as a higher-ranked school, a full scholarship almost always wins on NPV. If the higher-ranked school provides access to employers that will not recruit from the lower-ranked school, the salary delta may justify the tuition difference." },
+  { q: "Can I negotiate MBA scholarships?", a: "Yes. Merit scholarships are frequently negotiable, especially when you have competing offers from peer schools. Providing a competing offer letter to the admissions office and requesting a scholarship match or increase succeeds in approximately 30–50% of cases at T15–T25 programs. M7 programs are more conservative but may improve offers to retain preferred candidates." },
+  { q: "What is the break-even difference between a scholarship and no scholarship?", a: "At a $160K tuition M7 program: no scholarship breaks even in approximately 5.8 years for a consulting track; a 50% scholarship breaks even in approximately 4.0 years. The 1.8-year break-even compression is significant and represents approximately $80K–$120K in additional NPV over a 10-year projection." },
+  { q: "Does scholarship affect MBA prestige or networking?", a: "No. Scholarships at M7 programs do not affect degree prestige, employer perception, or alumni network access. The school name and MBA credential are identical regardless of scholarship amount. Scholarship recipients and full-pay students attend the same classes and recruit through the same channels." },
+]
 
 export default function MbaRoiScholarshipPage() {
   return (
@@ -390,6 +399,8 @@ export default function MbaRoiScholarshipPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -412,10 +423,6 @@ export default function MbaRoiScholarshipPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does a 50% scholarship change MBA ROI?", "acceptedAnswer": {"@type": "Answer", "text": "A 50% merit scholarship on a $160K tuition program ($80K scholarship) reduces total economic cost by approximately $80K, improving NPV by $80K–$100K after tax. The IRR improves by approximately 6–10 percentage points. For programs where full-cost ROI is marginal, a 50% scholarship can shift the outcome from negative to strongly positive NPV."}}, {"@type": "Question", "name": "Should I take a lower-ranked MBA with a full scholarship?", "acceptedAnswer": {"@type": "Answer", "text": "This depends on post-MBA salary outcomes. If the lower-ranked school places into the same salary outcome (e.g., local MBB office or regional finance roles) as a higher-ranked school, a full scholarship almost always wins on NPV. If the higher-ranked school provides access to employers that will not recruit from the lower-ranked school, the salary delta may justify the tuition difference."}}, {"@type": "Question", "name": "Can I negotiate MBA scholarships?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Merit scholarships are frequently negotiable, especially when you have competing offers from peer schools. Providing a competing offer letter to the admissions office and requesting a scholarship match or increase succeeds in approximately 30–50% of cases at T15–T25 programs. M7 programs are more conservative but may improve offers to retain preferred candidates."}}, {"@type": "Question", "name": "What is the break-even difference between a scholarship and no scholarship?", "acceptedAnswer": {"@type": "Answer", "text": "At a $160K tuition M7 program: no scholarship breaks even in approximately 5.8 years for a consulting track; a 50% scholarship breaks even in approximately 4.0 years. The 1.8-year break-even compression is significant and represents approximately $80K–$120K in additional NPV over a 10-year projection."}}, {"@type": "Question", "name": "Does scholarship affect MBA prestige or networking?", "acceptedAnswer": {"@type": "Answer", "text": "No. Scholarships at M7 programs do not affect degree prestige, employer perception, or alumni network access. The school name and MBA credential are identical regardless of scholarship amount. Scholarship recipients and full-pay students attend the same classes and recruit through the same channels."}}]}) }}
-      />
     </main>
   )
 }

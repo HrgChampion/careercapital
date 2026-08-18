@@ -11,6 +11,7 @@ import {
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 // ─── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -84,6 +85,12 @@ type GapBasicInputs = {
   breakDurationYears: number
   peerGrowthRate: number
 }
+
+const faqItems: FaqItem[] = [
+  { q: "How much does a 2-year career break cost in earnings?", a: "A 2-year career break on a $90,000 salary costs approximately $187,000–$210,000 in foregone earnings (including missed raises). The NPV of this loss, discounted at 6%, is $155,000–$175,000. Long-term salary trajectory impact can add another $50,000–$100,000 over a decade." },
+  { q: "Is a returnship better than direct re-entry after a career break?", a: "Returnships beat direct re-entry financially when their conversion rate exceeds approximately 55-65%. Amazon Returnship (90% conversion) and Goldman Sachs Returnship (85%) clear this threshold easily, making them financially superior to direct re-entry for most 2+ year gaps." },
+  { q: "What is the salary penalty for a career break?", a: "Research estimates a salary penalty of 3–7% per year of career break. A 2-year break typically results in a 6–14% discount vs. peers at re-entry. The penalty erodes over 2–4 years as performance proves out." },
+]
 
 export default function CareerGapCalculator() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -469,6 +476,10 @@ export default function CareerGapCalculator() {
           ))}
         </div>
       </section>
+
+      <div className="mx-auto w-full max-w-5xl px-6 pb-12">
+        <FaqSection items={faqItems} />
+      </div>
 
       <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
         <p>

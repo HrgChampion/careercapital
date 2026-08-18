@@ -2,6 +2,7 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 const _articleSchema = articleSchema({
   title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
@@ -30,6 +31,14 @@ export const metadata = {
     description: "Full cost breakdown, IRR by school tier, ROI vs the stock market.",
   },
 }
+
+const faqItems: FaqItem[] = [
+  { q: "Is an MBA worth it financially in 2026?", a: "An MBA is worth it financially when the post-MBA salary delta generates a positive net present value after accounting for tuition, living costs, foregone income, and loan repayment. At M7 programs targeting consulting or finance, the numbers typically work. At programs outside the top 25 with modest salary uplifts, they often do not. School tier, target industry, total cost, and financing structure are the determining variables." },
+  { q: "Is MBA ROI higher than investing in the stock market?", a: "At M7 programs targeting management consulting or investment banking, MBA IRR typically ranges from 18–24%, significantly above the S&P 500's long-run 8–10% return. At regional programs with modest salary uplifts and significant debt, MBA IRR can fall below stock market returns. The comparison depends entirely on the school, sector, and financing structure." },
+  { q: "How much does an MBA increase your salary?", a: "MBA salary increases range from 40% at regional programs targeting general management to over 110% at M7 programs placing into MBB consulting or investment banking. The median pre-MBA salary for full-time program applicants is approximately $85,000. Post-MBA M7 graduates entering consulting earn $190,000–$215,000 base salary, while finance roles start at $200,000–$250,000." },
+  { q: "How long does it take to break even on an MBA?", a: "MBA break-even ranges from 4–6 years for M7 programs with consulting or finance placement, to 7–10 years for regional programs targeting general management, to 2–3 years for online or part-time programs. The break-even calculation depends on total economic cost (tuition plus foregone income), salary delta, loan structure, and interest rate — not just tuition." },
+  { q: "What is the ROI of an MBA from a top school?", a: "MBA ROI at top (M7) programs targeting high-compensation sectors produces an IRR of 18–24% for consulting placements and 15–22% for investment banking placements. These returns exceed the long-run equity market return and represent a strongly positive net present value over a 10-year projection horizon. ROI falls significantly at programs outside the top 20 or when targeting lower-salary sectors." },
+]
 
 export default function MbaWorthItPage() {
   return (
@@ -366,63 +375,15 @@ export default function MbaWorthItPage() {
           ]}
         />
 
+        <FaqSection items={faqItems} />
+
         <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Is an MBA worth it financially in 2026?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "An MBA is worth it financially when the post-MBA salary delta generates a positive net present value after accounting for tuition, living costs, foregone income, and loan repayment. At M7 programs targeting consulting or finance, the numbers typically work. At programs outside the top 25 with modest salary uplifts, they often do not. School tier, target industry, total cost, and financing structure are the determining variables.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is MBA ROI higher than investing in the stock market?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "At M7 programs targeting management consulting or investment banking, MBA IRR typically ranges from 18–24%, significantly above the S&P 500's long-run 8–10% return. At regional programs with modest salary uplifts and significant debt, MBA IRR can fall below stock market returns. The comparison depends entirely on the school, sector, and financing structure.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How much does an MBA increase your salary?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "MBA salary increases range from 40% at regional programs targeting general management to over 110% at M7 programs placing into MBB consulting or investment banking. The median pre-MBA salary for full-time program applicants is approximately $85,000. Post-MBA M7 graduates entering consulting earn $190,000–$215,000 base salary, while finance roles start at $200,000–$250,000.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How long does it take to break even on an MBA?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "MBA break-even ranges from 4–6 years for M7 programs with consulting or finance placement, to 7–10 years for regional programs targeting general management, to 2–3 years for online or part-time programs. The break-even calculation depends on total economic cost (tuition plus foregone income), salary delta, loan structure, and interest rate — not just tuition.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What is the ROI of an MBA from a top school?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "MBA ROI at top (M7) programs targeting high-compensation sectors produces an IRR of 18–24% for consulting placements and 15–22% for investment banking placements. These returns exceed the long-run equity market return and represent a strongly positive net present value over a 10-year projection horizon. ROI falls significantly at programs outside the top 20 or when targeting lower-salary sectors.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
+
     </main>
   )
 }

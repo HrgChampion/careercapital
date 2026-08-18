@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "MBA ROI for Engineers 2026: Should a SWE Get an MBA?",
@@ -18,6 +19,14 @@ export const metadata = {
     description: "High pre-MBA salary compresses the delta. SWE→PM, consulting path & equity vesting cliff — exact ROI math for engineers. Decision framework.",
   },
 }
+
+const faqItems: FaqItem[] = [
+  { q: "Is an MBA worth it for software engineers?", a: "For software engineers earning $150K–$200K pre-MBA, the compressed salary delta makes the MBA math difficult. A SWE targeting product management at $200K–$220K faces only a $20K–$50K annual delta, producing a 10-year NPV that is often negative or marginal at M7 tuition. The MBA math works better for engineers targeting consulting or finance, where the delta is $80K–$120K." },
+  { q: "Is an MBA worth it for a data scientist?", a: "For most data scientists, an MBA is not financially justified. Senior data scientists and ML engineers at FAANG earn $180k–$350k+ total compensation — more than most post-MBA roles deliver in Year 1. The MBA case is only strong for data analysts and junior data scientists at non-FAANG companies (earning $85k–$120k) who are targeting a pivot to MBB consulting or corporate strategy, where the annual salary delta exceeds $80k. For senior data roles, the opportunity cost of forfeited equity and salary makes the MBA math deeply negative." },
+  { q: "What is the MBA ROI for engineers targeting consulting?", a: "Engineers targeting MBB consulting through an M7 MBA face a salary delta of $80K–$120K over their pre-MBA engineering salary. This produces an IRR of 15–22% and break-even in 4–6 years — a strong ROI case. Engineers with high pre-MBA salaries ($150K+) face a compressed delta even into consulting, reducing ROI by 3–5 percentage points." },
+  { q: "Is an MBA worth it for a senior engineer?", a: "For senior engineers (Staff, Principal) earning $250K–$400K total compensation, the MBA opportunity cost is extreme and the post-MBA salary uplift rarely closes the gap. An MBA is rarely financially justified for engineers beyond L6/Senior II. The exception is a deliberate career pivot to finance, private equity, or a senior corporate role where the credential gap is real." },
+  { q: "Which MBA programs are best for engineering backgrounds?", a: "MIT Sloan, Booth, and Kellogg have strong quantitative programs that leverage engineering backgrounds. Wharton is ideal for engineers targeting finance. HBS and Stanford GSB are strong for entrepreneurship and tech product leadership. All M7 programs recruit engineers for MBB consulting, which values analytical and problem-structuring skills." },
+]
 
 export default function MbaRoiEngineersPage() {
   return (
@@ -494,6 +503,8 @@ export default function MbaRoiEngineersPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -516,10 +527,6 @@ export default function MbaRoiEngineersPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA worth it for software engineers?", "acceptedAnswer": {"@type": "Answer", "text": "For software engineers earning $150K–$200K pre-MBA, the compressed salary delta makes the MBA math difficult. A SWE targeting product management at $200K–$220K faces only a $20K–$50K annual delta, producing a 10-year NPV that is often negative or marginal at M7 tuition. The MBA math works better for engineers targeting consulting or finance, where the delta is $80K–$120K."}}, {"@type": "Question", "name": "Is an MBA worth it for a data scientist?", "acceptedAnswer": {"@type": "Answer", "text": "For most data scientists, an MBA is not financially justified. Senior data scientists and ML engineers at FAANG earn $180k–$350k+ total compensation — more than most post-MBA roles deliver in Year 1. The MBA case is only strong for data analysts and junior data scientists at non-FAANG companies (earning $85k–$120k) who are targeting a pivot to MBB consulting or corporate strategy, where the annual salary delta exceeds $80k. For senior data roles, the opportunity cost of forfeited equity and salary makes the MBA math deeply negative."}}, {"@type": "Question", "name": "What is the MBA ROI for engineers targeting consulting?", "acceptedAnswer": {"@type": "Answer", "text": "Engineers targeting MBB consulting through an M7 MBA face a salary delta of $80K–$120K over their pre-MBA engineering salary. This produces an IRR of 15–22% and break-even in 4–6 years — a strong ROI case. Engineers with high pre-MBA salaries ($150K+) face a compressed delta even into consulting, reducing ROI by 3–5 percentage points."}}, {"@type": "Question", "name": "Is an MBA worth it for a senior engineer?", "acceptedAnswer": {"@type": "Answer", "text": "For senior engineers (Staff, Principal) earning $250K–$400K total compensation, the MBA opportunity cost is extreme and the post-MBA salary uplift rarely closes the gap. An MBA is rarely financially justified for engineers beyond L6/Senior II. The exception is a deliberate career pivot to finance, private equity, or a senior corporate role where the credential gap is real."}}, {"@type": "Question", "name": "Which MBA programs are best for engineering backgrounds?", "acceptedAnswer": {"@type": "Answer", "text": "MIT Sloan, Booth, and Kellogg have strong quantitative programs that leverage engineering backgrounds. Wharton is ideal for engineers targeting finance. HBS and Stanford GSB are strong for entrepreneurship and tech product leadership. All M7 programs recruit engineers for MBB consulting, which values analytical and problem-structuring skills."}}]}) }}
-      />
     </main>
   )
 }

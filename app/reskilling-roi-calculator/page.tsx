@@ -12,6 +12,7 @@ import {
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 // ─── Color helpers ──────────────────────────────────────────────────────────────
 
@@ -62,6 +63,12 @@ const DEFAULTS: Inputs = {
   loanAmount: 0,
   loanInterestRate: 0.06,
 }
+
+const faqItems: FaqItem[] = [
+  { q: "Is a coding bootcamp worth it financially?", a: "A $15,000 full-stack bootcamp targeting a $95k software engineer role has a 10-year NPV of approximately $180,000–$240,000 at a 6% discount rate, with a break-even period of 1.5–2.5 years. The ROI is substantially higher than most MBA programs on a cost-per-dollar-returned basis." },
+  { q: "What is the ROI of a Google certificate?", a: "The Google Data Analytics Certificate ($300, ~6 months) typically produces an annual salary impact of $10,000–$15,000, giving a 10-year NPV of $80,000–$120,000 at a 6% hurdle rate. It is one of the highest-ROI reskilling investments available." },
+  { q: "Bootcamp or part-time Masters — which has better ROI?", a: "Bootcamps have shorter payback (12–18 months vs 3–5 years for an MS) and lower total investment. Part-time Masters produce larger long-term salary deltas for senior/management roles. If you need near-term income recovery, a bootcamp wins on NPV. If you're targeting senior technical or research roles, an MS may produce higher lifetime earnings." },
+]
 
 export default function ReskillingCalculator() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -434,6 +441,10 @@ export default function ReskillingCalculator() {
           Sensitivity analysis applies ±10% to salary delta while holding all other variables constant.
         </p>
       </section>
+
+      <div className="mx-auto w-full max-w-5xl px-6 pb-12">
+        <FaqSection items={faqItems} />
+      </div>
 
       <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
         <p>

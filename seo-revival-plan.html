@@ -1,0 +1,472 @@
+<title>CareerReturns Search Revival</title>
+<style>
+:root{
+  --ground:#F4F6F8; --surface:#FFFFFF; --surface-2:#EDF0F4;
+  --ink:#0E1620; --ink-2:#33414F; --muted:#5C6874; --hairline:#DCE2E9;
+  --critical:#B23A2E; --critical-bg:#F7E9E7;
+  --warn:#A0690A; --warn-bg:#F9F0DE;
+  --ok:#0F6355; --ok-bg:#E4F0ED;
+  --accent:#1B5E8C; --accent-bg:#E6EFF6;
+  --serif:ui-serif,Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1116; --surface:#141B23; --surface-2:#1B242E;
+    --ink:#E7EDF3; --ink-2:#BAC6D2; --muted:#8795A3; --hairline:#243039;
+    --critical:#E87764; --critical-bg:#2B1A18;
+    --warn:#DDA33F; --warn-bg:#2A2113;
+    --ok:#4FBBA5; --ok-bg:#12261F;
+    --accent:#6BADDD; --accent-bg:#122430;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C1116; --surface:#141B23; --surface-2:#1B242E;
+  --ink:#E7EDF3; --ink-2:#BAC6D2; --muted:#8795A3; --hairline:#243039;
+  --critical:#E87764; --critical-bg:#2B1A18;
+  --warn:#DDA33F; --warn-bg:#2A2113;
+  --ok:#4FBBA5; --ok-bg:#12261F;
+  --accent:#6BADDD; --accent-bg:#122430;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+.col{max-width:70ch}
+.eyebrow{
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 10px;
+}
+h1{
+  font-family:var(--serif); font-weight:600; font-size:clamp(34px,5vw,54px);
+  line-height:1.08; letter-spacing:-.02em; margin:0 0 18px; text-wrap:balance;
+}
+h2{
+  font-family:var(--serif); font-weight:600; font-size:clamp(24px,3vw,32px);
+  line-height:1.2; letter-spacing:-.015em; margin:0 0 6px; text-wrap:balance;
+}
+h3{font-family:var(--sans); font-weight:650; font-size:17px; line-height:1.35; margin:0 0 6px}
+p{margin:0 0 14px; color:var(--ink-2)}
+a{color:var(--accent)}
+strong{color:var(--ink); font-weight:650}
+code{font-family:var(--mono); font-size:.86em; background:var(--surface-2); padding:1px 5px; border-radius:3px; color:var(--ink)}
+
+/* ── masthead ── */
+header.mast{border-bottom:1px solid var(--hairline); background:var(--surface); padding:56px 0 0}
+.verdict{
+  display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;
+  font-family:var(--mono); font-size:12px; letter-spacing:.06em; margin:0 0 22px;
+}
+.tag{
+  padding:3px 9px; border-radius:3px; text-transform:uppercase; letter-spacing:.1em; font-size:10.5px;
+}
+.tag.crit{background:var(--critical-bg); color:var(--critical)}
+.tag.ok{background:var(--ok-bg); color:var(--ok)}
+.lede{font-size:19px; line-height:1.55; color:var(--ink-2); max-width:66ch}
+.lede b{color:var(--ink)}
+
+/* ── stat strip ── */
+.stats{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr));
+  gap:0; margin:40px 0 0; border-top:1px solid var(--hairline);
+}
+.stat{padding:20px 20px 22px; border-right:1px solid var(--hairline)}
+.stat:last-child{border-right:none}
+.stat .k{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:7px}
+.stat .v{font-family:var(--serif); font-size:32px; line-height:1; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.stat .s{font-size:12.5px; color:var(--muted); display:block; margin-top:6px; line-height:1.4}
+.v.crit{color:var(--critical)} .v.warn{color:var(--warn)} .v.ok{color:var(--ok)}
+
+section{padding:64px 0}
+section + section{border-top:1px solid var(--hairline)}
+.sec-head{margin-bottom:32px; max-width:68ch}
+
+/* ── chart ── */
+.chartcard{background:var(--surface); border:1px solid var(--hairline); border-radius:6px; padding:24px 20px 16px}
+.chartwrap{overflow-x:auto}
+svg{display:block}
+.legend{display:flex; gap:20px; flex-wrap:wrap; font-family:var(--mono); font-size:11px; color:var(--muted); margin-top:14px; padding-top:14px; border-top:1px solid var(--hairline)}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:-1px}
+.caption{font-size:13px; color:var(--muted); margin:14px 0 0; max-width:80ch}
+
+/* ── findings ── */
+.findings{display:flex; flex-direction:column; gap:14px}
+.finding{
+  background:var(--surface); border:1px solid var(--hairline); border-left:3px solid var(--muted);
+  border-radius:0 5px 5px 0; padding:18px 20px;
+}
+.finding.crit{border-left-color:var(--critical)}
+.finding.warn{border-left-color:var(--warn)}
+.finding.info{border-left-color:var(--accent)}
+.fmeta{font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); margin-bottom:8px}
+.finding p{margin:0; font-size:14.5px; line-height:1.6}
+.finding p + p{margin-top:9px}
+
+/* ── timeline ── */
+.tl{display:flex; flex-direction:column; gap:0; border-left:1px solid var(--hairline); margin-left:8px}
+.ev{padding:0 0 26px 26px; position:relative}
+.ev:last-child{padding-bottom:0}
+.ev::before{
+  content:""; position:absolute; left:-5px; top:6px; width:9px; height:9px;
+  border-radius:50%; background:var(--surface); border:2px solid var(--muted);
+}
+.ev.hit::before{background:var(--critical); border-color:var(--critical)}
+.ev.blip::before{background:var(--warn); border-color:var(--warn)}
+.ev .d{font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; color:var(--muted); display:block; margin-bottom:3px}
+.ev p{margin:4px 0 0; font-size:14.5px}
+
+/* ── tables ── */
+.tablewrap{overflow-x:auto; border:1px solid var(--hairline); border-radius:6px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:14px; min-width:560px}
+th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--muted); text-align:left; font-weight:400;
+  padding:12px 16px; border-bottom:1px solid var(--hairline); white-space:nowrap;
+}
+td{padding:11px 16px; border-bottom:1px solid var(--hairline); color:var(--ink-2); vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num{font-family:var(--mono); font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap}
+td.url{font-family:var(--mono); font-size:12.5px; color:var(--ink)}
+.pill{display:inline-block; font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; padding:2px 7px; border-radius:3px; white-space:nowrap}
+.pill.crit{background:var(--critical-bg); color:var(--critical)}
+.pill.warn{background:var(--warn-bg); color:var(--warn)}
+.pill.ok{background:var(--ok-bg); color:var(--ok)}
+.pill.info{background:var(--accent-bg); color:var(--accent)}
+
+/* ── phases ── */
+.phase{background:var(--surface); border:1px solid var(--hairline); border-radius:6px; padding:26px 26px 22px; margin-bottom:18px}
+.phase-head{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:6px}
+.phase-n{font-family:var(--mono); font-size:11px; letter-spacing:.12em; color:var(--muted); text-transform:uppercase}
+.phase h3{font-family:var(--serif); font-weight:600; font-size:22px; letter-spacing:-.01em; margin:0}
+.phase .when{font-family:var(--mono); font-size:11px; color:var(--muted); margin-left:auto}
+.goal{font-size:14.5px; color:var(--muted); margin:0 0 18px; padding-bottom:16px; border-bottom:1px solid var(--hairline)}
+ol.acts,ul.acts{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:13px}
+ol.acts li,ul.acts li{font-size:14.5px; line-height:1.6; color:var(--ink-2); padding-left:20px; position:relative}
+ol.acts li::before{
+  content:counter(step); counter-increment:step; position:absolute; left:0; top:1px;
+  font-family:var(--mono); font-size:11px; color:var(--muted);
+}
+ol.acts{counter-reset:step}
+ul.acts li::before{content:"—"; position:absolute; left:0; color:var(--muted)}
+.kpi{margin-top:18px; padding-top:16px; border-top:1px solid var(--hairline); font-size:13.5px; color:var(--muted)}
+.kpi b{font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--ink); display:block; margin-bottom:5px; font-weight:400}
+
+.note{background:var(--accent-bg); border-radius:5px; padding:18px 20px; font-size:14.5px; line-height:1.6; color:var(--ink-2)}
+.note b{color:var(--ink)}
+footer{border-top:1px solid var(--hairline); padding:32px 0 56px; font-family:var(--mono); font-size:11.5px; color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){.bar{transition:opacity .15s}}
+@media (max-width:640px){
+  section{padding:44px 0}
+  .stat{border-right:none; border-bottom:1px solid var(--hairline)}
+  .phase{padding:20px}
+  .phase .when{margin-left:0; width:100%}
+}
+</style>
+
+<header class="mast">
+  <div class="wrap">
+    <p class="eyebrow">Search Performance Forensics · careerreturns.com · 14 May – 13 Aug 2026</p>
+    <h1>The July 12 cliff, and how to climb back</h1>
+    <div class="verdict">
+      <span class="tag crit">Site-level demotion</span>
+      <span class="tag ok">Recoverable — no hard penalty</span>
+    </div>
+    <p class="lede">Organic impressions fell <b>94%</b> overnight on 12 July and never came back. The site is technically healthy — this is a <b>trust</b> problem, not a crawl problem. The most likely trigger is Google's July 2026 core update landing on a site that was carrying <b>210 fabricated FAQ answers</b> across 58% of its pages.</p>
+    <div class="stats">
+      <div class="stat"><span class="k">Impressions / day</span><span class="v crit">315 → 19</span><span class="s">−94%, sustained 33 days</span></div>
+      <div class="stat"><span class="k">Clicks after 12 Jul</span><span class="v crit">0</span><span class="s">on 29 of 33 days</span></div>
+      <div class="stat"><span class="k">Invisible FAQ schema</span><span class="v warn">49 / 84</span><span class="s">URLs · 210 phantom Q&amp;As</span></div>
+      <div class="stat"><span class="k">Never indexed</span><span class="v warn">16 / 84</span><span class="s">zero impressions in 3 months</span></div>
+      <div class="stat"><span class="k">Re-test days</span><span class="v ok">4</span><span class="s">Google is still sampling the site</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Exhibit A</p>
+      <h2>Daily impressions, 14 May – 13 Aug</h2>
+      <p>A ranking change decays. This does not decay — it steps off a ledge between 11 and 12 July and flatlines, with four full-volume days breaking the flatline.</p>
+    </div>
+    <div class="chartcard">
+      <div class="chartwrap"><svg id="chart" width="1060" height="300" role="img" aria-label="Daily search impressions collapsing from about 400 per day to under 20 per day on 12 July 2026, with four isolated recovery days on 30–31 July, 1 August and 10 August."></svg></div>
+      <div class="legend">
+        <span><i style="background:var(--accent)"></i>Impressions before cliff</span>
+        <span><i style="background:var(--critical)"></i>After 12 Jul</span>
+        <span><i style="background:var(--warn)"></i>Re-test days</span>
+        <span><i style="background:var(--ok)"></i>Days with clicks</span>
+      </div>
+    </div>
+    <p class="caption">The four re-test days matter more than the cliff itself. On 30–31 July and 1 August the site served <strong>1,233 impressions and 20 real clicks at 1.1–2.0% CTR</strong> — a <em>higher</em> click-through rate than its pre-cliff baseline — then vanished again on 2 August with no deploy in between. Google is periodically re-sampling the domain and deciding against it. That is an algorithmic confidence state, not a manual ban, and confidence states reverse.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Sequence</p>
+      <h2>What actually happened</h2>
+    </div>
+    <div class="col">
+      <div class="tl">
+        <div class="ev">
+          <span class="d">8 JUL — commit 211b3a4</span>
+          <h3>14 new templated pages shipped</h3>
+          <p>A keyword-driven batch goes live: <code>mba-scholarships</code>, <code>no-gmat-mba-roi</code>, <code>free-mba-programs</code>, <code>part-time-mba-roi</code> and ten more. <strong>Thirteen of them have never received a single impression since.</strong> They were published onto a domain with no authority budget to spend.</p>
+        </div>
+        <div class="ev">
+          <span class="d">9 JUL</span>
+          <h3>Google's July 2026 core update completes</h3>
+          <p>Google also confirms that smaller core updates now roll continuously without announcement.</p>
+        </div>
+        <div class="ev hit">
+          <span class="d">11–12 JUL — the cliff</span>
+          <h3>SERP volatility peaks; the site drops out</h3>
+          <p>Third-party volatility trackers hit 10.38 on 11 July and 9.83 on 12 July — among the highest readings of the year. Impressions go 397 → 85 → 17. Average position drifts from ~14 to ~28 and keeps sliding to 60+.</p>
+          <p>The same-day commit <code>d553bbc</code> "mobile performance improvemnet" is <strong>not</strong> the cause — it changes link underlines, text colours, a background gradient, the AdSense script strategy and a browserslist entry. Nothing indexable.</p>
+        </div>
+        <div class="ev blip">
+          <span class="d">30 JUL – 1 AUG</span>
+          <h3>Three normal days, then gone again</h3>
+          <p>Full pre-cliff volume returns with above-baseline CTR, then collapses on 2 August. No deployment occurred on 1 or 2 August. This rules out a code regression and confirms a server-side confidence toggle.</p>
+        </div>
+        <div class="ev blip">
+          <span class="d">10 AUG</span>
+          <h3>A fourth, smaller re-test</h3>
+          <p>111 impressions at average position 11.8 — the best positional reading in the entire post-cliff window — then back to single digits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Diagnosis</p>
+      <h2>Root cause</h2>
+      <p>A core update is the trigger, not the cause. Core updates re-score sites that were already sitting on thin ice. These are the things that put this domain on thin ice — in order of how much they matter.</p>
+    </div>
+    <div class="findings">
+      <div class="finding crit">
+        <p class="fmeta">Critical · Google policy violation · verified live</p>
+        <h3>210 FAQ answers that exist only in the markup</h3>
+        <p><strong>49 of 84 live URLs</strong> emit <code>FAQPage</code> structured data whose questions and answers appear <em>nowhere</em> on the rendered page. <code>/average-mba-salary</code> declares 11 Q&amp;As and shows none of them. <code>/mba-roi-healthcare</code>, <code>/mba-cost</code>, <code>/mba-worth-it</code>, <code>/executive-mba-roi</code> and roughly thirty others each declare five.</p>
+        <p>Google's structured data policy is explicit: mark up only content visible to users. Invisible markup is the textbook trigger for spammy-structured-markup enforcement, and at 58% of the site it is a domain-wide signal rather than a page-level slip. <strong>This is the single most likely reason the site lost trust rather than merely lost rankings.</strong></p>
+        <p>Two pages already do it correctly — <code>/post-mba-salary</code> and <code>/mba-roi-mckinsey</code> render a visible FAQ section matching their schema. That is the pattern to copy.</p>
+      </div>
+      <div class="finding warn">
+        <p class="fmeta">High · Quality dilution</p>
+        <h3>An index full of pages that never earned a visit</h3>
+        <p>16 of 84 URLs drew <strong>zero impressions across the full three months</strong>. Twelve more render under 400 visible words. Nineteen <code>mba-roi-*</code> pages target heavily overlapping intent using the same section skeleton — "Why X Has the Strongest MBA ROI" → "X Compensation Breakdown" → "Break-Even Model" → "Which Programs Place into X" → "Calculate Your X ROI" — with identical markup and class names beneath the swapped entity.</p>
+        <p>The prose itself is genuinely distinct (1–3% shingle overlap), so this is not copy-paste spam. But 86 pages published in five months in keyword-named bursts, against a domain with no link equity, reads as scale without substance.</p>
+      </div>
+      <div class="finding warn">
+        <p class="fmeta">High · The real ceiling</p>
+        <h3>No external authority, and nothing worth citing</h3>
+        <p>US impressions — 79% of all traffic — averaged <strong>position 23.4</strong>. That is page three. The site was never competing with Poets&amp;Quants, US News or mba.com; it was sitting below them waiting to be noticed. Five <code>Dataset</code> schema blocks assert first-party MBA salary datasets, yet no page cites a visible source for its figures and no page carries a named author.</p>
+        <p>This is why on-page work alone will not restore the site. Authority is the binding constraint.</p>
+      </div>
+      <div class="finding info">
+        <p class="fmeta">Medium · Cannibalisation</p>
+        <h3>Two URLs fighting for one query</h3>
+        <p><code>/marketing-mba-salary</code> and <code>/mba-roi-marketing</code> ship the <em>identical</em> title tag: "Marketing MBA Salary 2026: $130K–$155K Brand Management, CMO Track &amp; ROI Data". Both rank poorly (positions 32.7 and 37.3). Twenty-plus other titles exceed 62 characters and are being rewritten by Google.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Due diligence</p>
+      <h2>What this is not</h2>
+      <p>Each of these was tested and eliminated. Recording them matters — three of them have been proposed before.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Hypothesis</th><th>Verdict</th><th>Evidence</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Crawl / technical fault</strong></td><td><span class="pill ok">Ruled out</span></td><td>All 84 URLs return HTTP 200 to a Googlebot user-agent. <code>robots.txt</code> clean, sitemap valid, canonicals self-referencing and correct, no <code>noindex</code> anywhere, all top pages server-rendered, no <code>ssr:false</code>, no client-side redirects.</td></tr>
+          <tr><td><strong>The 12 July deploy</strong></td><td><span class="pill ok">Ruled out</span></td><td>Commit <code>d553bbc</code> is cosmetic: link underlines, two text colours, a CSS gradient, AdSense <code>strategy="lazyOnload"</code>, a browserslist key, and deletion of an unused <code>pages/_app.tsx</code>. Also fails to explain the 30 Jul – 1 Aug recovery, which had no deploy.</td></tr>
+          <tr><td><strong>Bot-impression purge</strong><br><span style="font-size:12.5px;color:var(--muted)">(the previous conclusion)</span></td><td><span class="pill crit">Disproven</span></td><td>The suspicious foreign long tail carries only <strong>7% of impressions</strong> (1,462 of 20,499) — purging all of it cannot yield −94%. 79% of impressions are US at position 23.4 / 0.66% CTR, which is <em>normal</em> for page three. Non-US CTR (1.17%) is <em>higher</em> than US, the opposite of bot inflation. And the re-test days produced 20 genuine clicks at above-baseline CTR. Bots do not click.</td></tr>
+          <tr><td><strong>Keyword-level de-ranking</strong></td><td><span class="pill ok">Ruled out</span></td><td>Zero queries disappeared between the July and August exports; 291 new queries appeared. The loss is date-shaped, not query-shaped — the signature of a site-level action.</td></tr>
+          <tr><td><strong>Duplicate content</strong></td><td><span class="pill ok">Ruled out</span></td><td>5-gram Jaccard similarity between <code>mba-roi-*</code> pages is 1.3–3.4%. The copy is genuinely written per page.</td></tr>
+          <tr><td><strong>Fake reviews / ratings</strong></td><td><span class="pill ok">Ruled out</span></td><td>No <code>aggregateRating</code>, <code>ratingValue</code>, <code>reviewCount</code> or <code>Review</code> anywhere in the codebase.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Before you plan</p>
+      <h2>"Peak" was not good</h2>
+    </div>
+    <div class="col">
+      <p>The three months in this export produced <strong>157 clicks</strong> — 1.7 per day — at a 0.66% click-through rate from an average position of 23. The pre-cliff run rate of 315 impressions a day was almost entirely page-three placement that nobody clicked.</p>
+      <p class="note"><b>Restoring the old numbers is the wrong goal.</b> Getting back to 315 impressions/day at position 23 returns the site to roughly two clicks a day. The plan below is built to fix the reason the site sat on page three in the first place — because that fix and the recovery fix are largely the same work.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The plan</p>
+      <h2>Five phases to a defensible recovery</h2>
+      <p>Sequenced deliberately. Phase 1 must ship before anything else, because every later investment compounds on a domain Google currently distrusts.</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="phase-n">Phase 0</span><h3>Confirm the diagnosis</h3><span class="when">Day 1 · ~2 hours</span></div>
+      <p class="goal">Two of these checks can only be done in the Search Console UI, and one of them could change the entire plan.</p>
+      <ol class="acts">
+        <li><strong>Search Console → Manual actions and Security issues.</strong> If a manual action for spammy structured markup is listed, Phase 1 still applies but must be followed by a reconsideration request — and recovery becomes a review queue rather than an algorithmic wait. Check this before writing any code.</li>
+        <li><strong>Search Console → Indexing → Pages.</strong> Compare the "Indexed" count either side of 12 July, and read the "Crawled – currently not indexed" and "Discovered – currently not indexed" buckets. Expect the 16 zero-impression URLs to appear there.</li>
+        <li><strong>Performance → compare 10 Jun–11 Jul against 13 Jul–13 Aug</strong>, broken out by page, country and device. If every page lost proportionally, it is site-level (as expected). If the loss concentrates in a handful of pages, the diagnosis narrows.</li>
+        <li><strong>Cross-check GA4 organic sessions</strong> across the same dates. If GA4 shows no corresponding drop, the problem is Search Console reporting rather than serving — and the plan changes completely.</li>
+      </ol>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="phase-n">Phase 1</span><h3>Stop the policy violation</h3><span class="when">Week 1 · non-negotiable</span></div>
+      <p class="goal">Nothing else moves the needle while 58% of the site is emitting structured data for content that does not exist.</p>
+      <ol class="acts">
+        <li><strong>Resolve all 210 invisible Q&amp;As across the 49 affected URLs.</strong> Per page, choose one: <em>render</em> the FAQ visibly (preferred where the answers genuinely help the reader), or <em>delete</em> the <code>FAQPage</code> block. Never keep schema the page does not show.</li>
+        <li><strong>Use the existing compliant pages as the reference implementation</strong> — <code>app/post-mba-salary/page.tsx</code> and <code>app/mba-roi-mckinsey/page.tsx</code> already render a visible <em>Frequently Asked Questions</em> section that matches their JSON-LD. Extract that into one shared <code>&lt;FaqSection&gt;</code> component that takes the same array used to build the schema, so the two can never diverge again.</li>
+        <li><strong>Fix the worst offenders first</strong> — <code>/average-mba-salary</code> (11 invisible), <code>/mba-roi-healthcare</code> (6), then the ~30 pages carrying five each.</li>
+        <li><strong>Audit the remaining schema.</strong> The five <code>Dataset</code> blocks claim first-party datasets with no visible sourcing — either cite the underlying employment reports on the page or drop the <code>Dataset</code> type. Keep <code>SoftwareApplication</code> + <code>Offer</code> only on pages that actually contain a working tool.</li>
+        <li><strong>Validate every changed page</strong> in the Rich Results Test and re-request indexing for the top 20 URLs.</li>
+      </ol>
+      <p class="kpi"><b>Done when</b>A crawl of all 84 URLs returns zero FAQ questions that are absent from visible text — the same check used to find them.</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="phase-n">Phase 2</span><h3>Cut the index down to what deserves to rank</h3><span class="when">Weeks 1–2</span></div>
+      <p class="goal">Shrink from 84 URLs to roughly 50. Every page that cannot win a query is diluting the ones that can.</p>
+      <ul class="acts">
+        <li><strong>The 16 zero-impression URLs</strong> — for each, either 301 into the strongest related page or expand it into something genuinely differentiated. Do not leave them live and empty. The 13 from the 8 July batch are the obvious redirect candidates.</li>
+        <li><strong>The 12 pages under 400 visible words</strong> — <code>/career-return-roadmap</code> (114), <code>/mba-myth-buster</code> (139), <code>/career-roi-score</code> (159), <code>/salary-negotiation-simulator</code> (177) and the rest — merge into topic hubs, keeping the tool and losing the standalone URL.</li>
+        <li><strong>Resolve the cannibalisation pair.</strong> Pick one of <code>/marketing-mba-salary</code> or <code>/mba-roi-marketing</code>, 301 the other, and give the survivor a unique title.</li>
+        <li><strong>Consolidate the 19 <code>mba-roi-*</code> pages</strong> into a smaller set of genuinely distinct pages plus one strong parent hub. Firm-level pages (McKinsey, Goldman) that earn impressions stay; overlapping abstractions (<code>/mba-roi-consulting</code> vs <code>/mba-roi-investment-banking</code> vs <code>/mba-roi-big4-vs-mbb</code>) collapse.</li>
+        <li><strong>Rewrite the 20+ titles over 62 characters</strong> so Google stops replacing them.</li>
+      </ul>
+      <p class="kpi"><b>Done when</b>Every remaining URL has earned at least one impression in the trailing 90 days, or is under 30 days old.</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="phase-n">Phase 3</span><h3>Make the survivors the best page on the query</h3><span class="when">Weeks 2–6</span></div>
+      <p class="goal">Eight pages carry the site. Moving <code>/post-mba-salary</code> from position 27.5 to single digits is worth more than twenty new pages.</p>
+      <div class="tablewrap" style="margin-bottom:18px">
+        <table>
+          <thead><tr><th>Page</th><th class="num">Impr.</th><th class="num">Clicks</th><th class="num">Pos.</th><th>Priority</th></tr></thead>
+          <tbody>
+            <tr><td class="url">/post-mba-salary</td><td class="num">5,420</td><td class="num">49</td><td class="num">27.5</td><td><span class="pill crit">Highest — most impressions, worst position</span></td></tr>
+            <tr><td class="url">/mba-salary-by-school</td><td class="num">3,770</td><td class="num">18</td><td class="num">13.3</td><td><span class="pill warn">Striking distance</span></td></tr>
+            <tr><td class="url">/average-mba-salary-after-5-years</td><td class="num">1,835</td><td class="num">12</td><td class="num">24.0</td><td><span class="pill crit">High volume, page 3</span></td></tr>
+            <tr><td class="url">/</td><td class="num">1,077</td><td class="num">6</td><td class="num">19.2</td><td><span class="pill info">Entity hub</span></td></tr>
+            <tr><td class="url">/mba-salary-increase</td><td class="num">1,050</td><td class="num">3</td><td class="num">35.3</td><td><span class="pill crit">Weakest position of the top set</span></td></tr>
+            <tr><td class="url">/mba-roi-goldman-sachs</td><td class="num">1,004</td><td class="num">26</td><td class="num">8.8</td><td><span class="pill ok">Already page 1 — protect it</span></td></tr>
+            <tr><td class="url">/mba-worth-it</td><td class="num">726</td><td class="num">2</td><td class="num">42.9</td><td><span class="pill warn">Head term, needs depth</span></td></tr>
+            <tr><td class="url">/mba-roi-calculator</td><td class="num">727</td><td class="num">4</td><td class="num">30.9</td><td><span class="pill warn">Money page</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="acts">
+        <li><strong>Cite real sources, visibly.</strong> Every salary figure should link to the school's published employment report with its publication date. This is the largest single E-E-A-T gap: the site asserts proprietary datasets while showing no provenance.</li>
+        <li><strong>Add a named author with credentials</strong> and a "last reviewed" date on every money page, backed by <code>Person</code> schema and a real <code>/about</code> bio. Financial-advice content without an author entity is structurally disadvantaged.</li>
+        <li><strong>Expose the calculator's output to crawlers.</strong> <code>/mba-roi-calculator</code> gates its results panel behind <code>if (!result) return</code> and its steps behind wizard state, so the most valuable content on the page never reaches the index. Server-render a worked default scenario.</li>
+        <li><strong>Rebuild internal linking around the eight pages above</strong>, with descriptive anchors from every related page.</li>
+        <li><strong>Refresh the frozen <code>lastmod</code> values</strong> in <code>app/sitemap.xml/route.ts</code> — currently hardcoded to 2026-06-21 and 2026-07-16 — to reflect genuine edits. Also drop the five identical <code>hreflang</code> alternates that all point at the same URL; they signal nothing.</li>
+      </ul>
+      <p class="kpi"><b>Target</b>Average position under 12 on all eight pages; CTR above 2%.</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="phase-n">Phase 4</span><h3>Build the authority that lifts the ceiling</h3><span class="when">Weeks 3–12 · runs in parallel</span></div>
+      <p class="goal">This is the binding constraint. Without referring domains the site returns to page three even after a perfect cleanup.</p>
+      <ul class="acts">
+        <li><strong>Ship the embeddable calculator widget.</strong> A previous session already built <code>/embed/mba-roi-calculator</code> and the <code>/mba-roi-widget</code> landing page with a copy-paste iframe snippet carrying an attribution backlink — verify it survived and deploy it. Every third-party embed is a referring domain plus referral traffic.</li>
+        <li><strong>Turn the data into something citable.</strong> An annual <em>MBA ROI Report</em> with original NPV/IRR analysis across schools is genuinely linkable — pitch it to Poets&amp;Quants, BusinessBecause, Fortune Education, Clear Admit and r/MBA. This is the one asset the site has that competitors do not.</li>
+        <li><strong>Respond to journalist requests</strong> (Qwoted, Featured, SourceBottle) on MBA financing, salary benchmarks and return-to-work economics. Two or three placements in tier-one outlets outweighs fifty directory links.</li>
+        <li><strong>Build the brand entity</strong> — consistent <code>Organization</code> schema, a real LinkedIn presence, and a Wikidata/Crunchbase footprint so Google can resolve CareerReturns as a known publisher.</li>
+      </ul>
+      <p class="kpi"><b>Target</b>15–25 new referring domains within 90 days, none of them paid or directory-tier.</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="phase-n">Phase 5</span><h3>Wait properly, and measure the right things</h3><span class="when">Ongoing</span></div>
+      <p class="goal">Algorithmic trust states are re-evaluated on Google's schedule, not yours. Set expectations accordingly.</p>
+      <ul class="acts">
+        <li><strong>Expect two distinct recovery signals.</strong> Schema and consolidation fixes surface within 2–4 weeks as pages are re-crawled. Site-level trust recovery typically requires a full core update cycle to process the cleaned domain — realistically 6–12 weeks, possibly longer.</li>
+        <li><strong>Freeze new page publishing until Phase 2 is complete.</strong> Publishing more pages onto a distrusted domain is the exact behaviour that created the exposure. The 8 July batch is the cautionary example.</li>
+        <li><strong>Watch the re-test days as the leading indicator.</strong> If 30 July–1 August style days become more frequent and last longer before Phase 4 lands, the Phase 1 cleanup is working.</li>
+        <li><strong>Export Search Console weekly</strong> and track: indexed page count, impressions on the eight priority pages, average position on those pages, referring domains, and days-with-clicks. Not total impressions — that metric misled the last diagnosis.</li>
+      </ul>
+      <p class="kpi"><b>90-day definition of success</b>25+ clicks/day, CTR above 2%, average position under 12 on the priority set, 50 lean URLs, 20 referring domains. Note that this is materially better than the pre-cliff "peak" of 1.7 clicks/day.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Sources: Google Search Console export, 14 May – 13 Aug 2026 · live crawl of all 84 sitemap URLs, 18 Aug 2026 · repository audit at commit 233774d · third-party SERP volatility trackers, July 2026.
+  </div>
+</footer>
+
+<script>
+const D=[['05-14',395,2],['05-15',497,0],['05-16',459,1],['05-17',370,0],['05-18',222,1],['05-19',114,2],['05-20',214,0],['05-21',136,1],['05-22',97,0],['05-23',215,3],['05-24',219,1],['05-25',275,0],['05-26',296,0],['05-27',385,1],['05-28',396,3],['05-29',382,4],['05-30',447,2],['05-31',372,2],['06-01',244,2],['06-02',197,2],['06-03',318,2],['06-04',194,1],['06-05',299,3],['06-06',304,3],['06-07',344,3],['06-08',376,1],['06-09',601,2],['06-10',296,2],['06-11',264,3],['06-12',265,1],['06-13',289,2],['06-14',217,1],['06-15',222,1],['06-16',295,0],['06-17',374,0],['06-18',294,1],['06-19',219,0],['06-20',291,2],['06-21',258,0],['06-22',386,1],['06-23',353,3],['06-24',344,2],['06-25',316,8],['06-26',292,5],['06-27',340,5],['06-28',306,3],['06-29',307,6],['06-30',328,1],['07-01',399,4],['07-02',300,3],['07-03',299,7],['07-04',268,4],['07-05',290,3],['07-06',374,3],['07-07',381,3],['07-08',430,8],['07-09',431,3],['07-10',417,4],['07-11',397,6],['07-12',85,0],['07-13',17,0],['07-14',17,0],['07-15',15,0],['07-16',6,0],['07-17',23,0],['07-18',5,0],['07-19',16,0],['07-20',27,0],['07-21',12,0],['07-22',18,0],['07-23',35,0],['07-24',11,0],['07-25',18,0],['07-26',26,0],['07-27',24,0],['07-28',23,0],['07-29',13,0],['07-30',280,6],['07-31',557,6],['08-01',396,8],['08-02',11,0],['08-03',16,0],['08-04',7,0],['08-05',18,0],['08-06',11,0],['08-07',8,0],['08-08',10,0],['08-09',16,0],['08-10',111,0],['08-11',9,0],['08-12',21,0],['08-13',27,0]];
+
+const W=1060,H=300,PL=44,PR=14,PT=26,PB=42;
+const iw=W-PL-PR, ih=H-PT-PB;
+const max=610, bw=iw/D.length, gap=1.6;
+const CLIFF=D.findIndex(d=>d[0]==='07-12');
+const RETEST=new Set(['07-30','07-31','08-01','08-10']);
+const NS='http://www.w3.org/2000/svg';
+const svg=document.getElementById('chart');
+const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+
+// gridlines
+[0,150,300,450,600].forEach(v=>{
+  const y=PT+ih-(v/max)*ih;
+  svg.appendChild(el('line',{x1:PL,x2:W-PR,y1:y,y2:y,stroke:'var(--hairline)','stroke-width':1}));
+  const t=el('text',{x:PL-9,y:y+4,'text-anchor':'end',fill:'var(--muted)','font-size':10,'font-family':'var(--mono)'});
+  t.textContent=v; svg.appendChild(t);
+});
+
+// cliff marker
+const cx=PL+CLIFF*bw;
+svg.appendChild(el('line',{x1:cx,x2:cx,y1:PT-8,y2:PT+ih,stroke:'var(--critical)','stroke-width':1,'stroke-dasharray':'3 3'}));
+const cl=el('text',{x:cx+6,y:PT-12,fill:'var(--critical)','font-size':11,'font-family':'var(--mono)','letter-spacing':'.06em'});
+cl.textContent='12 JUL — core update'; svg.appendChild(cl);
+
+// bars
+D.forEach((d,i)=>{
+  const [date,imp,clk]=d;
+  const h=Math.max((imp/max)*ih,1);
+  const x=PL+i*bw, y=PT+ih-h;
+  const fill = RETEST.has(date) ? 'var(--warn)' : (i<CLIFF ? 'var(--accent)' : 'var(--critical)');
+  const r=el('rect',{class:'bar',x:x+gap/2,y:y,width:Math.max(bw-gap,1),height:h,fill:fill,opacity:i<CLIFF?.85:1,rx:1});
+  const ttl=el('title'); ttl.textContent=`${date}: ${imp} impressions, ${clk} click${clk===1?'':'s'}`;
+  r.appendChild(ttl); svg.appendChild(r);
+  if(clk>0) svg.appendChild(el('circle',{cx:x+bw/2,cy:PT+ih+10,r:2.2,fill:'var(--ok)'}));
+});
+
+// x labels
+[['05-14','14 MAY'],['06-01','1 JUN'],['07-01','1 JUL'],['08-01','1 AUG'],['08-13','13 AUG']].forEach(([k,lab])=>{
+  const i=D.findIndex(d=>d[0]===k); if(i<0)return;
+  const t=el('text',{x:PL+i*bw+bw/2,y:H-14,'text-anchor':'middle',fill:'var(--muted)','font-size':10,'font-family':'var(--mono)','letter-spacing':'.06em'});
+  t.textContent=lab; svg.appendChild(t);
+});
+const yl=el('text',{x:PL-9,y:PT-10,'text-anchor':'end',fill:'var(--muted)','font-size':9.5,'font-family':'var(--mono)'});
+yl.textContent='IMPR'; svg.appendChild(yl);
+</script>

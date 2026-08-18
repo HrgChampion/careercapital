@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "MBA ROI in Tech 2026: FAANG PM Salary, Equity & Break-Even",
@@ -7,6 +8,14 @@ export const metadata = {
     "MBA into Google/Amazon/Meta: PM salary vs SWE track, RSU vesting cliff analysis, M7 vs no-MBA PM paths. IRR calculation for tech-focused MBA candidates →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-tech"),
 }
+
+const faqItems: FaqItem[] = [
+  { q: "Is an MBA worth it for a career in tech?", a: "An MBA is worth it for tech careers only when targeting roles that require the credential — primarily product management at large companies, strategy and operations at tech firms, or a transition to tech investment banking or venture capital. For engineers seeking senior IC roles, the MBA provides almost no additional value over direct promotion." },
+  { q: "What is the post-MBA salary in tech product management?", a: "Tech product managers at large companies (Google, Meta, Apple, Amazon) earn $200K–$280K total compensation in year one post-MBA, including base, bonus, and RSUs. Startups pay lower cash but higher equity. The variance in tech PM comp is substantial; RSU valuations at growth companies can produce dramatically higher effective compensation." },
+  { q: "How did post-2022 tech layoffs affect MBA ROI for tech careers?", a: "The 2022–2023 tech contraction significantly reduced recruiting for MBA PMs at large tech companies. Companies like Google, Meta, and Amazon cut MBA hiring by 30–60%. This increased the economic risk of the tech MBA path, extended break-even timelines, and pushed MBA candidates toward consulting as a more stable first post-MBA role." },
+  { q: "Is an MBA better for consulting or tech careers?", a: "Consulting produces a higher and more predictable MBA ROI than tech in most scenarios. MBB offers structured MBA recruitment, predictable salary growth, and broad exit options. Tech PM roles are less structured in MBA recruiting, more variable in compensation, and have contracted since 2022. For pure financial optimization, consulting is the stronger MBA destination." },
+  { q: "Which MBA programs place best into tech companies?", a: "Stanford GSB and MIT Sloan have the strongest tech placement due to Silicon Valley proximity and culture. Harvard Business School, Wharton, and Booth also place strongly into tech strategy and product roles. For companies like Google and Amazon, all M7 programs have strong placement relationships." },
+]
 
 export default function MbaRoiTechPage() {
   return (
@@ -189,6 +198,8 @@ export default function MbaRoiTechPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -213,10 +224,6 @@ export default function MbaRoiTechPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA worth it for a career in tech?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA is worth it for tech careers only when targeting roles that require the credential — primarily product management at large companies, strategy and operations at tech firms, or a transition to tech investment banking or venture capital. For engineers seeking senior IC roles, the MBA provides almost no additional value over direct promotion."}}, {"@type": "Question", "name": "What is the post-MBA salary in tech product management?", "acceptedAnswer": {"@type": "Answer", "text": "Tech product managers at large companies (Google, Meta, Apple, Amazon) earn $200K–$280K total compensation in year one post-MBA, including base, bonus, and RSUs. Startups pay lower cash but higher equity. The variance in tech PM comp is substantial; RSU valuations at growth companies can produce dramatically higher effective compensation."}}, {"@type": "Question", "name": "How did post-2022 tech layoffs affect MBA ROI for tech careers?", "acceptedAnswer": {"@type": "Answer", "text": "The 2022–2023 tech contraction significantly reduced recruiting for MBA PMs at large tech companies. Companies like Google, Meta, and Amazon cut MBA hiring by 30–60%. This increased the economic risk of the tech MBA path, extended break-even timelines, and pushed MBA candidates toward consulting as a more stable first post-MBA role."}}, {"@type": "Question", "name": "Is an MBA better for consulting or tech careers?", "acceptedAnswer": {"@type": "Answer", "text": "Consulting produces a higher and more predictable MBA ROI than tech in most scenarios. MBB offers structured MBA recruitment, predictable salary growth, and broad exit options. Tech PM roles are less structured in MBA recruiting, more variable in compensation, and have contracted since 2022. For pure financial optimization, consulting is the stronger MBA destination."}}, {"@type": "Question", "name": "Which MBA programs place best into tech companies?", "acceptedAnswer": {"@type": "Answer", "text": "Stanford GSB and MIT Sloan have the strongest tech placement due to Silicon Valley proximity and culture. Harvard Business School, Wharton, and Booth also place strongly into tech strategy and product roles. For companies like Google and Amazon, all M7 programs have strong placement relationships."}}]}) }}
-      />
     </main>
   )
 }

@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "Women Returning to Work (2026): 20+ Programs & How to Close the 15–22% Salary Gap",
+  title: "Women Returning to Work 2026: Programs & Pay Gap Guide",
   description:
     "Women face a 15–22% salary penalty returning after career breaks — nearly double the male gap. See 20+ returnship programs for women (Amazon, Goldman, Path Forward), stipends, conversion rates & the fastest recovery strategy.",
   alternates: pageAlternates("https://careerreturns.com/women-returning-to-work"),
@@ -119,6 +120,14 @@ const salaryData = [
   { industry: "Healthcare", womenPenalty: "8–12%", menPenalty: "4–8%", gap: "~4%", recoveryPath: "Direct re-entry + credential refresh" },
   { industry: "Marketing / Brand", womenPenalty: "10–14%", menPenalty: "5–9%", gap: "~5%", recoveryPath: "Portfolio rebuild + direct re-entry" },
   { industry: "Finance / Accounting", womenPenalty: "12–17%", menPenalty: "8–12%", gap: "~5%", recoveryPath: "Fidelity / JPMorgan returnship" },
+]
+
+const faqItems: FaqItem[] = [
+  { q: "What salary penalty do women face when returning to work after a career break?", a: "Women returning from career breaks face a salary penalty of 15–22% at re-entry, compared to 8–12% for men returning from equivalent breaks. The difference reflects compounding effects of the gender pay gap and bias against caregiving-motivated breaks, which are more common among women. Structured returnship programs eliminate 60–80% of this penalty by removing the gap signal from the hiring equation." },
+  { q: "What are the best return-to-work programs for women?", a: "The best return-to-work programs for women include: Path Forward (100+ partner companies, widest access), Amazon Returnship (90% conversion, $4,200/week), Goldman Sachs Returnship (highest post-program salary at $200k–$250k), Intuit Again (women-focused, flexible structure), JPMorgan ReEntry (longest-running program), McKinsey Accelerate (highest long-term NPV for consulting professionals), and iRelaunch (resource hub connecting to 60+ employer partners)." },
+  { q: "How do I return to work after a long career break as a woman?", a: "The most financially effective strategy for women returning after a long career break is: (1) Apply to returnship programs through Path Forward, iRelaunch, or directly with target companies — these eliminate the salary penalty and provide structured re-entry. (2) Conduct bridge activities before your job search: freelance projects, online courses, volunteer leadership roles. (3) Negotiate from current market data, not your pre-break salary. (4) Use a salary benchmark calculator to know your market percentile before any salary discussion." },
+  { q: "How does maternity leave affect your career long-term?", a: "Standard maternity leave (12–16 weeks) carries minimal career impact when returning to the same employer. The salary penalty research applies primarily to extended breaks of 1+ years. The 'motherhood penalty' in salary is statistically significant — women with children earn 5–8% less than childless women in equivalent roles — but is separate from the career break penalty. A structured return to the same employer, followed by renegotiation after 6–12 months with market data, is the most effective financial strategy after standard maternity leave." },
+  { q: "Which industries are most welcoming to women returning to work?", a: "Technology has the most structured programs for women returners — Amazon, Meta, Microsoft, Google, and PayPal all have active returnship programs. Financial services (Goldman Sachs, JPMorgan, Fidelity) have well-funded programs with high post-program salaries. Consulting (McKinsey, Deloitte, Accenture) and healthcare also have strong re-entry pipelines. Path Forward provides access to consumer goods, media, and retail companies through a single application platform." },
 ]
 
 export default function WomenReturningToWorkPage() {
@@ -420,6 +429,8 @@ export default function WomenReturningToWorkPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -438,57 +449,6 @@ export default function WomenReturningToWorkPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What salary penalty do women face when returning to work after a career break?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Women returning from career breaks face a salary penalty of 15–22% at re-entry, compared to 8–12% for men returning from equivalent breaks. The difference reflects compounding effects of the gender pay gap and bias against caregiving-motivated breaks, which are more common among women. Structured returnship programs eliminate 60–80% of this penalty by removing the gap signal from the hiring equation.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What are the best return-to-work programs for women?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "The best return-to-work programs for women include: Path Forward (100+ partner companies, widest access), Amazon Returnship (90% conversion, $4,200/week), Goldman Sachs Returnship (highest post-program salary at $200k–$250k), Intuit Again (women-focused, flexible structure), JPMorgan ReEntry (longest-running program), McKinsey Accelerate (highest long-term NPV for consulting professionals), and iRelaunch (resource hub connecting to 60+ employer partners).",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How do I return to work after a long career break as a woman?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "The most financially effective strategy for women returning after a long career break is: (1) Apply to returnship programs through Path Forward, iRelaunch, or directly with target companies — these eliminate the salary penalty and provide structured re-entry. (2) Conduct bridge activities before your job search: freelance projects, online courses, volunteer leadership roles. (3) Negotiate from current market data, not your pre-break salary. (4) Use a salary benchmark calculator to know your market percentile before any salary discussion.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How does maternity leave affect your career long-term?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Standard maternity leave (12–16 weeks) carries minimal career impact when returning to the same employer. The salary penalty research applies primarily to extended breaks of 1+ years. The 'motherhood penalty' in salary is statistically significant — women with children earn 5–8% less than childless women in equivalent roles — but is separate from the career break penalty. A structured return to the same employer, followed by renegotiation after 6–12 months with market data, is the most effective financial strategy after standard maternity leave.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Which industries are most welcoming to women returning to work?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Technology has the most structured programs for women returners — Amazon, Meta, Microsoft, Google, and PayPal all have active returnship programs. Financial services (Goldman Sachs, JPMorgan, Fidelity) have well-funded programs with high post-program salaries. Consulting (McKinsey, Deloitte, Accenture) and healthcare also have strong re-entry pipelines. Path Forward provides access to consumer goods, media, and retail companies through a single application platform.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
     </main>
   )
 }

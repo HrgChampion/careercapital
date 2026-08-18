@@ -93,6 +93,15 @@ const datasetSchema = {
     url: "https://careerreturns.com",
   },
   temporalCoverage: "2026",
+  // CareerReturns compiles this dataset; it does not originate the underlying
+  // figures. Naming the upstream sources keeps the Dataset claim accurate.
+  sourceOrganization: [
+    { "@type": "Organization", name: "Graduate Management Admission Council", url: "https://www.gmac.com/" },
+    { "@type": "Organization", name: "Business school employment reports" },
+  ],
+  citation:
+    "Aggregated from GMAC survey data, published MBA employment reports, Glassdoor and Levels.fyi compensation data. Ranges are estimates; individual outcomes vary.",
+  isAccessibleForFree: true,
   keywords: [
     "mba salary by school",
     "mba salaries by school",

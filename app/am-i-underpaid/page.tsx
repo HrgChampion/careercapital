@@ -16,6 +16,7 @@ import {
 import { npvFromSeries, DISCOUNT_RATE } from "@/lib/mbaEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 function computeResult(
   currentSalary: number,
@@ -73,6 +74,12 @@ function computeResult(
     status: isUnderpaid ? "underpaid" : isFairlyPaid ? "fair" : "well-paid",
   }
 }
+
+const faqItems: FaqItem[] = [
+  { q: "How do I know if I am underpaid?", a: "Compare your salary to the p50 (median) for your exact role, industry, experience level, and location. If you're below the p50, you're earning less than half your peers in the same position. Below the p25 means you're in the bottom quarter. This tool does that comparison instantly using 2026 compensation benchmark data from BLS, Glassdoor, and Levels.fyi." },
+  { q: "What is the average salary gap for underpaid workers?", a: "Research from the Economic Policy Institute and LinkedIn's Workforce Report shows the median underpaid worker earns approximately 12-18% below their market rate. For a $90,000 salary, that translates to $10,800–$16,200 per year left on the table. Over 5 years at a 6% discount rate, the NPV of that gap is $47,000–$70,000." },
+  { q: "What should I do if I find out I'm underpaid?", a: "Three paths: (1) Ask for a raise now — prepare with market data and schedule a conversation with your manager. Internal raises typically yield 5-10%. (2) Get an outside offer — this is the most reliable way to get a 15-25% jump. Even using it as leverage in a counter-offer conversation works. (3) Switch jobs — job switchers earn an average of 17% more than those who stay, according to the Federal Reserve Bank of Atlanta's Wage Tracker." },
+]
 
 export default function AmIUnderpaidPage() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -515,6 +522,10 @@ export default function AmIUnderpaidPage() {
           ))}
         </div>
       </section>
+    <div className="mx-auto w-full max-w-5xl px-6 pb-12">
+      <FaqSection items={faqItems} />
+    </div>
+
     </main>
   )
 }

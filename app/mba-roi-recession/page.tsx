@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "MBA ROI in a Recession (2026): 2008 & 2020 Hiring Data",
@@ -7,6 +8,14 @@ export const metadata = {
     "MBA ROI in a recession. 2008 and 2020 hiring data, NPV models with salary delays, industries that held, and how to structure your MBA for downturns. See data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-recession"),
 }
+
+const faqItems: FaqItem[] = [
+  { q: "Is an MBA a good investment during a recession?", a: "An MBA during a recession can be strategically valuable for career switchers who use the 2-year program to bridge an employment gap and emerge into a recovery. Historical data from 2008–2010 shows MBB consulting and healthcare were more resilient than finance. However, salary timelines extend, increasing break-even periods by 1–3 years." },
+  { q: "How did MBA job placement perform in the 2008 recession?", a: "During 2008–2009, MBA job placement rates at top programs dropped 15–30%. MBB consulting maintained roughly 60% of typical hiring volume. Investment banking placements fell 40–50%. By 2010–2011, placement had recovered to pre-crisis levels. Graduates from the 2009–2010 class faced a 1–2 year salary delay that reduced their 10-year IRR by approximately 3–5 percentage points." },
+  { q: "Which industries are most recession-proof for MBA graduates?", a: "Healthcare and healthcare consulting are the most recession-resilient post-MBA tracks — hospital spending is relatively inelastic. Government and defense consulting maintained stable hiring in 2008 and 2020. Tech product management recovered quickly in 2020–2021. Investment banking and private equity show the highest recession vulnerability for MBA hiring." },
+  { q: "How does a recession affect the MBA break-even period?", a: "A one-year delay in post-MBA salary start (due to extended recruiting or reduced hiring) pushes the break-even point back by approximately 1–2 years. A 10% salary reduction in the first post-MBA role reduces 10-year NPV by $80K–$120K depending on the role level. These effects are material but not disqualifying for M7 programs with MBB or tech placement." },
+  { q: "Should I start an MBA during a recession?", a: "Yes — enrolling in an MBA at the start of a recession is historically advantageous. The 2-year program means you graduate into a recovery. Harvard, Wharton, and Booth saw application increases of 20–35% during the 2008–2009 recession as professionals returned to school. Graduating in an upturn produces better placement and salary outcomes than entering mid-cycle." },
+]
 
 export default function MbaRoiRecessionPage() {
   return (
@@ -336,6 +345,8 @@ export default function MbaRoiRecessionPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -358,10 +369,6 @@ export default function MbaRoiRecessionPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA a good investment during a recession?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA during a recession can be strategically valuable for career switchers who use the 2-year program to bridge an employment gap and emerge into a recovery. Historical data from 2008–2010 shows MBB consulting and healthcare were more resilient than finance. However, salary timelines extend, increasing break-even periods by 1–3 years."}}, {"@type": "Question", "name": "How did MBA job placement perform in the 2008 recession?", "acceptedAnswer": {"@type": "Answer", "text": "During 2008–2009, MBA job placement rates at top programs dropped 15–30%. MBB consulting maintained roughly 60% of typical hiring volume. Investment banking placements fell 40–50%. By 2010–2011, placement had recovered to pre-crisis levels. Graduates from the 2009–2010 class faced a 1–2 year salary delay that reduced their 10-year IRR by approximately 3–5 percentage points."}}, {"@type": "Question", "name": "Which industries are most recession-proof for MBA graduates?", "acceptedAnswer": {"@type": "Answer", "text": "Healthcare and healthcare consulting are the most recession-resilient post-MBA tracks — hospital spending is relatively inelastic. Government and defense consulting maintained stable hiring in 2008 and 2020. Tech product management recovered quickly in 2020–2021. Investment banking and private equity show the highest recession vulnerability for MBA hiring."}}, {"@type": "Question", "name": "How does a recession affect the MBA break-even period?", "acceptedAnswer": {"@type": "Answer", "text": "A one-year delay in post-MBA salary start (due to extended recruiting or reduced hiring) pushes the break-even point back by approximately 1–2 years. A 10% salary reduction in the first post-MBA role reduces 10-year NPV by $80K–$120K depending on the role level. These effects are material but not disqualifying for M7 programs with MBB or tech placement."}}, {"@type": "Question", "name": "Should I start an MBA during a recession?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — enrolling in an MBA at the start of a recession is historically advantageous. The 2-year program means you graduate into a recovery. Harvard, Wharton, and Booth saw application increases of 20–35% during the 2008–2009 recession as professionals returned to school. Graduating in an upturn produces better placement and salary outcomes than entering mid-cycle."}}]}) }}
-      />
     </main>
   )
 }

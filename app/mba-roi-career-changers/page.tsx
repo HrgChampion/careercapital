@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "MBA ROI for Career Changers 2026: Highest-Variance Return in Graduate Education",
+  title: "MBA ROI for Career Changers 2026: Is the Pivot Worth It?",
   description:
     "Career changers are the most financially polarized MBA segment. Successful pivot to MBB = 25–40% IRR. Failed pivot at regional school = negative NPV. School tier × target sector analysis →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-career-changers"),
@@ -23,53 +24,28 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is an MBA worth it for a career change?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "It depends heavily on two variables: the school tier you attend and the sector you are pivoting into. At M7 programs targeting MBB or investment banking, career-changer IRR ranges from 22–40%, which is strong. At T25 programs targeting the same sectors with limited recruiting pipelines, IRR often turns negative. The MBA is worth it for career change when you attend a school with an established recruiting pipeline into your target sector. It is not worth it when the program lacks the employer relationships to enable the pivot.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What industries are easiest to pivot into with an MBA?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Management consulting (particularly Big 4 and second-tier consulting firms), corporate strategy, general management, and healthcare management are the most accessible pivot targets for career changers across school tiers. MBB consulting and investment banking are accessible but concentrated at M7 and select T15 programs. Private equity is the most restrictive — even with an M7 MBA, PE-specific placement success rates for career changers are 35–50%.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does school tier matter for MBA career changers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "School tier matters more for career changers than for any other MBA candidate type. Straight-track candidates (staying in the same industry, moving up) can often justify T15–T25 programs. Career changers targeting competitive sectors like MBB consulting or bulge-bracket banking are almost entirely dependent on M7 recruiting pipelines. McKinsey hires from fewer than 15 US MBA programs. Going to T25 for a consulting pivot is a high-risk bet with poor expected value.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What salary increase can career changers expect from an MBA?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Career changer salary increases range from $50,000 to $115,000 depending on the transition type and program tier. Teacher or nonprofit workers pivoting to corporate strategy see the largest percentage increase (pre-MBA $55K → post-MBA $140K). Engineers pivoting to consulting gain $85K in absolute terms. The Military to consulting transition has among the best dollar-for-dollar outcomes when combined with GI Bill benefits that eliminate personal tuition cost entirely.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How should I prepare for an MBA career change?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Four pre-MBA steps dramatically improve career-change success rates: (1) Conduct 2–3 informational interviews with professionals in your target sector before applying — this builds early network connections and clarifies realistic expectations. (2) Begin case interview preparation before matriculation if targeting consulting. (3) Reach out to alumni in your target role during the application process, not after admission. (4) Consider a bridge role in your target sector for 6–12 months before the MBA to build direct experience and demonstrate commitment to the pivot.",
-      },
-    },
-  ],
-}
-
+const faqItems: FaqItem[] = [
+              {
+                q: "Is an MBA worth it for a career change?",
+                a: "It depends on school tier and target sector. At M7 programs targeting MBB or investment banking, career-changer IRR is 22–40% — strong. At T25 programs targeting those same competitive sectors, IRR often turns negative due to weak recruiting pipelines. The MBA is worth it for career change when you attend a school with established employer relationships in your target sector.",
+              },
+              {
+                q: "What industries are easiest to pivot into with an MBA?",
+                a: "Management consulting (Big 4 and second-tier firms), corporate strategy, general management, and healthcare management are the most accessible for career changers across school tiers. MBB consulting and bulge-bracket banking are accessible but concentrated at M7 and select T15 programs. Private equity is the most restrictive — even M7 placement rates for PE are 35–50% for career changers.",
+              },
+              {
+                q: "Does school tier matter more for career changers than other MBA candidates?",
+                a: "Yes — significantly more. Straight-track candidates can often justify T15–T25 programs. Career changers targeting competitive sectors like MBB or bulge-bracket banking are almost entirely dependent on M7 recruiting pipelines. McKinsey hires from fewer than 15 US MBA programs. Attending T25 for a consulting pivot is a high-risk, low-expected-value bet.",
+              },
+              {
+                q: "What salary increase can career changers expect from an MBA?",
+                a: "Career changer salary increases range from $50,000 to $115,000 for successful pivots. Teacher or nonprofit workers pivoting to corporate strategy see the largest percentage increase ($55K pre → $140K post). Engineers pivoting to consulting gain ~$85K absolute. Military candidates using GI Bill have near-infinite personal IRR on the transition to consulting or corporate strategy.",
+              },
+              {
+                q: "How should I prepare for an MBA career change?",
+                a: "Four steps matter most: (1) Conduct 2–3 informational interviews in your target sector before applying. (2) Begin case interview preparation before matriculation if targeting consulting. (3) Reach out to alumni in target roles during the application process. (4) Consider a bridge role in your target sector for 6–12 months before the MBA to build direct experience and credibility for the pivot story.",
+              },
+            ]
 export default function MbaRoiCareerChangersPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
@@ -603,38 +579,7 @@ export default function MbaRoiCareerChangersPage() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="space-y-5">
-          <h2 className="text-2xl font-semibold tracking-tight mb-5">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {[
-              {
-                q: "Is an MBA worth it for a career change?",
-                a: "It depends on school tier and target sector. At M7 programs targeting MBB or investment banking, career-changer IRR is 22–40% — strong. At T25 programs targeting those same competitive sectors, IRR often turns negative due to weak recruiting pipelines. The MBA is worth it for career change when you attend a school with established employer relationships in your target sector.",
-              },
-              {
-                q: "What industries are easiest to pivot into with an MBA?",
-                a: "Management consulting (Big 4 and second-tier firms), corporate strategy, general management, and healthcare management are the most accessible for career changers across school tiers. MBB consulting and bulge-bracket banking are accessible but concentrated at M7 and select T15 programs. Private equity is the most restrictive — even M7 placement rates for PE are 35–50% for career changers.",
-              },
-              {
-                q: "Does school tier matter more for career changers than other MBA candidates?",
-                a: "Yes — significantly more. Straight-track candidates can often justify T15–T25 programs. Career changers targeting competitive sectors like MBB or bulge-bracket banking are almost entirely dependent on M7 recruiting pipelines. McKinsey hires from fewer than 15 US MBA programs. Attending T25 for a consulting pivot is a high-risk, low-expected-value bet.",
-              },
-              {
-                q: "What salary increase can career changers expect from an MBA?",
-                a: "Career changer salary increases range from $50,000 to $115,000 for successful pivots. Teacher or nonprofit workers pivoting to corporate strategy see the largest percentage increase ($55K pre → $140K post). Engineers pivoting to consulting gain ~$85K absolute. Military candidates using GI Bill have near-infinite personal IRR on the transition to consulting or corporate strategy.",
-              },
-              {
-                q: "How should I prepare for an MBA career change?",
-                a: "Four steps matter most: (1) Conduct 2–3 informational interviews in your target sector before applying. (2) Begin case interview preparation before matriculation if targeting consulting. (3) Reach out to alumni in target roles during the application process. (4) Consider a bridge role in your target sector for 6–12 months before the MBA to build direct experience and credibility for the pivot story.",
-              },
-            ].map(({ q, a }) => (
-              <div key={q} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
-                <p className="text-white font-semibold text-sm">{q}</p>
-                <p className="text-slate-400 text-sm leading-relaxed">{a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <FaqSection items={faqItems} />
 
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
@@ -662,10 +607,6 @@ export default function MbaRoiCareerChangersPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
     </main>
   )
 }

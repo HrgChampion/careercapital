@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "Best Online MBA Programs ROI (2026): Which Pays Back Fastest?",
@@ -20,6 +21,14 @@ export const metadata = {
     description: "Best online MBA programs ranked by ROI. Online MBA breaks even 6–7 years faster. The opportunity cost math that most comparisons miss.",
   },
 }
+
+const faqItems: FaqItem[] = [
+  { q: "What is the ROI of an online MBA vs a full-time MBA?", a: "Online MBAs have higher IRR in most scenarios due to dramatically lower total cost. A top online MBA (Kelley, UNC Kenan-Flagler, UT McCombs) costs $40K–$90K with zero opportunity cost. A full-time M7 MBA costs $280K–$360K plus $150K–$200K foregone salary. The online MBA produces IRR of 25–40%+ vs 18–24% for M7 full-time programs." },
+  { q: "Is an online MBA respected by employers?", a: "Top-ranked online MBA programs from schools like Indiana Kelley, UNC, USC Marshall, and UT McCombs are respected by most employers. However, online MBAs are generally not used for first-time recruiting into MBB consulting or bulge bracket banking — those tracks require full-time on-campus program participation and structured recruiting." },
+  { q: "Can I get into consulting with an online MBA?", a: "MBB consulting (McKinsey, Bain, BCG) does not recruit through online MBA programs. Big 4 advisory and boutique consulting firms do hire from ranked online programs. If MBB is your target, a full-time M7 program is required. If mid-market or specialized consulting is the goal, an online MBA from a top-10 ranked program is viable." },
+  { q: "What is the break-even period for an online MBA?", a: "Top online MBA programs break even in 2–3 years due to their low cost. At $60K total cost and a $20K annual salary delta, break-even is 3 years. At a $40K salary delta, break-even is under 2 years. Online MBA ROI is typically high in percentage terms, even if nominal NPV is lower than M7 full-time programs due to smaller salary gains." },
+  { q: "Is a part-time or online MBA better than taking 2 years off for a full-time program?", a: "For candidates who do not need career switching or do not require MBB/banking access, part-time or online programs are often financially superior. They eliminate opportunity cost, maintain current salary and career progression, and deliver the credential in 2–3 years of evenings/weekends. For career switchers or MBB targets, the full-time format is necessary." },
+]
 
 export default function MbaRoiOnlineVsFullTimePage() {
   return (
@@ -279,6 +288,8 @@ export default function MbaRoiOnlineVsFullTimePage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -299,10 +310,6 @@ export default function MbaRoiOnlineVsFullTimePage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the ROI of an online MBA vs a full-time MBA?", "acceptedAnswer": {"@type": "Answer", "text": "Online MBAs have higher IRR in most scenarios due to dramatically lower total cost. A top online MBA (Kelley, UNC Kenan-Flagler, UT McCombs) costs $40K–$90K with zero opportunity cost. A full-time M7 MBA costs $280K–$360K plus $150K–$200K foregone salary. The online MBA produces IRR of 25–40%+ vs 18–24% for M7 full-time programs."}}, {"@type": "Question", "name": "Is an online MBA respected by employers?", "acceptedAnswer": {"@type": "Answer", "text": "Top-ranked online MBA programs from schools like Indiana Kelley, UNC, USC Marshall, and UT McCombs are respected by most employers. However, online MBAs are generally not used for first-time recruiting into MBB consulting or bulge bracket banking — those tracks require full-time on-campus program participation and structured recruiting."}}, {"@type": "Question", "name": "Can I get into consulting with an online MBA?", "acceptedAnswer": {"@type": "Answer", "text": "MBB consulting (McKinsey, Bain, BCG) does not recruit through online MBA programs. Big 4 advisory and boutique consulting firms do hire from ranked online programs. If MBB is your target, a full-time M7 program is required. If mid-market or specialized consulting is the goal, an online MBA from a top-10 ranked program is viable."}}, {"@type": "Question", "name": "What is the break-even period for an online MBA?", "acceptedAnswer": {"@type": "Answer", "text": "Top online MBA programs break even in 2–3 years due to their low cost. At $60K total cost and a $20K annual salary delta, break-even is 3 years. At a $40K salary delta, break-even is under 2 years. Online MBA ROI is typically high in percentage terms, even if nominal NPV is lower than M7 full-time programs due to smaller salary gains."}}, {"@type": "Question", "name": "Is a part-time or online MBA better than taking 2 years off for a full-time program?", "acceptedAnswer": {"@type": "Answer", "text": "For candidates who do not need career switching or do not require MBB/banking access, part-time or online programs are often financially superior. They eliminate opportunity cost, maintain current salary and career progression, and deliver the credential in 2–3 years of evenings/weekends. For career switchers or MBB targets, the full-time format is necessary."}}]}) }}
-      />
     </main>
   )
 }

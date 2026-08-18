@@ -2,7 +2,7 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA Salary Analytics: Top Providers & Data Sources in the United States (2026)",
+  title: "MBA Salary Analytics 2026: Top Data Sources Compared",
   description:
     "Compare the best MBA salary analytics providers in the United States. Free and paid data sources, custom reports, and how CareerReturns delivers institutional-grade MBA salary analysis for career planning and executive decisions.",
   alternates: pageAlternates("https://careerreturns.com/mba-salary-analytics"),

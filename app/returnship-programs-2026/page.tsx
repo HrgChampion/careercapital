@@ -11,7 +11,7 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Returnship Programs 2026", url: "https://careerreturns.com/returnship-programs-2026" }])
 
 export const metadata = {
-  title: "Best Returnship Programs 2026: Amazon $4,200/wk · Goldman 85% Hire Rate · 50+ Programs",
+  title: "Best Returnship Programs 2026: 50+ Paid Return-to-Work Roles",
   description: "50+ returnship programs ranked: Amazon (90% conversion, $4,200/wk), Goldman Sachs ($3,500/wk, 85% hire), McKinsey (full salary), Meta (88% conversion). Application deadlines, stipends & qualification requirements →",
   alternates: pageAlternates("https://careerreturns.com/returnship-programs-2026"),
   openGraph: {

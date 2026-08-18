@@ -1,6 +1,6 @@
 type AlternatesResult = {
   canonical: string
-  languages: Record<string, string>
+  languages?: Record<string, string>
 }
 
 type ArticleSchemaOptions = {
@@ -87,16 +87,11 @@ export function pageAlternates(
   canonicalUrl: string,
   isInternational: boolean = false
 ): AlternatesResult {
-  const languages: Record<string, string> = {
-    "en-US": canonicalUrl,
-    "x-default": canonicalUrl,
-  }
+  // hreflang maps a locale to a *different* URL. Every alternate here resolved
+  // to the same canonical, which tells Google nothing and just adds noise, so
+  // only the canonical is emitted. Reintroduce `languages` if genuinely
+  // localised URLs (e.g. /uk/mba-roi) ever ship — the flag is kept for that.
+  void isInternational
 
-  if (isInternational) {
-    languages["en-GB"] = canonicalUrl
-    languages["en-AU"] = canonicalUrl
-    languages["en-CA"] = canonicalUrl
-  }
-
-  return { canonical: canonicalUrl, languages }
+  return { canonical: canonicalUrl }
 }

@@ -61,37 +61,6 @@ const calculatorSchema = {
   ],
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much does the average person earn in their lifetime?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The average college-educated professional in the US earns $2.0M–$3.5M in nominal lifetime earnings (career start to age 65). With a 4% annual growth rate starting at $70,000, lifetime earnings reach approximately $2.8M nominal. Inflation-adjusted (at 3% CPI), this is approximately $1.4M in today's dollars. Highly skilled roles (software engineering, finance, medicine) can reach $4M–$8M nominal.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "What is the lifetime earnings cost of a 2-year career break?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A 2-year career break at $90,000/year costs $187,000 in direct foregone income. But the compounding effect of re-entering at 85% of pre-break salary and missing 2 years of promotions means the lifetime earnings gap (through retirement) typically reaches $350,000–$600,000 in nominal terms, depending on the re-entry salary and recovery trajectory.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Does a career pivot increase or decrease lifetime earnings?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A pivot with a 6-month reskilling break into a higher-growth field (e.g., tech or data science) typically breaks even vs. staying put within 2–4 years and exceeds the stay scenario's lifetime earnings within 5–8 years. The key variables are the salary premium in the new field and the growth rate differential. A 2% higher growth rate in the new career (e.g., 6% vs. 4%) compounds dramatically over a 25-year horizon.",
-      },
-    },
-  ],
-}
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -99,11 +68,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       {children}
+
     </>
   )
 }

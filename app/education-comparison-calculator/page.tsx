@@ -13,6 +13,7 @@ import {
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 // ─── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -43,6 +44,12 @@ const typeLabels: Record<ProgramType, string> = {
 }
 
 const PROGRAM_TYPES: ProgramType[] = ["mba", "masters", "bootcamp", "certificate", "self_study"]
+
+const faqItems: FaqItem[] = [
+  { q: "Does an MBA have better ROI than a coding bootcamp?", a: "A $15k coding bootcamp targeting a $95k SWE role typically produces a 10-year NPV of $180k–$240k with a 2-year break-even. A $150k MBA targeting a $165k consulting role produces a 10-year NPV of $180k–$280k with a 4-5 year break-even. The bootcamp wins on cost-efficiency and speed; the MBA wins on earnings ceiling for finance and consulting." },
+  { q: "Is an online Masters degree worth it compared to an MBA?", a: "An online MS Data Science ($22k, 1.5 years part-time) targeting $130k in tech typically produces a 10-year NPV of $220k–$320k. A full-time Top-20 MBA ($150k, 2 years) targeting $165k in consulting produces $180k–$280k. The online MS wins on cost and speed; the MBA wins on switching into finance and consulting." },
+  { q: "Is a Google certificate worth it compared to a degree?", a: "The Google Data Analytics Certificate ($300, 6 months part-time) produces a 10-year NPV of $80k–$120k and breaks even in under 3 months. Among reskilling investments, Google certificates have the highest ROI per dollar spent — though the absolute salary ceiling is lower than bootcamps or degrees." },
+]
 
 export default function EducationComparisonCalculator() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -388,6 +395,10 @@ export default function EducationComparisonCalculator() {
           For a narrative comparison of these paths, read <Link href="/blog/mba-vs-masters-vs-bootcamp" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA vs. master&apos;s vs. bootcamp</Link>.
         </p>
       </section>
+
+      <div className="mx-auto w-full max-w-6xl px-6 pb-12">
+        <FaqSection items={faqItems} />
+      </div>
 
       <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
         <p>

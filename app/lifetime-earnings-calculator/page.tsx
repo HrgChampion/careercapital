@@ -14,6 +14,7 @@ import {
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 function fmtM(n: number, c: CountryCode) {
   if (Math.abs(n) >= 1_000_000) return (n / 1_000_000).toFixed(2) + "M"
@@ -22,6 +23,12 @@ function fmtM(n: number, c: CountryCode) {
 function fmtPct(n: number) { return (n * 100).toFixed(1) + "%" }
 
 const SCENARIO_COLORS = ["#60a5fa", "#4ade80", "#f87171", "#facc15"]
+
+const faqItems: FaqItem[] = [
+  { q: "How much does the average person earn in their lifetime?", a: "The average college-educated professional in the US earns $2.0M–$3.5M in nominal lifetime earnings (career start to age 65). With a 4% annual growth rate starting at $70,000, lifetime earnings reach approximately $2.8M nominal. Inflation-adjusted (at 3% CPI), this is approximately $1.4M in today's dollars. Highly skilled roles (software engineering, finance, medicine) can reach $4M–$8M nominal." },
+  { q: "What is the lifetime earnings cost of a 2-year career break?", a: "A 2-year career break at $90,000/year costs $187,000 in direct foregone income. But the compounding effect of re-entering at 85% of pre-break salary and missing 2 years of promotions means the lifetime earnings gap (through retirement) typically reaches $350,000–$600,000 in nominal terms, depending on the re-entry salary and recovery trajectory." },
+  { q: "Does a career pivot increase or decrease lifetime earnings?", a: "A pivot with a 6-month reskilling break into a higher-growth field (e.g., tech or data science) typically breaks even vs. staying put within 2–4 years and exceeds the stay scenario's lifetime earnings within 5–8 years. The key variables are the salary premium in the new field and the growth rate differential. A 2% higher growth rate in the new career (e.g., 6% vs. 4%) compounds dramatically over a 25-year horizon." },
+]
 
 export default function LifetimeEarningsCalculator() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -401,6 +408,10 @@ export default function LifetimeEarningsCalculator() {
           ))}
         </div>
       </section>
+
+      <div className="mx-auto w-full max-w-6xl px-6 pb-12">
+        <FaqSection items={faqItems} />
+      </div>
 
       <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
         <p>

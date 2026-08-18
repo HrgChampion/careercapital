@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "Marketing MBA Salary 2026: $130K–$155K Brand Management, CMO Track & ROI Data",
+  title: "Marketing MBA ROI 2026: NPV, IRR & Break-Even Analysis",
   description:
     "Marketing MBA salary 2026: brand management $130K–$155K, digital marketing $125K–$145K, CMO track $250K–$500K. Break-even 5–8 years. Which programs dominate marketing recruiting & is it worth it? →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-marketing"),
@@ -41,44 +42,12 @@ const programTable = [
   { school: "Stern (NYU)", mktgStrength: "Media + Digital + Luxury", placePct: "~18% into marketing roles", medianSalary: "$145K", note: "Strong media, luxury, and digital marketing placement in NYC. Best for candidates targeting fashion, beauty, media, and entertainment brand roles." },
 ]
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is an MBA worth it for marketing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An MBA in marketing is worth it financially if you are targeting brand management at a top CPG company (P&G, Unilever, Kraft Heinz), product marketing at a major tech firm (Google, Apple, Meta), or a CMO career track. The salary delta for post-MBA marketing roles at top programs ranges from $45K–$70K annually, producing break-even timelines of 5–8 years. For digital marketing roles without a CPG or tech premium, the ROI is weaker — non-MBA paths are often available and the salary delta is insufficient to justify M7 costs.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the average salary for an MBA in marketing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Post-MBA marketing salaries depend on role and sector. Brand management at top CPG companies (P&G, Unilever): $130K–$155K. Product marketing at tech firms (Google, Apple, Meta): $150K–$185K. Marketing strategy consulting: $140K–$165K. Digital marketing director: $120K–$145K. CMO at major companies (10-year horizon): $250K–$500K+.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Which MBA program is best for marketing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Kellogg (Northwestern) is the top MBA program for CPG brand management. Haas (Berkeley) leads for tech product marketing. Wharton is strong for marketing strategy and fintech. Ross and Tuck are excellent for CPG with lower total cost than M7. Stern is the best for NYC media, luxury, and digital marketing.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you need an MBA for a CMO role?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An MBA is not required for a CMO role but is common among Fortune 500 CMOs who came through CPG brand management tracks. P&G's brand management training program is a well-known path to CMO roles with or without an MBA. For digital-first companies, CMOs frequently lack MBAs. The MBA is most valuable on the CMO track at large traditional consumer goods, retail, and financial services companies.",
-      },
-    },
-  ],
-}
+const faqItems: FaqItem[] = [
+  { q: "Is an MBA worth it for marketing?", a: "An MBA in marketing is worth it financially if you are targeting brand management at a top CPG company (P&G, Unilever, Kraft Heinz), product marketing at a major tech firm (Google, Apple, Meta), or a CMO career track. The salary delta for post-MBA marketing roles at top programs ranges from $45K–$70K annually, producing break-even timelines of 5–8 years. For digital marketing roles without a CPG or tech premium, the ROI is weaker — non-MBA paths are often available and the salary delta is insufficient to justify M7 costs." },
+  { q: "What is the average salary for an MBA in marketing?", a: "Post-MBA marketing salaries depend on role and sector. Brand management at top CPG companies (P&G, Unilever): $130K–$155K. Product marketing at tech firms (Google, Apple, Meta): $150K–$185K. Marketing strategy consulting: $140K–$165K. Digital marketing director: $120K–$145K. CMO at major companies (10-year horizon): $250K–$500K+." },
+  { q: "Which MBA program is best for marketing?", a: "Kellogg (Northwestern) is the top MBA program for CPG brand management. Haas (Berkeley) leads for tech product marketing. Wharton is strong for marketing strategy and fintech. Ross and Tuck are excellent for CPG with lower total cost than M7. Stern is the best for NYC media, luxury, and digital marketing." },
+  { q: "Do you need an MBA for a CMO role?", a: "An MBA is not required for a CMO role but is common among Fortune 500 CMOs who came through CPG brand management tracks. P&G's brand management training program is a well-known path to CMO roles with or without an MBA. For digital-first companies, CMOs frequently lack MBAs. The MBA is most valuable on the CMO track at large traditional consumer goods, retail, and financial services companies." },
+]
 
 export default function MbaRoiMarketingPage() {
   return (
@@ -298,6 +267,8 @@ export default function MbaRoiMarketingPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -318,10 +289,6 @@ export default function MbaRoiMarketingPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
     </main>
   )
 }

@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState, useMemo } from "react"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
@@ -51,6 +52,14 @@ function dtiLabel(dti: number): string {
 }
 
 // ─── Main Component ─────────────────────────────────────────────────────────
+
+const faqItems: FaqItem[] = [
+  { q: "How much are monthly MBA loan payments?", a: "Monthly MBA loan payments depend on your loan amount, interest rate, and repayment term. For a typical $120,000 MBA loan at 6.5% over 10 years, the monthly payment is approximately $1,362. Use this calculator to model your specific loan scenario — adjust the loan amount, rate, and term to see exact monthly payments instantly." },
+  { q: "What is the total interest on a $150K MBA loan?", a: "A $150,000 MBA loan at 6.5% interest over 10 years accumulates approximately $55,000–$60,000 in total interest, bringing your total repayment to around $205,000–$210,000. Extending the term to 15 years reduces monthly payments but increases total interest to roughly $88,000. Use this MBA loan calculator to see exact interest totals for your specific loan." },
+  { q: "How long to pay off MBA loans?", a: "Most MBA borrowers choose 10-year standard repayment for federal loans. A 10-year term balances manageable monthly payments against minimizing total interest paid. Income-Driven Repayment (IDR) plans can extend terms to 20–25 years but significantly increase total interest. Private loan refinancing often offers 5–20 year terms. This calculator shows your exact payoff year for any term you select." },
+  { q: "Should I refinance my MBA loans?", a: "Refinancing MBA loans makes sense when your credit score has improved post-graduation, your salary is established, and private rates are lower than your federal rate. However, refinancing federal loans into private loans permanently eliminates access to Income-Driven Repayment, Public Service Loan Forgiveness, and federal forbearance protections. Generally, refinance federal loans only if you have a stable high income and don't anticipate needing IDR or PSLF." },
+  { q: "What salary do I need to afford MBA loan payments?", a: "A common benchmark is keeping your annual loan payments below 10–15% of gross income. For a $1,362/month payment ($16,344/year), you'd want a salary of at least $109,000–$163,000 to stay within that range. Most MBA graduates targeting consulting, finance, or tech roles earn $140,000–$200,000 post-graduation, which typically makes standard repayment manageable. Use the debt-to-income indicator in this calculator to check your specific ratio." },
+]
 
 export default function MBALoanRepaymentCalculator() {
   const [loanAmount, setLoanAmount] = useState(120000)
@@ -643,6 +652,10 @@ export default function MBALoanRepaymentCalculator() {
         </nav>
 
       </div>
+    <div className="mx-auto w-full max-w-2xl px-6 pb-12">
+      <FaqSection items={faqItems} />
+    </div>
+
     </main>
   )
 }

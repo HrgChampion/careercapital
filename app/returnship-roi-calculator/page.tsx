@@ -12,6 +12,7 @@ import {
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 // ─── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -37,6 +38,12 @@ const industryColors: Record<string, string> = {
   Finance: "text-cyan-400",
   Any: "text-white/40",
 }
+
+const faqItems: FaqItem[] = [
+  { q: "Is the Amazon Returnship worth it?", a: "The Amazon Returnship (16 weeks, ~$2,500/week, ~90% conversion) converts to a $145,000+ full-time role. At a 90% conversion rate, its 10-year NPV is approximately $280k–$340k. The break-even conversion rate vs. direct re-entry is approximately 55% — well below Amazon's 90% historical rate. By this analysis, the Amazon Returnship is financially superior to direct re-entry for most career returners." },
+  { q: "What is the Goldman Sachs Returnship salary?", a: "Goldman Sachs Returnship participants earn approximately $3,500/week ($182k annualized) during the 15-week program. Full-time conversion salaries are $180,000–$250,000 base plus bonus. Historical conversion rate is approximately 85%. Total comp (base + bonus) for converted analysts typically reaches $250,000–$350,000 in Year 1." },
+  { q: "Which returnship programs have the highest conversion rates?", a: "Based on industry-reported and publicly available data: Amazon (~90%), Meta (~88%), Microsoft LEAP (~85%), Goldman Sachs (~85%), JPMorgan (~82%), McKinsey (~80%), Apple (~80%), Deloitte Encore (~78%). These are approximate figures based on program participant reports and employer disclosures — individual cohort results vary. Higher conversion rates are not always financially superior; post-conversion salary and growth matter equally." },
+]
 
 export default function ReturnshipCalculator() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -338,6 +345,10 @@ export default function ReturnshipCalculator() {
           ))}
         </div>
       </section>
+
+      <div className="mx-auto w-full max-w-5xl px-6 pb-12">
+        <FaqSection items={faqItems} />
+      </div>
 
       <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
         <p>

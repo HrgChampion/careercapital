@@ -55,7 +55,7 @@ const faqSchema = {
 }
 
 export const metadata = {
-  title: "How to Negotiate Your Post-MBA Salary: A Data-Driven Playbook | CareerReturns",
+  title: "How to Negotiate Your Post-MBA Salary: A Data Playbook",
   description:
     "Post-MBA offers are negotiable more often than recruiters admit. Here is what the data says about leverage points, timing, and how to close a $20k–$40k gap.",
   alternates: pageAlternates("https://careerreturns.com/blog/mba-salary-negotiation"),

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "How to Rebuild Work Experience After a Career Break (2026 ROI Data)",
@@ -94,6 +95,14 @@ const paths = [
     details: "For software engineers and data scientists, a public GitHub profile with active contributions and completed projects is more persuasive than a resume explanation. An engineer who contributed to 3 open-source projects during a 2-year gap has demonstrably current skills. Pair this with 1–2 personal projects with real users or demonstrable results — deployed apps, datasets, or published models — and the technical gap signal is effectively neutralized.",
     resumeAngle: "Include a GitHub/portfolio URL in your resume header. List significant projects under a 'Projects' section with: '[Project Name], [Technology Stack], [Impact or Users].' Link to deployed version or demo.",
   },
+]
+
+const faqItems: FaqItem[] = [
+  { q: "How do you rebuild work experience after a career break?", a: "The 6 most effective ways to rebuild work experience after a career break are: (1) freelance or independent consulting projects, (2) corporate returnship programs, (3) bootcamp or certificate programs, (4) volunteer board or nonprofit leadership roles, (5) part-time contract or temp work, and (6) open-source or public portfolio projects. The best choice depends on your industry, target salary, and how much time you can invest before your job search." },
+  { q: "What is the fastest way to rebuild work experience after a career break?", a: "Freelance or consulting projects are the fastest way to rebuild verifiable work experience — they can be completed in 4–8 weeks and provide an employer-facing signal immediately. For technical roles, open source contributions or a deployed personal project can achieve similar effect in 4–10 weeks. Both cost near zero and can be listed on your resume as recent professional activity." },
+  { q: "Is a bootcamp worth it for returning to work after a career break?", a: "A bootcamp is worth it when you are pivoting to a higher-paying technical track — particularly software engineering, data science, or product management. At $12,000–$17,000 in cost, a bootcamp that enables a $25k–$35k salary increase breaks even in under 1 year with a 10-year NPV of $150k–$250k. If you are returning to the same role and your skills are reasonably current, a bootcamp is likely not the right investment — a freelance project or returnship would achieve the same signal at lower cost." },
+  { q: "Do volunteer roles help when returning to work after a career break?", a: "Yes, particularly for management, operations, and leadership roles. Serving as a board member, treasurer, or committee chair for a nonprofit demonstrates leadership and strategic engagement. It is most effective when the role is substantive — managing a budget, leading a team, delivering a project — not just an advisory title. For technical individual contributor roles, hands-on technical work (freelance, open source) is more persuasive." },
+  { q: "How do I explain work experience gaps on my resume?", a: "The best approach is to fill the gap period with bridge activities and list them on your resume, then briefly note the career break reason in one line. State it directly — 'Career break, 2022–2024: primary caregiver' — then pivot to what you did during that period to stay current or contribute professionally. Do not leave unexplained blank years. Employers who run returnship programs are explicitly comfortable with gaps; target these companies first." },
 ]
 
 export default function RebuildWorkExperiencePage() {
@@ -335,6 +344,8 @@ export default function RebuildWorkExperiencePage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -353,57 +364,6 @@ export default function RebuildWorkExperiencePage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "How do you rebuild work experience after a career break?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "The 6 most effective ways to rebuild work experience after a career break are: (1) freelance or independent consulting projects, (2) corporate returnship programs, (3) bootcamp or certificate programs, (4) volunteer board or nonprofit leadership roles, (5) part-time contract or temp work, and (6) open-source or public portfolio projects. The best choice depends on your industry, target salary, and how much time you can invest before your job search.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What is the fastest way to rebuild work experience after a career break?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Freelance or consulting projects are the fastest way to rebuild verifiable work experience — they can be completed in 4–8 weeks and provide an employer-facing signal immediately. For technical roles, open source contributions or a deployed personal project can achieve similar effect in 4–10 weeks. Both cost near zero and can be listed on your resume as recent professional activity.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is a bootcamp worth it for returning to work after a career break?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "A bootcamp is worth it when you are pivoting to a higher-paying technical track — particularly software engineering, data science, or product management. At $12,000–$17,000 in cost, a bootcamp that enables a $25k–$35k salary increase breaks even in under 1 year with a 10-year NPV of $150k–$250k. If you are returning to the same role and your skills are reasonably current, a bootcamp is likely not the right investment — a freelance project or returnship would achieve the same signal at lower cost.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Do volunteer roles help when returning to work after a career break?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes, particularly for management, operations, and leadership roles. Serving as a board member, treasurer, or committee chair for a nonprofit demonstrates leadership and strategic engagement. It is most effective when the role is substantive — managing a budget, leading a team, delivering a project — not just an advisory title. For technical individual contributor roles, hands-on technical work (freelance, open source) is more persuasive.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How do I explain work experience gaps on my resume?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "The best approach is to fill the gap period with bridge activities and list them on your resume, then briefly note the career break reason in one line. State it directly — 'Career break, 2022–2024: primary caregiver' — then pivot to what you did during that period to stay current or contribute professionally. Do not leave unexplained blank years. Employers who run returnship programs are explicitly comfortable with gaps; target these companies first.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
     </main>
   )
 }

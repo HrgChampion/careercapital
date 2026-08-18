@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "Return-to-Work Programs 2026: 15+ Companies, ROI Data & How to Apply",
@@ -247,6 +248,14 @@ const industryBreakdown = [
   { industry: "Finance", count: "5 programs", companies: "Goldman Sachs, JPMorgan, Fidelity, Wells Fargo, Morgan Stanley (Path Forward)", note: "Highest post-program salaries ($125k–$250k). Require prior finance experience; most mandate 2+ year gap minimum." },
   { industry: "Consulting", count: "3 programs", companies: "McKinsey, Deloitte, Accenture", note: "Longest program durations (6–12 months). Full salary during program. Strongest NPV advantage vs. direct re-entry." },
   { industry: "Defense / Aerospace", count: "2 programs", companies: "Northrop Grumman, Raytheon (Path Forward)", note: "Security clearance eligibility required for many roles. Engineering and program management focus. Stable conversion (65–70%)." },
+]
+
+const faqItems: FaqItem[] = [
+  { q: "What are return-to-work programs (returnships)?", a: "Return-to-work programs, also called returnships, are structured re-entry pathways offered by major employers for professionals who have taken a career break of 1–3+ years. Unlike standard hiring, they are specifically designed for candidates with employment gaps and typically run 10–18 weeks, paying a full salary or competitive stipend, and converting to full-time roles at rates of 65–90%." },
+  { q: "Which company has the best return-to-work program?", a: "Amazon Returnship has the highest conversion rate at 90%, making it the strongest ROI on a risk-adjusted basis. Goldman Sachs and McKinsey offer the highest post-program salaries ($200k–$250k). JPMorgan ReEntry is the longest-running program and most accessible for finance professionals. The best program depends on your industry, target salary, and gap duration." },
+  { q: "How long do return-to-work programs last?", a: "Most returnship programs run 10–18 weeks. Goldman Sachs runs 10 weeks, Amazon and PayPal run 16 weeks, and McKinsey runs 6–12 months. Longer programs generally offer higher conversion certainty and more structured integration, but require more time before a full-time offer." },
+  { q: "Is a returnship worth it vs. applying directly?", a: "A returnship is typically worth it when your career gap is 2+ years and the program conversion rate exceeds 65–70%. The NPV advantage of returnships over direct re-entry ranges from $12k to $62k depending on the program, driven by higher post-program salary floor and faster elimination of the career gap salary penalty. Use a returnship ROI calculator to model your specific scenario." },
+  { q: "How do I apply for a return-to-work program?", a: "Apply directly through the company's careers page, searching for 'returnship' or 'return to work.' Most programs run on annual or semi-annual cohort cycles — Amazon and Goldman open applications 3–4 months before start. In your application, state your career break explicitly, describe any bridge activities during the break, and target roles that match your pre-break skills. Platforms like iRelaunch and Path Forward also list active returnship openings." },
 ]
 
 export default function ReturnToWorkProgramsPage() {
@@ -608,6 +617,8 @@ export default function ReturnToWorkProgramsPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -628,57 +639,6 @@ export default function ReturnToWorkProgramsPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What are return-to-work programs (returnships)?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Return-to-work programs, also called returnships, are structured re-entry pathways offered by major employers for professionals who have taken a career break of 1–3+ years. Unlike standard hiring, they are specifically designed for candidates with employment gaps and typically run 10–18 weeks, paying a full salary or competitive stipend, and converting to full-time roles at rates of 65–90%.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Which company has the best return-to-work program?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Amazon Returnship has the highest conversion rate at 90%, making it the strongest ROI on a risk-adjusted basis. Goldman Sachs and McKinsey offer the highest post-program salaries ($200k–$250k). JPMorgan ReEntry is the longest-running program and most accessible for finance professionals. The best program depends on your industry, target salary, and gap duration.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How long do return-to-work programs last?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Most returnship programs run 10–18 weeks. Goldman Sachs runs 10 weeks, Amazon and PayPal run 16 weeks, and McKinsey runs 6–12 months. Longer programs generally offer higher conversion certainty and more structured integration, but require more time before a full-time offer.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is a returnship worth it vs. applying directly?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "A returnship is typically worth it when your career gap is 2+ years and the program conversion rate exceeds 65–70%. The NPV advantage of returnships over direct re-entry ranges from $12k to $62k depending on the program, driven by higher post-program salary floor and faster elimination of the career gap salary penalty. Use a returnship ROI calculator to model your specific scenario.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How do I apply for a return-to-work program?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Apply directly through the company's careers page, searching for 'returnship' or 'return to work.' Most programs run on annual or semi-annual cohort cycles — Amazon and Goldman open applications 3–4 months before start. In your application, state your career break explicitly, describe any bridge activities during the break, and target roles that match your pre-break skills. Platforms like iRelaunch and Path Forward also list active returnship openings.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
     </main>
   )
 }

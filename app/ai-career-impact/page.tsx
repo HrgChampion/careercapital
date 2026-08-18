@@ -5,6 +5,7 @@ import { useState, useMemo } from "react"
 import { calculateAIImpact, AI_IMPACT_ROLES } from "@/lib/aiDisplacementEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 const RISK_CONFIGS = {
   low:      { color: "text-green-400",  border: "border-green-400/30",  bg: "bg-green-400/5",  badge: "border-green-400/40 text-green-400" },
@@ -12,6 +13,12 @@ const RISK_CONFIGS = {
   high:     { color: "text-orange-400", border: "border-orange-400/30", bg: "bg-orange-400/5", badge: "border-orange-400/40 text-orange-400" },
   critical: { color: "text-red-400",    border: "border-red-400/30",    bg: "bg-red-400/5",    badge: "border-red-400/40 text-red-400" },
 }
+
+const faqItems: FaqItem[] = [
+  { q: "Which jobs are most at risk from AI?", a: "According to Goldman Sachs and McKinsey research, the roles with the highest AI displacement risk include: administrative assistants (76% task automation), customer service reps (82%), paralegal/legal assistants (71%), content writers (74%), and accountants (67%). Lower-risk roles include nurses (10%), lawyers (25%), and management consultants (20%), where judgment, empathy, and relationship skills are harder to automate." },
+  { q: "What is the best skill to learn to protect yourself from AI?", a: "The highest-ROI hedge for most roles is AI tools proficiency — learning to use ChatGPT, Claude, and GitHub Copilot effectively often costs nothing and adds 8-12% salary uplift while reducing displacement risk by 20%+ within 1-2 months. For technical roles, Python and AWS certifications offer stronger long-term protection. The key principle: learn to direct AI, not compete with it." },
+  { q: "How was the AI displacement risk data calculated?", a: "Displacement probabilities are derived from Goldman Sachs' 2023 report on AI's economic impact (300M jobs at risk globally), McKinsey's 2024 analysis of generative AI task automation, and the WEF Future of Jobs 2025 report. The methodology counts the fraction of job tasks that are automatable by current large language models and estimates the displacement probability based on what percentage of the role can be replaced end-to-end." },
+]
 
 export default function AICareerImpactPage() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -313,6 +320,10 @@ export default function AICareerImpactPage() {
           ))}
         </div>
       </section>
+    <div className="mx-auto w-full max-w-5xl px-6 pb-12">
+      <FaqSection items={faqItems} />
+    </div>
+
     </main>
   )
 }

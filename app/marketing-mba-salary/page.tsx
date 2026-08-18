@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 const _articleSchema = articleSchema({
   title: "Marketing MBA Salary 2026: Brand Management $130K–$155K, CMO Track & Full Data",
@@ -11,7 +12,7 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Marketing MBA Salary", url: "https://careerreturns.com/marketing-mba-salary" }])
 
 export const metadata = {
-  title: "Marketing MBA Salary 2026: $130K–$155K Brand Management, CMO Track & ROI Data",
+  title: "Marketing MBA Salary 2026: $130K–$155K by Role & Level",
   description:
     "Marketing MBA salary 2026: brand management $130K–$155K, digital marketing $125K–$145K, product marketing $135K–$160K. CMO track reaches $250K–$500K. Kellogg, Wharton & Booth placement data →",
   alternates: pageAlternates("https://careerreturns.com/marketing-mba-salary"),
@@ -54,6 +55,14 @@ const roiData = [
   { scenario: "M7 + Tech Product Marketing", totalCost: "$230K", year1Salary: "$155K", breakEven: "5.9 yrs", irr: "14%", verdict: "Moderate" },
   { scenario: "T15 + CPG Brand Management", totalCost: "$185K", year1Salary: "$130K", breakEven: "5.8 yrs", irr: "15%", verdict: "Good" },
   { scenario: "M7 + Scholarship + Brand Mgmt", totalCost: "$115K", year1Salary: "$140K", breakEven: "3.2 yrs", irr: "28%", verdict: "Strong" },
+]
+
+const faqItems: FaqItem[] = [
+  { q: "What is the average marketing MBA salary?", a: "The average post-MBA salary for marketing roles in 2026 is $130K–$155K for brand management, $125K–$145K for digital marketing, and $140K–$165K for product marketing. These figures are for M7 and T15 graduates. Total compensation (including bonus) is typically 15–25% above base. Senior marketing roles at 5 years post-MBA reach $180K–$280K. CMO-track executives with 10–15 years post-MBA experience earn $250K–$500K+." },
+  { q: "Is a marketing MBA worth it?", a: "A marketing MBA is worth it under specific conditions: (1) You want to enter brand management at P&G, Unilever, J&J, or similar CPG companies — these firms recruit almost exclusively from MBA programs for their brand manager pipeline; (2) You want to transition from a non-marketing background into product marketing at a tech company; (3) You want to accelerate to VP Marketing or CMO faster than the non-MBA path allows. The break-even is 5–8 years for marketing destinations at sticker price, which is longer than consulting (4.2 years) or banking (4.5 years). Marketing-focused MBAs are most financially justified with scholarship aid." },
+  { q: "Which MBA programs are best for marketing careers?", a: "Top MBA programs for marketing in 2026: Kellogg (Northwestern) is the undisputed leader — 25–30% of the class enters marketing, with the strongest CPG and brand management pipeline in the world. Wharton is strong for brand management and strategy. Booth and HBS place well into tech product marketing and strategy consulting with a marketing focus. For digital marketing and tech, Haas (Berkeley) and MIT Sloan produce strong outcomes. For CPG specifically, Kellogg > Ross (Michigan) > Fuqua (Duke) > McCombs (UT Austin)." },
+  { q: "What is the salary for an MBA in digital marketing?", a: "MBA graduates entering digital marketing in 2026 earn $115K–$145K base salary at year 1, depending on company size and location. Tech companies (Google, Meta, Amazon) pay $130K–$155K base plus significant equity. CPG and traditional brands pay $110K–$135K. After 5 years, digital marketing managers with an MBA earn $180K–$250K total comp at tech companies. The digital marketing track at MBA programs has grown significantly — roles now include growth marketing, performance marketing, and marketing analytics, with the analytics-heavy roles commanding 15–20% premiums over brand-focused roles." },
+  { q: "How much does a marketing MBA salary increase vs. no MBA?", a: "An MBA from a T15 program increases marketing salaries by 40–70% vs. the non-MBA career path at year 5. Without an MBA, a marketing professional with 8–10 years of experience typically earns $90K–$130K as a Senior Manager. An equivalent MBA graduate at year 5 post-graduation earns $150K–$220K in a Director or VP Marketing role. The MBA accelerates career progression by approximately 3–5 years in the CPG and tech marketing tracks. The acceleration effect is largest in companies with formal MBA recruiting pipelines (P&G, Unilever, Google, Amazon)." },
 ]
 
 export default function MarketingMbaSalaryPage() {
@@ -191,6 +200,10 @@ export default function MarketingMbaSalaryPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
       </div>
+    <div className="mx-auto w-full max-w-3xl px-6 pb-12">
+      <FaqSection items={faqItems} />
+    </div>
+
     </main>
   )
 }

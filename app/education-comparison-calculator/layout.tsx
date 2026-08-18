@@ -47,43 +47,12 @@ const calculatorSchema = {
   "url": "https://careerreturns.com/education-comparison-calculator",
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Does an MBA have better ROI than a coding bootcamp?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A $15k coding bootcamp targeting a $95k SWE role typically produces a 10-year NPV of $180k–$240k with a 2-year break-even. A $150k MBA targeting a $165k consulting role produces a 10-year NPV of $180k–$280k with a 4-5 year break-even. The bootcamp wins on cost-efficiency and speed; the MBA wins on earnings ceiling for finance and consulting.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Is an online Masters degree worth it compared to an MBA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An online MS Data Science ($22k, 1.5 years part-time) targeting $130k in tech typically produces a 10-year NPV of $220k–$320k. A full-time Top-20 MBA ($150k, 2 years) targeting $165k in consulting produces $180k–$280k. The online MS wins on cost and speed; the MBA wins on switching into finance and consulting.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Is a Google certificate worth it compared to a degree?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Google Data Analytics Certificate ($300, 6 months part-time) produces a 10-year NPV of $80k–$120k and breaks even in under 3 months. Among reskilling investments, Google certificates have the highest ROI per dollar spent — though the absolute salary ceiling is lower than bootcamps or degrees.",
-      },
-    },
-  ],
-}
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {children}
+
     </>
   )
 }

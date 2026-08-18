@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Am I Underpaid After My Career Break? Free Salary Benchmark Calculator (2026)",
+  title: "Salary Benchmark Calculator 2026 — Am I Underpaid?",
   description:
     "Career returners accept salaries 8–15% below market on average. Find your market percentile, calculate how much you're leaving on the table per year, and get the NPV of asking for a raise now vs. switching jobs.",
   keywords: [
@@ -62,37 +62,6 @@ const calculatorSchema = {
   ],
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much does a career break affect your salary?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Research by Harvard economist Claudia Goldin and LinkedIn's Economic Graph estimates a salary penalty of 3–7% per year of career break, with the penalty declining over 2–4 years as performance proves out. A 2-year break typically results in a 6–14% salary discount vs. peers at re-entry. In fast-moving fields like tech, the penalty can be higher (7–10% per year) due to skills obsolescence.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "What is the NPV of being underpaid by $15,000 per year?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Being underpaid by $15,000/year has a 10-year NPV of approximately $110,000 at a 6% discount rate (assuming 3% annual raise). Over a 20-year career, the compounded lifetime earnings gap reaches $330,000–$450,000 including the effect of salary-based bonuses, 401k matches, and future salary negotiations anchored to a lower base.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Should I ask for a raise or switch jobs to recover salary after a career break?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Switching jobs typically produces a 15–25% salary increase vs. 5–10% for internal raises. However, job switches come with a 2–4 month search period (zero income delta) and the loss of institutional knowledge and tenure. The NPV crossover depends on your underpayment amount: if you're underpaid by more than $20,000/year, switching typically has higher NPV within 3–4 years.",
-      },
-    },
-  ],
-}
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -100,11 +69,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       {children}
+
     </>
   )
 }

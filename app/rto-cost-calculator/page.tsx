@@ -5,6 +5,7 @@ import { useState, useMemo } from "react"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
 import { npvFromSeries, DISCOUNT_RATE } from "@/lib/mbaEngine"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 // IRS standard mileage rate 2026
 const IRS_MILEAGE_RATE = 0.67 // USD per mile
@@ -94,6 +95,12 @@ function computeRTOCost(
     percentOfSalary: (totalAnnual / annualSalary) * 100,
   }
 }
+
+const faqItems: FaqItem[] = [
+  { q: "How much does return-to-office cost employees financially?", a: "Studies from Resume Builder and the Society for Human Resource Management estimate the average RTO cost at $5,000–$12,000 per year for US workers, including commuting, childcare, meals, and wardrobe. In high-cost cities like San Francisco or New York, the total can reach $20,000–$35,000 when including the remote salary premium workers lose by being geographically restricted." },
+  { q: "What is the remote work salary premium?", a: "Remote workers can command salaries equal to top-tier metro rates regardless of where they live, effectively earning a 10–25% premium over equivalent roles that require in-office presence in a lower-cost location. This geographic arbitrage is eliminated by RTO mandates that restrict where an employee can live." },
+  { q: "Should I quit if my company forces RTO?", a: "That depends on the total financial impact. If your RTO cost exceeds 10% of your total compensation, or if the mandate eliminates geographic flexibility that was core to your work arrangement, switching to a remote-first employer often produces a net gain. Use this calculator to get the exact number before deciding." },
+]
 
 export default function RTOCostCalculatorPage() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -456,6 +463,10 @@ export default function RTOCostCalculatorPage() {
           ))}
         </div>
       </section>
+    <div className="mx-auto w-full max-w-5xl px-6 pb-12">
+      <FaqSection items={faqItems} />
+    </div>
+
     </main>
   )
 }

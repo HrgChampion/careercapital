@@ -60,37 +60,6 @@ const toolSchema = {
   ],
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How much does return-to-office cost employees financially?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Studies from Resume Builder and the Society for Human Resource Management estimate the average RTO cost at $5,000–$12,000 per year for US workers, including commuting, childcare, meals, and wardrobe. In high-cost cities like San Francisco or New York, the total can reach $20,000–$35,000 when including the remote salary premium workers lose by being geographically restricted.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the remote work salary premium?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Remote workers can command salaries equal to top-tier metro rates regardless of where they live, effectively earning a 10–25% premium over equivalent roles that require in-office presence in a lower-cost location. This geographic arbitrage is eliminated by RTO mandates that restrict where an employee can live.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should I quit if my company forces RTO?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "That depends on the total financial impact. If your RTO cost exceeds 10% of your total compensation, or if the mandate eliminates geographic flexibility that was core to your work arrangement, switching to a remote-first employer often produces a net gain. Use this calculator to get the exact number before deciding.",
-      },
-    },
-  ],
-}
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -98,11 +67,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(toolSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       {children}
+
     </>
   )
 }

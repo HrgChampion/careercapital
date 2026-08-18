@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 const _articleSchema = articleSchema({
   title: "Part-Time MBA ROI 2026: The Format Most Financial Analyses Get Wrong",
@@ -37,52 +38,13 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is a part-time MBA worth it financially?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A part-time MBA is financially worth it when three conditions are met: (1) you attend an AACSB-accredited program, (2) you have a specific promotion or role change tied to the credential — not just general upskilling, and (3) the tuition is $65,000 or under, or you receive employer reimbursement. Programs costing $80,000–$120,000 with no employer subsidy require a $30,000+ annual salary delta to generate IRR above 10%, which is achievable but requires deliberate career positioning.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much does a part-time MBA increase salary?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The average salary increase after a part-time MBA is $18,000–$35,000 per year within 24 months of graduation. This is substantially lower than the $50,000–$100,000 delta from full-time M7 programs, but part-time tuition is also 70–80% lower. The important benchmark is ROI, not raw delta. A $25,000 annual gain on $55,000 in tuition with zero opportunity cost produces IRR of 20–25%, which is competitive with full-time MBA economics.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do employers value a part-time MBA?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Employer recognition of part-time MBA credentials depends heavily on the program's accreditation and brand. AACSB-accredited programs from recognized schools (Booth, Kellogg, Haas, Stern, Ross, Kelley, Marshall) are generally well-regarded by employers for internal promotion purposes. For external lateral moves or career pivots into consulting or banking, part-time MBA credentials carry less weight than full-time programs because they do not participate in on-campus recruiting.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does accreditation matter for a part-time MBA?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "AACSB accreditation is essential for part-time MBA programs. Non-AACSB programs are frequently not recognized by HR systems, excluded from tuition reimbursement programs, and do not appear on employer-recognized school lists. Among accredited programs, there is significant variation in brand strength by region and industry. A part-time MBA from a non-AACSB program is unlikely to generate salary lift and should not be pursued as a career investment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When should I choose part-time MBA over full-time MBA?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Choose part-time MBA over full-time when: (1) you want to advance within your current industry rather than switch careers, (2) you cannot afford or do not want to lose 2 years of salary, (3) your employer provides tuition assistance, or (4) you have family or financial obligations that make full-time enrollment impractical. Choose full-time over part-time when you need access to MBB consulting, investment banking, or big tech product management recruiting pipelines — these firms exclusively recruit from full-time programs.",
-      },
-    },
-  ],
-}
+const faqItems: FaqItem[] = [
+  { q: "Is a part-time MBA worth it financially?", a: "A part-time MBA is financially worth it when three conditions are met: (1) you attend an AACSB-accredited program, (2) you have a specific promotion or role change tied to the credential — not just general upskilling, and (3) the tuition is $65,000 or under, or you receive employer reimbursement. Programs costing $80,000–$120,000 with no employer subsidy require a $30,000+ annual salary delta to generate IRR above 10%, which is achievable but requires deliberate career positioning." },
+  { q: "How much does a part-time MBA increase salary?", a: "The average salary increase after a part-time MBA is $18,000–$35,000 per year within 24 months of graduation. This is substantially lower than the $50,000–$100,000 delta from full-time M7 programs, but part-time tuition is also 70–80% lower. The important benchmark is ROI, not raw delta. A $25,000 annual gain on $55,000 in tuition with zero opportunity cost produces IRR of 20–25%, which is competitive with full-time MBA economics." },
+  { q: "Do employers value a part-time MBA?", a: "Employer recognition of part-time MBA credentials depends heavily on the program's accreditation and brand. AACSB-accredited programs from recognized schools (Booth, Kellogg, Haas, Stern, Ross, Kelley, Marshall) are generally well-regarded by employers for internal promotion purposes. For external lateral moves or career pivots into consulting or banking, part-time MBA credentials carry less weight than full-time programs because they do not participate in on-campus recruiting." },
+  { q: "Does accreditation matter for a part-time MBA?", a: "AACSB accreditation is essential for part-time MBA programs. Non-AACSB programs are frequently not recognized by HR systems, excluded from tuition reimbursement programs, and do not appear on employer-recognized school lists. Among accredited programs, there is significant variation in brand strength by region and industry. A part-time MBA from a non-AACSB program is unlikely to generate salary lift and should not be pursued as a career investment." },
+  { q: "When should I choose part-time MBA over full-time MBA?", a: "Choose part-time MBA over full-time when: (1) you want to advance within your current industry rather than switch careers, (2) you cannot afford or do not want to lose 2 years of salary, (3) your employer provides tuition assistance, or (4) you have family or financial obligations that make full-time enrollment impractical. Choose full-time over part-time when you need access to MBB consulting, investment banking, or big tech product management recruiting pipelines — these firms exclusively recruit from full-time programs." },
+]
 
 const programFormats = [
   {
@@ -575,6 +537,8 @@ export default function PartTimeMbaRoiPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -593,7 +557,6 @@ export default function PartTimeMbaRoiPage() {
 
       </div>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
     </main>

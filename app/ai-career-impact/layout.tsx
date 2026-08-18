@@ -59,37 +59,6 @@ const toolSchema = {
   ],
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Which jobs are most at risk from AI?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "According to Goldman Sachs and McKinsey research, the roles with the highest AI displacement risk include: administrative assistants (76% task automation), customer service reps (82%), paralegal/legal assistants (71%), content writers (74%), and accountants (67%). Lower-risk roles include nurses (10%), lawyers (25%), and management consultants (20%), where judgment, empathy, and relationship skills are harder to automate.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the best skill to learn to protect yourself from AI?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The highest-ROI hedge for most roles is AI tools proficiency — learning to use ChatGPT, Claude, and GitHub Copilot effectively often costs nothing and adds 8-12% salary uplift while reducing displacement risk by 20%+ within 1-2 months. For technical roles, Python and AWS certifications offer stronger long-term protection. The key principle: learn to direct AI, not compete with it.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How was the AI displacement risk data calculated?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Displacement probabilities are derived from Goldman Sachs' 2023 report on AI's economic impact (300M jobs at risk globally), McKinsey's 2024 analysis of generative AI task automation, and the WEF Future of Jobs 2025 report. The methodology counts the fraction of job tasks that are automatable by current large language models and estimates the displacement probability based on what percentage of the role can be replaced end-to-end.",
-      },
-    },
-  ],
-}
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -97,11 +66,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(toolSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       {children}
+
     </>
   )
 }

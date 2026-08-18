@@ -5,6 +5,13 @@ import { useState, useMemo } from "react"
 import { calculateLoyaltyTax } from "@/lib/loyaltyTaxEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
+
+const faqItems: FaqItem[] = [
+  { q: "What is a loyalty tax?", a: "The loyalty tax is the cumulative salary gap between what a long-tenured employee earns and what a new external hire in the same role earns. Research from ADP and the Atlanta Federal Reserve shows that external hires earn 18% more than internal promotions for the same role, and job-switchers see annual raises of 5-7% vs 2-3% for those who stay. Over a 5-year period, the compounded difference typically amounts to $30,000-$80,000." },
+  { q: "Is job hopping actually better for your salary?", a: "Yes, statistically. The Atlanta Fed Wage Tracker consistently shows job-switchers earning approximately 5% more annually than job-stayers over rolling 12-month periods. Over a 10-year career, this compounds to a 50-80% salary advantage. The trade-off is the loss of institutional knowledge, tenure-based benefits (vesting schedules, PTO accrual), and role stability." },
+  { q: "When is the best time to switch jobs for maximum salary gain?", a: "The loyalty tax accelerates around Year 3-4 at most companies, when internal promotion rates flatten and external hiring budgets reset annually. The marginal tax tends to increase fastest in Years 2-5, then plateau. This calculator shows your year-by-year tax increment to identify the inflection point specific to your raise history." },
+]
 
 export default function LoyaltyTaxCalculatorPage() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -353,6 +360,10 @@ export default function LoyaltyTaxCalculatorPage() {
           ))}
         </div>
       </section>
+    <div className="mx-auto w-full max-w-5xl px-6 pb-12">
+      <FaqSection items={faqItems} />
+    </div>
+
     </main>
   )
 }

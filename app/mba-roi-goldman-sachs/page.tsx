@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "Goldman Sachs MBA Salary 2026: $200K Base + $150K Bonus",
@@ -21,6 +22,14 @@ export const metadata = {
       "GS MBA associate: $200K base + $75K–$150K bonus = $250K–$350K Y1 total comp. Break-even 4.5 yrs. Which schools Goldman Sachs recruits.",
   },
 }
+
+const faqItems: FaqItem[] = [
+  { q: "What does a Goldman Sachs MBA associate earn?", a: "Goldman Sachs MBA associates earn a base salary of approximately $200K in 2026. Year-end bonuses for first-year associates are typically $75K–$150K depending on desk performance. Total year-one compensation is $275K–$350K. The signing bonus is approximately $30K–$50K." },
+  { q: "Which MBA programs place into Goldman Sachs?", a: "Goldman Sachs recruits most heavily from Wharton, Harvard Business School, Columbia Business School, and Booth. Columbia's proximity to Wall Street and strong finance curriculum makes it a top feeder. GS also recruits from Stern, Tuck, and Fuqua for specific division needs." },
+  { q: "What is the break-even period for an MBA targeting Goldman Sachs?", a: "An MBA targeting Goldman Sachs investment banking breaks even in approximately 4–5 years. At $200K base + $100K average bonus vs a $95K pre-MBA salary, the net annual benefit is approximately $205K. Against a total economic cost of $300K–$380K, break-even falls in years 4–5." },
+  { q: "Is Goldman Sachs or McKinsey better for MBA ROI?", a: "Goldman Sachs produces higher nominal compensation in the first three years due to IB bonuses. McKinsey offers more predictable salary progression and superior exit opportunities. Over a 10-year horizon, the 10-year NPV is comparable, with Goldman having a slight edge in years 1–5 and McKinsey evening out through better non-financial compensation and exit optionality." },
+  { q: "Is an MBA required to work at Goldman Sachs?", a: "Goldman Sachs recruits MBA associates from M7 programs as the primary structured pathway for career switchers. Analysts who completed their two-year analyst programs can promote to associate without an MBA. For candidates without GS analyst experience, an M7 MBA is the most reliable route to an associate-level position." },
+]
 
 export default function MbaRoiGoldmanSachsPage() {
   return (
@@ -372,6 +381,8 @@ export default function MbaRoiGoldmanSachsPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -394,10 +405,6 @@ export default function MbaRoiGoldmanSachsPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a Goldman Sachs MBA associate earn?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs MBA associates earn a base salary of approximately $200K in 2026. Year-end bonuses for first-year associates are typically $75K–$150K depending on desk performance. Total year-one compensation is $275K–$350K. The signing bonus is approximately $30K–$50K."}}, {"@type": "Question", "name": "Which MBA programs place into Goldman Sachs?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs recruits most heavily from Wharton, Harvard Business School, Columbia Business School, and Booth. Columbia's proximity to Wall Street and strong finance curriculum makes it a top feeder. GS also recruits from Stern, Tuck, and Fuqua for specific division needs."}}, {"@type": "Question", "name": "What is the break-even period for an MBA targeting Goldman Sachs?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA targeting Goldman Sachs investment banking breaks even in approximately 4–5 years. At $200K base + $100K average bonus vs a $95K pre-MBA salary, the net annual benefit is approximately $205K. Against a total economic cost of $300K–$380K, break-even falls in years 4–5."}}, {"@type": "Question", "name": "Is Goldman Sachs or McKinsey better for MBA ROI?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs produces higher nominal compensation in the first three years due to IB bonuses. McKinsey offers more predictable salary progression and superior exit opportunities. Over a 10-year horizon, the 10-year NPV is comparable, with Goldman having a slight edge in years 1–5 and McKinsey evening out through better non-financial compensation and exit optionality."}}, {"@type": "Question", "name": "Is an MBA required to work at Goldman Sachs?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs recruits MBA associates from M7 programs as the primary structured pathway for career switchers. Analysts who completed their two-year analyst programs can promote to associate without an MBA. For candidates without GS analyst experience, an M7 MBA is the most reliable route to an associate-level position."}}]}) }}
-      />
     </main>
   )
 }

@@ -2,7 +2,7 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA Salary Analytics for Employers | Custom Reports & Benchmarking | CareerReturns",
+  title: "MBA Salary Analytics for Employers | CareerReturns",
   description:
     "MBA salary analytics and benchmarking data for employers, HR teams, and talent leaders. Use CareerReturns data to set competitive MBA-hire compensation, design retention packages, and support executive decisions.",
   alternates: pageAlternates("https://careerreturns.com/for-employers"),

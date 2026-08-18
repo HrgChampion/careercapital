@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 const _articleSchema = articleSchema({
   title: "Executive MBA ROI 2026: When EMBA Math Works (and When It Doesn't)",
@@ -37,52 +38,13 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is an Executive MBA worth the cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An EMBA is worth the cost in three situations: (1) your employer covers at least 50% of tuition, (2) you are targeting a promotion to GM, VP, or C-suite within 3–5 years and the credential accelerates that timeline, or (3) you are pivoting within the same industry — for example, from engineering management to business development. EMBAs are not worth full self-pay at top programs ($180K–$210K) if the resulting salary delta is under $25K/yr and you are already earning $200K+.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does employer sponsorship make EMBA ROI better than full-time MBA ROI?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, dramatically. When an employer pays 100% of EMBA tuition, the employee's net cost is zero. With no tuition outflow and no opportunity cost (you continue earning your salary), the IRR on employer-sponsored EMBA is effectively infinite. Even 50% employer sponsorship yields IRRs of 30–50%+ given the low personal outlay. Full-time MBA ROI at M7 programs rarely exceeds 22–40% IRR even at peak MBB/banking placement.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the salary increase after an Executive MBA?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The average salary increase after an Executive MBA is $15K–$40K per year, depending on the career track and starting compensation. EMBA candidates begin the program earning $150K–$250K on average, so the percentage delta is smaller than for full-time MBA graduates. However, the absolute compensation trajectory — moving from director to VP, or VP to SVP — can generate cumulative gains of $500K–$1M+ over a 10-year horizon.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does Executive MBA ROI compare to full-time MBA ROI?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For mid-career professionals who are not switching industries, EMBA NPV almost always exceeds full-time MBA NPV. The reason is opportunity cost elimination: a full-time MBA costs $300K–$450K all-in (tuition + foregone salary + living expenses). An EMBA costs only $120K–$210K in tuition with zero opportunity cost. For career-switchers who need access to MBB, investment banking, or technology recruiting pipelines, full-time MBA wins because EMBA programs do not participate in on-campus recruiting for these roles.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When is EMBA ROI negative?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "EMBA ROI is negative or marginal when: (1) you are already earning $200K+ and a promotion is likely without the degree, (2) you are attending purely for prestige without a specific role or promotion tied to it, (3) you are financing 100% of a top-tier EMBA ($180K–$210K) at 8%+ interest with a modest expected salary delta, or (4) you need to change industries — EMBA programs do not provide the recruiting access or dedicated placement infrastructure of full-time programs.",
-      },
-    },
-  ],
-}
+const faqItems: FaqItem[] = [
+  { q: "Is an Executive MBA worth the cost?", a: "An EMBA is worth the cost in three situations: (1) your employer covers at least 50% of tuition, (2) you are targeting a promotion to GM, VP, or C-suite within 3–5 years and the credential accelerates that timeline, or (3) you are pivoting within the same industry — for example, from engineering management to business development. EMBAs are not worth full self-pay at top programs ($180K–$210K) if the resulting salary delta is under $25K/yr and you are already earning $200K+." },
+  { q: "Does employer sponsorship make EMBA ROI better than full-time MBA ROI?", a: "Yes, dramatically. When an employer pays 100% of EMBA tuition, the employee's net cost is zero. With no tuition outflow and no opportunity cost (you continue earning your salary), the IRR on employer-sponsored EMBA is effectively infinite. Even 50% employer sponsorship yields IRRs of 30–50%+ given the low personal outlay. Full-time MBA ROI at M7 programs rarely exceeds 22–40% IRR even at peak MBB/banking placement." },
+  { q: "What is the salary increase after an Executive MBA?", a: "The average salary increase after an Executive MBA is $15K–$40K per year, depending on the career track and starting compensation. EMBA candidates begin the program earning $150K–$250K on average, so the percentage delta is smaller than for full-time MBA graduates. However, the absolute compensation trajectory — moving from director to VP, or VP to SVP — can generate cumulative gains of $500K–$1M+ over a 10-year horizon." },
+  { q: "How does Executive MBA ROI compare to full-time MBA ROI?", a: "For mid-career professionals who are not switching industries, EMBA NPV almost always exceeds full-time MBA NPV. The reason is opportunity cost elimination: a full-time MBA costs $300K–$450K all-in (tuition + foregone salary + living expenses). An EMBA costs only $120K–$210K in tuition with zero opportunity cost. For career-switchers who need access to MBB, investment banking, or technology recruiting pipelines, full-time MBA wins because EMBA programs do not participate in on-campus recruiting for these roles." },
+  { q: "When is EMBA ROI negative?", a: "EMBA ROI is negative or marginal when: (1) you are already earning $200K+ and a promotion is likely without the degree, (2) you are attending purely for prestige without a specific role or promotion tied to it, (3) you are financing 100% of a top-tier EMBA ($180K–$210K) at 8%+ interest with a modest expected salary delta, or (4) you need to change industries — EMBA programs do not provide the recruiting access or dedicated placement infrastructure of full-time programs." },
+]
 
 const programCosts = [
   {
@@ -584,6 +546,8 @@ export default function ExecutiveMbaRoiPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -602,7 +566,6 @@ export default function ExecutiveMbaRoiPage() {
 
       </div>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
     </main>

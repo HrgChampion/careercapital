@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "Free MBA Programs 2026: Fully-Funded, Fellowship & Zero-Tuition Options",
@@ -23,52 +24,13 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Are there actually free MBA programs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — but a truly free MBA requires qualifying for one of five paths: full-merit scholarship from the school (rare, typically GMAT 760+ profiles), a research or teaching assistantship, employer full sponsorship (the most common path), military GI Bill + Yellow Ribbon, or a corporate fellowship from firms like McKinsey or Bain. Each path is real and achievable for the right candidate profile, but none is automatic.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the Yellow Ribbon MBA program?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The Yellow Ribbon Program is a VA-school partnership where participating schools contribute additional tuition funds beyond the Post-9/11 GI Bill private school cap, matched dollar-for-dollar by the VA. For veterans with full GI Bill eligibility attending a 100% Yellow Ribbon school — including Wharton, Booth, Tuck, and Cornell — the net tuition cost is zero. Combined with the Monthly Housing Allowance, total annual benefit value can exceed $70,000–$100,000.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do employers pay for MBA programs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Full employer sponsorship programs exist at McKinsey, Bain, BCG, Goldman Sachs, Deloitte, and others. These programs pay 100% of tuition, maintain your salary during the program, and guarantee a return offer — in exchange for a 2–3 year post-MBA commitment. Partial tuition reimbursement is far more common: $5,250/yr is tax-free under IRS §127; amounts above that are taxable income. Many large companies in consulting, finance, pharma, and tech offer partial or full reimbursement.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is an MBA assistantship?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A Graduate Research Assistantship (GRA) or Teaching Assistantship (TA) is a school-funded arrangement where students work 15–20 hours per week on research or teaching in exchange for partial or full tuition coverage plus a modest stipend. Assistantships are more common at doctoral-granting business schools than at pure MBA programs. Schools with MBA-level assistantship programs include Georgia Tech Scheller, UT McCombs, Michigan Ross, Indiana Kelley, and Vanderbilt Owen.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How rare are full MBA scholarships?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Full-tuition merit scholarships at M7 programs are awarded to fewer than 3% of enrolled students. They are not impossible — but they require an exceptional combination of GMAT score (760+), meaningful work experience, leadership evidence, and a compelling application narrative. Need-based full awards at programs like Stanford GSB and Yale SOM are more accessible for candidates who qualify financially. Outside M7, full scholarships are more common: T15 and T25 programs use them competitively to attract strong candidates.",
-      },
-    },
-  ],
-}
+const faqItems: FaqItem[] = [
+  { q: "Are there actually free MBA programs?", a: "Yes — but a truly free MBA requires qualifying for one of five paths: full-merit scholarship from the school (rare, typically GMAT 760+ profiles), a research or teaching assistantship, employer full sponsorship (the most common path), military GI Bill + Yellow Ribbon, or a corporate fellowship from firms like McKinsey or Bain. Each path is real and achievable for the right candidate profile, but none is automatic." },
+  { q: "What is the Yellow Ribbon MBA program?", a: "The Yellow Ribbon Program is a VA-school partnership where participating schools contribute additional tuition funds beyond the Post-9/11 GI Bill private school cap, matched dollar-for-dollar by the VA. For veterans with full GI Bill eligibility attending a 100% Yellow Ribbon school — including Wharton, Booth, Tuck, and Cornell — the net tuition cost is zero. Combined with the Monthly Housing Allowance, total annual benefit value can exceed $70,000–$100,000." },
+  { q: "Do employers pay for MBA programs?", a: "Yes. Full employer sponsorship programs exist at McKinsey, Bain, BCG, Goldman Sachs, Deloitte, and others. These programs pay 100% of tuition, maintain your salary during the program, and guarantee a return offer — in exchange for a 2–3 year post-MBA commitment. Partial tuition reimbursement is far more common: $5,250/yr is tax-free under IRS §127; amounts above that are taxable income. Many large companies in consulting, finance, pharma, and tech offer partial or full reimbursement." },
+  { q: "What is an MBA assistantship?", a: "A Graduate Research Assistantship (GRA) or Teaching Assistantship (TA) is a school-funded arrangement where students work 15–20 hours per week on research or teaching in exchange for partial or full tuition coverage plus a modest stipend. Assistantships are more common at doctoral-granting business schools than at pure MBA programs. Schools with MBA-level assistantship programs include Georgia Tech Scheller, UT McCombs, Michigan Ross, Indiana Kelley, and Vanderbilt Owen." },
+  { q: "How rare are full MBA scholarships?", a: "Full-tuition merit scholarships at M7 programs are awarded to fewer than 3% of enrolled students. They are not impossible — but they require an exceptional combination of GMAT score (760+), meaningful work experience, leadership evidence, and a compelling application narrative. Need-based full awards at programs like Stanford GSB and Yale SOM are more accessible for candidates who qualify financially. Outside M7, full scholarships are more common: T15 and T25 programs use them competitively to attract strong candidates." },
+]
 
 export default function FreeMbaProgramsPage() {
   return (
@@ -485,6 +447,8 @@ export default function FreeMbaProgramsPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -505,10 +469,6 @@ export default function FreeMbaProgramsPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
     </main>
   )
 }

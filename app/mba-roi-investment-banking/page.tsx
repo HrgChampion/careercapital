@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "MBA ROI: Investment Banking 2026 — $210K Pay & Break-Even",
@@ -7,6 +8,14 @@ export const metadata = {
     "MBA ROI for investment banking. Bulge bracket associate pay, PE exit math, break-even timeline, and when banking justifies M7 tuition. See full data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-investment-banking"),
 }
+
+const faqItems: FaqItem[] = [
+  { q: "What is the post-MBA salary at investment banking?", a: "First-year MBA associates at bulge bracket banks earn a base salary of $175K–$200K plus a year-end bonus of $75K–$150K, for total compensation of $250K–$350K. Tier-2 banks (Lazard, Evercore, Jefferies) pay similarly. The signing bonus is typically $30K–$50K." },
+  { q: "Is an MBA required for investment banking?", a: "An MBA is not strictly required but provides structured re-entry for career changers and non-target undergrads. Banks recruit associates directly from M7 programs at Wharton, Booth, Columbia, and NYU Stern. For candidates without IB analyst experience, an M7 MBA is the primary pathway to associate-level IB roles." },
+  { q: "What is the break-even period for an MBA targeting investment banking?", a: "An MBA targeting bulge bracket investment banking breaks even in approximately 4–5 years. At $200K base + $100K bonus in year one, the annual salary delta over a typical $95K pre-MBA salary is $205K. Against a total economic cost of $280K–$320K, break-even occurs in the early post-graduation years." },
+  { q: "Is the MBA ROI better at Goldman Sachs or MBB consulting?", a: "Goldman Sachs produces slightly higher nominal compensation than MBB in the first three years. However, MBB offers faster promotion timelines and better upside post year 3. On a 10-year NPV basis, the two tracks are comparable, with MBB having a slight edge due to performance bonuses and more predictable career progression." },
+  { q: "Which MBA programs place best into investment banking?", a: "Wharton, Columbia Business School, Booth, and NYU Stern have the strongest bulge bracket IB placement rates. Approximately 30–40% of Wharton and Columbia classes enter financial services. Harvard and Stanford place fewer students into IB but retain strong individual relationships with Goldman, Morgan Stanley, and Evercore." },
+]
 
 export default function MbaRoiInvestmentBankingPage() {
   return (
@@ -228,6 +237,8 @@ export default function MbaRoiInvestmentBankingPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -254,10 +265,6 @@ export default function MbaRoiInvestmentBankingPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the post-MBA salary at investment banking?", "acceptedAnswer": {"@type": "Answer", "text": "First-year MBA associates at bulge bracket banks earn a base salary of $175K–$200K plus a year-end bonus of $75K–$150K, for total compensation of $250K–$350K. Tier-2 banks (Lazard, Evercore, Jefferies) pay similarly. The signing bonus is typically $30K–$50K."}}, {"@type": "Question", "name": "Is an MBA required for investment banking?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA is not strictly required but provides structured re-entry for career changers and non-target undergrads. Banks recruit associates directly from M7 programs at Wharton, Booth, Columbia, and NYU Stern. For candidates without IB analyst experience, an M7 MBA is the primary pathway to associate-level IB roles."}}, {"@type": "Question", "name": "What is the break-even period for an MBA targeting investment banking?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA targeting bulge bracket investment banking breaks even in approximately 4–5 years. At $200K base + $100K bonus in year one, the annual salary delta over a typical $95K pre-MBA salary is $205K. Against a total economic cost of $280K–$320K, break-even occurs in the early post-graduation years."}}, {"@type": "Question", "name": "Is the MBA ROI better at Goldman Sachs or MBB consulting?", "acceptedAnswer": {"@type": "Answer", "text": "Goldman Sachs produces slightly higher nominal compensation than MBB in the first three years. However, MBB offers faster promotion timelines and better upside post year 3. On a 10-year NPV basis, the two tracks are comparable, with MBB having a slight edge due to performance bonuses and more predictable career progression."}}, {"@type": "Question", "name": "Which MBA programs place best into investment banking?", "acceptedAnswer": {"@type": "Answer", "text": "Wharton, Columbia Business School, Booth, and NYU Stern have the strongest bulge bracket IB placement rates. Approximately 30–40% of Wharton and Columbia classes enter financial services. Harvard and Stanford place fewer students into IB but retain strong individual relationships with Goldman, Morgan Stanley, and Evercore."}}]}) }}
-      />
     </main>
   )
 }

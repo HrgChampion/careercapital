@@ -2,6 +2,7 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 const _articleSchema = articleSchema({
   title: "MBA ROI 2026: IRR, NPV & Break-Even by Industry [Guide]",
@@ -32,6 +33,14 @@ const roiTable = [
   { industry: "Media / Entertainment", irr: "9–18%", breakEven: "9.4–11.0 yrs", npv10yr: "+$30k–$90k", verdict: "Weak", color: "text-orange-400" },
   { industry: "Military / Government (with GI Bill)", irr: "28–55%", breakEven: "2.0–3.5 yrs", npv10yr: "+$350k–$600k", verdict: "Exceptional (veterans)", color: "text-blue-400" },
   { industry: "Nonprofit / Government (civilian)", irr: "4–14%", breakEven: "9.4–13.1 yrs", npv10yr: "–$20k to +$80k", verdict: "Negative at sticker", color: "text-red-400" },
+]
+
+const faqItems: FaqItem[] = [
+  { q: "What is a good MBA ROI?", a: "A good MBA ROI is an Internal Rate of Return (IRR) exceeding 10–12%, which represents returns above long-run equity market benchmarks. M7 programs targeting MBB consulting or investment banking typically produce IRRs of 18–24%. IRR below 6% — approximately the long-run risk-free rate — indicates the MBA does not pass a basic financial hurdle." },
+  { q: "How is MBA ROI calculated?", a: "MBA ROI is properly calculated using Discounted Cash Flow analysis: model all costs as negative cash flows (tuition, living expenses, foregone salary) and all benefits as positive cash flows (post-MBA salary delta net of taxes and loan payments). IRR is the discount rate that sets NPV to zero. Break-even is the year cumulative cash flow crosses zero." },
+  { q: "Is MBA ROI higher in consulting or banking?", a: "Consulting (MBB) and banking (bulge bracket) produce comparable MBA IRRs of 18–24% from M7 programs. Consulting produces faster break-even (4.2 vs 4.5 years) due to more predictable salary structure. Banking produces higher year 1–3 total compensation due to larger bonuses. Over 10 years, the NPVs are similar, diverging based on individual performance trajectories." },
+  { q: "Is MBA ROI positive for all programs?", a: "No. MBA ROI is negative or marginally positive for many programs outside the top 25, particularly when targeting sectors with modest post-MBA salary premiums. Regional programs targeting local general management roles at $90K–$110K post-MBA produce IRRs of 2–6%, which do not clear a basic financial hurdle. School tier, industry target, and financing structure are determinative." },
+  { q: "How does an MBA compare to just investing the money in the stock market?", a: "At M7 programs with MBB/banking placement, the MBA IRR of 18–24% significantly outperforms the S&P 500's long-run 8–10% return. However, equity investment is diversified and liquid; an MBA is a concentrated, illiquid bet on a single career path. At programs producing IRR below 8–10%, passive index investing would generate higher risk-adjusted returns." },
 ]
 
 export default function MbaRoiPage() {
@@ -413,16 +422,15 @@ export default function MbaRoiPage() {
           ]}
         />
 
+        <FaqSection items={faqItems} />
+
         <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good MBA ROI?", "acceptedAnswer": {"@type": "Answer", "text": "A good MBA ROI is an Internal Rate of Return (IRR) exceeding 10–12%, which represents returns above long-run equity market benchmarks. M7 programs targeting MBB consulting or investment banking typically produce IRRs of 18–24%. IRR below 6% — approximately the long-run risk-free rate — indicates the MBA does not pass a basic financial hurdle."}}, {"@type": "Question", "name": "How is MBA ROI calculated?", "acceptedAnswer": {"@type": "Answer", "text": "MBA ROI is properly calculated using Discounted Cash Flow analysis: model all costs as negative cash flows (tuition, living expenses, foregone salary) and all benefits as positive cash flows (post-MBA salary delta net of taxes and loan payments). IRR is the discount rate that sets NPV to zero. Break-even is the year cumulative cash flow crosses zero."}}, {"@type": "Question", "name": "Is MBA ROI higher in consulting or banking?", "acceptedAnswer": {"@type": "Answer", "text": "Consulting (MBB) and banking (bulge bracket) produce comparable MBA IRRs of 18–24% from M7 programs. Consulting produces faster break-even (4.2 vs 4.5 years) due to more predictable salary structure. Banking produces higher year 1–3 total compensation due to larger bonuses. Over 10 years, the NPVs are similar, diverging based on individual performance trajectories."}}, {"@type": "Question", "name": "Is MBA ROI positive for all programs?", "acceptedAnswer": {"@type": "Answer", "text": "No. MBA ROI is negative or marginally positive for many programs outside the top 25, particularly when targeting sectors with modest post-MBA salary premiums. Regional programs targeting local general management roles at $90K–$110K post-MBA produce IRRs of 2–6%, which do not clear a basic financial hurdle. School tier, industry target, and financing structure are determinative."}}, {"@type": "Question", "name": "How does an MBA compare to just investing the money in the stock market?", "acceptedAnswer": {"@type": "Answer", "text": "At M7 programs with MBB/banking placement, the MBA IRR of 18–24% significantly outperforms the S&P 500's long-run 8–10% return. However, equity investment is diversified and liquid; an MBA is a concentrated, illiquid bet on a single career path. At programs producing IRR below 8–10%, passive index investing would generate higher risk-adjusted returns."}}]}) }}
-      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
+
     </main>
   )
 }

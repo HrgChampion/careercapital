@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "MBA ROI for Healthcare (2026): Salaries, PSLF & Break-Even",
@@ -7,6 +8,15 @@ export const metadata = {
     "MBA ROI for healthcare. Hospital administration salary, healthcare consulting ROI, PSLF loan forgiveness strategy, top programs, and break-even math. See data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-healthcare"),
 }
+
+const faqItems: FaqItem[] = [
+  { q: "Is an MBA worth it for healthcare professionals?", a: "An MBA is worth it for healthcare professionals targeting hospital administration, healthcare consulting, or health tech product management. Hospital C-suite and VP roles average $200K–$350K — significantly above clinical-track salaries. The MBA ROI case is strongest for physicians, pharmacists, and clinical leaders targeting administrative or consulting roles." },
+  { q: "What is the post-MBA salary in healthcare management?", a: "Hospital VP and director roles pay $150K–$200K. Healthcare consulting at MBB pays $190K–$215K. Health tech (clinical product, digital health) pays $160K–$220K. Healthcare private equity pays $200K–$350K for post-MBA associates. These salary levels produce positive NPV against M7 tuition for candidates with strong pre-MBA clinical backgrounds." },
+  { q: "What is the PSLF loan forgiveness strategy for healthcare MBA graduates?", a: "Public Service Loan Forgiveness (PSLF) forgives remaining federal loan balances after 10 years of qualifying payments while working for a 501(c)(3) employer. Hospital systems are frequently 501(c)(3) entities. A healthcare MBA graduate targeting hospital administration can eliminate $150K–$200K in debt after 10 years through PSLF, dramatically improving MBA ROI." },
+  { q: "Which MBA programs are best for healthcare careers?", a: "Wharton (Health Care Management program), Michigan Ross (multidisciplinary health management), Yale SOM, and Kellogg have the strongest healthcare-focused MBA programs. Johnson (Cornell), Darden, and Harvard also place well into healthcare consulting and health system administration." },
+  { q: "How long to break even on an MBA for a healthcare professional?", a: "For a physician or pharmacist with a $200K pre-MBA salary targeting healthcare consulting at $215K, the delta is small and break-even is 8–12 years — the MBA math is marginal. For a nurse or clinical coordinator at $80K–$100K pre-MBA targeting hospital administration at $160K+, break-even is 5–7 years and the NPV is positive." },
+  { q: "What is the MBA in healthcare management salary?", a: "An MBA in healthcare management typically leads to salaries of $135,000–$160,000 in Year 1 at hospitals and health systems ($150K–$200K for VP/director roles), $190,000–$215,000 in healthcare consulting at MBB firms, and $160,000–$220,000 in health tech product management. Executive healthcare roles (COO, CFO of hospital system) reach $250,000–$400,000. The healthcare management MBA salary premium over non-MBA healthcare administrators is approximately $40,000–$80,000 per year." },
+]
 
 export default function MbaRoiHealthcarePage() {
   return (
@@ -333,6 +343,8 @@ export default function MbaRoiHealthcarePage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -355,10 +367,6 @@ export default function MbaRoiHealthcarePage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA worth it for healthcare professionals?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA is worth it for healthcare professionals targeting hospital administration, healthcare consulting, or health tech product management. Hospital C-suite and VP roles average $200K–$350K — significantly above clinical-track salaries. The MBA ROI case is strongest for physicians, pharmacists, and clinical leaders targeting administrative or consulting roles."}}, {"@type": "Question", "name": "What is the post-MBA salary in healthcare management?", "acceptedAnswer": {"@type": "Answer", "text": "Hospital VP and director roles pay $150K–$200K. Healthcare consulting at MBB pays $190K–$215K. Health tech (clinical product, digital health) pays $160K–$220K. Healthcare private equity pays $200K–$350K for post-MBA associates. These salary levels produce positive NPV against M7 tuition for candidates with strong pre-MBA clinical backgrounds."}}, {"@type": "Question", "name": "What is the PSLF loan forgiveness strategy for healthcare MBA graduates?", "acceptedAnswer": {"@type": "Answer", "text": "Public Service Loan Forgiveness (PSLF) forgives remaining federal loan balances after 10 years of qualifying payments while working for a 501(c)(3) employer. Hospital systems are frequently 501(c)(3) entities. A healthcare MBA graduate targeting hospital administration can eliminate $150K–$200K in debt after 10 years through PSLF, dramatically improving MBA ROI."}}, {"@type": "Question", "name": "Which MBA programs are best for healthcare careers?", "acceptedAnswer": {"@type": "Answer", "text": "Wharton (Health Care Management program), Michigan Ross (multidisciplinary health management), Yale SOM, and Kellogg have the strongest healthcare-focused MBA programs. Johnson (Cornell), Darden, and Harvard also place well into healthcare consulting and health system administration."}}, {"@type": "Question", "name": "How long to break even on an MBA for a healthcare professional?", "acceptedAnswer": {"@type": "Answer", "text": "For a physician or pharmacist with a $200K pre-MBA salary targeting healthcare consulting at $215K, the delta is small and break-even is 8–12 years — the MBA math is marginal. For a nurse or clinical coordinator at $80K–$100K pre-MBA targeting hospital administration at $160K+, break-even is 5–7 years and the NPV is positive."}}, {"@type": "Question", "name": "What is the MBA in healthcare management salary?", "acceptedAnswer": {"@type": "Answer", "text": "An MBA in healthcare management typically leads to salaries of $135,000–$160,000 in Year 1 at hospitals and health systems ($150K–$200K for VP/director roles), $190,000–$215,000 in healthcare consulting at MBB firms, and $160,000–$220,000 in health tech product management. Executive healthcare roles (COO, CFO of hospital system) reach $250,000–$400,000. The healthcare management MBA salary premium over non-MBA healthcare administrators is approximately $40,000–$80,000 per year."}}]}) }}
-      />
     </main>
   )
 }

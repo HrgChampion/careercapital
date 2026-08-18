@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "Return to Work After Career Break: 2026 Salary & Strategy",
@@ -73,6 +74,14 @@ const industryData = [
   { industry: "Finance / Accounting", returnDifficulty: "Moderate", salaryPenalty: "8–12%", recoveryPath: "Returnship or direct + CPA refresh", topPrograms: "Fidelity, JPMorgan, Deloitte" },
   { industry: "Engineering (Non-software)", returnDifficulty: "Moderate", salaryPenalty: "7–11%", recoveryPath: "Direct re-entry or returnship", topPrograms: "Northrop iReturn, Accenture" },
   { industry: "Human Resources / Operations", returnDifficulty: "Low", salaryPenalty: "4–7%", recoveryPath: "Direct re-entry", topPrograms: "Path Forward, Accenture" },
+]
+
+const faqItems: FaqItem[] = [
+  { q: "How does a career break affect your career?", a: "A career break typically reduces re-entry salary by 6–18% depending on gap duration and industry. Gaps under 12 months carry a 2–7% penalty with 1–3 year recovery. Gaps of 2–3 years carry a 10–14% penalty with 4–6 year recovery. The penalty reflects both skills depreciation and employer risk-discounting — both of which can be mitigated through returnship programs, reskilling, or bridge activities during the gap." },
+  { q: "Can you return to your career after a long break?", a: "Yes. Professionals return to careers after gaps of 5–10+ years through structured pathways including corporate returnship programs, reskilling bootcamps, and freelance/consulting bridge work. The longer the gap, the more structured the re-entry strategy needs to be. Returnship programs at companies like Amazon, Goldman Sachs, and JPMorgan are specifically designed for professionals with multi-year gaps." },
+  { q: "What is the best way to return to work after a career break?", a: "The best re-entry path depends on gap duration and industry. For gaps under 12 months: direct re-entry with strong network activation. For 1–2 year gaps: returnship program or targeted direct re-entry with bridge activities. For 2+ year gaps: returnship program or reskilling + career pivot. On a 10-year NPV basis, returnship programs outperform direct re-entry by $20k–$62k for most professional backgrounds, primarily because they eliminate the gap penalty and raise the salary floor." },
+  { q: "How do you explain a career gap to employers?", a: "State the gap directly and briefly on your resume and in interviews — caregiving, relocation, health, or education — then pivot to any bridge activities (courses, freelance, volunteer work) and your current readiness. Do not over-explain or apologize. Employers who run returnship programs have built internal consensus that gap candidates are hirable; target these companies first." },
+  { q: "How long does it take to recover salary after a career break?", a: "Salary recovery after a career break takes 1–8 years depending on gap duration and re-entry path. Direct re-entry after a 2-year gap in tech typically takes 5–7 years to reach peer salary parity. The same gap handled through an Amazon or Meta returnship reduces recovery time to approximately 2–3 years. Reskilling to a higher-paying track can eliminate the penalty entirely within 1–3 years but requires upfront time and cost." },
 ]
 
 export default function ReturnToWorkAfterCareerBreakPage() {
@@ -380,6 +389,8 @@ export default function ReturnToWorkAfterCareerBreakPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -398,57 +409,6 @@ export default function ReturnToWorkAfterCareerBreakPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "How does a career break affect your career?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "A career break typically reduces re-entry salary by 6–18% depending on gap duration and industry. Gaps under 12 months carry a 2–7% penalty with 1–3 year recovery. Gaps of 2–3 years carry a 10–14% penalty with 4–6 year recovery. The penalty reflects both skills depreciation and employer risk-discounting — both of which can be mitigated through returnship programs, reskilling, or bridge activities during the gap.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Can you return to your career after a long break?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes. Professionals return to careers after gaps of 5–10+ years through structured pathways including corporate returnship programs, reskilling bootcamps, and freelance/consulting bridge work. The longer the gap, the more structured the re-entry strategy needs to be. Returnship programs at companies like Amazon, Goldman Sachs, and JPMorgan are specifically designed for professionals with multi-year gaps.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What is the best way to return to work after a career break?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "The best re-entry path depends on gap duration and industry. For gaps under 12 months: direct re-entry with strong network activation. For 1–2 year gaps: returnship program or targeted direct re-entry with bridge activities. For 2+ year gaps: returnship program or reskilling + career pivot. On a 10-year NPV basis, returnship programs outperform direct re-entry by $20k–$62k for most professional backgrounds, primarily because they eliminate the gap penalty and raise the salary floor.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How do you explain a career gap to employers?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "State the gap directly and briefly on your resume and in interviews — caregiving, relocation, health, or education — then pivot to any bridge activities (courses, freelance, volunteer work) and your current readiness. Do not over-explain or apologize. Employers who run returnship programs have built internal consensus that gap candidates are hirable; target these companies first.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How long does it take to recover salary after a career break?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Salary recovery after a career break takes 1–8 years depending on gap duration and re-entry path. Direct re-entry after a 2-year gap in tech typically takes 5–7 years to reach peer salary parity. The same gap handled through an Amazon or Meta returnship reduces recovery time to approximately 2–3 years. Reskilling to a higher-paying track can eliminate the penalty entirely within 1–3 years but requires upfront time and cost.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
     </main>
   )
 }

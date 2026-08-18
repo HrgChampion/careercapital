@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "UK vs US MBA ROI 2026: Full Comparison — INSEAD $224K vs Wharton $395K ($171K Gap)",
+  title: "UK vs US MBA ROI 2026: INSEAD vs Wharton Compared",
   description: "INSEAD vs Wharton ROI compared: $171K cheaper, breaks even in 5 yrs vs 7.2 yrs. UK MBA salaries: London consulting £85K–£110K, IB £150K–£200K. Which wins for UK & international careers? →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-europe", true),
   openGraph: {
@@ -18,6 +19,14 @@ export const metadata = {
     description: "INSEAD vs Wharton: $171K cheaper, 5-yr vs 7.2-yr break-even. UK MBA salaries, London consulting & IB data included.",
   },
 }
+
+const faqItems: FaqItem[] = [
+  { q: "Is an MBA from INSEAD or LBS worth the cost?", a: "INSEAD and LBS both offer one-year programs at significantly lower total cost than US M7 schools — roughly $100K–$130K vs $230K–$260K all-in. Post-MBA salaries in Europe are 15–25% lower, but the compressed timeline eliminates one year of foregone income. Net present value analysis favors INSEAD for candidates targeting European or global roles." },
+  { q: "How does European MBA ROI compare to US MBA ROI?", a: "European MBA programs produce comparable IRR to US M7 programs when accounting for total economic cost. INSEAD's one-year format combined with lower tuition generates IRRs of 18–22% for consulting placements, matching Wharton or Booth outcomes despite lower nominal salaries." },
+  { q: "What is the post-MBA salary in Europe?", a: "Post-MBA median salary in Europe is approximately €85,000–€120,000 ($90K–$130K) for MBB consulting roles and €70,000–€95,000 ($75K–$105K) for general management. London and Zurich pay at the high end; Frankfurt and Amsterdam are more typical." },
+  { q: "Is the INSEAD MBA one year or two years?", a: "INSEAD offers a one-year MBA program, running approximately 10 months. This eliminates one year of foregone salary — the single largest cost in MBA ROI calculations — giving it a structural financial advantage over two-year US programs at comparable or even higher nominal tuition." },
+  { q: "When should I choose a European MBA over a US MBA?", a: "A European MBA is preferable when you: plan to work in Europe, Asia, or emerging markets; want to avoid two years of foregone income; value INSEAD or LBS's global alumni networks; and can achieve similar post-MBA roles at lower total cost. If you specifically need US MBB or bulge bracket placement, an M7 program has stronger institutional pipelines." },
+]
 
 export default function MbaRoiEuropePage() {
   return (
@@ -212,6 +221,8 @@ export default function MbaRoiEuropePage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -236,10 +247,6 @@ export default function MbaRoiEuropePage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is an MBA from INSEAD or LBS worth the cost?", "acceptedAnswer": {"@type": "Answer", "text": "INSEAD and LBS both offer one-year programs at significantly lower total cost than US M7 schools — roughly $100K–$130K vs $230K–$260K all-in. Post-MBA salaries in Europe are 15–25% lower, but the compressed timeline eliminates one year of foregone income. Net present value analysis favors INSEAD for candidates targeting European or global roles."}}, {"@type": "Question", "name": "How does European MBA ROI compare to US MBA ROI?", "acceptedAnswer": {"@type": "Answer", "text": "European MBA programs produce comparable IRR to US M7 programs when accounting for total economic cost. INSEAD's one-year format combined with lower tuition generates IRRs of 18–22% for consulting placements, matching Wharton or Booth outcomes despite lower nominal salaries."}}, {"@type": "Question", "name": "What is the post-MBA salary in Europe?", "acceptedAnswer": {"@type": "Answer", "text": "Post-MBA median salary in Europe is approximately €85,000–€120,000 ($90K–$130K) for MBB consulting roles and €70,000–€95,000 ($75K–$105K) for general management. London and Zurich pay at the high end; Frankfurt and Amsterdam are more typical."}}, {"@type": "Question", "name": "Is the INSEAD MBA one year or two years?", "acceptedAnswer": {"@type": "Answer", "text": "INSEAD offers a one-year MBA program, running approximately 10 months. This eliminates one year of foregone salary — the single largest cost in MBA ROI calculations — giving it a structural financial advantage over two-year US programs at comparable or even higher nominal tuition."}}, {"@type": "Question", "name": "When should I choose a European MBA over a US MBA?", "acceptedAnswer": {"@type": "Answer", "text": "A European MBA is preferable when you: plan to work in Europe, Asia, or emerging markets; want to avoid two years of foregone income; value INSEAD or LBS's global alumni networks; and can achieve similar post-MBA roles at lower total cost. If you specifically need US MBB or bulge bracket placement, an M7 program has stronger institutional pipelines."}}]}) }}
-      />
     </main>
   )
 }

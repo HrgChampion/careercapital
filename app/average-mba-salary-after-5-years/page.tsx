@@ -163,6 +163,15 @@ const datasetJsonLd = {
   url: "https://careerreturns.com/average-mba-salary-after-5-years",
   creator: { "@type": "Organization", name: "CareerReturns", url: "https://careerreturns.com" },
   temporalCoverage: "2026",
+  // CareerReturns compiles this dataset; it does not originate the underlying
+  // figures. Naming the upstream sources keeps the Dataset claim accurate.
+  sourceOrganization: [
+    { "@type": "Organization", name: "Graduate Management Admission Council", url: "https://www.gmac.com/" },
+    { "@type": "Organization", name: "Business school employment reports" },
+  ],
+  citation:
+    "Aggregated from GMAC survey data, published MBA employment reports, Glassdoor and Levels.fyi compensation data. Ranges are estimates; individual outcomes vary.",
+  isAccessibleForFree: true,
   variableMeasured: ["Base salary", "Total compensation", "Bonus", "Equity"],
 }
 

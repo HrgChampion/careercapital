@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
   title: "How to Pay for an MBA 2026: Loans, Scholarships, Employer Aid & GI Bill",
@@ -23,52 +24,13 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the best way to finance an MBA?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The optimal financing sequence is: (1) maximize non-repayable aid first — merit scholarships, need-based grants, employer sponsorship, GI Bill. (2) Use federal Direct Unsubsidized loans (6.54% in 2025–26) before Graduate PLUS loans (9.08%). (3) Consider private loans only if your credit score is 750+ and you'd get a rate below the PLUS rate. The best outcome is minimizing loans taken: every $10K in scholarship is $10K + interest you don't repay.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I get an MBA for free?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — through five paths: full merit scholarship (rare at M7, more common at T15–T25), research or teaching assistantship (tuition for 15–20 hrs/week of academic work), employer full sponsorship (most common real-world path), military GI Bill + Yellow Ribbon (covers full tuition + housing stipend for eligible veterans), or corporate fellowship programs (McKinsey, Bain, Goldman). A free MBA produces near-infinite ROI since personal out-of-pocket cost approaches zero.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much do most MBA students borrow?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "According to GMAC data, the median MBA graduate from a full-time program at a top U.S. business school borrows $80,000–$120,000. Students at M7 programs (where tuition exceeds $80,000/year) who do not receive substantial scholarships often borrow $120,000–$160,000 in combined federal and private loans. Loan amounts vary significantly by school tier, scholarship received, and pre-MBA savings.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is it worth borrowing $150K for an MBA?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "It depends on the post-MBA salary delta. For an M7 → MBB or IB track with a $120,000+ annual salary increase, $150K in loans has a break-even of approximately 3–4 years and a 10-year NPV of $500,000+. For a T25 program with a $25,000 annual delta, $150K in loans may take 8–12 years to break even with negative 10-year NPV. The MBA ROI calculator lets you model these exact scenarios with your own numbers.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the tax-free employer tuition benefit limit?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Under IRS Section 127, employers can provide up to $5,250 per year in tax-free educational assistance to employees. This applies to both undergraduate and graduate courses, including MBA programs. Amounts above $5,250 per year are treated as taxable income to the employee. Many employers structure their tuition reimbursement programs around this cap. Full sponsorship programs at consulting and financial firms typically treat amounts above the $5,250 threshold as supplemental compensation.",
-      },
-    },
-  ],
-}
+const faqItems: FaqItem[] = [
+  { q: "What is the best way to finance an MBA?", a: "The optimal financing sequence is: (1) maximize non-repayable aid first — merit scholarships, need-based grants, employer sponsorship, GI Bill. (2) Use federal Direct Unsubsidized loans (6.54% in 2025–26) before Graduate PLUS loans (9.08%). (3) Consider private loans only if your credit score is 750+ and you'd get a rate below the PLUS rate. The best outcome is minimizing loans taken: every $10K in scholarship is $10K + interest you don't repay." },
+  { q: "Can I get an MBA for free?", a: "Yes — through five paths: full merit scholarship (rare at M7, more common at T15–T25), research or teaching assistantship (tuition for 15–20 hrs/week of academic work), employer full sponsorship (most common real-world path), military GI Bill + Yellow Ribbon (covers full tuition + housing stipend for eligible veterans), or corporate fellowship programs (McKinsey, Bain, Goldman). A free MBA produces near-infinite ROI since personal out-of-pocket cost approaches zero." },
+  { q: "How much do most MBA students borrow?", a: "According to GMAC data, the median MBA graduate from a full-time program at a top U.S. business school borrows $80,000–$120,000. Students at M7 programs (where tuition exceeds $80,000/year) who do not receive substantial scholarships often borrow $120,000–$160,000 in combined federal and private loans. Loan amounts vary significantly by school tier, scholarship received, and pre-MBA savings." },
+  { q: "Is it worth borrowing $150K for an MBA?", a: "It depends on the post-MBA salary delta. For an M7 → MBB or IB track with a $120,000+ annual salary increase, $150K in loans has a break-even of approximately 3–4 years and a 10-year NPV of $500,000+. For a T25 program with a $25,000 annual delta, $150K in loans may take 8–12 years to break even with negative 10-year NPV. The MBA ROI calculator lets you model these exact scenarios with your own numbers." },
+  { q: "What is the tax-free employer tuition benefit limit?", a: "Under IRS Section 127, employers can provide up to $5,250 per year in tax-free educational assistance to employees. This applies to both undergraduate and graduate courses, including MBA programs. Amounts above $5,250 per year are treated as taxable income to the employee. Many employers structure their tuition reimbursement programs around this cap. Full sponsorship programs at consulting and financial firms typically treat amounts above the $5,250 threshold as supplemental compensation." },
+]
 
 export default function HowToPayForMbaPage() {
   return (
@@ -591,6 +553,8 @@ export default function HowToPayForMbaPage() {
           </div>
         </section>
 
+        <FaqSection items={faqItems} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -613,10 +577,6 @@ export default function HowToPayForMbaPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
     </main>
   )
 }
