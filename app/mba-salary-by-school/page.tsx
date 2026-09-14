@@ -9,6 +9,7 @@ const _articleSchema = articleSchema({
   url: "https://careerreturns.com/mba-salary-by-school",
   datePublished: "2026-03-21",
   dateModified: "2026-06-21",
+  namedAuthor: true,
 })
 const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Salary by School 2026", url: "https://careerreturns.com/mba-salary-by-school" }])
 
@@ -228,7 +229,7 @@ export default function MbaSalaryBySchoolPage() {
         <header className="space-y-5">
           <div className="flex items-center gap-4 flex-wrap">
             <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">CareerReturns · MBA Salary Data</p>
-            <p className="text-xs text-slate-500">Updated <time dateTime="2026-06-21">June 2026</time> · CareerReturns Research Team</p>
+            <p className="text-xs text-slate-500">Written by Himanshu Gauba, Founder, CareerReturns · Updated <time dateTime="2026-06-21">June 2026</time> · Data updated 2026-09-13</p>
           </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA Salary by School 2026
@@ -627,7 +628,7 @@ export default function MbaSalaryBySchoolPage() {
             { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
             { href: "/average-mba-salary-after-5-years", label: "MBA salary after 5 & 10 years", description: "Career trajectory data at Wharton, HBS & M7 schools." },
             { href: "/post-mba-salary", label: "Post-MBA salary 2026", description: "MBB $232K, IB $350K, tech $200K — by city and background." },
-            { href: "/mba-roi-insead-vs-wharton", label: "INSEAD vs Wharton ROI", description: "Head-to-head cost, salary and NPV comparison." },
+            { href: "/mba-roi-europe", label: "INSEAD vs Wharton ROI", description: "Head-to-head cost, salary and NPV comparison." },
           ]}
         />
 

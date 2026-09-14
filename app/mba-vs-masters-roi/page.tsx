@@ -331,7 +331,7 @@ export default function MbaVsMastersRoiPage() {
             {" · "}
             <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
             {" · "}
-            <Link href="/mba-roi-engineers" className="hover:text-slate-300 transition-colors">MBA ROI: Engineers</Link>
+            <Link href="/mba-roi-tech" className="hover:text-slate-300 transition-colors">MBA ROI: Engineers</Link>
             {" · "}
             <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">Average MBA Salary</Link>
           </p>

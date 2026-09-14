@@ -8,6 +8,7 @@ const _articleSchema = articleSchema({
   url: "https://careerreturns.com/marketing-mba-salary",
   datePublished: "2026-05-01",
   dateModified: "2026-05-21",
+  namedAuthor: true,
 })
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Marketing MBA Salary", url: "https://careerreturns.com/marketing-mba-salary" }])
 
@@ -86,7 +87,11 @@ export default function MarketingMbaSalaryPage() {
             Post-MBA marketing salaries range from <strong className="text-white">$125K–$160K</strong> at year 1 depending on role. Brand management at CPG companies pays $130K–$155K. Product marketing at tech pays $135K–$160K. CMO-track executives with 10+ years post-MBA earn $250K–$500K. Here is the full salary, program, and ROI breakdown.
           </p>
           <div className="flex flex-wrap gap-6 text-sm text-slate-400">
+            <span>Written by Himanshu Gauba, Founder, CareerReturns</span>
+            <span>·</span>
             <span>Updated May 2026</span>
+            <span>·</span>
+            <span>Data updated 2026-09-13</span>
             <span>·</span>
             <span>GMAC + program employment reports</span>
           </div>
@@ -176,13 +181,53 @@ export default function MarketingMbaSalaryPage() {
           </div>
         </section>
 
+        {/* Marketing ROI vs Other Tracks */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-bold">Marketing MBA ROI vs. Other Career Tracks</h2>
+          <p className="text-sm text-slate-400">
+            Marketing ranks below consulting and finance on pure IRR, but is competitive once work-life balance and
+            career longevity are weighed in. CPG brand management in particular offers the best combination of
+            quality of life and salary progression among MBA-required career tracks.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-slate-700/60">
+                  <th className="text-left py-3 pr-4 text-slate-400 font-medium">Track</th>
+                  <th className="text-left py-3 pr-4 text-slate-400 font-medium">Year-1 Salary</th>
+                  <th className="text-left py-3 pr-4 text-slate-400 font-medium">IRR</th>
+                  <th className="text-left py-3 pr-4 text-slate-400 font-medium">Break-Even</th>
+                  <th className="text-left py-3 pr-4 text-slate-400 font-medium">Work-Life Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { track: "MBB Consulting (MBA required)", postMBAY1: "$190K–$210K", irr: "18–24%", breakEven: "4–5 yr", wlb: "Demanding" },
+                  { track: "Investment Banking (MBA for associate)", postMBAY1: "$200K–$250K", irr: "20–28%", breakEven: "3–5 yr", wlb: "Very demanding" },
+                  { track: "Tech Product Marketing (MBA helpful)", postMBAY1: "$150K–$185K", irr: "16–22%", breakEven: "6–8 yr", wlb: "Good" },
+                  { track: "CPG Brand Management (MBA typical)", postMBAY1: "$130K–$155K", irr: "14–20%", breakEven: "5–7 yr", wlb: "Good–Excellent" },
+                  { track: "Marketing Strategy (via consulting)", postMBAY1: "$140K–$165K", irr: "15–20%", breakEven: "6–8 yr", wlb: "Moderate" },
+                  { track: "Digital Marketing (MBA optional)", postMBAY1: "$100K–$130K", irr: "6–12%", breakEven: "9–14 yr", wlb: "Good" },
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-slate-800/60 hover:bg-white/2">
+                    <td className="py-3 pr-4 font-medium text-white">{row.track}</td>
+                    <td className="py-3 pr-4 text-emerald-400 font-mono">{row.postMBAY1}</td>
+                    <td className="py-3 pr-4 text-violet-400 font-semibold">{row.irr}</td>
+                    <td className="py-3 pr-4 text-slate-300">{row.breakEven}</td>
+                    <td className="py-3 pr-4 text-slate-300">{row.wlb}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* Internal links */}
         <section className="space-y-4">
           <h2 className="text-xl font-bold">Related MBA Salary & ROI Data</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { href: "/mba-salary-by-school", label: "MBA Salary by School 2026 — All Programs" },
-              { href: "/mba-roi-marketing", label: "Marketing MBA ROI: Full Break-Even Analysis" },
               { href: "/mba-roi-calculator", label: "MBA ROI Calculator — Model Your Specific Numbers" },
               { href: "/average-mba-salary-after-5-years", label: "Average MBA Salary After 5 & 10 Years" },
             ].map((link) => (

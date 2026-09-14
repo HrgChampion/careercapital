@@ -184,8 +184,7 @@ export default function M7MbaConsultingSalaryPage() {
           <h2 className="text-xl font-bold">Related Data</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { href: "/mba-roi-mckinsey", label: "McKinsey MBA ROI — Full Financial Analysis" },
-              { href: "/mba-roi-big4-vs-mbb", label: "Big 4 vs MBB ROI — Which Pays More?" },
+              { href: "/mba-roi-mckinsey", label: "McKinsey MBA ROI — Full Financial Analysis (incl. Big 4 vs MBB)" },
               { href: "/mba-salary-by-school", label: "MBA Salary by School — Full Rankings 2026" },
               { href: "/mba-roi-report-2026", label: "MBA ROI Report 2026 — All Industries Compared" },
             ].map((link) => (

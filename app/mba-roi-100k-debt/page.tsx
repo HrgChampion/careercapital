@@ -313,7 +313,7 @@ export default function MbaRoi100kDebtPage() {
           </div>
           <p className="text-slate-400 text-sm leading-relaxed">
             The{" "}
-            <Link href="/mba-roi-big4-vs-mbb" className="text-red-400 hover:text-red-300 transition-colors underline underline-offset-2">Big 4 vs MBB comparison</Link>
+            <Link href="/mba-roi-mckinsey" className="text-red-400 hover:text-red-300 transition-colors underline underline-offset-2">Big 4 vs MBB comparison</Link>
             {" "}models several of these scenarios in detail with specific NPV and IRR figures.
           </p>
         </section>
@@ -380,7 +380,7 @@ export default function MbaRoi100kDebtPage() {
             {" · "}
             <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
             {" · "}
-            <Link href="/mba-roi-big4-vs-mbb" className="hover:text-slate-300 transition-colors">Big 4 vs MBB</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">Big 4 vs MBB</Link>
             {" · "}
             <Link href="/mba-break-even" className="hover:text-slate-300 transition-colors">MBA Break-Even</Link>
             {" · "}

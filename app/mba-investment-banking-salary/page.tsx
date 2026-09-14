@@ -433,7 +433,7 @@ export default function MbaInvestmentBankingSalaryPage() {
         <section className="border-t border-white/10 pt-10 mt-10">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-5">Related Guides</p>
           <div className="grid sm:grid-cols-2 gap-3">
-            <Link href="/mba-roi-investment-banking" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-goldman-sachs" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">$</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Investment Banking</p>
@@ -470,7 +470,7 @@ export default function MbaInvestmentBankingSalaryPage() {
             {" · "}
             <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
             {" · "}
-            <Link href="/mba-roi-investment-banking" className="hover:text-slate-300 transition-colors">MBA ROI: Investment Banking</Link>
+            <Link href="/mba-roi-goldman-sachs" className="hover:text-slate-300 transition-colors">MBA ROI: Investment Banking</Link>
             {" · "}
             <Link href="/post-mba-salary" className="hover:text-slate-300 transition-colors">Post-MBA Salary</Link>
             {" · "}

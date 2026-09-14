@@ -1,6 +1,15 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+
+const _articleSchema = articleSchema({
+  title: "MBA ROI Report 2026: Which Programs Pay Back in Under 4 Years? [Full Data]",
+  description: "MBB consulting breaks even in 4.2 yrs (IRR 22%). IB: 4.5 yrs. Tech: 6.1 yrs. Nonprofit: 13 yrs. Full salary uplift, IRR & break-even table for 12 industries — 2026 data →",
+  url: "https://careerreturns.com/mba-roi-report-2026",
+  datePublished: "2026-03-01",
+  dateModified: "2026-08-18",
+  namedAuthor: true,
+})
 
 export const metadata = {
   title: "MBA ROI Report 2026: Which Programs Pay Back in Under 4 Years? [Full Data]",
@@ -156,7 +165,7 @@ export default function MbaRoiReport2026Page() {
               </div>
             ))}
           </div>
-          <p className="text-slate-500 text-xs">Published March 2026 · Updated quarterly · <span className="text-emerald-400 font-medium">Free to cite with attribution.</span></p>
+          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Published March 2026 · Updated quarterly · Data updated 2026-09-13 · <span className="text-emerald-400 font-medium">Free to cite with attribution.</span></p>
         </header>
 
         {/* Key Findings */}
@@ -522,21 +531,29 @@ export default function MbaRoiReport2026Page() {
           <p className="text-xs font-medium text-slate-400 uppercase tracking-widest">Sources</p>
           <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
             {[
-              "GMAC Corporate Recruiters Survey 2024 — employer hiring intentions, salary ranges, and perception of MBA formats.",
-              "GMAC Application Trends Survey 2024 — scholarship reconsideration outcomes and application volume data.",
-              "Harvard Business School MBA Employment Report, Class of 2024 — post-MBA compensation, industry placement rates.",
-              "Wharton (UPenn) MBA Employment Report, Class of 2024 — total compensation, signing bonuses, sector breakdown.",
-              "Kellogg (Northwestern) MBA Employment Report, Class of 2024 — salary, consulting placement, geographic distribution.",
-              "INSEAD Employment Statistics, Class of 2024 — global placement, MBB outcomes, program cost benchmarks.",
-              "London Business School MBA Employment Report, Class of 2024 — European and global placement outcomes.",
-              "Glassdoor Salary Data, MBA Graduate job titles, United States — 2025 (aggregated, 10,000+ data points).",
-              "LinkedIn Workforce Insights 2024 — employer perception of online vs. full-time MBA formats; hiring manager survey.",
-              "Levels.fyi — technology sector total compensation (base, bonus, equity) for MBA-level product and strategy roles, 2025.",
-              "Wall Street Journal / Times Higher Education MBA Rankings 2025 — program-level employment benchmarks.",
-              "U.S. Bureau of Labor Statistics CPI — 2026 dollar normalization for historical salary figures.",
+              { name: "GMAC Corporate Recruiters Survey 2024", url: "https://www.gmac.com", detail: "employer hiring intentions, salary ranges, and perception of MBA formats." },
+              { name: "GMAC Application Trends Survey 2024", url: "https://www.gmac.com", detail: "scholarship reconsideration outcomes and application volume data." },
+              { name: "Harvard Business School MBA Employment Report, Class of 2024", url: "https://www.hbs.edu", detail: "post-MBA compensation, industry placement rates." },
+              { name: "Wharton (UPenn) MBA Employment Report, Class of 2024", url: "https://www.wharton.upenn.edu", detail: "total compensation, signing bonuses, sector breakdown." },
+              { name: "Kellogg (Northwestern) MBA Employment Report, Class of 2024", url: "https://www.kellogg.northwestern.edu", detail: "salary, consulting placement, geographic distribution." },
+              { name: "INSEAD Employment Statistics, Class of 2024", url: "https://www.insead.edu", detail: "global placement, MBB outcomes, program cost benchmarks." },
+              { name: "London Business School MBA Employment Report, Class of 2024", url: "https://www.london.edu", detail: "European and global placement outcomes." },
+              { name: "Glassdoor Salary Data, MBA Graduate job titles, United States", url: "https://www.glassdoor.com", detail: "2025 (aggregated, 10,000+ data points)." },
+              { name: "LinkedIn Workforce Insights 2024", url: "https://www.linkedin.com", detail: "employer perception of online vs. full-time MBA formats; hiring manager survey." },
+              { name: "Levels.fyi", url: "https://www.levels.fyi", detail: "technology sector total compensation (base, bonus, equity) for MBA-level product and strategy roles, 2025." },
+              { name: "Wall Street Journal / Times Higher Education MBA Rankings 2025", url: "https://www.timeshighereducation.com/rankings", detail: "program-level employment benchmarks." },
+              { name: "U.S. Bureau of Labor Statistics CPI", url: "https://www.bls.gov/cpi/", detail: "2026 dollar normalization for historical salary figures." },
             ].map((source) => (
-              <p key={source} className="text-slate-400 text-xs leading-relaxed border-b border-white/5 pb-2 last:border-0 last:pb-0">
-                {source}
+              <p key={source.name} className="text-slate-400 text-xs leading-relaxed border-b border-white/5 pb-2 last:border-0 last:pb-0">
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-300 hover:text-emerald-400 transition-colors underline underline-offset-2 decoration-white/20 hover:decoration-emerald-400"
+                >
+                  {source.name}
+                </a>
+                {" — "}{source.detail}
               </p>
             ))}
           </div>
@@ -626,6 +643,8 @@ export default function MbaRoiReport2026Page() {
 
         <FaqSection items={faqItems} />
 
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -642,9 +661,9 @@ export default function MbaRoiReport2026Page() {
             {" · "}
             <Link href="/mba-roi-recession" className="hover:text-slate-300 transition-colors">Recession Scenarios</Link>
             {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">Consulting ROI</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">Consulting ROI</Link>
             {" · "}
-            <Link href="/mba-roi-investment-banking" className="hover:text-slate-300 transition-colors">Banking ROI</Link>
+            <Link href="/mba-roi-goldman-sachs" className="hover:text-slate-300 transition-colors">Banking ROI</Link>
             {" · "}
             <Link href="/mba-break-even" className="hover:text-slate-300 transition-colors">Break-Even Calculator</Link>
           </p>

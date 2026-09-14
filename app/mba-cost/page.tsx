@@ -341,7 +341,7 @@ export default function MbaCostPage() {
             ROI rankings use IRR on a 10-year post-MBA earnings horizon assuming consulting or finance placement
             where applicable. General management outcomes produce lower IRR across all school tiers. For
             industry-specific ROI, see the{" "}
-            <Link href="/mba-roi-consulting" className="text-amber-400 hover:text-amber-300 transition-colors underline underline-offset-2">consulting</Link>,{" "}
+            <Link href="/mba-roi-mckinsey" className="text-amber-400 hover:text-amber-300 transition-colors underline underline-offset-2">consulting</Link>,{" "}
             <Link href="/mba-roi-tech" className="text-amber-400 hover:text-amber-300 transition-colors underline underline-offset-2">technology</Link>, and{" "}
             <Link href="/mba-roi-healthcare" className="text-amber-400 hover:text-amber-300 transition-colors underline underline-offset-2">healthcare</Link>
             {" "}ROI guides.

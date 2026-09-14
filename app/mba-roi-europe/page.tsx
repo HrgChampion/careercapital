@@ -1,6 +1,15 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+
+const _articleSchema = articleSchema({
+  title: "UK vs US MBA ROI 2026: INSEAD vs Wharton Compared",
+  description: "INSEAD vs Wharton ROI compared: $171K cheaper, breaks even in 5 yrs vs 7.2 yrs. UK MBA salaries: London consulting £85K–£110K, IB £150K–£200K. Which wins for UK & international careers? →",
+  url: "https://careerreturns.com/mba-roi-europe",
+  datePublished: "2026-09-13",
+  dateModified: "2026-08-18",
+  namedAuthor: true,
+})
 
 export const metadata = {
   title: "UK vs US MBA ROI 2026: INSEAD vs Wharton Compared",
@@ -47,6 +56,7 @@ export default function MbaRoiEuropePage() {
             European MBA programs offer a structurally different ROI profile from US programs.
             The one-year format changes the break-even math — and not everyone does the comparison correctly.
           </p>
+          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Data updated 2026-09-13</p>
         </header>
 
         {/* US vs European: key structural differences */}
@@ -169,6 +179,25 @@ export default function MbaRoiEuropePage() {
           </p>
         </section>
 
+        {/* Wharton vs INSEAD callout */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Wharton vs. INSEAD: The Single Clearest Head-to-Head</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Of the US-vs-Europe comparisons, INSEAD vs. Wharton is the one candidates ask about most — one
+            ten-month program, one twenty-one-month program, both globally elite. INSEAD's shorter format cuts total
+            economic cost by roughly $170,000 versus Wharton, which typically shortens break-even to about 5 years
+            against Wharton's 7.2 years for a comparable consulting or general management outcome. The trade-off is
+            placement geography, not program quality: Wharton's on-campus recruiting reaches US MBB and
+            bulge-bracket offices more reliably; INSEAD's alumni density is stronger across EMEA and Asia-Pacific
+            offices of the same firms.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            If your target role is specifically US-based MBB or Wall Street, that placement advantage can outweigh
+            INSEAD's cost edge. If you're targeting a global or European role, INSEAD's shorter break-even is
+            difficult for a two-year US program to beat on pure IRR.
+          </p>
+        </section>
+
         <section className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center space-y-5">
           <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest">Model Your Numbers</p>
           <h2 className="text-2xl font-semibold tracking-tight">Compare European vs. US MBA ROI</h2>
@@ -204,13 +233,6 @@ export default function MbaRoiEuropePage() {
                 <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-insead-vs-wharton" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
-              <div className="text-indigo-400 font-mono text-lg">≈</div>
-              <div>
-                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">INSEAD vs Wharton ROI</p>
-                <p className="text-slate-500 text-xs">Full cost & break-even comparison →</p>
-              </div>
-            </Link>
             <Link href="/mba-cost" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">$</div>
               <div>
@@ -222,6 +244,8 @@ export default function MbaRoiEuropePage() {
         </section>
 
         <FaqSection items={faqItems} />
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
 
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
@@ -235,9 +259,7 @@ export default function MbaRoiEuropePage() {
             {" · "}
             <Link href="/mba-roi-online-vs-full-time" className="hover:text-slate-300 transition-colors">Online vs. Full-Time MBA</Link>
             {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
-            {" · "}
-            <Link href="/mba-roi-insead-vs-wharton" className="hover:text-slate-300 transition-colors">INSEAD vs Wharton</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
             {" · "}
             <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
           </p>

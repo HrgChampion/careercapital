@@ -153,6 +153,7 @@ const articleSchemaData = articleSchema({
   url: "https://careerreturns.com/post-mba-salary",
   datePublished: "2026-03-12",
   dateModified: "2026-04-09",
+  namedAuthor: true,
 })
 
 const datasetSchema = {
@@ -190,7 +191,7 @@ export default function PostMbaSalaryPage() {
         <header className="space-y-5">
           <div className="flex items-center gap-4 flex-wrap">
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Post-MBA Salary Data</p>
-            <p className="text-xs text-slate-500">Updated <time dateTime="2026-06-21">June 2026</time> · CareerReturns Research Team</p>
+            <p className="text-xs text-slate-500">Written by Himanshu Gauba, Founder, CareerReturns · Updated <time dateTime="2026-06-21">June 2026</time> · Data updated 2026-09-13</p>
           </div>
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
             What Is Salary After an MBA?<br />

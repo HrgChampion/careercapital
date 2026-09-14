@@ -540,14 +540,14 @@ export default function MbaRoiCareerChangersPage() {
                 <p className="text-slate-500 text-xs">Model your specific career change →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-consulting" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-mckinsey" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-sky-400 font-mono text-lg">↗</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-sky-300 transition-colors">MBA ROI: Consulting</p>
                 <p className="text-slate-500 text-xs">MBB vs Big 4 salary analysis →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-investment-banking" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-roi-goldman-sachs" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-sky-400 font-mono text-lg">$</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-sky-300 transition-colors">MBA ROI: Investment Banking</p>
@@ -587,9 +587,9 @@ export default function MbaRoiCareerChangersPage() {
             {" · "}
             <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
             {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
             {" · "}
-            <Link href="/mba-roi-investment-banking" className="hover:text-slate-300 transition-colors">MBA ROI: Banking</Link>
+            <Link href="/mba-roi-goldman-sachs" className="hover:text-slate-300 transition-colors">MBA ROI: Banking</Link>
             {" · "}
             <Link href="/mba-roi-tech" className="hover:text-slate-300 transition-colors">MBA ROI: Tech</Link>
             {" · "}

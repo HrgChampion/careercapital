@@ -166,9 +166,9 @@ export default function MbaRoiRecessionPage() {
           <h2 className="text-2xl font-semibold tracking-tight">MBA Career Tracks by Recession Resilience</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             The{" "}
-            <Link href="/mba-roi-consulting" className="text-slate-300 hover:text-white transition-colors underline underline-offset-2">consulting track</Link>
+            <Link href="/mba-roi-mckinsey" className="text-slate-300 hover:text-white transition-colors underline underline-offset-2">consulting track</Link>
             {" "}and{" "}
-            <Link href="/mba-roi-investment-banking" className="text-slate-300 hover:text-white transition-colors underline underline-offset-2">investment banking track</Link>
+            <Link href="/mba-roi-goldman-sachs" className="text-slate-300 hover:text-white transition-colors underline underline-offset-2">investment banking track</Link>
             {" "}diverge sharply in recession resilience. Understanding this distinction before choosing a career goal
             is critical for candidates who are enrolled during or anticipating an economic downturn.
           </p>
@@ -353,9 +353,9 @@ export default function MbaRoiRecessionPage() {
             {" · "}
             <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
             {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
             {" · "}
-            <Link href="/mba-roi-investment-banking" className="hover:text-slate-300 transition-colors">MBA ROI: Banking</Link>
+            <Link href="/mba-roi-goldman-sachs" className="hover:text-slate-300 transition-colors">MBA ROI: Banking</Link>
             {" · "}
             <Link href="/mba-roi-healthcare" className="hover:text-slate-300 transition-colors">Healthcare MBA ROI</Link>
             {" · "}

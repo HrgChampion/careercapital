@@ -292,9 +292,9 @@ export default function MbaRoiScholarshipPage() {
           </div>
           <p className="text-slate-400 text-sm leading-relaxed">
             For candidates comparing scholarship awards across programs, the{" "}
-            <Link href="/mba-roi-big4-vs-mbb" className="text-yellow-400 hover:text-yellow-300 transition-colors underline underline-offset-2">Big 4 vs MBB comparison</Link>
+            <Link href="/mba-roi-mckinsey" className="text-yellow-400 hover:text-yellow-300 transition-colors underline underline-offset-2">Big 4 vs MBB comparison</Link>
             {" "}and the{" "}
-            <Link href="/mba-roi-insead-vs-wharton" className="text-yellow-400 hover:text-yellow-300 transition-colors underline underline-offset-2">INSEAD vs Wharton comparison</Link>
+            <Link href="/mba-roi-europe" className="text-yellow-400 hover:text-yellow-300 transition-colors underline underline-offset-2">INSEAD vs Wharton comparison</Link>
             {" "}provide concrete NPV frameworks for evaluating cost-outcome trade-offs across programs.
           </p>
         </section>
@@ -409,9 +409,9 @@ export default function MbaRoiScholarshipPage() {
             {" · "}
             <Link href="/mba-roi-100k-debt" className="hover:text-slate-300 transition-colors">MBA $100k Debt</Link>
             {" · "}
-            <Link href="/mba-roi-insead-vs-wharton" className="hover:text-slate-300 transition-colors">INSEAD vs Wharton</Link>
+            <Link href="/mba-roi-europe" className="hover:text-slate-300 transition-colors">INSEAD vs Wharton</Link>
             {" · "}
-            <Link href="/mba-roi-big4-vs-mbb" className="hover:text-slate-300 transition-colors">Big 4 vs MBB</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">Big 4 vs MBB</Link>
             {" · "}
             <Link href="/mba-break-even" className="hover:text-slate-300 transition-colors">MBA Break-Even</Link>
             {" · "}

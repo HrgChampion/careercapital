@@ -75,7 +75,7 @@ const MYTHS: Myth[] = [
     correctIndex: 1,
     reality: "A senior SWE earning $180K who transitions to MBB post-MBA earns $185K + $80K bonus. The delta narrows, but the career optionality value — partner tracks, PE/VC access, board roles — often exceeds the financial model alone.",
     source: "CareerReturns MBA ROI for Engineers model",
-    relatedTool: { href: "/mba-roi-engineers", label: "MBA ROI for engineers →" },
+    relatedTool: { href: "/mba-roi-tech", label: "MBA ROI for engineers →" },
   },
   {
     id: 8,

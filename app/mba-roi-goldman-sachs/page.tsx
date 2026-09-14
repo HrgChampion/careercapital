@@ -1,6 +1,16 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+
+const _articleSchema = articleSchema({
+  title: "Goldman Sachs MBA Salary 2026: $200K Base + $150K Bonus",
+  description:
+    "GS MBA associate: $200K base + $75K–$150K bonus = $250K–$350K Y1 total comp. Break-even 4.5 yrs. Which schools Goldman Sachs recruits. Full 2026 data.",
+  url: "https://careerreturns.com/mba-roi-goldman-sachs",
+  datePublished: "2026-09-13",
+  dateModified: "2026-08-18",
+  namedAuthor: true,
+})
 
 export const metadata = {
   title: "Goldman Sachs MBA Salary 2026: $200K Base + $150K Bonus",
@@ -51,6 +61,7 @@ export default function MbaRoiGoldmanSachsPage() {
             a bonus structure, hours requirement, and career variance that make the financial case significantly
             more complex than consulting. Here is the exact math.
           </p>
+          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Data updated 2026-09-13</p>
         </header>
 
         {/* Why Goldman IB */}
@@ -285,11 +296,62 @@ export default function MbaRoiGoldmanSachsPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Bulge bracket bank-by-bank comparison */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Goldman Sachs vs. the Rest of the Street: Bank-by-Bank Compensation</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            For a broader view of{" "}
-            <Link href="/mba-roi-investment-banking" className="text-amber-400 hover:text-amber-300 transition-colors underline underline-offset-2">MBA ROI in investment banking</Link>
-            {" "}across all bulge bracket and elite boutique firms, see the full investment banking guide.
+            Goldman Sachs is one data point in a broader investment banking compensation landscape. The table below
+            places GS associate pay in context against elite boutiques, other bulge brackets, and middle-market
+            banks — useful if Goldman isn't the only offer on the table.
           </p>
+          <div className="space-y-3">
+            {[
+              { tier: "Bulge Bracket (Goldman Sachs, Morgan Stanley, JPMorgan, BofA, Citi, Barclays, UBS)", base: "$200k – $225k", bonus: "$100k – $150k guaranteed Y1", note: "Highest total comp among large banks. Heaviest hours. Best PE placement." },
+              { tier: "Elite Boutique (Evercore, Lazard, Centerview, PJT)", base: "$215k – $250k", bonus: "$120k – $175k", note: "Equal or higher comp than bulge bracket. Smaller teams, deal-flow driven." },
+              { tier: "Middle Market (Jefferies, Baird, William Blair, Houlihan Lokey)", base: "$165k – $190k", bonus: "$60k – $100k", note: "Broader school recruiting. Lower absolute comp but more accessible." },
+              { tier: "Regional / Boutique", base: "$120k – $155k", bonus: "Performance-based", note: "Often recruits from non-M7 programs. ROI depends heavily on school cost." },
+            ].map(({ tier, base, bonus, note }) => (
+              <div key={tier} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <p className="text-white font-semibold text-sm">{tier}</p>
+                  <p className="text-amber-300 font-semibold text-sm">{base}</p>
+                </div>
+                <p className="text-slate-500 text-xs">{bonus} · {note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* PE exit math */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Private Equity Exits: How Carry Changes the 10-Year Math</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            A significant share of top MBA banking associates — Goldman included — move to private equity after two
+            to four years. This "2-and-out" path fundamentally transforms the long-run return of the MBA
+            investment, and it's the single biggest reason banking ROI models understate the real upside.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            PE associates at upper-middle-market and large-cap funds receive carried interest allocations that vest
+            over the fund life (typically 7–10 years). Associates at funds with strong performance can receive carry
+            payouts worth $500,000–$3,000,000+ over a 10-year career — economic value that no salary-based ROI model
+            captures, but that is made possible by the Goldman associate role, which is in turn made possible by the
+            M7 MBA.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Even excluding carry, VP-level PE compensation at mid-size funds runs $350,000–$600,000 in total cash.
+            If the MBA is the gateway to this trajectory, the 10-year NPV of the investment is multiples of what the
+            base-case model above suggests.
+          </p>
+          <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-5">
+            <p className="text-amber-100 text-sm leading-relaxed">
+              <span className="font-semibold text-white">Important caveat:</span> PE exits are not guaranteed. Only
+              30–50% of IB associates who target PE successfully transition in a given year, and outcomes depend
+              heavily on fund vintage, deal flow, and individual performance. Model the base case — staying in
+              banking — when evaluating ROI; the PE scenario is upside, not the expected case.
+            </p>
+          </div>
         </section>
 
         {/* Risks */}
@@ -364,13 +426,6 @@ export default function MbaRoiGoldmanSachsPage() {
                 <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-investment-banking" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
-              <div className="text-indigo-400 font-mono text-lg">$</div>
-              <div>
-                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Investment Banking</p>
-                <p className="text-slate-500 text-xs">Full IB associate pay & NPV →</p>
-              </div>
-            </Link>
             <Link href="/mba-roi-mckinsey" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">→</div>
               <div>
@@ -383,6 +438,8 @@ export default function MbaRoiGoldmanSachsPage() {
 
         <FaqSection items={faqItems} />
 
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -390,10 +447,6 @@ export default function MbaRoiGoldmanSachsPage() {
             <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
             {" · "}
             <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: McKinsey</Link>
-            {" · "}
-            <Link href="/mba-roi-investment-banking" className="hover:text-slate-300 transition-colors">MBA ROI: Banking</Link>
-            {" · "}
-            <Link href="/mba-roi-big4-vs-mbb" className="hover:text-slate-300 transition-colors">Big 4 vs MBB</Link>
             {" · "}
             <Link href="/mba-break-even" className="hover:text-slate-300 transition-colors">MBA Break-Even</Link>
             {" · "}

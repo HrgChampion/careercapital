@@ -127,7 +127,7 @@ export default function MbaRoiPage() {
                 variable: "1. Destination Industry",
                 impact: "Largest lever. Accounts for 60–70% of ROI variance.",
                 delta: "Consulting: +$115k/yr delta. Nonprofit: +$35k/yr delta.",
-                link: "/mba-roi-consulting",
+                link: "/mba-roi-mckinsey",
                 linkText: "See consulting ROI →",
                 color: "text-emerald-400",
               },
@@ -151,7 +151,7 @@ export default function MbaRoiPage() {
                 variable: "4. Pre-MBA Salary",
                 impact: "Higher pre-MBA salary compresses the delta and worsens ROI.",
                 delta: "FAANG engineer at $300k: MBA ROI can be negative. Non-FAANG at $110k: strong ROI.",
-                link: "/mba-roi-engineers",
+                link: "/mba-roi-tech",
                 linkText: "See engineer ROI →",
                 color: "text-sky-400",
               },
@@ -171,20 +171,15 @@ export default function MbaRoiPage() {
           <h2 className="text-2xl font-semibold tracking-tight">Deep-Dive Guides: MBA ROI by Scenario</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { href: "/mba-roi-consulting", label: "MBA ROI: MBB Consulting", desc: "The highest-ROI career track" },
-              { href: "/mba-roi-investment-banking", label: "MBA ROI: Investment Banking", desc: "Bulge bracket pay & PE exits" },
-              { href: "/mba-roi-tech", label: "MBA ROI: Tech / FAANG", desc: "Post-MBA PM & strategy roles" },
-              { href: "/mba-roi-mckinsey", label: "MBA ROI: McKinsey", desc: "$192K associate salary math" },
-              { href: "/mba-roi-goldman-sachs", label: "MBA ROI: Goldman Sachs", desc: "$210K+ banking pay model" },
-              { href: "/mba-roi-engineers", label: "MBA ROI: Engineers", desc: "The compressed delta problem" },
+              { href: "/mba-roi-tech", label: "MBA ROI: Tech / FAANG", desc: "Post-MBA PM & strategy roles, plus the compressed delta problem" },
+              { href: "/mba-roi-mckinsey", label: "MBA ROI: McKinsey", desc: "$192K associate salary math, MBB placement & Big 4 vs. MBB" },
+              { href: "/mba-roi-goldman-sachs", label: "MBA ROI: Goldman Sachs", desc: "$210K+ banking pay model & PE exit math" },
               { href: "/mba-roi-healthcare", label: "MBA ROI: Healthcare", desc: "Management + PSLF strategy" },
               { href: "/mba-roi-military", label: "MBA ROI: Military Veterans", desc: "GI Bill + Yellow Ribbon math" },
               { href: "/mba-roi-scholarship", label: "MBA Scholarship ROI", desc: "How 50% aid flips IRR to 40%" },
               { href: "/mba-roi-recession", label: "MBA ROI in a Recession", desc: "2008 & 2020 historical data" },
-              { href: "/mba-roi-europe", label: "European MBA ROI", desc: "INSEAD, LBS & 1-yr arbitrage" },
-              { href: "/mba-roi-insead-vs-wharton", label: "INSEAD vs. Wharton", desc: "Head-to-head ROI comparison" },
+              { href: "/mba-roi-europe", label: "European MBA ROI", desc: "INSEAD, LBS, Oxford & the INSEAD vs. Wharton head-to-head" },
               { href: "/mba-roi-online-vs-full-time", label: "Online vs. Full-Time MBA", desc: "When online wins on IRR" },
-              { href: "/mba-roi-big4-vs-mbb", label: "Big 4 vs. MBB ROI", desc: "$47K salary gap explained" },
               { href: "/mba-vs-masters-roi", label: "MBA vs. Master's ROI", desc: "MS Finance, MSCS & MFin vs MBA" },
               { href: "/mba-roi-report-2026", label: "MBA ROI Report 2026", desc: "Full dataset: all 12 industries" },
               { href: "/mba-roi-career-changers", label: "MBA ROI: Career Changers", desc: "Highest-variance return in grad ed" },
@@ -384,7 +379,7 @@ export default function MbaRoiPage() {
         <section className="space-y-8">
           <h2 className="text-2xl font-semibold tracking-tight">Is MBA ROI Worth It for Software Engineers?</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            For software engineers already earning $150,000–$300,000+ in total compensation, the MBA salary delta is the most compressed of any career track. A senior SWE moving from $220k to a post-MBA PM role at $200k actually takes a Year 1 pay cut. The financial case for engineers is based on role transition — moving from IC to product leadership — and on long-run equity upside that compounds differently. Engineers should calculate their specific scenario using a pre-MBA salary above $150k before assuming standard IRR benchmarks apply. See the <Link href="/mba-roi-engineers" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">full engineer MBA ROI analysis</Link>.
+            For software engineers already earning $150,000–$300,000+ in total compensation, the MBA salary delta is the most compressed of any career track. A senior SWE moving from $220k to a post-MBA PM role at $200k actually takes a Year 1 pay cut. The financial case for engineers is based on role transition — moving from IC to product leadership — and on long-run equity upside that compounds differently. Engineers should calculate their specific scenario using a pre-MBA salary above $150k before assuming standard IRR benchmarks apply. See the <Link href="/mba-roi-tech" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">full engineer MBA ROI analysis</Link>.
           </p>
 
           <h2 className="text-2xl font-semibold tracking-tight">MBA ROI With $100,000 in Student Debt</h2>

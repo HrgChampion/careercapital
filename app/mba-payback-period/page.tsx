@@ -244,7 +244,7 @@ export default function MbaPaybackPeriodPage() {
             {" · "}
             <Link href="/mba-cost" className="hover:text-slate-300 transition-colors">MBA Cost</Link>
             {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
             {" · "}
             <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
           </p>

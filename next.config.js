@@ -11,6 +11,36 @@ const nextConfig = {
         destination: '/average-mba-salary',
         permanent: true,
       },
+      {
+        source: '/mba-roi-consulting',
+        destination: '/mba-roi-mckinsey',
+        permanent: true,
+      },
+      {
+        source: '/mba-roi-big4-vs-mbb',
+        destination: '/mba-roi-mckinsey',
+        permanent: true,
+      },
+      {
+        source: '/mba-roi-investment-banking',
+        destination: '/mba-roi-goldman-sachs',
+        permanent: true,
+      },
+      {
+        source: '/mba-roi-engineers',
+        destination: '/mba-roi-tech',
+        permanent: true,
+      },
+      {
+        source: '/mba-roi-marketing',
+        destination: '/marketing-mba-salary',
+        permanent: true,
+      },
+      {
+        source: '/mba-roi-insead-vs-wharton',
+        destination: '/mba-roi-europe',
+        permanent: true,
+      },
     ]
   },
 

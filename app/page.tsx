@@ -385,14 +385,6 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-big4-vs-mbb" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
-            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Big 4 vs MBB ROI</p>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              The $60k annual salary gap, break-even comparison, NPV side-by-side, and when Big 4 actually wins.
-            </p>
-            <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
-          </Link>
-
           <Link href="/mba-roi-100k-debt" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI with $100k Debt</p>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -409,7 +401,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-insead-vs-wharton" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-europe" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">INSEAD vs Wharton ROI</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               Full cost comparison ($224k vs $395k), salary outcomes, break-even head-to-head, and career track fit by program.
@@ -417,7 +409,7 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-roi-engineers" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-roi-tech" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA ROI for Engineers</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               The compressed delta problem, SWE to PM math, four outcome scenarios, and when senior engineers should skip the MBA.

@@ -338,7 +338,7 @@ export default function MbaSalaryIncreasePage() {
 
           <h2 className="text-2xl font-semibold tracking-tight pt-4">How Much Does an MBA Increase Salary for Engineers?</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            For software engineers, the MBA salary increase is the most compressed. Senior SWEs at FAANG already earn $200k–$350k total compensation. Moving to an MBA PM or strategy role rarely produces a base salary increase — and often a short-term decrease. The ROI case for engineers is based on role transition (IC to product/strategy leadership) and long-run equity upside, not Year 1 salary. Engineers should model a <Link href="/mba-roi-engineers" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">specialized engineer MBA ROI scenario</Link> before assuming a standard salary delta applies.
+            For software engineers, the MBA salary increase is the most compressed. Senior SWEs at FAANG already earn $200k–$350k total compensation. Moving to an MBA PM or strategy role rarely produces a base salary increase — and often a short-term decrease. The ROI case for engineers is based on role transition (IC to product/strategy leadership) and long-run equity upside, not Year 1 salary. Engineers should model a <Link href="/mba-roi-tech" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">specialized engineer MBA ROI scenario</Link> before assuming a standard salary delta applies.
           </p>
         </section>
 

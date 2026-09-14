@@ -11,7 +11,20 @@ type ArticleSchemaOptions = {
   datePublished: string
   /** ISO date string — defaults to datePublished */
   dateModified?: string
+  /**
+   * Set true on pages that should credit a named person rather than just the
+   * Organization — reserve for pages that genuinely got author-level editorial
+   * attention. Do not fabricate credentials; this is a real, disclosed person.
+   */
+  namedAuthor?: boolean
 }
+
+const SITE_FOUNDER = {
+  "@type": "Person",
+  "name": "Himanshu Gauba",
+  "jobTitle": "Founder, CareerReturns",
+  "url": "https://careerreturns.com/about",
+} as const
 
 /**
  * Returns a Schema.org Article JSON-LD object for guide/content pages.
@@ -26,11 +39,13 @@ export function articleSchema(opts: ArticleSchemaOptions): object {
     "url": opts.url,
     "datePublished": opts.datePublished,
     "dateModified": opts.dateModified ?? opts.datePublished,
-    "author": {
-      "@type": "Organization",
-      "name": "CareerReturns",
-      "url": "https://careerreturns.com",
-    },
+    "author": opts.namedAuthor
+      ? SITE_FOUNDER
+      : {
+          "@type": "Organization",
+          "name": "CareerReturns",
+          "url": "https://careerreturns.com",
+        },
     "publisher": {
       "@type": "Organization",
       "name": "CareerReturns",

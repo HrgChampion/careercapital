@@ -351,7 +351,7 @@ export default function MbaRoiHealthcarePage() {
             {" · "}
             <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
             {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
             {" · "}
             <Link href="/mba-roi-military" className="hover:text-slate-300 transition-colors">MBA ROI: Military</Link>
             {" · "}

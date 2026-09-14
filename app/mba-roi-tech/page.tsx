@@ -1,6 +1,16 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+
+const _articleSchema = articleSchema({
+  title: "MBA ROI in Tech 2026: FAANG PM Salary, Equity & Break-Even",
+  description:
+    "MBA into Google/Amazon/Meta: PM salary vs SWE track, RSU vesting cliff analysis, M7 vs no-MBA PM paths. IRR calculation for tech-focused MBA candidates →",
+  url: "https://careerreturns.com/mba-roi-tech",
+  datePublished: "2026-09-13",
+  dateModified: "2026-08-18",
+  namedAuthor: true,
+})
 
 export const metadata = {
   title: "MBA ROI in Tech 2026: FAANG PM Salary, Equity & Break-Even",
@@ -36,6 +46,7 @@ export default function MbaRoiTechPage() {
             Tech was the most popular MBA career track from 2018–2022. The landscape shifted sharply
             after the 2022–2023 layoff cycle. Here is an honest look at what the numbers show now.
           </p>
+          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Data updated 2026-09-13</p>
         </header>
 
         {/* The changed landscape */}
@@ -122,6 +133,60 @@ export default function MbaRoiTechPage() {
           </div>
         </section>
 
+        {/* The Compressed Delta Problem */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">The Compressed Delta Problem, Named</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The pattern above has a name worth using explicitly: the compressed delta problem. Every MBA ROI
+            calculation runs on one number — the annual salary delta between pre-MBA and post-MBA compensation.
+            Career switchers from lower-paying fields moving into consulting or finance see deltas of
+            $80,000–$130,000/year. Engineers and other technical professionals already earning tech-level
+            compensation see that delta collapse to $10,000–$40,000/year, or even go negative once equity is
+            properly accounted for.
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            A senior software engineer earning $200,000 base plus $100,000 in vested equity ($300,000 total
+            compensation) who attends an M7 MBA and joins a PM or consulting role at $205,000 base has technically
+            increased base salary — but has given up $100,000+ in annual equity value and paid the full economic
+            cost of the program. The standard{" "}
+            <Link href="/mba-break-even" className="text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-2">break-even analysis</Link>
+            {" "}that shows 4.5 years for an average candidate can show 12+ years for a senior technical hire. The
+            MBA case for engineers and technical staff is strongest for non-FAANG professionals at $80,000–$120,000
+            total compensation, and weakest for anyone already at $200,000+ without a clear, high-delta pivot in mind.
+          </p>
+        </section>
+
+        {/* Data Scientist / ML Engineer decision framework */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">MBA ROI for Data Scientists and ML Engineers: A Decision Framework</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Data scientists and ML engineers face an even sharper version of the compressed delta problem, since
+            AI-era compensation at the senior level has outpaced what most post-MBA roles pay in year one.
+          </p>
+          <div className="space-y-3">
+            {[
+              { level: "Data Analyst / BI Engineer", total: "$85,000–$110,000", mbaCase: "Moderate", color: "text-yellow-400", note: "Delta into consulting or strategy ($80k–$100k/yr) is meaningful. The best MBA candidates in data sit here." },
+              { level: "Data Scientist (non-FAANG)", total: "$110,000–$150,000", mbaCase: "Neutral", color: "text-orange-400", note: "Break-even runs 6–8 years into consulting. Hinges on whether the target role is reachable without the degree." },
+              { level: "Senior Data Scientist / ML Engineer (FAANG)", total: "$180,000–$350,000", mbaCase: "Weak", color: "text-red-400", note: "RSU comp makes the delta razor-thin — often negative against a McKinsey-level base." },
+              { level: "ML Engineer / AI Research (top labs)", total: "$200,000–$450,000+", mbaCase: "Very Weak", color: "text-red-400", note: "AI/ML specialists frequently out-earn any MBA-track Year 1 offer. An MBA is rarely financially justified here." },
+            ].map(({ level, total, mbaCase, color, note }) => (
+              <div key={level} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <p className="text-white font-semibold text-sm">{level}</p>
+                  <p className={`${color} text-xs font-semibold`}>MBA Case: {mbaCase}</p>
+                </div>
+                <p className="text-slate-400 text-xs">Total comp: <span className={color}>{total}</span></p>
+                <p className="text-slate-400 text-xs leading-relaxed">{note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            As a rule of thumb: if pre-MBA total compensation is under $150k and the target is consulting or
+            finance, the financial case is strong. Above $200k at a FAANG-tier employer with unvested equity on the
+            table, the right move is usually to wait for the vesting cliff and re-run the numbers before applying.
+          </p>
+        </section>
+
         {/* When tech MBA makes sense */}
         <section className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">When a Tech MBA Makes Financial Sense</h2>
@@ -181,13 +246,6 @@ export default function MbaRoiTechPage() {
                 <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-engineers" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
-              <div className="text-indigo-400 font-mono text-lg">⚙</div>
-              <div>
-                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Engineers</p>
-                <p className="text-slate-500 text-xs">Compressed delta & SWE to PM math →</p>
-              </div>
-            </Link>
             <Link href="/average-mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">$</div>
               <div>
@@ -200,6 +258,8 @@ export default function MbaRoiTechPage() {
 
         <FaqSection items={faqItems} />
 
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">
           <p>
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
@@ -208,13 +268,11 @@ export default function MbaRoiTechPage() {
             {" · "}
             <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
             {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
             {" · "}
-            <Link href="/mba-roi-investment-banking" className="hover:text-slate-300 transition-colors">MBA ROI: Banking</Link>
+            <Link href="/mba-roi-goldman-sachs" className="hover:text-slate-300 transition-colors">MBA ROI: Banking</Link>
             {" · "}
             <Link href="/mba-roi-online-vs-full-time" className="hover:text-slate-300 transition-colors">Online vs. Full-Time MBA</Link>
-            {" · "}
-            <Link href="/mba-roi-engineers" className="hover:text-slate-300 transition-colors">MBA ROI: Engineers</Link>
             {" · "}
             <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
           </p>

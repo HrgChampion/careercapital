@@ -1,5 +1,15 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema } from "@/lib/seo"
+
+const _articleSchema = articleSchema({
+  title: "MBA ROI for McKinsey (2026): $192K Salary, IRR & Break-Even",
+  description:
+    "MBA ROI for McKinsey: $192K associate salary, break-even math, school placement rates into MBB, and when the McKinsey financial case works. Calculate now →",
+  url: "https://careerreturns.com/mba-roi-mckinsey",
+  datePublished: "2026-09-13",
+  dateModified: "2026-06-21",
+  namedAuthor: true,
+})
 
 export const metadata = {
   title: "MBA ROI for McKinsey (2026): $192K Salary, IRR & Break-Even",
@@ -27,6 +37,7 @@ export default function MbaRoiMcKinseyPage() {
             McKinsey produces the highest and most consistent MBA ROI of any single employer in the world.
             Here is the exact compensation data, the break-even math, and the conditions required for the case to hold.
           </p>
+          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Data updated 2026-09-13</p>
         </header>
 
         {/* Why McKinsey produces premium ROI */}
@@ -252,10 +263,91 @@ export default function MbaRoiMcKinseyPage() {
           <p className="text-slate-400 text-sm leading-relaxed">
             McKinsey recruiting for experienced hires (non-MBA) runs separately and represents a different ROI model.
             For MBA recruiting specifically, the M7 pathway is the highest-probability route to an associate offer.
-            See the{" "}
-            <Link href="/mba-roi-consulting" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA ROI consulting guide</Link>
-            {" "}for a full breakdown of MBB placement rates by school tier.
           </p>
+        </section>
+
+        {/* Which schools place into MBB (beyond McKinsey) + Big 4 fallback */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Which Schools Place into MBB — And What Happens If You Don't</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The placement picture looks similar across all three MBB firms — McKinsey, Bain, and BCG recruit from
+            largely the same pool of programs. Across the three firms combined, MBB offers reach roughly 15–30% of
+            the consulting-focused class at M7 programs, meaningfully wider access than the McKinsey-only numbers
+            above, but still concentrated at the top of the market.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                tier: "M7 Programs",
+                detail: "15–30% of the consulting-focused class receives an MBB offer (any of the three firms). On-campus acceptance rates remain below 15% even for strong candidates — the M7 label is necessary but not sufficient.",
+              },
+              {
+                tier: "Top 10–15 Programs",
+                detail: "MBB recruiting is present but lighter. Tier 2 strategy firms (LEK, OW, AT Kearney, Roland Berger) and Big 4 advisory are the more reliable base case from these programs.",
+              },
+              {
+                tier: "Outside Top 15",
+                detail: "On-campus MBB recruiting is largely absent. The realistic base case at non-target programs is Big 4 advisory — a meaningfully smaller salary delta and longer break-even.",
+              },
+            ].map(({ tier, detail }) => (
+              <div key={tier} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-white font-semibold text-sm">{tier}</p>
+                <p className="text-slate-400 text-xs leading-relaxed">{detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-xl p-5">
+            <p className="text-indigo-200 text-sm leading-relaxed">
+              <span className="font-semibold text-white">The Big 4 fallback scenario:</span> Attending an M7 program
+              with an MBB goal and landing a Big 4 advisory role instead (Deloitte S&O, PwC Strategy&, EY-Parthenon,
+              KPMG) produces a materially different outcome — a base salary of $130,000–$155,000 versus
+              $190,000–$215,000 at MBB, roughly $180,000 lower 10-year NPV. Always model this fallback as your
+              realistic base case, not just the MBB aspiration — see the full comparison below.
+            </p>
+          </div>
+        </section>
+
+        {/* Big 4 vs MBB */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Big 4 vs. MBB: The Pay Gap and When Big 4 Actually Wins</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Not every consulting-track MBA lands MBB. Understanding the actual size of the pay gap — and the
+            scenarios where Big 4 advisory produces a better risk-adjusted return — is essential before betting an
+            entire M7 tuition bill on an MBB outcome.
+          </p>
+          <div className="space-y-3">
+            {[
+              { tier: "MBB (McKinsey, Bain, BCG)", totalY1: "$270,000 – $350,000", breakEven: "~4.5 years", color: "text-green-400" },
+              { tier: "Tier 2 Strategy (LEK, OW, AT Kearney)", totalY1: "$205,000 – $275,000", breakEven: "~6.0 years", color: "text-teal-400" },
+              { tier: "Big 4 Strategy (Deloitte S&O, PwC Strategy&, EY-P)", totalY1: "$160,000 – $215,000", breakEven: "~7.5 years", color: "text-yellow-400" },
+              { tier: "Big 4 Advisory / General Consulting", totalY1: "$130,000 – $180,000", breakEven: "~9.5+ years", color: "text-orange-400" },
+            ].map(({ tier, totalY1, breakEven, color }) => (
+              <div key={tier} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <p className="text-white font-semibold text-sm">{tier}</p>
+                  <p className={`${color} font-semibold text-sm`}>{totalY1} total Y1</p>
+                </div>
+                <p className="text-slate-500 text-xs">Break-even: <span className={color}>{breakEven}</span> (M7, 60% loan @ 6.5%)</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The gap between MBB and Big 4 advisory total Y1 compensation is roughly $50,000–$70,000 a year,
+            compounding to a multi-hundred-thousand-dollar NPV difference over ten years. But Big 4 can still be the
+            better financial decision in specific situations:
+          </p>
+          <div className="space-y-3">
+            {[
+              { title: "Low-cost program, near-certain Big 4 placement", body: "A ranked regional program (15–30) with a 50% scholarship and reliable Big 4 access can produce a 12–16% IRR — better risk-adjusted than an M7 at full cost chasing a 10% MBB placement probability." },
+              { title: "Part-time or Executive MBA targeting Big 4", body: "Eliminating the opportunity-cost component (Ross, Booth, Kellogg part-time programs) can push Big 4 advisory ROI to 18–22% IRR." },
+              { title: "Regional Big 4 offices in lower cost-of-living markets", body: "A $145,000 Big 4 salary in Dallas often produces higher purchasing power than a $205,000 McKinsey salary in New York." },
+            ].map(({ title, body }) => (
+              <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-white font-semibold text-sm">{title}</p>
+                <p className="text-slate-400 text-xs leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* MBA salary increase context */}
@@ -420,13 +512,6 @@ export default function MbaRoiMcKinseyPage() {
                 <p className="text-slate-500 text-xs">IRR data across 12 industries →</p>
               </div>
             </Link>
-            <Link href="/mba-roi-consulting" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
-              <div className="text-indigo-400 font-mono text-lg">→</div>
-              <div>
-                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA ROI: Consulting</p>
-                <p className="text-slate-500 text-xs">MBB salary data & break-even →</p>
-              </div>
-            </Link>
             <Link href="/mba-roi-goldman-sachs" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">$</div>
               <div>
@@ -443,11 +528,7 @@ export default function MbaRoiMcKinseyPage() {
             {" · "}
             <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
             {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
-            {" · "}
             <Link href="/mba-roi-goldman-sachs" className="hover:text-slate-300 transition-colors">MBA ROI: Goldman Sachs</Link>
-            {" · "}
-            <Link href="/mba-roi-big4-vs-mbb" className="hover:text-slate-300 transition-colors">Big 4 vs MBB</Link>
             {" · "}
             <Link href="/mba-break-even" className="hover:text-slate-300 transition-colors">MBA Break-Even</Link>
             {" · "}
@@ -463,6 +544,7 @@ export default function MbaRoiMcKinseyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a McKinsey associate earn after an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "McKinsey MBA associates earn a base salary of $192K in 2026. Total first-year compensation including performance bonus (10–20% of base) and a signing bonus of $30K is approximately $225K–$260K. Compensation increases approximately 15–20% per year for strong performers."}}, {"@type": "Question", "name": "Which MBA programs place into McKinsey?", "acceptedAnswer": {"@type": "Answer", "text": "McKinsey recruits primarily from Harvard Business School, Wharton, Booth, Kellogg, MIT Sloan, Columbia, and Stanford GSB. Approximately 10–15% of M7 classes receive McKinsey offers annually. Outside M7, placement rates drop to under 2% at most programs."}}, {"@type": "Question", "name": "How long to break even on an MBA targeting McKinsey?", "acceptedAnswer": {"@type": "Answer", "text": "Breaking even on an MBA targeting McKinsey takes approximately 4.2 years. At $192K base + $50K bonus against a total economic cost of $300K–$350K, the annual salary delta of $140K–$160K generates payback in the early post-MBA years."}}, {"@type": "Question", "name": "Is McKinsey worth an M7 MBA financially?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, McKinsey produces one of the strongest MBA financial cases. The 22% IRR for M7 programs with MBB placement significantly exceeds both the risk-free rate and long-run equity market returns (~8%). Candidates who receive McKinsey offers from M7 programs typically generate a positive net present value of $300K–$500K over 10 years."}}, {"@type": "Question", "name": "Is it better to target McKinsey or Goldman Sachs with an MBA?", "acceptedAnswer": {"@type": "Answer", "text": "Both tracks produce similar 10-year NPVs. Goldman Sachs pays slightly higher in years 1–3 due to banking bonuses. McKinsey offers faster promotion visibility, better exit opportunities in private equity and corporate strategy, and lower variance in total compensation. The choice depends more on career goals than pure financial optimization."}}]}) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
     </main>
   )
 }

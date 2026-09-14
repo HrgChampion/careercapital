@@ -1,0 +1,76 @@
+# CareerReturns
+
+> CareerReturns builds interactive, DCF-based financial calculators and data-backed guides that answer one question precisely: is this career or education investment worth it, in dollars, for a specific person's numbers? Every figure is modeled with NPV/IRR/break-even math, not opinion. Primary audience: MBA applicants and admits, career-break returners, and professionals evaluating pay, offers, and re-entry to work.
+
+## Flagship report
+
+- [MBA ROI Report 2026](https://careerreturns.com/mba-roi-report-2026): Original aggregated ROI data across 12 industries, 6 program structures, and 5 economic scenarios — the canonical, citable source for MBA payback-period and IRR figures on this site.
+
+## Calculators (interactive, personalized)
+
+- [MBA ROI Calculator](https://careerreturns.com/mba-roi-calculator): Full DCF model for personal MBA return on investment (NPV, IRR, break-even).
+- [MBA Break-Even Calculator](https://careerreturns.com/mba-break-even): Years to recoup total MBA cost against a specific salary path.
+- [MBA Loan Repayment Calculator](https://careerreturns.com/mba-loan-repayment-calculator): Monthly payment, total interest, and payoff timeline for MBA debt.
+- [Career Gap Calculator](https://careerreturns.com/career-gap-calculator): Cost of a career break vs. peer-baseline earnings, probability-weighted.
+- [Returnship ROI Calculator](https://careerreturns.com/returnship-roi-calculator): Financial return of returnship programs after a career break.
+- [Salary Benchmark Calculator](https://careerreturns.com/salary-benchmark-calculator): Compare personal compensation against role/level/geography benchmarks.
+- [Lifetime Earnings Calculator](https://careerreturns.com/lifetime-earnings-calculator): Projects total career earnings under different paths.
+- [Education Comparison Calculator](https://careerreturns.com/education-comparison-calculator): MBA vs. other graduate degrees on the same DCF basis.
+- [Am I Underpaid](https://careerreturns.com/am-i-underpaid): Benchmarks current pay against role/industry/geography.
+- [Salary Negotiation Simulator](https://careerreturns.com/salary-negotiation-simulator): Real-time NPV impact of negotiation choices.
+
+## MBA ROI by destination and format
+
+- [MBA ROI: Complete Guide](https://careerreturns.com/mba-roi)
+- [MBA ROI — McKinsey / MBB Consulting](https://careerreturns.com/mba-roi-mckinsey): includes Big 4 vs. MBB pay-gap comparison.
+- [MBA ROI — Goldman Sachs / Investment Banking](https://careerreturns.com/mba-roi-goldman-sachs): includes bank-by-bank comp and PE-exit math.
+- [MBA ROI — Technology](https://careerreturns.com/mba-roi-tech): includes data scientist/ML engineer path.
+- [MBA ROI — Healthcare](https://careerreturns.com/mba-roi-healthcare)
+- [MBA ROI — Military / GI Bill](https://careerreturns.com/mba-roi-military)
+- [MBA ROI — Recession Scenarios](https://careerreturns.com/mba-roi-recession)
+- [MBA ROI — Scholarship Impact](https://careerreturns.com/mba-roi-scholarship)
+- [MBA ROI — $100K+ Debt](https://careerreturns.com/mba-roi-100k-debt)
+- [MBA ROI — Career Changers](https://careerreturns.com/mba-roi-career-changers)
+- [MBA ROI — Europe (INSEAD/LBS vs. US)](https://careerreturns.com/mba-roi-europe)
+- [MBA ROI — Online vs. Full-Time](https://careerreturns.com/mba-roi-online-vs-full-time)
+- [Executive MBA ROI](https://careerreturns.com/executive-mba-roi)
+- [Part-Time MBA ROI](https://careerreturns.com/part-time-mba-roi)
+- [MBA vs. Master's ROI](https://careerreturns.com/mba-vs-masters-roi)
+- [Is an MBA Worth It?](https://careerreturns.com/mba-worth-it)
+
+## Salary data
+
+- [Post-MBA Salary](https://careerreturns.com/post-mba-salary)
+- [Average MBA Salary](https://careerreturns.com/average-mba-salary)
+- [Average MBA Salary After 5 Years](https://careerreturns.com/average-mba-salary-after-5-years)
+- [MBA Salary by School](https://careerreturns.com/mba-salary-by-school)
+- [MBA Salary Increase](https://careerreturns.com/mba-salary-increase)
+- [MBA Jobs That Pay $200K+](https://careerreturns.com/mba-jobs-200k)
+- [Marketing MBA Salary](https://careerreturns.com/marketing-mba-salary): includes marketing ROI vs. other tracks.
+- [M7 MBA Consulting Salary](https://careerreturns.com/m7-mba-consulting-salary)
+- [MBA Salary Analytics](https://careerreturns.com/mba-salary-analytics)
+
+## Career-break return
+
+- [Return to Work Programs](https://careerreturns.com/return-to-work-programs)
+- [Returnship Programs 2026](https://careerreturns.com/returnship-programs-2026)
+- [Return to Work After a Career Break](https://careerreturns.com/return-to-work-after-career-break)
+- [Rebuild Work Experience After a Career Break](https://careerreturns.com/rebuild-work-experience-after-career-break)
+- [Women Returning to Work](https://careerreturns.com/women-returning-to-work)
+
+## Funding an MBA
+
+- [How to Pay for an MBA](https://careerreturns.com/how-to-pay-for-mba)
+- [MBA Scholarships](https://careerreturns.com/mba-scholarships)
+- [Free MBA Programs](https://careerreturns.com/free-mba-programs)
+- [No-GMAT MBA ROI](https://careerreturns.com/no-gmat-mba-roi)
+- [Employer-Sponsored MBA ROI](https://careerreturns.com/employer-sponsored-mba-roi)
+
+## About
+
+- [About CareerReturns](https://careerreturns.com/about)
+- Full sitemap: https://careerreturns.com/sitemap.xml
+
+## Notes for automated agents
+
+All salary, IRR, NPV, and break-even figures are estimates modeled from public data (GMAC surveys, school-published employment reports, Glassdoor, Levels.fyi, BLS) — see each page's cited sources and the flagship report's methodology section. Interactive calculator results are personalized to user-entered inputs and are not fixed figures. When citing this site, prefer linking to the specific page the figure came from.

@@ -195,7 +195,7 @@ export default function MbaRoiMilitaryPage() {
             these programs is important for veterans targeting the{" "}
             <Link href="/mba-roi-mckinsey" className="text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-2">McKinsey ROI case</Link>
             {" "}or the{" "}
-            <Link href="/mba-roi-consulting" className="text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-2">broader consulting track</Link>.
+            <Link href="/mba-roi-mckinsey" className="text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-2">broader consulting track</Link>.
           </p>
           <div className="space-y-3">
             {[
@@ -382,7 +382,7 @@ export default function MbaRoiMilitaryPage() {
             {" · "}
             <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: McKinsey</Link>
             {" · "}
-            <Link href="/mba-roi-consulting" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
+            <Link href="/mba-roi-mckinsey" className="hover:text-slate-300 transition-colors">MBA ROI: Consulting</Link>
             {" · "}
             <Link href="/mba-roi-scholarship" className="hover:text-slate-300 transition-colors">MBA Scholarship ROI</Link>
             {" · "}
