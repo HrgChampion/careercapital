@@ -402,7 +402,7 @@ export default function HowToCalculateMbaRoiPage() {
             {[
               { href: "/mba-roi", label: "MBA ROI by Industry — Full Guide" },
               { href: "/mba-break-even", label: "MBA Break-Even Analysis" },
-              { href: "/blog/is-mba-worth-it-2026", label: "Is an MBA Worth It in 2026?" },
+              { href: "/mba-worth-it", label: "Is an MBA Worth It in 2026?" },
               { href: "/mba-roi-scholarship", label: "MBA ROI with Scholarship Aid" },
             ].map(({ href, label }) => (
               <Link key={href} href={href} className="block text-sm text-blue-400 hover:text-blue-300 transition-colors py-2 px-3 rounded-lg border border-white/8 hover:border-white/15">

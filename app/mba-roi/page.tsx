@@ -3,6 +3,7 @@ import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "MBA ROI 2026: IRR, NPV & Break-Even by Industry [Guide]",
@@ -59,21 +60,12 @@ export default function MbaRoiPage() {
             MBA ROI (2026):<br />
             <span className="text-slate-400">The Complete Financial Analysis</span>
           </h1>
+          <ArticleMeta updated="2026-03-24" />
           <p className="text-slate-400 text-lg leading-relaxed">
             Return on investment for an MBA varies from 4% to 55% depending on industry, school tier,
             scholarship aid, and program type. This guide covers every variable with real data — so you can
             model your specific scenario before committing $200,000–$415,000.
           </p>
-          <div className="flex items-center gap-3 pt-1 border-t border-white/8">
-            <div className="w-7 h-7 rounded-full bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0">
-              <span className="text-emerald-400 text-xs font-semibold">HG</span>
-            </div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm text-white font-medium">Himanshu Gauba</span>
-              <span className="text-slate-600 text-xs">·</span>
-              <span className="text-slate-500 text-xs">Updated March 24, 2026</span>
-            </div>
-          </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { label: "IRR Range", value: "4–55%" },
@@ -413,7 +405,7 @@ export default function MbaRoiPage() {
             { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "Full DCF model: NPV, IRR & break-even for any program in 60 seconds." },
             { href: "/mba-worth-it", label: "Is an MBA worth it?", description: "2026 ROI data across 12 industries — and when the math fails." },
             { href: "/mba-cost", label: "MBA cost breakdown", description: "Tuition, living expenses & opportunity cost by program tier." },
-            { href: "/mba-payback-period", label: "MBA payback period calculator", description: "How long until your MBA pays for itself." },
+            { href: "/mba-break-even", label: "MBA break-even & payback period", description: "How long until your MBA pays for itself, by career track." },
           ]}
         />
 

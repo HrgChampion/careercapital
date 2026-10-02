@@ -1,13 +1,14 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "MBA ROI Report 2026: Which Programs Pay Back in Under 4 Years? [Full Data]",
   description: "MBB consulting breaks even in 4.2 yrs (IRR 22%). IB: 4.5 yrs. Tech: 6.1 yrs. Nonprofit: 13 yrs. Full salary uplift, IRR & break-even table for 12 industries — 2026 data →",
   url: "https://careerreturns.com/mba-roi-report-2026",
   datePublished: "2026-03-01",
-  dateModified: "2026-08-18",
+  dateModified: "2026-09-13",
   namedAuthor: true,
 })
 
@@ -139,6 +140,7 @@ export default function MbaRoiReport2026Page() {
             MBA ROI Report 2026<br />
             <span className="text-slate-400">Real Data from 5,000+ Graduates Across 12 Industries</span>
           </h1>
+          <ArticleMeta updated="2026-09-13" byline="author" />
           <p className="text-slate-400 text-lg leading-relaxed">
             Aggregated return-on-investment data across 12 industries, 6 program structures, and 5 economic scenarios. Built for candidates, journalists, and researchers who need numbers — not opinions.
           </p>
@@ -165,7 +167,7 @@ export default function MbaRoiReport2026Page() {
               </div>
             ))}
           </div>
-          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Published March 2026 · Updated quarterly · Data updated 2026-09-13 · <span className="text-emerald-400 font-medium">Free to cite with attribution.</span></p>
+          <p className="text-slate-500 text-xs">Published March 2026 · Reviewed quarterly · <span className="text-emerald-400 font-medium">Free to cite with attribution.</span></p>
         </header>
 
         {/* Key Findings */}
@@ -570,7 +572,7 @@ export default function MbaRoiReport2026Page() {
             https://careerreturns.com/mba-roi-report-2026
           </div>
           <p className="text-slate-500 text-xs leading-relaxed">
-            Suggested citation format: <em>CareerReturns MBA ROI Report 2026. CareerReturns.com. March 2026. https://careerreturns.com/mba-roi-report-2026</em>. Data is updated quarterly. For methodology questions or data corrections, use the contact form on the homepage.
+            Suggested citation format: <em>CareerReturns MBA ROI Report 2026. CareerReturns.com. March 2026. https://careerreturns.com/mba-roi-report-2026</em>. Data is updated quarterly. For methodology questions or data corrections, use the contact page.
           </p>
         </section>
 

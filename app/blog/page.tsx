@@ -22,17 +22,6 @@ export const metadata = {
 
 const articles = [
   {
-    slug: "is-mba-worth-it-2026",
-    title: "Is an MBA Worth It in 2026? A Full Financial Analysis",
-    description:
-      "We ran the NPV and IRR numbers across 12 industries and 4 school tiers. Here is exactly when an MBA pays off — and when it does not.",
-    date: "March 24, 2026",
-    readTime: "12 min read",
-    tag: "MBA ROI",
-    tagColor: "text-emerald-400",
-    tagBg: "bg-emerald-400/10 border-emerald-400/20",
-  },
-  {
     slug: "how-to-calculate-mba-roi",
     title: "How to Actually Calculate MBA ROI (NPV, IRR, Break-Even)",
     description:
@@ -109,9 +98,39 @@ export default function BlogPage() {
             Long-form analysis on MBA ROI, career investment decisions, salary negotiation, and
             returning to work. Built on the same financial models that power our calculators.
           </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The blog is for people weighing a large career investment: whether to do an MBA and where,
+            how to negotiate the offer that follows, and how to come back after a career break without
+            taking an unnecessary pay cut. Each post works through the numbers — cost, opportunity cost,
+            salary delta, NPV and IRR — and says where the data is thin or the answer depends on your
+            situation. Posts are written by{" "}
+            <Link href="/author/himanshu-gauba" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">Himanshu Gauba</Link>,
+            founder of CareerReturns. Sources and methods are described in our{" "}
+            <Link href="/editorial-policy" className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-2">editorial policy</Link>.
+          </p>
         </header>
 
+        <section className="rounded-2xl bg-emerald-500/5 border border-emerald-500/20 p-6 sm:p-7 space-y-4">
+          <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest">Start here</p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            New to the site? These three pages cover the core MBA decision before you get into the posts below.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {[
+              { href: "/mba-worth-it", label: "Is an MBA Worth It?", desc: "Cost, ROI by industry and school tier, and when it does not pay off." },
+              { href: "/mba-roi-calculator", label: "MBA ROI Calculator", desc: "Run NPV, IRR and break-even on your own numbers." },
+              { href: "/mba-roi", label: "MBA ROI Guide", desc: "How MBA ROI is measured, with data by industry." },
+            ].map(({ href, label, desc }) => (
+              <Link key={href} href={href} className="group rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all space-y-1">
+                <p className="text-white text-sm font-medium group-hover:text-emerald-300 transition-colors">{label} →</p>
+                <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section className="space-y-6">
+          <h2 className="sr-only">All posts</h2>
           {articles.map((article) => (
             <Link
               key={article.slug}

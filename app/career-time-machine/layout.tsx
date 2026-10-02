@@ -1,10 +1,11 @@
 import { pageAlternates } from "@/lib/seo"
 import SiteFooter from "@/components/SiteFooter"
+import Guide from "./guide"
 
 export const metadata = {
   title: "Career Time Machine: What a Different Career Choice Was Worth",
   description:
-    "Pick a past career decision and see the financial divergence between your actual path and the alternative — projected 10 years forward. Free tool, updated July 2026.",
+    "Pick a past career decision and estimate the earnings gap between your actual path and the alternative, then project it 10 years forward. Free tool.",
   alternates: pageAlternates("https://careerreturns.com/career-time-machine"),
   openGraph: {
     title: "Career Time Machine: What a Different Career Choice Was Worth",
@@ -41,6 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       {children}
+      <Guide />
       <SiteFooter />
     </>
   )

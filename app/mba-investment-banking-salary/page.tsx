@@ -1,9 +1,10 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema } from "@/lib/seo"
+import ArticleMeta from "@/components/ArticleMeta"
 
 export const metadata = {
   title: "MBA Investment Banking Salary 2026: Goldman $360K · JPM $320K [Bank-by-Bank]",
-  description: "MBA investment banking salary 2026: Goldman Sachs $360K, JPMorgan $320K, Morgan Stanley $315K total comp. Full bank-by-bank breakdown, year-end bonus data, Y1→MD trajectory, and IB vs. consulting ROI. Updated June 2026.",
+  description: "MBA investment banking salary 2026: Goldman Sachs $360K, JPMorgan $320K, Morgan Stanley $315K total comp. Full bank-by-bank breakdown, year-end bonus data, Y1→MD trajectory, and IB vs. consulting ROI.",
   openGraph: {
     title: "MBA Investment Banking Salary 2026: Goldman $360K · JPM $320K [Bank-by-Bank]",
     description: "MBA investment banking salary 2026: Goldman $360K, JPMorgan $320K, Morgan Stanley $315K. Full bank-by-bank breakdown, bonus data, and career progression to MD.",
@@ -14,7 +15,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MBA Investment Banking Salary 2026: Goldman $360K, JPM $320K, MS $315K",
-    description: "Bank-by-bank post-MBA IB associate comp, year-end bonus breakdown & MD trajectory. Updated June 2026.",
+    description: "Bank-by-bank post-MBA IB associate comp, year-end bonus breakdown & MD trajectory.",
   },
   alternates: pageAlternates("https://careerreturns.com/mba-investment-banking-salary"),
 }
@@ -127,6 +128,7 @@ export default function MbaInvestmentBankingSalaryPage() {
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA Investment Banking Salary 2026
           </h1>
+          <ArticleMeta updated="2026-06-21" />
           <p className="text-slate-400 text-lg leading-relaxed">
             Post-MBA investment banking associates earn some of the highest starting compensation of any MBA
             career track. Here is the full 2026 breakdown by bank, bonus structure, stub year math, and

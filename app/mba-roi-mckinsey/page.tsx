@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema } from "@/lib/seo"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "MBA ROI for McKinsey (2026): $192K Salary, IRR & Break-Even",
@@ -7,7 +8,7 @@ const _articleSchema = articleSchema({
     "MBA ROI for McKinsey: $192K associate salary, break-even math, school placement rates into MBB, and when the McKinsey financial case works. Calculate now →",
   url: "https://careerreturns.com/mba-roi-mckinsey",
   datePublished: "2026-09-13",
-  dateModified: "2026-06-21",
+  dateModified: "2026-09-13",
   namedAuthor: true,
 })
 
@@ -33,11 +34,11 @@ export default function MbaRoiMcKinseyPage() {
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA ROI for McKinsey:<br />When the Numbers Work
           </h1>
+          <ArticleMeta updated="2026-09-13" byline="author" />
           <p className="text-slate-400 text-lg leading-relaxed">
             McKinsey produces the highest and most consistent MBA ROI of any single employer in the world.
             Here is the exact compensation data, the break-even math, and the conditions required for the case to hold.
           </p>
-          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Data updated 2026-09-13</p>
         </header>
 
         {/* Why McKinsey produces premium ROI */}

@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
+import LegalBar from '../components/LegalBar'
 
 export const metadata = {
   title: "CareerReturns — Human Capital ROI Platform",
@@ -40,18 +41,6 @@ const websiteSchema = {
   "url": "https://careerreturns.com",
 }
 
-const siteNavSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://careerreturns.com" },
-    { "@type": "ListItem", "position": 2, "name": "MBA ROI Calculator", "item": "https://careerreturns.com/mba-roi-calculator" },
-    { "@type": "ListItem", "position": 3, "name": "MBA ROI Guide", "item": "https://careerreturns.com/mba-roi" },
-    { "@type": "ListItem", "position": 4, "name": "Career Gap Calculator", "item": "https://careerreturns.com/career-gap-calculator" },
-    { "@type": "ListItem", "position": 5, "name": "Returnship Programs 2026", "item": "https://careerreturns.com/returnship-programs-2026" },
-  ],
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -76,11 +65,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavSchema) }}
-        />
         {children}
+        <LegalBar />
         <Analytics />
       </body>
     </html>

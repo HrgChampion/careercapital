@@ -210,9 +210,9 @@ export default function ForEmployersPage() {
             </Link>
           </div>
           <p className="text-slate-500 text-xs">
-            For enterprise compensation surveys and custom segmentation, see our{" "}
-            <Link href="/mba-salary-analytics" className="text-violet-400 hover:text-violet-300">
-              MBA salary analytics provider comparison
+            For the underlying post-MBA pay benchmarks by school tier and industry, see our{" "}
+            <Link href="/average-mba-salary" className="text-violet-400 hover:text-violet-300">
+              average MBA salary data
             </Link>.
           </p>
           <p className="text-slate-500 text-xs">
@@ -241,8 +241,6 @@ export default function ForEmployersPage() {
           <p className="font-medium text-slate-400">CareerReturns</p>
           <p className="leading-relaxed">
             <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-            {" · "}
-            <Link href="/mba-salary-analytics" className="hover:text-slate-300 transition-colors">MBA Salary Analytics</Link>
             {" · "}
             <Link href="/average-mba-salary" className="hover:text-slate-300 transition-colors">Average MBA Salary</Link>
             {" · "}

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "MBA ROI in Tech 2026: FAANG PM Salary, Equity & Break-Even",
@@ -8,7 +9,7 @@ const _articleSchema = articleSchema({
     "MBA into Google/Amazon/Meta: PM salary vs SWE track, RSU vesting cliff analysis, M7 vs no-MBA PM paths. IRR calculation for tech-focused MBA candidates →",
   url: "https://careerreturns.com/mba-roi-tech",
   datePublished: "2026-09-13",
-  dateModified: "2026-08-18",
+  dateModified: "2026-09-13",
   namedAuthor: true,
 })
 
@@ -42,11 +43,11 @@ export default function MbaRoiTechPage() {
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA ROI in Tech:<br />The 2026 Reality Check
           </h1>
+          <ArticleMeta updated="2026-09-13" byline="author" />
           <p className="text-slate-400 text-lg leading-relaxed">
             Tech was the most popular MBA career track from 2018–2022. The landscape shifted sharply
             after the 2022–2023 layoff cycle. Here is an honest look at what the numbers show now.
           </p>
-          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Data updated 2026-09-13</p>
         </header>
 
         {/* The changed landscape */}

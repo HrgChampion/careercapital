@@ -41,6 +41,26 @@ const nextConfig = {
         destination: '/mba-roi-europe',
         permanent: true,
       },
+      {
+        source: '/mba-payback-period',
+        destination: '/mba-break-even',
+        permanent: true,
+      },
+      {
+        source: '/blog/is-mba-worth-it-2026',
+        destination: '/mba-worth-it',
+        permanent: true,
+      },
+      {
+        source: '/returnship-programs-2026',
+        destination: '/return-to-work-programs',
+        permanent: true,
+      },
+      {
+        source: '/mba-salary-analytics',
+        destination: '/average-mba-salary',
+        permanent: true,
+      },
     ]
   },
 

@@ -561,10 +561,10 @@ export default function HomePage() {
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
 
-          <Link href="/mba-salary-analytics" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
-            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">MBA Salary Analytics</p>
+          <Link href="/average-mba-salary" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Average MBA Salary 2026</p>
             <p className="text-slate-400 text-sm leading-relaxed">
-              The best free and paid MBA salary data sources in the US, and how to use them for career planning.
+              Post-MBA pay by school tier and industry, and how it grows from Year 1 to Year 10.
             </p>
             <p className="text-indigo-400 text-sm font-medium">Read guide →</p>
           </Link>
@@ -585,7 +585,7 @@ export default function HomePage() {
         <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest mb-6">From the Blog</p>
         <div className="grid md:grid-cols-3 gap-5">
 
-          <Link href="/blog/is-mba-worth-it-2026" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
+          <Link href="/mba-worth-it" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-white/20 transition-all">
             <p className="font-semibold text-white group-hover:text-emerald-300 transition-colors">Is an MBA Worth It in 2026?</p>
             <p className="text-slate-400 text-sm leading-relaxed">
               NPV and IRR run across 12 industries and 4 school tiers — exactly when an MBA pays off, and when it doesn't.

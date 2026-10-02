@@ -363,7 +363,7 @@ export default function MbaMastersBootcampPage() {
               { href: "/mba-vs-masters-roi", label: "MBA vs. Master's ROI Guide" },
               { href: "/education-comparison-calculator", label: "Education Comparison Calculator" },
               { href: "/reskilling-roi-calculator", label: "Reskilling ROI Calculator" },
-              { href: "/blog/is-mba-worth-it-2026", label: "Is an MBA Worth It in 2026?" },
+              { href: "/mba-worth-it", label: "Is an MBA Worth It in 2026?" },
             ].map(({ href, label }) => (
               <Link key={href} href={href} className="block text-sm text-amber-400 hover:text-amber-300 transition-colors py-2 px-3 rounded-lg border border-white/8 hover:border-white/15">
                 {label} →

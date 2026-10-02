@@ -1,10 +1,11 @@
 import { pageAlternates } from "@/lib/seo"
 import SiteFooter from "@/components/SiteFooter"
+import Guide from "./guide"
 
 export const metadata = {
   title: "Career Compounder: How Small Raises Compound Into $1M+ (Free Tool)",
   description:
-    "See how a 5% raise or faster growth rate compounds into life-changing wealth over 20 years. Free interactive career compounding visualizer. Updated July 2026.",
+    "See how a one-time raise or a faster salary growth rate compounds into cumulative earnings over 5 to 35 years. Free calculator with worked examples.",
   alternates: pageAlternates("https://careerreturns.com/career-compounder"),
   openGraph: {
     title: "Career Compounder: How Small Raises Compound Into $1M+ (Free Tool)",
@@ -41,6 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       {children}
+      <Guide />
       <SiteFooter />
     </>
   )

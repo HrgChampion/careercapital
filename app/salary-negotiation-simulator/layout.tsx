@@ -1,10 +1,11 @@
 import { pageAlternates } from "@/lib/seo"
 import SiteFooter from "@/components/SiteFooter"
+import SalaryNegotiationGuide from "./guide"
 
 export const metadata = {
   title: "Salary Negotiation Simulator: Practice a Raise, See the 10-Year Payoff",
   description:
-    "Practice the negotiation before it matters. Every choice shows its 10-year NPV impact in real time — a single successful ask is often worth $100K+. Free simulator.",
+    "Rehearse a job-offer negotiation against a scripted HR manager and see the 10-year present value of every extra dollar of base salary you win.",
   alternates: pageAlternates("https://careerreturns.com/salary-negotiation-simulator"),
   openGraph: {
     title: "Salary Negotiation Simulator: Practice a Raise, See the 10-Year Payoff",
@@ -41,6 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       {children}
+      <SalaryNegotiationGuide />
       <SiteFooter />
     </>
   )

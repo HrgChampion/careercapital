@@ -1,13 +1,14 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "UK vs US MBA ROI 2026: INSEAD vs Wharton Compared",
   description: "INSEAD vs Wharton ROI compared: $171K cheaper, breaks even in 5 yrs vs 7.2 yrs. UK MBA salaries: London consulting £85K–£110K, IB £150K–£200K. Which wins for UK & international careers? →",
   url: "https://careerreturns.com/mba-roi-europe",
   datePublished: "2026-09-13",
-  dateModified: "2026-08-18",
+  dateModified: "2026-09-13",
   namedAuthor: true,
 })
 
@@ -52,11 +53,11 @@ export default function MbaRoiEuropePage() {
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             European MBA ROI:<br />INSEAD, LBS & Oxford vs. US Programs
           </h1>
+          <ArticleMeta updated="2026-09-13" byline="author" />
           <p className="text-slate-400 text-lg leading-relaxed">
             European MBA programs offer a structurally different ROI profile from US programs.
             The one-year format changes the break-even math — and not everyone does the comparison correctly.
           </p>
-          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Data updated 2026-09-13</p>
         </header>
 
         {/* US vs European: key structural differences */}

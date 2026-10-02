@@ -2,11 +2,12 @@ import Link from "next/link"
 import { pageAlternates, articleSchema } from "@/lib/seo"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
+import ArticleMeta from "@/components/ArticleMeta"
 
 export const metadata = {
   title: "Post-MBA Salary 2026: MBB $232K, IB $350K, Tech $200K",
   description:
-    "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. Full breakdown by school tier, city, signing bonus, and pre-MBA background. Updated July 2026.",
+    "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. Full breakdown by school tier, city, signing bonus, and pre-MBA background.",
   alternates: pageAlternates("https://careerreturns.com/post-mba-salary"),
   openGraph: {
     title: "Post-MBA Salary 2026: MBB $232K, IB $350K, Tech $200K",
@@ -19,7 +20,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Post-MBA Salary 2026: MBB $232K · IB $350K · Tech $200K",
-    description: "Full salary data by industry, school tier, and city. MBB $232K, IB $350K, tech $200K. Updated June 2026.",
+    description: "Full salary data by industry, school tier, and city. MBB $232K, IB $350K, tech $200K.",
   },
 }
 
@@ -152,29 +153,9 @@ const articleSchemaData = articleSchema({
   description: "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. MBA salary by city, signing bonus by industry, and how pre-MBA background affects salary delta.",
   url: "https://careerreturns.com/post-mba-salary",
   datePublished: "2026-03-12",
-  dateModified: "2026-04-09",
+  dateModified: "2026-09-13",
   namedAuthor: true,
 })
-
-const datasetSchema = {
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  name: "Post-MBA Salary Data 2026",
-  description: "First-year post-MBA salary data by industry and school tier",
-  url: "https://careerreturns.com/post-mba-salary",
-  creator: { "@type": "Organization", name: "CareerReturns", url: "https://careerreturns.com" },
-  temporalCoverage: "2026",
-  // CareerReturns compiles this dataset; it does not originate the underlying
-  // figures. Naming the upstream sources keeps the Dataset claim accurate.
-  sourceOrganization: [
-    { "@type": "Organization", name: "Graduate Management Admission Council", url: "https://www.gmac.com/" },
-    { "@type": "Organization", name: "Business school employment reports" },
-  ],
-  citation:
-    "Aggregated from GMAC survey data, published MBA employment reports, Glassdoor and Levels.fyi compensation data. Ranges are estimates; individual outcomes vary.",
-  isAccessibleForFree: true,
-  keywords: ["post mba salary", "mba starting salary", "first year mba salary"],
-}
 
 export default function PostMbaSalaryPage() {
   return (
@@ -191,12 +172,12 @@ export default function PostMbaSalaryPage() {
         <header className="space-y-5">
           <div className="flex items-center gap-4 flex-wrap">
             <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns · Post-MBA Salary Data</p>
-            <p className="text-xs text-slate-500">Written by Himanshu Gauba, Founder, CareerReturns · Updated <time dateTime="2026-06-21">June 2026</time> · Data updated 2026-09-13</p>
           </div>
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
             What Is Salary After an MBA?<br />
             <span className="text-slate-400">2026 Data by Industry &amp; School</span>
           </h1>
+          <ArticleMeta updated="2026-09-13" byline="author" />
           <p className="text-slate-400 leading-relaxed">
             Salary after an MBA degree ranges from $85,000 in nonprofit roles to $350,000+ in investment banking — driven primarily by industry, school tier, and pre-MBA background.
           </p>
@@ -765,10 +746,6 @@ export default function PostMbaSalaryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
       <script
         type="application/ld+json"

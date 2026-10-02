@@ -10,26 +10,6 @@ export const metadata = {
   alternates: pageAlternates("https://careerreturns.com/mba-salary-increase"),
 }
 
-const datasetSchema = {
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  name: "MBA Salary Increase Data 2026",
-  description: "Pre vs post-MBA salary increase data by industry and career track",
-  url: "https://careerreturns.com/mba-salary-increase",
-  creator: { "@type": "Organization", name: "CareerReturns", url: "https://careerreturns.com" },
-  temporalCoverage: "2026",
-  // CareerReturns compiles this dataset; it does not originate the underlying
-  // figures. Naming the upstream sources keeps the Dataset claim accurate.
-  sourceOrganization: [
-    { "@type": "Organization", name: "Graduate Management Admission Council", url: "https://www.gmac.com/" },
-    { "@type": "Organization", name: "Business school employment reports" },
-  ],
-  citation:
-    "Aggregated from GMAC survey data, published MBA employment reports, Glassdoor and Levels.fyi compensation data. Ranges are estimates; individual outcomes vary.",
-  isAccessibleForFree: true,
-  keywords: ["mba salary increase", "does mba increase salary", "how much does mba increase salary"],
-}
-
 export default function MbaSalaryIncreasePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
@@ -294,7 +274,7 @@ export default function MbaSalaryIncreasePage() {
         <section className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">MBA Salary Increase by Year (2019–2026)</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            Post-MBA median salaries have risen consistently since 2019, driven by consulting and finance compensation inflation. The table below shows how Year 1 post-MBA median pay has trended at M7 programs across career tracks. For institutional-grade benchmarking data behind these figures, see our <Link href="/mba-salary-analytics" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">MBA salary analytics</Link>.
+            Post-MBA median salaries have risen consistently since 2019, driven by consulting and finance compensation inflation. The table below shows how Year 1 post-MBA median pay has trended at M7 programs across career tracks. For current pay by school tier and industry, see the <Link href="/average-mba-salary" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">average MBA salary data</Link>.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
@@ -416,10 +396,10 @@ export default function MbaSalaryIncreasePage() {
                 <p className="text-slate-500 text-xs">Pay by school tier and industry →</p>
               </div>
             </Link>
-            <Link href="/mba-payback-period" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
+            <Link href="/mba-break-even" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/8 hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">⌛</div>
               <div>
-                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Payback Period</p>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Break-Even & Payback Period</p>
                 <p className="text-slate-500 text-xs">Break-even timelines by career track →</p>
               </div>
             </Link>
@@ -442,10 +422,6 @@ export default function MbaSalaryIncreasePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does an MBA increase salary?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The median MBA graduate earns 47–55% more in their first post-MBA role than before business school. The increase is largest when switching into consulting, banking, or tech from a lower-paying function, and smallest when staying in an already high-paying field like senior engineering."}}, {"@type": "Question", "name": "How much does an MBA increase salary on average?", "acceptedAnswer": {"@type": "Answer", "text": "The average MBA salary increase is 47–55% from pre-MBA to first post-MBA role. For M7 graduates entering consulting, the delta exceeds 100%. The median pre-MBA salary is approximately $85K; the median post-MBA M7 salary is $175K–$210K depending on sector."}}, {"@type": "Question", "name": "Which industry pays the most for MBA graduates?", "acceptedAnswer": {"@type": "Answer", "text": "Investment banking pays the highest post-MBA base salary at $200K–$250K for bulge bracket associates. Management consulting (MBB) follows at $190K–$215K. Tech product management roles average $195K–$220K total compensation including equity. General management and healthcare management pay $130K–$160K."}}, {"@type": "Question", "name": "Does an MBA increase salary more in consulting or banking?", "acceptedAnswer": {"@type": "Answer", "text": "The raw salary delta is slightly higher in investment banking (typically +$90K–$120K from pre-MBA median) versus MBB consulting (+$85K–$107K). However, banking requires longer hours and has a steeper promotion curve. On an annualized per-hour basis, consulting often produces a better effective salary increase."}}, {"@type": "Question", "name": "How long does it take for MBA salary increase to pay back the degree?", "acceptedAnswer": {"@type": "Answer", "text": "For M7 programs targeting consulting or banking, the salary increase pays back total MBA cost (tuition + foregone income) in 4–6 years. For regional programs with $30K–$50K salary uplifts, payback takes 8–12 years. The break-even calculation depends on total economic cost, not tuition alone."}}, {"@type": "Question", "name": "Is the MBA salary increase worth the cost?", "acceptedAnswer": {"@type": "Answer", "text": "At M7 programs with MBB or bulge bracket placement, the salary increase generates a positive net present value of $200K–$400K over a 10-year horizon, producing IRRs of 18–24%. At programs below T25 with modest uplifts, the salary increase rarely covers full economic cost on a discounted basis."}}]}) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
     </main>
   )

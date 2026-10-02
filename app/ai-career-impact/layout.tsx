@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
+import AiCareerImpactGuide from "./guide"
 
 export const metadata: Metadata = {
   title: "AI Career Impact Calculator 2026 — What Will AI Cost Your Salary?",
   description:
-    "Calculate your personal AI displacement risk in dollars — not just a percentage. See your expected income loss by 2031 and the cheapest reskilling hedge that changes the outcome.",
+    "Estimate AI displacement risk for 26 roles in dollars: expected 5-year income loss, plus eight reskilling options ranked by net present value.",
   keywords: [
     "ai career impact calculator",
     "will ai take my job calculator",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "What Will AI Cost Your Salary? Calculate Your Personal AI Displacement Risk.",
     description:
-      "Not just a probability — a dollar figure. See your expected income loss by 2031 and the exact reskilling hedge that reduces it the most. Free calculator.",
+      "Not just a probability: a dollar figure. See your expected 5-year income loss from AI and which reskilling option offsets it best. Free calculator.",
     url: "https://careerreturns.com/ai-career-impact",
     type: "website",
     siteName: "CareerReturns",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     site: "@careerreturns",
     title: "AI Displacement Risk — In Dollars, Not Percentages",
     description:
-      "Your role has a 52% AI displacement risk. Here's what that means in actual salary impact — and the cheapest hedge that changes the outcome.",
+      "Turn your role's AI displacement risk into an expected salary impact, and see which reskilling hedge offsets it best.",
   },
 }
 
@@ -55,7 +56,7 @@ const toolSchema = {
     "8 reskilling hedges ranked by NPV",
     "Hedge ROI calculation",
     "Displacement probability before and after hedge",
-    "Data from Goldman Sachs, McKinsey, WEF Future of Jobs 2025",
+    "Role estimates informed by Goldman Sachs, McKinsey and WEF Future of Jobs 2025 research",
   ],
 }
 
@@ -67,7 +68,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(toolSchema) }}
       />
       {children}
-
+      <AiCareerImpactGuide />
     </>
   )
 }

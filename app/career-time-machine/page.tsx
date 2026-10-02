@@ -28,7 +28,8 @@ function computeTimeMachine(
   baseGrowth: number,
 ): { points: YearPoint[]; pastDivergence: number; futureDivergence: number } {
   const points: YearPoint[] = []
-  let actSal = currentSalary - salaryDelta * yearsAgo * 0.8 // approximate starting salary
+  // Back-cast the starting salary at the base growth rate so it grows into today's salary.
+  let actSal = currentSalary / Math.pow(1 + baseGrowth / 100, yearsAgo)
   let altSal = actSal + salaryDelta
 
   let actCum = 0
@@ -76,7 +77,7 @@ export default function CareerTimeMachinePage() {
     setExtraGrowth(Math.abs(dt.defaultGrowth))
   }
 
-  const { points, pastDivergence } = useMemo(
+  const { points, pastDivergence, futureDivergence } = useMemo(
     () => computeTimeMachine(currentSalary, yearsAgo, salaryDelta, extraGrowth, baseGrowth),
     [currentSalary, yearsAgo, salaryDelta, extraGrowth, baseGrowth],
   )
@@ -211,8 +212,8 @@ export default function CareerTimeMachinePage() {
           </div>
           <div className="rounded-2xl bg-purple-950/40 border border-purple-500/20 p-5 space-y-1">
             <p className="text-xs text-slate-500 uppercase tracking-wide">Forward Opportunity (10 yr)</p>
-            <p className="text-3xl font-bold text-purple-400">{formatCurrency(salaryDelta * 10 * 1.3)}</p>
-            <p className="text-xs text-slate-500">approximate future compounding value</p>
+            <p className="text-3xl font-bold text-purple-400">{formatCurrency(futureDivergence)}</p>
+            <p className="text-xs text-slate-500">cumulative difference over the next 10 years</p>
           </div>
         </div>
 

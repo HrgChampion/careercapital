@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "Goldman Sachs MBA Salary 2026: $200K Base + $150K Bonus",
@@ -8,7 +9,7 @@ const _articleSchema = articleSchema({
     "GS MBA associate: $200K base + $75K–$150K bonus = $250K–$350K Y1 total comp. Break-even 4.5 yrs. Which schools Goldman Sachs recruits. Full 2026 data.",
   url: "https://careerreturns.com/mba-roi-goldman-sachs",
   datePublished: "2026-09-13",
-  dateModified: "2026-08-18",
+  dateModified: "2026-09-13",
   namedAuthor: true,
 })
 
@@ -56,12 +57,12 @@ export default function MbaRoiGoldmanSachsPage() {
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA ROI for Goldman Sachs:<br />The Banking Math
           </h1>
+          <ArticleMeta updated="2026-09-13" byline="author" />
           <p className="text-slate-400 text-lg leading-relaxed">
             Goldman Sachs delivers some of the highest lifetime MBA compensation of any employer — but with
             a bonus structure, hours requirement, and career variance that make the financial case significantly
             more complex than consulting. Here is the exact math.
           </p>
-          <p className="text-slate-500 text-xs">Written by Himanshu Gauba, Founder, CareerReturns · Data updated 2026-09-13</p>
         </header>
 
         {/* Why Goldman IB */}

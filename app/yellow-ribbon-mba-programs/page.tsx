@@ -2,6 +2,7 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import SiteFooter from "@/components/SiteFooter"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "Yellow Ribbon MBA Programs 2026: Full List, GI Bill Benefits & ROI for Veterans",
@@ -77,13 +78,12 @@ export default function YellowRibbonMbaProgramsPage() {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
             Yellow Ribbon MBA Programs 2026: GI Bill Benefits, Full School List & Veteran ROI
           </h1>
+          <ArticleMeta updated="2026-05-21" />
           <p className="text-lg text-slate-300 leading-relaxed">
             The Yellow Ribbon Program (YRP) combined with the Post-9/11 GI Bill can cover <strong className="text-white">$150,000–$200,000+</strong> of an MBA&apos;s total cost for eligible veterans. This guide covers which MBA programs participate, how much you can save, eligibility requirements, and the ROI calculation.
           </p>
           <div className="flex flex-wrap gap-6 text-sm text-slate-400">
-            <span>Updated May 2026</span>
-            <span>·</span>
-            <span>VA Yellow Ribbon Program + school data</span>
+            <span>Sources: VA Yellow Ribbon Program + school data</span>
           </div>
         </section>
 

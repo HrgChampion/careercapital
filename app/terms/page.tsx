@@ -24,7 +24,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="text-slate-400 text-sm">
-            Last updated: <span className="text-white">March 2, 2026</span>
+            Last updated: <span className="text-white">October 2, 2026</span>
           </p>
           <p className="text-slate-400 text-base leading-relaxed">
             By using <strong className="text-white">careerreturns.com</strong> (&quot;CareerReturns,&quot; &quot;the site,&quot;
@@ -166,7 +166,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold tracking-tight">10. Contact</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             Questions about these Terms can be directed to{" "}
-            <span className="text-indigo-400">legal@careerreturns.com</span>.
+            <a href="mailto:hgauba4@gmail.com" className="text-indigo-400 underline underline-offset-2">hgauba4@gmail.com</a>.
           </p>
         </section>
 

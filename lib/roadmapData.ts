@@ -305,8 +305,8 @@ export function buildPhases(input: RoadmapInput): Phase[] {
             ? {
                 task: "Browse the returnship programs directory, filtered to your target sector. Shortlist 3 programs whose gap requirement and sector match your profile.",
                 type: "tool" as const,
-                toolPath: "/returnship-programs-2026",
-                toolLabel: "Returnship Programs Directory",
+                toolPath: "/return-to-work-programs",
+                toolLabel: "Return-to-Work Programs Directory",
                 timeEst: "30 min",
               }
             : {

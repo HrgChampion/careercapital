@@ -1,10 +1,11 @@
 import { pageAlternates } from "@/lib/seo"
 import SiteFooter from "@/components/SiteFooter"
+import CareerRoiScoreGuide from "./guide"
 
 export const metadata = {
   title: "Career ROI Score: Grade Your Career Financial Health in 60 Seconds",
   description:
-    "Get a 300–850 composite score for your career financial health — like a credit score for your human capital. Scored across 5 dimensions. Free, updated July 2026.",
+    "A 300–850 score for career financial health, built from pay vs. market, career gaps, skills fit, years of runway and savings rate. See the formula.",
   alternates: pageAlternates("https://careerreturns.com/career-roi-score"),
   openGraph: {
     title: "Career ROI Score: Grade Your Career Financial Health in 60 Seconds",
@@ -29,7 +30,7 @@ const softwareSchema = {
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Free tool that computes a 300–850 composite score for career financial health across salary trajectory, skills, and market positioning.",
+  "description": "Free tool that computes a 300–850 composite score for career financial health from salary vs. market, career continuity, skills alignment, career runway and savings rate.",
   "url": "https://careerreturns.com/career-roi-score",
 }
 
@@ -41,6 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       {children}
+      <CareerRoiScoreGuide />
       <SiteFooter />
     </>
   )

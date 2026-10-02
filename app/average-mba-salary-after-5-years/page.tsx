@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter"
 export const metadata = {
   title: "Average MBA Salary After 5 & 10 Years (2026): Wharton, HBS & M7 Data",
   description:
-    "Average MBA salary after 5 years: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. After 10 years: $400K–$1M+ at Wharton, Harvard & M7 schools. Updated July 2026.",
+    "Average MBA salary after 5 years: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. After 10 years: $400K–$1M+ at Wharton, Harvard & M7 schools.",
   openGraph: {
     title: "Average MBA Salary After 5 & 10 Years (2026): Wharton, HBS & M7 Data",
     description:
@@ -152,27 +152,6 @@ const faqJsonLd = {
     name: question,
     acceptedAnswer: { "@type": "Answer", text: answer },
   })),
-}
-
-const datasetJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  name: "MBA Salary Trajectory by Career Track: Years 1, 3, 5, and 10 (2026)",
-  description:
-    "Post-MBA salary data across seven career tracks at Years 1, 3, 5, and 10 post-graduation, covering MBB consulting, investment banking, tech, corporate strategy, healthcare, general management, and entrepreneurship.",
-  url: "https://careerreturns.com/average-mba-salary-after-5-years",
-  creator: { "@type": "Organization", name: "CareerReturns", url: "https://careerreturns.com" },
-  temporalCoverage: "2026",
-  // CareerReturns compiles this dataset; it does not originate the underlying
-  // figures. Naming the upstream sources keeps the Dataset claim accurate.
-  sourceOrganization: [
-    { "@type": "Organization", name: "Graduate Management Admission Council", url: "https://www.gmac.com/" },
-    { "@type": "Organization", name: "Business school employment reports" },
-  ],
-  citation:
-    "Aggregated from GMAC survey data, published MBA employment reports, Glassdoor and Levels.fyi compensation data. Ranges are estimates; individual outcomes vary.",
-  isAccessibleForFree: true,
-  variableMeasured: ["Base salary", "Total compensation", "Bonus", "Equity"],
 }
 
 export default function AverageMbaSalaryAfter5YearsPage() {
@@ -547,10 +526,6 @@ export default function AverageMbaSalaryAfter5YearsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetJsonLd) }}
       />
 
     </main>

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "M7 MBA Consulting Salary 2026: MBB, Big 4 & Placement Data by School",
@@ -84,13 +85,12 @@ export default function M7MbaConsultingSalaryPage() {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
             M7 MBA Consulting Salary 2026: McKinsey $232K · BCG $225K · Placement by School
           </h1>
+          <ArticleMeta updated="2026-05-21" />
           <p className="text-lg text-slate-300 leading-relaxed">
             Post-MBA MBB consulting associates earn <strong className="text-white">$225K–$242K total Year 1 compensation</strong> across McKinsey, BCG, and Bain. Booth places 35–40% of its class into consulting — the highest of any M7 program. Here is the full salary, firm-by-firm breakdown, placement rates by school, and Partner-track progression.
           </p>
           <div className="flex flex-wrap gap-6 text-sm text-slate-400">
-            <span>Updated May 2026</span>
-            <span>·</span>
-            <span>Program employment reports + industry data</span>
+            <span>Sources: Program employment reports + industry data</span>
           </div>
         </section>
 

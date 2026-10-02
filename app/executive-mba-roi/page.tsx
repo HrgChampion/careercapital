@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "Executive MBA ROI 2026: When EMBA Math Works (and When It Doesn't)",
@@ -107,22 +108,13 @@ export default function ExecutiveMbaRoiPage() {
             Executive MBA ROI 2026:<br />
             <span className="text-slate-400">When EMBA Math Works (and When It Doesn&apos;t)</span>
           </h1>
+          <ArticleMeta updated="2026-04-09" />
           <p className="text-slate-400 text-lg leading-relaxed">
             The Executive MBA has a fundamentally different ROI profile than full-time MBA — because{" "}
             <span className="text-white font-medium">you never stop earning</span>. Zero opportunity cost
             collapses the total economic outflow from $300K–$450K to $120K–$210K, which changes every
             break-even calculation. This guide models the math across every scenario.
           </p>
-          <div className="flex items-center gap-3 pt-1 border-t border-white/8">
-            <div className="w-7 h-7 rounded-full bg-orange-600/20 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
-              <span className="text-orange-400 text-xs font-semibold">HG</span>
-            </div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm text-white font-medium">Himanshu Gauba</span>
-              <span className="text-slate-600 text-xs">·</span>
-              <span className="text-slate-500 text-xs">Updated April 9, 2026</span>
-            </div>
-          </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { label: "Total Cost (Top EMBA)", value: "$180K–$210K" },

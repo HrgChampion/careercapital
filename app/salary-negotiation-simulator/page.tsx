@@ -116,7 +116,8 @@ export default function SalaryNegotiationSimulatorPage() {
 
   function choose(opt: { text: string; nextId: string; salaryGained: number }) {
     const next = script[opt.nextId]
-    const newGained = totalGained + opt.salaryGained
+    // salaryGained is the total raise over the original offer locked in by this choice, not an increment.
+    const newGained = Math.max(totalGained, opt.salaryGained)
     const newHistory = [
       ...history,
       { speaker: "you" as const, text: opt.text },
@@ -168,7 +169,7 @@ export default function SalaryNegotiationSimulatorPage() {
               <p className="font-medium text-blue-300">Why this matters financially</p>
               <p>Accepting {formatCurrency(offer)} vs. negotiating to {formatCurrency(Math.round(offer * 1.07))} ({formatCurrency(Math.round(offer * 0.07))} more):</p>
               <p className="text-blue-400 font-semibold text-lg">10-year NPV: {formatCurrency(npvOfSalaryDelta(Math.round(offer * 0.07)))}</p>
-              <p className="text-slate-500 text-xs">Assumes 8% discount rate, 3% annual raises on the new base</p>
+              <p className="text-slate-500 text-xs">Assumes 8% discount rate; the raise is held flat over 10 years</p>
             </div>
 
             <button

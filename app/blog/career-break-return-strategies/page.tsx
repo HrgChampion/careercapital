@@ -326,7 +326,7 @@ export default function CareerBreakReturnStrategiesPage() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { href: "/return-to-work-after-career-break", label: "Return to Work After Career Break" },
-              { href: "/returnship-programs-2026", label: "Returnship Programs 2026" },
+              { href: "/return-to-work-programs", label: "Return-to-Work Programs 2026" },
               { href: "/women-returning-to-work", label: "Women Returning to Work" },
               { href: "/career-gap-calculator", label: "Career Gap Calculator" },
               { href: "/reskilling-roi-calculator", label: "Reskilling ROI Calculator" },

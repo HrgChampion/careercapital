@@ -187,7 +187,7 @@ export default function EmployerScorecardPage() {
         <div className="mt-10 grid sm:grid-cols-3 gap-4">
           {[
             { href: "/returnship-roi-calculator", label: "Returnship ROI Analyzer", desc: "Model any program's ROI" },
-            { href: "/returnship-programs-2026", label: "Returnship Programs 2026", desc: "Full program directory" },
+            { href: "/return-to-work-programs", label: "Return-to-Work Programs", desc: "Full program directory" },
             { href: "/career-gap-calculator", label: "Career Gap Calculator", desc: "Model gap recovery" },
           ].map(item => (
             <Link key={item.href} href={item.href} className="group rounded-xl bg-white/5 border border-white/10 p-4 hover:border-indigo-500/30 transition-all">

@@ -1,10 +1,11 @@
 import { pageAlternates } from "@/lib/seo"
 import SiteFooter from "@/components/SiteFooter"
+import Guide from "./guide"
 
 export const metadata = {
   title: "Skills Portfolio Builder: Value Your Skills Like Financial Assets",
   description:
-    "Treat your skillset like an investment portfolio — each skill has a market value, demand, and growth trajectory. Find gaps, concentration risks, and best bets. Free tool.",
+    "Score each skill on your level, market demand and demand growth, like a portfolio. Find underinvested skills and concentration risk. Free tool.",
   alternates: pageAlternates("https://careerreturns.com/skills-portfolio"),
   openGraph: {
     title: "Skills Portfolio Builder: Value Your Skills Like Financial Assets",
@@ -41,6 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       {children}
+      <Guide />
       <SiteFooter />
     </>
   )

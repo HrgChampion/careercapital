@@ -2,13 +2,14 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
-  description: "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K — broken down by school tier, industry, and city. Updated June 2026.",
+  description: "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K — broken down by school tier, industry, and city.",
   url: "https://careerreturns.com/mba-salary-by-school",
   datePublished: "2026-03-21",
-  dateModified: "2026-06-21",
+  dateModified: "2026-09-13",
   namedAuthor: true,
 })
 const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Salary by School 2026", url: "https://careerreturns.com/mba-salary-by-school" }])
@@ -16,11 +17,11 @@ const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Salary by School 2026",
 export const metadata = {
   title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
   description:
-    "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — broken down by school tier, industry, and city. Updated June 2026.",
+    "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — broken down by school tier, industry, and city.",
   openGraph: {
     title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
     description:
-      "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — broken down by school tier, industry, and city. Updated June 2026.",
+      "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — broken down by school tier, industry, and city.",
     url: "https://careerreturns.com/mba-salary-by-school",
     siteName: "CareerReturns",
     type: "website",
@@ -29,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
     description:
-      "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — by school tier, industry, and city. Updated June 2026.",
+      "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — by school tier, industry, and city.",
   },
   alternates: pageAlternates("https://careerreturns.com/mba-salary-by-school"),
 }
@@ -78,38 +79,6 @@ const faqSchema = {
         text: "The M7 MBA average salary (median across all M7 programs: HBS, Wharton, Booth, Kellogg, MIT Sloan, Columbia, Stanford GSB) is approximately $185K–$210K for the first year post-graduation across all industry tracks. For consulting and banking tracks specifically, M7 median total compensation is $212K–$350K depending on industry. The average M7 MBA salary across all placed graduates is approximately $195K.",
       },
     },
-  ],
-}
-
-const datasetSchema = {
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  name: "MBA Salary by School 2026",
-  description:
-    "Post-MBA salary data for 25 business schools including M7, T15, T25, and top online programs — median salary, salary range, and class size",
-  url: "https://careerreturns.com/mba-salary-by-school",
-  creator: {
-    "@type": "Organization",
-    name: "CareerReturns",
-    url: "https://careerreturns.com",
-  },
-  temporalCoverage: "2026",
-  // CareerReturns compiles this dataset; it does not originate the underlying
-  // figures. Naming the upstream sources keeps the Dataset claim accurate.
-  sourceOrganization: [
-    { "@type": "Organization", name: "Graduate Management Admission Council", url: "https://www.gmac.com/" },
-    { "@type": "Organization", name: "Business school employment reports" },
-  ],
-  citation:
-    "Aggregated from GMAC survey data, published MBA employment reports, Glassdoor and Levels.fyi compensation data. Ranges are estimates; individual outcomes vary.",
-  isAccessibleForFree: true,
-  keywords: [
-    "mba salary by school",
-    "mba salaries by school",
-    "m7 mba salary",
-    "harvard mba salary",
-    "wharton mba salary",
-    "booth mba salary",
   ],
 }
 
@@ -229,11 +198,11 @@ export default function MbaSalaryBySchoolPage() {
         <header className="space-y-5">
           <div className="flex items-center gap-4 flex-wrap">
             <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">CareerReturns · MBA Salary Data</p>
-            <p className="text-xs text-slate-500">Written by Himanshu Gauba, Founder, CareerReturns · Updated <time dateTime="2026-06-21">June 2026</time> · Data updated 2026-09-13</p>
           </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA Salary by School 2026
           </h1>
+          <ArticleMeta updated="2026-09-13" byline="author" />
           <p className="text-slate-400 text-lg leading-relaxed">
             Median post-MBA salary, full range, and class size for 25 business schools — M7, T15, T25,
             top global programs, and ranked online MBAs. Data reflects 2026 placement outcomes.
@@ -639,10 +608,6 @@ export default function MbaSalaryBySchoolPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
       <script
         type="application/ld+json"

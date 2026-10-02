@@ -23,7 +23,7 @@ const SITE_FOUNDER = {
   "@type": "Person",
   "name": "Himanshu Gauba",
   "jobTitle": "Founder, CareerReturns",
-  "url": "https://careerreturns.com/about",
+  "url": "https://careerreturns.com/author/himanshu-gauba",
 } as const
 
 /**

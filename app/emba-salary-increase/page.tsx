@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "EMBA Salary Increase 2026: How Much Does an Executive MBA Raise Your Pay?",
@@ -78,13 +79,12 @@ export default function EmbaSalaryIncreasePage() {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
             Executive MBA Salary Increase 2026: How Much Does an EMBA Raise Your Pay?
           </h1>
+          <ArticleMeta updated="2026-05-21" />
           <p className="text-lg text-slate-300 leading-relaxed">
             The median EMBA salary increase is <strong className="text-white">14–17%</strong> within 3 years of graduation (GMAC 2025). Top-tier programs (Wharton, Booth, INSEAD) produce 20–28% increases. Critically, <strong className="text-white">40% of EMBA participants receive a promotion during or within 1 year of the program</strong> — often before graduation. Here is the full program-by-program breakdown.
           </p>
           <div className="flex flex-wrap gap-6 text-sm text-slate-400">
-            <span>Updated May 2026</span>
-            <span>·</span>
-            <span>GMAC Corporate Recruiters Survey 2025 + program data</span>
+            <span>Sources: GMAC Corporate Recruiters Survey 2025 + program data</span>
           </div>
         </section>
 

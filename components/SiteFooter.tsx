@@ -12,29 +12,11 @@ const dataLinks = [
   { href: "/mba-worth-it", label: "Is an MBA Worth It?" },
 ]
 
-const siteLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-  { href: "/privacy", label: "Privacy Policy" },
-  { href: "/terms", label: "Terms" },
-]
-
 export default function SiteFooter({ note }: { note?: string }) {
   return (
-    <footer className="border-t border-white/10 py-8 px-4 text-center text-slate-500 text-xs space-y-3">
+    <footer className="bg-slate-950 border-t border-white/10 py-8 px-4 text-center text-slate-500 text-xs space-y-3">
       <p className="max-w-3xl mx-auto leading-relaxed">
         {dataLinks.map((l, i) => (
-          <span key={l.href}>
-            {i > 0 && " · "}
-            <Link href={l.href} className="hover:text-slate-300 transition-colors">
-              {l.label}
-            </Link>
-          </span>
-        ))}
-      </p>
-      <p>
-        {siteLinks.map((l, i) => (
           <span key={l.href}>
             {i > 0 && " · "}
             <Link href={l.href} className="hover:text-slate-300 transition-colors">

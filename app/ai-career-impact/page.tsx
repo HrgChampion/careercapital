@@ -5,7 +5,6 @@ import { useState, useMemo } from "react"
 import { calculateAIImpact, AI_IMPACT_ROLES } from "@/lib/aiDisplacementEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
-import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 const RISK_CONFIGS = {
   low:      { color: "text-green-400",  border: "border-green-400/30",  bg: "bg-green-400/5",  badge: "border-green-400/40 text-green-400" },
@@ -13,12 +12,6 @@ const RISK_CONFIGS = {
   high:     { color: "text-orange-400", border: "border-orange-400/30", bg: "bg-orange-400/5", badge: "border-orange-400/40 text-orange-400" },
   critical: { color: "text-red-400",    border: "border-red-400/30",    bg: "bg-red-400/5",    badge: "border-red-400/40 text-red-400" },
 }
-
-const faqItems: FaqItem[] = [
-  { q: "Which jobs are most at risk from AI?", a: "According to Goldman Sachs and McKinsey research, the roles with the highest AI displacement risk include: administrative assistants (76% task automation), customer service reps (82%), paralegal/legal assistants (71%), content writers (74%), and accountants (67%). Lower-risk roles include nurses (10%), lawyers (25%), and management consultants (20%), where judgment, empathy, and relationship skills are harder to automate." },
-  { q: "What is the best skill to learn to protect yourself from AI?", a: "The highest-ROI hedge for most roles is AI tools proficiency — learning to use ChatGPT, Claude, and GitHub Copilot effectively often costs nothing and adds 8-12% salary uplift while reducing displacement risk by 20%+ within 1-2 months. For technical roles, Python and AWS certifications offer stronger long-term protection. The key principle: learn to direct AI, not compete with it." },
-  { q: "How was the AI displacement risk data calculated?", a: "Displacement probabilities are derived from Goldman Sachs' 2023 report on AI's economic impact (300M jobs at risk globally), McKinsey's 2024 analysis of generative AI task automation, and the WEF Future of Jobs 2025 report. The methodology counts the fraction of job tasks that are automatable by current large language models and estimates the displacement probability based on what percentage of the role can be replaced end-to-end." },
-]
 
 export default function AICareerImpactPage() {
   const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
@@ -295,34 +288,6 @@ export default function AICareerImpactPage() {
         </div>
       </div>
 
-      {/* FAQ */}
-      <section className="max-w-3xl mx-auto px-6 py-12 border-t border-white/10">
-        <h2 className="text-xl font-semibold mb-6 text-white/90">Frequently Asked Questions</h2>
-        <div className="space-y-6">
-          {[
-            {
-              q: "Which jobs are most at risk from AI?",
-              a: "Administrative assistants (76%), customer service reps (82%), paralegal/legal assistants (71%), content writers (74%), and accountants (67%) face the highest automation rates. Lower-risk roles include nurses (10%), management consultants (20%), and lawyers (25%), where judgment and relationship skills resist automation.",
-            },
-            {
-              q: "What is the best skill to learn to protect yourself from AI?",
-              a: "AI tools proficiency (ChatGPT, Claude, Copilot) is the highest-ROI hedge for most roles: it costs nothing, takes 1-2 months, and adds 8-12% salary uplift while reducing displacement risk by 20%+. For technical roles, Python and AWS certifications offer stronger long-term protection. The key: learn to direct AI, not compete with it.",
-            },
-            {
-              q: "How is the AI displacement risk calculated?",
-              a: "Data is sourced from Goldman Sachs' 2023 report (300M jobs at risk), McKinsey's 2024 generative AI analysis, and WEF Future of Jobs 2025. Displacement probability = fraction of job tasks automatable by current LLMs. The expected income loss model is probability-weighted and NPV-discounted at 6% over 5 years.",
-            },
-          ].map(({ q, a }) => (
-            <div key={q} className="border-b border-white/10 pb-6">
-              <h3 className="font-medium text-white/90 mb-2">{q}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">{a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    <div className="mx-auto w-full max-w-5xl px-6 pb-12">
-      <FaqSection items={faqItems} />
-    </div>
 
     </main>
   )

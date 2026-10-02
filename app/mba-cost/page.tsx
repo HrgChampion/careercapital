@@ -3,6 +3,7 @@ import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "MBA Total Cost 2026: $22K–$492K True Economic Cost by School",
@@ -81,21 +82,12 @@ export default function MbaCostPage() {
             MBA Cost (2026):<br />
             <span className="text-slate-400">The True Economic Cost</span>
           </h1>
+          <ArticleMeta updated="2026-03-24" />
           <p className="text-slate-400 text-lg leading-relaxed">
             Published tuition figures represent roughly half the true cost of an MBA. The full economic
             cost — tuition, living expenses, opportunity cost, and loan interest — ranges from $45,000
             for an online program to $492,000+ for M7 full-time. Here is the complete breakdown.
           </p>
-          <div className="flex items-center gap-3 pt-1 border-t border-white/8">
-            <div className="w-7 h-7 rounded-full bg-amber-600/20 border border-amber-500/30 flex items-center justify-center shrink-0">
-              <span className="text-amber-400 text-xs font-semibold">HG</span>
-            </div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm text-white font-medium">Himanshu Gauba</span>
-              <span className="text-slate-600 text-xs">·</span>
-              <span className="text-slate-500 text-xs">Updated March 24, 2026</span>
-            </div>
-          </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { label: "M7 Full Economic Cost", value: "$460–$492k" },

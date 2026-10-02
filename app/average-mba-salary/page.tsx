@@ -3,6 +3,7 @@ import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "Average MBA Salary 2026: $175K at M7 — Full Data by School",
@@ -32,26 +33,6 @@ export const metadata = {
     description:
       "$175K median at M7. $105K at top online programs. Full MBA salary data by school tier, industry, and years of experience. Updated 2026.",
   },
-}
-
-const datasetSchema = {
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  name: "Average MBA Salary Data 2026",
-  description: "MBA salary data by school tier, industry, specialization, and years of experience",
-  url: "https://careerreturns.com/average-mba-salary",
-  creator: { "@type": "Organization", name: "CareerReturns", url: "https://careerreturns.com" },
-  temporalCoverage: "2026",
-  // CareerReturns compiles this dataset; it does not originate the underlying
-  // figures. Naming the upstream sources keeps the Dataset claim accurate.
-  sourceOrganization: [
-    { "@type": "Organization", name: "Graduate Management Admission Council", url: "https://www.gmac.com/" },
-    { "@type": "Organization", name: "Business school employment reports" },
-  ],
-  citation:
-    "Aggregated from GMAC survey data, published MBA employment reports, Glassdoor and Levels.fyi compensation data. Ranges are estimates; individual outcomes vary.",
-  isAccessibleForFree: true,
-  keywords: ["mba salary", "average mba salary", "mba salary by school", "post mba salary"],
 }
 
 const salaryByTier = [
@@ -130,6 +111,7 @@ export default function AverageMbaSalaryPage() {
             Average Salary for an MBA (2026):<br />
             <span className="text-slate-400">MBA Average Salary by School & Experience</span>
           </h1>
+          <ArticleMeta updated="2026-05-10" />
           <p className="text-slate-400 text-lg leading-relaxed">
             The average salary for an MBA graduate varies from $85,000 at mid-tier online programs to $215,000+
             at M7 business schools placed into MBB consulting. For most MBA students, earning an MBA degree
@@ -137,16 +119,6 @@ export default function AverageMbaSalaryPage() {
             Salary expectations after an MBA vary significantly based on prior work experience, program tier, and
             target function — making it essential to model your specific scenario rather than rely on headline averages.
           </p>
-          <div className="flex items-center gap-3 pt-1 border-t border-white/8">
-            <div className="w-7 h-7 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0">
-              <span className="text-violet-400 text-xs font-semibold">HG</span>
-            </div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm text-white font-medium">Himanshu Gauba</span>
-              <span className="text-slate-600 text-xs">·</span>
-              <span className="text-slate-500 text-xs">Updated March 24, 2026</span>
-            </div>
-          </div>
           {/* Quick Answer — targets featured snippet for "average salary for an mba" */}
           <div className="rounded-xl border border-violet-500/30 bg-violet-500/5 px-5 py-4 space-y-1.5">
             <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">Quick Answer</p>
@@ -552,10 +524,10 @@ export default function AverageMbaSalaryPage() {
                 <p className="text-slate-500 text-xs">+47% avg — pre vs post MBA →</p>
               </div>
             </Link>
-            <Link href="/mba-payback-period" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+            <Link href="/mba-break-even" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
               <div className="text-indigo-400 font-mono text-lg">⌛</div>
               <div>
-                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Payback Period</p>
+                <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">MBA Break-Even & Payback Period</p>
                 <p className="text-slate-500 text-xs">Break-even timelines by career track →</p>
               </div>
             </Link>
@@ -584,10 +556,6 @@ export default function AverageMbaSalaryPage() {
 
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
-      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
 

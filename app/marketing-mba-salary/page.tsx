@@ -1,13 +1,14 @@
 import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "Marketing MBA Salary 2026: Brand Management $130K–$155K, CMO Track & Full Data",
   description: "Marketing MBA salary by role and school: brand management $130K–$155K, digital marketing $125K–$145K, product marketing $135K–$160K. Kellogg, Wharton, Booth placement data.",
   url: "https://careerreturns.com/marketing-mba-salary",
   datePublished: "2026-05-01",
-  dateModified: "2026-05-21",
+  dateModified: "2026-09-13",
   namedAuthor: true,
 })
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Marketing MBA Salary", url: "https://careerreturns.com/marketing-mba-salary" }])
@@ -83,17 +84,12 @@ export default function MarketingMbaSalaryPage() {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
             Marketing MBA Salary 2026: $130K–$155K Brand Management, CMO Track & Full ROI Data
           </h1>
+          <ArticleMeta updated="2026-09-13" byline="author" />
           <p className="text-lg text-slate-300 leading-relaxed">
             Post-MBA marketing salaries range from <strong className="text-white">$125K–$160K</strong> at year 1 depending on role. Brand management at CPG companies pays $130K–$155K. Product marketing at tech pays $135K–$160K. CMO-track executives with 10+ years post-MBA earn $250K–$500K. Here is the full salary, program, and ROI breakdown.
           </p>
           <div className="flex flex-wrap gap-6 text-sm text-slate-400">
-            <span>Written by Himanshu Gauba, Founder, CareerReturns</span>
-            <span>·</span>
-            <span>Updated May 2026</span>
-            <span>·</span>
-            <span>Data updated 2026-09-13</span>
-            <span>·</span>
-            <span>GMAC + program employment reports</span>
+            <span>Sources: GMAC + program employment reports</span>
           </div>
         </section>
 

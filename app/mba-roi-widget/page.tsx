@@ -3,11 +3,12 @@ import { pageAlternates } from "@/lib/seo"
 import CopySnippet from "@/components/CopySnippet"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
+import MbaRoiWidgetGuide from "./guide"
 
 export const metadata = {
   title: "Free Embeddable MBA ROI Calculator Widget (2026) — Add to Your Site",
   description:
-    "Embed a free MBA ROI calculator on your website in 30 seconds. Full DCF model — NPV, IRR, break-even and investment grade. No signup, no branding fees, one line of HTML.",
+    "Embed a free MBA ROI calculator on your site with one iframe. Same DCF engine as our full tool: NPV, IRR, break-even and an A–F grade. No signup.",
   openGraph: {
     title: "Free Embeddable MBA ROI Calculator Widget — CareerReturns",
     description:
@@ -52,39 +53,6 @@ const audiences = [
     why: "The calculator models loan percentage, interest rate and full amortization — a natural fit next to loan comparison content.",
   },
 ]
-
-const faqItems = [
-  {
-    question: "Is the MBA ROI calculator widget really free?",
-    answer:
-      "Yes. The widget is free to embed with no signup, API key, or branding fee. The only requirement is keeping the attribution link to CareerReturns below the iframe.",
-  },
-  {
-    question: "What does the embedded calculator compute?",
-    answer:
-      "It runs the same discounted cash flow engine as the full CareerReturns calculator: 10-year Net Present Value at a 6% discount rate, Internal Rate of Return, break-even year with true 5-year loan amortization, and an A–F investment grade with a risk level.",
-  },
-  {
-    question: "Will the widget slow my page down?",
-    answer:
-      "No. The iframe is lazy-loaded (loading=\"lazy\"), so it only loads when a visitor scrolls to it, and the embed page ships a minimal bundle with no images or fonts.",
-  },
-  {
-    question: "Can I customize the width and height?",
-    answer:
-      "Yes. The widget is fully responsive — set the iframe width to 100% and it adapts from 320px phones to 720px containers. A height of 620–700px fits all content without internal scrolling.",
-  },
-]
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map(({ question, answer }) => ({
-    "@type": "Question",
-    name: question,
-    acceptedAnswer: { "@type": "Answer", text: answer },
-  })),
-}
 
 export default function MbaRoiWidgetPage() {
   return (
@@ -163,19 +131,6 @@ export default function MbaRoiWidgetPage() {
           </p>
         </section>
 
-        {/* ── FAQ ── */}
-        <section id="faq" className="space-y-4">
-          <h2 className="text-2xl font-semibold tracking-tight">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {faqItems.map(({ question, answer }) => (
-              <div key={question} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
-                <p className="text-white font-semibold text-sm">{question}</p>
-                <p className="text-slate-400 text-sm leading-relaxed">{answer}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <RelatedLinks
           links={[
             { href: "/mba-roi-calculator", label: "MBA ROI calculator", description: "The full version: sensitivity analysis, amortization schedule, investment grade." },
@@ -185,14 +140,11 @@ export default function MbaRoiWidgetPage() {
           ]}
         />
 
-        <SiteFooter note="The embeddable MBA ROI calculator is free for editorial and educational use with attribution. The DCF engine assumes a 6% discount rate, 5-year loan term, and 10-year projection horizon." />
-
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <MbaRoiWidgetGuide />
+
+      <SiteFooter note="The embeddable MBA ROI calculator is free for editorial and educational use with attribution. The DCF engine assumes a 6% discount rate, 5-year loan term, and 10-year projection horizon." />
 
     </main>
   )

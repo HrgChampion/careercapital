@@ -2,11 +2,12 @@ import Link from "next/link"
 import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
+import ArticleMeta from "@/components/ArticleMeta"
 
 export const metadata = {
   title: "MBA Jobs That Pay $200K or More (2026): IB, PE, MBB & Tech Roles",
   description:
-    "MBA jobs paying $200K+: investment banking $275K–$350K, MBB consulting $212K–$232K, private equity $300K–$500K, tech PM $200K–$280K. Full list by role, firm, and school tier. Updated June 2026.",
+    "MBA jobs paying $200K+: investment banking $275K–$350K, MBB consulting $212K–$232K, private equity $300K–$500K, tech PM $200K–$280K. Full list by role, firm, and school tier.",
   alternates: pageAlternates("https://careerreturns.com/mba-jobs-200k"),
   openGraph: {
     title: "MBA Jobs That Pay $200K or More (2026): IB, PE, MBB & Tech Roles",
@@ -147,6 +148,7 @@ export default function MbaJobs200kPage() {
             MBA Jobs That Pay<br />
             <span className="text-indigo-400">$200K or More (2026)</span>
           </h1>
+          <ArticleMeta updated="2026-06-21" />
           <p className="text-slate-400 leading-relaxed">
             A first-year post-MBA salary of $200K+ is achievable — but only in specific roles, at specific firms,
             from specific programs. Here is every MBA career path that crosses $200K in year one, with exact comp data

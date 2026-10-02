@@ -6,7 +6,6 @@ export const metadata = {
   description:
     "CareerReturns privacy policy. What data we collect, how we use it, and your rights as a visitor.",
   alternates: pageAlternates("https://careerreturns.com/privacy"),
-  robots: { index: false, follow: true },
 }
 
 export default function PrivacyPage() {
@@ -25,12 +24,13 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-slate-400 text-sm">
-            Last updated: <span className="text-white">April 24, 2026</span>
+            Last updated: <span className="text-white">October 2, 2026</span>
           </p>
           <p className="text-slate-400 text-base leading-relaxed">
-            CareerReturns (<strong className="text-white">careerreturns.com</strong>) is a free informational tool. We collect
-            minimal data and do not sell or share your information with advertisers.
-            This policy explains exactly what we do and do not do.
+            CareerReturns (<strong className="text-white">careerreturns.com</strong>) is a free informational site. We collect
+            minimal data, we never sell personal information, and our calculators run entirely in your
+            browser. The site is supported by advertising served by Google, which uses cookies as
+            described below. This policy explains exactly what we do and do not do.
           </p>
         </header>
 
@@ -61,8 +61,9 @@ export default function PrivacyPage() {
               <p className="text-white font-semibold text-sm">No Accounts, No Email Collection</p>
               <p className="text-slate-400 text-sm leading-relaxed">
                 CareerReturns has no user registration, login system, or newsletter. We do not collect
-                your name, email address, or any personally identifiable information. There are no
-                contact forms that submit data to our servers.
+                your name or email address through the site. The contact form on our Contact page simply
+                opens your own email app — nothing is submitted to our servers. If you email us, we use
+                your address only to reply and delete correspondence once it is resolved.
               </p>
             </div>
           </div>
@@ -113,9 +114,32 @@ export default function PrivacyPage() {
               </tbody>
             </table>
           </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+            <p className="text-white font-semibold text-sm">Third-party vendors and the DoubleClick cookie</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior
+              visits to this website or other websites. Google&apos;s use of the DoubleClick advertising cookie
+              enables it and its partners to serve ads to you based on your visits to careerreturns.com and/or
+              other sites on the internet. Other third-party vendors or ad networks may also serve ads on this
+              site; a list is available in{" "}
+              <a href="https://support.google.com/admanager/answer/9012903" className="text-purple-400 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
+                Google&apos;s ad technology providers list
+              </a>.
+            </p>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+            <p className="text-white font-semibold text-sm">Consent for visitors in the EEA, UK and Switzerland</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Visitors from the European Economic Area, the United Kingdom and Switzerland are shown a
+              Google-certified consent message before any personalized advertising cookies are set. You can
+              decline personalized ads and still use every tool on the site. You can change your choice at any
+              time by clearing cookies for careerreturns.com, which brings the consent message back.
+            </p>
+          </div>
           <p className="text-slate-400 text-sm leading-relaxed">
             We do not use Google Analytics, Facebook Pixel, or data broker integrations. We do not
-            sell your information to third parties.
+            sell personal information to third parties. California residents can opt out of
+            personalized advertising at any time through Google Ads Settings (linked below).
           </p>
           <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
             <p className="text-white font-semibold text-sm">Google AdSense (Advertising)</p>
@@ -179,7 +203,9 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold tracking-tight">8. Contact</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             For privacy-related questions, email us at{" "}
-            <span className="text-purple-400">privacy@careerreturns.com</span>.
+            <a href="mailto:hgauba4@gmail.com" className="text-purple-400 underline underline-offset-2">hgauba4@gmail.com</a>{" "}
+            (Himanshu Gauba, founder). You can also use our{" "}
+            <Link href="/contact" className="text-purple-400 underline underline-offset-2">contact page</Link>.
             We do not have a physical mailing address for public correspondence.
           </p>
         </section>

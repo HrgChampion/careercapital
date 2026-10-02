@@ -1,12 +1,12 @@
 import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
+import ContactForm from "@/components/ContactForm"
 
 export const metadata = {
   title: "Contact | CareerReturns",
   description:
     "Get in touch with the CareerReturns team. Questions, feedback, or partnership inquiries — we'd love to hear from you.",
   alternates: pageAlternates("https://careerreturns.com/contact"),
-  robots: { index: false, follow: true },
 }
 
 export default function ContactPage() {
@@ -52,6 +52,17 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold tracking-tight">Send a message</h2>
+          <ContactForm />
+          <p className="text-slate-500 text-xs leading-relaxed">
+            Messages are read by Himanshu Gauba, the founder. Data corrections are prioritised: if a figure on
+            the site is wrong, we verify it against the source and update the page, usually within a week. See our{" "}
+            <Link href="/editorial-policy" className="text-purple-400 underline underline-offset-2">editorial policy</Link>{" "}
+            for how corrections are handled.
+          </p>
         </section>
 
         <section className="space-y-4">

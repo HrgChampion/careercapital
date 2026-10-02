@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
+import Guide from "./guide"
 
 export const metadata: Metadata = {
   title: "Skills Gap Calculator 2026 — What Missing Skills Cost You",
   description:
-    "Not knowing Python costs $22,000/year. SQL: $12,000/year. AWS: $25,000/year. Free calculator: assess 12 skills, see the exact annual salary cost of each gap, and get a ranked ROI-based upskilling plan.",
+    "Rate yourself on 12 skills, estimate the annual pay cost and 10-year NPV of each gap, and get a ranked, costed upskilling plan. Free calculator.",
   keywords: [
     "skills gap cost calculator",
     "how much does not knowing Python cost",
@@ -70,7 +71,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorSchema) }}
       />
       {children}
-
+      <Guide />
     </>
   )
 }

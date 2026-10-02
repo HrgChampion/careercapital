@@ -250,12 +250,92 @@ const industryBreakdown = [
   { industry: "Defense / Aerospace", count: "2 programs", companies: "Northrop Grumman, Raytheon (Path Forward)", note: "Security clearance eligibility required for many roles. Engineering and program management focus. Stable conversion (65–70%)." },
 ]
 
+type SectorKey = "Tech" | "Finance" | "Consulting" | "Healthcare" | "Other"
+
+// Programs not covered by the ROI-modeled directory above. Compact listing only.
+const morePrograms: {
+  company: string
+  sector: SectorKey
+  duration: string
+  stipend: string
+  conversion: number
+  gapMin: string
+  applicationPeriod: string
+}[] = [
+  { company: "Apple Return to Work", sector: "Tech", duration: "24 weeks", stipend: "$4,200/wk", conversion: 70, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "Google re:Work", sector: "Tech", duration: "12 weeks", stipend: "$4,500/wk", conversion: 65, gapMin: "1+ year", applicationPeriod: "Rolling" },
+  { company: "LinkedIn Return to Work", sector: "Tech", duration: "16 weeks", stipend: "$4,000/wk", conversion: 75, gapMin: "1+ year", applicationPeriod: "Annual" },
+  { company: "AT&T Return to Work", sector: "Tech", duration: "12 weeks", stipend: "$2,500/wk", conversion: 60, gapMin: "1+ year", applicationPeriod: "Annual" },
+  { company: "Walmart Return to Career", sector: "Tech", duration: "16 weeks", stipend: "$2,000/wk", conversion: 60, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "Morgan Stanley ReEntry", sector: "Finance", duration: "12 weeks", stipend: "$3,200/wk", conversion: 65, gapMin: "2+ years", applicationPeriod: "Annual (Mar)" },
+  { company: "Citigroup Citi ReEntry", sector: "Finance", duration: "10 weeks", stipend: "$2,800/wk", conversion: 60, gapMin: "2+ years", applicationPeriod: "Spring" },
+  { company: "Bank of America Return to Career", sector: "Finance", duration: "10 weeks", stipend: "$2,800/wk", conversion: 60, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "Credit Suisse ReConnect", sector: "Finance", duration: "10 weeks", stipend: "$3,200/wk", conversion: 62, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "EY Return to Work", sector: "Consulting", duration: "12 weeks", stipend: "$2,200/wk", conversion: 65, gapMin: "2+ years", applicationPeriod: "Rolling" },
+  { company: "KPMG Springboard", sector: "Consulting", duration: "12 weeks", stipend: "$2,200/wk", conversion: 60, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "PwC Career Comeback", sector: "Consulting", duration: "16 weeks", stipend: "$2,500/wk", conversion: 65, gapMin: "2+ years", applicationPeriod: "Rolling" },
+  { company: "Booz Allen Re|Energize", sector: "Consulting", duration: "12 weeks", stipend: "$2,500/wk", conversion: 65, gapMin: "2+ years", applicationPeriod: "Rolling" },
+  { company: "Johnson & Johnson ReEntry", sector: "Healthcare", duration: "12 weeks", stipend: "$2,500/wk", conversion: 65, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "Novartis Returnship", sector: "Healthcare", duration: "12 weeks", stipend: "$2,800/wk", conversion: 60, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "General Motors Return to Work", sector: "Other", duration: "12 weeks", stipend: "$2,200/wk", conversion: 62, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "Ford Motor Return to Work", sector: "Other", duration: "12 weeks", stipend: "$2,200/wk", conversion: 60, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "Lockheed Martin Returnship", sector: "Other", duration: "12 weeks", stipend: "$2,200/wk", conversion: 70, gapMin: "2+ years", applicationPeriod: "Annual" },
+  { company: "Raytheon Return to Work", sector: "Other", duration: "12 weeks", stipend: "$2,200/wk", conversion: 65, gapMin: "2+ years", applicationPeriod: "Annual" },
+]
+
+const sectorOrder: SectorKey[] = ["Tech", "Finance", "Consulting", "Healthcare", "Other"]
+
+const sectorLabels: Record<SectorKey, string> = {
+  Tech: "Technology",
+  Finance: "Finance & Banking",
+  Consulting: "Consulting & Professional Services",
+  Healthcare: "Healthcare & Pharma",
+  Other: "Automotive, Defense & Other",
+}
+
+const sectorAccent: Record<SectorKey, string> = {
+  Tech: "text-cyan-400",
+  Finance: "text-violet-400",
+  Consulting: "text-emerald-400",
+  Healthcare: "text-rose-400",
+  Other: "text-amber-400",
+}
+
+function conversionColor(rate: number): string {
+  if (rate >= 75) return "text-green-400"
+  if (rate >= 60) return "text-emerald-400"
+  return "text-yellow-400"
+}
+
+const findPlatforms = [
+  {
+    platform: "iRelaunch",
+    url: "https://www.irelaunch.com",
+    description:
+      "The leading career reentry platform. iRelaunch hosts a job board of active returnship openings, runs the iRelaunch Return to Work Conference (the largest gathering of career reentry professionals globally), and maintains a database of employer programs. Recommended for anyone seriously planning a returnship application.",
+  },
+  {
+    platform: "Path Forward",
+    url: "https://pathforward.org",
+    description:
+      "A nonprofit that partners with 100+ companies to create returnship programs and connects career returners with active openings. Path Forward programs span tech, finance, healthcare, and nonprofit sectors. Many companies run their returnship programs exclusively through Path Forward rather than their own careers page.",
+  },
+  {
+    platform: "LinkedIn",
+    url: "https://linkedin.com",
+    description:
+      "Search for 'returnship,' 'return to work program,' or 'career reentry' on LinkedIn Jobs. Filter by date posted (last 30 days) and location. Many programs post directly on LinkedIn, including some that do not appear on iRelaunch or Path Forward. Also useful for connecting with returnship alumni at target companies.",
+  },
+]
+
 const faqItems: FaqItem[] = [
-  { q: "What are return-to-work programs (returnships)?", a: "Return-to-work programs, also called returnships, are structured re-entry pathways offered by major employers for professionals who have taken a career break of 1–3+ years. Unlike standard hiring, they are specifically designed for candidates with employment gaps and typically run 10–18 weeks, paying a full salary or competitive stipend, and converting to full-time roles at rates of 65–90%." },
+  { q: "What are return-to-work programs (returnships)?", a: "Return-to-work programs, also called returnships, are structured re-entry pathways offered by major employers for professionals who have taken a career break of 1–3+ years. Unlike standard hiring, they are specifically designed for candidates with employment gaps and typically run 10–18 weeks, paying a full salary or competitive stipend, and converting to full-time roles at rates of 65–90%. The term was coined by Goldman Sachs in 2008 and is now used industry-wide." },
+  { q: "Which companies have returnship programs in 2026?", a: "50+ major companies run returnship programs in 2026, including Amazon, Meta, Goldman Sachs, JPMorgan, McKinsey, Microsoft, Apple, Google, Morgan Stanley, Citigroup, Deloitte, EY, KPMG, PwC, IBM, Salesforce, LinkedIn, PayPal, Accenture, Bank of America, Lockheed Martin, Johnson & Johnson, and many more. Programs span tech, finance, consulting, healthcare, defense, and retail sectors." },
   { q: "Which company has the best return-to-work program?", a: "Amazon Returnship has the highest conversion rate at 90%, making it the strongest ROI on a risk-adjusted basis. Goldman Sachs and McKinsey offer the highest post-program salaries ($200k–$250k). JPMorgan ReEntry is the longest-running program and most accessible for finance professionals. The best program depends on your industry, target salary, and gap duration." },
   { q: "How long do return-to-work programs last?", a: "Most returnship programs run 10–18 weeks. Goldman Sachs runs 10 weeks, Amazon and PayPal run 16 weeks, and McKinsey runs 6–12 months. Longer programs generally offer higher conversion certainty and more structured integration, but require more time before a full-time offer." },
+  { q: "What is the typical stipend for a returnship program?", a: "Returnship stipends range from $2,000/week to $4,500/week depending on company, industry, and role level. Tech companies pay the highest stipends: Meta ($4,500/wk), Amazon and Apple ($4,200/wk), Google ($4,500/wk), and Microsoft ($4,000/wk). Finance programs range from $2,800–$3,500/week. Consulting firms including McKinsey and Deloitte pay full consultant salary during the program, which can equate to $130,000–$215,000 annualized. The average stipend across all programs is approximately $3,000–$4,500/week for a 12–16 week program." },
   { q: "Is a returnship worth it vs. applying directly?", a: "A returnship is typically worth it when your career gap is 2+ years and the program conversion rate exceeds 65–70%. The NPV advantage of returnships over direct re-entry ranges from $12k to $62k depending on the program, driven by higher post-program salary floor and faster elimination of the career gap salary penalty. Use a returnship ROI calculator to model your specific scenario." },
-  { q: "How do I apply for a return-to-work program?", a: "Apply directly through the company's careers page, searching for 'returnship' or 'return to work.' Most programs run on annual or semi-annual cohort cycles — Amazon and Goldman open applications 3–4 months before start. In your application, state your career break explicitly, describe any bridge activities during the break, and target roles that match your pre-break skills. Platforms like iRelaunch and Path Forward also list active returnship openings." },
+  { q: "How do I apply for a return-to-work program?", a: "Apply directly through the company's careers page, searching for 'returnship' or 'return to work.' Most programs run on annual or semi-annual cohort cycles — Amazon and Goldman open applications 3–4 months before start, and cohorts fill quickly, so apply in the first 2–3 weeks of the window. In your application, state your career break explicitly and briefly, describe any bridge activities during the break (courses, freelance, volunteering), and target roles that match your pre-break skills. Platforms like iRelaunch and Path Forward also aggregate active returnship openings across 100+ employers." },
 ]
 
 export default function ReturnToWorkProgramsPage() {
@@ -276,7 +356,8 @@ export default function ReturnToWorkProgramsPage() {
             The Complete Guide to Return-to-Work Programs in 2026
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
-            15+ programs ranked by ROI — not just duration and prestige.
+            15+ programs ranked by ROI — not just duration and prestige — plus 19 more listed by sector,
+            the platforms that surface new openings, and how to apply.
           </p>
         </header>
 
@@ -341,7 +422,7 @@ export default function ReturnToWorkProgramsPage() {
             {[
               {
                 title: "Career gap duration",
-                body: "Most programs require a minimum gap of 1–2 years. Amazon and PayPal accept 12-month gaps; Goldman, JPMorgan, and McKinsey typically require 2+ years. There is rarely an upper limit on gap length.",
+                body: "Most programs require a minimum gap of 1–2 years. Amazon and PayPal accept 12-month gaps; Goldman, JPMorgan, and McKinsey typically require 2+ years. There is rarely an upper limit on gap length — multi-year or decade-long breaks are accepted.",
               },
               {
                 title: "Prior work experience",
@@ -349,11 +430,11 @@ export default function ReturnToWorkProgramsPage() {
               },
               {
                 title: "Reason for the break",
-                body: "Caregiving (child, parent, or family), relocation, health, and education are the most common accepted reasons. The break does not need to be justified — returnship programs are specifically designed not to penalize the gap itself.",
+                body: "Caregiving (child, parent, or family), relocation, health, and education are the most common accepted reasons. The break does not need to be justified — returnship programs are specifically designed not to penalize the gap itself. What matters is your readiness to return.",
               },
               {
                 title: "Skill and industry alignment",
-                body: "Most programs require skills relevant to the open role — you are not starting over. A software engineer taking a returnship in engineering, a finance professional in finance. Career-switch returnships exist but are less common.",
+                body: "Most programs require skills relevant to the open role — you are not starting over. A software engineer taking a returnship in engineering, a finance professional in finance. Career-switch returnships exist but are less common and more competitive.",
               },
             ].map(({ title, body }) => (
               <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
@@ -417,11 +498,65 @@ export default function ReturnToWorkProgramsPage() {
               </div>
             ))}
           </div>
+
+          <div id="more-programs" className="space-y-8 pt-4">
+            <div>
+              <h3 className="text-lg font-semibold tracking-tight">More 2026 Returnship Programs by Sector</h3>
+              <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+                These programs are not yet ROI-modeled, so no NPV figure is shown. Conversion rates are
+                color-coded: <span className="text-green-400 font-medium">green ≥75%</span>,{" "}
+                <span className="text-emerald-400 font-medium">emerald 60–74%</span>. Stipends are weekly.
+              </p>
+            </div>
+            {sectorOrder.map((sector) => {
+              const items = morePrograms.filter((m) => m.sector === sector)
+              if (!items.length) return null
+              return (
+                <div key={sector} className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className={`text-xs font-semibold uppercase tracking-widest ${sectorAccent[sector]}`}>
+                      {sectorLabels[sector]}
+                    </span>
+                    <div className="flex-1 h-px bg-white/10" />
+                    <span className="text-slate-500 text-xs">{items.length} programs</span>
+                  </div>
+                  <div className="space-y-3">
+                    {items.map((m) => (
+                      <div key={m.company} className="bg-white/5 border border-white/10 rounded-xl p-4 sm:p-5 space-y-3">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+                          <p className="text-white font-semibold text-sm">{m.company}</p>
+                          <span className="text-slate-500 text-xs">Applications: {m.applicationPeriod}</span>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                          <div>
+                            <p className="text-slate-500 mb-0.5">Duration</p>
+                            <p className="text-slate-300 font-medium">{m.duration}</p>
+                          </div>
+                          <div>
+                            <p className="text-slate-500 mb-0.5">Stipend</p>
+                            <p className="text-slate-300 font-medium">{m.stipend}</p>
+                          </div>
+                          <div>
+                            <p className="text-slate-500 mb-0.5">Conversion Rate</p>
+                            <p className={`font-semibold ${conversionColor(m.conversion)}`}>{m.conversion}%</p>
+                          </div>
+                          <div>
+                            <p className="text-slate-500 mb-0.5">Min Gap</p>
+                            <p className="text-slate-300 font-medium">{m.gapMin}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </section>
 
         {/* How to apply */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold tracking-tight">How to Apply: The 4-Step Framework</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">How to Apply: The 5-Step Framework</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             Returnship applications are evaluated differently from standard job applications. The gap is not
             the problem — it is the expected context. Here is what actually moves your application:
@@ -440,11 +575,16 @@ export default function ReturnToWorkProgramsPage() {
               },
               {
                 step: "03",
-                title: "Prepare for a compressed interview timeline",
-                body: "Many returnship programs run on fixed cohort cycles — Amazon and Goldman typically open applications 3–4 months before the program start. Applications are reviewed in batches. Apply early. Late applicants often find the cohort filled.",
+                title: "Apply in the first week of the window",
+                body: "Many returnship programs run on fixed cohort cycles — Amazon, Goldman, and McKinsey typically open applications 3–4 months before the program start, and applications are reviewed in batches. Cohorts fill within 6–8 weeks of opening, so late applicants often find the cohort filled even when the posting is still live. Set calendar reminders for January (Goldman), February (Amazon spring), and August (Amazon fall).",
               },
               {
                 step: "04",
+                title: "Prepare for a full technical interview",
+                body: "Tech company returnships (Amazon, Google, Microsoft) require the same technical interview bar as standard engineering and PM hiring — LeetCode medium/hard, system design, behavioral. Finance programs run a compressed version of their standard interview process. Prepare as if it is a full hire, not a special track.",
+              },
+              {
+                step: "05",
                 title: "Model your break-even conversion rate before accepting",
                 body: "A returnship is only financially rational if the conversion probability exceeds a threshold specific to your alternative options. If you have a strong direct re-entry offer, the returnship needs to offer a meaningfully higher expected salary to justify the time cost. Calculate this before committing.",
               },
@@ -501,7 +641,7 @@ export default function ReturnToWorkProgramsPage() {
             <p className="text-xs font-medium text-cyan-400 uppercase tracking-widest mb-1">By Sector</p>
             <h2 className="text-2xl font-semibold tracking-tight">Returnships by Industry: Which Sectors Have the Most Programs</h2>
             <p className="text-slate-400 text-sm mt-2 leading-relaxed">
-              Technology has the most return-to-work programs by count, but finance offers the highest post-program salaries. Consulting programs run longest and produce the highest NPV advantage vs. direct re-entry.
+              Counts below refer to the ROI-modeled directory above. Technology has the most return-to-work programs by count, but finance offers the highest post-program salaries. Consulting programs run longest and produce the highest NPV advantage vs. direct re-entry.
             </p>
           </div>
           <div className="space-y-3">
@@ -509,7 +649,7 @@ export default function ReturnToWorkProgramsPage() {
               <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
                 <div className="flex items-center justify-between gap-4 flex-wrap">
                   <p className="text-white font-semibold text-sm">{row.industry}</p>
-                  <span className="text-cyan-400 text-xs font-semibold">{row.count}</span>
+                  <span className="text-cyan-400 text-xs font-semibold">{row.count} modeled</span>
                 </div>
                 <p className="text-slate-400 text-xs">{row.companies}</p>
                 <p className="text-slate-500 text-xs leading-relaxed">{row.note}</p>
@@ -550,6 +690,36 @@ export default function ReturnToWorkProgramsPage() {
             </table>
           </div>
           <p className="text-slate-500 text-xs">Application windows are estimates based on historical program cycles. Verify exact dates on each company&apos;s careers page before applying.</p>
+        </section>
+
+        {/* How to Find More Programs */}
+        <section className="space-y-5">
+          <div>
+            <p className="text-xs font-medium text-cyan-400 uppercase tracking-widest mb-1">Platforms</p>
+            <h2 className="text-2xl font-semibold tracking-tight">How to Find More Returnship Programs</h2>
+            <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+              Beyond the programs listed above, three platforms aggregate active returnship openings
+              across hundreds of employers and should be checked regularly:
+            </p>
+          </div>
+          <div className="space-y-3">
+            {findPlatforms.map(({ platform, url, description }) => (
+              <div key={platform} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <p className="text-white font-semibold text-sm">{platform}</p>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 text-xs hover:text-cyan-300 transition-colors"
+                  >
+                    {url.replace("https://", "")} ↗
+                  </a>
+                </div>
+                <p className="text-slate-400 text-xs leading-relaxed">{description}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* CTA */}
@@ -607,11 +777,11 @@ export default function ReturnToWorkProgramsPage() {
                 <p className="text-slate-500 text-xs">Is your bootcamp worth the cost? →</p>
               </div>
             </Link>
-            <Link href="/returnship-programs-2026" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
-              <div className="text-cyan-400 font-mono text-lg">⇒</div>
+            <Link href="/returnship-roi-calculator" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
+              <div className="text-cyan-400 font-mono text-lg">Σ</div>
               <div>
-                <p className="text-white text-sm font-medium group-hover:text-cyan-300 transition-colors">Returnship Programs 2026</p>
-                <p className="text-slate-500 text-xs">50+ companies — deadlines, pay & how to apply →</p>
+                <p className="text-white text-sm font-medium group-hover:text-cyan-300 transition-colors">Returnship ROI Calculator</p>
+                <p className="text-slate-500 text-xs">NPV vs. direct re-entry modeled →</p>
               </div>
             </Link>
           </div>
