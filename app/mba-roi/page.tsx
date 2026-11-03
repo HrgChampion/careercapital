@@ -64,7 +64,9 @@ export default function MbaRoiPage() {
           <p className="text-slate-400 text-lg leading-relaxed">
             Return on investment for an MBA varies from 4% to 55% depending on industry, school tier,
             scholarship aid, and program type. This guide covers every variable with real data — so you can
-            model your specific scenario before committing $200,000–$415,000.
+            model your specific scenario before committing $200,000–$415,000. Want the short answer first? Read{" "}
+            <Link href="/mba-worth-it" className="text-white underline underline-offset-2 hover:text-indigo-300">is an MBA worth it</Link>, or run your numbers in the{" "}
+            <Link href="/mba-roi-calculator" className="text-white underline underline-offset-2 hover:text-indigo-300">MBA ROI calculator</Link>.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[

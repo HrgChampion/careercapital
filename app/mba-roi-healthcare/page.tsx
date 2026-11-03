@@ -3,9 +3,9 @@ import { pageAlternates } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "MBA ROI for Healthcare (2026): Salaries, PSLF & Break-Even",
+  title: "Healthcare MBA Salary 2026: $85K–$210K by Role + ROI",
   description:
-    "MBA ROI for healthcare. Hospital administration salary, healthcare consulting ROI, PSLF loan forgiveness strategy, top programs, and break-even math. See data →",
+    "Healthcare MBA salary 2026: consulting $165K–$210K, pharma strategy $140K–$195K, health system VP $130K–$195K, government $85K–$130K. Plus PSLF & ROI.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-healthcare"),
 }
 
@@ -33,10 +33,16 @@ export default function MbaRoiHealthcarePage() {
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             MBA ROI for Healthcare:<br />Management, Consulting & PSLF
           </h1>
+          <p className="text-white text-lg leading-relaxed">
+            A healthcare MBA salary ranges from $85,000 to $210,000 in total compensation in the first five
+            years after graduation: $165K–$210K in healthcare consulting, $140K–$195K in pharma and medtech
+            strategy, $130K–$195K at health systems and insurers, and $85K–$130K in health policy and government.
+          </p>
           <p className="text-slate-400 text-lg leading-relaxed">
             Healthcare management MBAs occupy a unique position in the ROI landscape: structurally lower salary
             growth than finance or consulting, but with a powerful debt forgiveness mechanism — PSLF — that can
-            add $50,000–$120,000 to effective NPV for the right candidate.
+            add $50,000–$120,000 to effective NPV for the right candidate. Model your own case with the{" "}
+            <Link href="/mba-roi-calculator" className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">MBA ROI calculator</Link>.
           </p>
         </header>
 

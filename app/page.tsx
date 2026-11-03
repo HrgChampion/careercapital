@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter"
 export const metadata = {
   title: "CareerReturns — Career ROI Platform: MBA, Salary & Career Investment Tools",
   description:
-    "14+ free tools to price every career decision with DCF rigor — MBA ROI, salary benchmarks, career gaps, returnships, and lifetime earnings. Used by 10,000+ professionals.",
+    "14+ free tools to price every career decision with DCF rigor — MBA ROI, salary benchmarks, career gaps, returnships, and lifetime earnings.",
   alternates: pageAlternates("https://careerreturns.com"),
   openGraph: {
     title: "CareerReturns — Career ROI Platform: MBA, Salary & Career Investment Tools",

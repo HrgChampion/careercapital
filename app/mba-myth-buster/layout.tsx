@@ -4,7 +4,7 @@ import SiteFooter from "@/components/SiteFooter"
 export const metadata = {
   title: "MBA Myth Buster: 10 MBA ROI Beliefs vs. the 2026 Data",
   description:
-    "10 common beliefs about MBA ROI, each tested against real salary and cost data. How many survive? Free interactive quiz, updated July 2026.",
+    "10 common beliefs about MBA ROI, each tested against real salary and cost data. How many survive? Free interactive quiz, updated October 2026.",
   alternates: pageAlternates("https://careerreturns.com/mba-myth-buster"),
   openGraph: {
     title: "MBA Myth Buster: 10 MBA ROI Beliefs vs. the 2026 Data",

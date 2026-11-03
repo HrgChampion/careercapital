@@ -4,9 +4,9 @@ import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
 
 export const metadata = {
-  title: "Does an MBA Increase Your Salary? +47% Average (2026 Data)",
+  title: "How Much Does an MBA Increase Your Salary? +47% (2026)",
   description:
-    "Yes — the average MBA salary increase is +47%. Full 2026 data: consulting +$105K, banking +$90K, tech +$60K, by role and sector. Calculate your exact ROI →",
+    "An MBA raises pay 47–55% on average, from ~$85K pre-MBA to $175K+ at M7. Increase by industry: consulting +$105K, banking +$90K, tech +$60K.",
   alternates: pageAlternates("https://careerreturns.com/mba-salary-increase"),
 }
 
@@ -28,7 +28,7 @@ export default function MbaSalaryIncreasePage() {
             Does an MBA Increase<br />Your Salary?
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
-            Yes — an MBA increases salary by an average of <span className="text-white font-medium">47–55%</span>, from a pre-MBA median of ~$85,000 to a post-MBA median of $175,000+ at M7 programs. Consulting track graduates entering MBB firms see a salary delta exceeding $100,000 in Year 1 alone. The size of the increase depends almost entirely on your pre-MBA salary, target industry, and program tier.
+            Yes — an MBA increases salary by an average of <span className="text-white font-medium">47–55%</span>, from a pre-MBA median of ~$85,000 to a post-MBA median base salary of $175,000 at M7 programs. Consulting track graduates entering MBB firms see a salary delta exceeding $100,000 in Year 1 alone. The size of the increase depends almost entirely on your pre-MBA salary, target industry, and program tier.
           </p>
           <div className="flex items-center gap-3 pt-1 border-t border-white/8">
             <div className="w-7 h-7 rounded-full bg-purple-600/20 border border-purple-500/30 flex items-center justify-center shrink-0">
@@ -43,6 +43,46 @@ export default function MbaSalaryIncreasePage() {
             </div>
           </div>
         </header>
+
+        {/* How much does an MBA raise your salary — Year 1 / 5 / 10 */}
+        <section id="how-much" className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">How much does an MBA raise your salary?</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            On average, an MBA raises your salary by 47–55% in the first year after graduation. M7 graduates
+            see a bigger jump: the median base salary goes from about $85,000 before the MBA to $175,000 after
+            it. The gap keeps widening after that, as the table shows.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-white/10 text-left">
+                  <th className="text-slate-500 text-xs font-medium py-3 pr-4">After graduation</th>
+                  <th className="text-slate-500 text-xs font-medium py-3 px-3">T16–T25 graduate</th>
+                  <th className="text-slate-500 text-xs font-medium py-3 pl-3">M7 graduate</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { year: "Year 1", t25: "$115K–$140K", t25Inc: "+$30K–$55K", m7: "$185K–$210K", m7Inc: "+$100K–$125K" },
+                  { year: "Year 5", t25: "$175K–$260K", t25Inc: "+$90K–$175K", m7: "$310K–$500K", m7Inc: "+$225K–$415K" },
+                  { year: "Year 10", t25: "$220K–$400K", t25Inc: "+$135K–$315K", m7: "$450K–$1.5M+", m7Inc: "+$365K–$1.4M+" },
+                ].map(({ year, t25, t25Inc, m7, m7Inc }) => (
+                  <tr key={year} className="border-b border-white/5">
+                    <td className="py-3 pr-4 text-white font-medium text-xs">{year}</td>
+                    <td className="py-3 px-3 text-xs"><span className="text-slate-300">{t25}</span> <span className="text-purple-300 font-semibold">({t25Inc})</span></td>
+                    <td className="py-3 pl-3 text-xs"><span className="text-slate-300">{m7}</span> <span className="text-green-400 font-semibold">({m7Inc})</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-slate-500 text-xs leading-relaxed">
+            Total cash compensation, with the increase measured against the ~$85K median pre-MBA salary. Your pay would
+            also have grown without the degree, so the true MBA premium is smaller than these raw increases; the{" "}
+            <Link href="/mba-roi-calculator" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">MBA ROI calculator</Link>{" "}
+            nets that out. Year 5 and 10 data: <Link href="/average-mba-salary-after-5-years" className="text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-2">average MBA salary after 5 years</Link>.
+          </p>
+        </section>
 
         {/* Pre-MBA median */}
         <section className="space-y-5">

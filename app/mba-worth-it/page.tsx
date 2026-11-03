@@ -6,7 +6,7 @@ import FaqSection, { type FaqItem } from "../../components/FaqSection"
 import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
-  title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
+  title: "Is an MBA Worth It in 2026? IRR by School & Industry",
   description: "Is an MBA worth it financially in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math reliably fails.",
   url: "https://careerreturns.com/mba-worth-it",
   datePublished: "2026-03-03",
@@ -15,21 +15,21 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Is an MBA Worth It?", url: "https://careerreturns.com/mba-worth-it" }])
 
 export const metadata = {
-  title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
+  title: "Is an MBA Worth It in 2026? IRR by School & Industry",
   description:
-    "Is an MBA worth it in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math fails. Calculate now →",
+    "An MBA is worth it when its IRR beats 10–12%. M7 to MBB/IB: 18–40%. Outside the T25: 2–6%. See your break-even and NPV by school and industry.",
   alternates: pageAlternates("https://careerreturns.com/mba-worth-it"),
   openGraph: {
-    title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
-    description: "Is an MBA worth it financially in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math reliably fails.",
+    title: "Is an MBA Worth It in 2026? IRR by School & Industry",
+    description: "An MBA is worth it when its IRR beats 10–12%. M7 to MBB/IB: 18–40%. Outside the T25: 2–6%. See your break-even and NPV by school and industry.",
     url: "https://careerreturns.com/mba-worth-it",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Is an MBA Worth It? 2026 ROI Data Across 12 Industries",
-    description: "Full cost breakdown, IRR by school tier, ROI vs the stock market.",
+    title: "Is an MBA Worth It in 2026? IRR by School & Industry",
+    description: "An MBA is worth it when its IRR beats 10–12%. M7 to MBB/IB: 18–40%. Outside the T25: 2–6%. See your break-even and NPV by school and industry.",
   },
 }
 
@@ -88,7 +88,9 @@ export default function MbaWorthItPage() {
           </h1>
           <ArticleMeta updated="2026-10-02" />
           <p className="text-slate-400 text-lg leading-relaxed">
-            An MBA is worth it financially when it produces an IRR above 10–12% — the long-run equity market benchmark. At M7 programs targeting MBB consulting or investment banking, IRRs range from <span className="text-white font-medium">18–40%</span>, making the degree one of the highest-returning investments available. At programs outside the top 25 targeting general management roles, IRRs of 2–6% rarely justify the full economic cost of $150,000–$300,000.
+            An MBA is worth it financially when it produces an IRR above 10–12% — the long-run equity market benchmark. At M7 programs targeting MBB consulting or investment banking, IRRs range from <span className="text-white font-medium">18–40%</span>, making the degree one of the highest-returning investments available. At programs outside the top 25 targeting general management roles, IRRs of 2–6% rarely justify the full economic cost of $150,000–$300,000. Check your own numbers with the{" "}
+            <Link href="/mba-roi-calculator" className="text-white underline underline-offset-2 hover:text-indigo-300">MBA ROI calculator</Link>, or see the line-by-line NPV, IRR and break-even math in our{" "}
+            <Link href="/mba-roi" className="text-white underline underline-offset-2 hover:text-indigo-300">detailed MBA ROI analysis</Link>.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[

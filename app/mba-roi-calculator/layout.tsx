@@ -1,21 +1,21 @@
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA ROI Calculator (2026) — Free NPV, IRR & Break-Even in 60 Seconds",
+  title: "MBA ROI Calculator: Is an MBA Worth It? (Free NPV & IRR)",
   description:
-    "Free MBA ROI calculator using full DCF analysis. Calculate NPV, IRR & break-even payback period in 60 seconds. Used by 10,000+ MBA applicants. Try it free →",
+    "Enter your salary, tuition and loan. Get your MBA's NPV, IRR and break-even year in 60 seconds. Free DCF model, no sign-up.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-calculator"),
   openGraph: {
-    title: "MBA ROI Calculator (2026) — Free NPV, IRR & Break-Even in 60 Seconds",
+    title: "MBA ROI Calculator: Is an MBA Worth It? (Free NPV & IRR)",
     description:
-      "Free MBA ROI calculator using full DCF analysis. Calculate NPV, IRR & break-even payback period in 60 seconds. Compare any program vs. your alternatives.",
+      "Enter your salary, tuition and loan. Get your MBA's NPV, IRR and break-even year in 60 seconds. Free DCF model, no sign-up.",
     url: "https://careerreturns.com/mba-roi-calculator",
     siteName: "CareerReturns",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MBA ROI Calculator (2026) — Free NPV, IRR & Break-Even Tool",
+    title: "MBA ROI Calculator: Is an MBA Worth It? (Free NPV & IRR)",
     description:
       "Calculate MBA ROI in 60 seconds. Full DCF model: NPV, IRR, break-even payback. Free for all programs.",
   },

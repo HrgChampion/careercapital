@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
         <header className="space-y-4">
           <p className="text-xs font-medium text-purple-400 uppercase tracking-widest">CareerReturns</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">Disclaimer</h1>
-          <p className="text-slate-400 text-sm">Last updated: <span className="text-white">October 2, 2026</span></p>
+          <p className="text-slate-400 text-sm">Last updated: <span className="text-white">October 21, 2026</span></p>
         </header>
 
         <section className="space-y-4">
@@ -46,11 +46,23 @@ export default function DisclaimerPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold tracking-tight">Advertising and affiliate disclosure</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
-            CareerReturns is free to use and is funded by display advertising served by Google AdSense. Ads are
-            selected by Google, not by us, and their appearance is not an endorsement. CareerReturns does not
-            currently use affiliate links. If that changes, affiliate links will be clearly labeled where they
-            appear and listed on this page. Advertising never affects the content or calculator results.
+            CareerReturns is free to use. It is funded by display advertising served by Google AdSense and by
+            affiliate partnerships. Ads are selected by Google, not by us, and their appearance is not an
+            endorsement.
           </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Some pages contain affiliate links, for example to student-loan refinancing lenders, test-prep and
+            online-course providers, resume and career-coaching services, and MBA admissions consultants. If you
+            click one of these links and sign up or buy, we may earn a commission at no extra cost to you. In line
+            with the U.S. Federal Trade Commission&apos;s Endorsement Guides, affiliate links are labeled where they
+            appear, marked with <code className="text-slate-300">rel=&quot;sponsored&quot;</code>, and placed next to a
+            short disclosure.
+          </p>
+          <ul className="list-disc pl-5 space-y-2 text-slate-400 text-sm leading-relaxed">
+            <li>Commissions never change calculator results, scores, rankings or the salary and cost data we publish.</li>
+            <li>We do not accept payment to recommend a school, lender or product in our editorial content.</li>
+            <li>Rates, prices and offers on partner sites are set by those partners and can change; check the terms on their site before you apply.</li>
+          </ul>
         </section>
 
         <section className="space-y-4">

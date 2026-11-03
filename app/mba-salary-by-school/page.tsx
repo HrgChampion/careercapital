@@ -212,7 +212,7 @@ export default function MbaSalaryBySchoolPage() {
           <div className="bg-white/5 border border-violet-500/30 rounded-xl p-5 space-y-2">
             <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">Quick Answer</p>
             <p className="text-white font-semibold text-base">
-              M7 median: $175K–$210K &nbsp;|&nbsp; T15: $140K–$165K &nbsp;|&nbsp; T25: $115K–$140K
+              M7 median: $185K–$210K &nbsp;|&nbsp; T15: $140K–$165K &nbsp;|&nbsp; T25: $115K–$140K
             </p>
             <p className="text-slate-400 text-sm">
               Stanford GSB leads at $210K median; Booth offers the best M7 salary-to-cost ratio at 0.93x.

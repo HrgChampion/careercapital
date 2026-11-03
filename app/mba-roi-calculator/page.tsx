@@ -115,7 +115,7 @@ export default function Home() {
             <p className="text-xs font-medium text-purple-400 uppercase tracking-widest mb-3">
               Capital Allocation Simulator
             </p>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">MBA ROI Calculator – Is an MBA Worth It? (Bloomberg ROI Calculator Alternative)</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">MBA ROI Calculator</h1>
             <p className="mt-4 text-slate-400 text-lg leading-relaxed max-w-2xl">
               This MBA ROI calculator helps you determine if an MBA is worth it financially by modeling
               tuition costs, forgone income during enrollment, student loans, pre-MBA salary, and

@@ -3,24 +3,25 @@ import { pageAlternates, articleSchema } from "@/lib/seo"
 import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
 import ArticleMeta from "@/components/ArticleMeta"
+import { SALARY_FACTS } from "@/lib/salaryFacts"
 
 export const metadata = {
-  title: "Post-MBA Salary 2026: MBB $232K, IB $350K, Tech $200K",
+  title: "Post-MBA Salary 2026: $185K–$210K M7 Median + By Industry",
   description:
-    "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. Full breakdown by school tier, city, signing bonus, and pre-MBA background.",
+    "What MBA grads earn in 2026: M7 median $185K–$210K; IB up to $350K total comp; MBB $232K; tech $185K–$200K + RSUs. By school, city & signing bonus.",
   alternates: pageAlternates("https://careerreturns.com/post-mba-salary"),
   openGraph: {
-    title: "Post-MBA Salary 2026: MBB $232K, IB $350K, Tech $200K",
+    title: "Post-MBA Salary 2026: $185K–$210K M7 Median + By Industry",
     description:
-      "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. Breakdown by school tier, city, and pre-MBA background.",
+      "What MBA grads earn in 2026: M7 median $185K–$210K; IB up to $350K total comp; MBB $232K; tech $185K–$200K + RSUs. By school, city & signing bonus.",
     url: "https://careerreturns.com/post-mba-salary",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Post-MBA Salary 2026: MBB $232K · IB $350K · Tech $200K",
-    description: "Full salary data by industry, school tier, and city. MBB $232K, IB $350K, tech $200K.",
+    title: "Post-MBA Salary 2026: $185K–$210K M7 Median + By Industry",
+    description: "What MBA grads earn in 2026: M7 median $185K–$210K; IB up to $350K total comp; MBB $232K; tech $185K–$200K + RSUs. By school, city & signing bonus.",
   },
 }
 
@@ -153,7 +154,7 @@ const articleSchemaData = articleSchema({
   description: "Post-MBA salary 2026: MBB $212K–$232K, investment banking $275K–$350K, tech $185K–$200K. MBA salary by city, signing bonus by industry, and how pre-MBA background affects salary delta.",
   url: "https://careerreturns.com/post-mba-salary",
   datePublished: "2026-03-12",
-  dateModified: "2026-09-13",
+  dateModified: "2026-10-21",
   namedAuthor: true,
 })
 
@@ -177,18 +178,21 @@ export default function PostMbaSalaryPage() {
             What Is Salary After an MBA?<br />
             <span className="text-slate-400">2026 Data by Industry &amp; School</span>
           </h1>
-          <ArticleMeta updated="2026-09-13" byline="author" />
+          <ArticleMeta updated="2026-10-21" byline="author" />
           <p className="text-slate-400 leading-relaxed">
             Salary after an MBA degree ranges from $85,000 in nonprofit roles to $350,000+ in investment banking — driven primarily by industry, school tier, and pre-MBA background.
           </p>
           <p className="text-slate-400 text-sm leading-relaxed">
-            Below: first-year post-MBA salary by industry and school tier, 10-year salary growth trajectories, signing bonuses, post-MBA total compensation breakdowns, and how post-MBA pay compares to pre-MBA earnings. All data reflects 2026 market figures.
+            Below: first-year post-MBA salary by industry and school tier, 10-year salary growth trajectories, signing bonuses, post-MBA total compensation breakdowns, and how post-MBA pay compares to pre-MBA earnings. All data reflects 2026 market figures. For averages ranked school by school, see our{" "}
+            <Link href="/average-mba-salary" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">average MBA salary</Link>{" "}
+            guide, or run your own numbers in the{" "}
+            <Link href="/mba-roi-calculator" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA ROI calculator</Link>.
           </p>
 
           {/* Key Takeaways */}
           <ul className="space-y-1.5 text-sm text-slate-300 border border-white/10 rounded-xl bg-white/5 px-5 py-4">
             <li className="text-xs font-medium text-slate-500 uppercase tracking-widest mb-2">Key Takeaways</li>
-            <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Median first-year post-MBA salary at M7 programs: <strong className="text-white">$185,000–$210,000</strong></span></li>
+            <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Median first-year total comp at M7 programs: <strong className="text-white">{SALARY_FACTS.m7FirstYearTotalComp.value}</strong> (median base salary {SALARY_FACTS.m7MedianBase.value})</span></li>
             <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Investment banking pays the highest first-year total comp: <strong className="text-white">$275,000–$350,000</strong> including year-end bonus</span></li>
             <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Average MBA salary increase vs. pre-MBA: <strong className="text-white">+47–55%</strong>; career switchers can exceed +100%</span></li>
             <li className="flex items-start gap-2"><span className="text-indigo-400 shrink-0">▸</span><span>Tech roles add <strong className="text-white">$60K–$120K/yr</strong> in RSU equity on top of cash compensation</span></li>
@@ -197,8 +201,8 @@ export default function PostMbaSalaryPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
-              <p className="text-2xl font-semibold text-indigo-400">$150K+</p>
-              <p className="text-slate-400 text-xs mt-1">Median first-year</p>
+              <p className="text-2xl font-semibold text-indigo-400">{SALARY_FACTS.m7MedianBase.short}</p>
+              <p className="text-slate-400 text-xs mt-1">M7 median base</p>
             </div>
             <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
               <p className="text-2xl font-semibold text-indigo-400">+47%</p>
@@ -447,8 +451,8 @@ export default function PostMbaSalaryPage() {
             </div>
             <div className="rounded-2xl bg-white/5 border border-white/10 p-5 space-y-3">
               <p className="text-indigo-400 font-mono text-lg">$190K</p>
-              <p className="font-semibold text-white">M7 Post-MBA Median</p>
-              <p className="text-slate-400 text-sm leading-relaxed">The median first-year post-MBA salary across M7 programs, inclusive of all tracks. Consulting and banking placements pull this figure above $200K; general management placements pull it below $150K.</p>
+              <p className="font-semibold text-white">M7 Post-MBA Median (Total Comp)</p>
+              <p className="text-slate-400 text-sm leading-relaxed">The midpoint of first-year post-MBA total compensation across M7 programs, inclusive of all tracks (median base salary is {SALARY_FACTS.m7MedianBase.value}). Consulting and banking placements pull this figure above $200K; general management placements pull it below $150K.</p>
             </div>
             <div className="rounded-2xl bg-white/5 border border-white/10 p-5 space-y-3">
               <p className="text-indigo-400 font-mono text-lg">+$105K</p>

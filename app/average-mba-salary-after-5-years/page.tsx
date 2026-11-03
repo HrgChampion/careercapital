@@ -4,21 +4,21 @@ import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
 
 export const metadata = {
-  title: "Average MBA Salary After 5 & 10 Years (2026): Wharton, HBS & M7 Data",
+  title: "Average MBA Salary After 5 & 10 Years: $175K–$500K (2026)",
   description:
-    "Average MBA salary after 5 years: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. After 10 years: $400K–$1M+ at Wharton, Harvard & M7 schools.",
+    "Average MBA salary after 5 years: $310K–$500K at M7, $240K–$380K at T15, $175K–$260K at T25. Plus 10-year pay for Wharton, HBS, MBB & IB.",
   openGraph: {
-    title: "Average MBA Salary After 5 & 10 Years (2026): Wharton, HBS & M7 Data",
+    title: "Average MBA Salary After 5 & 10 Years: $175K–$500K (2026)",
     description:
-      "Average MBA salary after 5 years: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. After 10 years: $400K–$1M+. Full data by school and industry.",
+      "Average MBA salary after 5 years: $310K–$500K at M7, $240K–$380K at T15, $175K–$260K at T25. Plus 10-year pay for Wharton, HBS, MBB & IB.",
     url: "https://careerreturns.com/average-mba-salary-after-5-years",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Average MBA Salary After 5 & 10 Years (2026): Wharton, HBS & M7 Data",
-    description: "5-year post-MBA salaries: MBB $250K–$400K, tech $230K–$350K, corporate $180K–$220K. 10-year trajectories + school breakdowns.",
+    title: "Average MBA Salary After 5 & 10 Years: $175K–$500K (2026)",
+    description: "Average MBA salary after 5 years: $310K–$500K at M7, $240K–$380K at T15, $175K–$260K at T25. Plus 10-year pay for Wharton, HBS, MBB & IB.",
   },
   alternates: pageAlternates("https://careerreturns.com/average-mba-salary-after-5-years"),
 }
@@ -168,7 +168,7 @@ export default function AverageMbaSalaryAfter5YearsPage() {
         <header className="space-y-5">
           <div className="flex items-center gap-4 flex-wrap">
             <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">CareerReturns · MBA Salary Trajectory</p>
-            <p className="text-xs text-slate-500">Updated <time dateTime="2026-06-21">June 2026</time> · CareerReturns Research Team</p>
+            <p className="text-xs text-slate-500">Updated <time dateTime="2026-10-21">October 2026</time> · CareerReturns Research Team</p>
           </div>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             Average MBA Salary After 5 &amp; 10 Years (2026)
@@ -187,7 +187,7 @@ export default function AverageMbaSalaryAfter5YearsPage() {
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-sm text-white font-medium">Himanshu Gauba</span>
               <span className="text-slate-600 text-xs">·</span>
-              <span className="text-slate-500 text-xs">Updated May 2026</span>
+              <span className="text-slate-500 text-xs">Updated October 2026</span>
               <span className="text-slate-600 text-xs">·</span>
               <span className="text-slate-500 text-xs">Data: GMAC, HBS & Wharton career reports, Glassdoor</span>
             </div>
@@ -195,14 +195,16 @@ export default function AverageMbaSalaryAfter5YearsPage() {
 
           {/* Quick answer box */}
           <div className="bg-violet-500/10 border border-violet-500/25 rounded-2xl p-6 space-y-3">
-            <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">Quick Answer — MBB Consulting</p>
-            <p className="text-white text-xl font-semibold">
-              MBB consulting: $250K–$400K at year 5 &nbsp;|&nbsp; $500K–$1.5M at year 10
+            <p className="text-xs font-medium text-violet-400 uppercase tracking-widest">Quick Answer</p>
+            <p className="text-white text-lg font-semibold leading-snug">
+              The average MBA salary after 5 years is $175,000–$500,000 in total cash compensation, depending
+              on school tier: $310K–$500K for M7 graduates, $240K–$380K for T10–T15 and $175K–$260K for
+              T16–T25. After 10 years, M7 alumni typically earn $450K–$1.5M+.
             </p>
             <p className="text-slate-400 text-sm">
-              Investment banking alumni earn more in absolute terms at year 5–10 ($550K–$2M+), but carry
-              higher lifestyle cost and less predictable promotion outcomes. Tech tracks average $320K–$800K
-              depending on equity value.
+              By career track, MBB consulting alumni earn $250K–$400K at year 5; investment banking alumni
+              earn $550K–$2M+ by years 5–10. Run your own trajectory in the{" "}
+              <Link href="/mba-roi-calculator" className="text-violet-300 hover:text-violet-200 underline underline-offset-2">MBA ROI calculator</Link>.
             </p>
           </div>
         </header>
@@ -213,7 +215,7 @@ export default function AverageMbaSalaryAfter5YearsPage() {
           <div className="flex flex-wrap gap-x-4 gap-y-1.5">
             <a href="#trajectory-table" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">Salary Trajectory Table</a>
             <a href="#harvard-10-years" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">Harvard MBA at 10 Years</a>
-            <a href="#wharton-trajectory" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">Wharton MBA Trajectory</a>
+            <a href="#wharton-trajectory" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">Wharton MBA After 10 Years</a>
             <a href="#salary-drivers" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">What Drives Salary Growth</a>
             <a href="#faq" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">FAQ</a>
           </div>
@@ -268,6 +270,10 @@ export default function AverageMbaSalaryAfter5YearsPage() {
         {/* ── Harvard MBA at 10 Years ── */}
         <section id="harvard-10-years" className="space-y-5">
           <h2 className="text-2xl font-semibold tracking-tight">Harvard MBA Salary After 10 Years</h2>
+          <p className="text-white text-base leading-relaxed">
+            Harvard MBA graduates earn a median of $500K–$800K in total compensation ten years after
+            graduation; alumni who reach MBB partner, banking MD or PE roles with carry earn $1M+.
+          </p>
           <p className="text-slate-400 text-sm leading-relaxed">
             Harvard Business School (HBS) graduates have some of the highest median compensation trajectories
             of any MBA program, driven by the school&apos;s disproportionate placement into the highest-paying
@@ -329,7 +335,12 @@ export default function AverageMbaSalaryAfter5YearsPage() {
 
         {/* ── Wharton Trajectory ── */}
         <section id="wharton-trajectory" className="space-y-5">
-          <h2 className="text-2xl font-semibold tracking-tight">Wharton MBA Salary Trajectory</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Wharton MBA Salary After 10 Years</h2>
+          <p className="text-white text-base leading-relaxed">
+            Wharton MBA graduates earn a median of $450K–$750K in total compensation ten years after
+            graduation, and top-quartile alumni earn $1M+, driven by the 35–40% of each class that
+            enters banking, private equity or asset management.
+          </p>
           <p className="text-slate-400 text-sm leading-relaxed">
             Wharton&apos;s MBA program has the highest percentage of graduates entering financial services
             of any M7 program — approximately 35–40% of the class enters investment banking, private equity,
@@ -341,7 +352,7 @@ export default function AverageMbaSalaryAfter5YearsPage() {
               { year: "Year 1", comp: "$200K–$240K", note: "Finance track median pulls above M7 average. IB associates account for a large share of the class entering at $300K+ total comp." },
               { year: "Year 3", comp: "$320K–$500K", note: "Finance alumni at VP level in banking ($400K–$600K) or engagement manager level in MBB ($270K–$320K). Tech PM track at $250K–$330K." },
               { year: "Year 5", comp: "$450K–$700K", note: "Finance-track alumni who stayed in banking are at Director/ED level. PE alumni at the associate-to-VP transition, with carry beginning to vest." },
-              { year: "Year 10", comp: "$600K–$2M+ (median) / $1M–$10M+ (top quartile)", note: "Median includes all tracks. Top quartile driven by PE carry and IB MD comp. Entrepreneurship and nonprofit alumni pull median down." },
+              { year: "Year 10", comp: "$450K–$750K (median) / $1M–$10M+ (top quartile)", note: "Median includes all tracks. Top quartile driven by PE carry and IB MD comp. Entrepreneurship and nonprofit alumni pull median down." },
             ].map(({ year, comp, note }) => (
               <div key={year} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
@@ -415,7 +426,7 @@ export default function AverageMbaSalaryAfter5YearsPage() {
               </thead>
               <tbody>
                 {[
-                  { tier: "M7 (HBS, Wharton, Booth, Kellogg, Columbia, Sloan, Tuck)", y1: "$185K–$215K", y5: "$310K–$500K", y10: "$450K–$1.5M+" },
+                  { tier: "M7 (HBS, Wharton, Booth, Kellogg, Columbia, Sloan, Tuck)", y1: "$185K–$210K", y5: "$310K–$500K", y10: "$450K–$1.5M+" },
                   { tier: "T10–T15 (Haas, Fuqua, Darden, Yale, Ross, Stern)", y1: "$155K–$175K", y5: "$240K–$380K", y10: "$320K–$700K" },
                   { tier: "T16–T25 (Kelley, Mendoza, Kenan-Flagler, etc.)", y1: "$115K–$140K", y5: "$175K–$260K", y10: "$220K–$400K" },
                   { tier: "Top Online MBA (UNC, Indiana, USC, Carnegie Mellon)", y1: "$100K–$120K", y5: "$155K–$220K", y10: "$195K–$310K" },
@@ -483,7 +494,7 @@ export default function AverageMbaSalaryAfter5YearsPage() {
               <div className="text-violet-400 font-mono text-lg">$</div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">Average MBA Salary (Year 1)</p>
-                <p className="text-slate-500 text-xs">$175K M7 median — all tracks →</p>
+                <p className="text-slate-500 text-xs">$175K M7 median base — all tracks →</p>
               </div>
             </Link>
             <Link href="/post-mba-salary" className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/[0.08] hover:border-white/20 transition-all">
