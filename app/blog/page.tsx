@@ -114,6 +114,8 @@ const guideGroups = [
       { href: "/mba-investment-banking-salary", label: "MBA investment banking salary", desc: "Bank-by-bank associate pay: Goldman $360K, JPMorgan $320K." },
       { href: "/marketing-mba-salary", label: "Marketing MBA salary", desc: "Brand management $130K–$155K and the path to CMO." },
       { href: "/emba-salary-increase", label: "EMBA salary increase", desc: "How much an executive MBA raises pay for mid-career professionals." },
+      { href: "/salary-calculator", label: "Salary & paycheck calculator", desc: "Hourly ↔ annual pay and take-home after 2026 federal, FICA and state tax." },
+      { href: "/job-offer-comparison", label: "Job offer comparison calculator", desc: "Two offers compared after tax, cost of living, commute and 401(k) match." },
     ],
   },
   {
@@ -300,6 +302,12 @@ export default function BlogPage() {
             </Link>
             <Link href="/returnship-roi-calculator" className="text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors">
               Returnship ROI Calculator →
+            </Link>
+            <Link href="/salary-calculator" className="text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors">
+              Salary &amp; Paycheck Calculator →
+            </Link>
+            <Link href="/job-offer-comparison" className="text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors">
+              Job Offer Comparison →
             </Link>
           </div>
         </section>

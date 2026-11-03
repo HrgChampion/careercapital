@@ -227,6 +227,24 @@ export default function HomePage() {
             <p className="text-violet-400 text-sm font-medium">Calculate now →</p>
           </Link>
 
+          <Link href="/salary-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-indigo-500/30 transition-all">
+            <div className="text-indigo-400 text-lg font-mono">⇆</div>
+            <p className="font-semibold text-white group-hover:text-indigo-300 transition-colors">Salary &amp; Paycheck Calculator</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Hourly to annual and back, plus take-home pay after 2026 federal, FICA and state tax. Instant, no signup.
+            </p>
+            <p className="text-indigo-400 text-sm font-medium">Calculate now →</p>
+          </Link>
+
+          <Link href="/job-offer-comparison" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-emerald-500/30 transition-all">
+            <div className="text-emerald-400 text-lg font-mono">⚖</div>
+            <p className="font-semibold text-white group-hover:text-emerald-300 transition-colors">Job Offer Comparison</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Which offer is really worth more after tax, cost of living, commute, bonus and 401(k) match? See the 5-year value.
+            </p>
+            <p className="text-emerald-400 text-sm font-medium">Compare offers →</p>
+          </Link>
+
           <Link href="/salary-benchmark-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-amber-500/30 transition-all">
             <div className="text-amber-400 text-lg font-mono">$</div>
             <p className="font-semibold text-white group-hover:text-amber-300 transition-colors">Salary Benchmark Calculator</p>
