@@ -1,5 +1,6 @@
 import fs from "fs"
 import path from "path"
+import { ANNUAL_SALARIES, HOURLY_RATES, PAY_PAGES_UPDATED, hourlyPath, salaryPath } from "@/lib/payRates"
 
 export const dynamic = "force-static"
 
@@ -87,7 +88,14 @@ const SEED: Record<string, SeedEntry> = {
   "career-time-machine": { lastmod: "2026-06-21", priority: "0.85", changefreq: "monthly"  },
   "salary-negotiation-simulator": { lastmod: "2026-06-21", priority: "0.88", changefreq: "monthly"  },
   "skills-portfolio": { lastmod: "2026-06-21", priority: "0.85", changefreq: "monthly"  },
+  "salary-calculator": { lastmod: "2026-11-03", priority: "0.90", changefreq: "monthly"  },
+  "job-offer-comparison": { lastmod: "2026-11-03", priority: "0.85", changefreq: "monthly"  },
 }
+
+// Dynamic-segment routes are skipped by collectRoutes(), so their built pages are
+// listed here from the same param lists that drive generateStaticParams().
+const DYNAMIC_ROUTES: string[] = [...HOURLY_RATES.map(hourlyPath), ...ANNUAL_SALARIES.map(salaryPath)]
+const DYNAMIC_SEED: SeedEntry = { lastmod: PAY_PAGES_UPDATED, priority: "0.6", changefreq: "yearly" }
 
 const DEFAULTS = { priority: "0.8", changefreq: "monthly" }
 // lastmod applied to routes not present in SEED (new pages).
@@ -141,9 +149,12 @@ export async function GET() {
     (route) => !NOINDEX_RE.test(routeSources(appDir, route))
   )
 
-  const entries = routes.map((route) => {
-    const seed = SEED[route]
-    const lastmod = declaredLastmod(routeSources(appDir, route)) ?? seed?.lastmod ?? NEW_ROUTE_LASTMOD
+  const dynamicSet = new Set(DYNAMIC_ROUTES)
+  const entries = [...routes, ...DYNAMIC_ROUTES].map((route) => {
+    const seed = dynamicSet.has(route) ? DYNAMIC_SEED : SEED[route]
+    const lastmod = dynamicSet.has(route)
+      ? DYNAMIC_SEED.lastmod
+      : declaredLastmod(routeSources(appDir, route)) ?? seed?.lastmod ?? NEW_ROUTE_LASTMOD
     const url = route ? `${BASE}/${route}` : `${BASE}/`
     return [
       "  <url>",
