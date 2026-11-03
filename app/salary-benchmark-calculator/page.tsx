@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { calculateCompensation, GAP_PENALTY_PER_YEAR, type CompensationInput } from "@/lib/compensationEngine"
 import {
   INDUSTRIES,
@@ -17,6 +17,7 @@ import { DISCOUNT_RATE, PROJECTION_YEARS } from "@/lib/mbaEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import { usePayView } from "@/components/PayView"
 
 const faqItems: FaqItem[] = [
   { q: "How much does a career break affect your salary?", a: "Research by Harvard economist Claudia Goldin and LinkedIn's Economic Graph estimates a salary penalty of 3–7% per year of career break, with the penalty declining over 2–4 years as performance proves out. A 2-year break typically results in a 6–14% salary discount vs. peers at re-entry. In fast-moving fields like tech, the penalty can be higher (7–10% per year) due to skills obsolescence." },
@@ -39,6 +40,52 @@ export default function SalaryBenchmarkCalculator() {
   const [location, setLocation] = useState<LocationTier>("tier2")
   const [companySize, setCompanySize] = useState<CompanySize>("enterprise")
   const [growthRate] = useState(0.04)
+  const [hydrated, setHydrated] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const payView = usePayView(country)
+
+  // Inputs are mirrored into the query string so a result can be shared as a link.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search)
+    const c = q.get("c")
+    if (c && c in COUNTRIES) setCountry(c as CountryCode)
+    const num = (k: string, set: (n: number) => void, max = Infinity) => {
+      const n = parseFloat(q.get(k) ?? "")
+      if (Number.isFinite(n) && n >= 0 && n <= max) set(n)
+    }
+    num("s", setCurrentSalary)
+    num("gap", setGapYears, 10)
+    num("yrs", setYearsExperience, 50)
+    const ind = INDUSTRIES.find(i => i.id === q.get("ind"))
+    if (ind) {
+      setIndustry(ind.id)
+      const r = q.get("role")
+      setRole(ind.roles.some(x => x.id === r) ? r! : ind.roles[0].id)
+    }
+    const exp = q.get("exp")
+    if (EXPERIENCE_BANDS.some(b => b.id === exp)) setExperience(exp as ExperienceBand)
+    const loc = q.get("loc")
+    if (loc === "tier1" || loc === "tier2" || loc === "tier3" || loc === "remote") setLocation(loc)
+    const size = q.get("size")
+    if (COMPANY_SIZES.some(x => x.id === size)) setCompanySize(size as CompanySize)
+    setHydrated(true)
+  }, [])
+
+  useEffect(() => {
+    if (!hydrated) return
+    const q = new URLSearchParams({
+      c: country, s: String(currentSalary), gap: String(gapYears), yrs: String(yearsExperience),
+      ind: industry, role, exp: experience, loc: location, size: companySize,
+    })
+    window.history.replaceState(null, "", `${window.location.pathname}?${q.toString()}`)
+  }, [hydrated, country, currentSalary, gapYears, yearsExperience, industry, role, experience, location, companySize])
+
+  const copyLink = () => {
+    navigator.clipboard?.writeText(window.location.href).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
 
   const selectedIndustry = INDUSTRIES.find(i => i.id === industry)
 
@@ -68,7 +115,7 @@ export default function SalaryBenchmarkCalculator() {
   const result = useMemo(() => {
     try { return calculateCompensation(input) }
     catch { return null }
-  }, [currentSalary, gapYears, yearsExperience, industry, role, experience, location, companySize])
+  }, [currentSalary, gapYears, yearsExperience, industry, role, experience, location, companySize, country])
 
   const isUnderpaid = result && result.currentVsMedian < -5000
 
@@ -211,6 +258,7 @@ export default function SalaryBenchmarkCalculator() {
               {result.benchmark && (
                 <div className="rounded-lg border border-white/10 p-4 bg-white/[0.02]">
                   <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-3">Market Range for Your Profile</p>
+                  <div className="mb-3">{payView.controls}</div>
                   <div className="relative h-6 bg-white/5 rounded-full overflow-hidden mb-2">
                     <div className="absolute inset-y-0 bg-white/10 rounded-full"
                       style={{
@@ -235,14 +283,22 @@ export default function SalaryBenchmarkCalculator() {
                     ].map(b => (
                       <div key={b.label}>
                         <p className="text-white/30">{b.label}</p>
-                        <p className="font-medium text-white/80">{formatCurrency(b.val, country)}</p>
+                        <p className="font-medium text-white/80">{payView.fmt(b.val)}</p>
                       </div>
                     ))}
                   </div>
                   <div className="mt-2 text-center">
                     <span className="text-xs text-white/50">Your salary: </span>
-                    <span className="text-xs font-medium text-white">{formatCurrency(currentSalary, country)}</span>
+                    <span className="text-xs font-medium text-white">{payView.fmt(currentSalary)}{payView.suffix}</span>
                   </div>
+                  {payView.footnote(currentSalary)}
+                  <button
+                    type="button"
+                    onClick={copyLink}
+                    className="mt-3 w-full py-2 rounded-lg border border-white/15 text-xs font-medium text-white/70 hover:bg-white/5"
+                  >
+                    {copied ? "Link copied ✓" : "Copy link to this result"}
+                  </button>
                 </div>
               )}
 

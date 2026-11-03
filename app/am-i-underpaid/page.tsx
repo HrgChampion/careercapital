@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useMemo, useRef } from "react"
+import { useState, useMemo, useRef, useEffect } from "react"
 import {
   INDUSTRIES,
   EXPERIENCE_BANDS,
@@ -17,6 +17,10 @@ import { npvFromSeries, DISCOUNT_RATE } from "@/lib/mbaEngine"
 import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
 import { CountrySelect } from "@/components/CountrySelect"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import { usePayView } from "@/components/PayView"
+
+// Inputs mirrored into the query string so "Share" links reopen the exact audit.
+const URL_KEYS = { country: "c", salary: "s", industry: "ind", role: "role", experience: "exp", location: "loc", size: "size" } as const
 
 function computeResult(
   currentSalary: number,
@@ -89,10 +93,48 @@ export default function AmIUnderpaidPage() {
   const [location, setLocation] = useState<LocationTier>("tier2")
   const [companySize, setCompanySize] = useState<CompanySize>("enterprise")
   const [copied, setCopied] = useState(false)
+  const [hydrated, setHydrated] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
 
   const selectedIndustry = INDUSTRIES.find(i => i.id === industry)
   const [role, setRole] = useState(selectedIndustry?.roles[0]?.id ?? "software_engineer")
+
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search)
+    const c = q.get(URL_KEYS.country)
+    if (c && c in COUNTRIES) setCountry(c as CountryCode)
+    const s = parseFloat(q.get(URL_KEYS.salary) ?? "")
+    if (Number.isFinite(s) && s > 0) setCurrentSalary(s)
+    const ind = INDUSTRIES.find(i => i.id === q.get(URL_KEYS.industry))
+    if (ind) {
+      setIndustry(ind.id)
+      const r = q.get(URL_KEYS.role)
+      setRole(ind.roles.some(x => x.id === r) ? r! : ind.roles[0].id)
+    }
+    const exp = q.get(URL_KEYS.experience)
+    if (EXPERIENCE_BANDS.some(b => b.id === exp)) setExperience(exp as ExperienceBand)
+    const loc = q.get(URL_KEYS.location)
+    if (loc === "tier1" || loc === "tier2" || loc === "tier3" || loc === "remote") setLocation(loc)
+    const size = q.get(URL_KEYS.size)
+    if (COMPANY_SIZES.some(x => x.id === size)) setCompanySize(size as CompanySize)
+    setHydrated(true)
+  }, [])
+
+  useEffect(() => {
+    if (!hydrated) return
+    const q = new URLSearchParams({
+      [URL_KEYS.country]: country,
+      [URL_KEYS.salary]: String(currentSalary),
+      [URL_KEYS.industry]: industry,
+      [URL_KEYS.role]: role,
+      [URL_KEYS.experience]: experience,
+      [URL_KEYS.location]: location,
+      [URL_KEYS.size]: companySize,
+    })
+    window.history.replaceState(null, "", `${window.location.pathname}?${q.toString()}`)
+  }, [hydrated, country, currentSalary, industry, role, experience, location, companySize])
+
+  const payView = usePayView(country)
 
   const handleIndustryChange = (ind: string) => {
     setIndustry(ind)
@@ -130,7 +172,7 @@ export default function AmIUnderpaidPage() {
       ? `I'm in the ${result.percentile}th percentile — fairly paid but there's room to grow.`
       : `I'm in the ${result.percentile}th percentile — above market for my role!`
 
-    const text = `💰 Salary Audit — ${roleName} in ${industryName}\n\n${status}\n5-year NPV of the gap: ${result.fiveYearNPV > 0 ? formatCurrency(result.fiveYearNPV, country as CountryCode) : "You're ahead of the market"}\n\nCheck yours free → careerreturns.com/am-i-underpaid`
+    const text = `💰 Salary Audit — ${roleName} in ${industryName}\n\n${status}\n5-year NPV of the gap: ${result.fiveYearNPV > 0 ? formatCurrency(result.fiveYearNPV, country as CountryCode) : "You're ahead of the market"}\n\nCheck yours free → ${window.location.href}`
 
     if (typeof navigator !== "undefined" && navigator.clipboard) {
       navigator.clipboard.writeText(text).then(() => {
@@ -318,6 +360,7 @@ export default function AmIUnderpaidPage() {
                 {/* Market range visual */}
                 {result.benchmark && (
                   <div className="mb-4">
+                    <div className="mb-3">{payView.controls}</div>
                     <div className="relative h-3 bg-white/10 rounded-full overflow-hidden mb-2">
                       {/* P25-P75 band */}
                       <div
@@ -344,13 +387,14 @@ export default function AmIUnderpaidPage() {
                       ].map(b => (
                         <div key={b.label}>
                           <p className="text-[10px] text-white/30">{b.label}</p>
-                          <p className="text-xs font-medium text-white/70">{formatCurrency(b.val, country as CountryCode)}</p>
+                          <p className="text-xs font-medium text-white/70">{payView.fmt(b.val)}</p>
                         </div>
                       ))}
                     </div>
                     <p className="text-center text-xs text-white/40 mt-1">
-                      Your salary: <span className="text-white font-medium">{formatCurrency(currentSalary, country as CountryCode)}</span>
+                      Your salary: <span className="text-white font-medium">{payView.fmt(currentSalary)}{payView.suffix}</span>
                     </p>
+                    {payView.footnote(currentSalary)}
                   </div>
                 )}
 

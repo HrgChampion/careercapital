@@ -1,6 +1,7 @@
 /**
  * Compensation benchmark data
- * Sources: BLS Occupational Employment Statistics, Levels.fyi, Glassdoor, GMAC placement reports
+ * Sources: BLS Occupational Employment Statistics, Levels.fyi, Glassdoor, GMAC placement reports,
+ * Robert Half Salary Guide (accounting roles)
  * Last updated: 2026
  *
  * Structure: industry → role → experience band → location tier → company size → p25/p50/p75/p90
@@ -86,6 +87,17 @@ const RAW_BENCHMARKS: Record<string, Benchmark> = {
   "finance:financial_analyst:junior:tier2:enterprise": { p25: 58000,  p50: 70000,  p75: 84000,  p90: 99000  },
   "finance:financial_analyst:mid:tier2:enterprise":    { p25: 78000,  p50: 95000,  p75: 113000, p90: 134000 },
 
+  // Accountants & auditors (SOC 13-2011). Anchored to BLS OEWS May 2025 (national median
+  // $83,680, P10 $56,020, P90 $144,090) and Robert Half 2026–27 midpoints (staff ≈ $74–77K,
+  // senior ≈ $95–97K, audit manager ≈ $113.5K), scaled to tier-1 metros. CPA rows apply
+  // a ~12% licensure premium (Robert Half: 5–15%; AICPA: up to 15%).
+  "finance:accountant:junior:tier1:enterprise": { p25: 62000,  p50: 74000,  p75: 86000,  p90: 100000 },
+  "finance:accountant:mid:tier1:enterprise":    { p25: 78000,  p50: 92000,  p75: 108000, p90: 126000 },
+  "finance:accountant:senior:tier1:enterprise": { p25: 100000, p50: 115000, p75: 135000, p90: 158000 },
+  "finance:cpa:junior:tier1:enterprise": { p25: 69000,  p50: 83000,  p75: 96000,  p90: 112000 },
+  "finance:cpa:mid:tier1:enterprise":    { p25: 87000,  p50: 103000, p75: 121000, p90: 141000 },
+  "finance:cpa:senior:tier1:enterprise": { p25: 112000, p50: 129000, p75: 151000, p90: 177000 },
+
   "finance:investment_banker:junior:tier1:enterprise": { p25: 100000, p50: 120000, p75: 150000, p90: 185000 },
   "finance:investment_banker:mid:tier1:enterprise":    { p25: 150000, p50: 185000, p75: 235000, p90: 290000 },
   "finance:investment_banker:senior:tier1:enterprise": { p25: 200000, p50: 250000, p75: 320000, p90: 400000 },
@@ -134,6 +146,8 @@ export const INDUSTRIES: IndustryMeta[] = [
     roles: [
       { id: "financial_analyst", label: "Financial Analyst" },
       { id: "investment_banker", label: "Investment Banker" },
+      { id: "accountant", label: "Accountant / Auditor" },
+      { id: "cpa", label: "CPA (licensed accountant)" },
     ],
   },
   {
