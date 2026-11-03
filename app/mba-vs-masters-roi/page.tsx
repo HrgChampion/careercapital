@@ -317,6 +317,12 @@ export default function MbaVsMastersRoiPage() {
           </div>
         </section>
 
+        <p className="text-slate-400 text-sm leading-relaxed">
+          Weighing a professional credential instead of a degree? Our{" "}
+          <Link href="/cpa-vs-mba" className="text-indigo-300 hover:underline">CPA vs MBA comparison</Link> covers cost, salary lift and
+          10-year NPV for accountants deciding between the CPA license and a full-time MBA.
+        </p>
+
         <FaqSection items={faqItems} />
 
         <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2">

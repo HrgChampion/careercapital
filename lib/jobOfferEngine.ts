@@ -2,16 +2,14 @@
 // after-tax, cost-of-living-adjusted dollars, net of commute cost, then projecting
 // five years and discounting with the site-wide rate.
 
-import { CITIES } from "./geographicArbitrageEngine"
+import { METROS, metroLabel } from "./costOfLiving"
 import { DISCOUNT_RATE, npvFromSeries } from "./mbaEngine"
 import { calculatePaycheck, type FilingStatus } from "./paycheckEngine"
 
-// US locations an offer can be in. COL index comes from the existing city data
+// US locations an offer can be in. COL index is the BEA Regional Price Parity
 // (100 = US average); "other" lets the visitor pick any state at an average index.
 export const OFFER_LOCATIONS: Array<{ id: string; label: string; state: string; colIndex: number }> = [
-  ...Object.entries(CITIES)
-    .filter(([, c]) => c.country === "US")
-    .map(([id, c]) => ({ id, label: c.name, state: c.name.slice(-2), colIndex: c.colIndex })),
+  ...METROS.map((m) => ({ id: m.id, label: metroLabel(m), state: m.state, colIndex: m.rpp })),
   { id: "other", label: "Elsewhere in the US (average cost)", state: "TX", colIndex: 100 },
 ]
 

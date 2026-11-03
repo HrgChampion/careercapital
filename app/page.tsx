@@ -245,6 +245,24 @@ export default function HomePage() {
             <p className="text-emerald-400 text-sm font-medium">Compare offers →</p>
           </Link>
 
+          <Link href="/cost-of-living-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-sky-500/30 transition-all">
+            <div className="text-sky-400 text-lg font-mono">⌂</div>
+            <p className="font-semibold text-white group-hover:text-sky-300 transition-colors">Cost of Living Calculator</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              The salary you need in a new city, after state tax. 57 US metros with official BEA price data.
+            </p>
+            <p className="text-sky-400 text-sm font-medium">Calculate now →</p>
+          </Link>
+
+          <Link href="/raise-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-violet-500/30 transition-all">
+            <div className="text-violet-400 text-lg font-mono">%</div>
+            <p className="font-semibold text-white group-hover:text-violet-300 transition-colors">Raise Calculator</p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              What your raise is worth per paycheck, after tax, after inflation, and compounded over 10 years.
+            </p>
+            <p className="text-violet-400 text-sm font-medium">Calculate now →</p>
+          </Link>
+
           <Link href="/salary-benchmark-calculator" className="group rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-7 space-y-3 hover:bg-white/8 hover:border-amber-500/30 transition-all">
             <div className="text-amber-400 text-lg font-mono">$</div>
             <p className="font-semibold text-white group-hover:text-amber-300 transition-colors">Salary Benchmark Calculator</p>

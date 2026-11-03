@@ -90,6 +90,9 @@ const SEED: Record<string, SeedEntry> = {
   "skills-portfolio": { lastmod: "2026-06-21", priority: "0.85", changefreq: "monthly"  },
   "salary-calculator": { lastmod: "2026-11-03", priority: "0.90", changefreq: "monthly"  },
   "job-offer-comparison": { lastmod: "2026-11-03", priority: "0.85", changefreq: "monthly"  },
+  "raise-calculator": { lastmod: "2026-11-04", priority: "0.85", changefreq: "monthly"  },
+  "cpa-vs-mba": { lastmod: "2026-11-04", priority: "0.80", changefreq: "monthly"  },
+  "cost-of-living-calculator": { lastmod: "2026-11-04", priority: "0.85", changefreq: "monthly"  },
 }
 
 // Dynamic-segment routes are skipped by collectRoutes(), so their built pages are

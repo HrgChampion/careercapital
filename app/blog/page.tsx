@@ -95,6 +95,7 @@ const guideGroups = [
       { href: "/mba-roi-career-changers", label: "MBA ROI for career changers", desc: "Whether the pivot pays, by starting field and target role." },
       { href: "/mba-roi-recession", label: "MBA ROI in a recession", desc: "What 2008 and 2020 hiring data says about graduating into a downturn." },
       { href: "/mba-vs-masters-roi", label: "MBA vs. master's degree ROI", desc: "MS Finance, MSCS and MFin compared with the MBA on cost and pay." },
+      { href: "/cpa-vs-mba", label: "CPA vs MBA", desc: "A ~$3.5K license that pays back in months vs an M7 MBA's higher ceiling." },
       { href: "/mba-myth-buster", label: "MBA Myth Buster", desc: "10 common MBA ROI beliefs tested against the data." },
     ],
   },
@@ -116,6 +117,8 @@ const guideGroups = [
       { href: "/emba-salary-increase", label: "EMBA salary increase", desc: "How much an executive MBA raises pay for mid-career professionals." },
       { href: "/salary-calculator", label: "Salary & paycheck calculator", desc: "Hourly ↔ annual pay and take-home after 2026 federal, FICA and state tax." },
       { href: "/job-offer-comparison", label: "Job offer comparison calculator", desc: "Two offers compared after tax, cost of living, commute and 401(k) match." },
+      { href: "/raise-calculator", label: "Raise calculator", desc: "A raise per paycheck, after tax and inflation, plus its 10-year value." },
+      { href: "/cost-of-living-calculator", label: "Cost of living calculator", desc: "Salary needed in 57 US metros, using BEA price data and state taxes." },
     ],
   },
   {

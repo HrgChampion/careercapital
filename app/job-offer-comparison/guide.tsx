@@ -60,7 +60,7 @@ export default function JobOfferGuide() {
         },
         {
           q: "Is a higher salary in an expensive city worth it?",
-          a: "Only if the salary premium is larger than the cost-of-living gap after tax. A city with an index 40% above average needs roughly 40% more take-home pay to match the same lifestyle, and higher-cost cities often also have higher state income tax.",
+          a: "Only if the salary premium is larger than the cost-of-living gap after tax. A metro with prices 15% above average, such as San Francisco, needs roughly 15% more take-home pay to match the same lifestyle. Higher-cost metros often also have higher state income tax, so the gross raise you need is larger still. Our cost of living calculator works out the exact figure.",
         },
         {
           q: "How should I value a signing bonus?",
@@ -72,12 +72,12 @@ export default function JobOfferGuide() {
         },
         {
           q: "Where does the cost-of-living index come from?",
-          a: "It uses the city index from our geographic arbitrage calculator, where 100 is the US average. 'Elsewhere in the US' assumes an average-cost location and lets you choose the state for tax purposes.",
+          a: "It uses the U.S. Bureau of Economic Analysis Regional Price Parities for 2024, the official measure of how price levels differ between metro areas, where 100 is the US average. 'Elsewhere in the US' assumes an average-cost location and lets you choose the state for tax purposes.",
         },
       ]}
       sources={[
         "Tax: 2026 IRS brackets and standard deduction (Rev. Proc. 2025-32), SSA 2026 wage base, state flat rates per the Tax Foundation. See the salary calculator methodology.",
-        "Cost of living: CareerReturns city index (100 = US average), shared with the geographic arbitrage calculator.",
+        "Cost of living: U.S. Bureau of Economic Analysis, Regional Price Parities by metro area, 2024 (100 = US average).",
         "Discount rate: 6% a year, consistent with every NPV on CareerReturns.",
         "Limitations: equity is valued at face value, bonuses at target, and health premiums, PTO and local taxes are not modelled. Treat the result as a decision aid, not financial advice.",
       ]}

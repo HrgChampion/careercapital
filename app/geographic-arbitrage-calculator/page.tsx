@@ -85,6 +85,11 @@ export default function GeographicArbitrageCalculatorPage() {
         </h1>
         <p className="text-white/70 max-w-2xl mb-6 text-lg leading-relaxed">
           Earn a San Francisco salary, live in Lisbon. See your exact purchasing power multiplier, monthly surplus, and years until financial independence — for any two cities.
+          <span className="block text-sm text-white/40 mt-2">
+            Moving within the US? The{" "}
+            <Link href="/cost-of-living-calculator" className="underline hover:text-white/70">cost of living calculator</Link>{" "}
+            covers 57 metros with official BEA data and state taxes.
+          </span>
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
           {[
