@@ -12,7 +12,8 @@ import {
   type BreakType,
 } from "@/lib/trajectoryEngine"
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
-import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { COUNTRIES, formatCurrency, type CountryCode } from "@/lib/locale"
+import { useDetectedCountry } from "@/components/useDetectedCountry"
 import { CountrySelect } from "@/components/CountrySelect"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
@@ -31,7 +32,7 @@ const faqItems: FaqItem[] = [
 ]
 
 export default function LifetimeEarningsCalculator() {
-  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const [country, setCountry] = useDetectedCountry()
   const handleCountryChange = (c: CountryCode) => {
     setCountry(c)
     const sal = COUNTRIES[c].defaultSalary

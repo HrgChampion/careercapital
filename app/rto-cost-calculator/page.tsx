@@ -2,7 +2,8 @@
 
 import Link from "next/link"
 import { useState, useMemo } from "react"
-import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { COUNTRIES, formatCurrency, type CountryCode } from "@/lib/locale"
+import { useDetectedCountry } from "@/components/useDetectedCountry"
 import { CountrySelect } from "@/components/CountrySelect"
 import { npvFromSeries, DISCOUNT_RATE } from "@/lib/mbaEngine"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
@@ -103,7 +104,7 @@ const faqItems: FaqItem[] = [
 ]
 
 export default function RTOCostCalculatorPage() {
-  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const [country, setCountry] = useDetectedCountry()
   const [annualSalary, setAnnualSalary] = useState(110000)
   const [commuteMiles, setCommuteMiles] = useState(15)
   const [commuteMinutes, setCommuteMinutes] = useState(35)

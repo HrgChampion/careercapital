@@ -11,7 +11,8 @@ import {
   type SkillCategory,
 } from "@/lib/skillsGapEngine"
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
-import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { COUNTRIES, formatCurrency, type CountryCode } from "@/lib/locale"
+import { useDetectedCountry } from "@/components/useDetectedCountry"
 import { CountrySelect } from "@/components/CountrySelect"
 
 const LEVEL_LABELS: Record<SkillLevel, string> = {
@@ -29,7 +30,7 @@ const PATH_TYPE_COLORS: Record<string, string> = {
 }
 
 export default function SkillsGapCalculator() {
-  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const [country, setCountry] = useDetectedCountry()
   const handleCountryChange = (c: CountryCode) => {
     setCountry(c)
     setCurrentSalary(COUNTRIES[c].defaultSalary)

@@ -22,7 +22,7 @@ const gradeColor: Record<string, string> = {
 
 function money(n: number) {
   const sign = n < 0 ? "−$" : "$"
-  return `${sign}${Math.round(Math.abs(n)).toLocaleString()}`
+  return `${sign}${Math.round(Math.abs(n)).toLocaleString("en-US")}`
 }
 
 export default function EmbedMbaRoiCalculator() {

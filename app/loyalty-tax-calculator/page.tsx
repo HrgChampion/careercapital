@@ -3,7 +3,8 @@
 import Link from "next/link"
 import { useState, useMemo } from "react"
 import { calculateLoyaltyTax } from "@/lib/loyaltyTaxEngine"
-import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { COUNTRIES, formatCurrency, type CountryCode } from "@/lib/locale"
+import { useDetectedCountry } from "@/components/useDetectedCountry"
 import { CountrySelect } from "@/components/CountrySelect"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
@@ -14,7 +15,7 @@ const faqItems: FaqItem[] = [
 ]
 
 export default function LoyaltyTaxCalculatorPage() {
-  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const [country, setCountry] = useDetectedCountry()
   const [startingSalary, setStartingSalary] = useState(80000)
   const [currentSalary, setCurrentSalary] = useState(95000)
   const [yearsAtCompany, setYearsAtCompany] = useState(5)

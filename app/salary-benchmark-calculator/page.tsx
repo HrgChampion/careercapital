@@ -14,7 +14,8 @@ import {
   type BenchmarkCountry,
 } from "@/lib/compensationBenchmarks"
 import { DISCOUNT_RATE, PROJECTION_YEARS } from "@/lib/mbaEngine"
-import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { COUNTRIES, formatCurrency, type CountryCode } from "@/lib/locale"
+import { useDetectedCountry } from "@/components/useDetectedCountry"
 import { CountrySelect } from "@/components/CountrySelect"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 import { usePayView } from "@/components/PayView"
@@ -26,7 +27,7 @@ const faqItems: FaqItem[] = [
 ]
 
 export default function SalaryBenchmarkCalculator() {
-  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const [country, setCountry] = useDetectedCountry()
   const handleCountryChange = (c: CountryCode) => {
     setCountry(c)
     setCurrentSalary(COUNTRIES[c].defaultSalary)

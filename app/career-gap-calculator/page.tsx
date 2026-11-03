@@ -9,7 +9,8 @@ import {
   type ReentryPath,
 } from "@/lib/gapEngine"
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
-import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { COUNTRIES, formatCurrency, type CountryCode } from "@/lib/locale"
+import { useDetectedCountry } from "@/components/useDetectedCountry"
 import { CountrySelect } from "@/components/CountrySelect"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
@@ -93,7 +94,7 @@ const faqItems: FaqItem[] = [
 ]
 
 export default function CareerGapCalculator() {
-  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const [country, setCountry] = useDetectedCountry()
   const [step, setStep] = useState(0)
   const [basic, setBasic] = useState<GapBasicInputs>({
     preBreakSalary: 85000,

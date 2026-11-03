@@ -3,7 +3,8 @@
 import Link from "next/link"
 import { useState, useMemo } from "react"
 import { calculateAIImpact, AI_IMPACT_ROLES } from "@/lib/aiDisplacementEngine"
-import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { COUNTRIES, formatCurrency, type CountryCode } from "@/lib/locale"
+import { useDetectedCountry } from "@/components/useDetectedCountry"
 import { CountrySelect } from "@/components/CountrySelect"
 
 const RISK_CONFIGS = {
@@ -14,7 +15,7 @@ const RISK_CONFIGS = {
 }
 
 export default function AICareerImpactPage() {
-  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const [country, setCountry] = useDetectedCountry()
   const [currentSalary, setCurrentSalary] = useState(95000)
   const [selectedIndustryIdx, setSelectedIndustryIdx] = useState(0)
   const [selectedRoleId, setSelectedRoleId] = useState("software_engineer")

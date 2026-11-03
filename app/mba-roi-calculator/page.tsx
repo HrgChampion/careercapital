@@ -670,7 +670,7 @@ function StepContent({
         value={inputs.currentSalary}
         step={1000}
         onChange={v => set("currentSalary", v)}
-        hint={`~$${Math.round(inputs.currentSalary / 12).toLocaleString()}/month baseline income`}
+        hint={`~$${Math.round(inputs.currentSalary / 12).toLocaleString("en-US")}/month baseline income`}
       />
       <NumberInput
         label="Post-MBA Salary"
@@ -679,8 +679,8 @@ function StepContent({
         step={1000}
         onChange={v => set("postMbaSalary", v)}
         hint={monthlyDelta > 0
-          ? `+$${Math.round(monthlyDelta).toLocaleString()}/month after graduation`
-          : `−$${Math.round(Math.abs(monthlyDelta)).toLocaleString()}/month vs. current`}
+          ? `+$${Math.round(monthlyDelta).toLocaleString("en-US")}/month after graduation`
+          : `−$${Math.round(Math.abs(monthlyDelta)).toLocaleString("en-US")}/month vs. current`}
         hintColor={monthlyDelta >= 0 ? "text-emerald-400" : "text-red-400"}
       />
       <NumberInput
@@ -691,7 +691,7 @@ function StepContent({
         max={4}
         step={1}
         onChange={v => set("programDuration", v)}
-        hint={`$${Math.round(inputs.currentSalary * inputs.programDuration).toLocaleString()} in opportunity cost`}
+        hint={`$${Math.round(inputs.currentSalary * inputs.programDuration).toLocaleString("en-US")} in opportunity cost`}
       />
     </div>
   )
@@ -706,7 +706,7 @@ function StepContent({
         step={1000}
         onChange={v => set("mbaCost", v)}
         hint={outOfPocket > 0
-          ? `$${Math.round(outOfPocket).toLocaleString()} out of pocket at current loan %`
+          ? `$${Math.round(outOfPocket).toLocaleString("en-US")} out of pocket at current loan %`
           : "Fully financed at current loan %"}
       />
     </div>
@@ -725,7 +725,7 @@ function StepContent({
         display={`${Math.round(inputs.loanPercentage * 100)}%`}
         onChange={v => set("loanPercentage", v)}
         hint={inputs.loanPercentage > 0
-          ? `$${Math.round(financedAmount).toLocaleString()} financed over ${LOAN_TERM_YEARS} years`
+          ? `$${Math.round(financedAmount).toLocaleString("en-US")} financed over ${LOAN_TERM_YEARS} years`
           : "Self-funded — no debt"}
       />
       <SliderInput
@@ -737,7 +737,7 @@ function StepContent({
         display={`${(inputs.interestRate * 100).toFixed(1)}%`}
         onChange={v => set("interestRate", v)}
         hint={result && result.loanDetails.monthlyPayment > 0
-          ? `$${Math.round(result.loanDetails.monthlyPayment).toLocaleString()}/month loan payment`
+          ? `$${Math.round(result.loanDetails.monthlyPayment).toLocaleString("en-US")}/month loan payment`
           : "No loan — no payment"}
       />
     </div>
@@ -824,7 +824,7 @@ function ResultsPanel({
       {/* Metrics grid */}
       <div className="grid grid-cols-2 gap-3">
         <MetricCard title="Net Present Value">
-          <div className="text-lg font-semibold transition-all duration-300 ease-out tabular-nums">${Math.round(npv).toLocaleString()}</div>
+          <div className="text-lg font-semibold transition-all duration-300 ease-out tabular-nums">${Math.round(npv).toLocaleString("en-US")}</div>
         </MetricCard>
 
         <MetricCard title="IRR">
@@ -834,7 +834,7 @@ function ResultsPanel({
         </MetricCard>
 
         <MetricCard title="Total Cost">
-          <div className="text-lg font-semibold transition-all duration-300 ease-out tabular-nums">${Math.round(result.totalCost).toLocaleString()}</div>
+          <div className="text-lg font-semibold transition-all duration-300 ease-out tabular-nums">${Math.round(result.totalCost).toLocaleString("en-US")}</div>
           <div className="text-xs mt-0.5 text-slate-500">
             {inputs.loanPercentage > 0 ? "Financed" : "Self-funded"}
           </div>
@@ -844,19 +844,19 @@ function ResultsPanel({
           {inputs.loanPercentage === 0 ? (
             <div className="text-sm text-slate-400">No financing</div>
           ) : (
-            <div className="text-lg font-semibold transition-all duration-300 ease-out tabular-nums">${Math.round(result.loanDetails.monthlyPayment).toLocaleString()}</div>
+            <div className="text-lg font-semibold transition-all duration-300 ease-out tabular-nums">${Math.round(result.loanDetails.monthlyPayment).toLocaleString("en-US")}</div>
           )}
         </MetricCard>
 
         <MetricCard title="Conservative NPV">
           <div className="text-lg font-semibold transition-all duration-300 ease-out tabular-nums">
-            ${Math.round(result.sensitivity.conservative ?? 0).toLocaleString()}
+            ${Math.round(result.sensitivity.conservative ?? 0).toLocaleString("en-US")}
           </div>
         </MetricCard>
 
         <MetricCard title="Salary Delta">
           <div className="text-lg font-semibold transition-all duration-300 ease-out tabular-nums">
-            +${Math.round(result.salaryDelta).toLocaleString()}/yr
+            +${Math.round(result.salaryDelta).toLocaleString("en-US")}/yr
           </div>
         </MetricCard>
       </div>
@@ -900,8 +900,8 @@ function VerdictCard({ result }: { result: MBAResult }) {
       </p>
       <p className="text-sm">
         {npv > 0
-          ? `Creates $${Math.round(npv).toLocaleString()} in present value`
-          : `Destroys $${Math.round(Math.abs(npv)).toLocaleString()} in present value`}
+          ? `Creates $${Math.round(npv).toLocaleString("en-US")} in present value`
+          : `Destroys $${Math.round(Math.abs(npv)).toLocaleString("en-US")} in present value`}
       </p>
     </div>
   )
@@ -929,9 +929,9 @@ function AlternativeComparison({ mbaCost, irr }: { mbaCost: number; irr: number 
       <p className="text-slate-400 text-xs font-medium uppercase tracking-widest">Compare to Alternative Investment</p>
       <p className="text-slate-300 text-sm leading-relaxed">
         If{" "}
-        <span className="text-white font-medium">${Math.round(mbaCost).toLocaleString()}</span>
+        <span className="text-white font-medium">${Math.round(mbaCost).toLocaleString("en-US")}</span>
         {" "}invested at 8% for 10 years grows to{" "}
-        <span className="text-white font-medium tabular-nums">${altFV.toLocaleString()}</span>.
+        <span className="text-white font-medium tabular-nums">${altFV.toLocaleString("en-US")}</span>.
         {irrPct !== null && (
           <> Your MBA&rsquo;s modeled IRR: <span className="text-purple-300 font-medium tabular-nums">{irrPct.toFixed(1)}%</span>.</>
         )}

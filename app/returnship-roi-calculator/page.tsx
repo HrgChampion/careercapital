@@ -10,7 +10,8 @@ import {
   type ReturnshipProgram,
 } from "@/lib/returnshipEngine"
 import { DISCOUNT_RATE } from "@/lib/mbaEngine"
-import { COUNTRIES, formatCurrency, defaultCountry, type CountryCode } from "@/lib/locale"
+import { COUNTRIES, formatCurrency, type CountryCode } from "@/lib/locale"
+import { useDetectedCountry } from "@/components/useDetectedCountry"
 import { CountrySelect } from "@/components/CountrySelect"
 
 // ─── Helpers ────────────────────────────────────────────────────────────────────
@@ -39,7 +40,7 @@ const industryColors: Record<string, string> = {
 }
 
 export default function ReturnshipCalculator() {
-  const [country, setCountry] = useState<CountryCode>(() => defaultCountry())
+  const [country, setCountry] = useDetectedCountry()
   const handleCountryChange = (c: CountryCode) => {
     setCountry(c)
     const sal = COUNTRIES[c].defaultSalary
