@@ -28,7 +28,7 @@ const SEED: Record<string, SeedEntry> = {
   "skills-gap-calculator": { lastmod: "2026-08-18", priority: "0.6", changefreq: "monthly"  },
   "lifetime-earnings-calculator": { lastmod: "2026-08-18", priority: "0.6", changefreq: "monthly"  },
   "mba-roi": { lastmod: "2026-08-18", priority: "0.9", changefreq: "monthly"  },
-  "mba-worth-it": { lastmod: "2026-08-18", priority: "0.85", changefreq: "monthly"  },
+  "mba-worth-it": { lastmod: "2026-11-05", priority: "0.85", changefreq: "monthly"  },
   "mba-jobs-200k": { lastmod: "2026-07-08", priority: "0.8", changefreq: "monthly"  },
   "mba-break-even": { lastmod: "2026-06-21", priority: "0.85", changefreq: "monthly"  },
   "mba-cost": { lastmod: "2026-08-18", priority: "0.85", changefreq: "monthly"  },

@@ -4,37 +4,74 @@ import RelatedLinks from "@/components/RelatedLinks"
 import SiteFooter from "@/components/SiteFooter"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 import ArticleMeta from "@/components/ArticleMeta"
+import ScenarioExplorer from "./ScenarioExplorer"
+import { PRESET_SCENARIOS, runMbaScenario, type MbaScenarioInput } from "@/lib/mbaScenarioModel"
+
+const TITLE = "When an MBA Degree Is Worth It: A Data-Driven Look by Industry and School Tier"
+const META_TITLE = "When an MBA Is Worth It: NPV, IRR & Break-Even by Industry"
+const META_DESC =
+  "Is an MBA worth it? Use NPV, IRR and payback to decide. M7 to MBB at $85k prior pay: ~33% IRR. Same path at $160k: never pays back in 10 years. Scenarios inside."
 
 const _articleSchema = articleSchema({
-  title: "Is an MBA Worth It in 2026? IRR by School & Industry",
-  description: "Is an MBA worth it financially in 2026? Full cost breakdown, IRR by school tier, ROI vs the stock market, and when the math reliably fails.",
+  title: TITLE,
+  description: META_DESC,
   url: "https://careerreturns.com/mba-worth-it",
   datePublished: "2026-03-03",
-  dateModified: "2026-10-02",
+  dateModified: "2026-11-05",
 })
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Is an MBA Worth It?", url: "https://careerreturns.com/mba-worth-it" }])
 
 export const metadata = {
-  title: "Is an MBA Worth It in 2026? IRR by School & Industry",
-  description:
-    "An MBA is worth it when its IRR beats 10–12%. M7 to MBB/IB: 18–40%. Outside the T25: 2–6%. See your break-even and NPV by school and industry.",
+  title: META_TITLE,
+  description: META_DESC,
   alternates: pageAlternates("https://careerreturns.com/mba-worth-it"),
   openGraph: {
-    title: "Is an MBA Worth It in 2026? IRR by School & Industry",
-    description: "An MBA is worth it when its IRR beats 10–12%. M7 to MBB/IB: 18–40%. Outside the T25: 2–6%. See your break-even and NPV by school and industry.",
+    title: META_TITLE,
+    description: META_DESC,
     url: "https://careerreturns.com/mba-worth-it",
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Is an MBA Worth It in 2026? IRR by School & Industry",
-    description: "An MBA is worth it when its IRR beats 10–12%. M7 to MBB/IB: 18–40%. Outside the T25: 2–6%. See your break-even and NPV by school and industry.",
+    title: META_TITLE,
+    description: META_DESC,
   },
 }
 
+/* ── Scenario math, computed at build time from the same model as the interactive explorer ── */
+
+function fmtMoney(n: number) {
+  const sign = n < 0 ? "−" : ""
+  const a = Math.abs(n)
+  if (a >= 1_000_000) return `${sign}$${(a / 1_000_000).toFixed(2)}M`
+  return `${sign}$${Math.round(a / 1000)}k`
+}
+function fmtPct(n: number | null) {
+  return n === null ? "n/a" : `${(n * 100).toFixed(1)}%`
+}
+function fmtYears(n: number) {
+  return isFinite(n) ? `${n.toFixed(1)} yrs` : "> 10 yrs"
+}
+
+const [TECH, CONSULT, HEALTH] = PRESET_SCENARIOS
+const scenarioResults = PRESET_SCENARIOS.map((p) => ({ preset: p, result: runMbaScenario(p.input) }))
+
+const variantRows: { base: string; change: string; input: MbaScenarioInput }[] = [
+  { base: TECH.label, change: "Switch to a part-time MBA ($120k, keep working, $150k post-MBA)", input: { ...TECH.input, programYears: 3, keepsSalary: true, programCost: 120000, postSalary: 150000 } },
+  { base: CONSULT.label, change: "Negotiate a $60k scholarship", input: { ...CONSULT.input, programCost: 210000 } },
+  { base: CONSULT.label, change: "Choose a 1-year program (INSEAD/LBS-style, $150k)", input: { ...CONSULT.input, programYears: 1, programCost: 150000 } },
+  { base: HEALTH.label, change: "Quit to attend full-time instead ($210k, 2 years)", input: { ...HEALTH.input, programYears: 2, keepsSalary: false, programCost: 210000, loanPct: 0.7 } },
+]
+const variantResults = variantRows.map((v) => ({ ...v, result: runMbaScenario(v.input) }))
+
+const priorSalaryRows = [85000, 110000, 135000, 160000].map((pre) => ({
+  pre,
+  result: runMbaScenario({ ...CONSULT.input, age: 28, preSalary: pre }),
+}))
+
 const costRows = [
-  { label: "Tuition + Fees", m7: "$145,000–$165,000", t1015: "$120,000–$145,000", t1525: "$90,000–$125,000", note: "Two-year total, excludes scholarships" },
+  { label: "Tuition + Fees", m7: "$155,000–$180,000", t1015: "$145,000–$170,000", t1525: "$100,000–$140,000", note: "Two-year total at 2025–26 rates, before scholarships" },
   { label: "Living Expenses", m7: "$90,000–$120,000", t1015: "$70,000–$95,000", t1525: "$55,000–$75,000", note: "$40k–$60k/yr depending on city" },
   { label: "Opportunity Cost (foregone salary)", m7: "$150,000–$200,000", t1015: "$120,000–$170,000", t1525: "$100,000–$150,000", note: "2 years × pre-MBA base salary" },
 ]
@@ -67,6 +104,10 @@ const faqItems: FaqItem[] = [
   { q: "What is the ROI of an MBA from a top school?", a: "MBA ROI at top (M7) programs targeting high-compensation sectors produces an IRR of 18–24% for consulting placements and 15–22% for investment banking placements. These returns exceed the long-run equity market return and represent a strongly positive net present value over a 10-year projection horizon. ROI falls significantly at programs outside the top 20 or when targeting lower-salary sectors." },
   { q: "Does school rank matter for MBA ROI?", a: "Yes, significantly. M7 programs (Harvard, Wharton, Stanford, Booth, Kellogg, Sloan, Columbia) produce median starting salaries of $175k+ and open MBB consulting and top-tier banking recruiting. T10–15 programs produce $145–165k median salaries with solid firm access. T15–25 programs produce $120–140k with limited MBB access. The ROI gap between M7 and T25 is roughly 8–15 IRR points for consulting paths." },
   { q: "Is an online MBA worth the same ROI as a full-time MBA?", a: "No. Online MBAs cost significantly less ($30k–$80k vs $200k–$250k) and can be completed while working, eliminating the opportunity cost. However, they do not open the same recruiting doors as residential programs — particularly for MBB consulting and bulge bracket banking. The ROI math is better on a pure cost basis, but the salary outcome ceiling is lower." },
+  { q: "How do I determine if an MBA is worth it using NPV, IRR and break-even?", a: "Build a cash flow series. Year 0 is everything you give up: tuition, living costs and the salary you forgo. Each year after graduation is your post-MBA salary minus what you would have earned anyway, minus loan payments. NPV discounts those flows at your cost of capital (CareerReturns uses 6%); a positive NPV means the MBA creates value. IRR is the discount rate at which NPV is zero; compare it with a 10–12% hurdle, roughly the long-run equity return. Payback is the year cumulative cash flow turns positive. An MBA is clearly worth it when all three agree: positive NPV, IRR above the hurdle, and payback within about 5–7 years." },
+  { q: "Does work experience before an MBA change the ROI?", a: "Yes, sharply, because a higher pre-MBA salary raises your opportunity cost and shrinks your salary delta at the same time. In the CareerReturns model, an M7 full-time MBA leading to a $215k consulting role returns about a 33% IRR for someone earning $85k beforehand, about 20% at $110k, about 8% at $135k, and never pays back within 10 years at $160k. Experienced candidates usually get a better return from part-time, executive or 1-year programs that keep or shorten the income gap." },
+  { q: "Is a part-time MBA worth it compared with full-time?", a: "Financially, usually yes, because you keep your salary. In our healthcare example, a registered nurse paying $75k for a part-time MBA and moving from $98k to $140k breaks even about one year after graduation. The same move made full-time ($210k plus two years of lost pay) does not break even within 10 years. The trade-off is access: part-time programs rarely feed MBB consulting or investment banking associate pipelines." },
+  { q: "Can I still finance an MBA with federal loans in 2026?", a: "Partly. Under the 2025 budget reconciliation law, Grad PLUS loans closed to new borrowers on July 1, 2026. New graduate students can borrow Direct Unsubsidized Loans up to $20,500 per year and $100,000 in aggregate; students already borrowing in the same program before that date may be grandfathered. Most full-time MBA budgets above that cap now need scholarships, savings, employer sponsorship or private loans, so model your actual interest rate rather than the federal rate." },
 ]
 
 export default function MbaWorthItPage() {
@@ -84,9 +125,9 @@ export default function MbaWorthItPage() {
         <header className="space-y-5">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">CareerReturns</p>
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
-            Is an MBA Worth It?
+            When an MBA Degree Is Worth It: A Data-Driven Look by Industry and School Tier
           </h1>
-          <ArticleMeta updated="2026-10-02" />
+          <ArticleMeta updated="2026-11-05" />
           <p className="text-slate-400 text-lg leading-relaxed">
             An MBA is worth it financially when it produces an IRR above 10–12% — the long-run equity market benchmark. At M7 programs targeting MBB consulting or investment banking, IRRs range from <span className="text-white font-medium">18–40%</span>, making the degree one of the highest-returning investments available. At programs outside the top 25 targeting general management roles, IRRs of 2–6% rarely justify the full economic cost of $150,000–$300,000. Check your own numbers with the{" "}
             <Link href="/mba-roi-calculator" className="text-white underline underline-offset-2 hover:text-indigo-300">MBA ROI calculator</Link>, or see the line-by-line NPV, IRR and break-even math in our{" "}
@@ -96,7 +137,7 @@ export default function MbaWorthItPage() {
             {[
               { label: "IRR Range", value: "4–55%" },
               { label: "Break-Even Range", value: "2–13 yrs" },
-              { label: "Industries Modeled", value: "12" },
+              { label: "Industries Modeled", value: "10" },
               { label: "School Tiers Analyzed", value: "4" },
             ].map(({ label, value }) => (
               <div key={label} className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
@@ -118,11 +159,18 @@ export default function MbaWorthItPage() {
               {" "}after accounting for tuition, living costs, two years of foregone income, and loan repayment.
             </p>
             <p className="text-slate-400 text-sm leading-relaxed">
-              At M7 programs (Harvard, Wharton, Booth, Kellogg, Columbia, Sloan, Tuck) with strong consulting
+              At M7 programs (Harvard, Wharton, Stanford, Booth, Kellogg, Columbia, Sloan) with strong consulting
               or finance placement, the numbers typically work. At programs outside the top 25 with modest
-              salary uplifts, they often do not. The degree itself is not the variable. The combination of
-              school tier, target industry, total cost, and financing structure is what determines the outcome.
-              There is no universal answer — only your specific numbers modeled correctly.
+              salary uplifts, they often do not. The degree itself is not the variable. Five things decide the
+              outcome: target industry, school tier, your pre-MBA salary, total cost after aid, and how you
+              finance it. There is no universal answer, only your own numbers modeled correctly.
+            </p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              For scale: US employers in GMAC&apos;s 2025 Corporate Recruiters Survey projected a median MBA
+              starting salary of <span className="text-white">$125,000</span>, and MBB consulting firms pay
+              newly hired MBAs about <span className="text-white">$190,000–$192,000</span> base plus a signing
+              bonus of up to $30,000. The gap between those two numbers is why industry matters more than the
+              degree itself.
             </p>
           </div>
           <p className="text-slate-400 text-sm leading-relaxed">
@@ -135,6 +183,59 @@ export default function MbaWorthItPage() {
             GMAC survey data, school employment reports, and publicly reported compensation figures from MBB
             consulting firms, bulge bracket banks, and major technology companies.
           </p>
+        </section>
+
+        {/* Framework */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">How to Determine If an MBA Is Worth It Using NPV, IRR, and Break-Even Modeling</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Treat the MBA like any other capital investment: a large cash outflow now, in exchange for a
+            stream of higher earnings later. Three numbers summarize that trade, and each answers a
+            different question. You need all three, because they can disagree.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {[
+              {
+                metric: "NPV",
+                question: "Does it create value?",
+                body: "The sum of every future cash flow discounted back to today, minus what you put in. Positive NPV means the MBA beats leaving your money (and time) where it was. CareerReturns discounts at 6%, roughly the after-tax return on a balanced portfolio.",
+              },
+              {
+                metric: "IRR",
+                question: "How hard does each dollar work?",
+                body: "The discount rate at which NPV is exactly zero. It lets you compare an MBA with any other use of capital. Use 10–12% (the long-run S&P 500 return) as the hurdle; below that, an index fund was the better financial bet.",
+              },
+              {
+                metric: "Payback",
+                question: "How long is my money at risk?",
+                body: "The year cumulative cash flow turns positive. It ignores the time value of money, but it captures risk: the longer the payback, the more a recession, layoff or career change can derail the return. Under 5 years is strong; over 8 is fragile.",
+              },
+            ].map(({ metric, question, body }) => (
+              <div key={metric} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+                <p className="text-indigo-300 font-semibold text-lg">{metric}</p>
+                <p className="text-white text-sm font-medium">{question}</p>
+                <p className="text-slate-400 text-xs leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-3">
+            <p className="text-white text-sm font-semibold">The four-step model</p>
+            <ol className="space-y-2 text-slate-400 text-sm leading-relaxed list-decimal list-inside">
+              <li><span className="text-white">Year 0 outflow.</span> Tuition, fees and living costs you pay yourself, plus the salary you give up while in school. For a full-time program the lost salary is usually the biggest line.</li>
+              <li><span className="text-white">Annual inflows.</span> Post-MBA salary minus what you would have earned without the degree, minus loan payments while the loan is outstanding.</li>
+              <li><span className="text-white">Discount and solve.</span> Discount the inflows to get NPV, solve for the rate that zeroes NPV to get IRR, and find the year the running total crosses zero for payback.</li>
+              <li><span className="text-white">Stress-test.</span> Re-run with a 10–20% lower post-MBA salary and a later start date. If the verdict flips, the MBA is a bet on things going right, not a sound investment.</li>
+            </ol>
+          </div>
+          <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-xl p-5">
+            <p className="text-indigo-200 text-sm leading-relaxed">
+              <span className="font-semibold text-white">Decision rule.</span> An MBA is clearly worth it when
+              NPV is positive, IRR clears 10–12%, and payback is within about 5–7 years, and all three still
+              hold in the stress test. If only the lifetime view (30+ years) is positive, the decision rests on
+              your belief that the degree permanently changes your earnings path. That is a reasonable belief
+              for some careers and wishful thinking for others. The scenarios below show both views.
+            </p>
+          </div>
         </section>
 
         {/* What Is an MBA? */}
@@ -219,15 +320,15 @@ export default function MbaWorthItPage() {
             <p className="text-indigo-200 text-sm font-semibold">Total all-in cost</p>
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center">
-                <p className="text-white font-semibold">$385k–$485k</p>
+                <p className="text-white font-semibold">$395k–$500k</p>
                 <p className="text-slate-500 text-xs mt-0.5">M7 Programs</p>
               </div>
               <div className="text-center">
-                <p className="text-white font-semibold">$310k–$410k</p>
+                <p className="text-white font-semibold">$335k–$435k</p>
                 <p className="text-slate-500 text-xs mt-0.5">T10–15</p>
               </div>
               <div className="text-center">
-                <p className="text-white font-semibold">$245k–$350k</p>
+                <p className="text-white font-semibold">$255k–$365k</p>
                 <p className="text-slate-500 text-xs mt-0.5">T15–25</p>
               </div>
             </div>
@@ -243,7 +344,8 @@ export default function MbaWorthItPage() {
             single largest cost. If you are earning $85,000 per year before the MBA, you forgo $170,000 in
             gross salary during the program — money that would have continued to compound in your
             retirement account. Living costs vary heavily by city: Boston, New York, and San Francisco
-            programs carry the highest. For a program-by-program breakdown, see{" "}
+            programs carry the highest. For reference, HBS lists 2025–26 tuition at $78,700, and Wharton&apos;s
+            published first-year budget is about $132,000 including living costs. For a program-by-program breakdown, see{" "}
             <Link href="/mba-cost" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA cost in 2026</Link>.
           </p>
         </section>
@@ -342,6 +444,168 @@ export default function MbaWorthItPage() {
           </p>
         </section>
 
+        {/* Prior experience */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold tracking-tight">Prior Experience: The Variable Most ROI Estimates Ignore</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Published school ROI figures assume a typical student. But your pre-MBA salary works against you
+            twice: it raises the income you give up while in school, and it shrinks the raise the degree
+            delivers. Hold everything else constant (M7 full-time, $270k tuition and living costs, 60%
+            financed at 8%, a $215k consulting job afterward) and change only what you earned before:
+          </p>
+          <div className="space-y-2">
+            {priorSalaryRows.map(({ pre, result }) => {
+              const good = (result.irr10 ?? -1) >= 0.12
+              const ok = (result.irr10 ?? -1) >= 0.06
+              const color = good ? "text-emerald-400" : ok ? "text-amber-400" : "text-red-400"
+              return (
+                <div key={pre} className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 grid grid-cols-4 gap-2 items-center text-xs sm:text-sm">
+                  <div>
+                    <p className="text-white font-medium tabular-nums">{fmtMoney(pre)}</p>
+                    <p className="text-slate-500 text-[11px]">Pre-MBA salary</p>
+                  </div>
+                  <div>
+                    <p className={`font-semibold tabular-nums ${color}`}>{fmtPct(result.irr10)}</p>
+                    <p className="text-slate-500 text-[11px]">IRR</p>
+                  </div>
+                  <div>
+                    <p className="text-white tabular-nums">{fmtMoney(result.npv10)}</p>
+                    <p className="text-slate-500 text-[11px]">10-yr NPV</p>
+                  </div>
+                  <div>
+                    <p className="text-white tabular-nums">{fmtYears(result.payback)}</p>
+                    <p className="text-slate-500 text-[11px]">Payback</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The same school and the same job swing from one of the best investments you could make to one
+            that never pays back within a decade. This is why the full-time MBA works best for people about
+            3–6 years into their careers, and why experienced candidates should look hard at 1-year,
+            executive and part-time formats that cut or remove the income gap. Our{" "}
+            <Link href="/mba-roi-career-changers" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA ROI for career changers</Link>
+            {" "}guide covers pivots in more depth.
+          </p>
+        </section>
+
+        {/* Scenarios */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Three Sample Scenarios: Break-Even and Lifetime Earnings</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Benchmarks only go so far. Here are three representative profiles run through the same engine
+            as the MBA ROI Calculator, with two views of each. The <span className="text-white">10-year DCF</span>
+            {" "}holds the salary delta flat and is deliberately conservative. The{" "}
+            <span className="text-white">lifetime view</span> lets both career paths compound until age 65.
+          </p>
+
+          <div className="space-y-3">
+            {scenarioResults.map(({ preset, result }) => (
+              <div key={preset.id} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-3">
+                <div className="space-y-1">
+                  <p className="text-white font-semibold text-sm">{preset.label}</p>
+                  <p className="text-slate-500 text-xs leading-relaxed">
+                    {preset.persona}. {fmtMoney(preset.input.preSalary)} → {fmtMoney(preset.input.postSalary)};{" "}
+                    {fmtMoney(preset.input.programCost)} tuition and living costs,{" "}
+                    {preset.input.keepsSalary ? "salary kept during the program" : `${fmtMoney(result.lostIncome)} in lost salary`}.
+                  </p>
+                </div>
+                <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center">
+                  {[
+                    { v: fmtMoney(result.totalEconomicCost), l: "All-in cost" },
+                    { v: fmtMoney(result.npv10), l: "10-yr NPV", c: result.npv10 >= 0 ? "text-emerald-400" : "text-red-400" },
+                    { v: fmtPct(result.irr10), l: "IRR" },
+                    { v: fmtYears(result.payback), l: "Payback" },
+                    { v: fmtMoney(result.lifetimeGainPV), l: "Lifetime gain (today's $)" },
+                    { v: result.crossoverAge ? `Age ${result.crossoverAge}` : "Never", l: "Lifetime break-even" },
+                  ].map(({ v, l, c }) => (
+                    <div key={l} className="bg-slate-900/60 rounded-lg p-2">
+                      <p className={`text-sm font-semibold tabular-nums ${c ?? "text-purple-300"}`}>{v}</p>
+                      <p className="text-slate-500 text-[10px] mt-0.5 leading-tight">{l}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-3">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What the early-career tech case shows</p>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                A $55k raise is not enough to recover nearly $500k of cost within ten years, so the 10-year NPV
+                is negative and the IRR sits far below the market. Over a full career it looks very different,
+                because a roughly 48% higher salary compounds for almost four decades. The honest verdict:
+                this MBA only pays if the PM role genuinely puts you on a higher long-term path than staying
+                in analytics. Without that, a part-time program or an internal transfer gets most of the gain
+                for a fraction of the cost (see the table below). Tech-specific data is in{" "}
+                <Link href="/mba-roi-tech" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">MBA ROI for tech</Link>.
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What the mid-career consulting pivot shows</p>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                An $80k raise into MBB is large, but $270k of foregone salary on top of tuition pushes the IRR
+                below the market hurdle. The pivot is positive over a lifetime and roughly break-even over a
+                decade, which makes it a career bet more than a financial one. Two levers change that: a
+                scholarship, or a 1-year program that halves the income gap. Also note that MBB recruits MBAs
+                across a range of experience, but candidates with nine or more years face a narrower path, so
+                confirm your target firms hire at your level before modeling the outcome. Firm-level pay is
+                in{" "}
+                <Link href="/mba-roi-mckinsey" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">MBA ROI for McKinsey</Link>.
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-2">
+              <p className="text-white font-semibold text-sm">What the healthcare professional case shows</p>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                Clinical leaders moving into administration are often the strongest MBA case, because they can
+                study part-time and keep earning. BLS puts the May 2024 median pay for medical and health
+                services managers at $117,960, with director-level roles well above that. Keeping the salary
+                turns a modest $42k raise into a payback of about a year after graduation. Many hospital
+                systems also offer tuition assistance, which improves the numbers further. Quit to do the same
+                degree full-time and the return disappears. More detail is in{" "}
+                <Link href="/mba-roi-healthcare" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">MBA ROI for healthcare</Link>.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <p className="text-xs font-medium text-slate-500 uppercase tracking-widest">What changes the verdict</p>
+            {variantResults.map(({ base, change, result }) => (
+              <div key={change} className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="text-white text-sm">{change}</p>
+                  <p className="text-slate-500 text-xs">{base}</p>
+                </div>
+                <div className="flex gap-4 shrink-0 text-right">
+                  <div>
+                    <p className={`text-sm font-semibold tabular-nums ${result.npv10 >= 0 ? "text-emerald-400" : "text-red-400"}`}>{fmtMoney(result.npv10)}</p>
+                    <p className="text-slate-500 text-[11px]">NPV</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold tabular-nums text-white">{fmtPct(result.irr10)}</p>
+                    <p className="text-slate-500 text-[11px]">IRR</p>
+                  </div>
+                  <div className="hidden sm:block">
+                    <p className="text-sm font-semibold tabular-nums text-white">{fmtYears(result.payback)}</p>
+                    <p className="text-slate-500 text-[11px]">Payback</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <ScenarioExplorer />
+
+          <p className="text-slate-500 text-xs leading-relaxed">
+            Assumptions: pre-tax salaries; 6% discount rate; loans repaid over 5 years; the 10-year DCF holds the
+            salary delta flat; the lifetime view uses a 3–4% annual raise on both paths (+0.5 points on the
+            consulting track). Signing bonuses, employer tuition assistance and taxes are excluded. Profiles
+            are illustrative composites, not individual clients.
+          </p>
+        </section>
+
         {/* Scholarships */}
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold tracking-tight">Scholarships: The Highest-Leverage Variable You Control</h2>
@@ -366,6 +630,23 @@ export default function MbaWorthItPage() {
               Schools have historically increased scholarship packages by $20k–$50k when presented with
               competing offers. See{" "}
               <Link href="/mba-roi-scholarship" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">MBA ROI with scholarship aid</Link>.
+            </p>
+          </div>
+          <div className="bg-amber-500/8 border border-amber-500/20 rounded-xl p-5 space-y-2">
+            <p className="text-amber-300 text-sm font-semibold">2026 change: Grad PLUS loans are gone for new borrowers</p>
+            <p className="text-slate-400 text-xs leading-relaxed">
+              Since July 1, 2026, new graduate students can no longer take out Grad PLUS loans, which used to
+              cover up to the full cost of attendance. Federal borrowing for most graduate programs is now capped
+              at $20,500 a year and $100,000 in aggregate through Direct Unsubsidized Loans. Students who were
+              already borrowing in the same program before that date may be grandfathered. Check with your
+              school whether its MBA counts as a graduate or a professional program. For a $250k+ full-time
+              budget, the gap has to come from scholarships, savings, employer sponsorship or private loans,
+              whose rates depend on credit. That makes scholarship negotiation more valuable than before, and
+              it means you should model your actual blended loan rate, not the federal rate. Options are
+              covered in{" "}
+              <Link href="/how-to-pay-for-mba" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">how to pay for an MBA</Link>
+              {" "}and the{" "}
+              <Link href="/mba-loan-repayment-calculator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">MBA loan repayment calculator</Link>.
             </p>
           </div>
         </section>
@@ -506,14 +787,116 @@ export default function MbaWorthItPage() {
           </div>
         </section>
 
+        {/* Alternatives */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Alternatives: When Another Investment Makes More Sense</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The right comparison is not &ldquo;MBA vs. nothing.&rdquo; It is the MBA against the cheapest
+            path to the same outcome. Run the alternative through the same NPV and payback test before you
+            commit six figures.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                title: "Part-time, online or executive MBA",
+                when: "You want the credential and a raise in your current industry or employer.",
+                body: "No income gap, often employer-funded, and break-even is commonly 1–3 years after graduation. The cost is weaker access to MBB and investment banking recruiting.",
+                href: "/part-time-mba-roi",
+                link: "Part-time MBA ROI",
+              },
+              {
+                title: "Employer sponsorship",
+                when: "Your company has a tuition program and a path to promotion.",
+                body: "Sponsorship can push your out-of-pocket cost close to zero, at the price of a stay-or-repay clause, usually 1–3 years. Read the clawback terms before you model the upside.",
+                href: "/employer-sponsored-mba-roi",
+                link: "Employer-sponsored MBA ROI",
+              },
+              {
+                title: "Targeted reskilling",
+                when: "The job you want screens for skills, not a degree: data, product, cloud, analytics.",
+                body: "A $2k–$20k certificate or bootcamp with a few months of reduced income can deliver a comparable salary step with a payback measured in months. The ceiling is lower and the signal weaker for general management roles.",
+                href: "/reskilling-roi-calculator",
+                link: "Reskilling ROI Calculator",
+              },
+              {
+                title: "Returnships",
+                when: "You are re-entering the workforce after a career break.",
+                body: "Paid 8–16 week return-to-work programs at large employers convert to full-time roles without new tuition debt. For returners, they often beat an MBA on both cost and time to re-employment.",
+                href: "/returnship-roi-calculator",
+                link: "Returnship ROI Calculator",
+              },
+              {
+                title: "Stay, negotiate and compound",
+                when: "You are already on a fast track in a well-paid field.",
+                body: "Two years of raises, a promotion and an invested $100k+ of tuition is a real alternative, not a default. If your no-MBA path would reach the same salary within 3–5 years, the degree's IRR collapses.",
+                href: "/career-compounder",
+                link: "Career Compounder",
+              },
+            ].map(({ title, when, body, href, link }) => (
+              <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-5 space-y-1.5">
+                <p className="text-white font-semibold text-sm">{title}</p>
+                <p className="text-indigo-300 text-xs">Best when: {when}</p>
+                <p className="text-slate-400 text-xs leading-relaxed">{body}</p>
+                <Link href={href} className="inline-block text-indigo-400 hover:text-indigo-300 text-xs underline underline-offset-2">{link} →</Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Next steps */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Practical Next Steps Before You Apply or Accept</h2>
+          <ol className="space-y-3">
+            {[
+              {
+                title: "Name the destination job first",
+                body: "Pick the specific role, industry and city you want after the MBA, then pull its salary from the employment reports of the schools you are considering. The school's overall median is the wrong input.",
+              },
+              {
+                title: "Choose the school that gets you there at the lowest cost",
+                body: "If your target employers recruit at a T15 school as heavily as at an M7, the cheaper or better-funded admit usually wins. Pay up for tier only when it changes which firms will interview you.",
+              },
+              {
+                title: "Negotiate the scholarship",
+                body: "Send each school competing offers and ask for a review, politely and in writing, before the deposit deadline. With Grad PLUS gone, every dollar of grant aid also lowers the private-loan rate risk.",
+              },
+              {
+                title: "Pick the format that fits your prior salary",
+                body: "Under about $110k pre-MBA with a pivot in mind: full-time is usually justified. Above about $135k, or staying in your industry: test 1-year, part-time and executive formats before a 2-year program.",
+              },
+              {
+                title: "Stress-test, then decide",
+                body: "Re-run your case with a 15% lower post-MBA salary and a six-month delay in your start date. If NPV stays positive and payback stays under about 7 years, you have a robust investment.",
+              },
+              {
+                title: "Plan the negotiation on the other side",
+                body: "Signing bonuses, relocation and tuition reimbursement from your post-MBA employer are negotiable and go straight into your Year 1 cash flow.",
+                href: "/blog/mba-salary-negotiation",
+                link: "MBA salary negotiation guide",
+              },
+            ].map(({ title, body, href, link }, i) => (
+              <li key={title} className="bg-white/5 border border-white/10 rounded-xl p-5 flex gap-4">
+                <span className="text-indigo-300 font-semibold tabular-nums">{i + 1}</span>
+                <div className="space-y-1">
+                  <p className="text-white font-semibold text-sm">{title}</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">{body}</p>
+                  {href && (
+                    <Link href={href} className="inline-block text-indigo-400 hover:text-indigo-300 text-xs underline underline-offset-2">{link} →</Link>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+
         {/* CTA */}
         <section className="rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-10 text-center space-y-5">
           <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest">Free Tool</p>
-          <h2 className="text-2xl font-semibold tracking-tight">Model Your Specific MBA Decision</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Run Your Personalized MBA DCF</h2>
           <p className="text-slate-400 text-sm leading-relaxed max-w-lg mx-auto">
-            The industry and tier numbers above are benchmarks; your result depends on your own pre-MBA
-            salary, school cost, scholarship aid, and post-MBA role. Enter them to get NPV, IRR, break-even
-            year, and a side-by-side comparison against a passive equity investment.
+            The industry, tier and scenario numbers above are benchmarks. Your result depends on your own pre-MBA
+            salary, school cost, scholarship aid, loan rate and post-MBA role. Enter them to get NPV, IRR, break-even
+            year, a loan amortization schedule and a side-by-side comparison against a passive equity investment.
           </p>
           <p className="text-slate-400 text-sm leading-relaxed max-w-lg mx-auto">
             Run three scenarios: optimistic (higher post-MBA salary, scholarship), base (median outcomes),
@@ -524,8 +907,12 @@ export default function MbaWorthItPage() {
             href="/mba-roi-calculator"
             className="inline-block bg-linear-to-r from-indigo-600 to-violet-600 hover:opacity-90 transition-all px-8 py-4 rounded-xl font-medium text-white text-base shadow-[0_0_40px_rgba(99,102,241,0.3)]"
           >
-            Use the MBA ROI Calculator →
+            Run My MBA DCF →
           </Link>
+          <p className="text-slate-500 text-xs">
+            Want to see the 30-year picture? Model career phases and breaks in the{" "}
+            <Link href="/lifetime-earnings-calculator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">Lifetime Earnings Calculator</Link>.
+          </p>
         </section>
 
         {/* ── Related Guides ── */}
@@ -588,7 +975,7 @@ export default function MbaWorthItPage() {
 
         <FaqSection items={faqItems} />
 
-        <SiteFooter note="Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary." />
+        <SiteFooter note="Sources: GMAC Corporate Recruiters Survey 2025, school employment reports and 2025–26 cost-of-attendance budgets, publicly reported MBB and banking compensation, BLS Occupational Employment and Wage Statistics (May 2024), U.S. Department of Education loan limits effective July 1, 2026, Glassdoor and Levels.fyi. Scenario profiles are illustrative composites. All ranges are estimates; individual outcomes vary." />
 
       </div>
 
