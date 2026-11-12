@@ -78,7 +78,6 @@ const SEED: Record<string, SeedEntry> = {
   "free-mba-programs": { lastmod: "2026-08-18", priority: "0.85", changefreq: "monthly"  },
   "how-to-pay-for-mba": { lastmod: "2026-08-18", priority: "0.85", changefreq: "monthly"  },
   "marketing-mba-salary": { lastmod: "2026-08-18", priority: "0.85", changefreq: "monthly"  },
-  "emba-salary-increase": { lastmod: "2026-08-18", priority: "0.85", changefreq: "monthly"  },
   "yellow-ribbon-mba-programs": { lastmod: "2026-08-18", priority: "0.82", changefreq: "monthly"  },
   "m7-mba-consulting-salary": { lastmod: "2026-08-18", priority: "0.85", changefreq: "monthly"  },
   "career-roi-score": { lastmod: "2026-06-21", priority: "0.90", changefreq: "monthly"  },

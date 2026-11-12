@@ -114,7 +114,6 @@ const guideGroups = [
       { href: "/m7-mba-consulting-salary", label: "M7 MBA consulting salary", desc: "MBB and Big 4 pay and placement data by M7 school." },
       { href: "/mba-investment-banking-salary", label: "MBA investment banking salary", desc: "Bank-by-bank associate pay: Goldman $360K, JPMorgan $320K." },
       { href: "/marketing-mba-salary", label: "Marketing MBA salary", desc: "Brand management $130K–$155K and the path to CMO." },
-      { href: "/emba-salary-increase", label: "EMBA salary increase", desc: "How much an executive MBA raises pay for mid-career professionals." },
       { href: "/salary-calculator", label: "Salary & paycheck calculator", desc: "Hourly ↔ annual pay and take-home after 2026 federal, FICA and state tax." },
       { href: "/job-offer-comparison", label: "Job offer comparison calculator", desc: "Two offers compared after tax, cost of living, commute and 401(k) match." },
       { href: "/raise-calculator", label: "Raise calculator", desc: "A raise per paycheck, after tax and inflation, plus its 10-year value." },
@@ -140,7 +139,7 @@ const guideGroups = [
     intro:
       "A full-time MBA's largest cost is usually the salary you give up while studying, so formats that let you keep working change the numbers sharply. These guides cover executive, part-time and online programs, MBAs your employer pays for, and programs that waive the GMAT. They also cover the trade-off: you keep your income, but you usually lose access to the on-campus recruiting that leads to consulting and banking offers. If you plan to stay in your field or move up at your current employer, one of these formats is often the better financial choice.",
     guides: [
-      { href: "/executive-mba-roi", label: "Executive MBA ROI", desc: "When EMBA math works, and when it doesn't." },
+      { href: "/executive-mba-roi", label: "Executive MBA ROI and salary increase", desc: "EMBA raises by program, promotion rates, and when the math works." },
       { href: "/part-time-mba-roi", label: "Part-time MBA ROI", desc: "Why keeping your salary changes the ROI more than most analyses assume." },
       { href: "/mba-roi-online-vs-full-time", label: "Online vs. full-time MBA ROI", desc: "Which online MBA programs pay back fastest." },
       { href: "/employer-sponsored-mba-roi", label: "Employer-sponsored MBA ROI", desc: "The return on your own money when your employer covers tuition." },

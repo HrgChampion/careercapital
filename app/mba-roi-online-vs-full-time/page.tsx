@@ -1,26 +1,65 @@
 import Link from "next/link"
-import { pageAlternates } from "@/lib/seo"
+import { pageAlternates, articleSchema, breadcrumbSchema } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
+import ArticleMeta from "@/components/ArticleMeta"
+
+const PAGE_URL = "https://careerreturns.com/mba-roi-online-vs-full-time"
+const TITLE = "Online MBA vs Full-Time MBA ROI (2026): Break-Even by Salary"
+const DESCRIPTION =
+  "Online vs full-time MBA ROI on the same salary outcome: $48K vs $315K total cost, ~1.6 vs ~10.5 year payback, a break-even table by pre-MBA salary, and 7 online programs compared."
+
+const _articleSchema = articleSchema({
+  title: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  datePublished: "2026-03-19",
+  dateModified: "2026-11-12",
+})
+const _breadcrumbSchema = breadcrumbSchema([
+  { name: "MBA ROI Hub", url: "https://careerreturns.com/mba-roi" },
+  { name: "Online vs Full-Time MBA ROI", url: PAGE_URL },
+])
 
 export const metadata = {
-  title: "Best Online MBA Programs ROI (2026): Which Pays Back Fastest?",
-  description:
-    "Best online MBA programs ranked by ROI. Online vs full-time MBA compared side by side — opportunity cost math, salary outcomes, break-even timelines by program, and when each format wins. See data →",
-  alternates: pageAlternates("https://careerreturns.com/mba-roi-online-vs-full-time"),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: pageAlternates(PAGE_URL),
   openGraph: {
-    title: "Best Online MBA Programs ROI (2026): Which Pays Back Fastest?",
-    description: "Best online MBA programs ranked by ROI. Full-time MBA: $315K total outflow, 8–9 yr break-even. Online MBA: $48K outflow, 2 yr break-even. The opportunity cost math explained.",
-    url: "https://careerreturns.com/mba-roi-online-vs-full-time",
+    title: TITLE,
+    description: "Same $30K raise, two formats: the online MBA pays back in ~1.6 years, the full-time MBA in ~10.5. The opportunity-cost math, plus break-even by pre-MBA salary.",
+    url: PAGE_URL,
     siteName: "CareerReturns",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "Best Online MBA Programs ROI (2026)",
-    description: "Best online MBA programs ranked by ROI. Online MBA breaks even 6–7 years faster. The opportunity cost math that most comparisons miss.",
+    title: TITLE,
+    description: "Same $30K raise, two formats: online MBA pays back in ~1.6 years, full-time in ~10.5. The opportunity-cost math most comparisons miss.",
   },
 }
+
+// Simple payback model used throughout the page: total economic outflow ÷ annual
+// pre-tax salary increase (undiscounted). Full-time outflow = tuition + living
+// ($155K, top-20 program) + two years of forgone pre-MBA salary.
+const FT_TUITION_LIVING = 155_000
+const ONLINE_COST = 48_000
+const BREAK_EVEN_SALARIES = [60_000, 80_000, 100_000, 120_000, 150_000]
+
+const k = (n: number) => `$${Math.round(n / 1000)}K`
+const yrs = (n: number) => `${n.toFixed(1)} yrs`
+
+const breakEvenRows = BREAK_EVEN_SALARIES.map((salary) => {
+  const ftOutflow = FT_TUITION_LIVING + 2 * salary
+  return {
+    salary: k(salary),
+    ftOutflow: k(ftOutflow),
+    ft30: yrs(ftOutflow / 30_000),
+    ft60: yrs(ftOutflow / 60_000),
+    deltaFor5yr: k(ftOutflow / 5),
+    online30: yrs(ONLINE_COST / 30_000),
+  }
+})
 
 const faqItems: FaqItem[] = [
   { q: "What is the ROI of an online MBA vs a full-time MBA?", a: "Online MBAs have higher IRR in most scenarios due to dramatically lower total cost. A top online MBA (Kelley, UNC Kenan-Flagler, UT McCombs) costs $40K–$90K with zero opportunity cost. A full-time M7 MBA costs $280K–$360K plus $150K–$200K foregone salary. The online MBA produces IRR of 25–40%+ vs 18–24% for M7 full-time programs." },
@@ -45,6 +84,7 @@ export default function MbaRoiOnlineVsFullTimePage() {
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
             Online MBA vs. Full-Time MBA:<br />Which Has Better ROI?
           </h1>
+          <ArticleMeta updated="2026-11-12" />
           <p className="text-slate-400 text-lg leading-relaxed">
             Counterintuitively, online and part-time MBAs often produce stronger financial returns
             than full-time programs — not despite lower tuition, but because of eliminated opportunity cost.
@@ -71,7 +111,7 @@ export default function MbaRoiOnlineVsFullTimePage() {
             and acquire the credential over 2–3 years alongside your job. The total economic outflow
             is limited to tuition — and the{" "}
             <Link href="/mba-break-even" className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2">break-even period</Link>
-            {" "}shrinks from 6–8 years to 2–3 years for the same salary outcome.
+            {" "}shrinks from a decade or more to 2–3 years for the same salary outcome.
           </p>
         </section>
 
@@ -81,7 +121,8 @@ export default function MbaRoiOnlineVsFullTimePage() {
           <p className="text-slate-400 text-sm leading-relaxed">
             The following comparison uses identical pre- and post-MBA salary assumptions ($80k → $110k,
             a realistic outcome for both formats in general management or operations) to isolate the
-            format effect on ROI.
+            format effect on ROI. Payback is total outflow divided by the annual pre-tax salary increase,
+            before discounting, taxes or loan interest, which all push both timelines out.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
@@ -91,11 +132,10 @@ export default function MbaRoiOnlineVsFullTimePage() {
                 <div className="flex justify-between"><span className="text-slate-400">Opportunity cost</span><span className="text-white">$160,000</span></div>
                 <div className="flex justify-between border-t border-white/10 pt-2"><span className="text-white font-medium">Total outflow</span><span className="text-red-400 font-semibold">$315,000</span></div>
                 <div className="flex justify-between"><span className="text-slate-400">Annual salary delta</span><span className="text-white">$30,000</span></div>
-                <div className="flex justify-between"><span className="text-slate-400">Annual loan payment</span><span className="text-white">−$11,000</span></div>
-                <div className="flex justify-between border-t border-white/10 pt-2"><span className="text-white font-medium">Net annual benefit</span><span className="text-white font-semibold">$19,000</span></div>
+                <div className="flex justify-between border-t border-white/10 pt-2"><span className="text-white font-medium">Payback ($315K ÷ $30K)</span><span className="text-white font-semibold">10.5 yrs</span></div>
               </div>
               <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3">
-                <p className="text-yellow-300 text-sm font-semibold">Break-even: ~8–9 years</p>
+                <p className="text-yellow-300 text-sm font-semibold">Break-even: ~10–11 years</p>
               </div>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
@@ -105,28 +145,71 @@ export default function MbaRoiOnlineVsFullTimePage() {
                 <div className="flex justify-between"><span className="text-slate-400">Opportunity cost</span><span className="text-green-400 font-medium">$0 (kept working)</span></div>
                 <div className="flex justify-between border-t border-white/10 pt-2"><span className="text-white font-medium">Total outflow</span><span className="text-red-400 font-semibold">$48,000</span></div>
                 <div className="flex justify-between"><span className="text-slate-400">Annual salary delta</span><span className="text-white">$30,000</span></div>
-                <div className="flex justify-between"><span className="text-slate-400">Annual loan payment</span><span className="text-white">−$7,000</span></div>
-                <div className="flex justify-between border-t border-white/10 pt-2"><span className="text-white font-medium">Net annual benefit</span><span className="text-white font-semibold">$23,000</span></div>
+                <div className="flex justify-between border-t border-white/10 pt-2"><span className="text-white font-medium">Payback ($48K ÷ $30K)</span><span className="text-white font-semibold">1.6 yrs</span></div>
               </div>
               <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3">
-                <p className="text-green-400 text-sm font-semibold">Break-even: ~2 years</p>
+                <p className="text-green-400 text-sm font-semibold">Break-even: ~1.5–2 years</p>
               </div>
             </div>
           </div>
           <div className="bg-violet-500/10 border border-violet-500/20 rounded-xl p-5">
             <p className="text-violet-200 text-sm leading-relaxed">
               <span className="font-semibold text-white">Insight:</span> Identical salary outcomes.
-              The online MBA breaks even roughly <span className="font-semibold text-white">6–7 years earlier</span>.
-              The difference is not tuition ($107k gap) — it is the $160,000 opportunity cost that the
-              full-time format imposes. Cutting tuition by 70% accounts for less than 35% of the total
-              cost difference.
+              The online MBA breaks even roughly <span className="font-semibold text-white">9 years earlier</span>.
+              Tuition is the smaller part of the gap: the $107K tuition difference is about 40% of the
+              $267K total cost difference, while the $160K of forgone salary is the other 60%.
             </p>
           </div>
         </section>
 
+        {/* Break-even by pre-MBA salary */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Break-Even by Pre-MBA Salary</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            The online MBA&apos;s cost does not depend on what you earn today. The full-time MBA&apos;s does,
+            because opportunity cost is two years of your current salary. The table holds tuition and
+            living costs at $155K and shows how the full-time payback stretches as pre-MBA pay rises, and
+            how large a raise the full-time format needs to pay back within five years.
+          </p>
+          <div className="overflow-x-auto bg-white/5 border border-white/10 rounded-xl p-5">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left text-slate-500 pb-2 pr-4 font-medium">Pre-MBA salary</th>
+                  <th className="text-left text-slate-500 pb-2 pr-4 font-medium">Full-time total outflow</th>
+                  <th className="text-left text-slate-500 pb-2 pr-4 font-medium">Full-time payback, +$30K raise</th>
+                  <th className="text-left text-slate-500 pb-2 pr-4 font-medium">Full-time payback, +$60K raise</th>
+                  <th className="text-left text-slate-500 pb-2 pr-4 font-medium">Raise needed for 5-yr payback</th>
+                  <th className="text-left text-slate-500 pb-2 font-medium">Online payback, +$30K raise</th>
+                </tr>
+              </thead>
+              <tbody>
+                {breakEvenRows.map((r) => (
+                  <tr key={r.salary} className="border-b border-white/5">
+                    <td className="text-white py-2 pr-4 font-medium">{r.salary}</td>
+                    <td className="text-slate-300 py-2 pr-4">{r.ftOutflow}</td>
+                    <td className="text-yellow-300 py-2 pr-4">{r.ft30}</td>
+                    <td className="text-slate-300 py-2 pr-4">{r.ft60}</td>
+                    <td className="text-slate-300 py-2 pr-4">{r.deltaFor5yr}/yr</td>
+                    <td className="text-green-400 py-2">{r.online30}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Two things follow. First, the higher your current salary, the harder the full-time case gets:
+            at $120K you need a raise of roughly $79K a year to pay back in five years, which in practice
+            means a switch into consulting, banking or big tech, not a promotion in your current track.
+            Second, the full-time format only becomes competitive when it unlocks a much larger raise than
+            an online program can. If both formats lead to the same job, the online MBA wins at every
+            salary level in the table.
+          </p>
+        </section>
+
         {/* Online MBA programs worth considering */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold tracking-tight">Best Online MBA Programs: ROI Comparison</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Online MBA Programs Compared on Cost and Break-Even</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             The online MBA market matured significantly after 2018. A small set of accredited programs
             now carry employer recognition comparable to their parent school's residential brand. The
@@ -310,6 +393,8 @@ export default function MbaRoiOnlineVsFullTimePage() {
 
       </div>
 
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_breadcrumbSchema) }} />
     </main>
   )
 }

@@ -4,12 +4,12 @@ import FaqSection, { type FaqItem } from "../../components/FaqSection"
 import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
-  title: "Executive MBA ROI 2026: When EMBA Math Works (and When It Doesn't)",
+  title: "Executive MBA ROI & Salary Increase 2026: When the EMBA Math Works",
   description:
-    "EMBA ROI analysis for 2026: how zero opportunity cost changes the math, break-even scenarios, salary outcomes by track, and EMBA vs full-time MBA comparison.",
+    "EMBA ROI and salary increase for 2026: median raise by program, promotion rates, break-even scenarios, salary outcomes by track, and EMBA vs full-time MBA comparison.",
   url: "https://careerreturns.com/executive-mba-roi",
   datePublished: "2026-04-09",
-  dateModified: "2026-04-09",
+  dateModified: "2026-11-11",
 })
 
 const _breadcrumbSchema = breadcrumbSchema([
@@ -18,14 +18,14 @@ const _breadcrumbSchema = breadcrumbSchema([
 ])
 
 export const metadata = {
-  title: "Executive MBA ROI 2026: When EMBA Math Works (and When It Doesn't)",
+  title: "Executive MBA ROI & Salary Increase 2026: When the EMBA Math Works",
   description:
-    "EMBA ROI 2026: zero opportunity cost, break-even scenarios, salary deltas by track, and EMBA vs full-time MBA comparison. Full financial analysis.",
+    "EMBA salary increase by program (Wharton, Booth, Kellogg, INSEAD), promotion rates, break-even scenarios and EMBA vs full-time MBA ROI. Full 2026 analysis.",
   alternates: pageAlternates("https://careerreturns.com/executive-mba-roi"),
   openGraph: {
-    title: "Executive MBA ROI 2026: When EMBA Math Works (and When It Doesn't)",
+    title: "Executive MBA ROI & Salary Increase 2026: When the EMBA Math Works",
     description:
-      "EMBA ROI 2026: zero opportunity cost, break-even scenarios, salary deltas by track, and EMBA vs full-time MBA comparison. Full financial analysis.",
+      "EMBA salary increase by program, promotion rates, break-even scenarios and EMBA vs full-time MBA ROI. Full 2026 analysis.",
     url: "https://careerreturns.com/executive-mba-roi",
     siteName: "CareerReturns",
     type: "article",
@@ -33,9 +33,9 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "Executive MBA ROI 2026: When EMBA Math Works (and When It Doesn't)",
+    title: "Executive MBA ROI & Salary Increase 2026: When the EMBA Math Works",
     description:
-      "EMBA ROI 2026: zero opportunity cost, break-even scenarios, salary deltas by track, and EMBA vs full-time MBA comparison.",
+      "EMBA salary increase by program, promotion rates, break-even scenarios and EMBA vs full-time MBA ROI.",
   },
 }
 
@@ -44,6 +44,8 @@ const faqItems: FaqItem[] = [
   { q: "Does employer sponsorship make EMBA ROI better than full-time MBA ROI?", a: "Yes, dramatically. When an employer pays 100% of EMBA tuition, the employee's net cost is zero. With no tuition outflow and no opportunity cost (you continue earning your salary), the IRR on employer-sponsored EMBA is effectively infinite. Even 50% employer sponsorship yields IRRs of 30–50%+ given the low personal outlay. Full-time MBA ROI at M7 programs rarely exceeds 22–40% IRR even at peak MBB/banking placement." },
   { q: "What is the salary increase after an Executive MBA?", a: "The average salary increase after an Executive MBA is $15K–$40K per year, depending on the career track and starting compensation. EMBA candidates begin the program earning $150K–$250K on average, so the percentage delta is smaller than for full-time MBA graduates. However, the absolute compensation trajectory — moving from director to VP, or VP to SVP — can generate cumulative gains of $500K–$1M+ over a 10-year horizon." },
   { q: "How does Executive MBA ROI compare to full-time MBA ROI?", a: "For mid-career professionals who are not switching industries, EMBA NPV almost always exceeds full-time MBA NPV. The reason is opportunity cost elimination: a full-time MBA costs $300K–$450K all-in (tuition + foregone salary + living expenses). An EMBA costs only $120K–$210K in tuition with zero opportunity cost. For career-switchers who need access to MBB, investment banking, or technology recruiting pipelines, full-time MBA wins because EMBA programs do not participate in on-campus recruiting for these roles." },
+  { q: "What is the average EMBA salary increase by program?", a: "Median salary increase within 3 years of graduation, by program: Wharton EMBA +$35K–$55K (22–28%); Booth EMBA +$30K–$50K (20–26%); INSEAD EMBA +$30K–$50K (20–28%); Kellogg EMBA +$28K–$45K (18–24%); Columbia EMBA +$25K–$40K (16–22%); UCLA Anderson and NYU Stern EMBA +$20K–$35K (14–20%). Across all EMBA programs the median is closer to 14–17%. Increases are largest for participants who change employers or are promoted during the program." },
+  { q: "How many EMBA students get promoted during the program?", a: "Around 40% of EMBA participants receive a promotion during the program or within a year of finishing it, and the share is higher (45–52%) at top programs such as Wharton, Booth, Kellogg and INSEAD. Because the promotion often lands before graduation, much of the EMBA salary increase shows up earlier than a full-time MBA's, which only starts after you return to work." },
   { q: "When is EMBA ROI negative?", a: "EMBA ROI is negative or marginal when: (1) you are already earning $200K+ and a promotion is likely without the degree, (2) you are attending purely for prestige without a specific role or promotion tied to it, (3) you are financing 100% of a top-tier EMBA ($180K–$210K) at 8%+ interest with a modest expected salary delta, or (4) you need to change industries — EMBA programs do not provide the recruiting access or dedicated placement infrastructure of full-time programs." },
 ]
 
@@ -91,6 +93,17 @@ const salaryTracks = [
   { track: "Healthcare Management", delta: "+$12K–$28K", notes: "Clinical mgmt → exec leadership" },
 ]
 
+// Median salary increase within 3 years of graduation (GMAC surveys + program employment data).
+const programIncreases = [
+  { school: "Wharton EMBA", increase: "+$35K–$55K", pct: "22–28%", promoted: "50%", breakEven: "4–5 yrs" },
+  { school: "INSEAD EMBA", increase: "+$30K–$50K", pct: "20–28%", promoted: "52%", breakEven: "4–5 yrs" },
+  { school: "Booth EMBA (Chicago)", increase: "+$30K–$50K", pct: "20–26%", promoted: "48%", breakEven: "4–5 yrs" },
+  { school: "Kellogg EMBA", increase: "+$28K–$45K", pct: "18–24%", promoted: "45%", breakEven: "4–5 yrs" },
+  { school: "Columbia EMBA", increase: "+$25K–$40K", pct: "16–22%", promoted: "43%", breakEven: "5–6 yrs" },
+  { school: "UCLA Anderson EMBA", increase: "+$20K–$35K", pct: "14–20%", promoted: "40%", breakEven: "5–6 yrs" },
+  { school: "NYU Stern EMBA", increase: "+$20K–$35K", pct: "14–20%", promoted: "40%", breakEven: "5–6 yrs" },
+]
+
 export default function ExecutiveMbaRoiPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
@@ -108,7 +121,7 @@ export default function ExecutiveMbaRoiPage() {
             Executive MBA ROI 2026:<br />
             <span className="text-slate-400">When EMBA Math Works (and When It Doesn&apos;t)</span>
           </h1>
-          <ArticleMeta updated="2026-04-09" />
+          <ArticleMeta updated="2026-11-11" />
           <p className="text-slate-400 text-lg leading-relaxed">
             The Executive MBA has a fundamentally different ROI profile than full-time MBA — because{" "}
             <span className="text-white font-medium">you never stop earning</span>. Zero opportunity cost
@@ -276,6 +289,49 @@ export default function ExecutiveMbaRoiPage() {
             a VP-to-SVP promotion by 2 years generates compounding salary advantages over a 10-year horizon
             that dwarf the immediate delta. Cumulative 10-year NPV of a 2-year career acceleration — even at
             modest $30K/yr raises per level — is often $200,000–$350,000 at a 10% discount rate.
+          </p>
+        </section>
+
+        {/* ── Section 3b: EMBA Salary Increase by Program (merged from /emba-salary-increase) ── */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">EMBA Salary Increase by Program (2026)</h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Across all programs, the median EMBA salary increase is{" "}
+            <span className="text-white font-medium">14–17% within 3 years</span> of graduation. Top-tier
+            programs sit well above that at 20–28%. The timing also differs from a full-time MBA:{" "}
+            <span className="text-white font-medium">about 40% of EMBA participants are promoted during the
+            program or within a year of finishing</span>, so part of the raise often arrives before graduation.
+          </p>
+          <div className="overflow-x-auto bg-white/5 border border-white/10 rounded-xl p-5">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left text-slate-500 pb-2 pr-4 font-medium">Program</th>
+                  <th className="text-left text-slate-500 pb-2 pr-4 font-medium">Median $ increase</th>
+                  <th className="text-left text-slate-500 pb-2 pr-4 font-medium">% increase</th>
+                  <th className="text-left text-slate-500 pb-2 pr-4 font-medium">Promoted</th>
+                  <th className="text-left text-slate-500 pb-2 font-medium">Break-even</th>
+                </tr>
+              </thead>
+              <tbody>
+                {programIncreases.map((row) => (
+                  <tr key={row.school} className="border-b border-white/5">
+                    <td className="text-white py-2 pr-4 font-medium">{row.school}</td>
+                    <td className="text-orange-400 py-2 pr-4 font-medium">{row.increase}</td>
+                    <td className="text-slate-300 py-2 pr-4">{row.pct}</td>
+                    <td className="text-slate-300 py-2 pr-4">{row.promoted}</td>
+                    <td className="text-slate-300 py-2">{row.breakEven}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Figures are median increases within 3 years of graduation, from GMAC surveys and program
+            employment data. &ldquo;Promoted&rdquo; is the share promoted during the program or within a year of it.
+            The single biggest driver of where you land in each range is whether you change employers:
+            participants who move see increases 30–50% larger than those who stay with the same company.
+            If you plan to stay put, use the bottom of the range when you model your break-even.
           </p>
         </section>
 

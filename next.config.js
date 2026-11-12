@@ -61,6 +61,11 @@ const nextConfig = {
         destination: '/average-mba-salary',
         permanent: true,
       },
+      {
+        source: '/emba-salary-increase',
+        destination: '/executive-mba-roi',
+        permanent: true,
+      },
     ]
   },
 

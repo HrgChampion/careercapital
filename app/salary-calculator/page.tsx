@@ -2,7 +2,7 @@ import Link from "next/link"
 import CopySnippet from "@/components/CopySnippet"
 import SalaryCalculator from "./Calculator"
 import { calculatePaycheck, toAnnual, usd } from "@/lib/paycheckEngine"
-import { hourlyPath, salaryPath, shortSalary } from "@/lib/payRates"
+import { ANNUAL_SALARIES, HOURLY_RATES, hourlyPath, salaryPath, shortSalary } from "@/lib/payRates"
 import { SALARY_FACTS } from "@/lib/salaryFacts"
 
 const TABLE_RATES = [15, 18, 20, 22, 25, 28, 30, 35, 40, 45, 50, 60, 75, 100]
@@ -84,6 +84,35 @@ export default function SalaryCalculatorPage() {
               </span>
             ))}
           </p>
+        </section>
+
+        {/* Every programmatic pay page is linked from this hub so none of them is an orphan reachable only via the sitemap. */}
+        <section className="space-y-5">
+          <h2 className="text-2xl font-semibold tracking-tight">Every hourly rate and salary, converted</h2>
+          <div className="space-y-2">
+            <h3 className="text-sm font-medium text-slate-300">Hourly to annual salary</h3>
+            <ul className="flex flex-wrap gap-2 text-sm">
+              {HOURLY_RATES.map((rate) => (
+                <li key={rate}>
+                  <Link href={`/${hourlyPath(rate)}`} className="inline-block rounded-lg bg-white/5 border border-white/10 px-3 py-1.5 text-indigo-300 hover:bg-white/10">
+                    ${rate}/hr
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-sm font-medium text-slate-300">Annual salary to hourly</h3>
+            <ul className="flex flex-wrap gap-2 text-sm">
+              {ANNUAL_SALARIES.map((amt) => (
+                <li key={amt}>
+                  <Link href={`/${salaryPath(amt)}`} className="inline-block rounded-lg bg-white/5 border border-white/10 px-3 py-1.5 text-indigo-300 hover:bg-white/10">
+                    {shortSalary(amt)}/yr
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         <section className="space-y-3 max-w-3xl">
