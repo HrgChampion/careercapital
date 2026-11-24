@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "MBA vs Bootcamp vs Master's ROI Calculator — Compare NPV Side-by-Side (Free)",
+  title: "MBA vs Bootcamp vs Master's ROI Calculator (Free)",
   description:
     "Which has higher NPV: $130K MBA, $15K bootcamp, or $50K Master's? Enter your salary and compare DCF-based ROI for up to 4 education paths simultaneously →",
   keywords: [

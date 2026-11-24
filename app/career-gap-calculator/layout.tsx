@@ -1,8 +1,10 @@
 import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
+import SiteFooter from "@/components/SiteFooter"
+import Guide from "./guide"
 
 export const metadata: Metadata = {
-  title: "Career Gap Recovery Calculator (2026) — Which Re-entry Path Earns You Most?",
+  title: "Career Gap Calculator (2026): Best Path Back to Work",
   description:
     "A 2-year career break costs $170,000+ in foregone earnings. Free calculator: compare direct re-entry vs returnship vs reskilling to find which path recovers your salary fastest. DCF-based.",
   keywords: [
@@ -52,7 +54,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorSchema) }} />
       {children}
-
+      <Guide />
+      <SiteFooter />
     </>
   )
 }

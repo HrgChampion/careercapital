@@ -2,12 +2,12 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "Employer-Sponsored MBA ROI 2026: Near-Infinite Return on Personal Investment",
+  title: "Employer-Sponsored MBA ROI 2026: Is It Worth It?",
   description:
     "When your employer pays for your MBA, tuition cost is zero and opportunity cost stays. The math: near-infinite IRR on personal investment. Models, negotiation steps, clawback risk →",
   alternates: pageAlternates("https://careerreturns.com/employer-sponsored-mba-roi"),
   openGraph: {
-    title: "Employer-Sponsored MBA ROI 2026: Near-Infinite Return on Personal Investment",
+    title: "Employer-Sponsored MBA ROI 2026: Is It Worth It?",
     description:
       "When your employer pays for your MBA, tuition cost is zero and opportunity cost stays. The math: near-infinite IRR on personal investment. Models, negotiation steps, clawback risk →",
     url: "https://careerreturns.com/employer-sponsored-mba-roi",
@@ -17,7 +17,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "Employer-Sponsored MBA ROI 2026: Near-Infinite Return on Personal Investment",
+    title: "Employer-Sponsored MBA ROI 2026: Is It Worth It?",
     description:
       "When your employer pays for your MBA, tuition cost is zero and opportunity cost stays. The math: near-infinite IRR on personal investment.",
   },

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Loyalty Tax Calculator 2026 — How Much Did Staying at Your Company Cost You?",
+  title: "Loyalty Tax Calculator 2026: What Staying Cost You",
   description:
     "Job-switchers earn 50%+ more over a decade than loyal employees. Calculate your loyalty tax: the exact dollar amount your company tenure has cost you vs. switching to market rate.",
   keywords: [

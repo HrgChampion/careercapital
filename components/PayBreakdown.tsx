@@ -10,6 +10,7 @@ import {
 } from "@/lib/paycheckEngine"
 import { SALARY_FACTS } from "@/lib/salaryFacts"
 import { PAY_PAGES_UPDATED } from "@/lib/payRates"
+import { OEWS_RELEASE, medianComparison, nearestOccupations, nextStepHint } from "@/lib/payContext"
 
 export { PAY_PAGES_UPDATED }
 
@@ -49,6 +50,9 @@ export default function PayBreakdown({
   const married = calculatePaycheck({ annualGross: annual, filingStatus: "married", stateCode: "TX" })
   const net = allPeriods(single.takeHome)
   const monthlyNet = single.takeHome / 12
+  const jobs = nearestOccupations(hourly)
+  const raiseNet =
+    calculatePaycheck({ annualGross: annual + 2080, filingStatus: "single", stateCode: "TX" }).takeHome - single.takeHome
 
   const schedules = [
     { label: "Full-time, 52 weeks (2,080 hrs)", hours: 40, weeks: 52 },
@@ -170,6 +174,44 @@ export default function PayBreakdown({
             </table>
           </div>
           <p className="text-xs text-slate-500">Hourly employees covered by the FLSA earn 1.5× their rate for hours over 40 a week, so true overtime pay would be higher than the base-rate row.</p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-2xl font-semibold tracking-tight">Jobs paying closest to {usd(hourly, 0)} an hour</h2>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            {usd(hourly, 2)} an hour works out to {usd(annual)} a year full-time. {medianComparison(hourly)} These US occupations
+            have the national median wages closest to that rate:
+          </p>
+          <div className="rounded-2xl bg-white/5 border border-white/10 overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10 text-slate-400">
+                  <th className="text-left font-medium p-3">Occupation</th>
+                  <th className="text-left font-medium p-3">Field</th>
+                  <th className="text-right font-medium p-3">Median hourly</th>
+                  <th className="text-right font-medium p-3">Full-time / yr</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5">
+                {jobs.map((j) => (
+                  <tr key={j.title}>
+                    <td className="p-3">{j.title}</td>
+                    <td className="p-3 text-slate-400">{j.field}</td>
+                    <td className="p-3 text-right text-white">{usd(j.hourly, 2)}</td>
+                    <td className="p-3 text-right text-slate-300">{usd(j.hourly * 2080)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            A $1-an-hour raise from {usd(hourly, 2)} adds {usd(2080)} a year before tax, or about {usd(raiseNet)} after federal
+            tax and FICA, because the extra dollars fall in the {(single.marginalRate * 100).toFixed(0)}% federal bracket.{" "}
+            {nextStepHint(hourly)}
+          </p>
+          <p className="text-xs text-slate-500">
+            Approximate national medians from the {OEWS_RELEASE}. Pay varies widely by state, city and experience.
+          </p>
         </section>
 
         <section className="space-y-3">

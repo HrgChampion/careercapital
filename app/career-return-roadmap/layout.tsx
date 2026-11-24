@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
+import SiteFooter from "@/components/SiteFooter"
+import Guide from "./guide"
 
 export const metadata: Metadata = {
   title: "Career Return Roadmap: Your Personalized 90-Day Plan (Free)",
@@ -52,7 +54,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
       {children}
-
+      <Guide />
+      <SiteFooter />
     </>
   )
 }

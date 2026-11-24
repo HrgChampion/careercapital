@@ -4,12 +4,12 @@ import OpportunityCostClock from "@/components/OpportunityCostClock"
 import SiteFooter from "@/components/SiteFooter"
 
 export const metadata = {
-  title: "CareerReturns — Career ROI Platform: MBA, Salary & Career Investment Tools",
+  title: "CareerReturns: MBA ROI, Salary & Career Calculators",
   description:
     "14+ free tools to price every career decision with DCF rigor — MBA ROI, salary benchmarks, career gaps, returnships, and lifetime earnings.",
   alternates: pageAlternates("https://careerreturns.com"),
   openGraph: {
-    title: "CareerReturns — Career ROI Platform: MBA, Salary & Career Investment Tools",
+    title: "CareerReturns: MBA ROI, Salary & Career Calculators",
     description: "14+ free tools to price every career decision with DCF rigor — MBA ROI, salary benchmarks, career gaps, returnships, and lifetime earnings.",
     url: "https://careerreturns.com",
     siteName: "CareerReturns",
@@ -18,7 +18,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "CareerReturns — Career ROI Platform: MBA, Salary & Career Investment Tools",
+    title: "CareerReturns: MBA ROI, Salary & Career Calculators",
     description: "14+ free tools to price every career decision with DCF rigor — MBA ROI, salary benchmarks, career gaps, and lifetime earnings.",
   },
 }

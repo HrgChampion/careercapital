@@ -7,7 +7,7 @@ const _articleSchema = articleSchema({
     "Three paths, three cost structures, three ROI profiles. We model the NPV of each so you can compare apples to apples before committing six figures.",
   url: "https://careerreturns.com/blog/mba-vs-masters-vs-bootcamp",
   datePublished: "2026-03-14",
-  dateModified: "2026-03-14",
+  dateModified: "2026-11-24",
 })
 
 const _breadcrumbSchema = breadcrumbSchema([
@@ -40,7 +40,7 @@ const faqSchema = {
       "name": "What is the average cost of a Master's degree vs. MBA?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Master's degree at a top-25 US university costs $40,000–$100,000 in tuition (1–2 years). An MBA at an M7 program costs $145,000–$165,000 in tuition alone, or $385,000–$485,000 all-in with living expenses and opportunity cost. Specialized Master's programs (MS in Data Science, MS in Finance, MS in Computer Science) are typically 1 year and cost significantly less than a full-time MBA.",
+        "text": "A Master's degree at a top-25 US university costs $40,000–$100,000 in tuition (1–2 years). An MBA at an M7 program costs $160,000–$190,000 in tuition alone, or $460,000–$492,000 all-in once living expenses and two years of forgone salary are included. Specialized Master's programs (MS in Data Science, MS in Finance, MS in Computer Science) are typically 1 year and cost significantly less than a full-time MBA. Since July 1, 2026, new graduate borrowers in either type of program can take at most $20,500 a year in federal Direct Unsubsidized Loans, which covers a much larger share of a Master's budget than of an MBA budget.",
       },
     },
     {
@@ -55,9 +55,9 @@ const faqSchema = {
 }
 
 export const metadata = {
-  title: "MBA vs. Master's vs. Bootcamp: ROI Comparison 2026 | CareerReturns",
+  title: "MBA vs Master's vs Bootcamp: 2026 ROI Comparison",
   description:
-    "Three paths, three cost structures, three ROI profiles. We model the NPV of each so you can compare apples to apples before committing six figures.",
+    "MBA, specialized master's or bootcamp? Cost, 2026 federal loan limits, salaries, NPV and IRR compared so you can choose before committing six figures.",
   alternates: pageAlternates("https://careerreturns.com/blog/mba-vs-masters-vs-bootcamp"),
   openGraph: {
     title: "MBA vs. Master's vs. Bootcamp: ROI Comparison for 2026",
@@ -107,9 +107,11 @@ export default function MbaMastersBootcampPage() {
 
         {/* Header */}
         <header className="space-y-5">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full border bg-amber-400/10 border-amber-400/20 text-amber-400">Comparison</span>
-            <span className="text-slate-500 text-xs">March 14, 2026</span>
+            <span className="text-slate-500 text-xs">Published March 14, 2026</span>
+            <span className="text-slate-600 text-xs">·</span>
+            <span className="text-amber-400 text-xs">Updated November 24, 2026</span>
             <span className="text-slate-600 text-xs">·</span>
             <span className="text-slate-500 text-xs">13 min read</span>
           </div>
@@ -138,7 +140,7 @@ export default function MbaMastersBootcampPage() {
         {/* Summary comparison */}
         <div className="grid sm:grid-cols-3 gap-3">
           {[
-            { path: "Full-Time MBA (M7)", cost: "$385k–$485k", irr: "22–40%", horizon: "10–15 yr payback", color: "text-emerald-400", bg: "bg-emerald-400/8 border-emerald-400/20" },
+            { path: "Full-Time MBA (M7)", cost: "$460k–$492k", irr: "22–40%", horizon: "4–7 yr payback", color: "text-emerald-400", bg: "bg-emerald-400/8 border-emerald-400/20" },
             { path: "Specialized Master's", cost: "$40k–$100k", irr: "15–35%", horizon: "3–7 yr payback", color: "text-amber-400", bg: "bg-amber-400/8 border-amber-400/20" },
             { path: "Bootcamp / Certificate", cost: "$5k–$25k", irr: "80–200%+", horizon: "1–2 yr payback", color: "text-blue-400", bg: "bg-blue-400/8 border-blue-400/20" },
           ].map((item) => (
@@ -152,8 +154,69 @@ export default function MbaMastersBootcampPage() {
           ))}
         </div>
         <p className="text-slate-500 text-xs -mt-6">
-          Note: Bootcamp IRR is high because the investment base is very small. Absolute dollar return (NPV) is much higher for an MBA in the right path.
+          Note: Bootcamp IRR is high because the investment base is very small. Absolute dollar return (NPV) is much higher for an MBA in the right path. MBA all-in cost includes two years of forgone salary; payback is 4–5 years for M7 graduates entering MBB or banking and 6–7 years for tech (see the <Link href="/mba-roi-report-2026" className="text-amber-400 hover:text-amber-300">MBA ROI Report 2026</Link>).
         </p>
+
+        {/* What changed in 2026 */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold tracking-tight">What Changed in 2026</h2>
+          <p className="text-slate-400 leading-relaxed">
+            Two things moved this comparison since our first version: the latest MBA salary data, and new federal
+            loan limits that hit the most expensive option hardest.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                title: "MBA salaries: Class of 2025",
+                body: "The M7 median base salary is $175,000, and median first-year total compensation is $185,000–$210,000. Against a median pre-MBA salary of about $85,000, that is a 47–55% jump, which is still the largest salary step of the three paths when it lands in consulting, banking or private equity.",
+              },
+              {
+                title: "Federal loans: Grad PLUS is gone for new borrowers",
+                body: "From July 1, 2026, new graduate students cannot take Grad PLUS loans, and Direct Unsubsidized borrowing is capped at $20,500 a year ($100,000 aggregate) for both MBAs and most Master's programs. A one-year Master's with $60,000 tuition can still be one-third federally financed; a two-year M7 MBA can be financed only about one-sixth federally. The rest must come from savings, scholarships, employer support or private loans.",
+              },
+              {
+                title: "Opportunity cost is the real gap",
+                body: "At the $85,000 median pre-MBA salary, two years out of work costs $170,000. A one-year Master's costs $85,000 of salary; a part-time or evening bootcamp costs close to nothing. That difference, more than tuition, is why the Master's and bootcamp paths pay back faster.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-amber-500/5 border border-amber-500/15 rounded-xl p-5 space-y-1.5">
+                <p className="font-semibold text-amber-300 text-sm">{item.title}</p>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-slate-900 border border-white/10 rounded-xl overflow-x-auto">
+            <table className="w-full text-sm min-w-120">
+              <thead>
+                <tr className="text-left text-slate-500 text-xs border-b border-white/10">
+                  <th className="px-4 py-3 font-medium">2026 financing snapshot</th>
+                  <th className="px-4 py-3 font-medium">Tuition</th>
+                  <th className="px-4 py-3 font-medium">Max new federal loans</th>
+                  <th className="px-4 py-3 font-medium">Salary forgone</th>
+                </tr>
+              </thead>
+              <tbody className="text-slate-300">
+                {[
+                  { path: "M7 full-time MBA (2 yrs)", tuition: "$160k–$190k", fed: "$41,000", lost: "~$170,000" },
+                  { path: "Specialized Master's (1 yr)", tuition: "$40k–$100k", fed: "$20,500", lost: "~$85,000" },
+                  { path: "Bootcamp / certificate", tuition: "$5k–$25k", fed: "Usually not eligible", lost: "$0 if part-time" },
+                ].map((row) => (
+                  <tr key={row.path} className="border-b border-white/5 last:border-0">
+                    <td className="px-4 py-3 text-white">{row.path}</td>
+                    <td className="px-4 py-3">{row.tuition}</td>
+                    <td className="px-4 py-3 text-amber-400">{row.fed}</td>
+                    <td className="px-4 py-3">{row.lost}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-slate-500 text-xs">
+            Federal limits are for new borrowers from July 1, 2026; students already enrolled and borrowing before that date may be covered by transition rules. Salary forgone uses the $85,000 median pre-MBA salary. For financing options, see{" "}
+            <Link href="/how-to-pay-for-mba" className="text-amber-400 hover:text-amber-300">How to Pay for an MBA</Link> and{" "}
+            <Link href="/blog/mba-loans-2026-grad-plus-changes" className="text-amber-400 hover:text-amber-300">MBA Loans After Grad PLUS</Link>.
+          </p>
+        </section>
 
         {/* Section 1: The right question */}
         <section className="space-y-4">
@@ -214,8 +277,9 @@ export default function MbaMastersBootcampPage() {
           <p className="text-slate-400 leading-relaxed">
             The MBA makes financial sense when the salary delta it enables is large and sustained. For
             consulting and banking paths from M7 programs, 10-year NPVs of $186k–$341k are achievable.
-            For paths where the MBA does not materially change destination salary, the $385k–$485k
-            all-in cost is difficult to justify.
+            For paths where the MBA does not materially change destination salary, the $460k–$492k
+            all-in cost is difficult to justify, and since 2026 most of the cash portion has to be financed
+            outside the federal loan program.
           </p>
         </section>
 
@@ -364,6 +428,8 @@ export default function MbaMastersBootcampPage() {
               { href: "/education-comparison-calculator", label: "Education Comparison Calculator" },
               { href: "/reskilling-roi-calculator", label: "Reskilling ROI Calculator" },
               { href: "/mba-worth-it", label: "Is an MBA Worth It in 2026?" },
+              { href: "/part-time-mba-roi", label: "Part-Time MBA ROI" },
+              { href: "/blog/mba-loans-2026-grad-plus-changes", label: "MBA Loans After Grad PLUS (2026)" },
             ].map(({ href, label }) => (
               <Link key={href} href={href} className="block text-sm text-amber-400 hover:text-amber-300 transition-colors py-2 px-3 rounded-lg border border-white/8 hover:border-white/15">
                 {label} →
@@ -384,7 +450,7 @@ export default function MbaMastersBootcampPage() {
           {" · "}
           <Link href="/about" className="hover:text-slate-300 transition-colors">About</Link>
         </p>
-        <p>Salary data sourced from GMAC surveys, school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
+        <p>Salary data sourced from GMAC surveys, Class of 2025 school employment reports, Glassdoor, Levels.fyi, and publicly reported compensation figures. Loan limits reflect U.S. Department of Education rules effective July 1, 2026. All ranges are estimates; individual outcomes vary.</p>
       </footer>
 
     </main>

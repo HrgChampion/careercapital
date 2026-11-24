@@ -482,22 +482,7 @@ export default function CareerGapCalculator() {
         <FaqSection items={faqItems} />
       </div>
 
-      <footer className="border-t border-white/10 pt-8 text-center text-slate-500 text-xs space-y-2 mt-12 mx-4 pb-8">
-        <p>
-          <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
-          {" · "}
-          <Link href="/mba-roi-calculator" className="hover:text-slate-300 transition-colors">MBA ROI Calculator</Link>
-          {" · "}
-          <Link href="/mba-roi" className="hover:text-slate-300 transition-colors">MBA ROI Guide</Link>
-          {" · "}
-          <Link href="/mba-worth-it" className="hover:text-slate-300 transition-colors">Is MBA Worth It?</Link>
-          {" · "}
-          <Link href="/about" className="hover:text-slate-300 transition-colors">About</Link>
-          {" · "}
-          <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
-        </p>
-        <p>Rational decisions. Compounding outcomes.</p>
-      </footer>
+
     </main>
   )
 }

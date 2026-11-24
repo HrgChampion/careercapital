@@ -4,6 +4,7 @@ import PayBreakdown, { PAY_PAGES_UPDATED } from "@/components/PayBreakdown"
 import { articleSchema, breadcrumbSchema, pageAlternates } from "@/lib/seo"
 import { calculatePaycheck, toAnnual, usd } from "@/lib/paycheckEngine"
 import { HOURLY_RATES, hourlyPath } from "@/lib/payRates"
+import { listJobs, medianComparison } from "@/lib/payContext"
 
 export const dynamicParams = false
 
@@ -22,7 +23,8 @@ export function generateMetadata({ params }: { params: { rate: string } }): Meta
   const { rate, annual, net } = figures(params.rate)
   const url = `https://careerreturns.com/${hourlyPath(rate)}`
   const title = `$${rate} an Hour Is How Much a Year? ${usd(annual)} (2026 After Tax)`
-  const description = `$${rate} an hour is ${usd(annual)} a year, ${usd(annual / 12)} a month and ${usd(annual / 26)} biweekly before tax, and about ${usd(net.takeHome)} a year after 2026 federal tax and FICA. Full breakdown by pay period.`
+  // Keep under ~155 characters at every rate so Google shows it untruncated.
+  const description = `$${rate} an hour is ${usd(annual)} a year (${usd(annual / 12)}/month) before tax, or about ${usd(net.takeHome)} after 2026 federal tax. Weekly, biweekly and monthly pay.`
   return {
     title,
     description,
@@ -53,6 +55,10 @@ export default function HourlyToSalaryPage({ params }: { params: { rate: string 
     {
       q: `What is $${rate} an hour after taxes?`,
       a: `After 2026 federal income tax (${usd(net.federalTax)}), Social Security (${usd(net.socialSecurity)}) and Medicare (${usd(net.medicare)}), $${rate} an hour leaves about ${usd(net.takeHome)} a year, or ${usd(net.takeHome / 2080, 2)} per hour worked. State income tax would reduce this in most states.`,
+    },
+    {
+      q: `What jobs pay $${rate} an hour?`,
+      a: `The US occupations with a median wage closest to $${rate} an hour are ${listJobs(rate)}. ${medianComparison(rate)}`,
     },
   ]
 

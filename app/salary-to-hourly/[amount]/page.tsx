@@ -4,6 +4,7 @@ import PayBreakdown, { PAY_PAGES_UPDATED } from "@/components/PayBreakdown"
 import { articleSchema, breadcrumbSchema, pageAlternates } from "@/lib/seo"
 import { calculatePaycheck, fromAnnual, usd } from "@/lib/paycheckEngine"
 import { ANNUAL_SALARIES, salaryPath, shortSalary } from "@/lib/payRates"
+import { listJobs, medianComparison } from "@/lib/payContext"
 
 export const dynamicParams = false
 
@@ -22,7 +23,8 @@ export function generateMetadata({ params }: { params: { amount: string } }): Me
   const { annual, hourly, net } = figures(params.amount)
   const url = `https://careerreturns.com/${salaryPath(annual)}`
   const title = `${usd(annual)} a Year Is How Much an Hour? ${usd(hourly, 2)} (2026)`
-  const description = `${usd(annual)} a year is ${usd(hourly, 2)} an hour, ${usd(annual / 12)} a month and ${usd(annual / 26)} biweekly. After 2026 federal tax and FICA it comes to about ${usd(net.takeHome)} a year (${usd(net.takeHome / 12)}/month).`
+  // Keep under ~155 characters at every amount so Google shows it untruncated.
+  const description = `${usd(annual)} a year is ${usd(hourly, 2)} an hour and ${usd(annual / 12)} a month before tax, or about ${usd(net.takeHome)} a year after 2026 federal tax and FICA.`
   return {
     title,
     description,
@@ -53,6 +55,10 @@ export default function SalaryToHourlyPage({ params }: { params: { amount: strin
     {
       q: `How much tax do I pay on ${usd(annual)}?`,
       a: `A single filer pays about ${usd(net.federalTax)} in federal income tax, ${usd(net.socialSecurity)} in Social Security and ${usd(net.medicare)} in Medicare. That is ${usd(net.totalTax)} in total (${(net.effectiveRate * 100).toFixed(1)}% of gross) before state tax, and the top federal bracket reached is ${(net.marginalRate * 100).toFixed(0)}%.`,
+    },
+    {
+      q: `What jobs pay ${usd(annual)} a year?`,
+      a: `${usd(annual)} is about ${usd(hourly, 2)} an hour. The US occupations with a median wage closest to that are ${listJobs(hourly)}. ${medianComparison(hourly)}`,
     },
   ]
 

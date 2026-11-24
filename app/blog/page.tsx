@@ -22,11 +22,22 @@ export const metadata = {
 
 const articles = [
   {
+    slug: "mba-loans-2026-grad-plus-changes",
+    title: "MBA Loans After Grad PLUS: How the 2026 Federal Loan Caps Change MBA ROI",
+    description:
+      "Grad PLUS ended for new borrowers on July 1, 2026, and federal MBA borrowing is capped at $20,500 a year. We work through the funding gap on a $250K budget, the monthly payments, and what private rates of 9–13% do to NPV.",
+    date: "November 24, 2026",
+    readTime: "12 min read",
+    tag: "Financing",
+    tagColor: "text-emerald-400",
+    tagBg: "bg-emerald-400/10 border-emerald-400/20",
+  },
+  {
     slug: "how-to-calculate-mba-roi",
     title: "How to Actually Calculate MBA ROI (NPV, IRR, Break-Even)",
     description:
-      "Most MBA ROI calculators get the math wrong. This guide walks through the correct discounted cash flow framework — opportunity cost, loan amortization, and all.",
-    date: "March 20, 2026",
+      "Most MBA ROI calculators get the math wrong. The correct discounted cash flow framework, now with Class of 2025 salaries, 2026 tax brackets, the new federal loan limits and a fully worked M7 example.",
+    date: "Updated November 24, 2026",
     readTime: "14 min read",
     tag: "Finance 101",
     tagColor: "text-blue-400",
@@ -36,8 +47,8 @@ const articles = [
     slug: "mba-salary-negotiation",
     title: "How to Negotiate Your Post-MBA Salary: A Data-Driven Playbook",
     description:
-      "Post-MBA offers are negotiable more often than recruiters admit. Here is what the data says about leverage points, timing, and how to close a $20k–$40k gap.",
-    date: "March 17, 2026",
+      "Post-MBA offers are negotiable more often than recruiters admit. Class of 2025 benchmarks by firm type, what is actually movable, a script, and the after-tax value of a counter-offer.",
+    date: "Updated November 24, 2026",
     readTime: "11 min read",
     tag: "Salary",
     tagColor: "text-violet-400",
@@ -47,8 +58,8 @@ const articles = [
     slug: "mba-vs-masters-vs-bootcamp",
     title: "MBA vs. Master's vs. Bootcamp: ROI Comparison for 2026",
     description:
-      "Three paths, three cost structures, three ROI profiles. We model the NPV of each so you can compare apples to apples before committing six figures.",
-    date: "March 14, 2026",
+      "Three paths, three cost structures, three ROI profiles. Updated with Class of 2025 MBA salaries and a 2026 financing snapshot showing how far federal loans now go for each path.",
+    date: "Updated November 24, 2026",
     readTime: "13 min read",
     tag: "Comparison",
     tagColor: "text-amber-400",
@@ -58,8 +69,8 @@ const articles = [
     slug: "career-break-return-strategies",
     title: "6 Strategies for Returning to Work After a Career Break",
     description:
-      "A career gap of 1–3 years costs the average professional $180k–$320k in cumulative earnings. These six strategies minimize the damage and accelerate your return.",
-    date: "March 10, 2026",
+      "A career gap of 1–3 years costs the average professional $180k–$320k in cumulative earnings. Six strategies to cut that cost, plus 2026 take-home math for returnship and direct re-entry offers.",
+    date: "Updated November 24, 2026",
     readTime: "10 min read",
     tag: "Career Return",
     tagColor: "text-rose-400",
@@ -69,8 +80,8 @@ const articles = [
     slug: "women-mba-roi",
     title: "The Gender MBA ROI Gap: What the Data Actually Shows",
     description:
-      "Women face a persistent salary gap pre-MBA and a different one post-MBA. We break down the numbers and what that means for ROI projections, school selection, and career path.",
-    date: "March 7, 2026",
+      "Women face a persistent salary gap pre-MBA and a different one post-MBA. Recalculated for 2026: IRR and NPV by gender, how sensitive they are to post-MBA parity, and why scholarships now matter more.",
+    date: "Updated November 24, 2026",
     readTime: "11 min read",
     tag: "Research",
     tagColor: "text-pink-400",
@@ -153,6 +164,7 @@ const guideGroups = [
       "How you finance the degree can move its NPV by $100,000 or more without changing the school or the job you get afterwards. These guides compare federal and private loans, scholarships and fellowships, employer aid, and benefits for veterans such as the GI Bill and Yellow Ribbon program. They show how much each option saves and how it shifts your break-even year. If you already have an offer, the scholarship ROI and $100K-debt guides show how to compare two financial-aid packages on equal terms.",
     guides: [
       { href: "/how-to-pay-for-mba", label: "How to pay for an MBA", desc: "Loans, scholarships, employer aid and the GI Bill compared." },
+      { href: "/blog/mba-loans-2026-grad-plus-changes", label: "MBA loans after Grad PLUS", desc: "The $20,500 federal cap from July 2026 and what private rates do to NPV." },
       { href: "/mba-scholarships", label: "MBA scholarships", desc: "Merit aid and fellowships, and how aid changes your ROI." },
       { href: "/mba-roi-scholarship", label: "MBA scholarship ROI", desc: "How 50% aid cuts break-even from 8 years to 4." },
       { href: "/mba-roi-100k-debt", label: "MBA ROI with $100K debt", desc: "Loan math and career tracks for a six-figure MBA loan." },

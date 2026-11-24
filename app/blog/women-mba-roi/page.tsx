@@ -7,7 +7,7 @@ const _articleSchema = articleSchema({
     "Women face a persistent salary gap pre-MBA and a different one post-MBA. We break down the numbers and what that means for ROI projections.",
   url: "https://careerreturns.com/blog/women-mba-roi",
   datePublished: "2026-03-07",
-  dateModified: "2026-03-07",
+  dateModified: "2026-11-24",
 })
 
 const _breadcrumbSchema = breadcrumbSchema([
@@ -24,7 +24,7 @@ const faqSchema = {
       "name": "Do women get lower ROI from an MBA than men?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The IRR of an MBA for women is actually higher than for men in most scenarios, despite the post-MBA salary gap. The reason is that women's lower pre-MBA salaries result in lower opportunity cost (foregone salary during school) and produce a larger salary delta (the percentage jump from pre-MBA to post-MBA is greater). The absolute NPV in dollar terms may be lower due to lower post-MBA salaries, but the IRR percentage is often comparable or higher.",
+        "text": "Not necessarily. When post-MBA starting pay is close to parity, as it is at structured employers such as MBB consulting firms and large banks, women's MBA IRR is often comparable to or higher than men's. Lower pre-MBA salaries mean lower opportunity cost (foregone salary during school) and a larger percentage jump. In our 2026 example, a woman moving from $103k to $200k earns a 19.7% IRR versus 16.8% for a man moving from $115k to $210k. The advantage disappears if the post-MBA gap is wider than the pre-MBA gap: at a $190k starting salary, her IRR falls to 15.7%.",
       },
     },
     {
@@ -32,7 +32,7 @@ const faqSchema = {
       "name": "Which MBA programs have the best outcomes for women?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Programs with strong consulting and finance placement (where pay is standardized by class year regardless of gender) tend to have the smallest gender pay gaps post-graduation. Harvard, Wharton, Stanford, and Booth all report median starting salaries in the $175k–$200k range with minimal gender differentiation at the point of hire. The gap tends to emerge 3–7 years post-graduation when bonus discretion and negotiation dynamics diverge.",
+        "text": "Programs with strong consulting and finance placement (where pay is standardized by class year regardless of gender) tend to have the smallest gender pay gaps post-graduation. Harvard, Wharton, Stanford, and Booth reported Class of 2025 median base salaries in roughly the $175k–$210k range, and the M7 median base was $175k. Differences by gender at the point of hire are small at structured employers. The gap tends to emerge 3–7 years post-graduation when bonus discretion and negotiation dynamics diverge.",
       },
     },
     {
@@ -48,16 +48,16 @@ const faqSchema = {
       "name": "Are there MBA scholarships specifically for women?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Most top MBA programs have women-specific fellowships, some worth $20,000–$80,000. Notable examples: Forté Foundation fellowships at over 50 partner schools, the Consortium for Graduate Study in Management (which includes gender equity programs), school-specific awards like the Forte Fellowship at Wharton, and the Robert Toigo Foundation for diverse candidates in finance. Applying for these should be part of every female candidate's scholarship strategy.",
+        "text": "Yes. Most top MBA programs offer women-specific fellowships, typically worth $10,000–$80,000. The best-known route is the Forté Foundation, whose fellowships are awarded through its partner business schools; many schools also run their own women's fellowships, and the Robert Toigo Foundation supports underrepresented candidates in finance. Since July 1, 2026, new borrowers can no longer use Grad PLUS loans, so each scholarship dollar now replaces private debt at a credit-based rate. That makes applying for these awards more valuable than before.",
       },
     },
   ],
 }
 
 export const metadata = {
-  title: "The Gender MBA ROI Gap: What the Data Actually Shows | CareerReturns",
+  title: "The Gender MBA ROI Gap: What the 2026 Data Shows",
   description:
-    "Women face a persistent salary gap pre-MBA and a different one post-MBA. We break down the numbers and what that means for ROI projections.",
+    "Women start MBAs earning less and often fall behind later. 2026 numbers on pre- and post-MBA pay gaps, IRR, new loan limits and scholarships.",
   alternates: pageAlternates("https://careerreturns.com/blog/women-mba-roi"),
   openGraph: {
     title: "The Gender MBA ROI Gap: What the Data Actually Shows",
@@ -107,9 +107,11 @@ export default function WomenMbaRoiPage() {
 
         {/* Header */}
         <header className="space-y-5">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full border bg-pink-400/10 border-pink-400/20 text-pink-400">Research</span>
-            <span className="text-slate-500 text-xs">March 7, 2026</span>
+            <span className="text-slate-500 text-xs">Published March 7, 2026</span>
+            <span className="text-slate-600 text-xs">·</span>
+            <span className="text-pink-400 text-xs">Updated November 24, 2026</span>
             <span className="text-slate-600 text-xs">·</span>
             <span className="text-slate-500 text-xs">11 min read</span>
           </div>
@@ -139,9 +141,10 @@ export default function WomenMbaRoiPage() {
         <div className="bg-pink-500/8 border border-pink-500/20 rounded-xl p-5 space-y-2">
           <p className="text-pink-300 font-semibold text-sm">The Counterintuitive Finding</p>
           <p className="text-slate-400 text-sm leading-relaxed">
-            Despite a persistent post-MBA salary gap, women&apos;s IRR from an MBA is often <em className="text-white">higher</em> than men&apos;s —
+            Despite a persistent pay gap later in their careers, women&apos;s IRR from an MBA is often <em className="text-white">higher</em> than men&apos;s —
             because lower pre-MBA salaries mean lower opportunity cost and a larger percentage salary jump.
-            The absolute NPV in dollars may be lower, but the annualized return on investment often is not.
+            That advantage holds only while post-MBA starting pay stays close to parity, which is why employer
+            choice and negotiation matter so much.
           </p>
         </div>
 
@@ -199,13 +202,14 @@ export default function WomenMbaRoiPage() {
             At the point of hire — the starting salary in the first post-MBA role — gender gaps are
             smallest at structured employers. MBB consulting firms, bulge bracket banks, and major tech
             companies use standardized compensation grids that do not vary by gender. An M7 graduate
-            entering McKinsey in 2026 earns $190,000–$215,000 base salary whether male or female.
+            joining McKinsey, BCG or Bain from the Class of 2025 received a standard base salary of about
+            $190,000–$192,000 whether male or female.
           </p>
           <p className="text-slate-400 leading-relaxed">
             The gap re-emerges within 3–7 years of graduation. GMAC&apos;s longitudinal data and independent
             research (including Harvard Business School&apos;s own alumni surveys) consistently find that
-            10 years post-MBA, women&apos;s total compensation is 30–40% lower than men&apos;s with equivalent
-            qualifications. The causes are complex and include:
+            10 years post-MBA, women&apos;s total compensation is substantially lower than men&apos;s with equivalent
+            qualifications, by 30% or more in several studies. The causes are complex and include:
           </p>
           <div className="space-y-3">
             {[
@@ -215,7 +219,7 @@ export default function WomenMbaRoiPage() {
               },
               {
                 cause: "Negotiation divergence",
-                detail: "Studies show that women negotiate less frequently than men (roughly 57% vs. 73% who negotiate their first offer post-MBA), and are penalized more often when they do. This creates a widening gap from the first offer onward.",
+                detail: "Several studies of MBA graduates find that women are less likely than men to negotiate their first post-MBA offer, and more likely to face pushback when they do. Because later raises are usually a percentage of the current salary, a small gap at the first offer widens over time.",
               },
               {
                 cause: "Career break incidence",
@@ -239,7 +243,10 @@ export default function WomenMbaRoiPage() {
           <h2 className="text-2xl font-semibold tracking-tight">The IRR Math: Why Women&apos;s MBA ROI Is Often Higher</h2>
           <p className="text-slate-400 leading-relaxed">
             The counterintuitive finding in the data is that despite lower post-MBA salaries, women&apos;s
-            MBA IRR often exceeds men&apos;s. Here is the math for an M7 consulting path:
+            MBA IRR often exceeds men&apos;s. Here is the math for an M7 consulting path, updated for 2026: both
+            candidates face a $250,000 two-year budget and, because they start after July 1, 2026, borrow
+            $200,000 as $41,000 of federal Direct Unsubsidized Loans (7.94%) plus $159,000 of private loans
+            (assumed 11%), repaid over 5 years and discounted at 6%.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="bg-blue-500/8 border border-blue-500/20 rounded-xl p-5 space-y-3">
@@ -248,10 +255,12 @@ export default function WomenMbaRoiPage() {
                 {[
                   { label: "Pre-MBA salary", value: "$115k" },
                   { label: "Opportunity cost (2 yrs)", value: "$230k" },
+                  { label: "Year 0 outflow (incl. $50k cash)", value: "−$280k" },
                   { label: "Post-MBA base", value: "$210k" },
                   { label: "Salary delta", value: "$95k/yr" },
-                  { label: "IRR (10-yr)", value: "27%" },
-                  { label: "10-yr NPV", value: "+$264k" },
+                  { label: "IRR (10-yr)", value: "16.8%" },
+                  { label: "10-yr NPV", value: "+$202k" },
+                  { label: "Payback", value: "5.7 yrs" },
                 ].map((row) => (
                   <div key={row.label} className="flex items-center justify-between">
                     <p className="text-slate-400">{row.label}</p>
@@ -266,10 +275,12 @@ export default function WomenMbaRoiPage() {
                 {[
                   { label: "Pre-MBA salary", value: "$103k" },
                   { label: "Opportunity cost (2 yrs)", value: "$206k" },
+                  { label: "Year 0 outflow (incl. $50k cash)", value: "−$256k" },
                   { label: "Post-MBA base", value: "$200k" },
                   { label: "Salary delta", value: "$97k/yr" },
-                  { label: "IRR (10-yr)", value: "29%" },
-                  { label: "10-yr NPV", value: "+$248k" },
+                  { label: "IRR (10-yr)", value: "19.7%" },
+                  { label: "10-yr NPV", value: "+$241k" },
+                  { label: "Payback", value: "5.3 yrs" },
                 ].map((row) => (
                   <div key={row.label} className="flex items-center justify-between">
                     <p className="text-slate-400">{row.label}</p>
@@ -280,11 +291,48 @@ export default function WomenMbaRoiPage() {
             </div>
           </div>
           <p className="text-slate-400 leading-relaxed">
-            The female candidate&apos;s IRR (29%) exceeds the male candidate&apos;s (27%) because the lower pre-MBA
-            salary produces a lower opportunity cost and a higher percentage salary delta. The absolute NPV
-            is lower ($248k vs. $264k) because the post-MBA salary is lower — but the percentage return on
-            the investment is actually better. This is a feature of the math, not a consolation prize.
+            The female candidate&apos;s IRR (19.7%) exceeds the male candidate&apos;s (16.8%) because the lower pre-MBA
+            salary produces a lower opportunity cost and a slightly larger salary delta. In this example her NPV is
+            higher too ($241k vs. $202k), because both candidates pay the same $51,446 a year in loan payments and she
+            gives up $24k less salary while in school. This is a feature of the math, not a consolation prize.
           </p>
+          <p className="text-slate-400 leading-relaxed">
+            The result is sensitive to post-MBA parity. If she starts at $190k instead of $200k, so the post-MBA gap
+            ($20k) is wider than the pre-MBA gap ($12k), her NPV falls to about $168k and her IRR to 15.7%, below his.
+            A $40,000 women&apos;s fellowship that replaces private borrowing moves her the other way: NPV about $285k,
+            IRR 22.7%, payback 4.6 years.
+          </p>
+          <p className="text-slate-500 text-xs">
+            All three cases use the same 10-year DCF as the{" "}
+            <Link href="/mba-roi-calculator" className="text-pink-400 hover:text-pink-300">MBA ROI Calculator</Link>. Figures
+            were recalculated in November 2026 with the post-July 2026 loan limits; the ranking between the two candidates is unchanged from our March version.
+          </p>
+        </section>
+
+        {/* What changed in 2026 */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold tracking-tight">What Changed in 2026</h2>
+          <div className="space-y-3">
+            {[
+              {
+                title: "New salary baseline",
+                body: "Class of 2025 employment reports put the M7 median base salary at $175,000 and median first-year total compensation at $185,000–$210,000. MBB base pay stayed at about $190,000–$192,000. Standardized offers are still where the entry-level gender gap is smallest.",
+              },
+              {
+                title: "Federal loan limits",
+                body: "From July 1, 2026, new graduate borrowers cannot take Grad PLUS loans, and federal Direct Unsubsidized borrowing for an MBA is capped at $20,500 a year. The rest is usually private credit, priced on credit score and income. Candidates with lower pre-MBA pay or less savings, more often women in the industries above, may face higher private rates or need a cosigner. In our example, moving her private rate from 11% to 13% lowers her NPV by about $8,000.",
+              },
+              {
+                title: "Scholarships are worth more",
+                body: "Because scholarship money now displaces private debt rather than federal loans, women-specific fellowships carry more financial value than before. A $40,000 award raised the IRR in our example by 3 points.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-pink-500/5 border border-pink-500/15 rounded-xl p-5 space-y-1.5">
+                <p className="font-semibold text-pink-300 text-sm">{item.title}</p>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Section 4: Strategy implications */}
@@ -308,10 +356,10 @@ export default function WomenMbaRoiPage() {
               <h3 className="text-lg font-semibold text-white">2. Apply for women-specific scholarships aggressively</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Women-specific MBA scholarships are underutilized because many candidates do not know
-                they exist or underestimate their own eligibility. The Forté Foundation has partner
-                programs at 50+ MBA schools offering fellowships of $10,000–$80,000. Every qualified
-                woman should apply. Each dollar of scholarship improves NPV and reduces the cost
-                basis of the investment.
+                they exist or underestimate their own eligibility. Forté Foundation fellowships, awarded
+                through its partner business schools, and schools&apos; own women&apos;s fellowships are typically
+                worth $10,000–$80,000. Every qualified woman should apply. Each dollar of scholarship improves
+                NPV and, since the 2026 loan changes, usually replaces a dollar of private debt.
               </p>
             </div>
             <div className="space-y-3">
@@ -376,6 +424,8 @@ export default function WomenMbaRoiPage() {
               { href: "/blog/career-break-return-strategies", label: "6 Career Break Return Strategies" },
               { href: "/mba-roi-scholarship", label: "MBA Scholarship ROI Impact" },
               { href: "/career-gap-calculator", label: "Career Gap Calculator" },
+              { href: "/mba-scholarships", label: "MBA Scholarships Guide" },
+              { href: "/blog/mba-loans-2026-grad-plus-changes", label: "MBA Loans After Grad PLUS (2026)" },
             ].map(({ href, label }) => (
               <Link key={href} href={href} className="block text-sm text-pink-400 hover:text-pink-300 transition-colors py-2 px-3 rounded-lg border border-white/8 hover:border-white/15">
                 {label} →
@@ -396,7 +446,7 @@ export default function WomenMbaRoiPage() {
           {" · "}
           <Link href="/about" className="hover:text-slate-300 transition-colors">About</Link>
         </p>
-        <p>Salary data sourced from GMAC surveys, HBS alumni research, school employment reports, and publicly reported compensation figures. All ranges are estimates; individual outcomes vary.</p>
+        <p>Salary data sourced from GMAC surveys, HBS alumni research, Class of 2025 school employment reports, and publicly reported compensation figures. Loan limits reflect U.S. Department of Education rules effective July 1, 2026. All ranges are estimates; individual outcomes vary.</p>
       </footer>
 
     </main>
