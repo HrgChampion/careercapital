@@ -3,7 +3,7 @@ import { pageAlternates } from "@/lib/seo"
 export const metadata = {
   title: "MBA Loan Repayment Calculator 2026: Payment & Payoff",
   description:
-    "Free MBA loan repayment calculator. Enter loan amount, interest rate, and term to see monthly payment, total interest paid, payoff timeline, and salary-to-debt ratio. Takes 30 seconds →",
+    "Free MBA loan repayment calculator. Enter loan amount, rate and term to see your monthly payment, total interest, payoff date and salary-to-debt ratio.",
   alternates: pageAlternates("https://careerreturns.com/mba-loan-repayment-calculator"),
 }
 

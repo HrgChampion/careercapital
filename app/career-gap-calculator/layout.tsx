@@ -6,7 +6,7 @@ import Guide from "./guide"
 export const metadata: Metadata = {
   title: "Career Gap Calculator (2026): Best Path Back to Work",
   description:
-    "A 2-year career break costs $170,000+ in foregone earnings. Free calculator: compare direct re-entry vs returnship vs reskilling to find which path recovers your salary fastest. DCF-based.",
+    "A 2-year career break can cost $170,000+ in lost pay. Compare direct re-entry, a returnship and reskilling to see which path recovers your salary fastest.",
   keywords: [
     "career gap recovery calculator",
     "career break earnings loss calculator",

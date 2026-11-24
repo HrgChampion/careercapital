@@ -13,7 +13,7 @@ const URL = "https://careerreturns.com/cpa-vs-mba"
 const UPDATED = "2026-11-04"
 const TITLE = "CPA vs MBA: Salary, Cost & ROI Compared (2026)"
 const DESCRIPTION =
-  "CPA vs MBA in 2026: cost, time, salary lift and 10-year NPV side by side. A CPA pays back in months, while an M7 MBA costs more but has a higher ceiling. When each wins, plus Canadian CPA pay."
+  "CPA vs MBA in 2026: cost, time, salary lift and 10-year NPV side by side. A CPA pays back in months; an M7 MBA costs more but has a higher ceiling."
 
 export const metadata = {
   title: TITLE,

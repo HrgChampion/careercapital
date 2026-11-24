@@ -3,12 +3,12 @@ import SiteFooter from "@/components/SiteFooter"
 import SalaryNegotiationGuide from "./guide"
 
 export const metadata = {
-  title: "Salary Negotiation Simulator: Practice a Raise, See the 10-Year Payoff",
+  title: "Salary Negotiation Simulator: Practice and See the Payoff",
   description:
     "Rehearse a job-offer negotiation against a scripted HR manager and see the 10-year present value of every extra dollar of base salary you win.",
   alternates: pageAlternates("https://careerreturns.com/salary-negotiation-simulator"),
   openGraph: {
-    title: "Salary Negotiation Simulator: Practice a Raise, See the 10-Year Payoff",
+    title: "Salary Negotiation Simulator: Practice and See the Payoff",
     description:
       "Practice the conversation before it matters. Each choice shows the 10-year NPV impact in real time — because negotiating is just applied financial modeling.",
     url: "https://careerreturns.com/salary-negotiation-simulator",

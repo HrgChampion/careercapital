@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter"
 import MbaRoiWidgetGuide from "./guide"
 
 export const metadata = {
-  title: "Free Embeddable MBA ROI Calculator Widget (2026) — Add to Your Site",
+  title: "Free Embeddable MBA ROI Calculator Widget (2026)",
   description:
     "Embed a free MBA ROI calculator on your site with one iframe. Same DCF engine as our full tool: NPV, IRR, break-even and an A–F grade. No signup.",
   openGraph: {

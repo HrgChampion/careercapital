@@ -4,12 +4,12 @@ import { pageAlternates } from "@/lib/seo"
 export const metadata = {
   title: "Employer-Sponsored MBA ROI 2026: Is It Worth It?",
   description:
-    "When your employer pays for your MBA, tuition cost is zero and opportunity cost stays. The math: near-infinite IRR on personal investment. Models, negotiation steps, clawback risk →",
+    "When your employer pays for your MBA, tuition is free but opportunity cost remains. The ROI math, how to negotiate sponsorship, and clawback risk.",
   alternates: pageAlternates("https://careerreturns.com/employer-sponsored-mba-roi"),
   openGraph: {
     title: "Employer-Sponsored MBA ROI 2026: Is It Worth It?",
     description:
-      "When your employer pays for your MBA, tuition cost is zero and opportunity cost stays. The math: near-infinite IRR on personal investment. Models, negotiation steps, clawback risk →",
+      "When your employer pays for your MBA, tuition is free but opportunity cost remains. The ROI math, how to negotiate sponsorship, and clawback risk.",
     url: "https://careerreturns.com/employer-sponsored-mba-roi",
     siteName: "CareerReturns",
     type: "article",

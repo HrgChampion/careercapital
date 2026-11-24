@@ -3,14 +3,14 @@ import { pageAlternates } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "Free MBA Programs 2026: Fully-Funded, Fellowship & Zero-Tuition Options",
+  title: "Free MBA Programs 2026: Fully Funded & Zero-Tuition Options",
   description:
-    "Complete guide to free and fully-funded MBA programs in 2026. See fellowships, assistantships, employer-sponsored programs, and near-zero-tuition options with salary outcome data.",
+    "Free and fully funded MBA programs in 2026: fellowships, assistantships, employer sponsorship and near-zero-tuition options, with salary outcome data.",
   alternates: pageAlternates("https://careerreturns.com/free-mba-programs"),
   openGraph: {
-    title: "Free MBA Programs 2026: Fully-Funded, Fellowship & Zero-Tuition Options",
+    title: "Free MBA Programs 2026: Fully Funded & Zero-Tuition Options",
     description:
-      "Complete guide to free and fully-funded MBA programs in 2026. See fellowships, assistantships, employer-sponsored programs, and near-zero-tuition options with salary outcome data.",
+      "Free and fully funded MBA programs in 2026: fellowships, assistantships, employer sponsorship and near-zero-tuition options, with salary outcome data.",
     url: "https://careerreturns.com/free-mba-programs",
     siteName: "CareerReturns",
     type: "article",
@@ -18,9 +18,9 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "Free MBA Programs 2026: Fully-Funded, Fellowship & Zero-Tuition Options",
+    title: "Free MBA Programs 2026: Fully Funded & Zero-Tuition Options",
     description:
-      "Complete guide to free and fully-funded MBA programs in 2026. See fellowships, assistantships, employer-sponsored programs, and near-zero-tuition options with salary outcome data.",
+      "Free and fully funded MBA programs in 2026: fellowships, assistantships, employer sponsorship and near-zero-tuition options, with salary outcome data.",
   },
 }
 

@@ -5,7 +5,7 @@ import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "UK vs US MBA ROI 2026: INSEAD vs Wharton Compared",
-  description: "INSEAD vs Wharton ROI compared: $171K cheaper, breaks even in 5 yrs vs 7.2 yrs. UK MBA salaries: London consulting £85K–£110K, IB £150K–£200K. Which wins for UK & international careers? →",
+  description: "INSEAD vs Wharton ROI: $171K cheaper and a 5-year vs 7.2-year break-even. Plus UK MBA salaries in London consulting and banking. Which wins for you?",
   url: "https://careerreturns.com/mba-roi-europe",
   datePublished: "2026-09-13",
   dateModified: "2026-09-13",
@@ -14,7 +14,7 @@ const _articleSchema = articleSchema({
 
 export const metadata = {
   title: "UK vs US MBA ROI 2026: INSEAD vs Wharton Compared",
-  description: "INSEAD vs Wharton ROI compared: $171K cheaper, breaks even in 5 yrs vs 7.2 yrs. UK MBA salaries: London consulting £85K–£110K, IB £150K–£200K. Which wins for UK & international careers? →",
+  description: "INSEAD vs Wharton ROI: $171K cheaper and a 5-year vs 7.2-year break-even. Plus UK MBA salaries in London consulting and banking. Which wins for you?",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-europe", true),
   openGraph: {
     title: "UK vs US MBA ROI 2026: Full Comparison — INSEAD $224K vs Wharton $395K ($171K Gap)",

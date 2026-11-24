@@ -6,9 +6,9 @@ import Guide from "./guide"
 const URL = "https://careerreturns.com/raise-calculator"
 
 export const metadata: Metadata = {
-  title: "Raise Calculator 2026: New Salary, After-Tax & Inflation (Free)",
+  title: "Raise Calculator 2026: New Salary, After Tax & Inflation",
   description:
-    "Calculate any raise by percentage or new salary. See new pay per hour, paycheck and month, what you keep after 2026 taxes, the real raise after inflation, and its 10-year value. No signup.",
+    "Calculate a raise by percentage or new salary. See new hourly, paycheck and monthly pay, take-home after 2026 taxes and the real raise after inflation.",
   keywords: [
     "raise calculator",
     "salary raise calculator",

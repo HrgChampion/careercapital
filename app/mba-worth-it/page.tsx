@@ -10,7 +10,7 @@ import { PRESET_SCENARIOS, runMbaScenario, type MbaScenarioInput } from "@/lib/m
 const TITLE = "When an MBA Degree Is Worth It: A Data-Driven Look by Industry and School Tier"
 const META_TITLE = "When an MBA Is Worth It: NPV, IRR & Break-Even by Industry"
 const META_DESC =
-  "Is an MBA worth it? Use NPV, IRR and payback to decide. M7 to MBB at $85k prior pay: ~33% IRR. Same path at $160k: never pays back in 10 years. Scenarios inside."
+  "Is an MBA worth it? Decide with NPV, IRR and payback. M7 to MBB at $85k prior pay: ~33% IRR. The same path at $160k never pays back in 10 years."
 
 const _articleSchema = articleSchema({
   title: TITLE,

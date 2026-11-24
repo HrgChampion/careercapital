@@ -3,12 +3,12 @@ import { pageAlternates } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "Return-to-Work Programs 2026: 15+ Companies, ROI Data & How to Apply",
+  title: "Return-to-Work Programs 2026: 15+ Companies & ROI Data",
   description:
-    "Complete guide to return-to-work programs in 2026. Compare 15+ companies — Amazon, Goldman, JPMorgan, Meta, McKinsey — with conversion rates, stipends, and ROI calculations.",
+    "Return-to-work programs in 2026: 15+ companies including Amazon, Goldman, JPMorgan, Meta and McKinsey, with conversion rates, stipends and ROI.",
   alternates: pageAlternates("https://careerreturns.com/return-to-work-programs"),
   openGraph: {
-    title: "Return-to-Work Programs 2026: 15+ Companies, ROI Data & How to Apply",
+    title: "Return-to-Work Programs 2026: 15+ Companies & ROI Data",
     description:
       "Compare 15+ return-to-work programs with conversion rates, stipends, and NPV vs. direct re-entry. Find the right returnship for your career break.",
     url: "https://careerreturns.com/return-to-work-programs",

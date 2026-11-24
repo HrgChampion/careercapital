@@ -6,7 +6,7 @@ import Guide from "./guide"
 export const metadata: Metadata = {
   title: "Career Return Roadmap: Your Personalized 90-Day Plan (Free)",
   description:
-    "Answer 6 questions. Get a personalized 90-day career return plan with weekly tasks, the right programs, and salary targets. Built for professionals returning after a career break.",
+    "Answer 6 questions to get a personalized 90-day plan for returning to work after a career break, with weekly tasks, programs and salary targets.",
   keywords: [
     "career return roadmap",
     "career break return plan",

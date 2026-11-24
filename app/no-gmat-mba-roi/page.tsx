@@ -2,14 +2,14 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "No-GMAT MBA ROI 2026: Does Skipping the GMAT Hurt Your MBA Return?",
+  title: "No-GMAT MBA ROI 2026: Does Skipping the GMAT Hurt?",
   description:
-    "Do no-GMAT MBA programs deliver the same ROI as GMAT-required programs? Salary outcomes, employer perception, accreditation, and break-even data for GMAT-waiver MBA programs in 2026.",
+    "Do no-GMAT MBA programs deliver the same ROI? Salary outcomes, employer perception, accreditation and break-even data for GMAT-waiver programs in 2026.",
   alternates: pageAlternates("https://careerreturns.com/no-gmat-mba-roi"),
   openGraph: {
-    title: "No-GMAT MBA ROI 2026: Does Skipping the GMAT Hurt Your MBA Return?",
+    title: "No-GMAT MBA ROI 2026: Does Skipping the GMAT Hurt?",
     description:
-      "Do no-GMAT MBA programs deliver the same ROI as GMAT-required programs? Salary outcomes, employer perception, accreditation, and break-even data for GMAT-waiver MBA programs in 2026.",
+      "Do no-GMAT MBA programs deliver the same ROI? Salary outcomes, employer perception, accreditation and break-even data for GMAT-waiver programs in 2026.",
     url: "https://careerreturns.com/no-gmat-mba-roi",
     siteName: "CareerReturns",
     type: "article",

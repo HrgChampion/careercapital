@@ -5,7 +5,7 @@ import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
   title: "MBA ROI Report 2026: Which Programs Pay Back Fastest?",
-  description: "MBB consulting breaks even in 4.2 yrs (IRR 22%). IB: 4.5 yrs. Tech: 6.1 yrs. Nonprofit: 13 yrs. Full salary uplift, IRR & break-even table for 12 industries — 2026 data →",
+  description: "MBB consulting breaks even in 4.2 years (22% IRR), IB 4.5, tech 6.1, nonprofit 13. Salary uplift, IRR and break-even for 12 industries, 2026 data.",
   url: "https://careerreturns.com/mba-roi-report-2026",
   datePublished: "2026-03-01",
   dateModified: "2026-09-13",
@@ -14,7 +14,7 @@ const _articleSchema = articleSchema({
 
 export const metadata = {
   title: "MBA ROI Report 2026: Which Programs Pay Back Fastest?",
-  description: "MBB consulting breaks even in 4.2 yrs (IRR 22%). IB: 4.5 yrs. Tech: 6.1 yrs. Nonprofit: 13 yrs. Full salary uplift, IRR & break-even table for 12 industries — 2026 data →",
+  description: "MBB consulting breaks even in 4.2 years (22% IRR), IB 4.5, tech 6.1, nonprofit 13. Salary uplift, IRR and break-even for 12 industries, 2026 data.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-report-2026"),
   openGraph: {
     title: "MBA ROI Report 2026: Which Programs Pay Back Fastest?",

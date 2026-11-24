@@ -15,9 +15,9 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Break-Even Period", url: "https://careerreturns.com/mba-break-even" }])
 
 export const metadata = {
-  title: "MBA Break-Even Period 2026: 4–8 Years — Timelines by Industry",
+  title: "MBA Break-Even Period 2026: 4–8 Years by Industry",
   description:
-    "MBA break-even and payback period with real math: MBB 4.2–4.7 years, banking 4.5–5, tech 6–7. Factors that shift your timeline + a free DCF calculator. Updated July 2026.",
+    "MBA break-even and payback with real math: MBB 4.2–4.7 years, banking 4.5–5, tech 6–7. What shifts your timeline, plus a free DCF calculator.",
   alternates: pageAlternates("https://careerreturns.com/mba-break-even"),
 }
 

@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Return-to-Office Cost Calculator 2026 — What Does RTO Really Cost You?",
+  title: "Return-to-Office Cost Calculator 2026: What RTO Costs You",
   description:
-    "Amazon, JPMorgan, Google forced full RTO. Calculate your real annual cost: commute, lost remote premium, childcare, time — and see your 5-year financial impact. Share your RTO invoice on LinkedIn.",
+    "Calculate what return-to-office really costs you: commute, lost remote premium, childcare and time, plus the 5-year financial impact. Free calculator.",
   keywords: [
     "return to office cost calculator",
     "rto cost calculator",

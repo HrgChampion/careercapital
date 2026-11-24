@@ -3,12 +3,12 @@ import SiteFooter from "@/components/SiteFooter"
 import Guide from "./guide"
 
 export const metadata = {
-  title: "Career Time Machine: What a Different Career Choice Was Worth",
+  title: "Career Time Machine: What Another Career Path Was Worth",
   description:
     "Pick a past career decision and estimate the earnings gap between your actual path and the alternative, then project it 10 years forward. Free tool.",
   alternates: pageAlternates("https://careerreturns.com/career-time-machine"),
   openGraph: {
-    title: "Career Time Machine: What a Different Career Choice Was Worth",
+    title: "Career Time Machine: What Another Career Path Was Worth",
     description:
       "Select a past career decision and see the financial divergence between your actual trajectory and the alternative — from then to 10 years into the future.",
     url: "https://careerreturns.com/career-time-machine",

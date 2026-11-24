@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Lifetime Earnings Calculator (2026) — Model Your Career to Retirement",
+  title: "Lifetime Earnings Calculator 2026: Model Your Career",
   description:
-    "Free calculator: compare staying, pivoting, or taking a break across your full career to retirement. See total lifetime earnings, inflation-adjusted NPV, and peak salary year for each scenario.",
+    "Compare staying, pivoting or taking a break across your career to retirement. See lifetime earnings, inflation-adjusted NPV and your peak salary year.",
   keywords: [
     "lifetime earnings calculator",
     "career earnings trajectory calculator",

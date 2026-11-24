@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Geographic Arbitrage Calculator 2026 — Remote Work Wealth Multiplier",
+  title: "Geographic Arbitrage Calculator 2026: Remote Work Wealth",
   description:
-    "Earn a San Francisco salary, live in Lisbon. See your exact wealth multiplier, monthly surplus, and years to financial independence. Compare any two cities instantly.",
+    "Earn a San Francisco salary, live in Lisbon. See your wealth multiplier, monthly surplus and years to financial independence for any two cities.",
   keywords: [
     "geographic arbitrage calculator",
     "remote work cost of living calculator",

@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter"
 import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
-  title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
+  title: "MBA Salary by School 2026: M7 vs T15 vs Online Data",
   description: "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K — broken down by school tier, industry, and city.",
   url: "https://careerreturns.com/mba-salary-by-school",
   datePublished: "2026-03-21",
@@ -15,11 +15,11 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "MBA Salary by School 2026", url: "https://careerreturns.com/mba-salary-by-school" }])
 
 export const metadata = {
-  title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
+  title: "MBA Salary by School 2026: M7 vs T15 vs Online Data",
   description:
     "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — broken down by school tier, industry, and city.",
   openGraph: {
-    title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
+    title: "MBA Salary by School 2026: M7 vs T15 vs Online Data",
     description:
       "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — broken down by school tier, industry, and city.",
     url: "https://careerreturns.com/mba-salary-by-school",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MBA Salary by School 2026: M7 vs T15 vs Online — Full Rankings + Data",
+    title: "MBA Salary by School 2026: M7 vs T15 vs Online Data",
     description:
       "How much do MBA grads really earn? Stanford $210K, HBS $205K, Wharton $200K, Booth $195K — by school tier, industry, and city.",
   },

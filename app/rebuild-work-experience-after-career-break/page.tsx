@@ -3,12 +3,12 @@ import { pageAlternates } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "How to Rebuild Work Experience After a Career Break (2026 ROI Data)",
+  title: "Rebuild Work Experience After a Career Break (2026)",
   description:
-    "6 proven paths to rebuild work experience after a career break — with ROI data. Freelance, bootcamp, returnship, consulting, volunteer, open source compared by cost, time, and salary recovery.",
+    "6 ways to rebuild work experience after a career break, with ROI data: freelance, bootcamp, returnship, consulting, volunteering and open source.",
   alternates: pageAlternates("https://careerreturns.com/rebuild-work-experience-after-career-break"),
   openGraph: {
-    title: "How to Rebuild Work Experience After a Career Break (2026 ROI Data)",
+    title: "Rebuild Work Experience After a Career Break (2026)",
     description:
       "Which bridge path has the best ROI? Freelance consulting, bootcamps, returnships, volunteer board roles — compared by time, cost, and 10-year salary recovery impact.",
     url: "https://careerreturns.com/rebuild-work-experience-after-career-break",

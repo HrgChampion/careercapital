@@ -6,9 +6,9 @@ import Guide from "./guide"
 const URL = "https://careerreturns.com/salary-calculator"
 
 export const metadata: Metadata = {
-  title: "Salary Calculator 2026: Hourly to Annual + Take-Home Pay (Free)",
+  title: "Salary Calculator 2026: Hourly to Annual + Take-Home Pay",
   description:
-    "Convert hourly, weekly, biweekly, monthly and annual pay, and see take-home pay after 2026 federal, FICA and state tax. Instant results, with no signup or email.",
+    "Convert hourly, weekly, biweekly, monthly and annual pay and see take-home after 2026 federal, FICA and state tax. Instant results, no signup.",
   keywords: [
     "salary calculator",
     "calculate salary",

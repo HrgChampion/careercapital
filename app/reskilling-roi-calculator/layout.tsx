@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Reskilling ROI Calculator (2026) — Is a Bootcamp or Certificate Worth It?",
+  title: "Reskilling ROI Calculator 2026: Is a Bootcamp Worth It?",
   description:
-    "Free calculator: is a $15k bootcamp worth it vs. a $300 certificate? Get NPV, IRR, and break-even in 60 seconds. Compare 9 programs including coding bootcamps, AWS, PMP, and Google certs.",
+    "Is a $15k bootcamp worth it vs a $300 certificate? Get NPV, IRR and break-even in 60 seconds for 9 programs, from coding bootcamps to AWS and PMP.",
   keywords: [
     "reskilling ROI calculator",
     "coding bootcamp worth it calculator",

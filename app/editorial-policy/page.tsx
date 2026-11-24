@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter"
 export const metadata = {
   title: "Editorial Policy & Corrections | CareerReturns",
   description:
-    "How CareerReturns researches, models, reviews and updates its MBA ROI guides and calculators — sources, update schedule, AI use, corrections and advertising independence.",
+    "How CareerReturns researches, models, reviews and updates its guides and calculators: sources, update schedule, AI use, corrections and independence.",
   alternates: pageAlternates("https://careerreturns.com/editorial-policy"),
 }
 

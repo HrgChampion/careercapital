@@ -5,14 +5,14 @@ import SiteFooter from "@/components/SiteFooter"
 import ArticleMeta from "@/components/ArticleMeta"
 
 export const metadata = {
-  title: "MBA Jobs That Pay $200K or More (2026): IB, PE, MBB & Tech Roles",
+  title: "MBA Jobs That Pay $200K+ (2026): IB, PE, MBB & Tech",
   description:
-    "MBA jobs paying $200K+: investment banking $275K–$350K, MBB consulting $212K–$232K, private equity $300K–$500K, tech PM $200K–$280K. Full list by role, firm, and school tier.",
+    "MBA jobs paying $200K+: investment banking $275K–$350K, MBB $212K–$232K, private equity $300K–$500K, tech PM $200K–$280K. By role, firm and school.",
   alternates: pageAlternates("https://careerreturns.com/mba-jobs-200k"),
   openGraph: {
-    title: "MBA Jobs That Pay $200K or More (2026): IB, PE, MBB & Tech Roles",
+    title: "MBA Jobs That Pay $200K+ (2026): IB, PE, MBB & Tech",
     description:
-      "MBA jobs paying $200K+: investment banking $275K–$350K, MBB consulting $212K–$232K, private equity $300K–$500K, tech PM $200K–$280K. Full list by role, firm, and school tier.",
+      "MBA jobs paying $200K+: investment banking $275K–$350K, MBB $212K–$232K, private equity $300K–$500K, tech PM $200K–$280K. By role, firm and school.",
     url: "https://careerreturns.com/mba-jobs-200k",
     siteName: "CareerReturns",
     type: "article",
@@ -25,7 +25,7 @@ export const metadata = {
 }
 
 const _articleSchema = articleSchema({
-  title: "MBA Jobs That Pay $200K or More (2026): IB, PE, MBB & Tech Roles",
+  title: "MBA Jobs That Pay $200K+ (2026): IB, PE, MBB & Tech",
   description: "Complete guide to MBA jobs paying $200K or more in 2026, including investment banking, private equity, MBB consulting, and tech product management roles.",
   url: "https://careerreturns.com/mba-jobs-200k",
   datePublished: "2026-06-21",

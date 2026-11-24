@@ -6,7 +6,7 @@ import Guide from "./guide"
 const URL = "https://careerreturns.com/job-offer-comparison"
 
 export const metadata: Metadata = {
-  title: "Job Offer Comparison Calculator 2026: After Tax & Cost of Living",
+  title: "Job Offer Comparison Calculator 2026: After Tax & COL",
   description:
     "Compare two job offers side by side after 2026 taxes, cost of living, commute, bonus, equity and 401(k) match, with a 5-year value. Free and instant, no signup.",
   keywords: [

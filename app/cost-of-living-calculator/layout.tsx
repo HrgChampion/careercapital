@@ -6,9 +6,9 @@ import Guide from "./guide"
 const URL = "https://careerreturns.com/cost-of-living-calculator"
 
 export const metadata: Metadata = {
-  title: "Cost of Living Calculator 2026: Salary Needed in 57 US Metros (After Tax)",
+  title: "Cost of Living Calculator 2026: Salary Needed in 57 Metros",
   description:
-    "How much do you need to earn in a new city? Compare 57 US metros with official BEA price data, and get the salary you need after state and federal tax. Free, no signup.",
+    "How much do you need to earn in a new city? Compare 57 US metros using BEA price data and see the salary you need after state and federal tax. Free.",
   keywords: [
     "cost of living calculator",
     "cost of living comparison",

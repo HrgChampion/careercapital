@@ -4,7 +4,7 @@ import { pageAlternates } from "@/lib/seo"
 export const metadata = {
   title: "MBA Salary Analytics for Employers | CareerReturns",
   description:
-    "MBA salary analytics and benchmarking data for employers, HR teams, and talent leaders. Use CareerReturns data to set competitive MBA-hire compensation, design retention packages, and support executive decisions.",
+    "MBA salary benchmarks for employers and HR teams. Use CareerReturns data to set competitive MBA-hire pay, design retention packages and plan budgets.",
   alternates: pageAlternates("https://careerreturns.com/for-employers"),
   openGraph: {
     title: "MBA Salary Analytics for Employers | CareerReturns",

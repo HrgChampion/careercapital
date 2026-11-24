@@ -3,7 +3,7 @@ import { pageAlternates } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "MBA Scholarship ROI 2026: How 50% Aid Cuts Break-Even From 8 to 4 Years",
+  title: "MBA Scholarship ROI 2026: How Aid Halves Break-Even",
   description:
     "Exact math: $65K scholarship shifts MBA payback from 8 yrs to 4 yrs. When to take the lower-ranked school with full aid. Scholarship negotiation data →",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-scholarship"),

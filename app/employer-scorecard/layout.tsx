@@ -3,12 +3,12 @@ import SiteFooter from "@/components/SiteFooter"
 import Guide from "./guide"
 
 export const metadata = {
-  title: "Employer Rankings 2026: Return-to-Work Friendly Companies, Scored",
+  title: "Return-to-Work Friendly Employers 2026, Scored",
   description:
     "Compare 12 employers on returnship conversion rate, salary recovery, promotion speed and flexibility. A scorecard for professionals returning to work.",
   alternates: pageAlternates("https://careerreturns.com/employer-scorecard"),
   openGraph: {
-    title: "Employer Rankings 2026: Return-to-Work Friendly Companies, Scored",
+    title: "Return-to-Work Friendly Employers 2026, Scored",
     description:
       "Employers scored on returnship conversion rate, salary recovery, promotion velocity, and program quality — not marketing.",
     url: "https://careerreturns.com/employer-scorecard",

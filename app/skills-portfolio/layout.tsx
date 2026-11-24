@@ -3,12 +3,12 @@ import SiteFooter from "@/components/SiteFooter"
 import Guide from "./guide"
 
 export const metadata = {
-  title: "Skills Portfolio Builder: Value Your Skills Like Financial Assets",
+  title: "Skills Portfolio Builder: Value Skills Like Assets",
   description:
     "Score each skill on your level, market demand and demand growth, like a portfolio. Find underinvested skills and concentration risk. Free tool.",
   alternates: pageAlternates("https://careerreturns.com/skills-portfolio"),
   openGraph: {
-    title: "Skills Portfolio Builder: Value Your Skills Like Financial Assets",
+    title: "Skills Portfolio Builder: Value Skills Like Assets",
     description:
       "Each skill has a current value, market demand, and growth trajectory. Find your gaps, concentration risks, and best bets.",
     url: "https://careerreturns.com/skills-portfolio",

@@ -3,14 +3,14 @@ import { pageAlternates } from "@/lib/seo"
 import FaqSection, { type FaqItem } from "../../components/FaqSection"
 
 export const metadata = {
-  title: "How to Pay for an MBA 2026: Loans, Scholarships, Employer Aid & GI Bill",
+  title: "How to Pay for an MBA in 2026: Loans, Aid & GI Bill",
   description:
-    "Complete guide to MBA financing in 2026. Compare federal loans, private loans, merit scholarships, employer sponsorship, fellowships, and GI Bill. Includes ROI impact of each funding source.",
+    "How to finance an MBA in 2026: federal and private loans, scholarships, employer sponsorship, fellowships and the GI Bill, and each one's ROI impact.",
   alternates: pageAlternates("https://careerreturns.com/how-to-pay-for-mba"),
   openGraph: {
-    title: "How to Pay for an MBA 2026: Loans, Scholarships, Employer Aid & GI Bill",
+    title: "How to Pay for an MBA in 2026: Loans, Aid & GI Bill",
     description:
-      "Complete guide to MBA financing in 2026. Compare federal loans, private loans, merit scholarships, employer sponsorship, fellowships, and GI Bill. Includes ROI impact of each funding source.",
+      "How to finance an MBA in 2026: federal and private loans, scholarships, employer sponsorship, fellowships and the GI Bill, and each one's ROI impact.",
     url: "https://careerreturns.com/how-to-pay-for-mba",
     siteName: "CareerReturns",
     type: "article",
@@ -18,9 +18,9 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "How to Pay for an MBA 2026: Loans, Scholarships, Employer Aid & GI Bill",
+    title: "How to Pay for an MBA in 2026: Loans, Aid & GI Bill",
     description:
-      "Complete guide to MBA financing in 2026. Compare federal loans, private loans, merit scholarships, employer sponsorship, fellowships, and GI Bill. Includes ROI impact of each funding source.",
+      "How to finance an MBA in 2026: federal and private loans, scholarships, employer sponsorship, fellowships and the GI Bill, and each one's ROI impact.",
   },
 }
 

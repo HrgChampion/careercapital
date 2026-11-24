@@ -4,7 +4,7 @@ import { pageAlternates } from "@/lib/seo"
 export const metadata: Metadata = {
   title: "Loyalty Tax Calculator 2026: What Staying Cost You",
   description:
-    "Job-switchers earn 50%+ more over a decade than loyal employees. Calculate your loyalty tax: the exact dollar amount your company tenure has cost you vs. switching to market rate.",
+    "Job-switchers often out-earn loyal employees. Calculate your loyalty tax: what your tenure has cost you compared with switching jobs at market rate.",
   keywords: [
     "loyalty tax calculator",
     "job hopping salary calculator",

@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Am I Underpaid? Free Salary Check Tool 2026 — Find Your Market Percentile",
+  title: "Am I Underpaid? Free Salary Percentile Check (2026)",
   description:
-    "Enter your role, industry, and experience. See your salary percentile instantly — and exactly how much you're leaving on the table per year (and over 5 years). Free, no signup.",
+    "Enter your role, industry and experience to see your salary percentile and how much you leave on the table each year and over 5 years. Free, no signup.",
   keywords: [
     "am i underpaid",
     "am i underpaid calculator",

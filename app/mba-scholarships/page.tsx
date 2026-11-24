@@ -2,14 +2,14 @@ import Link from "next/link"
 import { pageAlternates } from "@/lib/seo"
 
 export const metadata = {
-  title: "MBA Scholarships 2026: Merit Aid, Fellowships & How Aid Changes Your ROI",
+  title: "MBA Scholarships 2026: Merit Aid, Fellowships & ROI",
   description:
-    "Complete guide to MBA scholarships, fellowships, and merit aid in 2026. See which programs offer the most aid, how to negotiate, and how each dollar of scholarship changes your MBA ROI.",
+    "MBA scholarships, fellowships and merit aid in 2026: which programs give the most, how to negotiate, and how each dollar of aid changes your MBA ROI.",
   alternates: pageAlternates("https://careerreturns.com/mba-scholarships"),
   openGraph: {
-    title: "MBA Scholarships 2026: Merit Aid, Fellowships & How Aid Changes Your ROI",
+    title: "MBA Scholarships 2026: Merit Aid, Fellowships & ROI",
     description:
-      "Complete guide to MBA scholarships, fellowships, and merit aid in 2026. See which programs offer the most aid, how to negotiate, and how each dollar of scholarship changes your MBA ROI.",
+      "MBA scholarships, fellowships and merit aid in 2026: which programs give the most, how to negotiate, and how each dollar of aid changes your MBA ROI.",
     url: "https://careerreturns.com/mba-scholarships",
     siteName: "CareerReturns",
     type: "article",
@@ -17,7 +17,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "MBA Scholarships 2026: Merit Aid, Fellowships & How Aid Changes Your ROI",
+    title: "MBA Scholarships 2026: Merit Aid, Fellowships & ROI",
     description:
       "A $65K scholarship reduces MBA break-even from 7 years to 4. Full guide to merit aid, fellowships, and negotiation tactics.",
   },

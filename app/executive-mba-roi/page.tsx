@@ -4,7 +4,7 @@ import FaqSection, { type FaqItem } from "../../components/FaqSection"
 import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
-  title: "Executive MBA ROI & Salary Increase 2026: When the EMBA Math Works",
+  title: "Executive MBA ROI & Salary Increase 2026",
   description:
     "EMBA ROI and salary increase for 2026: median raise by program, promotion rates, break-even scenarios, salary outcomes by track, and EMBA vs full-time MBA comparison.",
   url: "https://careerreturns.com/executive-mba-roi",
@@ -18,12 +18,12 @@ const _breadcrumbSchema = breadcrumbSchema([
 ])
 
 export const metadata = {
-  title: "Executive MBA ROI & Salary Increase 2026: When the EMBA Math Works",
+  title: "Executive MBA ROI & Salary Increase 2026",
   description:
     "EMBA salary increase by program (Wharton, Booth, Kellogg, INSEAD), promotion rates, break-even scenarios and EMBA vs full-time MBA ROI. Full 2026 analysis.",
   alternates: pageAlternates("https://careerreturns.com/executive-mba-roi"),
   openGraph: {
-    title: "Executive MBA ROI & Salary Increase 2026: When the EMBA Math Works",
+    title: "Executive MBA ROI & Salary Increase 2026",
     description:
       "EMBA salary increase by program, promotion rates, break-even scenarios and EMBA vs full-time MBA ROI. Full 2026 analysis.",
     url: "https://careerreturns.com/executive-mba-roi",
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "Executive MBA ROI & Salary Increase 2026: When the EMBA Math Works",
+    title: "Executive MBA ROI & Salary Increase 2026",
     description:
       "EMBA salary increase by program, promotion rates, break-even scenarios and EMBA vs full-time MBA ROI.",
   },

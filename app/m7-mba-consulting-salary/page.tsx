@@ -15,7 +15,7 @@ const _breadcrumbSchema = breadcrumbSchema([{ name: "M7 MBA Consulting Salary", 
 export const metadata = {
   title: "M7 MBA Consulting Salary 2026: McKinsey, BCG & Bain",
   description:
-    "M7 MBA consulting salary 2026: McKinsey $192K base + $40K bonus = $232K. BCG $225K. Bain $227K. MBB placement rates by school (HBS 30%, Booth 40%). Big 4 comparison & Partner-track progression →",
+    "M7 MBA consulting salary 2026: McKinsey $192K base plus bonus ($232K), BCG $225K, Bain $227K. MBB placement rates by school and the partner track.",
   alternates: pageAlternates("https://careerreturns.com/m7-mba-consulting-salary"),
   openGraph: {
     title: "M7 MBA Consulting Salary 2026: McKinsey $232K · BCG $225K · Placement by School",

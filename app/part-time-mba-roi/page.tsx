@@ -4,7 +4,7 @@ import FaqSection, { type FaqItem } from "../../components/FaqSection"
 import ArticleMeta from "@/components/ArticleMeta"
 
 const _articleSchema = articleSchema({
-  title: "Part-Time MBA ROI 2026: The Format Most Financial Analyses Get Wrong",
+  title: "Part-Time MBA ROI 2026: Break-Even & When It Wins",
   description:
     "Part-time MBA ROI 2026: how zero opportunity cost changes the math, break-even profiles, salary outcomes, accreditation guide, and when part-time loses to full-time.",
   url: "https://careerreturns.com/part-time-mba-roi",
@@ -18,12 +18,12 @@ const _breadcrumbSchema = breadcrumbSchema([
 ])
 
 export const metadata = {
-  title: "Part-Time MBA ROI 2026: The Format Most Financial Analyses Get Wrong",
+  title: "Part-Time MBA ROI 2026: Break-Even & When It Wins",
   description:
     "Part-time MBA ROI 2026: zero opportunity cost, break-even profiles, salary outcomes, when it beats full-time, and which accredited programs matter most.",
   alternates: pageAlternates("https://careerreturns.com/part-time-mba-roi"),
   openGraph: {
-    title: "Part-Time MBA ROI 2026: The Format Most Financial Analyses Get Wrong",
+    title: "Part-Time MBA ROI 2026: Break-Even & When It Wins",
     description:
       "Part-time MBA ROI 2026: zero opportunity cost, break-even profiles, salary outcomes, when it beats full-time, and which accredited programs matter most.",
     url: "https://careerreturns.com/part-time-mba-roi",
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@careerreturns",
-    title: "Part-Time MBA ROI 2026: The Format Most Financial Analyses Get Wrong",
+    title: "Part-Time MBA ROI 2026: Break-Even & When It Wins",
     description:
       "Part-time MBA ROI 2026: zero opportunity cost, break-even profiles, salary outcomes, and which programs actually matter.",
   },

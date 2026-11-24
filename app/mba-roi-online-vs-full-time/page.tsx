@@ -6,7 +6,7 @@ import ArticleMeta from "@/components/ArticleMeta"
 const PAGE_URL = "https://careerreturns.com/mba-roi-online-vs-full-time"
 const TITLE = "Online MBA vs Full-Time MBA ROI (2026): Break-Even by Salary"
 const DESCRIPTION =
-  "Online vs full-time MBA ROI on the same salary outcome: $48K vs $315K total cost, ~1.6 vs ~10.5 year payback, a break-even table by pre-MBA salary, and 7 online programs compared."
+  "Online vs full-time MBA ROI on the same salary outcome: $48K vs $315K total cost, ~1.6 vs ~10.5 year payback, and break-even by pre-MBA salary."
 
 const _articleSchema = articleSchema({
   title: TITLE,

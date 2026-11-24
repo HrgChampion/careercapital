@@ -3,12 +3,12 @@ import SiteFooter from "@/components/SiteFooter"
 import CareerRoiScoreGuide from "./guide"
 
 export const metadata = {
-  title: "Career ROI Score: Grade Your Career Financial Health in 60 Seconds",
+  title: "Career ROI Score: Grade Your Career's Financial Health",
   description:
     "A 300–850 score for career financial health, built from pay vs. market, career gaps, skills fit, years of runway and savings rate. See the formula.",
   alternates: pageAlternates("https://careerreturns.com/career-roi-score"),
   openGraph: {
-    title: "Career ROI Score: Grade Your Career Financial Health in 60 Seconds",
+    title: "Career ROI Score: Grade Your Career's Financial Health",
     description:
       "Your single composite score for career financial health — like a credit score, but for your human capital. Scored 300–850 across 5 dimensions.",
     url: "https://careerreturns.com/career-roi-score",

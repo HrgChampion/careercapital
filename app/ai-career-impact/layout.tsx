@@ -3,7 +3,7 @@ import { pageAlternates } from "@/lib/seo"
 import AiCareerImpactGuide from "./guide"
 
 export const metadata: Metadata = {
-  title: "AI Career Impact Calculator 2026 — What Will AI Cost Your Salary?",
+  title: "AI Career Impact Calculator 2026: What AI Costs Your Pay",
   description:
     "Estimate AI displacement risk for 26 roles in dollars: expected 5-year income loss, plus eight reskilling options ranked by net present value.",
   keywords: [

@@ -16,7 +16,7 @@ const _breadcrumbSchema = breadcrumbSchema([{ name: "Marketing MBA Salary", url:
 export const metadata = {
   title: "Marketing MBA Salary 2026: $130K–$155K by Role & Level",
   description:
-    "Marketing MBA salary 2026: brand management $130K–$155K, digital marketing $125K–$145K, product marketing $135K–$160K. CMO track reaches $250K–$500K. Kellogg, Wharton & Booth placement data →",
+    "Marketing MBA salary 2026: brand management $130K–$155K, digital $125K–$145K, product marketing $135K–$160K, and a CMO track to $250K–$500K.",
   alternates: pageAlternates("https://careerreturns.com/marketing-mba-salary"),
   openGraph: {
     title: "Marketing MBA Salary 2026: $130K–$155K Brand Management, CMO Track & ROI Data",

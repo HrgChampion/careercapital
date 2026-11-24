@@ -4,7 +4,7 @@ import { pageAlternates } from "@/lib/seo"
 export const metadata: Metadata = {
   title: "Salary Benchmark Calculator 2026 — Am I Underpaid?",
   description:
-    "Career returners accept salaries 8–15% below market on average. Find your market percentile, calculate how much you're leaving on the table per year, and get the NPV of asking for a raise now vs. switching jobs.",
+    "Career returners often accept pay 8–15% below market. Find your market percentile, what you leave on the table, and the NPV of asking for a raise now.",
   keywords: [
     "am I underpaid calculator",
     "salary benchmark calculator 2026",

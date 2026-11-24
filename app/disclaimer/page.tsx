@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter"
 export const metadata = {
   title: "Disclaimer | CareerReturns",
   description:
-    "CareerReturns calculators and guides are educational estimates, not financial, legal or admissions advice. Read how to use our figures and how the site is funded.",
+    "CareerReturns calculators and guides are educational estimates, not financial, legal or admissions advice. How to use our figures and how we're funded.",
   alternates: pageAlternates("https://careerreturns.com/disclaimer"),
 }
 

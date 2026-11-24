@@ -14,12 +14,12 @@ const _articleSchema = articleSchema({
 const _breadcrumbSchema = breadcrumbSchema([{ name: "Yellow Ribbon MBA Programs", url: "https://careerreturns.com/yellow-ribbon-mba-programs" }])
 
 export const metadata = {
-  title: "Yellow Ribbon MBA Programs (2026): Full List & GI Bill Savings",
+  title: "Yellow Ribbon MBA Programs 2026: List & GI Bill Savings",
   description:
-    "Yellow Ribbon Program MBA 2026: veterans can attend top MBA programs at near-zero tuition using GI Bill + YRP. Full program list, benefit calculations ($150K–$200K savings), eligibility & ROI →",
+    "Yellow Ribbon MBA programs 2026: how veterans attend top MBAs at near-zero tuition with the GI Bill. Full program list, savings, eligibility and ROI.",
   alternates: pageAlternates("https://careerreturns.com/yellow-ribbon-mba-programs"),
   openGraph: {
-    title: "Yellow Ribbon MBA Programs (2026): Full List & GI Bill Savings",
+    title: "Yellow Ribbon MBA Programs 2026: List & GI Bill Savings",
     description:
       "Yellow Ribbon Program MBA 2026: veterans save $150K–$200K on top MBA programs. Full program list, GI Bill + YRP calculations & eligibility.",
     url: "https://careerreturns.com/yellow-ribbon-mba-programs",

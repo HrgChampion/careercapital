@@ -3,12 +3,12 @@ import SiteFooter from "@/components/SiteFooter"
 import Guide from "./guide"
 
 export const metadata = {
-  title: "Career Compounder: How Small Raises Compound Into $1M+ (Free Tool)",
+  title: "Career Compounder: How Small Raises Grow to $1M+",
   description:
     "See how a one-time raise or a faster salary growth rate compounds into cumulative earnings over 5 to 35 years. Free calculator with worked examples.",
   alternates: pageAlternates("https://careerreturns.com/career-compounder"),
   openGraph: {
-    title: "Career Compounder: How Small Raises Compound Into $1M+ (Free Tool)",
+    title: "Career Compounder: How Small Raises Grow to $1M+",
     description:
       "See how a small salary increase or faster growth rate compounds into life-changing wealth over 20 years. The math is counterintuitive — see it visualized.",
     url: "https://careerreturns.com/career-compounder",

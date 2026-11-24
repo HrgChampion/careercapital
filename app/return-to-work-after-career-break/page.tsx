@@ -5,7 +5,7 @@ import FaqSection, { type FaqItem } from "../../components/FaqSection"
 export const metadata = {
   title: "Return to Work After Career Break: 2026 Salary & Strategy",
   description:
-    "How does a career break affect your career? Salary penalty data by industry and break duration, 3 re-entry strategies compared by NPV, and a step-by-step recovery framework.",
+    "How a career break affects your pay: salary penalty by industry and break length, 3 re-entry strategies compared by NPV, and a recovery framework.",
   alternates: pageAlternates("https://careerreturns.com/return-to-work-after-career-break"),
   openGraph: {
     title: "Return to Work After Career Break: 2026 Salary & Strategy",

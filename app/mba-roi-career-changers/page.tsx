@@ -5,12 +5,12 @@ import FaqSection, { type FaqItem } from "../../components/FaqSection"
 export const metadata = {
   title: "MBA ROI for Career Changers 2026: Is the Pivot Worth It?",
   description:
-    "Career changers are the most financially polarized MBA segment. Successful pivot to MBB = 25–40% IRR. Failed pivot at regional school = negative NPV. School tier × target sector analysis →",
+    "Career changers are the most polarized MBA group: a successful pivot to MBB can return a 25–40% IRR, a failed one a negative NPV. By school and sector.",
   alternates: pageAlternates("https://careerreturns.com/mba-roi-career-changers"),
   openGraph: {
     title: "MBA ROI for Career Changers 2026: Highest-Variance Return in Graduate Education",
     description:
-      "Career changers are the most financially polarized MBA segment. Successful pivot to MBB = 25–40% IRR. Failed pivot at regional school = negative NPV. School tier × target sector analysis →",
+      "Career changers are the most polarized MBA group: a successful pivot to MBB can return a 25–40% IRR, a failed one a negative NPV. By school and sector.",
     url: "https://careerreturns.com/mba-roi-career-changers",
     siteName: "CareerReturns",
     type: "article",

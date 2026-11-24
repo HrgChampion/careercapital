@@ -5,7 +5,7 @@ import FaqSection, { type FaqItem } from "../../components/FaqSection"
 export const metadata = {
   title: "Women Returning to Work 2026: Programs & Pay Gap Guide",
   description:
-    "Women face a 15–22% salary penalty returning after career breaks — nearly double the male gap. See 20+ returnship programs for women (Amazon, Goldman, Path Forward), stipends, conversion rates & the fastest recovery strategy.",
+    "Women face a 15–22% salary penalty after a career break. Compare 20+ returnship programs for women, stipends, conversion rates and the fastest way back.",
   alternates: pageAlternates("https://careerreturns.com/women-returning-to-work"),
   openGraph: {
     title: "Women Returning to Work (2026): 20+ Programs & How to Close the 15–22% Salary Gap",
